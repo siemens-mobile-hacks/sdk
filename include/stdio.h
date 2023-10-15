@@ -87,8 +87,8 @@ int putchar_unlocked(int c) __THROW;
 #define putc_unlocked(c,stream) fputc_unlocked(c,stream)
 #define putchar_unlocked(c) fputc_unlocked(c,stdout)
 #else
-inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
-inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
+static inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
+static inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
 #endif
 
 #if !defined(__cplusplus)
@@ -97,8 +97,8 @@ inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,
 #define getc_unlocked(stream) fgetc_unlocked(stream)
 #define getchar_unlocked() fgetc_unlocked(stdin)
 #else
-inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
-inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
+static inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
+static inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
 #endif
 
 int puts(const char *s) __THROW;
@@ -172,11 +172,11 @@ int setvbuf_unlocked(FILE *stream, char *buf, int mode , size_t size) __THROW;
 #define setbuffer(stream,buf,size) setvbuf(stream,buf,buf?_IOFBF:_IONBF,size)
 #define setlinebuf(stream) setvbuf(stream,0,_IOLBF,BUFSIZ)
 #else
-inline int setbuf(FILE *stream, char *buf) __THROW
+static inline int setbuf(FILE *stream, char *buf) __THROW
   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,BUFSIZ); }
-inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
+static inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,size); }
-inline int setlinebuf(FILE *stream) __THROW
+static inline int setlinebuf(FILE *stream) __THROW
   { return setvbuf(stream,0,_IOLBF,BUFSIZ); }
 #endif
 
