@@ -1,0 +1,514 @@
+# depslib dependency file v1.0
+950816391 source:/home/vova7890/Sie/libm/src/e_acos.c
+	"fdlibm.h"
+
+1310260897 /home/vova7890/Sie/libm/src/fdlibm.h
+	<math.h>
+	<sys/types.h>
+	"ieeefp.h"
+
+1291318246 /home/vova7890/Sie/libm/src/ieeefp.h
+
+950816391 source:/home/vova7890/Sie/libm/src/e_acosh.c
+	"fdlibm.h"
+
+959380958 source:/home/vova7890/Sie/libm/src/e_asin.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_atan2.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_atanh.c
+	"fdlibm.h"
+
+967484756 source:/home/vova7890/Sie/libm/src/e_cosh.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_exp.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_fmod.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_hypot.c
+	"fdlibm.h"
+
+959380958 source:/home/vova7890/Sie/libm/src/e_j0.c
+	"fdlibm.h"
+
+959380958 source:/home/vova7890/Sie/libm/src/e_j1.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_jn.c
+	"fdlibm.h"
+
+959380958 source:/home/vova7890/Sie/libm/src/e_log.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_log10.c
+	"fdlibm.h"
+
+1178044935 source:/home/vova7890/Sie/libm/src/e_pow.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_rem_pio2.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_remainder.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_scalb.c
+	"fdlibm.h"
+
+967484756 source:/home/vova7890/Sie/libm/src/e_sinh.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/e_sqrt.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/ef_acos.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_acosh.c
+	"fdlibm.h"
+
+987527580 source:/home/vova7890/Sie/libm/src/ef_asin.c
+	"fdlibm.h"
+
+1121876424 source:/home/vova7890/Sie/libm/src/ef_atan2.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/ef_atanh.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_cosh.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_exp.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_fmod.c
+	"fdlibm.h"
+
+1123011884 source:/home/vova7890/Sie/libm/src/ef_hypot.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_j0.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_j1.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_jn.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_log.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_log10.c
+	"fdlibm.h"
+
+1178044935 source:/home/vova7890/Sie/libm/src/ef_pow.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_rem_pio2.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_remainder.c
+	"fdlibm.h"
+
+1247159096 source:/home/vova7890/Sie/libm/src/ef_scalb.c
+	"fdlibm.h"
+	<limits.h>
+
+986391059 source:/home/vova7890/Sie/libm/src/ef_sinh.c
+	"fdlibm.h"
+
+1267779316 source:/home/vova7890/Sie/libm/src/ef_sqrt.c
+	"fdlibm.h"
+
+1023487196 source:/home/vova7890/Sie/libm/src/er_gamma.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/er_lgamma.c
+	"fdlibm.h"
+
+1023487196 source:/home/vova7890/Sie/libm/src/erf_gamma.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/erf_lgamma.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/k_cos.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/k_rem_pio2.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/k_sin.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/k_tan.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/kf_cos.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/kf_rem_pio2.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/kf_sin.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/kf_tan.c
+	"fdlibm.h"
+
+1066675597 source:/home/vova7890/Sie/libm/src/s_asinh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+1066675597 source:/home/vova7890/Sie/libm/src/s_atan.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_ceil.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_cos.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_erf.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_fabs.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_floor.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+1066675597 source:/home/vova7890/Sie/libm/src/s_frexp.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+1130534468 source:/home/vova7890/Sie/libm/src/s_ldexp.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/s_signif.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_sin.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_tan.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/s_tanh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_asinh.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_atan.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_ceil.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_cos.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_erf.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/sf_fabs.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_floor.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_frexp.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/sf_ldexp.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/sf_signif.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_sin.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_tan.c
+	"fdlibm.h"
+
+986391059 source:/home/vova7890/Sie/libm/src/sf_tanh.c
+	"fdlibm.h"
+
+1178044935 source:/home/vova7890/Sie/libm/src/w_acos.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_acosh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1178044935 source:/home/vova7890/Sie/libm/src/w_asin.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1179438731 source:/home/vova7890/Sie/libm/src/w_atan2.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_atanh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_cosh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_drem.c
+	"fdlibm.h"
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_exp.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1238008381 source:/home/vova7890/Sie/libm/src/w_exp2.c
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+	<math.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_fmod.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_hypot.c
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1130534468 source:/home/vova7890/Sie/libm/src/w_j0.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_j1.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_jn.c
+	"fdlibm.h"
+	<errno.h>
+
+1192665812 source:/home/vova7890/Sie/libm/src/w_log.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1310260863 source:/home/vova7890/Sie/libm/src/w_gamma.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1310260907 source:/home/vova7890/Sie/libm/src/w_lgamma.c
+	"fdlibm.h"
+	<errno.h>
+
+1192665812 source:/home/vova7890/Sie/libm/src/w_log10.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1178044935 source:/home/vova7890/Sie/libm/src/w_pow.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_remainder.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_scalb.c
+	"fdlibm.h"
+	<errno.h>
+
+1029533385 source:/home/vova7890/Sie/libm/src/w_sincos.c
+	"fdlibm.h"
+	<errno.h>
+
+1066675597 source:/home/vova7890/Sie/libm/src/w_sinh.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/w_sqrt.c
+	<math.h>
+	<math.h>
+	"fdlibm.h"
+	<errno.h>
+
+1023487196 source:/home/vova7890/Sie/libm/src/w_tgamma.c
+	"fdlibm.h"
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_acos.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_acosh.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_asin.c
+	"fdlibm.h"
+	<errno.h>
+
+1179438731 source:/home/vova7890/Sie/libm/src/wf_atan2.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_atanh.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_cosh.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wf_drem.c
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/wf_exp.c
+	"fdlibm.h"
+	<errno.h>
+
+1023487196 source:/home/vova7890/Sie/libm/src/wf_exp2.c
+	"fdlibm.h"
+	<errno.h>
+	<math.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_fmod.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wf_hypot.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_j0.c
+	"fdlibm.h"
+	<errno.h>
+
+1310260920 source:/home/vova7890/Sie/libm/src/wf_gamma.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_j1.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_jn.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_log.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_log10.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_pow.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_remainder.c
+	"fdlibm.h"
+	<errno.h>
+
+1310260929 source:/home/vova7890/Sie/libm/src/wf_lgamma.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_scalb.c
+	"fdlibm.h"
+	<errno.h>
+
+1029533385 source:/home/vova7890/Sie/libm/src/wf_sincos.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wf_sinh.c
+	"fdlibm.h"
+	<errno.h>
+
+1247159096 source:/home/vova7890/Sie/libm/src/wf_sqrt.c
+	"fdlibm.h"
+	<errno.h>
+
+1188927190 source:/home/vova7890/Sie/libm/src/wf_tgamma.c
+	"math.h"
+	"fdlibm.h"
+
+950816391 source:/home/vova7890/Sie/libm/src/wr_gamma.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wr_lgamma.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wrf_gamma.c
+	"fdlibm.h"
+	<errno.h>
+
+950816391 source:/home/vova7890/Sie/libm/src/wrf_lgamma.c
+	"fdlibm.h"
+	<errno.h>
+

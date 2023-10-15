@@ -1,0 +1,2263 @@
+# depslib dependency file v1.0
+1310208303 source:/home/vova7890/Sie/libm/src/e_acos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 /home/vova7890/Sie/libm/src/math_private.h
+	<sys/types.h>
+	<endian.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_acosh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_asin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_atan2.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_atanh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_cosh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_exp.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_fmod.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_hypot.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_j0.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_j1.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_jn.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_log.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_log10.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_pow.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_remainder.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_scalb.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_sinh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_sqrt.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_cos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_sin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_tan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_asinh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_atan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ceil.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_erf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fabs.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_floor.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_frexp.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_sin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_tan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_tanh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/w_drem.c
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_acosf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_acoshf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_asinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_atan2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_atanhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_coshf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_expf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_fmodf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_gamma.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_gamma_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_gammaf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_gammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_hypotf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_j0f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_j1f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_jnf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_ldexpf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_lgamma.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_lgamma_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_lgammaf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_lgammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_log10f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_logf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_powf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_remainderf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_scalbf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_sinhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/e_sqrtf.c
+	"math.h"
+	"math_private.h"
+
+1312193708 source:/home/vova7890/Sie/libm/src/fenv.c
+	<fenv.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_asinhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_atanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cbrt.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cbrtf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ceilf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ceill.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1310208303 /home/vova7890/Sie/libm/src/fpmath.h
+	<endian.h>
+	"_fpmath.h"
+
+1310208303 /home/vova7890/Sie/libm/src/_fpmath.h
+
+1312192374 source:/home/vova7890/Sie/libm/src/s_cimag.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cimagf.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cimagl.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_conj.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_conjf.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_conjl.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_copysign.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_copysignf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_copysignl.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_cosf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1310208303 /home/vova7890/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 /home/vova7890/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_creal.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_crealf.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_creall.c
+	<complex.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_erff.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_exp2.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_exp2f.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_expm1.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_expm1f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fabsf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fabsl.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fdim.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_finite.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_finitef.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_floorf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_floorl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1312192510 source:/home/vova7890/Sie/libm/src/s_fma.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<float.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fmaf.c
+	<sys/cdefs.h>
+
+1311386520 source:/home/vova7890/Sie/libm/src/s_fmal.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<float.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fmax.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fmaxf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fmaxl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fmin.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fminf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_fminl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_frexpf.c
+	"math.h"
+	"math_private.h"
+
+1312193881 source:/home/vova7890/Sie/libm/src/s_frexpl.c
+	<float.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ilogb.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ilogbf.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_ilogbl.c
+	<float.h>
+	<limits.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_isfinite.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_isnan.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_isnormal.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_llrint.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310208303 /home/vova7890/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_llrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310261279 source:/home/vova7890/Sie/libm/src/s_llround.c
+	<sys/cdefs.h>
+	<machine/limits.h>
+	"s_lround.c"
+
+1310261287 /home/vova7890/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_llroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_llroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_log1p.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_log1pf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_logb.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_logbf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_lrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310261287 source:/home/vova7890/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_lroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_lroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_modf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_modff.c
+	"math.h"
+	"math_private.h"
+
+1312194003 source:/home/vova7890/Sie/libm/src/s_nan.c
+	<endian.h>
+	<ctype.h>
+	<float.h>
+	<math.h>
+	<stdint.h>
+	<strings.h>
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nearbyint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nextafter.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nextafterf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nextafterl.c
+	<sys/cdefs.h>
+	<float.h>
+	"fpmath.h"
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nexttoward.c
+	<float.h>
+	"fpmath.h"
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_nexttowardf.c
+	<float.h>
+	"fpmath.h"
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_remquo.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_remquof.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_rint.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_rintf.c
+	<sys/types.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_round.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_roundf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_roundl.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_scalbln.c
+	<sys/cdefs.h>
+	<limits.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_scalbn.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310265676 source:/home/vova7890/Sie/libm/src/s_scalbnf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310262030 source:/home/vova7890/Sie/libm/src/s_scalbnl.c
+	<sys/cdefs.h>
+	<float.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_signbit.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_signgam.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_significand.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_significandf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_sinf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_tanf.c
+	"math.h"
+	"math_private.h"
+	"k_tanf.c"
+
+1310208303 /home/vova7890/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_tanhf.c
+	"math.h"
+	"math_private.h"
+
+1312194013 source:/home/vova7890/Sie/libm/src/s_tgammaf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_trunc.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_truncf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/s_truncl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/w_cabs.c
+	<complex.h>
+	<math.h>
+
+1310208303 source:/home/vova7890/Sie/libm/src/w_cabsf.c
+	<complex.h>
+	<math.h>
+	"math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/w_dremf.c
+	"math.h"
+	"math_private.h"
+
+1312468135 source:/home/vova7890/Sie/libm/src/b_exp.c
+	<sys/cdefs.h>
+	"mathimpl.h"
+
+1310208303 /home/vova7890/Sie/libm/src/mathimpl.h
+	<sys/cdefs.h>
+	<math.h>
+	"../src/math_private.h"
+
+1310208303 source:/home/vova7890/Sie/libm/src/b_log.c
+	<sys/cdefs.h>
+	<math.h>
+	<errno.h>
+	"mathimpl.h"
+
+1310261731 source:/home/vova7890/Sie/libm/src/b_tgamma.c
+	<sys/cdefs.h>
+	<math.h>
+	"mathimpl.h"
+	<errno.h>
+
+1312468135 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/b_exp.c
+	<sys/cdefs.h>
+	"mathimpl.h"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/mathimpl.h
+	<sys/cdefs.h>
+	<math.h>
+	"../src/math_private.h"
+
+1315047484 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/math_private.h
+	<sys/types.h>
+	<endian.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/b_log.c
+	<sys/cdefs.h>
+	<math.h>
+	<errno.h>
+	"mathimpl.h"
+
+1310261731 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/b_tgamma.c
+	<sys/cdefs.h>
+	<math.h>
+	"mathimpl.h"
+	<errno.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_acos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_acosf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_acosh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_acoshf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_asin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_asinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_atan2.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_atan2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_atanh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_atanhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_cosh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_coshf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_exp.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_expf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_fmod.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_fmodf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_gamma.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_gamma_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_gammaf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_gammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_hypot.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_hypotf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_j0.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_j0f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_j1.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_j1f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_jn.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_jnf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_ldexpf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_lgamma.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_lgamma_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_lgammaf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_lgammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_log.c
+	"math.h"
+	"math_private.h"
+
+1315047396 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_log10.c
+	"math.h"
+	"math_private.h"
+
+1315047375 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_log10f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_logf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_pow.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_powf.c
+	"math.h"
+	"math_private.h"
+
+1315047527 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1315047535 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_remainder.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_remainderf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_scalb.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_scalbf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_sinh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_sinhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_sqrt.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/e_sqrtf.c
+	"math.h"
+	"math_private.h"
+
+1312193708 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/fenv.c
+	<fenv.h>
+
+1313538450 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/isinf.c
+	<math.h>
+	<sys/cdefs.h>
+	"fpmath.h"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/fpmath.h
+	<endian.h>
+	"_fpmath.h"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/_fpmath.h
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_cos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1315047550 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_sin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_tan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_asinh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_asinhf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_atan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_atanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cbrt.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cbrtf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ceil.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ceilf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ceill.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1312192374 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cimag.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cimagf.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cimagl.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_conj.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_conjf.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_conjl.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_copysign.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_copysignf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_copysignl.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cos.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_cosf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_creal.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_crealf.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_creall.c
+	<complex.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_erf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_erff.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_exp2.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_exp2f.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_expm1.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_expm1f.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fabs.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fabsf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fabsl.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fdim.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_finite.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_finitef.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_floor.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_floorf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_floorl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1312192510 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fma.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<float.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fmaf.c
+	<sys/cdefs.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fmax.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fmaxf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fmaxl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fmin.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fminf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_fminl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_frexp.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_frexpf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ilogb.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ilogbf.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_ilogbl.c
+	<float.h>
+	<limits.h>
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_isfinite.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_isnan.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_isnormal.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_llrint.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_llrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310261279 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_llround.c
+	<sys/cdefs.h>
+	<machine/limits.h>
+	"s_lround.c"
+
+1310261287 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_llroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_llroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_log1p.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_log1pf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_logb.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_logbf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1310261287 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_lroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_modf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_modff.c
+	"math.h"
+	"math_private.h"
+
+1312194003 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_nan.c
+	<endian.h>
+	<ctype.h>
+	<float.h>
+	<math.h>
+	<stdint.h>
+	<strings.h>
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_nearbyint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_nextafter.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_nextafterf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_nexttowardf.c
+	<float.h>
+	"fpmath.h"
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_remquo.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_remquof.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_rint.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_rintf.c
+	<sys/types.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_round.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_roundf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_roundl.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_scalbln.c
+	<sys/cdefs.h>
+	<limits.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_scalbn.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1310265676 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_scalbnf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_signbit.c
+	<math.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_signgam.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_significand.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_significandf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_sin.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_sinf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_tan.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_tanf.c
+	"math.h"
+	"math_private.h"
+	"k_tanf.c"
+
+1310208303 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_tanh.c
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_tanhf.c
+	"math.h"
+	"math_private.h"
+
+1312194013 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_tgammaf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_trunc.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_truncf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/s_truncl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/w_cabs.c
+	<complex.h>
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/w_cabsf.c
+	<complex.h>
+	<math.h>
+	"math_private.h"
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/w_drem.c
+	<math.h>
+
+1310208303 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libm/src/w_dremf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/b_exp.c
+	<sys/cdefs.h>
+	"mathimpl.h"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/mathimpl.h
+	<sys/cdefs.h>
+	<math.h>
+	"../src/math_private.h"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/math_private.h
+	<sys/types.h>
+	<endian.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/b_log.c
+	<sys/cdefs.h>
+	<math.h>
+	<errno.h>
+	"mathimpl.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/b_tgamma.c
+	<sys/cdefs.h>
+	<math.h>
+	"mathimpl.h"
+	<errno.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_acos.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_acosf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_acosh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_acoshf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_asin.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_asinf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_atan2.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_atan2f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_atanh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_atanhf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_cosh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_coshf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_exp.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_expf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_fmod.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_fmodf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_gamma.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_gamma_r.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_gammaf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_gammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_hypot.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_hypotf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_j0.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_j0f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_j1.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_j1f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_jn.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_jnf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_ldexpf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_lgamma.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_lgamma_r.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_lgammaf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_lgammaf_r.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_log.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_log10.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_log10f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_logf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_pow.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_powf.c
+	"math.h"
+	"math_private.h"
+
+1325155207 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_remainder.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_remainderf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_scalb.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_scalbf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_sinh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_sinhf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_sqrt.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/e_sqrtf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/fenv.c
+	<fenv.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/isinf.c
+	<math.h>
+	<sys/cdefs.h>
+	"fpmath.h"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/fpmath.h
+	<endian.h>
+	"_fpmath.h"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/_fpmath.h
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_cos.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_rem_pio2.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_rem_pio2f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_sin.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_tan.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_asinh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_asinhf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_atan.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_atanf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cbrt.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cbrtf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ceil.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ceilf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ceill.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cimag.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cimagf.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cimagl.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_conj.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_conjf.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_conjl.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_copysign.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_copysignf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_copysignl.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cos.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_cosf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_cosf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_sinf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_creal.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_crealf.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_creall.c
+	<complex.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_erf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_erff.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_exp2.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_exp2f.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_expm1.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_expm1f.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fabs.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fabsf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fabsl.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fdim.c
+	<sys/cdefs.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_finite.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_finitef.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_floor.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_floorf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_floorl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fma.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<float.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fmaf.c
+	<sys/cdefs.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fmax.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fmaxf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fmaxl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fmin.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fminf.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_fminl.c
+	<sys/cdefs.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_frexp.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_frexpf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ilogb.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ilogbf.c
+	<limits.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_ilogbl.c
+	<float.h>
+	<limits.h>
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_isfinite.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_isnan.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_isnormal.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_llrint.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_llrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_llround.c
+	<sys/cdefs.h>
+	<machine/limits.h>
+	"s_lround.c"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_llroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_llroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_log1p.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_log1pf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_logb.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_logbf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lrint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lrintf.c
+	<sys/cdefs.h>
+	"s_lrint.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lround.c
+	<sys/cdefs.h>
+	<limits.h>
+	<fenv.h>
+	<math.h>
+	<machine/limits.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lroundf.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_lroundl.c
+	<sys/cdefs.h>
+	"s_lround.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_modf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_modff.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_nan.c
+	<endian.h>
+	<ctype.h>
+	<float.h>
+	<math.h>
+	<stdint.h>
+	<strings.h>
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_nearbyint.c
+	<sys/cdefs.h>
+	<fenv.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_nextafter.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_nextafterf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_nexttowardf.c
+	<float.h>
+	"fpmath.h"
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_remquo.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_remquof.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_rint.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_rintf.c
+	<sys/types.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_round.c
+	<sys/cdefs.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_roundf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_roundl.c
+	<sys/cdefs.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_scalbln.c
+	<sys/cdefs.h>
+	<limits.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_scalbn.c
+	<sys/cdefs.h>
+	<float.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_scalbnf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_signbit.c
+	<math.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_signgam.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_significand.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_significandf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_sin.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_sinf.c
+	"math.h"
+	"math_private.h"
+	"k_cosf.c"
+	"k_sinf.c"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_tan.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_tanf.c
+	"math.h"
+	"math_private.h"
+	"k_tanf.c"
+
+1317646873 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/k_tanf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_tanh.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_tanhf.c
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_tgammaf.c
+	<sys/cdefs.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_trunc.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_truncf.c
+	<sys/cdefs.h>
+	"math.h"
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/s_truncl.c
+	<float.h>
+	<math.h>
+	<stdint.h>
+	"fpmath.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/w_cabs.c
+	<complex.h>
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/w_cabsf.c
+	<complex.h>
+	<math.h>
+	"math_private.h"
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/w_drem.c
+	<math.h>
+
+1317646873 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/src/w_dremf.c
+	"math.h"
+	"math_private.h"
+
+1327965278 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libm/main.c
+	<swilib.h>
+	<stdio.h>
+	<ep3/loader.h>
+
