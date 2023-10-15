@@ -1,7 +1,11 @@
 #include <swilib.h>
 #include <ep3/loader.h>
 
-
+__attribute__((naked))
+void kill_data(void *p, void (*func_p)(void *))
+{
+    __asm__ ("bx  %1\n" :: "r"(p), "r"(func_p));
+}
 
 char * _get_folder(char *_buf)
 {

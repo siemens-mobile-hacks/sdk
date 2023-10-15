@@ -6,7 +6,7 @@ BUILD_DIR := bin
 CSTD := -std=c99
 OPT := -Os
 
-CFLAGS += -mthumb -fno-gnu89-inline -Wno-implicit-fallthrough -Wno-missing-prototypes
+CFLAGS += -mthumb -Wno-implicit-fallthrough -Wno-missing-prototypes
 DEFINES += -D__dietlibc__
 INCLUDES += -Isrc
 
@@ -190,4 +190,4 @@ SIEDEV_DIR=..
 include $(SIEDEV_DIR)/rules.mk
 
 install:
-	cp -v $(PROJECT).so ../../lib/$(PROJECT).so
+	cp -v $(PROJECT).so ../lib/$(PROJECT).so

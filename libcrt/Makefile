@@ -20,4 +20,4 @@ SIEDEV_DIR=..
 include $(SIEDEV_DIR)/rules.mk
 
 install:
-	cp -v $(PROJECT).a ../../lib/$(PROJECT).a
+	cp -v $(PROJECT).a ../lib/$(PROJECT).a
