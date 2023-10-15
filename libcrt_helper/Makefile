@@ -5,9 +5,9 @@ BUILD_DIR := bin
 
 OPT := -Os
 
-CFILES += main.c switab.c
-AFILES += dump.S
-CXXFILES += __cxa_atexit.cpp
+SOURCES += main.c switab.c
+SOURCES += dump.S
+SOURCES += __cxa_atexit.cpp
 
 CFLAGS += -Wno-missing-prototypes
 DEFINES += -D__NO_LIBC

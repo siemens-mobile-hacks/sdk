@@ -1,10 +1,7 @@
 # Required variables:
 # SIE_DEV	- path to the sie-dev submodule.
 # PROJECT	- name of the project, for example: crack-for-jww87
-# CFILES	- list of *.c files.
-# CXXFILES	- list of *.cpp files.
-# CCFILES	- list of *.cc files.
-# AFILES	- list of *.S files.
+# SOURCES	- list of *.c, *.cpp, *.cc, *.s, *.S files.
 #
 # Optional variables:
 # TARGETS		- list of the siemens targets: NSG, SG, ELKA, ANY
@@ -51,10 +48,11 @@ endif
 OUTPUT_NAME := $(PROJECT)$(OUTPUT_POSTFIX)
 BUILD_DIR ?= bin/$(TARGET)
 
-OBJECTS = $(CFILES:%.c=$(BUILD_DIR)/%.o)
-OBJECTS += $(CXXFILES:%.cpp=$(BUILD_DIR)/%.o)
-OBJECTS += $(CCFILES:%.cc=$(BUILD_DIR)/%.o)
-OBJECTS += $(AFILES:%.S=$(BUILD_DIR)/%.o)
+OBJECTS := $(SOURCES:%=$(BUILD_DIR)/%)
+OBJECTS := $(OBJECTS:%.c=%.o)
+OBJECTS := $(OBJECTS:%.cpp=%.o)
+OBJECTS := $(OBJECTS:%.cc=%.o)
+OBJECTS := $(OBJECTS:%.S=%.o)
 
 ifeq ($(TARGET),ELKA)
 DEFINES += -DNEWSGOLD -DELKA

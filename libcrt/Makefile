@@ -5,9 +5,9 @@ BUILD_DIR := bin
 
 OPT := -O2
 
-CFILES += main.c
-AFILES += crt.S
-CXXFILES += __cxa_atexit.cpp
+SOURCES += main.c
+SOURCES += crt.S
+SOURCES += __cxa_atexit.cpp
 
 CFLAGS += -Wno-missing-prototypes
 DEFINES += -D__NO_LIBC
