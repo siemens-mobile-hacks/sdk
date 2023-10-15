@@ -74,7 +74,7 @@ TARGET_CFLAGS += -Wextra -Wshadow -Wno-unused-variable -Wno-unused-parameter -Wn
 TARGET_CFLAGS += -Wredundant-decls -Wmissing-prototypes
 TARGET_CFLAGS += $(CFLAGS)
 
-TARGET_CXXFLAGS := $(CXXSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS)
+TARGET_CXXFLAGS := $(CXXSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS) -nostdinc++
 TARGET_CXXFLAGS += -fno-common -ffunction-sections -fdata-sections -Wno-main -Wno-unused-parameter
 TARGET_CXXFLAGS += -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions
 TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls
@@ -94,7 +94,7 @@ else ifeq ($(BUILD_TYPE),archive)
 TARGET_LDFLAGS := $(ARCH_FLAGS) -L$(SIEDEV_DIR)/lib -nostartfiles
 TARGET_LDFLAGS += $(ARCH_FLAGS) -Wl,-s -Wl,-pie
 endif
-TARGET_LDFLAGS += -Wl,--start-group -fno-builtin -nodefaultlibs -nostdlib -nostdinc -Wl,--end-group -Wl,--gc-sections
+TARGET_LDFLAGS += -fno-builtin -nostdlib -nodefaultlibs -Wl,--gc-sections
 TARGET_LDFLAGS += $(LDFLAGS)
 
 # AR flags
