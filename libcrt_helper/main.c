@@ -38,7 +38,7 @@ MUTEX mutex;
 
 int func_abort()
 {
-    asm volatile("push  {r12}\n"
+    __asm__ volatile("push  {r12}\n"
                  "ldr   r12, =position\n"
                  "str   lr, [r12]\n"
                  "pop   {r12}\n"
@@ -49,7 +49,7 @@ int func_abort()
 
     dump_registers();
 
-    /* íåõåğ ëîìèòñÿ áåç î÷åğåäè */
+    /* Ğ½ĞµÑ…ĞµÑ€ Ğ»Ğ¾Ğ¼Ğ¸Ñ‚ÑÑ Ğ±ĞµĞ· Ğ¾Ñ‡ĞµÑ€ĞµĞ´Ğ¸ */
     MutexLock(&mutex);
     LockSched();
 
@@ -106,7 +106,7 @@ int func_abort()
 
 void __onstart()
 {
-    /* èíèöèàëèçğóåì ïåğåìåííóş __sys_switab_addres */
+    /* Ğ¸Ğ½Ğ¸Ñ†Ğ¸Ğ°Ğ»Ğ¸Ğ·Ñ€ÑƒĞµĞ¼ Ğ¿ĞµÑ€ĞµĞ¼ĞµĞ½Ğ½ÑƒÑ __sys_switab_addres */
     extern void *__ex;
     int *table = ((Elf32_Exec*)&__ex)->switab;
     int i;

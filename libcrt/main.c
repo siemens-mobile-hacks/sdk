@@ -41,14 +41,15 @@ static void __crt_run_initarray()
     __hcrt_run_initarray((void*)ex);
 }
 
+int main(char *exe, char *fname, void *p1);
 
 char *__argv[2] = {0};
 int _start(char *exe, char *fname, void *p1)
 {
-    /* скопипастим путь к эльфу */
+    /* СЃРєРѕРїРёРїР°СЃС‚РёРј РїСѓС‚СЊ Рє СЌР»СЊС„Сѓ */
     strcpy((char*)_curent_dir, exe);
 
-    /* установим 0x0 после последнего "\\" */
+    /* СѓСЃС‚Р°РЅРѕРІРёРј 0x0 РїРѕСЃР»Рµ РїРѕСЃР»РµРґРЅРµРіРѕ "\\" */
     _get_folder((char*)_curent_dir);
 
     __crt_run_initarray();
@@ -62,7 +63,7 @@ int _start(char *exe, char *fname, void *p1)
 
     return main(argc, __argv);
 #else
-    /* выполним маин */
+    /* РІС‹РїРѕР»РЅРёРј РјР°РёРЅ */
     return main(exe, fname, p1);
 #endif
 }
