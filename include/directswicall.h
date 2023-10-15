@@ -747,8 +747,8 @@ WSHDR * AllocWS (int len)
 __def( 0x0125, WSHDR *, len)
 
 __inl
-void  CutWSTR (void *WSHDR,int len)
-__defn( 0x0126, WSHDR, len)
+void  CutWSTR (void *wshdr,int len)
+__defn( 0x0126, wshdr, len)
 
 __inl
 WSHDR * CreateLocalWS (WSHDR *wshdr,unsigned __int16 *wsbody,int len)
@@ -801,12 +801,12 @@ __def( 0x0132, void *, dest, source, cnt)
 #endif
 
 __inl
-void  StoreXYWHtoRECT (void *RECT,int x,int y,int w,int h)
-__defn( 0x0133, RECT, x, y, w, h)
+void  StoreXYWHtoRECT (void *rect,int x,int y,int w,int h)
+__defn( 0x0133, rect, x, y, w, h)
 
 __inl
-void  StoreXYXYtoRECT (void *RECT,int x,int y,int x2,int y2)
-__defn( 0x0134, RECT, x, y, x2, y2)
+void  StoreXYXYtoRECT (void *rect,int x,int y,int x2,int y2)
+__defn( 0x0134, rect, x, y, x2, y2)
 
 __inl
 int  IsGuiOnTop (int id)
@@ -901,8 +901,8 @@ void SetColor(DRWOBJ *drwobj, const char *color1, const char *color2)
 __defn( 0x014B, drwobj, color1, color2)
 
 __inl
-void DrawString(WSHDR *WSHDR,int x1,int y1,int x2,int y2,int font,int text_attribute,const char *Pen,const char *Brush)
-__defn( 0x014C, WSHDR, x1, y1, x2, y2, font, text_attribute, Pen, Brush)
+void DrawString(WSHDR *wshdr,int x1,int y1,int x2,int y2,int font,int text_attribute,const char *Pen,const char *Brush)
+__defn( 0x014C, wshdr, x1, y1, x2, y2, font, text_attribute, Pen, Brush)
 
 __inl
 GUI *GetTopGUI(void)

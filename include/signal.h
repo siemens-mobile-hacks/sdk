@@ -510,6 +510,7 @@ typedef struct sigaltstack {
 #endif
 } stack_t;
 
+#pragma GCC diagnostic ignored "-Wshadow"
 int sigaltstack(const struct sigaltstack *newstack, struct sigaltstack *oldstack) __THROW;
 
 int sigemptyset(sigset_t *set) __THROW;
@@ -532,6 +533,7 @@ sighandler_t signal(int signum, sighandler_t action);
 int raise (int sig) __THROW;
 int kill(pid_t pid, int sig) __THROW;
 
+#pragma GCC diagnostic ignored "-Wshadow"
 int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact) __THROW;
 
 #include <sys/time.h>
