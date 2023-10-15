@@ -6,7 +6,7 @@
 char mon_days[] =
 {
     31,
-    28, /*(в високосном году — 29)*/
+    28, /*(РІ РІРёСЃРѕРєРѕСЃРЅРѕРј РіРѕРґСѓ вЂ” 29)*/
     31,
     30,
     31,
@@ -43,7 +43,7 @@ int gettimeofday (struct timeval *tv, struct timezone *tz)
 
     if (NULL != tv)
     {
-        struct tm t;
+        struct tm t = {};
         t.tm_sec  = tt.sec;
         t.tm_min  = tt.min;
         t.tm_hour = tt.hour;
@@ -76,7 +76,7 @@ int settimeofday (const struct timeval *tv, const struct timezone *tz)
 
     if (NULL != tv)
     {
-        struct tm t;
+        struct tm t = {};
         tt.sec   = t.tm_sec;
         tt.min = t.tm_min;
         tt.hour  = t.tm_hour;
@@ -89,7 +89,7 @@ int settimeofday (const struct timeval *tv, const struct timezone *tz)
 
     if (NULL != tz)
     {
-        /* а шо тут делать? */
+        /* Р° С€Рѕ С‚СѓС‚ РґРµР»Р°С‚СЊ? */
     }
 
     return 0;

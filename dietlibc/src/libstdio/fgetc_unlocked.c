@@ -1,6 +1,10 @@
 #include "dietstdio.h"
 #include <unistd.h>
 
+#undef fgetc
+#undef getc
+#undef getchar
+
 int fgetc_unlocked(FILE *stream) {
   unsigned char c;
   if (__unlikely(!(stream->flags&CANREAD))) goto kaputt;

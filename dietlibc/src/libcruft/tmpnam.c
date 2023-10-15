@@ -10,10 +10,10 @@
 
 //link_warning("tmpnam","\e[1;33;41m>>> tmpnam stinks! NEVER ! NEVER USE IT ! <<<\e[0m");
 
-char* tmpnam(char* s) {
+char* tmpnam(char* str) {
   static char buf[100];
   char *tmp;
-  if (s) tmp=s; else tmp=buf;
+  if (str) tmp=str; else tmp=buf;
   strcpy(tmp,"0:\\System\\temp_");
   for (;;) {
     struct stat s;

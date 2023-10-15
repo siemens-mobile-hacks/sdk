@@ -32,7 +32,7 @@ int main()
     lt = time(NULL);
     ptr = localtime(&lt);
 
-    strftime(str, 100, "Сейчас %H %p.", ptr);
+    strftime(str, 100, "РЎРµР№С‡Р°СЃ %H %p.", ptr);
     printf("O_O: %s", str);
 
     fflush(stdout);

@@ -3,6 +3,38 @@
 #include <math.h>
 /* convert double to string.  Helper for sprintf. */
 
+union _IEEEd2bits {
+	double	d;
+	struct {
+/* #ifdef __ARMEB__ */
+#if (__BYTE_ORDER == __BIG_ENDIAN) || (defined(__arm__) && !defined(__VFP_FP__))
+		unsigned int	manh	:20;
+		unsigned int	exp	:11;
+		unsigned int	sign	:1;
+		unsigned int	manl	:32;
+#elif  __BYTE_ORDER == __LITTLE_ENDIAN 
+		unsigned int	manl	:32;
+		unsigned int	manh	:20;
+		unsigned int	exp	:11;
+		unsigned int	sign	:1;
+#elif __BYTE_ORDER == __BIG_ENDIAN
+		unsigned int	sign	:1;
+		unsigned int	exp	:11;
+		unsigned int	manh	:20;
+		unsigned int	manl	:32;
+#endif
+	} bits;
+};
+
+/* Copy-paste for removing libm dependency for libc */
+static int _isnan(double d)
+{
+	union _IEEEd2bits u;
+
+	u.d = d;
+	return (u.bits.exp == 2047 && (u.bits.manl != 0 || u.bits.manh != 0));
+}
+
 static int copystring(char* buf,int maxlen, const char* s) {
   int i;
   for (i=0; i<3&&i<maxlen; ++i)
@@ -36,7 +68,7 @@ int __dtostr(double d,char *buf,unsigned int maxlen,unsigned int prec,unsigned i
   char *oldbuf=buf;
 
   if ((i=isinf(d))) return copystring(buf,maxlen,i>0?"inf":"-inf");
-  if (isnan(d)) return copystring(buf,maxlen,"nan");
+  if (_isnan(d)) return copystring(buf,maxlen,"nan");
   e10=1+(long)(e*0.30102999566398119802); /* log10(2) */
   /* Wir iterieren von Links bis wir bei 0 sind oder maxlen erreicht
    * ist.  Wenn maxlen erreicht ist, machen wir das nochmal in

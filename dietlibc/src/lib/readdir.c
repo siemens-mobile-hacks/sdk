@@ -15,6 +15,6 @@ struct dirent* readdir(DIR *d) {
 
   de->d_ino = -1;
   de->d_off = -1;
-  strcpy(de->d_name, (char*)d->dir.wsfile_name);
+  strcpy(de->d_name, (char*)d->dir.file_name);
   return de;
 }

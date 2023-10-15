@@ -15,13 +15,13 @@ void ExecuteIMB()
         "swieq   0x00      \n"
         "swine   0x04      \n"
 
-        "MRS	R1,CPSR\n"		// Запрещаем прерывания
+        "MRS	R1,CPSR\n"		// Р—Р°РїСЂРµС‰Р°РµРј РїСЂРµСЂС‹РІР°РЅРёСЏ
         "ORR	R1,R1,#0xC0\n"
         "MSR	CPSR_c,R1\n"
         "NOP\n"
         "NOP\n"
         "NOP\n"
-        // Выполняем необходимую требуху с кешем
+        // Р’С‹РїРѕР»РЅСЏРµРј РЅРµРѕР±С…РѕРґРёРјСѓСЋ С‚СЂРµР±СѓС…Сѓ СЃ РєРµС€РµРј
     "clean_loop:\n"
         "MRC 	p15, 0, r15, c7, c10, 3\n" // clean entire dcache using test and clean
         "NOP\n"
@@ -39,8 +39,8 @@ void ExecuteIMB()
         "NOP\n"
         "NOP\n"
         "NOP\n"
-        // Выходим
-        "MSR	CPSR_c,R2\n"	// Восстанавливаем старый режим
+        // Р’С‹С…РѕРґРёРј
+        "MSR	CPSR_c,R2\n"	// Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃС‚Р°СЂС‹Р№ СЂРµР¶РёРј
         "LDR	PC,[SP], #+0x4\n");
 }
 

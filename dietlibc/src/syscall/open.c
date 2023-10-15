@@ -15,25 +15,25 @@ int open(const char *file, int flags, ...)
     int flag = 0, mode = 0, i = 0;
     unsigned int err;
 
-    /* только чтение */
+    /* С‚РѕР»СЊРєРѕ С‡С‚РµРЅРёРµ */
     if( flags & O_RDONLY ) flag |= A_ReadOnly;
 
-    /* только запись */
+    /* С‚РѕР»СЊРєРѕ Р·Р°РїРёСЃСЊ */
     if( flags & O_WRONLY ) flag |= A_WriteOnly;
 
-    /* чтение/запись */
+    /* С‡С‚РµРЅРёРµ/Р·Р°РїРёСЃСЊ */
     if( flags & O_RDWR ) flag |= A_ReadWrite;
 
-    /* создать файл если не существует */
+    /* СЃРѕР·РґР°С‚СЊ С„Р°Р№Р» РµСЃР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ */
     if( flags & O_CREAT ) flag |= A_Create;
 
-    /* хз :-D */
+    /* С…Р· :-D */
     if( flags & O_EXCL ) flag |= A_Exclusive;
 
-    /* очистить файл */
+    /* РѕС‡РёСЃС‚РёС‚СЊ С„Р°Р№Р» */
     if( flags & O_TRUNC ) flag |= A_Truncate;
 
-    /* записывать в конец */
+    /* Р·Р°РїРёСЃС‹РІР°С‚СЊ РІ РєРѕРЅРµС† */
     if( flags & O_APPEND ) flag |= A_Append;
 
 
