@@ -69,7 +69,7 @@ color16_t plGetPixel16i(image_t *img, int i)
 }
 
 
-/* терь тоже самое но без проверок */
+/* С‚РµСЂСЊ С‚РѕР¶Рµ СЃР°РјРѕРµ РЅРѕ Р±РµР· РїСЂРѕРІРµСЂРѕРє */
 __inl
 void plPutPixel16f(image_t *img, int x, int y, color16_t c)
 {

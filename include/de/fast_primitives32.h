@@ -70,7 +70,7 @@ color32_t plGetPixel32i(image_t *img, int i)
 }
 
 
-/* терь тоже самое но без проверок */
+/* С‚РµСЂСЊ С‚РѕР¶Рµ СЃР°РјРѕРµ РЅРѕ Р±РµР· РїСЂРѕРІРµСЂРѕРє */
 __inl
 void plPutPixel32f(image_t *img, int x, int y, color32_t c)
 {

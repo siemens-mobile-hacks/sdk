@@ -51,7 +51,7 @@ extern const int __sys_switab_addres[];
 
 #define __defn(id, ...) { ((void (*)())((__sys_switab_addres[id])))(__VA_ARGS__); }
 
-/* использовать для функций типа sprintf, но не юзать для рамных функций! */
+/* РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РґР»СЏ С„СѓРЅРєС†РёР№ С‚РёРїР° sprintf, РЅРѕ РЅРµ СЋР·Р°С‚СЊ РґР»СЏ СЂР°РјРЅС‹С… С„СѓРЅРєС†РёР№! */
 #define __cdef(id, ret, ...) (ret)((ret (*)())((__sys_switab_addres[id])))(__VA_ARGS__)
 #define __cdefn(id, ...) ((void (*)())((__sys_switab_addres[id])))(__VA_ARGS__)
 

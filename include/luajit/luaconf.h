@@ -31,7 +31,7 @@
   ";" LUA_XROOT "share/lua/5.1/?.lua;" LUA_XROOT "share/lua/5.1/?/init.lua"
 #define LUA_XCPATH	LUA_XROOT "lib/lua/5.1/?.so;"
 #else
-#define LUA_JDIR	LUA_ROOT "с"
+#define LUA_JDIR	LUA_ROOT "СЃ"
 #define LUA_XPATH
 #define LUA_XCPATH
 #endif

@@ -30,18 +30,18 @@ enum
 
 
 
-/* битмап копируется в новое изображение */
+/* Р±РёС‚РјР°Рї РєРѕРїРёСЂСѓРµС‚СЃСЏ РІ РЅРѕРІРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ */
 image_t *imghdr2image(IMGHDR *img);
 
-/* битмап задаётся указателем на имгхдр */
+/* Р±РёС‚РјР°Рї Р·Р°РґР°С‘С‚СЃСЏ СѓРєР°Р·Р°С‚РµР»РµРј РЅР° РёРјРіС…РґСЂ */
 image_t *imghdr2image_p(IMGHDR *img);
 
-/* создаёт новое изображение */
+/* СЃРѕР·РґР°С‘С‚ РЅРѕРІРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ */
 image_t *create_image(uint16_t w, uint16_t h, uint8_t depth);
 
 image_t *image_createFromPng(const char *p, int bpnum);
 
-/* освобождение изображения */
+/* РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ */
 void free_image(image_t *);
 
 /* create image */
@@ -66,40 +66,40 @@ image_t * image_fork(image_t *src);
 /* copy image without alpha blend */
 void image_copy(image_t * dst, image_t *src);
 
-/* нарисовать rgba точку */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ rgba С‚РѕС‡РєСѓ */
 void drawpixel(image_t *buffer, uint16_t x, uint16_t y, const uint8_t color[4]);
 
-/* нарисовать ргб точку + альфа*/
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ СЂРіР± С‚РѕС‡РєСѓ + Р°Р»СЊС„Р°*/
 void drawpixel24(image_t *buffer, uint16_t x, uint16_t y, const uint8_t color[3], uint8_t alpha);
 
-/* нарисовать 16битную точку */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ 16Р±РёС‚РЅСѓСЋ С‚РѕС‡РєСѓ */
 void drawpixel16(image_t *buffer, uint16_t x, uint16_t y, color16_t color);
 
-/* нарисовать 32битную точку */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ 32Р±РёС‚РЅСѓСЋ С‚РѕС‡РєСѓ */
 void drawpixel32(image_t *buffer, uint16_t x, uint16_t y, color32_t color);
 
-/* скопировать пиксель в картинку без альфа бленда */
+/* СЃРєРѕРїРёСЂРѕРІР°С‚СЊ РїРёРєСЃРµР»СЊ РІ РєР°СЂС‚РёРЅРєСѓ Р±РµР· Р°Р»СЊС„Р° Р±Р»РµРЅРґР° */
 void setpixel32(image_t *buffer, uint16_t x, uint16_t y, color32_t color);
 
-/* нарисовать пиксель по индексу в битмапе */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ РїРёРєСЃРµР»СЊ РїРѕ РёРЅРґРµРєСЃСѓ РІ Р±РёС‚РјР°РїРµ */
 void drawpixel32i(image_t *buffer, uint32_t index, color32_t col);
 
-/* взять пиксель из изображение, если изображение 16 бит то возвратит uint16_t */
+/* РІР·СЏС‚СЊ РїРёРєСЃРµР»СЊ РёР· РёР·РѕР±СЂР°Р¶РµРЅРёРµ, РµСЃР»Рё РёР·РѕР±СЂР°Р¶РµРЅРёРµ 16 Р±РёС‚ С‚Рѕ РІРѕР·РІСЂР°С‚РёС‚ uint16_t */
 uint32_t pixel(image_t *buffer, uint16_t x, uint16_t y);
 
-/* взять 16х битный цвет не зависимо от битности картинки */
+/* РІР·СЏС‚СЊ 16С… Р±РёС‚РЅС‹Р№ С†РІРµС‚ РЅРµ Р·Р°РІРёСЃРёРјРѕ РѕС‚ Р±РёС‚РЅРѕСЃС‚Рё РєР°СЂС‚РёРЅРєРё */
 uint16_t pixel16(image_t *buffer, uint16_t x, uint16_t y);
 
-/* взять 32х битный цвет не зависимо от битности картинки */
+/* РІР·СЏС‚СЊ 32С… Р±РёС‚РЅС‹Р№ С†РІРµС‚ РЅРµ Р·Р°РІРёСЃРёРјРѕ РѕС‚ Р±РёС‚РЅРѕСЃС‚Рё РєР°СЂС‚РёРЅРєРё */
 uint32_t pixel32(image_t *buffer, uint16_t x, uint16_t y);
 
-/* взять 32х битный цвет по идексу не зависимо от битности картинки */
+/* РІР·СЏС‚СЊ 32С… Р±РёС‚РЅС‹Р№ С†РІРµС‚ РїРѕ РёРґРµРєСЃСѓ РЅРµ Р·Р°РІРёСЃРёРјРѕ РѕС‚ Р±РёС‚РЅРѕСЃС‚Рё РєР°СЂС‚РёРЅРєРё */
 uint32_t pixel32i(image_t *buffer, uint32_t index);
 
-/* закрасить буффер 32битным цветом */
+/* Р·Р°РєСЂР°СЃРёС‚СЊ Р±СѓС„С„РµСЂ 32Р±РёС‚РЅС‹Рј С†РІРµС‚РѕРј */
 void fillscreen(image_t *buffer, color32_t col);
 
-/* нарисовать rgba линию */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ rgba Р»РёРЅРёСЋ */
 void drawline32(image_t *buffer, int16_t x1, int16_t y1,
               int16_t x2, int16_t y2, color32_t color);
 
@@ -107,44 +107,44 @@ void drawline32(image_t *buffer, int16_t x1, int16_t y1,
 void drawhline32(image_t *buffer, int16_t x1, int16_t x2, int16_t y, color32_t col);
 void drawvline32(image_t *buffer, int16_t x, int16_t y1, int16_t y2, color32_t col);
 
-/* нарисовать rgba прямоугольник */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ rgba РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє */
 void drawrectangle32(image_t *buffer, int16_t x1, int16_t y1,
                    int16_t x2, int16_t y2, color32_t color);
 
-/* нарисовать закрашенный rgba прямоугольник */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ Р·Р°РєСЂР°С€РµРЅРЅС‹Р№ rgba РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє */
 void drawfillrect32(image_t *buffer, int16_t x1, int16_t y1,
                   int16_t x2, int16_t y2, color32_t color_rect,
                   color32_t color_inside);
 
 
 
-/* нарисовать rgba окружность */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ rgba РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ */
 void drawcircle32(image_t *buffer, int16_t x, int16_t y, int16_t r, color32_t color);
 
-/* нарисовать залитую окружность */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ Р·Р°Р»РёС‚СѓСЋ РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ */
 void drawfillcircle32(image_t *buffer, int16_t x, int16_t y, int16_t r, color32_t color);
 
-/* нарисовать rgba элипс */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ rgba СЌР»РёРїСЃ */
 void drawellipse32(image_t *buffer, int16_t x, int16_t y, int16_t a, int16_t b, color32_t color);
 
-/* нарисовать треугольник */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРє */
 void drawtriangle32(image_t *buffer, int16_t x1, int16_t y1,
                                   int16_t x2, int16_t y2,
                                   int16_t x3, int16_t y3,
                                   color32_t color);
 
-/* нарисовать закрашенный треугольник */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ Р·Р°РєСЂР°С€РµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє */
 void drawfilltriangle32(image_t *buffer, int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, color32_t clr);
 
-/* нарисовать участок картинки в буффер */
+/* РЅР°СЂРёСЃРѕРІР°С‚СЊ СѓС‡Р°СЃС‚РѕРє РєР°СЂС‚РёРЅРєРё РІ Р±СѓС„С„РµСЂ */
 void ll_drawimg(image_t *buffer, int16_t x, int16_t y, int16_t w, int16_t h, char blend, image_t *img);
 void drawimg(image_t *buffer, int16_t x, int16_t y, char blend, image_t *img);
 void drawimg_area_to_area(image_t *buffer, int16_t x, int16_t y, int16_t width, int16_t height,
                            int16_t x2, int16_t y2, char blend, image_t *img);
 
-/* функция может пичатать любую кодировку. В параметр conv передаётся функция конвертации символа вашей кодировки в ucs2  */
-/* в функцию передаётся указатель на указатель строки, она должна вовзратить ucs2 символ и записать указатель */
-/* строки+(длинная одного символ вашей кодировки). Примеры можно посмотреть в исходниках */
+/* С„СѓРЅРєС†РёСЏ РјРѕР¶РµС‚ РїРёС‡Р°С‚Р°С‚СЊ Р»СЋР±СѓСЋ РєРѕРґРёСЂРѕРІРєСѓ. Р’ РїР°СЂР°РјРµС‚СЂ conv РїРµСЂРµРґР°С‘С‚СЃСЏ С„СѓРЅРєС†РёСЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё СЃРёРјРІРѕР»Р° РІР°С€РµР№ РєРѕРґРёСЂРѕРІРєРё РІ ucs2  */
+/* РІ С„СѓРЅРєС†РёСЋ РїРµСЂРµРґР°С‘С‚СЃСЏ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СѓРєР°Р·Р°С‚РµР»СЊ СЃС‚СЂРѕРєРё, РѕРЅР° РґРѕР»Р¶РЅР° РІРѕРІР·СЂР°С‚РёС‚СЊ ucs2 СЃРёРјРІРѕР» Рё Р·Р°РїРёСЃР°С‚СЊ СѓРєР°Р·Р°С‚РµР»СЊ */
+/* СЃС‚СЂРѕРєРё+(РґР»РёРЅРЅР°СЏ РѕРґРЅРѕРіРѕ СЃРёРјРІРѕР» РІР°С€РµР№ РєРѕРґРёСЂРѕРІРєРё). РџСЂРёРјРµСЂС‹ РјРѕР¶РЅРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РІ РёСЃС…РѕРґРЅРёРєР°С… */
 uint16_t drawstring(ft_font *ftf, image_t *buffer, const wchar_t *str, int16_t x, int16_t y,
                         int mw, int mh, int type, uint8_t leter_step, int32_t max_leter_cnt, color32_t color,
                         void (*set_pixel)(void *layer, int x, int y, color32_t c), wchar_t (*conv)(const void **));
@@ -153,11 +153,11 @@ uint32_t drawstringf(ft_font *ftf, image_t *buffer, const void *str, int16_t x, 
                  int mw, int mh, int type, uint8_t leter_step, int32_t _max_leter_cnt, color32_t color,
                  void (*set_pixel)(void *layer, int x, int y, color32_t c), wchar_t (*conv)(const void **));
 
-/* по принцыпу аналогична функции ^*/
+/* РїРѕ РїСЂРёРЅС†С‹РїСѓ Р°РЅР°Р»РѕРіРёС‡РЅР° С„СѓРЅРєС†РёРё ^*/
 uint32_t ft_string_metrics(ft_font *ftf, const void *str, uint32_t *height, uint32_t *y_seek, int32_t max_leter_cnt, wchar_t (*conv)(const void **));
 
 
-/* печать текста ucs c помощью freetype2 */
+/* РїРµС‡Р°С‚СЊ С‚РµРєСЃС‚Р° ucs c РїРѕРјРѕС‰СЊСЋ freetype2 */
 uint16_t drawsymbol32_ucs(ft_font *ftf, image_t *buffer, uint16_t leter, int16_t x, int16_t y,
                           int16_t mw, int16_t mh, char align, color32_t color, void (*set_pixel)(void *layer, int x, int y, color32_t c) );
 
@@ -179,30 +179,30 @@ uint16_t drawstring32f_utf8(ft_font *ftf, image_t *buffer, const char *str, int1
 
 uint32_t ft_string_metrics_utf8(ft_font *ftf, const char *str, uint32_t *height, uint32_t *top, int32_t max_leter_cnt);
 
-/* эффект волны */
+/* СЌС„С„РµРєС‚ РІРѕР»РЅС‹ */
 void image_wave(image_t *dest, image_t *img, int l);
 
-/* размытие по гаусу */
+/* СЂР°Р·РјС‹С‚РёРµ РїРѕ РіР°СѓСЃСѓ */
 void image_blur(image_t *dest, image_t *img, int r);
 
-/* маштаб изображения, возвращает новый имгхдр с новыми размерами */
+/* РјР°С€С‚Р°Р± РёР·РѕР±СЂР°Р¶РµРЅРёСЏ, РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРІС‹Р№ РёРјРіС…РґСЂ СЃ РЅРѕРІС‹РјРё СЂР°Р·РјРµСЂР°РјРё */
 image_t *image_rescale_quality(image_t *image, int newwidth, int newheight);
 image_t *image_rescale_fast(image_t *original, int newWidth, int newHeight);
 
-/* поворачивает изображение на произвольный угол */
+/* РїРѕРІРѕСЂР°С‡РёРІР°РµС‚ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅР° РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ СѓРіРѕР» */
 void image_rotate(image_t *dest, image_t *src, int centerx, int centery, int angle);
 
-/* сглаживание картинки, медленней чем размытие по гаусу, но качественней */
+/* СЃРіР»Р°Р¶РёРІР°РЅРёРµ РєР°СЂС‚РёРЅРєРё, РјРµРґР»РµРЅРЅРµР№ С‡РµРј СЂР°Р·РјС‹С‚РёРµ РїРѕ РіР°СѓСЃСѓ, РЅРѕ РєР°С‡РµСЃС‚РІРµРЅРЅРµР№ */
 void image_smooth(image_t *dst, image_t *src, uint16_t smooth_w, uint16_t smooth_h);
 
-/* зеркальное отражение */
+/* Р·РµСЂРєР°Р»СЊРЅРѕРµ РѕС‚СЂР°Р¶РµРЅРёРµ */
 void image_reflection(image_t *dst, image_t *src, int ref_w_h);
 
-/* рисует градиент от цвета cf до цвета ct. type: 0 - с верху-вниз, 1 - наоборот, 2 - с лева на право, 3 - наоборот */
+/* СЂРёСЃСѓРµС‚ РіСЂР°РґРёРµРЅС‚ РѕС‚ С†РІРµС‚Р° cf РґРѕ С†РІРµС‚Р° ct. type: 0 - СЃ РІРµСЂС…Сѓ-РІРЅРёР·, 1 - РЅР°РѕР±РѕСЂРѕС‚, 2 - СЃ Р»РµРІР° РЅР° РїСЂР°РІРѕ, 3 - РЅР°РѕР±РѕСЂРѕС‚ */
 void ll_image_gradient(image_t *dst, uint16_t x, uint16_t y, uint16_t w, uint16_t h, int type, uint8_t cf[4], uint8_t ct[4]);
 void image_gradient(image_t *dst, int type, uint8_t cf[4], uint8_t ct[4]);
 
-/* добавляет альфа канал в изображение, условие: dst должен быть 32х битным */
+/* РґРѕР±Р°РІР»СЏРµС‚ Р°Р»СЊС„Р° РєР°РЅР°Р» РІ РёР·РѕР±СЂР°Р¶РµРЅРёРµ, СѓСЃР»РѕРІРёРµ: dst РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ 32С… Р±РёС‚РЅС‹Рј */
 void image_alpha(image_t *dst, image_t *src, uint8_t alpha);
 
 
