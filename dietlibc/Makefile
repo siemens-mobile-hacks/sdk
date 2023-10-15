@@ -254,7 +254,7 @@ CFILES += src/wchar/wcspbrk.c
 CFILES += src/wchar/wcsrchr.c
 CFILES += src/wchar/wcsstr.c
 
-SIEDEV_DIR=../..
+SIEDEV_DIR=..
 include $(SIEDEV_DIR)/rules.mk
 
 install:
