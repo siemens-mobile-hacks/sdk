@@ -54,6 +54,12 @@ OBJECTS := $(OBJECTS:%.cpp=%.o)
 OBJECTS := $(OBJECTS:%.cc=%.o)
 OBJECTS := $(OBJECTS:%.S=%.o)
 
+DEPENDS := $(SOURCES:%=$(BUILD_DIR)/%)
+DEPENDS := $(DEPENDS:%.c=%.d)
+DEPENDS := $(DEPENDS:%.cpp=%.d)
+DEPENDS := $(DEPENDS:%.cc=%.d)
+DEPENDS := $(DEPENDS:%.S=%.d)
+
 ifeq ($(TARGET),ELKA)
 DEFINES += -DNEWSGOLD -DELKA
 else ifeq ($(TARGET),NSG)
@@ -98,27 +104,29 @@ TARGET_LDFLAGS += $(LDFLAGS)
 # AR flags
 TARGET_ARFLAGS := rcsD
 
+-include $(DEPENDS)
+
 all: $(OUTPUT_NAME).$(OUTPUT_EXT)
 
 $(BUILD_DIR)/%.o: %.c
 	@printf "  CC\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_CFLAGS) -o $@ -c $<
+	$(Q)$(CC) $(TARGET_CFLAGS) -MMD -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.cpp
 	@printf "  CXX\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -o $@ -c $<
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.cc
 	@printf "  CXX\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -o $@ -c $<
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.S
 	@printf "  AS\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_AFLAGS) -o $@ -c $<
+	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -o $@ -c $<
 
 $(OUTPUT_NAME).elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
