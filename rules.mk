@@ -46,6 +46,7 @@ else ifeq ($(BUILD_TYPE),archive)
 endif
 
 OUTPUT_NAME := $(PROJECT)$(OUTPUT_POSTFIX)
+OUTPUT_FILENAME := $(PROJECT)$(OUTPUT_POSTFIX).$(OUTPUT_EXT)
 BUILD_DIR ?= bin/$(TARGET)
 
 OBJECTS := $(SOURCES:%=$(BUILD_DIR)/%)
@@ -54,11 +55,7 @@ OBJECTS := $(OBJECTS:%.cpp=%.o)
 OBJECTS := $(OBJECTS:%.cc=%.o)
 OBJECTS := $(OBJECTS:%.S=%.o)
 
-DEPENDS := $(SOURCES:%=$(BUILD_DIR)/%)
-DEPENDS := $(DEPENDS:%.c=%.d)
-DEPENDS := $(DEPENDS:%.cpp=%.d)
-DEPENDS := $(DEPENDS:%.cc=%.d)
-DEPENDS := $(DEPENDS:%.S=%.d)
+DEPENDS := $(OBJECTS:%.o=%.d)
 
 ifeq ($(TARGET),ELKA)
 DEFINES += -DNEWSGOLD -DELKA
@@ -104,29 +101,27 @@ TARGET_LDFLAGS += $(LDFLAGS)
 # AR flags
 TARGET_ARFLAGS := rcsD
 
--include $(DEPENDS)
-
 all: $(OUTPUT_NAME).$(OUTPUT_EXT)
 
 $(BUILD_DIR)/%.o: %.c
 	@printf "  CC\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_CFLAGS) -MMD -o $@ -c $<
+	$(Q)$(CC) $(TARGET_CFLAGS) -MMD -MP -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.cpp
 	@printf "  CXX\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -o $@ -c $<
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -MP -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.cc
 	@printf "  CXX\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -o $@ -c $<
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -MP -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.S
 	@printf "  AS\t$<\n"
 	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -o $@ -c $<
+	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<
 
 $(OUTPUT_NAME).elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
@@ -139,6 +134,8 @@ $(OUTPUT_NAME).so: $(OBJECTS)
 $(OUTPUT_NAME).a: $(OBJECTS)
 	@printf "  AR\t$@\n"
 	$(Q)$(AR) $(TARGET_ARFLAGS) $@ $(OBJECTS)
+
+-include $(DEPENDS)
 
 clean:
 	rm -f $(OUTPUT_NAME).$(OUTPUT_EXT)
