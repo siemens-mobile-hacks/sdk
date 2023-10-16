@@ -1,5 +1,5 @@
 PROJECT := libc-1.0
-TARGET := ANY
+TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
