@@ -186,8 +186,8 @@ SOURCES += src/w_cabsf.c
 SOURCES += src/w_drem.c
 SOURCES += src/w_dremf.c
 
-SIEDEV_DIR=..
-include $(SIEDEV_DIR)/rules.mk
+SDK_PATH := ..
+include $(SDK_PATH)/rules.mk
 
 install:
-	cp -v $(PROJECT).so ../lib/$(PROJECT).so
+	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)

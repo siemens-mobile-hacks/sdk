@@ -1,7 +1,7 @@
 PROJECT := libc-1.0
-TARGET := NSG
 BUILD_TYPE := lib
-BUILD_DIR := bin
+# NSG == ELKA
+TARGETS := NSG SG
 
 CSTD := -std=gnu99
 OPT := -Os
@@ -268,8 +268,12 @@ SOURCES += src/wchar/wcspbrk.c
 SOURCES += src/wchar/wcsrchr.c
 SOURCES += src/wchar/wcsstr.c
 
-SIEDEV_DIR=..
-include $(SIEDEV_DIR)/rules.mk
+SDK_PATH := ..
+include $(SDK_PATH)/multi-target.mk
+
+ifdef TARGET
 
 install:
-	cp -v $(PROJECT).so ../lib/$(PROJECT).so
+	cp -v $(OUTPUT_FILENAME) ../lib/$(TARGET)/$(PROJECT).$(OUTPUT_EXT)
+
+endif

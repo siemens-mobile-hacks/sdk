@@ -65,8 +65,8 @@ SOURCES += src/utility.cpp
 SOURCES += src/valarray.cpp
 SOURCES += src/vector.cpp
 
-SIEDEV_DIR=..
-include $(SIEDEV_DIR)/rules.mk
+SDK_PATH := ..
+include $(SDK_PATH)/rules.mk
 
 install:
-	cp -v $(PROJECT).so ../lib/$(PROJECT).so
+	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)

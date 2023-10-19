@@ -1,5 +1,5 @@
 # Required variables:
-# SIE_DEV	- path to the sie-dev submodule.
+# SDK_PATH	- path to the this sdk.
 # PROJECT	- name of the project, for example: crack-for-jww87
 # SOURCES	- list of *.c, *.cpp, *.cc, *.s, *.S files.
 #
@@ -34,20 +34,38 @@ CXX		= $(PREFIX)g++
 LD		= $(PREFIX)gcc
 AR		= $(PREFIX)ar
 
-SIEDEV_INC = $(SIEDEV_DIR)/include
+SIEDEV_INC = $(SDK_PATH)/include
 INCLUDES += $(patsubst %,-I%, . $(SIEDEV_INC))
+
+BUILD_DIR ?= bin/$(TARGET)
+LIB_OUT_DIR ?= lib/$(TARGET)
+
+LIBDIR += -L$(SDK_PATH)/lib
+ifeq ($(TARGET),ELKA)
+	DEFINES += -DNEWSGOLD -DELKA
+	LIBDIR += -L$(SDK_PATH)/lib/ELKA -L$(SDK_PATH)/lib/NSG
+	OUTPUT_POSTFIX ?= _ELKA
+else ifeq ($(TARGET),NSG)
+	DEFINES += -DNEWSGOLD
+	LIBDIR += -L$(SDK_PATH)/lib/NSG
+	OUTPUT_POSTFIX ?= _NSG
+else ifeq ($(TARGET),SG)
+	DEFINES += -DSGOLD
+	LIBDIR += -L$(SDK_PATH)/lib/SG
+	OUTPUT_POSTFIX ?= _SG
+endif
 
 OUTPUT_EXT := elf
 ifeq ($(BUILD_TYPE),lib)
 	OUTPUT_EXT := so
 	LIB_SONAME ?= $(PROJECT).$(OUTPUT_EXT)
+	OUTPUT_FILENAME := lib/$(TARGET)/$(PROJECT).$(OUTPUT_EXT)
 else ifeq ($(BUILD_TYPE),archive)
 	OUTPUT_EXT := a
+	OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
+else ifeq ($(BUILD_TYPE),exe)
+	OUTPUT_FILENAME := $(PROJECT)$(OUTPUT_POSTFIX).$(OUTPUT_EXT)
 endif
-
-OUTPUT_NAME := $(PROJECT)$(OUTPUT_POSTFIX)
-OUTPUT_FILENAME := $(PROJECT)$(OUTPUT_POSTFIX).$(OUTPUT_EXT)
-BUILD_DIR ?= bin/$(TARGET)
 
 OBJECTS := $(SOURCES:%=$(BUILD_DIR)/%)
 OBJECTS := $(OBJECTS:%.c=%.o)
@@ -56,14 +74,6 @@ OBJECTS := $(OBJECTS:%.cc=%.o)
 OBJECTS := $(OBJECTS:%.S=%.o)
 
 DEPENDS := $(OBJECTS:%.o=%.d)
-
-ifeq ($(TARGET),ELKA)
-DEFINES += -DNEWSGOLD -DELKA
-else ifeq ($(TARGET),NSG)
-DEFINES += -DNEWSGOLD
-else ifeq ($(TARGET),SG)
-DEFINES += -DSGOLD
-endif
 
 # Compiler flags
 TARGET_COMMON_FLAGS := -finput-charset=UTF-8 -fexec-charset=cp1251
@@ -86,13 +96,13 @@ TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 
 # Linker flags
 ifeq ($(BUILD_TYPE),lib)
-TARGET_LDFLAGS := $(ARCH_FLAGS) -L$(SIEDEV_DIR)/lib -nostartfiles
+TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
 TARGET_LDFLAGS += -Wl,-shared -Wl,-Bsymbolic -Wl,-Bsymbolic-function -Wl,-s -Wl,-soname=$(LIB_SONAME)
 else ifeq ($(BUILD_TYPE),exe)
-TARGET_LDFLAGS := $(ARCH_FLAGS) -L$(SIEDEV_DIR)/lib -nostartfiles
+TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
 TARGET_LDFLAGS += $(ARCH_FLAGS) -Wl,-s -Wl,-pie
 else ifeq ($(BUILD_TYPE),archive)
-TARGET_LDFLAGS := $(ARCH_FLAGS) -L$(SIEDEV_DIR)/lib -nostartfiles
+TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
 TARGET_LDFLAGS += $(ARCH_FLAGS) -Wl,-s -Wl,-pie
 endif
 TARGET_LDFLAGS += -fno-builtin -nostdlib -nodefaultlibs -Wl,--gc-sections
@@ -101,7 +111,10 @@ TARGET_LDFLAGS += $(LDFLAGS)
 # AR flags
 TARGET_ARFLAGS := rcsD
 
-all: $(OUTPUT_NAME).$(OUTPUT_EXT)
+all: $(LIB_OUT_DIR) $(OUTPUT_FILENAME)
+
+$(LIB_OUT_DIR):
+	mkdir -p $(LIB_OUT_DIR)
 
 $(BUILD_DIR)/%.o: %.c
 	@printf "  CC\t$<\n"
@@ -123,22 +136,22 @@ $(BUILD_DIR)/%.o: %.S
 	@mkdir -p $(dir $@)
 	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<
 
-$(OUTPUT_NAME).elf: $(OBJECTS)
+%.elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
 
-$(OUTPUT_NAME).so: $(OBJECTS)
+%.so: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
 
-$(OUTPUT_NAME).a: $(OBJECTS)
+%.a: $(OBJECTS)
 	@printf "  AR\t$@\n"
 	$(Q)$(AR) $(TARGET_ARFLAGS) $@ $(OBJECTS)
 
 -include $(DEPENDS)
 
 clean:
-	rm -f $(OUTPUT_NAME).$(OUTPUT_EXT)
-	rm -rf $(BUILD_DIR)
+	rm -f $(OUTPUT_FILENAME)
+	rm -rf $(BUILD_DIR) $(LIB_OUT_DIR)
 
 .PHONY: all clean

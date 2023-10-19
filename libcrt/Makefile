@@ -16,8 +16,8 @@ DEFINES += -D__NO_LIBC
 export SOURCE_DATE_EPOCH := 1172750400
 CFLAGS += -frandom-seed=0
 
-SIEDEV_DIR=..
-include $(SIEDEV_DIR)/rules.mk
+SDK_PATH := ..
+include $(SDK_PATH)/rules.mk
 
 install:
-	cp -v $(PROJECT).a ../lib/$(PROJECT).a
+	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
