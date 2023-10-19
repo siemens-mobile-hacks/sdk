@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <math.h>
 #include "dietstdio.h"
 #include "dietwarning.h"
 
@@ -43,7 +44,8 @@ int __v_printf(struct arg_printf* fn, const char *format, va_list arg_ptr)
   while (*format) {
     unsigned long sz = skip_to(format);
     if (sz) {
-      B_WRITE(fn,format,sz); len+=sz;
+      B_WRITE(fn,format,sz);
+      len+=sz;
       format+=sz;
     }
     if (*format=='%') {
@@ -81,6 +83,7 @@ inn_printf:
       /* FLAGS */
       case '#':
 	flag_hash=-1;
+	/* fall through */
 
       case 'h':
 	--flag_long;
@@ -90,7 +93,11 @@ inn_printf:
 #endif
       case 'q':		/* BSD ... */
       case 'L':
-	++flag_long; /* fall through */
+	++flag_long;	/* fall through */
+#if defined(__GNUC__) && (__GNUC__ >= 7)
+	__attribute__((fallthrough));
+#endif
+
 #if __WORDSIZE == 64
       case 'j':
 #endif
@@ -141,6 +148,7 @@ inn_printf:
 	  if ((width=(unsigned long)tmp)>MAX_WIDTH) return -1;
 	  goto inn_printf;
 	}
+	/* fall through */
       case '.':
 	flag_dot=1;
 	if (*format=='*') {
@@ -158,8 +166,10 @@ inn_printf:
       /* print a char or % */
       case 'c':
 	ch=(char)va_arg(arg_ptr,int);
+	/* fall through */
       case '%':
-	B_WRITE(fn,&ch,1); ++len;
+	B_WRITE(fn,&ch,1);
+	++len;
 	break;
 
 #ifdef WANT_ERROR_PRINTF
@@ -167,7 +177,8 @@ inn_printf:
       case 'm':
 	s=strerror(_errno);
 	sz=strlen(s);
-	B_WRITE(fn,s,sz); len+=sz;
+	B_WRITE(fn,s,sz);
+	len+=sz;
 	break;
 #endif
       /* print a string */
@@ -189,7 +200,8 @@ print_out:
 	int vs;
 	
 	if (! (width||preci) ) {
-	  B_WRITE(fn,s,sz); len+=sz;
+	  B_WRITE(fn,s,sz);
+	  len+=sz;
 	  break;
 	}
 	
@@ -238,7 +250,8 @@ print_out:
 	if (write_pad(&len,fn,preci-sz,precpadwith))
 	  return -1;
 	/* write actual string */
-	B_WRITE(fn,s,sz); len+=sz;
+	B_WRITE(fn,s,sz);
+	len+=sz;
 	if (flag_left) {
 	  if (write_pad(&len,fn,width-preci,padwith))
 	    return -1;
@@ -256,8 +269,10 @@ print_out:
 	flag_hash=2;
 	flag_long=1;
 	ch='x';
+	/* fall through */
       case 'X':
 	flag_upcase=(ch=='X');
+	/* fall through */
       case 'x':
 	base=16;
 	sz=0;
@@ -272,6 +287,7 @@ print_out:
       case 'd':
       case 'i':
 	flag_in_sign=1;
+	/* fall through */
       case 'u':
 	base=10;
 	sz=0;
@@ -346,45 +362,49 @@ num_printf:
 #ifdef WANT_FLOATING_POINT_IN_PRINTF
       /* print a floating point value */
       case 'f':
+      case 'F':
       case 'g':
+      case 'G':
 	{
-	  int g=(ch=='g');
+	  int flags=(((ch&0x5f)=='G') ? 0x01 : 0x00) | ((ch&0x20) ? 0x00 : 0x02);
 	  double d=va_arg(arg_ptr,double);
 	  s=buf+1;
 	  if (width==0) width=1;
 	  if (!flag_dot) preci=6;
 	  if (flag_sign || d < +0.0) flag_in_sign=1;
 
-	  sz=__dtostr(d,s,sizeof(buf)-1,width,preci,g);
+	  sz=__dtostr(d,s,sizeof(buf)-1,width,preci,flags);
 
-	  if (flag_dot) {
-	    char *tmp;
-	    if ((tmp=strchr(s,'.'))) {
-	      if (preci || flag_hash) ++tmp;
-	      while (preci>0 && *++tmp) --preci;
-	      *tmp=0;
-	    } else if (flag_hash) {
-	      s[sz]='.';
-	      s[++sz]='\0';
+	  if (!isnan(d) && !isinf(d)) {		/* skip NaN + INF values */
+	    if (flag_dot) {
+	      char *tmp;
+	      if ((tmp=strchr(s,'.'))) {
+		if (preci || flag_hash) ++tmp;
+		while (preci>0 && *++tmp) --preci;
+		*tmp=0;
+	      } else if (flag_hash) {
+		s[sz]='.';
+		s[++sz]='\0';
+	      }
 	    }
-	  }
 
-	  if (g) {
-	    char *tmp,*tmp1;	/* boy, is _this_ ugly! */
-	    if ((tmp=strchr(s,'.'))) {
-	      tmp1=strchr(tmp,'e');
-	      while (*tmp) ++tmp;
-	      if (tmp1) tmp=tmp1;
-	      while (*--tmp=='0') ;
-	      if (*tmp!='.') ++tmp;
-	      *tmp=0;
-	      if (tmp1) strcpy(tmp,tmp1);
+	    if ((flags&0x01)) {
+	      char *tmp,*tmp1;	/* boy, is _this_ ugly! */
+	      if ((tmp=strchr(s,'.'))) {
+		tmp1=strchr(tmp,'e');
+		while (*tmp) ++tmp;
+		if (tmp1) tmp=tmp1;
+		while (*--tmp=='0') ;
+		if (*tmp!='.') ++tmp;
+		*tmp=0;
+		if (tmp1) strcpy(tmp,tmp1);
+	      }
 	    }
-	  }
 	  
-	  if ((flag_sign || flag_space) && d>=0) {
-	    *(--s)=(flag_sign)?'+':' ';
-	    ++sz;
+	    if ((flag_sign || flag_space) && d>=0) {
+	      *(--s)=(flag_sign)?'+':' ';
+	      ++sz;
+	    }
 	  }
 	  
 	  sz=strlen(s);
@@ -404,6 +424,6 @@ num_printf:
   return len;
 }
 
-#ifdef __NEED_WARNING
+#if 0
 link_warning("__v_printf","warning: the printf functions add several kilobytes of bloat.")
 #endif

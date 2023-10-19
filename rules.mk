@@ -26,7 +26,7 @@ OPT ?= -Os
 CSTD ?= -std=c11
 CXXSTD ?= -std=c++11
 BUILD_TYPE ?= exe
-ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -zmax-page-size=1
+ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -zmax-page-size=1 -mthumb-interwork
 
 PREFIX	?= arm-none-eabi-
 CC		= $(PREFIX)gcc

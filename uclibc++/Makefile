@@ -9,7 +9,7 @@ OPT := -O2
 DEFINES += -D__ARM_EABI__ -D__arm__ -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
 
-LDLIBS += -lcrt_helper -lgcc-4.6.1 -lc-1.0
+LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400

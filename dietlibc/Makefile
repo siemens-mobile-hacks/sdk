@@ -10,7 +10,7 @@ CFLAGS += -fomit-frame-pointer -Wno-implicit-fallthrough -Wno-missing-prototypes
 DEFINES += -D__ARM_EABI__ -D__arm__
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt_helper -lgcc-4.6.1
+LDLIBS += -lcrt -lcrt_helper -lgcc
 
 LDFLAGS += -Wl,--init=_init
 LDFLAGS += -Wl,--fini=_fini
@@ -54,6 +54,7 @@ SOURCES += src/libdl/dlerror.c
 SOURCES += src/libdl/dlopen.c
 SOURCES += src/libdl/dlsym.c
 SOURCES += src/lib/__dtostr.c
+SOURCES += src/lib/__isnan.c
 SOURCES += src/lib/errlistu.c
 SOURCES += src/lib/errno_location.c
 SOURCES += src/lib/getopt.c

@@ -1,0 +1,13 @@
+*.o
+dietlibc/bin
+dietlibc/*.so
+libcrt/bin
+libcrt/*.a
+libcrt_helper/bin
+libcrt_helper/*.so
+libm/bin
+libm/*.so
+libgcc/build
+libgcc/*.tar*
+uclibc++/bin
+uclibc++/*.so
