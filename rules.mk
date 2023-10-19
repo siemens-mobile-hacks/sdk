@@ -24,7 +24,7 @@
 
 OPT ?= -Os
 CSTD ?= -std=c11
-CXXSTD ?= -std=c++11
+CXXSTD ?= -std=gnu++98
 BUILD_TYPE ?= exe
 ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
 ARCH_LDFLAGS ?= -zmax-page-size=1
@@ -36,8 +36,8 @@ CXX		= $(PREFIX)g++
 LD		= $(PREFIX)ld
 AR		= $(PREFIX)ar
 
-SIEDEV_INC = $(SDK_PATH)/include
-INCLUDES += $(patsubst %,-I%, . $(SIEDEV_INC))
+INCLUDES += -I$(SDK_PATH)/include
+INCLUDES += -I$(SDK_PATH)/uclibc++/include
 
 BUILD_DIR ?= bin/$(TARGET)
 LIB_OUT_DIR ?= lib/$(TARGET)

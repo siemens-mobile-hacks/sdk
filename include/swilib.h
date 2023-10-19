@@ -1,11 +1,7 @@
-
-
-
 /**
 *  Переделанная swilib.h для gcc.
 *  (c) Z.Vova
 */
-
 
 #ifndef __SWILIB__
 #define __SWILIB__
@@ -1435,7 +1431,6 @@ typedef struct I2C_MSG
 extern "C" {
 #endif
 
-
 #ifdef __NO_DIRECT_SWI
 #include "swicall.h"
 #else
@@ -1443,6 +1438,7 @@ extern "C" {
 #endif
 
 void kill_elf();
+extern void kill_data(void *p, void (*func_p)(void *));
 
 #ifdef __cplusplus
 }
