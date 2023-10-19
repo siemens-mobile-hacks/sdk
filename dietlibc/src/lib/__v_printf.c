@@ -10,6 +10,8 @@
 
 #define MAX_WIDTH 10*1024
 
+int __isnan(double d);
+
 static inline unsigned long skip_to(const char *format) {
   unsigned long nr;
   for (nr=0; format[nr] && (format[nr]!='%'); ++nr);
@@ -375,7 +377,7 @@ num_printf:
 
 	  sz=__dtostr(d,s,sizeof(buf)-1,width,preci,flags);
 
-	  if (!isnan(d) && !isinf(d)) {		/* skip NaN + INF values */
+	  if (!__isnan(d) && !isinf(d)) {		/* skip NaN + INF values */
 	    if (flag_dot) {
 	      char *tmp;
 	      if ((tmp=strchr(s,'.'))) {
