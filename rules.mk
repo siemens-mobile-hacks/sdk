@@ -29,6 +29,7 @@ BUILD_TYPE ?= exe
 ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
 ARCH_LDFLAGS ?= -zmax-page-size=1
 LIBDIRS ?=
+SOURCE_ENCODING ?= utf-8
 
 PREFIX	?= arm-none-eabi-
 CC		= $(PREFIX)gcc
@@ -38,6 +39,7 @@ AR		= $(PREFIX)ar
 
 INCLUDES += -I$(SDK_PATH)/include
 INCLUDES += -I$(SDK_PATH)/libuclibc++/include
+INCLUDES += -I$(SDK_PATH)/libjpeg/include
 
 BUILD_DIR ?= bin/$(TARGET)
 LIB_OUT_DIR ?= lib/$(TARGET)
@@ -79,7 +81,9 @@ OBJECTS := $(OBJECTS:%.s=%.o)
 DEPENDS := $(OBJECTS:%.o=%.d)
 
 # Compiler flags
-TARGET_COMMON_FLAGS := -finput-charset=UTF-8 -fexec-charset=cp1251
+ifneq ($(SOURCE_ENCODING),cp1251)
+	TARGET_COMMON_FLAGS := -finput-charset=$(SOURCE_ENCODING) -fexec-charset=cp1251
+endif
 TARGET_COMMON_FLAGS += -fno-builtin -nodefaultlibs -nostdlib -nostdinc
 
 TARGET_CFLAGS := $(CSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS)

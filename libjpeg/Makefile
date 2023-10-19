@@ -6,7 +6,7 @@ BUILD_DIR := bin
 CSTD := -std=c99
 OPT := -Os
 
-CFLAGS += -mthumb -Wno-implicit-fallthrough
+CFLAGS += -mthumb -Wno-implicit-fallthrough -isystem ./include/jpeglib
 INCLUDES += -Isrc
 
 LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
