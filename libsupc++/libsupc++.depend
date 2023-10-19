@@ -1,0 +1,596 @@
+# depslib dependency file v1.0
+1311317917 source:/home/vova7890/Sie/libsupc++/main.cpp
+	<swilib.h>
+
+1286271717 source:/home/vova7890/Sie/libsupc++/src/bad_alloc.cc
+	"new"
+
+1275592556 /home/vova7890/Sie/libsupc++/src/new
+	<bits/c++config.h>
+	<exception>
+
+1296427176 /home/vova7890/Sie/libsupc++/src/exception
+	<bits/c++config.h>
+	<bits/exception_ptr.h>
+	<bits/nested_exception.h>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/array_type_info.cc
+	"tinfo.h"
+
+1239289219 /home/vova7890/Sie/libsupc++/src/tinfo.h
+	"typeinfo"
+	<cstddef>
+	<cxxabi.h>
+
+1295051230 /home/vova7890/Sie/libsupc++/src/typeinfo
+	<exception>
+	<bits/hash_bytes.h>
+
+1295051230 /home/vova7890/Sie/libsupc++/src/cxxabi.h
+	<stddef.h>
+	<bits/c++config.h>
+	<bits/cxxabi_tweaks.h>
+	<bits/cxxabi_forced.h>
+	<typeinfo>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/atexit_arm.cc
+	<cxxabi.h>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/bad_cast.cc
+	<typeinfo>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/bad_typeid.cc
+	<typeinfo>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/class_type_info.cc
+	"tinfo.h"
+
+1313153074 source:/home/vova7890/Sie/libsupc++/src/del_op.cc
+	<bits/c++config.h>
+	<swilib.h>
+	<cstdlib>
+	"new"
+
+1313153101 source:/home/vova7890/Sie/libsupc++/src/del_opnt.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1313153101 source:/home/vova7890/Sie/libsupc++/src/del_opv.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1313153101 source:/home/vova7890/Sie/libsupc++/src/del_opvnt.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1246918431 source:/home/vova7890/Sie/libsupc++/src/dyncast.cc
+	"tinfo.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/enum_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/function_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/fundamental_type_info.cc
+	"tinfo.h"
+
+1312275565 source:/home/vova7890/Sie/libsupc++/src/guard.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+	<exception>
+	<new>
+	<ext/atomicity.h>
+	<ext/concurrence.h>
+	<climits>
+	<syscall.h>
+
+1297293747 source:/home/vova7890/Sie/libsupc++/src/guard_error.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+
+1300294764 source:/home/vova7890/Sie/libsupc++/src/nested_exception.cc
+	<exception>
+
+1286271717 source:/home/vova7890/Sie/libsupc++/src/new_handler.cc
+	"new"
+
+1296427176 source:/home/vova7890/Sie/libsupc++/src/hash_bytes.cc
+	<bits/hash_bytes.h>
+
+1312310420 source:/home/vova7890/Sie/libsupc++/src/new_op.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	"new"
+	<swilib.h>
+
+1312366777 source:/home/vova7890/Sie/libsupc++/src/new_opnt.cc
+	<bits/c++config.h>
+	<bits/exception_defines.h>
+	"new"
+	<swilib.h>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/new_opv.cc
+	<bits/c++config.h>
+	"new"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/new_opvnt.cc
+	<bits/c++config.h>
+	"new"
+
+1266385404 source:/home/vova7890/Sie/libsupc++/src/pbase_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/pmem_type_info.cc
+	"tinfo.h"
+
+1266385404 source:/home/vova7890/Sie/libsupc++/src/pointer_type_info.cc
+	"tinfo.h"
+
+1311316526 source:/home/vova7890/Sie/libsupc++/src/pure.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+	"unwind-cxx.h"
+	<unistd.h>
+	<cstdio>
+
+1312310368 /home/vova7890/Sie/libsupc++/src/unwind-cxx.h
+	<typeinfo>
+	<exception>
+	<cstddef>
+	"unwind.h"
+	<bits/atomic_word.h>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/si_class_type_info.cc
+	"tinfo.h"
+
+1311322447 source:/home/vova7890/Sie/libsupc++/src/tinfo.cc
+	<bits/c++config.h>
+	<cstddef>
+	<swilib.h>
+	"tinfo.h"
+
+1256941439 source:/home/vova7890/Sie/libsupc++/src/tinfo2.cc
+	<cstddef>
+	"tinfo.h"
+
+1295051230 source:/home/vova7890/Sie/libsupc++/src/vec.cc
+	<cxxabi.h>
+	<new>
+	<exception>
+	<bits/exception_defines.h>
+	"unwind-cxx.h"
+
+1246918431 source:/home/vova7890/Sie/libsupc++/src/vmi_class_type_info.cc
+	"tinfo.h"
+
+1311317233 source:/home/vova7890/Sie/libsupc++/src/vterminate.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<exception>
+	<bits/exception_defines.h>
+	<cxxabi.h>
+	<cstdio>
+
+1312366738 source:/home/vova7890/Sie/libsupc++/src/eh_alloc.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<cstring>
+	<climits>
+	<exception>
+	"unwind-cxx.h"
+	<ext/concurrence.h>
+	<string.h>
+	<swilib.h>
+
+1294087942 source:/home/vova7890/Sie/libsupc++/src/eh_arm.cc
+	<cxxabi.h>
+	"unwind-cxx.h"
+
+1312314858 source:/home/vova7890/Sie/libsupc++/src/eh_aux_runtime.cc
+	"typeinfo"
+	"exception"
+	<cstdlib>
+	"unwind-cxx.h"
+	<bits/exception_defines.h>
+
+1295051230 source:/home/vova7890/Sie/libsupc++/src/eh_call.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	"unwind-cxx.h"
+	"unwind-pe.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/eh_catch.cc
+	<cstdlib>
+	"unwind-cxx.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/eh_exception.cc
+	"typeinfo"
+	"exception"
+	<cxxabi.h>
+
+1312366760 source:/home/vova7890/Sie/libsupc++/src/eh_globals.cc
+	<bits/c++config.h>
+	<exception>
+	<cstdlib>
+	"cxxabi.h"
+	"unwind-cxx.h"
+	"bits/gthr.h"
+	<swilib.h>
+
+1312313851 source:/home/vova7890/Sie/libsupc++/src/eh_personality.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	<cxxabi.h>
+	"unwind-cxx.h"
+	"unwind-pe.h"
+
+1295051230 source:/home/vova7890/Sie/libsupc++/src/eh_ptr.cc
+	<bits/c++config.h>
+	<exception>
+	<bits/exception_ptr.h>
+	"unwind-cxx.h"
+
+1312313867 source:/home/vova7890/Sie/libsupc++/src/eh_term_handler.cc
+	<bits/c++config.h>
+	"unwind-cxx.h"
+	<cstdlib>
+
+1312313877 source:/home/vova7890/Sie/libsupc++/src/eh_terminate.cc
+	"typeinfo"
+	"exception"
+	<cstdlib>
+	"unwind-cxx.h"
+	<bits/exception_defines.h>
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/eh_throw.cc
+	<bits/c++config.h>
+	"unwind-cxx.h"
+
+1240093101 source:/home/vova7890/Sie/libsupc++/src/eh_type.cc
+	<typeinfo>
+	<cxxabi.h>
+	"unwind-cxx.h"
+
+1239289219 source:/home/vova7890/Sie/libsupc++/src/eh_unex_handler.cc
+	"unwind-cxx.h"
+
+1311317917 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/main.cpp
+	<swilib.h>
+
+1239289219 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/array_type_info.cc
+	"tinfo.h"
+
+1239289219 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/tinfo.h
+	"typeinfo"
+	<cstddef>
+	<cxxabi.h>
+
+1295051230 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/typeinfo
+	<exception>
+	<bits/hash_bytes.h>
+
+1296427176 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/exception
+	<bits/c++config.h>
+	<bits/exception_ptr.h>
+	<bits/nested_exception.h>
+
+1295051230 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/cxxabi.h
+	<stddef.h>
+	<bits/c++config.h>
+	<bits/cxxabi_tweaks.h>
+	<bits/cxxabi_forced.h>
+	<typeinfo>
+
+1239289219 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/atexit_arm.cc
+	<cxxabi.h>
+
+1286271717 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/bad_alloc.cc
+	"new"
+
+1275592556 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/new
+	<bits/c++config.h>
+	<exception>
+
+1239289219 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/bad_cast.cc
+	<typeinfo>
+
+1239289219 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/bad_typeid.cc
+	<typeinfo>
+
+1239289219 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/class_type_info.cc
+	"tinfo.h"
+
+1313153523 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/del_op.cc
+	<bits/c++config.h>
+	<swilib.h>
+	<cstdlib>
+	"new"
+
+1313153101 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/del_opnt.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1313153101 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/del_opv.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1313153101 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/del_opvnt.cc
+	<bits/c++config.h>
+	"new"
+	<swilib.h>
+
+1246918431 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/dyncast.cc
+	"tinfo.h"
+
+1294087942 source:/media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/eh_arm.cc
+	<cxxabi.h>
+	"unwind-cxx.h"
+
+1312310368 /media/c6ed3b97-6d37-4f06-b8a8-7468f1f23619/Sie/libsupc++/src/unwind-cxx.h
+	<typeinfo>
+	<exception>
+	<cstddef>
+	"unwind.h"
+	<bits/atomic_word.h>
+
+1317646876 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/main.cpp
+	<swilib.h>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/array_type_info.cc
+	"tinfo.h"
+
+1239289219 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/tinfo.h
+	"typeinfo"
+	<cstddef>
+	<cxxabi.h>
+
+1295051230 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/typeinfo
+	<exception>
+	<bits/hash_bytes.h>
+
+1296427176 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/exception
+	<bits/c++config.h>
+	<bits/exception_ptr.h>
+	<bits/nested_exception.h>
+
+1295051230 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/cxxabi.h
+	<stddef.h>
+	<bits/c++config.h>
+	<bits/cxxabi_tweaks.h>
+	<bits/cxxabi_forced.h>
+	<typeinfo>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/atexit_arm.cc
+	<cxxabi.h>
+
+1286271717 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/bad_alloc.cc
+	"new"
+
+1275592556 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new
+	<bits/c++config.h>
+	<exception>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/bad_cast.cc
+	<typeinfo>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/bad_typeid.cc
+	<typeinfo>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/class_type_info.cc
+	"tinfo.h"
+
+1296427176 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/del_op.cc
+	<bits/c++config.h>
+	<cstdlib>
+	"new"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/del_opnt.cc
+	<bits/c++config.h>
+	"new"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/del_opv.cc
+	<bits/c++config.h>
+	"new"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/del_opvnt.cc
+	<bits/c++config.h>
+	"new"
+
+1246918431 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/dyncast.cc
+	"tinfo.h"
+
+1323601698 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_alloc.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<cstring>
+	<climits>
+	<exception>
+	"unwind-cxx.h"
+	<ext/concurrence.h>
+
+1279619041 /media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/unwind-cxx.h
+	<typeinfo>
+	<exception>
+	<cstddef>
+	"unwind.h"
+	<bits/atomic_word.h>
+
+1294087942 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_arm.cc
+	<cxxabi.h>
+	"unwind-cxx.h"
+
+1323599273 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_aux_runtime.cc
+	"typeinfo"
+	"exception"
+	<cstdlib>
+	"unwind-cxx.h"
+	<bits/exception_defines.h>
+
+1295051230 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_call.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	"unwind-cxx.h"
+	"unwind-pe.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_catch.cc
+	<cstdlib>
+	"unwind-cxx.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_exception.cc
+	"typeinfo"
+	"exception"
+	<cxxabi.h>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_globals.cc
+	<bits/c++config.h>
+	<exception>
+	<cstdlib>
+	"cxxabi.h"
+	"unwind-cxx.h"
+	"bits/gthr.h"
+
+1323599376 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_personality.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	<cxxabi.h>
+	"unwind-cxx.h"
+	"unwind-pe.h"
+
+1295051230 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_ptr.cc
+	<bits/c++config.h>
+	<exception>
+	<bits/exception_ptr.h>
+	"unwind-cxx.h"
+
+1323599316 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_term_handler.cc
+	<bits/c++config.h>
+	"unwind-cxx.h"
+	<cstdlib>
+
+1323599346 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_terminate.cc
+	"typeinfo"
+	"exception"
+	<cstdlib>
+	"unwind-cxx.h"
+	<bits/exception_defines.h>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_throw.cc
+	<bits/c++config.h>
+	"unwind-cxx.h"
+
+1240093101 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_type.cc
+	<typeinfo>
+	<cxxabi.h>
+	"unwind-cxx.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/eh_unex_handler.cc
+	"unwind-cxx.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/enum_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/function_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/fundamental_type_info.cc
+	"tinfo.h"
+
+1297293747 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/guard.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+	<exception>
+	<new>
+	<ext/atomicity.h>
+	<ext/concurrence.h>
+	<climits>
+	<syscall.h>
+
+1297293747 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/guard_error.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+
+1296427176 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/hash_bytes.cc
+	<bits/hash_bytes.h>
+
+1300294764 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/nested_exception.cc
+	<exception>
+
+1286271717 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new_handler.cc
+	"new"
+
+1295051230 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new_op.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<bits/exception_defines.h>
+	"new"
+
+1295051230 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new_opnt.cc
+	<bits/c++config.h>
+	<bits/exception_defines.h>
+	"new"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new_opv.cc
+	<bits/c++config.h>
+	"new"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/new_opvnt.cc
+	<bits/c++config.h>
+	"new"
+
+1266385404 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/pbase_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/pmem_type_info.cc
+	"tinfo.h"
+
+1266385404 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/pointer_type_info.cc
+	"tinfo.h"
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/pure.cc
+	<bits/c++config.h>
+	<cxxabi.h>
+	"unwind-cxx.h"
+	<unistd.h>
+	<cstdio>
+
+1239289219 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/si_class_type_info.cc
+	"tinfo.h"
+
+1256941439 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/tinfo.cc
+	<bits/c++config.h>
+	<cstddef>
+	"tinfo.h"
+
+1256941439 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/tinfo2.cc
+	<cstddef>
+	"tinfo.h"
+
+1295051230 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/vec.cc
+	<cxxabi.h>
+	<new>
+	<exception>
+	<bits/exception_defines.h>
+	"unwind-cxx.h"
+
+1246918431 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/vmi_class_type_info.cc
+	"tinfo.h"
+
+1296427176 source:/media/a9b81efd-a4cc-534e-c7be-7500bb2c8ad3/Sie/libsupc++/src/vterminate.cc
+	<bits/c++config.h>
+	<cstdlib>
+	<exception>
+	<bits/exception_defines.h>
+	<cxxabi.h>
+	<cstdio>
+

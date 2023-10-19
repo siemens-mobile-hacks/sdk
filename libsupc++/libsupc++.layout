@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="NSG" />
+	<File name="main.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="47" topLine="0" />
+	</File>
+	<File name="src/atexit_arm.cc" open="0" top="0" tabpos="0">
+		<Cursor position="1017" topLine="0" />
+	</File>
+	<File name="src/bad_alloc.cc" open="0" top="0" tabpos="10">
+		<Cursor position="0" topLine="1" />
+	</File>
+	<File name="src/cxxabi.h" open="0" top="0" tabpos="0">
+		<Cursor position="17913" topLine="550" />
+	</File>
+	<File name="src/dyncast.cc" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="52" />
+	</File>
+	<File name="src/eh_alloc.cc" open="0" top="0" tabpos="6">
+		<Cursor position="3395" topLine="108" />
+	</File>
+	<File name="src/eh_arm.cc" open="0" top="0" tabpos="0">
+		<Cursor position="2086" topLine="103" />
+	</File>
+	<File name="src/eh_aux_runtime.cc" open="0" top="0" tabpos="0">
+		<Cursor position="1472" topLine="10" />
+	</File>
+	<File name="src/eh_exception.cc" open="0" top="0" tabpos="0">
+		<Cursor position="1352" topLine="11" />
+	</File>
+	<File name="src/eh_personality.cc" open="0" top="0" tabpos="3">
+		<Cursor position="13853" topLine="113" />
+	</File>
+	<File name="src/eh_terminate.cc" open="0" top="0" tabpos="1">
+		<Cursor position="1459" topLine="27" />
+	</File>
+	<File name="src/eh_unex_handler.cc" open="0" top="0" tabpos="5">
+		<Cursor position="1065" topLine="0" />
+	</File>
+	<File name="src/hash_bytes.cc" open="0" top="0" tabpos="1">
+		<Cursor position="1137" topLine="17" />
+	</File>
+	<File name="src/pure.cc" open="0" top="0" tabpos="7">
+		<Cursor position="1644" topLine="10" />
+	</File>
+	<File name="src/tinfo.cc" open="0" top="0" tabpos="4">
+		<Cursor position="1218" topLine="21" />
+	</File>
+	<File name="src/tinfo.h" open="0" top="0" tabpos="0">
+		<Cursor position="1197" topLine="13" />
+	</File>
+	<File name="src/unwind-cxx.h" open="0" top="0" tabpos="3">
+		<Cursor position="1313" topLine="19" />
+	</File>
+	<File name="src/vterminate.cc" open="0" top="0" tabpos="2">
+		<Cursor position="1245" topLine="50" />
+	</File>
+</CodeBlocks_layout_file>
