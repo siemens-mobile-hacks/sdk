@@ -11,7 +11,7 @@ TMP_DIR="$ROOT/libgcc_repack"
 rm -rf "$TMP_DIR"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR"
-rm "$OUT_FILE"
+rm -f "$OUT_FILE"
 ar x "$LIB_FILE"
 arm-none-eabi-ar rcsD "$OUT_FILE" *
 ls -lah "$OUT_FILE"

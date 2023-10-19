@@ -37,7 +37,7 @@ LD		= $(PREFIX)ld
 AR		= $(PREFIX)ar
 
 INCLUDES += -I$(SDK_PATH)/include
-INCLUDES += -I$(SDK_PATH)/uclibc++/include
+INCLUDES += -I$(SDK_PATH)/libuclibc++/include
 
 BUILD_DIR ?= bin/$(TARGET)
 LIB_OUT_DIR ?= lib/$(TARGET)

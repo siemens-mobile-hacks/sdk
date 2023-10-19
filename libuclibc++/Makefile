@@ -1,4 +1,4 @@
-PROJECT := libstdc++-1.2.2
+PROJECT := libuclibc++-1.0
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
