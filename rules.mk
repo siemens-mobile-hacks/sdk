@@ -8,7 +8,7 @@
 # BUILD_TYPE	- type of project: exe (.elf), lib (.so), archive (.a)
 # DEFINES		- additional defines, example: -DDEBUG=1
 # INCLUDES		- additional includes, example: -I./somelib
-# LDLIBS		- required libs, example: -lcrt-1.0 -lcrt-helper
+# LDLIBS		- required libs, example: -lcrt -lcrt-helper -lgcc
 #
 # OPT			- optimization level (default -Os).
 # CSTD			- C language standart (default -std=c11).
@@ -74,6 +74,7 @@ OBJECTS := $(OBJECTS:%.c=%.o)
 OBJECTS := $(OBJECTS:%.cpp=%.o)
 OBJECTS := $(OBJECTS:%.cc=%.o)
 OBJECTS := $(OBJECTS:%.S=%.o)
+OBJECTS := $(OBJECTS:%.s=%.o)
 
 DEPENDS := $(OBJECTS:%.o=%.d)
 
@@ -132,6 +133,11 @@ $(BUILD_DIR)/%.o: %.cc
 	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -MP -o $@ -c $<
 
 $(BUILD_DIR)/%.o: %.S
+	@printf "  AS\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<
+
+$(BUILD_DIR)/%.o: %.s
 	@printf "  AS\t$<\n"
 	@mkdir -p $(dir $@)
 	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<

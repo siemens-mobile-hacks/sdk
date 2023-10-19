@@ -7,7 +7,6 @@ CSTD := -std=c99
 OPT := -Os
 
 CFLAGS += -mthumb -Wno-implicit-fallthrough
-DEFINES += -D__dietlibc__
 INCLUDES += -Isrc
 
 LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
