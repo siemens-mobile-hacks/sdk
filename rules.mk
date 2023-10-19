@@ -26,12 +26,14 @@ OPT ?= -Os
 CSTD ?= -std=c11
 CXXSTD ?= -std=c++11
 BUILD_TYPE ?= exe
-ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -zmax-page-size=1 -mthumb-interwork
+ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
+ARCH_LDFLAGS ?= -zmax-page-size=1
+LIBDIRS ?=
 
 PREFIX	?= arm-none-eabi-
 CC		= $(PREFIX)gcc
 CXX		= $(PREFIX)g++
-LD		= $(PREFIX)gcc
+LD		= $(PREFIX)ld
 AR		= $(PREFIX)ar
 
 SIEDEV_INC = $(SDK_PATH)/include
@@ -40,20 +42,20 @@ INCLUDES += $(patsubst %,-I%, . $(SIEDEV_INC))
 BUILD_DIR ?= bin/$(TARGET)
 LIB_OUT_DIR ?= lib/$(TARGET)
 
-LIBDIR += -L$(SDK_PATH)/lib
 ifeq ($(TARGET),ELKA)
 	DEFINES += -DNEWSGOLD -DELKA
-	LIBDIR += -L$(SDK_PATH)/lib/ELKA -L$(SDK_PATH)/lib/NSG
+	LIBDIRS += -L$(SDK_PATH)/lib/ELKA -L$(SDK_PATH)/lib/NSG
 	OUTPUT_POSTFIX ?= _ELKA
 else ifeq ($(TARGET),NSG)
 	DEFINES += -DNEWSGOLD
-	LIBDIR += -L$(SDK_PATH)/lib/NSG
+	LIBDIRS += -L$(SDK_PATH)/lib/NSG
 	OUTPUT_POSTFIX ?= _NSG
 else ifeq ($(TARGET),SG)
 	DEFINES += -DSGOLD
-	LIBDIR += -L$(SDK_PATH)/lib/SG
+	LIBDIRS += -L$(SDK_PATH)/lib/SG
 	OUTPUT_POSTFIX ?= _SG
 endif
+LIBDIRS += -L$(SDK_PATH)/lib
 
 OUTPUT_EXT := elf
 ifeq ($(BUILD_TYPE),lib)
@@ -96,16 +98,14 @@ TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 
 # Linker flags
 ifeq ($(BUILD_TYPE),lib)
-TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
-TARGET_LDFLAGS += -Wl,-shared -Wl,-Bsymbolic -Wl,-Bsymbolic-function -Wl,-s -Wl,-soname=$(LIB_SONAME)
+TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS)
+TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function -s -soname=$(LIB_SONAME)
 else ifeq ($(BUILD_TYPE),exe)
-TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
-TARGET_LDFLAGS += $(ARCH_FLAGS) -Wl,-s -Wl,-pie
+TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) -s -pie
 else ifeq ($(BUILD_TYPE),archive)
-TARGET_LDFLAGS := $(ARCH_FLAGS) $(LIBDIR) -nostartfiles
-TARGET_LDFLAGS += $(ARCH_FLAGS) -Wl,-s -Wl,-pie
+TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) -s -pie
 endif
-TARGET_LDFLAGS += -fno-builtin -nostdlib -nodefaultlibs -Wl,--gc-sections
+TARGET_LDFLAGS += -nostdlib --gc-sections
 TARGET_LDFLAGS += $(LDFLAGS)
 
 # AR flags

@@ -1,5 +1,5 @@
 PROJECT := libcrt
-TARGET := ANY
+TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
 

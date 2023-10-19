@@ -1,5 +1,5 @@
 PROJECT := libcrt_helper
-TARGET := ANY
+TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
@@ -11,8 +11,8 @@ SOURCES += __cxa_atexit.cpp
 
 CFLAGS += -Wno-missing-prototypes
 DEFINES += -D__NO_LIBC
-LDFLAGS += -Wl,--init=__onstart
-LDFLAGS += -Wl,--fini=__onclose
+LDFLAGS += --init=__onstart
+LDFLAGS += --fini=__onclose
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400

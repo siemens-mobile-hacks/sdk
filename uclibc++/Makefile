@@ -1,5 +1,5 @@
 PROJECT := libstdc++-1.2.2
-TARGET := ANY
+TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 

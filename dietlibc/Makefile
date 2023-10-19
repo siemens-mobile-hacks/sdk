@@ -12,8 +12,8 @@ INCLUDES += -Isrc
 
 LDLIBS += -lcrt -lcrt_helper -lgcc
 
-LDFLAGS += -Wl,--init=_init
-LDFLAGS += -Wl,--fini=_fini
+LDFLAGS += --init=_init
+LDFLAGS += --fini=_fini
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400

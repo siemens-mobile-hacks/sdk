@@ -12,8 +12,6 @@ install: $(INSTALL_TARGETS)
 clean: $(CLEAN_TARGETS)
 	rm -rf bin
 
-build_ANY:
-	@$(MAKE) TARGET=ANY
 build_ELKA:
 	@$(MAKE) TARGET=ELKA
 build_NSG:
@@ -21,8 +19,6 @@ build_NSG:
 build_SG:
 	@$(MAKE) TARGET=SG
 
-clean_ANY:
-	@$(MAKE) TARGET=ANY clean
 clean_ELKA:
 	@$(MAKE) TARGET=ELKA clean
 clean_NSG:
@@ -30,8 +26,6 @@ clean_NSG:
 clean_SG:
 	@$(MAKE) TARGET=SG clean
 
-install_ANY:
-	@$(MAKE) TARGET=ANY install
 install_ELKA:
 	@$(MAKE) TARGET=ELKA install
 install_NSG:
@@ -39,7 +33,7 @@ install_NSG:
 install_SG:
 	@$(MAKE) TARGET=SG install
 
-.PHONY: all clean build_ELKA build_NSG build_SG clean_ELKA clean_NSG clean_SG install_ANY install_ELKA install_NSG install_SG
+.PHONY: all clean build_ELKA build_NSG build_SG clean_ELKA clean_NSG clean_SG install_ELKA install_NSG install_SG
 
 else
 
