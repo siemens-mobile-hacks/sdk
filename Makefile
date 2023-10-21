@@ -23,4 +23,7 @@ clean:
 	$(MAKE) -C libjpeg clean
 	$(MAKE) -C libpng clean
 
+libs_release:
+	tools/lib-pkg.sh
+
 .PHONY: all clean

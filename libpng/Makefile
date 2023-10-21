@@ -9,7 +9,7 @@ OPT := -Os
 CFLAGS += -mthumb -Wno-implicit-fallthrough
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lm-1.0 -lz-1.0
+LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lm-1.0 -lz-1.2.5
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400
