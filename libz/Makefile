@@ -1,4 +1,4 @@
-PROJECT := libz-1.0
+PROJECT := libz-1.2.5
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
