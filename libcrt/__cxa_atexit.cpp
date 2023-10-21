@@ -11,7 +11,6 @@ typedef struct
 extern char *_curent_dir;
 __cxa_atexit_struct *__s_exit = 0, *__ex_start = 0;
 int __cxa_is_killing = 0;
-void *__dso_handle = 0;
 
 extern void h_kill_elf(__cxa_atexit_struct *__ex_start, int *__cxa_is_killing, void *_ex);
 

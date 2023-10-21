@@ -36,6 +36,7 @@ distclean:
 	rm -rf $(BUILD_DIR)
 
 libgcc: $(GCC_FILE) $(GCC_DIR)
+	sed -ire 's/__dso_handle\s+__attribute__\s+\(\(__visibility__ \("hidden"\)\)\)/__dso_handle/g' $(GCC_DIR)/libgcc/crtstuff.c
 	mkdir -p $(GCC_BUILD_DIR) $(CACHE_DIR)
 	cd $(GCC_BUILD_DIR) && $(GCC_DIR)/configure \
 		--target=arm-none-eabi \
@@ -68,6 +69,7 @@ $(BUILD_DIR):
 $(GCC_DIR):
 	tar -C $(BUILD_DIR) -xpf $(GCC_FILE)
 	cd $(GCC_DIR) && ./contrib/download_prerequisites
+	sed -ire 's/__dso_handle\s+__attribute__\s+\(\(__visibility__ \("hidden"\)\)\)/__dso_handle/g' $(GCC_DIR)/libgcc/crtstuff.c
 
 $(GCC_FILE):
 	wget $(GCC_URL) -O $@
