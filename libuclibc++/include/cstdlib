@@ -1,41 +1,79 @@
-#ifndef __DIETLIBC_CSTDLIB_INCLUDED
-#define __DIETLIBC_CSTDLIB_INCLUDED
+/*	Copyright (C) 2005 Garrett A. Kajmowicz
+
+	This file is part of the uClibc++ Library.
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.1 of the License, or (at your option) any later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
 
 #include <stdlib.h>
+#include <basic_definitions>
 
-namespace std {
-    using ::div_t;
+#ifndef __HEADER_CSTDLIB
+#define __HEADER_CSTDLIB 1
 
-    //using ::abort;
-    using ::abs;
-    using ::atexit;
-    using ::atof;
-    using ::atoi;
-    using ::atol;
-    using ::bsearch;
-    using ::div;
-    //using ::exit;
+
+namespace std{
+	using ::abort;
+	using ::abs;
+	using ::atexit;
+	using ::atol;
+	using ::atof;
+	using ::atoi;
+	using ::bsearch;
 #ifndef __NO_LIBC
-#ifndef VALGRIND
-    using ::calloc;
-    using ::free;
-    using ::malloc;
-    using ::realloc;
+	using ::calloc;
 #endif
-
-    using ::getenv;
-    using ::strtol;
-    using ::strtoul;
-#endif
-
-    using ::labs;
-    using ::qsort;
+	using ::div;
+	using ::exit;
 #ifndef __NO_LIBC
-    using ::rand;
-    using ::srand;
+	using ::free;
+	using ::getenv;
 #endif
-    using ::strtod;
-    using ::system;
+	using ::labs;
+	using ::ldiv;
+#ifndef __NO_LIBC
+	using ::malloc;
+#endif
+	using ::qsort;
+#ifndef __NO_LIBC
+	using ::rand;
+	using ::realloc;
+	using ::srand;
+	using ::strtod;
+	using ::strtol;
+	using ::strtoul;
+#endif
+	using ::system;
+#ifdef __UCLIBCXX_HAS_WCHAR__
+	using ::mblen;
+	using ::mbstowcs;
+	using ::mbtowc;
+	using ::wctomb;
+	using ::wcstombs;
+#endif
+
+	inline long abs(long i){
+		return labs(i);
+	}
+
+	inline ldiv_t div(long i, long j){
+		return ldiv(i, j);
+	}
+
 }
 
+
+
 #endif
+

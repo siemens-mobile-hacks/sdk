@@ -47,7 +47,10 @@ namespace std{
 	using ::fwrite;
 	using ::getc;
 	using ::getchar;
+#if __cplusplus <= 201103L
+	// LWG 2249
 	using ::gets;
+#endif
 	using ::perror;
 	using ::printf;
 	using ::putc;
@@ -56,15 +59,17 @@ namespace std{
 	using ::remove;
 	using ::rename;
 	using ::rewind;
-	//using ::scanf;
+#ifndef __NO_LIBC
+	using ::scanf;
 	using ::setbuf;
 	using ::setvbuf;
-#ifndef __NO_LIBC
 	using ::sprintf;
 	using ::sscanf;
 #endif
 	using ::tmpfile;
+#if _GLIBCXX_USE_TMPNAM
 	using ::tmpnam;
+#endif
 	using ::ungetc;
 	using ::vfprintf;
 	using ::vprintf;

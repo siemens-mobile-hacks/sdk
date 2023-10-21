@@ -33,7 +33,7 @@ extern "C" {
 	 * let that happen.  We get to choose what to do - we will abort
 	 */
 	void __cxa_pure_virtual (){
-		//abort();
+		abort();
 	}
 
 }

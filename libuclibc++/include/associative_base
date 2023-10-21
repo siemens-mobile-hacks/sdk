@@ -34,14 +34,14 @@ namespace std{
 
 
 /*
- *	The basic premis here is that most of the code used by map, multimap, set and 
+ *	The basic premise here is that most of the code used by map, multimap, set and
  *	multiset is really common.  There are a number of interface additions, and
- *	considerations about how to address multiple enteries with the same key.
- *	The goal is that the code tree/storage code should be here, and managing
- * 	single or moultiple counts will be loeft to subclasses.
- *	Yes, inheritence for the purpose of code sharing is usually a bad idea.  However,
- * 	since our goal is to reduce tht total amount of code written and the overall binary
- *	size, this seems to be the best approach possible.
+ *	considerations about how to address multiple entries with the same key.
+ *	The goal is that the tree/storage code should be here, and managing
+ *	single or multiple counts will be left to subclasses.
+ *	Yes, inheritence for the purpose of code sharing is usually a bad idea.
+ *	However, since our goal is to reduce the total amount of code written
+ *	and the overall binary size, this seems to be the best approach possible.
  */
 
 template<class Key, class ValueType, class Compare = less<Key>, class Allocator = allocator<ValueType> > class __base_associative;
@@ -161,7 +161,7 @@ public:
 		}
 		return retval;
 	}
-        const_iterator find(const key_type& x) const{
+	const_iterator find(const key_type& x) const{
 		const_iterator retval = lower_bound(x);
 		if(retval == end()){
 			return retval;
@@ -171,7 +171,7 @@ public:
 		}
 		return retval;
 	}
-        size_type count(const key_type& x) const{
+	size_type count(const key_type& x) const{
 		size_type retval(0);
 		const_iterator first = lower_bound(x);
 		while(first != end() && !c(x, value_to_key(*first))){
@@ -188,7 +188,7 @@ public:
 	void erase(iterator pos){
 		backing.erase(pos.base_iterator());
 	}
-        size_type erase(const key_type& x){
+	size_type erase(const key_type& x){
 		size_type count(0);
 		iterator start = lower_bound(x);
 		iterator end = upper_bound(x);
@@ -198,10 +198,9 @@ public:
 		}
 		return count;
 	}
-        void erase(iterator first, iterator last){
+	void erase(iterator first, iterator last){
 		while(first != last){
-			backing.erase(first.base_iterator());
-			++first;
+			first = backing.erase(first.base_iterator());
 		}
 	}
 
@@ -234,7 +233,7 @@ protected:
 
 
 /*
- * Tree interators for the base associative class
+ * Tree iterators for the base associative class
  */
 
 template<class ValueType, class Compare, class Allocator> class _associative_citer
@@ -279,7 +278,7 @@ public:
 		return *this;
 	}
 	_associative_citer operator++(int){
-		//The following approach ensures that we only need to 
+		//The following approach ensures that we only need to
 		//provide code for ++ in one place (above)
 		_associative_citer temp(base_iter);
 		++base_iter;
@@ -290,7 +289,7 @@ public:
 		return *this;
 	}
 	_associative_citer operator--(int){
-		//The following approach ensures that we only need to 
+		//The following approach ensures that we only need to
 		//provide code for -- in one place (above)
 		_associative_citer temp(base_iter);
 		--base_iter;
@@ -301,7 +300,6 @@ public:
 	typename listtype::const_iterator base_iterator(){
 		return base_iter;
 	}
-	
 };
 
 
@@ -318,9 +316,8 @@ protected:
 	typedef std::list<ValueType> listtype;
 
 	typename listtype::iterator base_iter;
-	typedef std::_associative_citer<ValueType, Compare, Allocator> _associative_citer;
+	typedef _associative_citer<ValueType, Compare, Allocator> __associative_citer;
 
-	
 public:
 	_associative_iter() { }
 	_associative_iter(const _associative_iter & m)
@@ -347,13 +344,13 @@ public:
 	bool operator==(const _associative_iter & m) const{
 		return m.base_iter == base_iter;
 	}
-	bool operator==(const _associative_citer & m) const{
+	bool operator==(const __associative_citer & m) const{
 		return m.base_iter == base_iter;
 	}
 	bool operator!=(const _associative_iter & m) const{
 		return m.base_iter != base_iter;
 	}
-	bool operator!=(const _associative_citer & m) const{
+	bool operator!=(const __associative_citer & m) const{
 		return m.base_iter != base_iter;
 	}
 	_associative_iter & operator++(){
@@ -361,7 +358,7 @@ public:
 		return *this;
 	}
 	_associative_iter operator++(int){
-		//The following approach ensures that we only need to 
+		//The following approach ensures that we only need to
 		//provide code for ++ in one place (above)
 		_associative_iter temp(base_iter);
 		++base_iter;
@@ -372,14 +369,14 @@ public:
 		return *this;
 	}
 	_associative_iter operator--(int){
-		//The following approach ensures that we only need to 
+		//The following approach ensures that we only need to
 		//provide code for -- in one place (above)
 		_associative_iter temp(base_iter);
 		--base_iter;
 		return temp;
 	}
-	operator _associative_citer() const{
-		return _associative_citer(base_iter);
+	operator __associative_citer() const{
+		return __associative_citer(base_iter);
 	}
 	typename listtype::iterator base_iterator(){
 		return base_iter;
@@ -392,7 +389,7 @@ public:
 
 
 	// The lower_bound code is really crappy linear search.  However, it is a dead
-	// simple implimentation (easy to audit).  It can also be easily replaced.
+	// simple implementation (easy to audit).  It can also be easily replaced.
 
 
 	template <class Key, class ValueType, class Compare, class Allocator>
@@ -418,7 +415,7 @@ public:
 	}
 
 	// Upper bound search is linear from the point of lower_bound.  This is likely the best solution
-	// in all but the most pathalogical of cases.
+	// in all but the most pathological of cases.
 
 	template <class Key, class ValueType, class Compare, class Allocator>
 		typename __base_associative<Key, ValueType, Compare, Allocator>::iterator
@@ -513,7 +510,7 @@ public:
 
 	pair<iterator, bool> insert(const value_type& x){
 		pair<iterator, bool> retval;
-		iterator location = lower_bound(value_to_key(x));
+		iterator location = lower_bound(this->value_to_key(x));
 		retval.second = true;
 		//Empty list or need to insert at end
 		if(end() == location){
@@ -522,7 +519,7 @@ public:
 			return retval;
 		}
 		//Something in the list
-		if(c(value_to_key(x), value_to_key(*location))){
+		if(c(this->value_to_key(x), this->value_to_key(*location))){
 			location = backing.insert(location.base_iterator(), x);
 			retval.first = location;
 		}else{
@@ -533,7 +530,7 @@ public:
 	}
 
 	iterator insert(iterator position, const value_type& x){
-		// FIXME - this is cheeting and probably should be more efficient since we are
+		// FIXME - this is cheating and probably should be more efficient since we are
 		// now log(n) to find for inserts
 		return insert(x).first;
 	}
@@ -606,7 +603,7 @@ public:
 	}
 
 	iterator insert(const value_type& x){
-		iterator location = lower_bound(value_to_key(x));
+		iterator location = lower_bound(this->value_to_key(x));
 
 		if(location == begin()){
 			backing.push_front(x);
@@ -618,7 +615,7 @@ public:
 	}
 
 	iterator insert(iterator position, const value_type& x){
-		// FIXME - this is cheeting and probably should be more efficient since we are
+		// FIXME - this is cheating and probably should be more efficient since we are
 		// now log(n) to find for inserts
 		return insert(x);
 	}
@@ -640,4 +637,3 @@ public:
 
 #endif	//__STD_HEADER_ASSOCIATIVE_BASE
 
-	

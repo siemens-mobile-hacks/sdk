@@ -19,7 +19,6 @@
 #define __BASIC_DEFINITIONS 1
 
 #include <system_configuration.h>
-#define GCC_HASCLASSVISIBILITY
 
 #pragma GCC visibility push(default)
 
@@ -40,6 +39,28 @@
 #define __UCLIBCXX_NORETURN
 #endif
 
+#ifdef __GCC__
+# ifndef _UCXX_NOTHROW
+#  ifndef __cplusplus
+#   define _UCXX_NOTHROW __attribute__((__nothrow__))
+#  endif
+# endif
+#endif
+#ifdef __cplusplus
+# if __cplusplus >= 201103L
+#  define _UCXX_NOEXCEPT noexcept
+#  define _UCXX_USE_NOEXCEPT noexcept
+#  define _UCXX_THROW(_EXCEPTION)
+# else
+#  define _UCXX_NOEXCEPT
+#  define _UCXX_USE_NOEXCEPT throw()
+#  define _UCXX_THROW(_EXCEPTION) throw(_EXCEPTION)
+# endif
+# ifndef _UCXX_NOTHROW
+#  define _UCXX_NOTHROW _UCXX_USE_NOEXCEPT
+# endif
+#endif
+
 #ifdef __UCLIBCXX_HAS_TLS__
 	#define __UCLIBCXX_TLS __thread
 #else
@@ -57,11 +78,9 @@ namespace std{
 
 #pragma GCC visibility pop
 
-#endif
-
-
-#ifdef __DODEBUG__
+# ifdef __DODEBUG__
 	#define UCLIBCXX_DEBUG 1
-#else
+# else
 	#define UCLIBCXX_DEBUG 0
+# endif
 #endif

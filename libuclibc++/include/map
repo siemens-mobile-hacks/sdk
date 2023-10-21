@@ -21,8 +21,6 @@
 #include <memory>
 #include <utility>
 #include <iterator>
-#include <deque>
-#include <functional>
 #include <associative_base>
 
 
@@ -135,10 +133,14 @@ public:
 	using base::lower_bound;
 	using base::upper_bound;
 	using base::equal_range;
+	using base::swap;
 
 	reference operator[](const key_type& k){
-		//This is from the spec and is quite ugly.
-		return (*((insert(make_pair(k, T()))).first)).second;
+		iterator i = lower_bound(k);
+		if (i == end() || base::c(k, i->first)) {
+			i = insert(make_pair(k, T())).first;
+		}
+		return i->second;
 	}
 
 protected:
@@ -210,6 +212,7 @@ public:
 	using base::lower_bound;
 	using base::upper_bound;
 	using base::equal_range;
+	using base::swap;
 
 protected:
 

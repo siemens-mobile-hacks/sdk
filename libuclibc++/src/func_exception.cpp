@@ -61,23 +61,23 @@ _UCXXEXPORT void __throw_invalid_argument(const char * message){
 #else
 
 _UCXXEXPORT void __throw_bad_alloc(){
-	//abort();
+	abort();
 }
 
 _UCXXEXPORT void __throw_out_of_range( const char * ){
-	//abort();
+	abort();
 }
 
 _UCXXEXPORT void __throw_overflow_error( const char * ){
-	//abort();
+	abort();
 }
 
 _UCXXEXPORT void __throw_length_error(const char * ){
-	//abort();
+	abort();
 }
 
 _UCXXEXPORT void __throw_invalid_argument(const char *){
-	//abort();
+	abort();
 }
 
 #endif

@@ -1,4 +1,4 @@
-/*	Copyright (C) 2004 Garrett A. Kajmowicz
+/*	Copyright (C) 2004-2008 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
 
@@ -85,6 +85,10 @@ namespace std {
 		basic_ostream<charT,traits>& operator<<(long double f);
 		basic_ostream<charT,traits>& operator<<(void* p);
 		basic_ostream<charT,traits>& operator<<(basic_streambuf<char_type,traits>* sb);
+#ifndef __STRICT_ANSI__
+		basic_ostream<charT,traits>& operator<<(long long n);
+		basic_ostream<charT,traits>& operator<<(unsigned long long n);
+#endif
 
 		_UCXXEXPORT basic_ostream<charT,traits>& put(char_type c){
 			if(basic_ostream<charT,traits>::traits_type::eq_int_type(
@@ -129,6 +133,25 @@ namespace std {
 			return *this;
 		}
 
+		_UCXXEXPORT void printout(const char_type* s, streamsize n){
+			streamsize extra = ios::width() - n;
+			if ((ios::flags()&ios::adjustfield) == ios::right){
+				while (extra > 0) {
+					--extra;
+					put(ios::fill());
+				}
+			}
+			write(s, n);
+			if ((ios::flags()&ios::adjustfield) == ios::left) {
+				while (extra > 0) {
+					--extra;
+					put(ios::fill());
+				}
+			}
+			// Width value only applies for the next output operation.  Reset to zero.
+			ios::width(0);
+		}
+
 	protected:
 		basic_ostream(const basic_ostream<charT,traits> &){ }
 		basic_ostream<charT,traits> & operator=(const basic_ostream<charT,traits> &){ return *this; }
@@ -142,15 +165,15 @@ namespace std {
 		sentry s(*this);
 		if( basic_ios<charT,traits>::flags() & ios_base::boolalpha){
 			if(n){
-				write("true", 4);
+				printout("true", 4);
 			}else{
-				write("false", 5);
+				printout("false", 5);
 			}
 		}else{
 			if(n){
-				write("1", 1);
+				printout("1", 1);
 			}else{
-				write("0", 1);
+				printout("0", 1);
 			}
 		}
 		if(basic_ios<charT,traits>::flags() & ios_base::unitbuf){
@@ -198,6 +221,22 @@ namespace std {
 		return *this;
 	}
 
+#ifndef __STRICT_ANSI__
+	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(long long n)
+	{
+		sentry s(*this);
+		__ostream_printout<traits, charT, long long >::printout(*this, n);
+		return *this;
+	}
+
+	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(unsigned long long n)
+	{
+		sentry s(*this);
+		__ostream_printout<traits, charT, unsigned long long >::printout(*this, n);
+		return *this;
+	}
+#endif
+
 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(float f){
 		sentry s(*this);
 		__ostream_printout<traits, charT, double >::printout(*this, f);
@@ -219,7 +258,7 @@ namespace std {
 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(void* p){
 		sentry s(*this);
 		char buffer[20];
-		write(buffer, snprintf(buffer, 20, "%p", p) );
+		printout(buffer, snprintf(buffer, 20, "%p", p) );
 		if(basic_ios<charT,traits>::flags() & ios_base::unitbuf){
 			flush();
 		}
@@ -356,7 +395,7 @@ namespace std {
 		operator<<(basic_ostream<charT,traits>& out, const charT* c)
 	{
 		typename basic_ostream<charT,traits>::sentry s(out);
-		out.write(c, traits::length(c) );
+		out.printout(c, traits::length(c) );
 		return out;
 	}
 	
@@ -364,7 +403,7 @@ namespace std {
 		operator<<(basic_ostream<charT,traits>& out, const char* c)
 	{
 		typename basic_ostream<charT,traits>::sentry s(out);
-		out.write(c, char_traits<char>::length(c) );
+		out.printout(c, char_traits<char>::length(c) );
 		return out;
 	}
 
@@ -373,7 +412,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(c, traits::length(c));
+		out.printout(c, traits::length(c));
 		return out;
 	}
 
@@ -389,7 +428,7 @@ namespace std {
 			temp[i] = out.widen(c[i]);
 		}
 
-		out.write(temp, numChars);
+		out.printout(temp, numChars);
 		return out;
 	}
 #endif
@@ -399,7 +438,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const signed char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
+		out.printout(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
 		return out;
 	}
 	
@@ -407,7 +446,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const unsigned char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
+		out.printout(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
 		return out;
 	}
 

@@ -16,7 +16,7 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#ifndef __STD_HEADER_FSTREAM
+#ifndef __STD_HEADER_FSTREAM 
 #define __STD_HEADER_FSTREAM 1
 
 
@@ -66,9 +66,10 @@ namespace std{
 
 		//Constructors/destructor:
 
-		_UCXXEXPORT basic_filebuf()	: basic_streambuf<charT, traits>(), fp(0), pbuffer(0), gbuffer(0)
+		_UCXXEXPORT basic_filebuf()
+			: basic_streambuf<charT, traits>(), fp(0), pbuffer(0),
+				gbuffer(0), append(false)
 		{
-			append=false;
 			pbuffer = new char_type[__UCLIBCXX_IOSTREAM_BUFSIZE__];
 			gbuffer = new char_type[__UCLIBCXX_IOSTREAM_BUFSIZE__];
 
@@ -238,7 +239,7 @@ namespace std{
 			//fcntl(fileno(fp), F_SETFL, fcntl_flags | O_NONBLOCK);
 
 			//Fill rest of buffer
-			retval = fread(basic_streambuf<charT,traits>::egptr() -
+			retval = fread(basic_streambuf<charT,traits>::egptr() - 
 				basic_streambuf<charT,traits>::gptr() + basic_streambuf<charT,traits>::eback(),
 				sizeof(charT),
 				offset,
@@ -259,7 +260,7 @@ namespace std{
 				//Set to blocking mode
 				//fcntl(fileno(fp), F_SETFL, fcntl_flags & ~O_NONBLOCK);
 
-				retval = fread(basic_streambuf<charT,traits>::egptr() -
+				retval = fread(basic_streambuf<charT,traits>::egptr() - 
 					basic_streambuf<charT,traits>::gptr() + basic_streambuf<charT,traits>::eback(),
 					sizeof(charT),
 					1,
@@ -295,7 +296,7 @@ namespace std{
 			return retval;
 		}
 		virtual _UCXXEXPORT int_type pbackfail(int_type c = traits::eof()){
-			if(is_open() == false ||
+			if(is_open() == false || 
 				basic_streambuf<charT,traits>::gptr() == basic_streambuf<charT,traits>::eback())
 			{
 				return traits::eof();
@@ -375,13 +376,13 @@ namespace std{
 			if(s == 0 && n == 0){	//Unbuffered
 				if(pbuffer !=0){
 					delete [] pbuffer;
+					pbuffer = 0;
 				}
 				if(gbuffer !=0){
 					delete [] gbuffer;
+					gbuffer = 0;
 				}
-				pbuffer = 0;
-				gbuffer = 0;
-			}else if(basic_streambuf<charT,traits>::gptr() !=0 &&
+			}else if(basic_streambuf<charT,traits>::gptr() !=0 && 
 				basic_streambuf<charT,traits>::gptr()==basic_streambuf<charT,traits>::egptr())
 			{
 				delete [] pbuffer;
@@ -389,7 +390,7 @@ namespace std{
 			}
 			return this;
 		}
-		virtual _UCXXEXPORT pos_type seekoff(off_type off, ios_base::seekdir way,
+		virtual _UCXXEXPORT pos_type seekoff(off_type off, ios_base::seekdir way, 
 			ios_base::openmode = ios_base::in | ios_base::out)
 		{
 			if(is_open() == false){
@@ -580,7 +581,7 @@ template <> _UCXXEXPORT basic_filebuf<wchar_t, char_traits<wchar_t> >::int_type
 		explicit _UCXXEXPORT basic_ofstream(const char* s, ios_base::openmode mode = ios_base::out | ios_base::trunc) :
 			basic_ios<charT, traits>(&sb), basic_ostream<charT,traits>(&sb)
 		{
-			if(sb.open(s, mode) == 0){
+			if(sb.open(s, mode | ios_base::out ) == 0){
 				basic_ios<charT,traits>::setstate(ios_base::failbit);
 			}
 		}

@@ -1,4 +1,4 @@
-/*	Copyright (C) 2004 Garrett A. Kajmowicz
+/*	Copyright (C) 2015 Bernhard Reutner-Fischer
 
 	This file is part of the uClibc++ Library.
 
@@ -16,13 +16,12 @@
 	License along with this library; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+/* C++14 sized deallocation */
 
 #include <new>
 #include <cstdlib>
 #include <func_exception>
 
-#ifndef NO_NOTHROW
-_UCXXEXPORT void operator delete(void* ptr, const std::nothrow_t& ) _UCXX_USE_NOEXCEPT {
-	free(ptr);
+_UCXXEXPORT void operator delete(void* ptr, std::size_t) _UCXX_USE_NOEXCEPT{
+	::operator delete (ptr);
 }
-#endif

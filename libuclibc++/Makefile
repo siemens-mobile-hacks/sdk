@@ -4,7 +4,7 @@ BUILD_TYPE := lib
 BUILD_DIR := bin
 
 CXXSTD := -std=gnu++98
-OPT := -O2
+OPT := -Os
 
 DEFINES += -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
@@ -29,8 +29,10 @@ SOURCES += src/char_traits.cpp
 SOURCES += src/complex.cpp
 SOURCES += src/del_op.cpp
 SOURCES += src/del_opnt.cpp
+# SOURCES += src/del_ops.cpp
 SOURCES += src/del_opv.cpp
 SOURCES += src/del_opvnt.cpp
+# SOURCES += src/del_opvs.cpp
 SOURCES += src/deque.cpp
 SOURCES += src/eh_alloc.cpp
 SOURCES += src/eh_globals.cpp
@@ -60,7 +62,8 @@ SOURCES += src/stack.cpp
 SOURCES += src/stdexcept.cpp
 SOURCES += src/streambuf.cpp
 SOURCES += src/string.cpp
-SOURCES += src/support.cpp
+# SOURCES += src/support.cpp
+# SOURCES += src/typeinfo.cpp
 SOURCES += src/utility.cpp
 SOURCES += src/valarray.cpp
 SOURCES += src/vector.cpp

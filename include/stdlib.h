@@ -11,26 +11,10 @@ __BEGIN_DECLS
 
 #ifndef __NO_LIBC
 
-#ifdef VALGRIND
-
-void *val_malloc(size_t sz, const char *file, int line);
-void val_free(void *data, const char *file, int line);
-void *val_realloc(void *ptr, size_t size, const char *file, int line);
-void *val_calloc(size_t nmemb, size_t size, const char *file, int line);
-#define malloc(sz) val_malloc(sz, __FILE__, __LINE__)
-#define free(data) val_free(data, __FILE__, __LINE__)
-#define realloc(adr, sz) val_realloc(adr, sz, __FILE__, __LINE__)
-#define calloc(n, sz) val_calloc(n, sz, __FILE__, __LINE__)
-#define mfree free
-
-#else /* VALGRIND */
-
 void *calloc(size_t nmemb, size_t size) __THROW __attribute_malloc__;
 void *malloc(size_t size)  __THROW __attribute_malloc__;
 void free(void *ptr) __THROW;
 void *realloc(void *ptr, size_t size) __THROW __attribute_malloc__;
-
-#endif /* VALGRIND */
 
 char *getenv(const char *name) __THROW __pure;
 int putenv(const char *string) __THROW;

@@ -1,23 +1,30 @@
-#ifndef __DIETLIBC_CLOCALE_INCLUDED
-#define __DIETLIBC_CLOCALE_INCLUDED
+/*	Copyright (C) 2005 Garrett A. Kajmowicz
+	This file is part of the uClibc++ Library.
 
-#include <sys/types.h>
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.1 of the License, or (at your option) any later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+#ifndef __STD_HEADER_CLOCALE
+#define __STD_HEADER_CLOCALE 1
+
 #include <locale.h>
 
-struct __locale_struct
-{
-    struct locale_data *__locales[13];
-    const uint16_t *__ctype_b;
-    const int32_t *__ctype_tolower;
-    const int32_t *__ctype_toupper;
-    const char *__names[13];
-};
-typedef struct __locale_struct *__locale_t;
-
 namespace std {
-    using ::lconv;
-    using ::localeconv;
-    using ::setlocale;
+	using ::lconv;
+	using ::setlocale;
+	using ::localeconv;
 }
 
-#endif
+#endif // __STD_HEADER_CLOCALE

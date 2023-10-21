@@ -19,7 +19,6 @@
 
 #define __UCLIBCXX_COMPILE_STRING__ 1
 
-#include <system_configuration.h>
 #include <basic_definitions>
 #include <char_traits>
 #include <string>
@@ -77,11 +76,11 @@ namespace std{
 
 	template _UCXXEXPORT bool operator==(const string & lhs, const string & rhs);
 	template _UCXXEXPORT bool operator==(const char * lhs, const string & rhs);
-	template _UCXXEXPORT bool operator==(const string & rhs, const char * _rhs);
+	template _UCXXEXPORT bool operator==(const string & lhs, const char * rhs);
 
 	template _UCXXEXPORT bool operator!=(const string & lhs, const string & rhs);
 	template _UCXXEXPORT bool operator!=(const char * lhs, const string & rhs);
-	template _UCXXEXPORT bool operator!=(const string & rhs, const char * _rhs);
+	template _UCXXEXPORT bool operator!=(const string & lhs, const char * rhs);
 
 	template _UCXXEXPORT string operator+(const string & lhs, const char* rhs);
 	template _UCXXEXPORT string operator+(const char* lhs, const string & rhs);
