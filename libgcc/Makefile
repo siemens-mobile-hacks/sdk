@@ -60,7 +60,7 @@ libgcc: $(GCC_FILE) $(GCC_DIR)
 	make -C $(GCC_BUILD_DIR) -j $(shell nproc) all-target-libgcc
 
 repack:
-	./repack.sh $(GCC_BUILD_DIR)/gcc/libgcc.a
+	./repack.sh $(GCC_BUILD_DIR)/gcc/thumb/libgcc.a
 
 $(BUILD_DIR):
 	mkdir -p $@
