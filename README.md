@@ -9,7 +9,7 @@
 | libgcc-4.6.1.so | No | Legacy GCC helper library, do not use it in new projects! Used only for compatibility with old ELF's. |
 | libc-1.0.so | No | Lightweight libc (dietlibc) ported for Siemens. |
 | libm-1.0.so | No | Lightweight libm (openlibm). Required when you use <math.h> functions. |
-| libstdc++-1.2.2.so libucsup++.a | No | uclibc++ library for the C++98 support. |
+| libstdc++-1.2.2.so libsup++-1.2.2.a | No | uclibc++ library for the C++98 support. |
 |  |
 | libjpeg-62.so | No  | Library for encoding and decoding JPEG. |
 | libpng-12.so | No  | Library for encoding and decoding PNG. |
