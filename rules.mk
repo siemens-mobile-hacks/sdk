@@ -27,7 +27,7 @@ CSTD ?= -std=c11
 CXXSTD ?= -std=gnu++98
 BUILD_TYPE ?= exe
 ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
-ARCH_LDFLAGS ?= -zmax-page-size=1
+ARCH_LDFLAGS ?= -zmax-page-size=1 --defsym=__dso_handle=0
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
 

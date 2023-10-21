@@ -3,7 +3,7 @@ ROOT=$(dirname $(realpath $0))
 TMP_DIR=/tmp/tmp-ep3-libs
 
 rm -rf $TMP_DIR
-mkdir -p $TMP_DIR/NSG $TMP_DIR/ELKA $TMP_DIR/SG
+mkdir -p $TMP_DIR/NSG $TMP_DIR/ELKA $TMP_DIR/SG $TMP_DIR/COMPAT
 
 # SG
 echo "SG libs"
@@ -25,6 +25,12 @@ cp -v $ROOT/../lib/*.so $TMP_DIR/ELKA/
 cp -v $ROOT/../lib/NSG/*.so $TMP_DIR/ELKA/
 cp -v $ROOT/../lib/ELKA/*.so $TMP_DIR/ELKA/
 cd $TMP_DIR/ELKA/ && zip $TMP_DIR/libs_ELKA.zip -r .
+echo "------------------------------------------------"
+
+# COMPAT
+echo "compat libs"
+cp -v $ROOT/../lib/legacy/*.so $TMP_DIR/COMPAT/
+cd $TMP_DIR/COMPAT/ && zip $TMP_DIR/libs_compat.zip -r .
 echo "------------------------------------------------"
 
 ls -lah $TMP_DIR/libs_*.zip

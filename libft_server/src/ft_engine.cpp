@@ -247,7 +247,6 @@ FT_Render_Mode _fte_render_flags(ft_engine *fte)
     return fte->render_flags;
 }
 
-
 ft_engine * _fte_open_env(const char *name)
 {
     const char *env = getenv("FONTS");
@@ -326,6 +325,10 @@ extern "C" {
     {
         _fte_set_load_flags(fte, flag);
     }
+
+	void fte_set_flags(ft_engine *fte, FT_Int32 flag) {
+		_fte_set_load_flags(fte, flag);
+	}
 
     FT_Int32 fte_load_flags(ft_engine *fte)
     {
