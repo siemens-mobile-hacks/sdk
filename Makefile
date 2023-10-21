@@ -8,7 +8,7 @@ all: create_dirs
 	$(MAKE) -C libz -j$(shell nproc) all install
 	$(MAKE) -C libjpeg -j$(shell nproc) all install
 	$(MAKE) -C libpng -j$(shell nproc) all install
-	$(MAKE) -C libsigc++ -j$(shell nproc) all install
+	$(MAKE) -C libft -j$(shell nproc) all install
 
 create_dirs:
 	mkdir -p lib/NSG lib/SG lib/ELKA
@@ -24,6 +24,7 @@ clean:
 	$(MAKE) -C libjpeg clean
 	$(MAKE) -C libpng clean
 	$(MAKE) -C libsigc++ clean
+	$(MAKE) -C libft clean
 
 libs_release:
 	tools/lib-pkg.sh
