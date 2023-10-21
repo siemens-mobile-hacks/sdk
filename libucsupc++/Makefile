@@ -1,4 +1,4 @@
-PROJECT := libucsupc++
+PROJECT := libsupc++-1.2.2
 TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
