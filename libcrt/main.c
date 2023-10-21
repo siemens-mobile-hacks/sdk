@@ -1,38 +1,19 @@
 #include <swilib.h>
 #include <ep3/loader.h>
 
-//#define NEWSTULE
+//#define LITE
 
-
-
-volatile char _curent_dir[128]= {0};
-
-/*
-__attribute__((noinline))
-void __crt_init_switab()
-{
-    register int ret=0;
-    asm volatile("swi	0x80FF\n\t"
-                 "mov	%0, r0"
-		     :"=r"(ret)
-                     :
-                     :"lr");
-    __sys_switab_addres = ( int*)ret;
-}*/
-
-
-
-extern char * _get_folder(char *_buf);
+char *_curent_dir = 0;
 extern void __hcrt_run_initarray(void *_ex);
 
+#ifndef LITE
 __attribute__(( noinline ))
 char *getcwd(char *buf, size_t max)
 {
     strncpy(buf, (char*)_curent_dir, max);
     return buf;
 }
-
-
+#endif
 
 static void __crt_run_initarray()
 {
@@ -46,30 +27,20 @@ int main(char *exe, char *fname, void *p1);
 char *__argv[2] = {0};
 int _start(char *exe, char *fname, void *p1)
 {
-    /* скопипастим путь к эльфу */
-    strcpy((char*)_curent_dir, exe);
+#ifndef LITE
+    size_t l = strlen(exe);
+    _curent_dir = (char *)malloc(l+1);
 
-    /* установим 0x0 после последнего "\\" */
-    _get_folder((char*)_curent_dir);
+    char * d = strrchr(exe, '\\');
+
+    /* скопипастим путь к эльфу */
+    size_t b = d? (unsigned long)d-(unsigned long)exe+1 : l;
+    memcpy((char*)_curent_dir, exe, b);
+    _curent_dir[b] = 0;
+#endif
 
     __crt_run_initarray();
-    
-#ifdef NEWSTULE /* warning: doesnt work */
-    __argv[0] = exe;
-    *(int*)(__argv+1) = *(int*)fname;
 
-    int argc = 0;
-    while(__argv[argc]) ++argc;
-
-    return main(argc, __argv);
-#else
     /* выполним маин */
     return main(exe, fname, p1);
-#endif
 }
-
-
-
-
-
-

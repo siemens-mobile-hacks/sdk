@@ -41,6 +41,9 @@ INCLUDES += -I$(SDK_PATH)/include
 INCLUDES += -I$(SDK_PATH)/libuclibc++/include
 INCLUDES += -I$(SDK_PATH)/libjpeg/include
 
+DEFINES += -D__arm__
+DEFINES += -D__ARM_EABI__
+
 BUILD_DIR ?= bin/$(TARGET)
 LIB_OUT_DIR ?= lib/$(TARGET)
 

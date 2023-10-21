@@ -7,7 +7,6 @@ CSTD := -std=gnu99
 OPT := -Os
 
 CFLAGS += -fomit-frame-pointer -Wno-implicit-fallthrough -Wno-missing-prototypes
-DEFINES += -D__ARM_EABI__ -D__arm__
 INCLUDES += -Isrc
 
 LDLIBS += -lgcc -lcrt_helper
