@@ -26,7 +26,7 @@ OPT ?= -Os
 CSTD ?= -std=c11
 CXXSTD ?= -std=gnu++98
 BUILD_TYPE ?= exe
-ARCH_FLAGS ?= -mabi=apcs-gnu -mfloat-abi=soft -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
+ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
 ARCH_LDFLAGS ?= -zmax-page-size=1
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8

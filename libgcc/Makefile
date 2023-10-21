@@ -6,7 +6,8 @@ GCC_DIR := $(BUILD_DIR)/gcc-$(GCC_VERSION)
 GCC_BUILD_DIR := $(BUILD_DIR)/gcc-$(GCC_VERSION)-build
 CCACHE_DIR := $(BUILD_DIR)/gcc-$(GCC_VERSION)-cache
 
-ARCH_FLAGS := -mabi=apcs-gnu -fshort-wchar -zmax-page-size=1 -mthumb-interwork -frandom-seed=0 -Os
+ARCH_FLAGS := -mcpu=arm926ej-s -msoft-float  -mlittle-endian -fshort-wchar -mthumb-interwork -frandom-seed=0 -Os
+ARCH_LDFLAGS := -zmax-page-size=1
 
 export CCACHE_DIR
 
@@ -23,8 +24,9 @@ export RANLIB_FOR_TARGET := $(shell which arm-none-eabi-ranlib)
 export READELF_FOR_TARGET := $(shell which arm-none-eabi-readelf)
 export STRIP_FOR_TARGET := $(shell which arm-none-eabi-strip)
 export CFLAGS_FOR_TARGET := $(ARCH_FLAGS)
+export LDFLAGS_FOR_TARGET := $(ARCH_LDFLAGS)
 
-all: $(BUILD_DIR) libgcc
+all: $(BUILD_DIR) libgcc repack
 
 clean:
 	make -C $(GCC_BUILD_DIR) -j $(shell nproc) clean
@@ -53,10 +55,11 @@ libgcc: $(GCC_FILE) $(GCC_DIR)
 		--enable-interwork \
 		--disable-fpu \
 		--disable-gcov \
-		--enable-languages=c,c++ \
-		--with-abi=apcs-gnu
+		--enable-languages=c,c++
 	make -C $(GCC_BUILD_DIR) -j $(shell nproc) all-gcc
 	make -C $(GCC_BUILD_DIR) -j $(shell nproc) all-target-libgcc
+
+repack:
 	./repack.sh $(GCC_BUILD_DIR)/gcc/libgcc.a
 
 $(BUILD_DIR):
@@ -65,9 +68,8 @@ $(BUILD_DIR):
 $(GCC_DIR):
 	tar -C $(BUILD_DIR) -xpf $(GCC_FILE)
 	cd $(GCC_DIR) && ./contrib/download_prerequisites
-	./patch_gcc.sh $(GCC_DIR)
 
 $(GCC_FILE):
 	wget $(GCC_URL) -O $@
 
-.PHONY: all clean distclean libgcc
+.PHONY: all clean distclean libgcc repack

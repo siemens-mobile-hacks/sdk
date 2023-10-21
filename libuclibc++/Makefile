@@ -1,4 +1,4 @@
-PROJECT := libuclibc++-1.0
+PROJECT := libstdc++-1.2.2
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
@@ -9,7 +9,7 @@ OPT := -O2
 DEFINES += -D__ARM_EABI__ -D__arm__ -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
 
-LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
+LDLIBS += -lcrt_helper -lgcc -lc-1.0
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400
@@ -68,5 +68,9 @@ SOURCES += src/vector.cpp
 SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
-install:
+ifdef TARGET
+
+install: all
 	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+
+endif

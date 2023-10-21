@@ -10,7 +10,7 @@ CFLAGS += -fomit-frame-pointer -Wno-implicit-fallthrough -Wno-missing-prototypes
 DEFINES += -D__ARM_EABI__ -D__arm__
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt -lcrt_helper -lgcc
+LDLIBS += -lgcc -lcrt_helper
 
 LDFLAGS += --init=_init
 LDFLAGS += --fini=_fini
@@ -276,7 +276,7 @@ include $(SDK_PATH)/multi-target.mk
 
 ifdef TARGET
 
-install:
+install: all
 	cp -v $(OUTPUT_FILENAME) ../lib/$(TARGET)/$(PROJECT).$(OUTPUT_EXT)
 
 endif

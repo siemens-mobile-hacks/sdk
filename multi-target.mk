@@ -26,11 +26,11 @@ clean_NSG:
 clean_SG:
 	@$(MAKE) TARGET=SG clean
 
-install_ELKA:
+install_ELKA: build_ELKA
 	@$(MAKE) TARGET=ELKA install
-install_NSG:
+install_NSG: build_NSG
 	@$(MAKE) TARGET=NSG install
-install_SG:
+install_SG: build_SG
 	@$(MAKE) TARGET=SG install
 
 .PHONY: all clean build_ELKA build_NSG build_SG clean_ELKA clean_NSG clean_SG install_ELKA install_NSG install_SG

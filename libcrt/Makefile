@@ -19,5 +19,9 @@ CFLAGS += -frandom-seed=0
 SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
-install:
+ifdef TARGET
+
+install: all
 	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+
+endif

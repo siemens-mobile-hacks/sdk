@@ -1,4 +1,4 @@
-PROJECT := libjpeg-1.0
+PROJECT := libjpeg-62
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
@@ -9,7 +9,7 @@ OPT := -Os
 CFLAGS += -mthumb -Wno-implicit-fallthrough -isystem ./include/jpeglib
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
+LDLIBS += -lcrt_helper -lgcc -lc-1.0
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400
@@ -67,5 +67,9 @@ SOURCES += src/transupp.c
 SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
-install:
+ifdef TARGET
+
+install: all
 	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+
+endif

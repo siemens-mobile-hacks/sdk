@@ -9,7 +9,7 @@ OPT := -Os
 CFLAGS += -mthumb -Wno-implicit-fallthrough
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt -lcrt_helper -lgcc -lc-1.0
+LDLIBS += -lcrt_helper -lgcc -lc-1.0
 
 # reproductive builds
 export SOURCE_DATE_EPOCH=1172750400
@@ -35,5 +35,9 @@ SOURCES += src/zutil.c
 SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
-install:
+ifdef TARGET
+
+install: all
 	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+
+endif
