@@ -194,6 +194,7 @@ SOURCES += src/libugly/timegm.c
 SOURCES += src/libugly/time_table_spd.c
 SOURCES += src/libugly/timezone.c
 SOURCES += src/libugly/tzfile.c
+SOURCES += src/libugly/vasprintf.c
 
 SOURCES += src/lib/uname.c
 SOURCES += src/lib/__v_printf.c

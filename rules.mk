@@ -31,6 +31,8 @@ ARCH_LDFLAGS ?= -zmax-page-size=1 --defsym=__dso_handle=0
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
 
+STRIP_OR_DEBUG := -s
+
 PREFIX	?= arm-none-eabi-
 CC		= $(PREFIX)gcc
 CXX		= $(PREFIX)g++
@@ -107,11 +109,11 @@ TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 # Linker flags
 ifeq ($(BUILD_TYPE),lib)
 TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS)
-TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function -s -soname=$(LIB_SONAME)
+TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function $(STRIP_OR_DEBUG) -soname=$(LIB_SONAME)
 else ifeq ($(BUILD_TYPE),exe)
-TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) -s -pie
+TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
 else ifeq ($(BUILD_TYPE),archive)
-TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) -s -pie
+TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
 endif
 TARGET_LDFLAGS += -nostdlib --gc-sections
 TARGET_LDFLAGS += $(LDFLAGS)
