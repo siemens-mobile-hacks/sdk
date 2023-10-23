@@ -24,14 +24,20 @@
 
 OPT ?= -Os
 CSTD ?= -std=c11
-CXXSTD ?= -std=gnu++98
+CXXSTD ?= -std=gnu++11
 BUILD_TYPE ?= exe
-ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
-ARCH_LDFLAGS ?= -zmax-page-size=1 --defsym=__dso_handle=0
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
 
-STRIP_OR_DEBUG := -s
+ifeq ($(USE_EMULATOR),1)
+	ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
+	ARCH_LDFLAGS ?= --defsym=__dso_handle=0 --dynamic-linker=/usr/arm-linux-gnueabi/lib/ld-linux.so.3
+	STRIP_OR_DEBUG := -g
+else
+	ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
+	ARCH_LDFLAGS ?= -zmax-page-size=1 --defsym=__dso_handle=0
+	STRIP_OR_DEBUG := -s
+endif
 
 PREFIX	?= arm-none-eabi-
 CC		= $(PREFIX)gcc
@@ -46,8 +52,13 @@ INCLUDES += -I$(SDK_PATH)/libjpeg/include
 DEFINES += -D__arm__
 DEFINES += -D__ARM_EABI__
 
-BUILD_DIR ?= bin/$(TARGET)
-LIB_OUT_DIR ?= lib/$(TARGET)
+ifeq ($(USE_EMULATOR),1)
+	BUILD_DIR ?= bin-emulator
+	LIB_OUT_DIR ?= lib-emulator
+else
+	BUILD_DIR ?= bin
+	LIB_OUT_DIR ?= lib
+endif
 
 ifeq ($(TARGET),ELKA)
 	DEFINES += -DNEWSGOLD -DELKA
@@ -68,7 +79,7 @@ OUTPUT_EXT := elf
 ifeq ($(BUILD_TYPE),lib)
 	OUTPUT_EXT := so
 	LIB_SONAME ?= $(PROJECT).$(OUTPUT_EXT)
-	OUTPUT_FILENAME := lib/$(TARGET)/$(PROJECT).$(OUTPUT_EXT)
+	OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
 else ifeq ($(BUILD_TYPE),archive)
 	OUTPUT_EXT := a
 	OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
@@ -108,48 +119,23 @@ TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 
 # Linker flags
 ifeq ($(BUILD_TYPE),lib)
-TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS)
-TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function $(STRIP_OR_DEBUG) -soname=$(LIB_SONAME)
+	TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS)
+	TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function $(STRIP_OR_DEBUG) -soname=$(LIB_SONAME)
 else ifeq ($(BUILD_TYPE),exe)
-TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
+	TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
 else ifeq ($(BUILD_TYPE),archive)
-TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
+	TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
 endif
+
 TARGET_LDFLAGS += -nostdlib --gc-sections
 TARGET_LDFLAGS += $(LDFLAGS)
 
 # AR flags
 TARGET_ARFLAGS := rcsD
 
-all: $(LIB_OUT_DIR) $(OUTPUT_FILENAME)
+.SECONDARY: $(OBJECTS)
 
-$(LIB_OUT_DIR):
-	mkdir -p $(LIB_OUT_DIR)
-
-$(BUILD_DIR)/%.o: %.c
-	@printf "  CC\t$<\n"
-	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_CFLAGS) -MMD -MP -o $@ -c $<
-
-$(BUILD_DIR)/%.o: %.cpp
-	@printf "  CXX\t$<\n"
-	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -MP -o $@ -c $<
-
-$(BUILD_DIR)/%.o: %.cc
-	@printf "  CXX\t$<\n"
-	@mkdir -p $(dir $@)
-	$(Q)$(CXX) $(TARGET_CXXFLAGS) -MMD -MP -o $@ -c $<
-
-$(BUILD_DIR)/%.o: %.S
-	@printf "  AS\t$<\n"
-	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<
-
-$(BUILD_DIR)/%.o: %.s
-	@printf "  AS\t$<\n"
-	@mkdir -p $(dir $@)
-	$(Q)$(CC) $(TARGET_AFLAGS) -MMD -MP -o $@ -c $<
+all: $(OUTPUT_FILENAME)
 
 %.elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
@@ -157,13 +143,40 @@ $(BUILD_DIR)/%.o: %.s
 
 %.so: $(OBJECTS)
 	@printf "  LD\t$@\n"
+	mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
 
 %.a: $(OBJECTS)
 	@printf "  AR\t$@\n"
+	mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(AR) $(TARGET_ARFLAGS) $@ $(OBJECTS)
 
 -include $(DEPENDS)
+
+$(BUILD_DIR)/%.o: %.c
+	@printf "  CC\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CC) $(TARGET_CFLAGS) -c $< -o $@ -MMD -MP
+
+$(BUILD_DIR)/%.o: %.cpp
+	@printf "  CXX\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -c $< -o $@ -MMD -MP
+
+$(BUILD_DIR)/%.o: %.cc
+	@printf "  CXX\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CXX) $(TARGET_CXXFLAGS) -c $< -o $@ -MMD -MP
+
+$(BUILD_DIR)/%.o: %.S
+	@printf "  AS\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CC) $(TARGET_AFLAGS) -c $< -o $@ -MMD -MP
+
+$(BUILD_DIR)/%.o: %.s
+	@printf "  AS\t$<\n"
+	@mkdir -p $(dir $@)
+	$(Q)$(CC) $(TARGET_AFLAGS) -c $< -o $@ -MMD -MP
 
 clean:
 	rm -f $(OUTPUT_FILENAME)

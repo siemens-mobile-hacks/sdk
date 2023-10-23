@@ -11,6 +11,7 @@ all: $(BUILD_TARGETS)
 install: $(INSTALL_TARGETS)
 clean: $(CLEAN_TARGETS)
 	rm -rf bin
+	rm -rf lib
 
 build_ELKA:
 	@$(MAKE) TARGET=ELKA
@@ -36,6 +37,14 @@ install_SG: build_SG
 .PHONY: all clean build_ELKA build_NSG build_SG clean_ELKA clean_NSG clean_SG install_ELKA install_NSG install_SG
 
 else
+
+ifeq ($(USE_EMULATOR),1)
+	BUILD_DIR := bin/$(TARGET)-emulator
+	LIB_OUT_DIR := lib/$(TARGET)-emulator
+else
+	BUILD_DIR := bin/$(TARGET)
+	LIB_OUT_DIR := lib/$(TARGET)
+endif
 
 include $(SDK_PATH)/rules.mk
 
