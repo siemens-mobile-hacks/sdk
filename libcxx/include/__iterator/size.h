@@ -11,9 +11,8 @@
 #define _LIBCPP___ITERATOR_SIZE_H
 
 #include <__config>
-#include <__type_traits/common_type.h>
-#include <__type_traits/make_signed.h>
 #include <cstddef>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -21,7 +20,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 17
+#if _LIBCPP_STD_VER > 14
 
 template <class _Cont>
 _LIBCPP_INLINE_VISIBILITY
@@ -34,7 +33,7 @@ template <class _Tp, size_t _Sz>
 _LIBCPP_INLINE_VISIBILITY
 constexpr size_t size(const _Tp (&)[_Sz]) noexcept { return _Sz; }
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17
 template <class _Cont>
 _LIBCPP_INLINE_VISIBILITY
 constexpr auto ssize(const _Cont& __c)
@@ -52,7 +51,7 @@ constexpr ptrdiff_t ssize(const _Tp (&)[_Sz]) noexcept { return _Sz; }
 _LIBCPP_DIAGNOSTIC_POP
 #endif
 
-#endif // _LIBCPP_STD_VER >= 17
+#endif // _LIBCPP_STD_VER > 14
 
 _LIBCPP_END_NAMESPACE_STD
 

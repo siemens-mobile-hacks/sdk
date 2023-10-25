@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 //
 //===----------------------------------------------------------------------===//
-
 #ifndef _LIBCPP___RANGES_VIEW_INTERFACE_H
 #define _LIBCPP___RANGES_VIEW_INTERFACE_H
 
@@ -21,9 +20,7 @@
 #include <__ranges/access.h>
 #include <__ranges/concepts.h>
 #include <__ranges/empty.h>
-#include <__type_traits/is_class.h>
-#include <__type_traits/make_unsigned.h>
-#include <__type_traits/remove_cv.h>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -31,7 +28,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 namespace ranges {
 
@@ -102,7 +99,7 @@ public:
   constexpr auto size()
     requires forward_range<_D2> && sized_sentinel_for<sentinel_t<_D2>, iterator_t<_D2>>
   {
-    return std::__to_unsigned_like(ranges::end(__derived()) - ranges::begin(__derived()));
+    return ranges::end(__derived()) - ranges::begin(__derived());
   }
 
   template<class _D2 = _Derived>
@@ -110,7 +107,7 @@ public:
   constexpr auto size() const
     requires forward_range<const _D2> && sized_sentinel_for<sentinel_t<const _D2>, iterator_t<const _D2>>
   {
-    return std::__to_unsigned_like(ranges::end(__derived()) - ranges::begin(__derived()));
+    return ranges::end(__derived()) - ranges::begin(__derived());
   }
 
   template<class _D2 = _Derived>
@@ -118,7 +115,7 @@ public:
   constexpr decltype(auto) front()
     requires forward_range<_D2>
   {
-    _LIBCPP_ASSERT_UNCATEGORIZED(!empty(),
+    _LIBCPP_ASSERT(!empty(),
         "Precondition `!empty()` not satisfied. `.front()` called on an empty view.");
     return *ranges::begin(__derived());
   }
@@ -128,7 +125,7 @@ public:
   constexpr decltype(auto) front() const
     requires forward_range<const _D2>
   {
-    _LIBCPP_ASSERT_UNCATEGORIZED(!empty(),
+    _LIBCPP_ASSERT(!empty(),
         "Precondition `!empty()` not satisfied. `.front()` called on an empty view.");
     return *ranges::begin(__derived());
   }
@@ -138,7 +135,7 @@ public:
   constexpr decltype(auto) back()
     requires bidirectional_range<_D2> && common_range<_D2>
   {
-    _LIBCPP_ASSERT_UNCATEGORIZED(!empty(),
+    _LIBCPP_ASSERT(!empty(),
         "Precondition `!empty()` not satisfied. `.back()` called on an empty view.");
     return *ranges::prev(ranges::end(__derived()));
   }
@@ -148,7 +145,7 @@ public:
   constexpr decltype(auto) back() const
     requires bidirectional_range<const _D2> && common_range<const _D2>
   {
-    _LIBCPP_ASSERT_UNCATEGORIZED(!empty(),
+    _LIBCPP_ASSERT(!empty(),
         "Precondition `!empty()` not satisfied. `.back()` called on an empty view.");
     return *ranges::prev(ranges::end(__derived()));
   }
@@ -170,7 +167,7 @@ public:
 
 } // namespace ranges
 
-#endif // _LIBCPP_STD_VER >= 20
+#endif // _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 _LIBCPP_END_NAMESPACE_STD
 

@@ -208,6 +208,11 @@ template <class Key, class T, class Hash, class Pred, class Alloc>
 #include <ext/__hash>
 #include <functional>
 #include <stdexcept>
+#include <type_traits>
+
+#ifndef _LIBCPP_REMOVE_TRANSITIVE_INCLUDES
+#  include <iterator>
+#endif
 
 #if defined(__DEPRECATED) && __DEPRECATED
 #if defined(_LIBCPP_WARNING)
@@ -323,7 +328,7 @@ public:
     bool __first_constructed;
     bool __second_constructed;
 
-    _LIBCPP_HIDE_FROM_ABI __hash_map_node_destructor(__hash_map_node_destructor const&) = default;
+    __hash_map_node_destructor(__hash_map_node_destructor const&) = default;
     __hash_map_node_destructor& operator=(const __hash_map_node_destructor&) = delete;
 
     _LIBCPP_INLINE_VISIBILITY
@@ -357,9 +362,9 @@ public:
     void operator()(pointer __p)
     {
         if (__second_constructed)
-            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__get_value().second));
+            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.second));
         if (__first_constructed)
-            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__get_value().first));
+            __alloc_traits::destroy(__na_, _VSTD::addressof(__p->__value_.first));
         if (__p)
             __alloc_traits::deallocate(__na_, __p, 1);
     }
@@ -377,7 +382,7 @@ public:
     typedef std::pair<key_type, mapped_type>                     value_type;
     typedef typename _HashIterator::difference_type              difference_type;
     typedef value_type&                                          reference;
-    typedef std::__rebind_pointer_t<typename _HashIterator::pointer, value_type>
+    typedef typename std::__rebind_pointer<typename _HashIterator::pointer, value_type>::type
         pointer;
 
     _LIBCPP_INLINE_VISIBILITY __hash_map_iterator() {}
@@ -422,7 +427,7 @@ public:
     typedef std::pair<key_type, mapped_type>                     value_type;
     typedef typename _HashIterator::difference_type              difference_type;
     typedef const value_type&                                    reference;
-    typedef std::__rebind_pointer_t<typename _HashIterator::pointer, const value_type>
+    typedef typename std::__rebind_pointer<typename _HashIterator::pointer, const value_type>::type
         pointer;
 
     _LIBCPP_INLINE_VISIBILITY __hash_map_const_iterator() {}
@@ -482,7 +487,8 @@ private:
     typedef std::pair<key_type, mapped_type>                    __value_type;
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
-    typedef std::__rebind_alloc<std::allocator_traits<allocator_type>, __value_type> __allocator_type;
+    typedef typename std::__rebind_alloc_helper<
+        std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
                          __key_equal,  __allocator_type>   __table;
@@ -507,23 +513,23 @@ public:
     typedef __hash_map_const_iterator<typename __table::const_iterator> const_iterator;
 
     _LIBCPP_INLINE_VISIBILITY hash_map() { }
-    explicit _LIBCPP_HIDE_FROM_ABI hash_map(size_type __n, const hasher& __hf = hasher(),
+    explicit hash_map(size_type __n, const hasher& __hf = hasher(),
                            const key_equal& __eql = key_equal());
-    _LIBCPP_HIDE_FROM_ABI hash_map(size_type __n, const hasher& __hf,
+    hash_map(size_type __n, const hasher& __hf,
                   const key_equal& __eql,
                   const allocator_type& __a);
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_map(_InputIterator __first, _InputIterator __last);
+        hash_map(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_map(_InputIterator __first, _InputIterator __last,
+        hash_map(_InputIterator __first, _InputIterator __last,
                       size_type __n, const hasher& __hf = hasher(),
                       const key_equal& __eql = key_equal());
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_map(_InputIterator __first, _InputIterator __last,
+        hash_map(_InputIterator __first, _InputIterator __last,
                       size_type __n, const hasher& __hf,
                       const key_equal& __eql,
                       const allocator_type& __a);
-    _LIBCPP_HIDE_FROM_ABI hash_map(const hash_map& __u);
+    hash_map(const hash_map& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
@@ -587,7 +593,7 @@ public:
     std::pair<const_iterator, const_iterator> equal_range(const key_type& __k) const
         {return __table_.__equal_range_unique(__k);}
 
-    _LIBCPP_HIDE_FROM_ABI mapped_type& operator[](const key_type& __k);
+    mapped_type& operator[](const key_type& __k);
 
     _LIBCPP_INLINE_VISIBILITY
     size_type bucket_count() const {return __table_.bucket_count();}
@@ -602,7 +608,7 @@ public:
     void resize(size_type __n) {__table_.__rehash_unique(__n);}
 
 private:
-    _LIBCPP_HIDE_FROM_ABI __node_holder __construct_node(const key_type& __k);
+    __node_holder __construct_node(const key_type& __k);
 };
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
@@ -667,9 +673,9 @@ hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>::__construct_node(const key_type& __k)
 {
     __node_allocator& __na = __table_.__node_alloc();
     __node_holder __h(__node_traits::allocate(__na, 1), _Dp(__na));
-    __node_traits::construct(__na, _VSTD::addressof(__h->__get_value().first), __k);
+    __node_traits::construct(__na, _VSTD::addressof(__h->__value_.first), __k);
     __h.get_deleter().__first_constructed = true;
-    __node_traits::construct(__na, _VSTD::addressof(__h->__get_value().second));
+    __node_traits::construct(__na, _VSTD::addressof(__h->__value_.second));
     __h.get_deleter().__second_constructed = true;
     return __h;
 }
@@ -708,7 +714,7 @@ swap(hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-_LIBCPP_HIDE_FROM_ABI bool
+bool
 operator==(const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
            const hash_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
@@ -755,7 +761,7 @@ private:
     typedef std::pair<key_type, mapped_type>               __value_type;
     typedef __hash_map_hasher<__value_type, hasher>   __hasher;
     typedef __hash_map_equal<__value_type, key_equal> __key_equal;
-    typedef std::__rebind_alloc<std::allocator_traits<allocator_type>, __value_type> __allocator_type;
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
 
     typedef std::__hash_table<__value_type, __hasher,
                          __key_equal,  __allocator_type>   __table;
@@ -779,23 +785,23 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY
     hash_multimap() { }
-    explicit _LIBCPP_HIDE_FROM_ABI hash_multimap(size_type __n, const hasher& __hf = hasher(),
+    explicit hash_multimap(size_type __n, const hasher& __hf = hasher(),
                                 const key_equal& __eql = key_equal());
-    _LIBCPP_HIDE_FROM_ABI hash_multimap(size_type __n, const hasher& __hf,
+    hash_multimap(size_type __n, const hasher& __hf,
                                 const key_equal& __eql,
                                 const allocator_type& __a);
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_multimap(_InputIterator __first, _InputIterator __last);
+        hash_multimap(_InputIterator __first, _InputIterator __last);
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_multimap(_InputIterator __first, _InputIterator __last,
+        hash_multimap(_InputIterator __first, _InputIterator __last,
                       size_type __n, const hasher& __hf = hasher(),
                       const key_equal& __eql = key_equal());
     template <class _InputIterator>
-    _LIBCPP_HIDE_FROM_ABI hash_multimap(_InputIterator __first, _InputIterator __last,
+        hash_multimap(_InputIterator __first, _InputIterator __last,
                       size_type __n, const hasher& __hf,
                       const key_equal& __eql,
                       const allocator_type& __a);
-    _LIBCPP_HIDE_FROM_ABI hash_multimap(const hash_multimap& __u);
+    hash_multimap(const hash_multimap& __u);
 
     _LIBCPP_INLINE_VISIBILITY
     allocator_type get_allocator() const
@@ -948,7 +954,7 @@ swap(hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 template <class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-_LIBCPP_HIDE_FROM_ABI bool
+bool
 operator==(const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
            const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
 {
@@ -980,11 +986,5 @@ operator!=(const hash_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
 }
 
 } // namespace __gnu_cxx
-
-#if !defined(_LIBCPP_REMOVE_TRANSITIVE_INCLUDES) && _LIBCPP_STD_VER <= 20
-#  include <concepts>
-#  include <iterator>
-#  include <type_traits>
-#endif
 
 #endif // _LIBCPP_HASH_MAP

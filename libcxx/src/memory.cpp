@@ -25,6 +25,8 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
+const allocator_arg_t allocator_arg = allocator_arg_t();
+
 bad_weak_ptr::~bad_weak_ptr() noexcept {}
 
 const char*
@@ -149,22 +151,22 @@ static constinit __libcpp_mutex_t mut_back[__sp_mut_count] =
     _LIBCPP_MUTEX_INITIALIZER, _LIBCPP_MUTEX_INITIALIZER, _LIBCPP_MUTEX_INITIALIZER, _LIBCPP_MUTEX_INITIALIZER
 };
 
-constexpr __sp_mut::__sp_mut(void* p) noexcept
-   : __lx_(p)
+_LIBCPP_CONSTEXPR __sp_mut::__sp_mut(void* p) noexcept
+   : __lx(p)
 {
 }
 
 void
 __sp_mut::lock() noexcept
 {
-    auto m = static_cast<__libcpp_mutex_t*>(__lx_);
+    auto m = static_cast<__libcpp_mutex_t*>(__lx);
     __libcpp_mutex_lock(m);
 }
 
 void
 __sp_mut::unlock() noexcept
 {
-    __libcpp_mutex_unlock(static_cast<__libcpp_mutex_t*>(__lx_));
+    __libcpp_mutex_unlock(static_cast<__libcpp_mutex_t*>(__lx));
 }
 
 __sp_mut&
@@ -192,7 +194,7 @@ align(size_t alignment, size_t size, void*& ptr, size_t& space)
     if (size <= space)
     {
         char* p1 = static_cast<char*>(ptr);
-        char* p2 = reinterpret_cast<char*>(reinterpret_cast<uintptr_t>(p1 + (alignment - 1)) & -alignment);
+        char* p2 = reinterpret_cast<char*>(reinterpret_cast<size_t>(p1 + (alignment - 1)) & -alignment);
         size_t d = static_cast<size_t>(p2 - p1);
         if (d <= space - size)
         {

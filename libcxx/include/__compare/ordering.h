@@ -10,8 +10,7 @@
 #define _LIBCPP___COMPARE_ORDERING_H
 
 #include <__config>
-#include <__type_traits/enable_if.h>
-#include <__type_traits/is_same.h>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -19,16 +18,16 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17
 
 // exposition only
-enum class _OrdResult : signed char {
+enum class _LIBCPP_ENUM_VIS _OrdResult : signed char {
   __less = -1,
   __equiv = 0,
   __greater = 1
 };
 
-enum class _NCmpResult : signed char {
+enum class _LIBCPP_ENUM_VIS _NCmpResult : signed char {
   __unordered = -127
 };
 
@@ -40,7 +39,7 @@ template<class _Tp, class... _Args>
 inline constexpr bool __one_of_v = (is_same_v<_Tp, _Args> || ...);
 
 struct _CmpUnspecifiedParam {
-  _LIBCPP_HIDE_FROM_ABI constexpr
+  _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEVAL
   _CmpUnspecifiedParam(int _CmpUnspecifiedParam::*) noexcept {}
 
   template<class _Tp, class = enable_if_t<!__one_of_v<_Tp, int, partial_ordering, weak_ordering, strong_ordering>>>
@@ -313,13 +312,7 @@ inline constexpr strong_ordering strong_ordering::equal(_OrdResult::__equiv);
 inline constexpr strong_ordering strong_ordering::equivalent(_OrdResult::__equiv);
 inline constexpr strong_ordering strong_ordering::greater(_OrdResult::__greater);
 
-/// [cmp.categories.pre]/1
-/// The types partial_ordering, weak_ordering, and strong_ordering are
-/// collectively termed the comparison category types.
-template <class _Tp>
-concept __comparison_category = __one_of_v<_Tp, partial_ordering, weak_ordering, strong_ordering>;
-
-#endif // _LIBCPP_STD_VER >= 20
+#endif // _LIBCPP_STD_VER > 17
 
 _LIBCPP_END_NAMESPACE_STD
 

@@ -19,13 +19,12 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 23
+#if _LIBCPP_STD_VER > 20
 template <class _Pointer>
 struct allocation_result {
   _Pointer ptr;
   size_t count;
 };
-_LIBCPP_CTAD_SUPPORTED_FOR_TYPE(allocation_result);
 
 template <class _Alloc>
 [[nodiscard]] _LIBCPP_HIDE_FROM_ABI constexpr
@@ -55,7 +54,7 @@ __allocation_result<typename allocator_traits<_Alloc>::pointer> __allocate_at_le
   return {__alloc.allocate(__n), __n};
 }
 
-#endif // _LIBCPP_STD_VER >= 23
+#endif // _LIBCPP_STD_VER > 20
 
 _LIBCPP_END_NAMESPACE_STD
 

@@ -7,10 +7,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef _LIBCPP___SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H
-#define _LIBCPP___SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H
-
-#include <__config>
+#ifndef _LIBCPP_SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H
+#define _LIBCPP_SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,13 +17,24 @@ extern "C" {
 // Patch over lack of extended locale support
 typedef void *locale_t;
 
-inline _LIBCPP_HIDE_FROM_ABI_C locale_t duplocale(locale_t) { return NULL; }
+inline _LIBCPP_HIDE_FROM_ABI locale_t
+duplocale(locale_t) {
+  return NULL;
+}
 
-inline _LIBCPP_HIDE_FROM_ABI_C void freelocale(locale_t) {}
+inline _LIBCPP_HIDE_FROM_ABI void
+freelocale(locale_t) {
+}
 
-inline _LIBCPP_HIDE_FROM_ABI_C locale_t newlocale(int, const char*, locale_t) { return NULL; }
+inline _LIBCPP_HIDE_FROM_ABI locale_t
+newlocale(int, const char *, locale_t) {
+  return NULL;
+}
 
-inline _LIBCPP_HIDE_FROM_ABI_C locale_t uselocale(locale_t) { return NULL; }
+inline _LIBCPP_HIDE_FROM_ABI locale_t
+uselocale(locale_t) {
+  return NULL;
+}
 
 #define LC_COLLATE_MASK  (1 << LC_COLLATE)
 #define LC_CTYPE_MASK    (1 << LC_CTYPE)
@@ -44,4 +53,4 @@ inline _LIBCPP_HIDE_FROM_ABI_C locale_t uselocale(locale_t) { return NULL; }
 } // extern "C"
 #endif
 
-#endif // _LIBCPP___SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H
+#endif // _LIBCPP_SUPPORT_XLOCALE_NOP_LOCALE_MGMT_H

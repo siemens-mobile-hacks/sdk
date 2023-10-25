@@ -25,7 +25,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _AlgPolicy, class _Compare, class _BidirectionalIterator, class _Sentinel>
-_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_SINCE_CXX20
+_LIBCPP_CONSTEXPR_AFTER_CXX17
 pair<_BidirectionalIterator, bool>
 __prev_permutation(_BidirectionalIterator __first, _Sentinel __last, _Compare&& __comp)
 {
@@ -57,20 +57,22 @@ __prev_permutation(_BidirectionalIterator __first, _Sentinel __last, _Compare&& 
 }
 
 template <class _BidirectionalIterator, class _Compare>
-inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
+inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 bool
 prev_permutation(_BidirectionalIterator __first, _BidirectionalIterator __last, _Compare __comp)
 {
+  using _Comp_ref = typename __comp_ref_type<_Compare>::type;
   return std::__prev_permutation<_ClassicAlgPolicy>(
-      std::move(__first), std::move(__last), static_cast<__comp_ref_type<_Compare> >(__comp)).second;
+      std::move(__first), std::move(__last), static_cast<_Comp_ref>(__comp)).second;
 }
 
 template <class _BidirectionalIterator>
-inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
+inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 bool
 prev_permutation(_BidirectionalIterator __first, _BidirectionalIterator __last)
 {
-    return _VSTD::prev_permutation(__first, __last, __less<>());
+    return _VSTD::prev_permutation(__first, __last,
+                                  __less<typename iterator_traits<_BidirectionalIterator>::value_type>());
 }
 
 _LIBCPP_END_NAMESPACE_STD

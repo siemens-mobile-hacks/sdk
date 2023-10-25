@@ -11,7 +11,7 @@
 #define _LIBCPP___BIT_BIT_CAST_H
 
 #include <__config>
-#include <__type_traits/is_trivially_copyable.h>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17
 
 template <class _ToType, class _FromType>
   requires(sizeof(_ToType) == sizeof(_FromType) &&
@@ -29,7 +29,7 @@ _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI constexpr _ToType bit_cast(const _Fr
   return __builtin_bit_cast(_ToType, __from);
 }
 
-#endif // _LIBCPP_STD_VER >= 20
+#endif // _LIBCPP_STD_VER > 17
 
 _LIBCPP_END_NAMESPACE_STD
 

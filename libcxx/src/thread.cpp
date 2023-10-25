@@ -10,8 +10,6 @@
 
 #ifndef _LIBCPP_HAS_NO_THREADS
 
-#include <__thread/poll_with_backoff.h>
-#include <__thread/timed_backoff_policy.h>
 #include <exception>
 #include <future>
 #include <limits>
@@ -166,8 +164,8 @@ __thread_struct_imp::~__thread_struct_imp()
     for (_Notify::iterator i = notify_.begin(), e = notify_.end();
             i != e; ++i)
     {
-        i->first->notify_all();
         i->second->unlock();
+        i->first->notify_all();
     }
     for (_AsyncStates::iterator i = async_states_.begin(), e = async_states_.end();
             i != e; ++i)

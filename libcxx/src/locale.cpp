@@ -6,6 +6,12 @@
 //
 //===----------------------------------------------------------------------===//
 
+// On Solaris, we need to define something to make the C99 parts of localeconv
+// visible.
+#ifdef __sun__
+#define _LCONV_C99
+#endif
+
 #include <__utility/unreachable.h>
 #include <algorithm>
 #include <clocale>
@@ -94,7 +100,7 @@ T& make(Args ...args)
 
 template <typename T, size_t N>
 inline
-constexpr
+_LIBCPP_CONSTEXPR
 size_t
 countof(const T (&)[N])
 {
@@ -103,25 +109,23 @@ countof(const T (&)[N])
 
 template <typename T>
 inline
-constexpr
+_LIBCPP_CONSTEXPR
 size_t
 countof(const T * const begin, const T * const end)
 {
     return static_cast<size_t>(end - begin);
 }
 
+_LIBCPP_NORETURN static void __throw_runtime_error(const string &msg)
+{
+#ifndef _LIBCPP_NO_EXCEPTIONS
+    throw runtime_error(msg);
+#else
+    (void)msg;
+    _VSTD::abort();
+#endif
 }
 
-string
-build_name(const string& other, const string& one, locale::category c) {
-    if (other == "*" || one == "*")
-        return "*";
-    if (c == locale::none || other == one)
-        return other;
-
-    // FIXME: Handle the more complicated cases, such as when the locale has
-    // different names for different categories.
-    return "*";
 }
 
 const locale::category locale::none;
@@ -137,7 +141,14 @@ class _LIBCPP_HIDDEN locale::__imp
     : public facet
 {
     enum {N = 30};
+#if defined(_LIBCPP_COMPILER_MSVC)
+// FIXME: MSVC doesn't support aligned parameters by value.
+// I can't get the __sso_allocator to work here
+// for MSVC I think for this reason.
+    vector<facet*> facets_;
+#else
     vector<facet*, __sso_allocator<facet*, N> > facets_;
+#endif
     string         name_;
 public:
     explicit __imp(size_t refs = 0);
@@ -232,10 +243,10 @@ locale::__imp::__imp(const string& name, size_t refs)
       facets_(N),
       name_(name)
 {
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     try
     {
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
         facets_ = locale::classic().__locale_->facets_;
         for (unsigned i = 0; i < facets_.size(); ++i)
             if (facets_[i])
@@ -282,7 +293,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
         install(new messages_byname<wchar_t>(name_));
 #endif
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
@@ -291,7 +302,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
                 facets_[i]->__release_shared();
         throw;
     }
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
 }
 
 locale::__imp::__imp(const __imp& other)
@@ -305,16 +316,17 @@ locale::__imp::__imp(const __imp& other)
 }
 
 locale::__imp::__imp(const __imp& other, const string& name, locale::category c)
-    : facets_(N), name_(build_name(other.name_, name, c))
+    : facets_(N),
+      name_("*")
 {
     facets_ = other.facets_;
     for (unsigned i = 0; i < facets_.size(); ++i)
         if (facets_[i])
             facets_[i]->__add_shared();
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     try
     {
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
         if (c & locale::collate)
         {
             install(new collate_byname<char>(name));
@@ -375,7 +387,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
             install(new messages_byname<wchar_t>(name));
 #endif
         }
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
@@ -384,7 +396,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
                 facets_[i]->__release_shared();
         throw;
     }
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
 }
 
 template<class F>
@@ -397,16 +409,17 @@ locale::__imp::install_from(const locale::__imp& one)
 }
 
 locale::__imp::__imp(const __imp& other, const __imp& one, locale::category c)
-    : facets_(N), name_(build_name(other.name_, one.name_, c))
+    : facets_(N),
+      name_("*")
 {
     facets_ = other.facets_;
     for (unsigned i = 0; i < facets_.size(); ++i)
         if (facets_[i])
             facets_[i]->__add_shared();
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     try
     {
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
         if (c & locale::collate)
         {
             install_from<_VSTD::collate<char> >(one);
@@ -483,7 +496,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
             install_from<_VSTD::messages<wchar_t> >(one);
 #endif
         }
-#ifndef _LIBCPP_HAS_NO_EXCEPTIONS
+#ifndef _LIBCPP_NO_EXCEPTIONS
     }
     catch (...)
     {
@@ -492,7 +505,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
                 facets_[i]->__release_shared();
         throw;
     }
-#endif // _LIBCPP_HAS_NO_EXCEPTIONS
+#endif // _LIBCPP_NO_EXCEPTIONS
 }
 
 locale::__imp::__imp(const __imp& other, facet* f, long id)
@@ -688,36 +701,63 @@ locale::facet::__on_zero_shared() noexcept
 
 // locale::id
 
-constinit int32_t locale::id::__next_id = 0;
+int32_t locale::id::__next_id = 0;
 
-long locale::id::__get() {
-    call_once(__flag_, [&] { __id_ = __libcpp_atomic_add(&__next_id, 1); });
+namespace
+{
+
+class __fake_bind
+{
+    locale::id* id_;
+    void (locale::id::* pmf_)();
+public:
+    __fake_bind(void (locale::id::* pmf)(), locale::id* id)
+        : id_(id), pmf_(pmf) {}
+
+    void operator()() const
+    {
+        (id_->*pmf_)();
+    }
+};
+
+}
+
+long
+locale::id::__get()
+{
+    call_once(__flag_, __fake_bind(&locale::id::__init, this));
     return __id_ - 1;
+}
+
+void
+locale::id::__init()
+{
+    __id_ = __libcpp_atomic_add(&__next_id, 1);
 }
 
 // template <> class collate_byname<char>
 
 collate_byname<char>::collate_byname(const char* n, size_t refs)
     : collate<char>(refs),
-      __l_(newlocale(LC_ALL_MASK, n, 0))
+      __l(newlocale(LC_ALL_MASK, n, 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("collate_byname<char>::collate_byname"
-                               " failed to construct for " + string(n)).c_str());
+    if (__l == 0)
+        __throw_runtime_error("collate_byname<char>::collate_byname"
+                            " failed to construct for " + string(n));
 }
 
 collate_byname<char>::collate_byname(const string& name, size_t refs)
     : collate<char>(refs),
-      __l_(newlocale(LC_ALL_MASK, name.c_str(), 0))
+      __l(newlocale(LC_ALL_MASK, name.c_str(), 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("collate_byname<char>::collate_byname"
-                               " failed to construct for " + name).c_str());
+    if (__l == 0)
+        __throw_runtime_error("collate_byname<char>::collate_byname"
+                            " failed to construct for " + name);
 }
 
 collate_byname<char>::~collate_byname()
 {
-    freelocale(__l_);
+    freelocale(__l);
 }
 
 int
@@ -726,7 +766,7 @@ collate_byname<char>::do_compare(const char_type* __lo1, const char_type* __hi1,
 {
     string_type lhs(__lo1, __hi1);
     string_type rhs(__lo2, __hi2);
-    int r = strcoll_l(lhs.c_str(), rhs.c_str(), __l_);
+    int r = strcoll_l(lhs.c_str(), rhs.c_str(), __l);
     if (r < 0)
         return -1;
     if (r > 0)
@@ -738,8 +778,8 @@ collate_byname<char>::string_type
 collate_byname<char>::do_transform(const char_type* lo, const char_type* hi) const
 {
     const string_type in(lo, hi);
-    string_type out(strxfrm_l(0, in.c_str(), 0, __l_), char());
-    strxfrm_l(const_cast<char*>(out.c_str()), in.c_str(), out.size()+1, __l_);
+    string_type out(strxfrm_l(0, in.c_str(), 0, __l), char());
+    strxfrm_l(const_cast<char*>(out.c_str()), in.c_str(), out.size()+1, __l);
     return out;
 }
 
@@ -748,25 +788,25 @@ collate_byname<char>::do_transform(const char_type* lo, const char_type* hi) con
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 collate_byname<wchar_t>::collate_byname(const char* n, size_t refs)
     : collate<wchar_t>(refs),
-      __l_(newlocale(LC_ALL_MASK, n, 0))
+      __l(newlocale(LC_ALL_MASK, n, 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("collate_byname<wchar_t>::collate_byname(size_t refs)"
-                               " failed to construct for " + string(n)).c_str());
+    if (__l == 0)
+        __throw_runtime_error("collate_byname<wchar_t>::collate_byname(size_t refs)"
+                            " failed to construct for " + string(n));
 }
 
 collate_byname<wchar_t>::collate_byname(const string& name, size_t refs)
     : collate<wchar_t>(refs),
-      __l_(newlocale(LC_ALL_MASK, name.c_str(), 0))
+      __l(newlocale(LC_ALL_MASK, name.c_str(), 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("collate_byname<wchar_t>::collate_byname(size_t refs)"
-                               " failed to construct for " + name).c_str());
+    if (__l == 0)
+        __throw_runtime_error("collate_byname<wchar_t>::collate_byname(size_t refs)"
+                            " failed to construct for " + name);
 }
 
 collate_byname<wchar_t>::~collate_byname()
 {
-    freelocale(__l_);
+    freelocale(__l);
 }
 
 int
@@ -775,7 +815,7 @@ collate_byname<wchar_t>::do_compare(const char_type* __lo1, const char_type* __h
 {
     string_type lhs(__lo1, __hi1);
     string_type rhs(__lo2, __hi2);
-    int r = wcscoll_l(lhs.c_str(), rhs.c_str(), __l_);
+    int r = wcscoll_l(lhs.c_str(), rhs.c_str(), __l);
     if (r < 0)
         return -1;
     if (r > 0)
@@ -787,8 +827,8 @@ collate_byname<wchar_t>::string_type
 collate_byname<wchar_t>::do_transform(const char_type* lo, const char_type* hi) const
 {
     const string_type in(lo, hi);
-    string_type out(wcsxfrm_l(0, in.c_str(), 0, __l_), wchar_t());
-    wcsxfrm_l(const_cast<wchar_t*>(out.c_str()), in.c_str(), out.size()+1, __l_);
+    string_type out(wcsxfrm_l(0, in.c_str(), 0, __l), wchar_t());
+    wcsxfrm_l(const_cast<wchar_t*>(out.c_str()), in.c_str(), out.size()+1, __l);
     return out;
 }
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
@@ -809,7 +849,7 @@ const ctype_base::mask ctype_base::graph;
 // template <> class ctype<wchar_t>;
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-constinit locale::id ctype<wchar_t>::id;
+locale::id ctype<wchar_t>::id;
 
 ctype<wchar_t>::~ctype()
 {
@@ -942,7 +982,7 @@ ctype<wchar_t>::do_narrow(const char_type* low, const char_type* high, char dfau
 
 // template <> class ctype<char>;
 
-constinit locale::id ctype<char>::id;
+locale::id ctype<char>::id;
 
 const size_t ctype<char>::table_size;
 
@@ -1070,7 +1110,7 @@ extern "C" const int ** __ctype_toupper_loc();
 const ctype<char>::mask*
 ctype<char>::classic_table() noexcept
 {
-    static constexpr const ctype<char>::mask builtin_table[table_size] = {
+    static _LIBCPP_CONSTEXPR const ctype<char>::mask builtin_table[table_size] = {
         cntrl,                          cntrl,
         cntrl,                          cntrl,
         cntrl,                          cntrl,
@@ -1156,6 +1196,8 @@ ctype<char>::classic_table() noexcept
     return _C_ctype_tab_ + 1;
 #elif defined(__GLIBC__)
     return _LIBCPP_GET_C_LOCALE->__ctype_b;
+#elif defined(__sun__)
+    return __ctype_mask;
 #elif defined(_LIBCPP_MSVCRT) || defined(__MINGW32__)
     return __pctype_func();
 #elif defined(__EMSCRIPTEN__)
@@ -1244,52 +1286,52 @@ ctype<char>::__classic_upper_table() _NOEXCEPT
 
 ctype_byname<char>::ctype_byname(const char* name, size_t refs)
     : ctype<char>(0, false, refs),
-      __l_(newlocale(LC_ALL_MASK, name, 0))
+      __l(newlocale(LC_ALL_MASK, name, 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("ctype_byname<char>::ctype_byname"
-                               " failed to construct for " + string(name)).c_str());
+    if (__l == 0)
+        __throw_runtime_error("ctype_byname<char>::ctype_byname"
+                            " failed to construct for " + string(name));
 }
 
 ctype_byname<char>::ctype_byname(const string& name, size_t refs)
     : ctype<char>(0, false, refs),
-      __l_(newlocale(LC_ALL_MASK, name.c_str(), 0))
+      __l(newlocale(LC_ALL_MASK, name.c_str(), 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("ctype_byname<char>::ctype_byname"
-                               " failed to construct for " + name).c_str());
+    if (__l == 0)
+        __throw_runtime_error("ctype_byname<char>::ctype_byname"
+                            " failed to construct for " + name);
 }
 
 ctype_byname<char>::~ctype_byname()
 {
-    freelocale(__l_);
+    freelocale(__l);
 }
 
 char
 ctype_byname<char>::do_toupper(char_type c) const
 {
-    return static_cast<char>(toupper_l(static_cast<unsigned char>(c), __l_));
+    return static_cast<char>(toupper_l(static_cast<unsigned char>(c), __l));
 }
 
 const char*
 ctype_byname<char>::do_toupper(char_type* low, const char_type* high) const
 {
     for (; low != high; ++low)
-        *low = static_cast<char>(toupper_l(static_cast<unsigned char>(*low), __l_));
+        *low = static_cast<char>(toupper_l(static_cast<unsigned char>(*low), __l));
     return low;
 }
 
 char
 ctype_byname<char>::do_tolower(char_type c) const
 {
-    return static_cast<char>(tolower_l(static_cast<unsigned char>(c), __l_));
+    return static_cast<char>(tolower_l(static_cast<unsigned char>(c), __l));
 }
 
 const char*
 ctype_byname<char>::do_tolower(char_type* low, const char_type* high) const
 {
     for (; low != high; ++low)
-        *low = static_cast<char>(tolower_l(static_cast<unsigned char>(*low), __l_));
+        *low = static_cast<char>(tolower_l(static_cast<unsigned char>(*low), __l));
     return low;
 }
 
@@ -1298,45 +1340,45 @@ ctype_byname<char>::do_tolower(char_type* low, const char_type* high) const
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 ctype_byname<wchar_t>::ctype_byname(const char* name, size_t refs)
     : ctype<wchar_t>(refs),
-      __l_(newlocale(LC_ALL_MASK, name, 0))
+      __l(newlocale(LC_ALL_MASK, name, 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("ctype_byname<wchar_t>::ctype_byname"
-                               " failed to construct for " + string(name)).c_str());
+    if (__l == 0)
+        __throw_runtime_error("ctype_byname<wchar_t>::ctype_byname"
+                            " failed to construct for " + string(name));
 }
 
 ctype_byname<wchar_t>::ctype_byname(const string& name, size_t refs)
     : ctype<wchar_t>(refs),
-      __l_(newlocale(LC_ALL_MASK, name.c_str(), 0))
+      __l(newlocale(LC_ALL_MASK, name.c_str(), 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("ctype_byname<wchar_t>::ctype_byname"
-                               " failed to construct for " + name).c_str());
+    if (__l == 0)
+        __throw_runtime_error("ctype_byname<wchar_t>::ctype_byname"
+                            " failed to construct for " + name);
 }
 
 ctype_byname<wchar_t>::~ctype_byname()
 {
-    freelocale(__l_);
+    freelocale(__l);
 }
 
 bool
 ctype_byname<wchar_t>::do_is(mask m, char_type c) const
 {
 #ifdef _LIBCPP_WCTYPE_IS_MASK
-    return static_cast<bool>(iswctype_l(c, m, __l_));
+    return static_cast<bool>(iswctype_l(c, m, __l));
 #else
     bool result = false;
     wint_t ch = static_cast<wint_t>(c);
-    if ((m & space) == space) result |= (iswspace_l(ch, __l_) != 0);
-    if ((m & print) == print) result |= (iswprint_l(ch, __l_) != 0);
-    if ((m & cntrl) == cntrl) result |= (iswcntrl_l(ch, __l_) != 0);
-    if ((m & upper) == upper) result |= (iswupper_l(ch, __l_) != 0);
-    if ((m & lower) == lower) result |= (iswlower_l(ch, __l_) != 0);
-    if ((m & alpha) == alpha) result |= (iswalpha_l(ch, __l_) != 0);
-    if ((m & digit) == digit) result |= (iswdigit_l(ch, __l_) != 0);
-    if ((m & punct) == punct) result |= (iswpunct_l(ch, __l_) != 0);
-    if ((m & xdigit) == xdigit) result |= (iswxdigit_l(ch, __l_) != 0);
-    if ((m & blank) == blank) result |= (iswblank_l(ch, __l_) != 0);
+    if ((m & space) == space) result |= (iswspace_l(ch, __l) != 0);
+    if ((m & print) == print) result |= (iswprint_l(ch, __l) != 0);
+    if ((m & cntrl) == cntrl) result |= (iswcntrl_l(ch, __l) != 0);
+    if ((m & upper) == upper) result |= (iswupper_l(ch, __l) != 0);
+    if ((m & lower) == lower) result |= (iswlower_l(ch, __l) != 0);
+    if ((m & alpha) == alpha) result |= (iswalpha_l(ch, __l) != 0);
+    if ((m & digit) == digit) result |= (iswdigit_l(ch, __l) != 0);
+    if ((m & punct) == punct) result |= (iswpunct_l(ch, __l) != 0);
+    if ((m & xdigit) == xdigit) result |= (iswxdigit_l(ch, __l) != 0);
+    if ((m & blank) == blank) result |= (iswblank_l(ch, __l) != 0);
     return result;
 #endif
 }
@@ -1352,32 +1394,34 @@ ctype_byname<wchar_t>::do_is(const char_type* low, const char_type* high, mask* 
         {
             *vec = 0;
             wint_t ch = static_cast<wint_t>(*low);
-            if (iswspace_l(ch, __l_))
+            if (iswspace_l(ch, __l))
                 *vec |= space;
 #ifndef _LIBCPP_CTYPE_MASK_IS_COMPOSITE_PRINT
-            if (iswprint_l(ch, __l_))
+            if (iswprint_l(ch, __l))
                 *vec |= print;
 #endif
-            if (iswcntrl_l(ch, __l_))
+            if (iswcntrl_l(ch, __l))
                 *vec |= cntrl;
-            if (iswupper_l(ch, __l_))
+            if (iswupper_l(ch, __l))
                 *vec |= upper;
-            if (iswlower_l(ch, __l_))
+            if (iswlower_l(ch, __l))
                 *vec |= lower;
 #ifndef _LIBCPP_CTYPE_MASK_IS_COMPOSITE_ALPHA
-            if (iswalpha_l(ch, __l_))
+            if (iswalpha_l(ch, __l))
                 *vec |= alpha;
 #endif
-            if (iswdigit_l(ch, __l_))
+            if (iswdigit_l(ch, __l))
                 *vec |= digit;
-            if (iswpunct_l(ch, __l_))
+            if (iswpunct_l(ch, __l))
                 *vec |= punct;
 #ifndef _LIBCPP_CTYPE_MASK_IS_COMPOSITE_XDIGIT
-            if (iswxdigit_l(ch, __l_))
+            if (iswxdigit_l(ch, __l))
                 *vec |= xdigit;
 #endif
-            if (iswblank_l(ch, __l_))
+#if !defined(__sun__)
+            if (iswblank_l(ch, __l))
                 *vec |= blank;
+#endif
         }
     }
     return low;
@@ -1389,20 +1433,20 @@ ctype_byname<wchar_t>::do_scan_is(mask m, const char_type* low, const char_type*
     for (; low != high; ++low)
     {
 #ifdef _LIBCPP_WCTYPE_IS_MASK
-        if (iswctype_l(*low, m, __l_))
+        if (iswctype_l(*low, m, __l))
             break;
 #else
         wint_t ch = static_cast<wint_t>(*low);
-        if ((m & space) == space && iswspace_l(ch, __l_)) break;
-        if ((m & print) == print && iswprint_l(ch, __l_)) break;
-        if ((m & cntrl) == cntrl && iswcntrl_l(ch, __l_)) break;
-        if ((m & upper) == upper && iswupper_l(ch, __l_)) break;
-        if ((m & lower) == lower && iswlower_l(ch, __l_)) break;
-        if ((m & alpha) == alpha && iswalpha_l(ch, __l_)) break;
-        if ((m & digit) == digit && iswdigit_l(ch, __l_)) break;
-        if ((m & punct) == punct && iswpunct_l(ch, __l_)) break;
-        if ((m & xdigit) == xdigit && iswxdigit_l(ch, __l_)) break;
-        if ((m & blank) == blank && iswblank_l(ch, __l_)) break;
+        if ((m & space) == space && iswspace_l(ch, __l)) break;
+        if ((m & print) == print && iswprint_l(ch, __l)) break;
+        if ((m & cntrl) == cntrl && iswcntrl_l(ch, __l)) break;
+        if ((m & upper) == upper && iswupper_l(ch, __l)) break;
+        if ((m & lower) == lower && iswlower_l(ch, __l)) break;
+        if ((m & alpha) == alpha && iswalpha_l(ch, __l)) break;
+        if ((m & digit) == digit && iswdigit_l(ch, __l)) break;
+        if ((m & punct) == punct && iswpunct_l(ch, __l)) break;
+        if ((m & xdigit) == xdigit && iswxdigit_l(ch, __l)) break;
+        if ((m & blank) == blank && iswblank_l(ch, __l)) break;
 #endif
     }
     return low;
@@ -1414,20 +1458,20 @@ ctype_byname<wchar_t>::do_scan_not(mask m, const char_type* low, const char_type
     for (; low != high; ++low)
     {
 #ifdef _LIBCPP_WCTYPE_IS_MASK
-        if (!iswctype_l(*low, m, __l_))
+        if (!iswctype_l(*low, m, __l))
             break;
 #else
         wint_t ch = static_cast<wint_t>(*low);
-        if ((m & space) == space && iswspace_l(ch, __l_)) continue;
-        if ((m & print) == print && iswprint_l(ch, __l_)) continue;
-        if ((m & cntrl) == cntrl && iswcntrl_l(ch, __l_)) continue;
-        if ((m & upper) == upper && iswupper_l(ch, __l_)) continue;
-        if ((m & lower) == lower && iswlower_l(ch, __l_)) continue;
-        if ((m & alpha) == alpha && iswalpha_l(ch, __l_)) continue;
-        if ((m & digit) == digit && iswdigit_l(ch, __l_)) continue;
-        if ((m & punct) == punct && iswpunct_l(ch, __l_)) continue;
-        if ((m & xdigit) == xdigit && iswxdigit_l(ch, __l_)) continue;
-        if ((m & blank) == blank && iswblank_l(ch, __l_)) continue;
+        if ((m & space) == space && iswspace_l(ch, __l)) continue;
+        if ((m & print) == print && iswprint_l(ch, __l)) continue;
+        if ((m & cntrl) == cntrl && iswcntrl_l(ch, __l)) continue;
+        if ((m & upper) == upper && iswupper_l(ch, __l)) continue;
+        if ((m & lower) == lower && iswlower_l(ch, __l)) continue;
+        if ((m & alpha) == alpha && iswalpha_l(ch, __l)) continue;
+        if ((m & digit) == digit && iswdigit_l(ch, __l)) continue;
+        if ((m & punct) == punct && iswpunct_l(ch, __l)) continue;
+        if ((m & xdigit) == xdigit && iswxdigit_l(ch, __l)) continue;
+        if ((m & blank) == blank && iswblank_l(ch, __l)) continue;
         break;
 #endif
     }
@@ -1437,49 +1481,49 @@ ctype_byname<wchar_t>::do_scan_not(mask m, const char_type* low, const char_type
 wchar_t
 ctype_byname<wchar_t>::do_toupper(char_type c) const
 {
-    return towupper_l(c, __l_);
+    return towupper_l(c, __l);
 }
 
 const wchar_t*
 ctype_byname<wchar_t>::do_toupper(char_type* low, const char_type* high) const
 {
     for (; low != high; ++low)
-        *low = towupper_l(*low, __l_);
+        *low = towupper_l(*low, __l);
     return low;
 }
 
 wchar_t
 ctype_byname<wchar_t>::do_tolower(char_type c) const
 {
-    return towlower_l(c, __l_);
+    return towlower_l(c, __l);
 }
 
 const wchar_t*
 ctype_byname<wchar_t>::do_tolower(char_type* low, const char_type* high) const
 {
     for (; low != high; ++low)
-        *low = towlower_l(*low, __l_);
+        *low = towlower_l(*low, __l);
     return low;
 }
 
 wchar_t
 ctype_byname<wchar_t>::do_widen(char c) const
 {
-    return __libcpp_btowc_l(c, __l_);
+    return __libcpp_btowc_l(c, __l);
 }
 
 const char*
 ctype_byname<wchar_t>::do_widen(const char* low, const char* high, char_type* dest) const
 {
     for (; low != high; ++low, ++dest)
-        *dest = __libcpp_btowc_l(*low, __l_);
+        *dest = __libcpp_btowc_l(*low, __l);
     return low;
 }
 
 char
 ctype_byname<wchar_t>::do_narrow(char_type c, char dfault) const
 {
-    int r = __libcpp_wctob_l(c, __l_);
+    int r = __libcpp_wctob_l(c, __l);
     return (r != EOF) ? static_cast<char>(r) : dfault;
 }
 
@@ -1488,7 +1532,7 @@ ctype_byname<wchar_t>::do_narrow(const char_type* low, const char_type* high, ch
 {
     for (; low != high; ++low, ++dest)
     {
-        int r = __libcpp_wctob_l(*low, __l_);
+        int r = __libcpp_wctob_l(*low, __l);
         *dest = (r != EOF) ? static_cast<char>(r) : dfault;
     }
     return low;
@@ -1497,7 +1541,7 @@ ctype_byname<wchar_t>::do_narrow(const char_type* low, const char_type* high, ch
 
 // template <> class codecvt<char, char, mbstate_t>
 
-constinit locale::id codecvt<char, char, mbstate_t>::id;
+locale::id codecvt<char, char, mbstate_t>::id;
 
 codecvt<char, char, mbstate_t>::~codecvt()
 {
@@ -1559,27 +1603,27 @@ codecvt<char, char, mbstate_t>::do_max_length() const noexcept
 // template <> class codecvt<wchar_t, char, mbstate_t>
 
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-constinit locale::id codecvt<wchar_t, char, mbstate_t>::id;
+locale::id codecvt<wchar_t, char, mbstate_t>::id;
 
 codecvt<wchar_t, char, mbstate_t>::codecvt(size_t refs)
     : locale::facet(refs),
-      __l_(_LIBCPP_GET_C_LOCALE)
+      __l(_LIBCPP_GET_C_LOCALE)
 {
 }
 
 codecvt<wchar_t, char, mbstate_t>::codecvt(const char* nm, size_t refs)
     : locale::facet(refs),
-      __l_(newlocale(LC_ALL_MASK, nm, 0))
+      __l(newlocale(LC_ALL_MASK, nm, 0))
 {
-    if (__l_ == 0)
-        __throw_runtime_error(("codecvt_byname<wchar_t, char, mbstate_t>::codecvt_byname"
-                               " failed to construct for " + string(nm)).c_str());
+    if (__l == 0)
+        __throw_runtime_error("codecvt_byname<wchar_t, char, mbstate_t>::codecvt_byname"
+                            " failed to construct for " + string(nm));
 }
 
 codecvt<wchar_t, char, mbstate_t>::~codecvt()
 {
-    if (__l_ != _LIBCPP_GET_C_LOCALE)
-        freelocale(__l_);
+    if (__l != _LIBCPP_GET_C_LOCALE)
+        freelocale(__l);
 }
 
 codecvt<wchar_t, char, mbstate_t>::result
@@ -1599,13 +1643,13 @@ codecvt<wchar_t, char, mbstate_t>::do_out(state_type& st,
         // save state in case it is needed to recover to_nxt on error
         mbstate_t save_state = st;
         size_t n = __libcpp_wcsnrtombs_l(to, &frm_nxt, static_cast<size_t>(fend-frm),
-                                     static_cast<size_t>(to_end-to), &st, __l_);
+                                     static_cast<size_t>(to_end-to), &st, __l);
         if (n == size_t(-1))
         {
             // need to recover to_nxt
             for (to_nxt = to; frm != frm_nxt; ++frm)
             {
-                n = __libcpp_wcrtomb_l(to_nxt, *frm, &save_state, __l_);
+                n = __libcpp_wcrtomb_l(to_nxt, *frm, &save_state, __l);
                 if (n == size_t(-1))
                     break;
                 to_nxt += n;
@@ -1622,7 +1666,7 @@ codecvt<wchar_t, char, mbstate_t>::do_out(state_type& st,
         {
             // Try to write the terminating null
             extern_type tmp[MB_LEN_MAX];
-            n = __libcpp_wcrtomb_l(tmp, intern_type(), &st, __l_);
+            n = __libcpp_wcrtomb_l(tmp, intern_type(), &st, __l);
             if (n == size_t(-1))  // on error
                 return error;
             if (n > static_cast<size_t>(to_end-to_nxt))  // is there room?
@@ -1656,14 +1700,14 @@ codecvt<wchar_t, char, mbstate_t>::do_in(state_type& st,
         // save state in case it is needed to recover to_nxt on error
         mbstate_t save_state = st;
         size_t n = __libcpp_mbsnrtowcs_l(to, &frm_nxt, static_cast<size_t>(fend-frm),
-                                     static_cast<size_t>(to_end-to), &st, __l_);
+                                     static_cast<size_t>(to_end-to), &st, __l);
         if (n == size_t(-1))
         {
             // need to recover to_nxt
             for (to_nxt = to; frm != frm_nxt; ++to_nxt)
             {
                 n = __libcpp_mbrtowc_l(to_nxt, frm, static_cast<size_t>(fend-frm),
-                                   &save_state, __l_);
+                                   &save_state, __l);
                 switch (n)
                 {
                 case 0:
@@ -1691,7 +1735,7 @@ codecvt<wchar_t, char, mbstate_t>::do_in(state_type& st,
         if (fend != frm_end)  // set up next null terminated sequence
         {
             // Try to write the terminating null
-            n = __libcpp_mbrtowc_l(to_nxt, frm_nxt, 1, &st, __l_);
+            n = __libcpp_mbrtowc_l(to_nxt, frm_nxt, 1, &st, __l);
             if (n != 0)  // on error
                 return error;
             ++to_nxt;
@@ -1711,7 +1755,7 @@ codecvt<wchar_t, char, mbstate_t>::do_unshift(state_type& st,
 {
     to_nxt = to;
     extern_type tmp[MB_LEN_MAX];
-    size_t n = __libcpp_wcrtomb_l(tmp, intern_type(), &st, __l_);
+    size_t n = __libcpp_wcrtomb_l(tmp, intern_type(), &st, __l);
     if (n == size_t(-1) || n == 0)  // on error
         return error;
     --n;
@@ -1725,11 +1769,11 @@ codecvt<wchar_t, char, mbstate_t>::do_unshift(state_type& st,
 int
 codecvt<wchar_t, char, mbstate_t>::do_encoding() const noexcept
 {
-    if (__libcpp_mbtowc_l(nullptr, nullptr, MB_LEN_MAX, __l_) != 0)
+    if (__libcpp_mbtowc_l(nullptr, nullptr, MB_LEN_MAX, __l) != 0)
         return -1;
 
     // stateless encoding
-    if (__l_ == 0 || __libcpp_mb_cur_max_l(__l_) == 1)  // there are no known constant length encodings
+    if (__l == 0 || __libcpp_mb_cur_max_l(__l) == 1)  // there are no known constant length encodings
         return 1;                // which take more than 1 char to form a wchar_t
     return 0;
 }
@@ -1747,7 +1791,7 @@ codecvt<wchar_t, char, mbstate_t>::do_length(state_type& st,
     int nbytes = 0;
     for (size_t nwchar_t = 0; nwchar_t < mx && frm != frm_end; ++nwchar_t)
     {
-        size_t n = __libcpp_mbrlen_l(frm, static_cast<size_t>(frm_end-frm), &st, __l_);
+        size_t n = __libcpp_mbrlen_l(frm, static_cast<size_t>(frm_end-frm), &st, __l);
         switch (n)
         {
         case 0:
@@ -1769,7 +1813,7 @@ codecvt<wchar_t, char, mbstate_t>::do_length(state_type& st,
 int
 codecvt<wchar_t, char, mbstate_t>::do_max_length() const noexcept
 {
-    return __l_ == 0 ? 1 : static_cast<int>(__libcpp_mb_cur_max_l(__l_));
+    return __l == 0 ? 1 : static_cast<int>(__libcpp_mb_cur_max_l(__l));
 }
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
@@ -3165,7 +3209,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 
 // template <> class codecvt<char16_t, char, mbstate_t>
 
-constinit locale::id codecvt<char16_t, char, mbstate_t>::id;
+locale::id codecvt<char16_t, char, mbstate_t>::id;
 
 codecvt<char16_t, char, mbstate_t>::~codecvt()
 {
@@ -3244,7 +3288,7 @@ codecvt<char16_t, char, mbstate_t>::do_max_length() const noexcept
 
 // template <> class codecvt<char16_t, char8_t, mbstate_t>
 
-constinit locale::id codecvt<char16_t, char8_t, mbstate_t>::id;
+locale::id codecvt<char16_t, char8_t, mbstate_t>::id;
 
 codecvt<char16_t, char8_t, mbstate_t>::~codecvt()
 {
@@ -3323,7 +3367,7 @@ codecvt<char16_t, char8_t, mbstate_t>::do_max_length() const noexcept
 
 // template <> class codecvt<char32_t, char, mbstate_t>
 
-constinit locale::id codecvt<char32_t, char, mbstate_t>::id;
+locale::id codecvt<char32_t, char, mbstate_t>::id;
 
 codecvt<char32_t, char, mbstate_t>::~codecvt()
 {
@@ -3402,7 +3446,7 @@ codecvt<char32_t, char, mbstate_t>::do_max_length() const noexcept
 
 // template <> class codecvt<char32_t, char8_t, mbstate_t>
 
-constinit locale::id codecvt<char32_t, char8_t, mbstate_t>::id;
+locale::id codecvt<char32_t, char8_t, mbstate_t>::id;
 
 codecvt<char32_t, char8_t, mbstate_t>::~codecvt()
 {
@@ -3501,10 +3545,10 @@ __codecvt_utf8<wchar_t>::do_out(state_type&,
     uint8_t* _to_nxt = _to;
 #if defined(_LIBCPP_SHORT_WCHAR)
     result r = ucs2_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
 #else
     result r = ucs4_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3524,13 +3568,13 @@ __codecvt_utf8<wchar_t>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf8_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
 #else
     uint32_t* _to = reinterpret_cast<uint32_t*>(to);
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf8_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3564,9 +3608,9 @@ __codecvt_utf8<wchar_t>::do_length(state_type&,
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
 #if defined(_LIBCPP_SHORT_WCHAR)
-    return utf8_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #else
-    return utf8_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #endif
 }
 
@@ -3575,11 +3619,11 @@ int
 __codecvt_utf8<wchar_t>::do_max_length() const noexcept
 {
 #if defined(_LIBCPP_SHORT_WCHAR)
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 3;
 #else
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 7;
     return 4;
 #endif
@@ -3600,7 +3644,7 @@ __codecvt_utf8<char16_t>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs2_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -3618,7 +3662,7 @@ __codecvt_utf8<char16_t>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf8_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -3650,14 +3694,14 @@ __codecvt_utf8<char16_t>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf8_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf8<char16_t>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 3;
 }
@@ -3677,7 +3721,7 @@ __codecvt_utf8<char32_t>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs4_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -3695,7 +3739,7 @@ __codecvt_utf8<char32_t>::do_in(state_type&,
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf8_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                            __maxcode_, __mode_);
+                            _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -3727,14 +3771,14 @@ __codecvt_utf8<char32_t>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf8_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf8<char32_t>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 7;
     return 4;
 }
@@ -3762,10 +3806,10 @@ __codecvt_utf16<wchar_t, false>::do_out(state_type&,
     uint8_t* _to_nxt = _to;
 #if defined(_LIBCPP_SHORT_WCHAR)
     result r = ucs2_to_utf16be(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #else
     result r = ucs4_to_utf16be(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3785,13 +3829,13 @@ __codecvt_utf16<wchar_t, false>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf16be_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #else
     uint32_t* _to = reinterpret_cast<uint32_t*>(to);
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf16be_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3825,9 +3869,9 @@ __codecvt_utf16<wchar_t, false>::do_length(state_type&,
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
 #if defined(_LIBCPP_SHORT_WCHAR)
-    return utf16be_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16be_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #else
-    return utf16be_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16be_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #endif
 }
 
@@ -3835,11 +3879,11 @@ int
 __codecvt_utf16<wchar_t, false>::do_max_length() const noexcept
 {
 #if defined(_LIBCPP_SHORT_WCHAR)
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 4;
     return 2;
 #else
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 4;
 #endif
@@ -3866,10 +3910,10 @@ __codecvt_utf16<wchar_t, true>::do_out(state_type&,
     uint8_t* _to_nxt = _to;
 #if defined(_LIBCPP_SHORT_WCHAR)
     result r = ucs2_to_utf16le(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #else
     result r = ucs4_to_utf16le(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3889,13 +3933,13 @@ __codecvt_utf16<wchar_t, true>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf16le_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #else
     uint32_t* _to = reinterpret_cast<uint32_t*>(to);
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf16le_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
 #endif
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
@@ -3929,9 +3973,9 @@ __codecvt_utf16<wchar_t, true>::do_length(state_type&,
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
 #if defined(_LIBCPP_SHORT_WCHAR)
-    return utf16le_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16le_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #else
-    return utf16le_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16le_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 #endif
 }
 
@@ -3939,11 +3983,11 @@ int
 __codecvt_utf16<wchar_t, true>::do_max_length() const noexcept
 {
 #if defined(_LIBCPP_SHORT_WCHAR)
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 4;
     return 2;
 #else
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 4;
 #endif
@@ -3964,7 +4008,7 @@ __codecvt_utf16<char16_t, false>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs2_to_utf16be(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -3982,7 +4026,7 @@ __codecvt_utf16<char16_t, false>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf16be_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4014,14 +4058,14 @@ __codecvt_utf16<char16_t, false>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf16be_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16be_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf16<char16_t, false>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 4;
     return 2;
 }
@@ -4041,7 +4085,7 @@ __codecvt_utf16<char16_t, true>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs2_to_utf16le(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4059,7 +4103,7 @@ __codecvt_utf16<char16_t, true>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf16le_to_ucs2(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4091,14 +4135,14 @@ __codecvt_utf16<char16_t, true>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf16le_to_ucs2_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16le_to_ucs2_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf16<char16_t, true>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 4;
     return 2;
 }
@@ -4118,7 +4162,7 @@ __codecvt_utf16<char32_t, false>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs4_to_utf16be(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4136,7 +4180,7 @@ __codecvt_utf16<char32_t, false>::do_in(state_type&,
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf16be_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4168,14 +4212,14 @@ __codecvt_utf16<char32_t, false>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf16be_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16be_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf16<char32_t, false>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 4;
 }
@@ -4195,7 +4239,7 @@ __codecvt_utf16<char32_t, true>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = ucs4_to_utf16le(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4213,7 +4257,7 @@ __codecvt_utf16<char32_t, true>::do_in(state_type&,
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf16le_to_ucs4(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                               __maxcode_, __mode_);
+                               _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4245,14 +4289,14 @@ __codecvt_utf16<char32_t, true>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf16le_to_ucs4_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf16le_to_ucs4_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf16<char32_t, true>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 6;
     return 4;
 }
@@ -4279,7 +4323,7 @@ __codecvt_utf8_utf16<wchar_t>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = utf16_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4303,7 +4347,7 @@ __codecvt_utf8_utf16<wchar_t>::do_in(state_type&,
     uint32_t* _to_nxt = _to;
 #endif
     result r = utf8_to_utf16(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4335,13 +4379,13 @@ __codecvt_utf8_utf16<wchar_t>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf8_to_utf16_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_utf16_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 int
 __codecvt_utf8_utf16<wchar_t>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 7;
     return 4;
 }
@@ -4361,7 +4405,7 @@ __codecvt_utf8_utf16<char16_t>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = utf16_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4379,7 +4423,7 @@ __codecvt_utf8_utf16<char16_t>::do_in(state_type&,
     uint16_t* _to_end = reinterpret_cast<uint16_t*>(to_end);
     uint16_t* _to_nxt = _to;
     result r = utf8_to_utf16(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4411,14 +4455,14 @@ __codecvt_utf8_utf16<char16_t>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf8_to_utf16_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_utf16_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf8_utf16<char16_t>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 7;
     return 4;
 }
@@ -4438,7 +4482,7 @@ __codecvt_utf8_utf16<char32_t>::do_out(state_type&,
     uint8_t* _to_end = reinterpret_cast<uint8_t*>(to_end);
     uint8_t* _to_nxt = _to;
     result r = utf16_to_utf8(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4456,7 +4500,7 @@ __codecvt_utf8_utf16<char32_t>::do_in(state_type&,
     uint32_t* _to_end = reinterpret_cast<uint32_t*>(to_end);
     uint32_t* _to_nxt = _to;
     result r = utf8_to_utf16(_frm, _frm_end, _frm_nxt, _to, _to_end, _to_nxt,
-                             __maxcode_, __mode_);
+                             _Maxcode_, _Mode_);
     frm_nxt = frm + (_frm_nxt - _frm);
     to_nxt = to + (_to_nxt - _to);
     return r;
@@ -4488,14 +4532,14 @@ __codecvt_utf8_utf16<char32_t>::do_length(state_type&,
 {
     const uint8_t* _frm = reinterpret_cast<const uint8_t*>(frm);
     const uint8_t* _frm_end = reinterpret_cast<const uint8_t*>(frm_end);
-    return utf8_to_utf16_length(_frm, _frm_end, mx, __maxcode_, __mode_);
+    return utf8_to_utf16_length(_frm, _frm_end, mx, _Maxcode_, _Mode_);
 }
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 int
 __codecvt_utf8_utf16<char32_t>::do_max_length() const noexcept
 {
-    if (__mode_ & consume_header)
+    if (_Mode_ & consume_header)
         return 7;
     return 4;
 }
@@ -4601,9 +4645,9 @@ static bool checked_string_to_char_convert(char& dest,
 
 // numpunct<char> && numpunct<wchar_t>
 
-constinit locale::id numpunct<char>::id;
+locale::id numpunct< char  >::id;
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
-constinit locale::id numpunct<wchar_t>::id;
+locale::id numpunct<wchar_t>::id;
 #endif
 
 numpunct<char>::numpunct(size_t refs)
@@ -4683,8 +4727,8 @@ numpunct_byname<char>::__init(const char* nm)
     {
         __libcpp_unique_locale loc(nm);
         if (!loc)
-            __throw_runtime_error(("numpunct_byname<char>::numpunct_byname"
-                                   " failed to construct for " + string(nm)).c_str());
+            __throw_runtime_error("numpunct_byname<char>::numpunct_byname"
+                                " failed to construct for " + string(nm));
 
         lconv* lc = __libcpp_localeconv_l(loc.get());
         if (!checked_string_to_char_convert(__decimal_point_, lc->decimal_point,
@@ -4724,8 +4768,8 @@ numpunct_byname<wchar_t>::__init(const char* nm)
     {
         __libcpp_unique_locale loc(nm);
         if (!loc)
-            __throw_runtime_error(("numpunct_byname<wchar_t>::numpunct_byname"
-                                   " failed to construct for " + string(nm)).c_str());
+            __throw_runtime_error("numpunct_byname<wchar_t>::numpunct_byname"
+                                " failed to construct for " + string(nm));
 
         lconv* lc = __libcpp_localeconv_l(loc.get());
         checked_string_to_wchar_convert(__decimal_point_, lc->decimal_point,
@@ -4761,7 +4805,7 @@ __check_grouping(const string& __grouping, unsigned* __g, unsigned* __g_end,
 {
 //  if the grouping pattern is empty _or_ there are no grouping bits, then do nothing
 //  we always have at least a single entry in [__g, __g_end); the end of the input sequence
-    if (__grouping.size() != 0 && __g_end - __g > 1)
+	if (__grouping.size() != 0 && __g_end - __g > 1)
     {
         reverse(__g, __g_end);
         const char* __ig = __grouping.data();
@@ -4794,7 +4838,7 @@ __num_put_base::__format_int(char* __fmtp, const char* __len, bool __signd,
     if ((__flags & ios_base::showpos) &&
         (__flags & ios_base::basefield) != ios_base::oct &&
         (__flags & ios_base::basefield) != ios_base::hex &&
-        __signd)
+	__signd)
         *__fmtp++ = '+';
     if (__flags & ios_base::showbase)
         *__fmtp++ = '#';
@@ -5156,14 +5200,16 @@ __time_get::__time_get(const char* nm)
     : __loc_(newlocale(LC_ALL_MASK, nm, 0))
 {
     if (__loc_ == 0)
-        __throw_runtime_error(("time_get_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("time_get_byname"
+                            " failed to construct for " + string(nm));
 }
 
 __time_get::__time_get(const string& nm)
     : __loc_(newlocale(LC_ALL_MASK, nm.c_str(), 0))
 {
     if (__loc_ == 0)
-        __throw_runtime_error(("time_get_byname failed to construct for " + nm).c_str());
+        __throw_runtime_error("time_get_byname"
+                            " failed to construct for " + nm);
 }
 
 __time_get::~__time_get()
@@ -5812,14 +5858,16 @@ __time_put::__time_put(const char* nm)
     : __loc_(newlocale(LC_ALL_MASK, nm, 0))
 {
     if (__loc_ == 0)
-        __throw_runtime_error(("time_put_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("time_put_byname"
+                            " failed to construct for " + string(nm));
 }
 
 __time_put::__time_put(const string& nm)
     : __loc_(newlocale(LC_ALL_MASK, nm.c_str(), 0))
 {
     if (__loc_ == 0)
-        __throw_runtime_error(("time_put_byname failed to construct for " + nm).c_str());
+        __throw_runtime_error("time_put_byname"
+                            " failed to construct for " + nm);
 }
 
 __time_put::~__time_put()
@@ -6237,7 +6285,8 @@ moneypunct_byname<char, false>::init(const char* nm)
     typedef moneypunct<char, false> base;
     __libcpp_unique_locale loc(nm);
     if (!loc)
-        __throw_runtime_error(("moneypunct_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("moneypunct_byname"
+                            " failed to construct for " + string(nm));
 
     lconv* lc = __libcpp_localeconv_l(loc.get());
     if (!checked_string_to_char_convert(__decimal_point_,
@@ -6280,7 +6329,8 @@ moneypunct_byname<char, true>::init(const char* nm)
     typedef moneypunct<char, true> base;
     __libcpp_unique_locale loc(nm);
     if (!loc)
-        __throw_runtime_error(("moneypunct_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("moneypunct_byname"
+                            " failed to construct for " + string(nm));
 
     lconv* lc = __libcpp_localeconv_l(loc.get());
     if (!checked_string_to_char_convert(__decimal_point_,
@@ -6340,7 +6390,8 @@ moneypunct_byname<wchar_t, false>::init(const char* nm)
     typedef moneypunct<wchar_t, false> base;
     __libcpp_unique_locale loc(nm);
     if (!loc)
-        __throw_runtime_error(("moneypunct_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("moneypunct_byname"
+                            " failed to construct for " + string(nm));
     lconv* lc = __libcpp_localeconv_l(loc.get());
     if (!checked_string_to_wchar_convert(__decimal_point_,
                                          lc->mon_decimal_point,
@@ -6404,7 +6455,8 @@ moneypunct_byname<wchar_t, true>::init(const char* nm)
     typedef moneypunct<wchar_t, true> base;
     __libcpp_unique_locale loc(nm);
     if (!loc)
-        __throw_runtime_error(("moneypunct_byname failed to construct for " + string(nm)).c_str());
+        __throw_runtime_error("moneypunct_byname"
+                            " failed to construct for " + string(nm));
 
     lconv* lc = __libcpp_localeconv_l(loc.get());
     if (!checked_string_to_wchar_convert(__decimal_point_,
@@ -6481,6 +6533,16 @@ moneypunct_byname<wchar_t, true>::init(const char* nm)
 #endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
 void __do_nothing(void*) {}
+
+void __throw_runtime_error(const char* msg)
+{
+#ifndef _LIBCPP_NO_EXCEPTIONS
+    throw runtime_error(msg);
+#else
+    (void)msg;
+    _VSTD::abort();
+#endif
+}
 
                            template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS collate<char>;
 _LIBCPP_IF_WIDE_CHARACTERS(template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS collate<wchar_t>;)

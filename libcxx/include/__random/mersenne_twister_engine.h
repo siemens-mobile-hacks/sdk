@@ -17,6 +17,7 @@
 #include <cstdint>
 #include <iosfwd>
 #include <limits>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -35,7 +36,7 @@ class _LIBCPP_TEMPLATE_VIS mersenne_twister_engine;
 template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI bool
+bool
 operator==(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __x,
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
@@ -55,7 +56,7 @@ template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
+basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __x);
@@ -64,7 +65,7 @@ template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
+basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                    _Bp, _Tp, _Cp, _Lp, _Fp>& __x);
@@ -135,19 +136,24 @@ public:
       seed(__sd);
     }
 #endif
-    template<class _Sseq, __enable_if_t<__is_seed_sequence<_Sseq, mersenne_twister_engine>::value, int> = 0>
+    template<class _Sseq>
         _LIBCPP_INLINE_VISIBILITY
-        explicit mersenne_twister_engine(_Sseq& __q)
+        explicit mersenne_twister_engine(_Sseq& __q,
+        typename enable_if<__is_seed_sequence<_Sseq, mersenne_twister_engine>::value>::type* = 0)
         {seed(__q);}
-    _LIBCPP_HIDE_FROM_ABI void seed(result_type __sd = default_seed);
-    template<class _Sseq, __enable_if_t<__is_seed_sequence<_Sseq, mersenne_twister_engine>::value, int> = 0>
+    void seed(result_type __sd = default_seed);
+    template<class _Sseq>
         _LIBCPP_INLINE_VISIBILITY
-        void
+        typename enable_if
+        <
+            __is_seed_sequence<_Sseq, mersenne_twister_engine>::value,
+            void
+        >::type
         seed(_Sseq& __q)
             {__seed(__q, integral_constant<unsigned, 1 + (__w - 1) / 32>());}
 
     // generating functions
-    _LIBCPP_HIDE_FROM_ABI result_type operator()();
+    result_type operator()();
     _LIBCPP_INLINE_VISIBILITY
     void discard(unsigned long long __z) {for (; __z; --__z) operator()();}
 
@@ -193,32 +199,48 @@ public:
 private:
 
     template<class _Sseq>
-    _LIBCPP_HIDE_FROM_ABI void __seed(_Sseq& __q, integral_constant<unsigned, 1>);
+        void __seed(_Sseq& __q, integral_constant<unsigned, 1>);
     template<class _Sseq>
-    _LIBCPP_HIDE_FROM_ABI void __seed(_Sseq& __q, integral_constant<unsigned, 2>);
+        void __seed(_Sseq& __q, integral_constant<unsigned, 2>);
 
-    template <size_t __count, __enable_if_t<__count < __w, int> = 0>
+    template <size_t __count>
         _LIBCPP_INLINE_VISIBILITY
         static
-        result_type
+        typename enable_if
+        <
+            __count < __w,
+            result_type
+        >::type
         __lshift(result_type __x) {return (__x << __count) & _Max;}
 
-    template <size_t __count, __enable_if_t<(__count >= __w), int> = 0>
+    template <size_t __count>
         _LIBCPP_INLINE_VISIBILITY
         static
-        result_type
+        typename enable_if
+        <
+            (__count >= __w),
+            result_type
+        >::type
         __lshift(result_type) {return result_type(0);}
 
-    template <size_t __count, __enable_if_t<__count < _Dt, int> = 0>
+    template <size_t __count>
         _LIBCPP_INLINE_VISIBILITY
         static
-        result_type
+        typename enable_if
+        <
+            __count < _Dt,
+            result_type
+        >::type
         __rshift(result_type __x) {return __x >> __count;}
 
-    template <size_t __count, __enable_if_t<(__count >= _Dt), int> = 0>
+    template <size_t __count>
         _LIBCPP_INLINE_VISIBILITY
         static
-        result_type
+        typename enable_if
+        <
+            (__count >= _Dt),
+            result_type
+        >::type
         __rshift(result_type) {return result_type(0);}
 };
 
@@ -381,9 +403,9 @@ mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b,
     const size_t __j = (__i_ + 1) % __n;
     const result_type __mask = __r == _Dt ? result_type(~0) :
                                        (result_type(1) << __r) - result_type(1);
-    const result_type __yp = (__x_[__i_] & ~__mask) | (__x_[__j] & __mask);
+    const result_type _Yp = (__x_[__i_] & ~__mask) | (__x_[__j] & __mask);
     const size_t __k = (__i_ + __m) % __n;
-    __x_[__i_] = __x_[__k] ^ __rshift<1>(__yp) ^ (__a * (__yp & 1));
+    __x_[__i_] = __x_[__k] ^ __rshift<1>(_Yp) ^ (__a * (_Yp & 1));
     result_type __z = __x_[__i_] ^ (__rshift<__u>(__x_[__i_]) & __d);
     __i_ = __j;
     __z ^= __lshift<__s>(__z) & __b;
@@ -394,7 +416,7 @@ mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b,
 template <class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI bool
+bool
 operator==(const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __x,
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
@@ -452,7 +474,7 @@ template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI basic_ostream<_CharT, _Traits>&
+basic_ostream<_CharT, _Traits>&
 operator<<(basic_ostream<_CharT, _Traits>& __os,
            const mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                          _Bp, _Tp, _Cp, _Lp, _Fp>& __x)
@@ -474,7 +496,7 @@ template <class _CharT, class _Traits,
           class _UInt, size_t _Wp, size_t _Np, size_t _Mp, size_t _Rp,
           _UInt _Ap, size_t _Up, _UInt _Dp, size_t _Sp,
           _UInt _Bp, size_t _Tp, _UInt _Cp, size_t _Lp, _UInt _Fp>
-_LIBCPP_HIDE_FROM_ABI basic_istream<_CharT, _Traits>&
+basic_istream<_CharT, _Traits>&
 operator>>(basic_istream<_CharT, _Traits>& __is,
            mersenne_twister_engine<_UInt, _Wp, _Np, _Mp, _Rp, _Ap, _Up, _Dp, _Sp,
                                    _Bp, _Tp, _Cp, _Lp, _Fp>& __x)

@@ -104,9 +104,7 @@ void perror(const char* s);
 #  pragma GCC system_header
 #endif
 
-#  if __has_include_next(<stdio.h>)
-#    include_next <stdio.h>
-#  endif
+#include_next <stdio.h>
 
 #ifdef __cplusplus
 
@@ -115,8 +113,6 @@ void perror(const char* s);
 #undef clearerr
 #undef feof
 #undef ferror
-#undef putchar
-#undef getchar
 
 #endif
 

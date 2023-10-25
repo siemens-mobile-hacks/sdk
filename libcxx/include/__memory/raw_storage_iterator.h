@@ -16,7 +16,6 @@
 #include <__memory/addressof.h>
 #include <__utility/move.h>
 #include <cstddef>
-#include <new>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -39,7 +38,7 @@ private:
 public:
     typedef output_iterator_tag iterator_category;
     typedef void                value_type;
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17
     typedef ptrdiff_t           difference_type;
 #else
     typedef void                difference_type;

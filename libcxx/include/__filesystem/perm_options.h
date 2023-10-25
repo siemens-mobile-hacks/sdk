@@ -21,7 +21,9 @@
 
 _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
-enum class perm_options : unsigned char {
+_LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
+
+enum class _LIBCPP_ENUM_VIS perm_options : unsigned char {
   replace = 1,
   add = 2,
   remove = 4,
@@ -65,6 +67,8 @@ _LIBCPP_INLINE_VISIBILITY
 inline perm_options& operator^=(perm_options& __lhs, perm_options __rhs) {
   return __lhs = __lhs ^ __rhs;
 }
+
+_LIBCPP_AVAILABILITY_FILESYSTEM_POP
 
 _LIBCPP_END_NAMESPACE_FILESYSTEM
 

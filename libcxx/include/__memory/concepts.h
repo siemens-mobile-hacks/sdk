@@ -10,16 +10,14 @@
 #ifndef _LIBCPP___MEMORY_CONCEPTS_H
 #define _LIBCPP___MEMORY_CONCEPTS_H
 
-#include <__concepts/same_as.h>
 #include <__config>
 #include <__iterator/concepts.h>
 #include <__iterator/iterator_traits.h>
 #include <__iterator/readable_traits.h>
 #include <__ranges/access.h>
 #include <__ranges/concepts.h>
-#include <__type_traits/is_reference.h>
-#include <__type_traits/remove_cvref.h>
-#include <__type_traits/remove_reference.h> // TODO(modules): This should not be required
+#include <concepts>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -27,7 +25,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 namespace ranges {
 
@@ -63,7 +61,7 @@ concept __nothrow_forward_range =
 
 } // namespace ranges
 
-#endif // _LIBCPP_STD_VER >= 20
+#endif // _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 _LIBCPP_END_NAMESPACE_STD
 

@@ -15,12 +15,8 @@
 #include <__iterator/advance.h>
 #include <__iterator/distance.h>
 #include <__iterator/iterator_traits.h>
-#include <__memory/destruct_n.h>
-#include <__memory/temporary_buffer.h>
-#include <__memory/unique_ptr.h>
-#include <__utility/move.h>
-#include <__utility/pair.h>
-#include <new>
+#include <memory>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -29,7 +25,7 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _AlgPolicy, class _Predicate, class _ForwardIterator, class _Distance, class _Pair>
-_LIBCPP_HIDE_FROM_ABI _ForwardIterator
+_ForwardIterator
 __stable_partition_impl(_ForwardIterator __first, _ForwardIterator __last, _Predicate __pred,
                    _Distance __len, _Pair __p, forward_iterator_tag __fit)
 {
@@ -118,14 +114,11 @@ __second_half_done:
 }
 
 template <class _AlgPolicy, class _Predicate, class _ForwardIterator>
-_LIBCPP_HIDE_FROM_ABI _ForwardIterator
+_ForwardIterator
 __stable_partition_impl(_ForwardIterator __first, _ForwardIterator __last, _Predicate __pred,
                    forward_iterator_tag)
 {
-    typedef typename iterator_traits<_ForwardIterator>::difference_type difference_type;
-    typedef typename iterator_traits<_ForwardIterator>::value_type value_type;
-
-    const difference_type __alloc_limit = 3;  // might want to make this a function of trivial assignment
+    const unsigned __alloc_limit = 3;  // might want to make this a function of trivial assignment
     // Either prove all true and return __first or point to first false
     while (true)
     {
@@ -137,6 +130,8 @@ __stable_partition_impl(_ForwardIterator __first, _ForwardIterator __last, _Pred
     }
     // We now have a reduced range [__first, __last)
     // *__first is known to be false
+    typedef typename iterator_traits<_ForwardIterator>::difference_type difference_type;
+    typedef typename iterator_traits<_ForwardIterator>::value_type value_type;
     difference_type __len = _IterOps<_AlgPolicy>::distance(__first, __last);
     pair<value_type*, ptrdiff_t> __p(0, 0);
     unique_ptr<value_type, __return_temporary_buffer> __h;
@@ -264,7 +259,7 @@ __second_half_done:
 }
 
 template <class _AlgPolicy, class _Predicate, class _BidirectionalIterator>
-_LIBCPP_HIDE_FROM_ABI _BidirectionalIterator
+_BidirectionalIterator
 __stable_partition_impl(_BidirectionalIterator __first, _BidirectionalIterator __last, _Predicate __pred,
                    bidirectional_iterator_tag)
 {
@@ -310,7 +305,7 @@ template <class _AlgPolicy, class _Predicate, class _ForwardIterator, class _Ite
 _LIBCPP_HIDE_FROM_ABI
 _ForwardIterator __stable_partition(
     _ForwardIterator __first, _ForwardIterator __last, _Predicate&& __pred, _IterCategory __iter_category) {
-  return std::__stable_partition_impl<_AlgPolicy, __remove_cvref_t<_Predicate>&>(
+  return std::__stable_partition_impl<_AlgPolicy, __uncvref_t<_Predicate>&>(
       std::move(__first), std::move(__last), __pred, __iter_category);
 }
 

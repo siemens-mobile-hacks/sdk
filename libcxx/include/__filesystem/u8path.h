@@ -15,6 +15,7 @@
 #include <__config>
 #include <__filesystem/path.h>
 #include <string>
+#include <type_traits>
 
 // Only required on Windows for __widen_from_utf8, and included conservatively
 // because it requires support for localization.
@@ -30,11 +31,11 @@
 
 _LIBCPP_BEGIN_NAMESPACE_FILESYSTEM
 
-_LIBCPP_AVAILABILITY_FILESYSTEM_LIBRARY_PUSH
+_LIBCPP_AVAILABILITY_FILESYSTEM_PUSH
 
-template <class _InputIt, __enable_if_t<__is_pathable<_InputIt>::value, int> = 0>
+template <class _InputIt>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
-    path
+    typename enable_if<__is_pathable<_InputIt>::value, path>::type
     u8path(_InputIt __f, _InputIt __l) {
   static_assert(
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
@@ -56,9 +57,9 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
 }
 
 #if defined(_LIBCPP_WIN32API)
-template <class _InputIt, __enable_if_t<__is_pathable<_InputIt>::value, int> = 0>
+template <class _InputIt>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
-    path
+    typename enable_if<__is_pathable<_InputIt>::value, path>::type
     u8path(_InputIt __f, _NullSentinel) {
   static_assert(
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
@@ -79,9 +80,9 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
 }
 #endif /* _LIBCPP_WIN32API */
 
-template <class _Source, __enable_if_t<__is_pathable<_Source>::value, int> = 0>
+template <class _Source>
 _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
-    path
+    typename enable_if<__is_pathable<_Source>::value, path>::type
     u8path(const _Source& __s) {
   static_assert(
 #ifndef _LIBCPP_HAS_NO_CHAR8_T
@@ -98,7 +99,7 @@ _LIBCPP_INLINE_VISIBILITY _LIBCPP_DEPRECATED_WITH_CHAR8_T
 #endif
 }
 
-_LIBCPP_AVAILABILITY_FILESYSTEM_LIBRARY_POP
+_LIBCPP_AVAILABILITY_FILESYSTEM_POP
 
 _LIBCPP_END_NAMESPACE_FILESYSTEM
 

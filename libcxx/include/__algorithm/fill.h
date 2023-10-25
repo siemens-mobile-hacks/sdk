@@ -12,6 +12,7 @@
 #include <__algorithm/fill_n.h>
 #include <__config>
 #include <__iterator/iterator_traits.h>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -22,7 +23,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 // fill isn't specialized for std::memset, because the compiler already optimizes the loop to a call to std::memset.
 
 template <class _ForwardIterator, class _Tp>
-inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
+inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 void
 __fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value, forward_iterator_tag)
 {
@@ -31,7 +32,7 @@ __fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value, fo
 }
 
 template <class _RandomAccessIterator, class _Tp>
-inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
+inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 void
 __fill(_RandomAccessIterator __first, _RandomAccessIterator __last, const _Tp& __value, random_access_iterator_tag)
 {
@@ -39,7 +40,7 @@ __fill(_RandomAccessIterator __first, _RandomAccessIterator __last, const _Tp& _
 }
 
 template <class _ForwardIterator, class _Tp>
-inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_SINCE_CXX20
+inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
 void
 fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
 {

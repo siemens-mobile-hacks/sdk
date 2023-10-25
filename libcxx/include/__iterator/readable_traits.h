@@ -10,15 +10,9 @@
 #ifndef _LIBCPP___ITERATOR_READABLE_TRAITS_H
 #define _LIBCPP___ITERATOR_READABLE_TRAITS_H
 
-#include <__concepts/same_as.h>
 #include <__config>
-#include <__type_traits/conditional.h>
-#include <__type_traits/is_array.h>
-#include <__type_traits/is_object.h>
-#include <__type_traits/is_primary_template.h>
-#include <__type_traits/remove_cv.h>
-#include <__type_traits/remove_cvref.h>
-#include <__type_traits/remove_extent.h>
+#include <concepts>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -26,7 +20,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17
 
 // [readable.traits]
 template<class> struct __cond_value_type {};
@@ -74,7 +68,18 @@ template<__has_member_value_type _Tp>
 struct indirectly_readable_traits<_Tp>
   : __cond_value_type<typename _Tp::value_type> {};
 
-#endif // _LIBCPP_STD_VER >= 20
+template <class>
+struct iterator_traits;
+
+// Let `RI` be `remove_cvref_t<I>`. The type `iter_value_t<I>` denotes
+// `indirectly_readable_traits<RI>::value_type` if `iterator_traits<RI>` names a specialization
+// generated from the primary template, and `iterator_traits<RI>::value_type` otherwise.
+template <class _Ip>
+using iter_value_t = typename conditional_t<__is_primary_template<iterator_traits<remove_cvref_t<_Ip> > >::value,
+                                            indirectly_readable_traits<remove_cvref_t<_Ip> >,
+                                            iterator_traits<remove_cvref_t<_Ip> > >::value_type;
+
+#endif // _LIBCPP_STD_VER > 17
 
 _LIBCPP_END_NAMESPACE_STD
 

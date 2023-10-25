@@ -10,8 +10,8 @@
 #define _LIBCPP___RANDOM_LOG2_H
 
 #include <__config>
-#include <__type_traits/conditional.h>
 #include <cstddef>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -58,12 +58,15 @@ struct __log2
 {
     static const size_t value = __log2_imp<
 #ifndef _LIBCPP_HAS_NO_INT128
-        __conditional_t<sizeof(_UIntType) <= sizeof(unsigned long long), unsigned long long, __uint128_t>,
+        typename conditional<
+                sizeof(_UIntType) <= sizeof(unsigned long long),
+                    unsigned long long,
+                    __uint128_t
+            >::type,
 #else
         unsigned long long,
 #endif // _LIBCPP_HAS_NO_INT128
-        _Xp,
-        sizeof(_UIntType) * __CHAR_BIT__ - 1>::value;
+        _Xp, sizeof(_UIntType) * __CHAR_BIT__ - 1>::value;
 };
 
 _LIBCPP_END_NAMESPACE_STD

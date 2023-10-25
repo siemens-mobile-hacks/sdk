@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 //
 //===----------------------------------------------------------------------===//
-
 #ifndef _LIBCPP___RANGES_COUNTED_H
 #define _LIBCPP___RANGES_COUNTED_H
 
@@ -19,11 +18,10 @@
 #include <__iterator/iterator_traits.h>
 #include <__memory/pointer_traits.h>
 #include <__ranges/subrange.h>
-#include <__type_traits/decay.h>
 #include <__utility/forward.h>
 #include <__utility/move.h>
-#include <cstddef>
 #include <span>
+#include <type_traits>
 
 #if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 #  pragma GCC system_header
@@ -31,7 +29,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
+#if _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 namespace ranges::views {
 
@@ -76,7 +74,7 @@ inline namespace __cpo {
 
 } // namespace ranges::views
 
-#endif // _LIBCPP_STD_VER >= 20
+#endif // _LIBCPP_STD_VER > 17 && !defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)
 
 _LIBCPP_END_NAMESPACE_STD
 
