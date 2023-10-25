@@ -28,6 +28,7 @@ CXXSTD ?= -std=gnu++11
 BUILD_TYPE ?= exe
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
+CXX_TYPE ?= uclibc++
 
 ifeq ($(USE_EMULATOR),1)
 	ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
@@ -46,8 +47,15 @@ LD		= $(PREFIX)ld
 AR		= $(PREFIX)ar
 
 INCLUDES += -I$(SDK_PATH)/include
-INCLUDES += -I$(SDK_PATH)/libuclibc++/include
+INCLUDES += -I$(SDK_PATH)/dietlibc/include
 INCLUDES += -I$(SDK_PATH)/libjpeg/include
+
+# Type of C++ library
+ifeq ($(CXX_TYPE),libcxx)
+	INCLUDES += -I$(SDK_PATH)/libcxx/include
+else ifeq ($(CXX_TYPE),uclibc++)
+	INCLUDES += -I$(SDK_PATH)/libuclibc++/include
+endif
 
 DEFINES += -D__arm__
 DEFINES += -D__ARM_EABI__
