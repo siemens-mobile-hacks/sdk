@@ -115,10 +115,13 @@ in_scan:
 	case 'X':
 	case 'x':
 	  _div+=6;
+	  /* fall through */
 	case 'd':
 	  _div+=2;
+	  /* fall through */
 	case 'o':
 	  _div+=8;
+	  /* fall through */
 	case 'u':
 	case 'i':
 	  {
@@ -338,6 +341,7 @@ exp_out:
 	    char cset[256];
 	    int flag_not=0;
 	    int flag_dash=0;
+	    int matched=0;
 	    memset(cset,0,sizeof(cset));
 	    ch=*format++;
 	    /* first char specials */
@@ -368,18 +372,19 @@ exp_out:
 	    else cset[ch]=1;
 
 	    /* like %c or %s */
-	    if (!flag_discard) {
+	    if (!flag_discard)
 	      s=(char *)va_arg(arg_ptr,char*);
-	      ++n;
-	    }
 	    while (width && (tpch>=0) && (cset[tpch]^flag_not)) {
 	      if (!flag_discard) *s=tpch;
 	      if (tpch) ++s; else break;
 	      --width;
 	      tpch=A_GETC(fn);
+	      matched=1;
 	    }
 	    if (!flag_discard) *s=0;
 	    ++format;
+	    if (matched && !flag_discard)
+	      ++n;
 	  }
 	  break;
 #endif
@@ -412,6 +417,4 @@ err_out:
   return n;
 }
 
-#ifdef __NEED_WARNING
 link_warning("__v_scanf","warning: the scanf functions add several kilobytes of bloat.");
-#endif
