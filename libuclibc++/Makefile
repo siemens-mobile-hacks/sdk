@@ -6,6 +6,9 @@ BUILD_DIR := bin
 CXXSTD := -std=gnu++98
 OPT := -Os
 
+CFLAGS += -mthumb
+CXXFLAGS += -mthumb
+
 DEFINES += -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
 

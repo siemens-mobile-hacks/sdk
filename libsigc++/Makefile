@@ -3,6 +3,9 @@ TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
+CFLAGS += -mthumb
+CXXFLAGS += -mthumb
+
 CXXSTD := -std=gnu++98
 OPT := -O2
 

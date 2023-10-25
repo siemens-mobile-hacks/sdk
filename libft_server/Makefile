@@ -3,7 +3,10 @@ TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
-OPT := -O2
+OPT := -Os
+
+CFLAGS += -mthumb
+CXXFLAGS += -mthumb
 
 LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lstdc++-1.2.2 -lm-1.0 -lft-2.4.6-1
 

@@ -5,6 +5,9 @@ BUILD_DIR := bin
 
 INCLUDES += -Iinclude
 
+CFLAGS += -mthumb
+CXXFLAGS += -mthumb
+
 CXXSTD := -std=gnu++98
 OPT := -O2
 
