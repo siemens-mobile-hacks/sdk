@@ -72,7 +72,7 @@ using ::gmtime _LIBCPP_USING_IF_EXISTS;
 using ::localtime _LIBCPP_USING_IF_EXISTS;
 using ::strftime _LIBCPP_USING_IF_EXISTS;
 #if _LIBCPP_STD_VER > 14
-using ::timespec_get _LIBCPP_USING_IF_EXISTS;
+// using ::timespec_get _LIBCPP_USING_IF_EXISTS;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

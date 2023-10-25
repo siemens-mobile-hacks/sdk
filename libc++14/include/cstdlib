@@ -103,9 +103,9 @@ using ::strtod _LIBCPP_USING_IF_EXISTS;
 using ::strtof _LIBCPP_USING_IF_EXISTS;
 using ::strtold _LIBCPP_USING_IF_EXISTS;
 using ::strtol _LIBCPP_USING_IF_EXISTS;
-using ::strtoll _LIBCPP_USING_IF_EXISTS;
+// using ::strtoll _LIBCPP_USING_IF_EXISTS;
 using ::strtoul _LIBCPP_USING_IF_EXISTS;
-using ::strtoull _LIBCPP_USING_IF_EXISTS;
+// using ::strtoull _LIBCPP_USING_IF_EXISTS;
 using ::rand _LIBCPP_USING_IF_EXISTS;
 using ::srand _LIBCPP_USING_IF_EXISTS;
 using ::calloc _LIBCPP_USING_IF_EXISTS;
@@ -115,7 +115,7 @@ using ::realloc _LIBCPP_USING_IF_EXISTS;
 using ::abort _LIBCPP_USING_IF_EXISTS;
 using ::atexit _LIBCPP_USING_IF_EXISTS;
 using ::exit _LIBCPP_USING_IF_EXISTS;
-using ::_Exit _LIBCPP_USING_IF_EXISTS;
+// using ::_Exit _LIBCPP_USING_IF_EXISTS;
 using ::getenv _LIBCPP_USING_IF_EXISTS;
 using ::system _LIBCPP_USING_IF_EXISTS;
 using ::bsearch _LIBCPP_USING_IF_EXISTS;
@@ -127,16 +127,18 @@ using ::div _LIBCPP_USING_IF_EXISTS;
 using ::ldiv _LIBCPP_USING_IF_EXISTS;
 using ::lldiv _LIBCPP_USING_IF_EXISTS;
 using ::mblen _LIBCPP_USING_IF_EXISTS;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 using ::mbtowc _LIBCPP_USING_IF_EXISTS;
 using ::wctomb _LIBCPP_USING_IF_EXISTS;
 using ::mbstowcs _LIBCPP_USING_IF_EXISTS;
 using ::wcstombs _LIBCPP_USING_IF_EXISTS;
-#if !defined(_LIBCPP_CXX03_LANG)
-using ::at_quick_exit _LIBCPP_USING_IF_EXISTS;
-using ::quick_exit _LIBCPP_USING_IF_EXISTS;
 #endif
-#if _LIBCPP_STD_VER > 14
-using ::aligned_alloc _LIBCPP_USING_IF_EXISTS;
+#if !defined(_LIBCPP_CXX03_LANG)
+// using ::at_quick_exit _LIBCPP_USING_IF_EXISTS;
+// using ::quick_exit _LIBCPP_USING_IF_EXISTS;
+#endif
+#if _LIBCPP_STD_VER >= 17
+// using ::aligned_alloc _LIBCPP_USING_IF_EXISTS;
 #endif
 
 _LIBCPP_END_NAMESPACE_STD

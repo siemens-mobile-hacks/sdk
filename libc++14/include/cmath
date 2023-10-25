@@ -342,7 +342,7 @@ using ::acos _LIBCPP_USING_IF_EXISTS;
 using ::acosf _LIBCPP_USING_IF_EXISTS;
 using ::asin _LIBCPP_USING_IF_EXISTS;
 using ::asinf _LIBCPP_USING_IF_EXISTS;
-using ::atan _LIBCPP_USING_IF_EXISTS;
+// using ::atan _LIBCPP_USING_IF_EXISTS;
 using ::atanf _LIBCPP_USING_IF_EXISTS;
 using ::atan2 _LIBCPP_USING_IF_EXISTS;
 using ::atan2f _LIBCPP_USING_IF_EXISTS;
@@ -353,7 +353,7 @@ using ::cosf _LIBCPP_USING_IF_EXISTS;
 using ::cosh _LIBCPP_USING_IF_EXISTS;
 using ::coshf _LIBCPP_USING_IF_EXISTS;
 
-using ::exp _LIBCPP_USING_IF_EXISTS;
+// using ::exp _LIBCPP_USING_IF_EXISTS;
 using ::expf _LIBCPP_USING_IF_EXISTS;
 
 using ::fabs _LIBCPP_USING_IF_EXISTS;
@@ -369,7 +369,7 @@ using ::frexpf _LIBCPP_USING_IF_EXISTS;
 using ::ldexp _LIBCPP_USING_IF_EXISTS;
 using ::ldexpf _LIBCPP_USING_IF_EXISTS;
 
-using ::log _LIBCPP_USING_IF_EXISTS;
+// using ::log _LIBCPP_USING_IF_EXISTS;
 using ::logf _LIBCPP_USING_IF_EXISTS;
 
 using ::log10 _LIBCPP_USING_IF_EXISTS;
@@ -434,7 +434,7 @@ using ::llroundf _LIBCPP_USING_IF_EXISTS;
 using ::log1p _LIBCPP_USING_IF_EXISTS;
 using ::log1pf _LIBCPP_USING_IF_EXISTS;
 using ::log2 _LIBCPP_USING_IF_EXISTS;
-using ::log2f _LIBCPP_USING_IF_EXISTS;
+// using ::log2f _LIBCPP_USING_IF_EXISTS;
 using ::logb _LIBCPP_USING_IF_EXISTS;
 using ::logbf _LIBCPP_USING_IF_EXISTS;
 using ::lrint _LIBCPP_USING_IF_EXISTS;
@@ -468,71 +468,71 @@ using ::tgammaf _LIBCPP_USING_IF_EXISTS;
 using ::trunc _LIBCPP_USING_IF_EXISTS;
 using ::truncf _LIBCPP_USING_IF_EXISTS;
 
-using ::acosl _LIBCPP_USING_IF_EXISTS;
-using ::asinl _LIBCPP_USING_IF_EXISTS;
-using ::atanl _LIBCPP_USING_IF_EXISTS;
-using ::atan2l _LIBCPP_USING_IF_EXISTS;
+// using ::acosl _LIBCPP_USING_IF_EXISTS;
+// using ::asinl _LIBCPP_USING_IF_EXISTS;
+// using ::atanl _LIBCPP_USING_IF_EXISTS;
+// using ::atan2l _LIBCPP_USING_IF_EXISTS;
 using ::ceill _LIBCPP_USING_IF_EXISTS;
-using ::cosl _LIBCPP_USING_IF_EXISTS;
-using ::coshl _LIBCPP_USING_IF_EXISTS;
-using ::expl _LIBCPP_USING_IF_EXISTS;
+// using ::cosl _LIBCPP_USING_IF_EXISTS;
+// using ::coshl _LIBCPP_USING_IF_EXISTS;
+// using ::expl _LIBCPP_USING_IF_EXISTS;
 using ::fabsl _LIBCPP_USING_IF_EXISTS;
 using ::floorl _LIBCPP_USING_IF_EXISTS;
-using ::fmodl _LIBCPP_USING_IF_EXISTS;
+// using ::fmodl _LIBCPP_USING_IF_EXISTS;
 using ::frexpl _LIBCPP_USING_IF_EXISTS;
 using ::ldexpl _LIBCPP_USING_IF_EXISTS;
-using ::logl _LIBCPP_USING_IF_EXISTS;
-using ::log10l _LIBCPP_USING_IF_EXISTS;
-using ::modfl _LIBCPP_USING_IF_EXISTS;
-using ::powl _LIBCPP_USING_IF_EXISTS;
-using ::sinl _LIBCPP_USING_IF_EXISTS;
-using ::sinhl _LIBCPP_USING_IF_EXISTS;
-using ::sqrtl _LIBCPP_USING_IF_EXISTS;
-using ::tanl _LIBCPP_USING_IF_EXISTS;
+// using ::logl _LIBCPP_USING_IF_EXISTS;
+// using ::log10l _LIBCPP_USING_IF_EXISTS;
+// using ::modfl _LIBCPP_USING_IF_EXISTS;
+// using ::powl _LIBCPP_USING_IF_EXISTS;
+// using ::sinl _LIBCPP_USING_IF_EXISTS;
+// using ::sinhl _LIBCPP_USING_IF_EXISTS;
+// using ::sqrtl _LIBCPP_USING_IF_EXISTS;
+// using ::tanl _LIBCPP_USING_IF_EXISTS;
 
-using ::tanhl _LIBCPP_USING_IF_EXISTS;
-using ::acoshl _LIBCPP_USING_IF_EXISTS;
-using ::asinhl _LIBCPP_USING_IF_EXISTS;
-using ::atanhl _LIBCPP_USING_IF_EXISTS;
-using ::cbrtl _LIBCPP_USING_IF_EXISTS;
+// using ::tanhl _LIBCPP_USING_IF_EXISTS;
+// using ::acoshl _LIBCPP_USING_IF_EXISTS;
+// using ::asinhl _LIBCPP_USING_IF_EXISTS;
+// using ::atanhl _LIBCPP_USING_IF_EXISTS;
+// using ::cbrtl _LIBCPP_USING_IF_EXISTS;
 
 using ::copysignl _LIBCPP_USING_IF_EXISTS;
 
-using ::erfl _LIBCPP_USING_IF_EXISTS;
-using ::erfcl _LIBCPP_USING_IF_EXISTS;
-using ::exp2l _LIBCPP_USING_IF_EXISTS;
-using ::expm1l _LIBCPP_USING_IF_EXISTS;
+// using ::erfl _LIBCPP_USING_IF_EXISTS;
+// using ::erfcl _LIBCPP_USING_IF_EXISTS;
+// using ::exp2l _LIBCPP_USING_IF_EXISTS;
+// using ::expm1l _LIBCPP_USING_IF_EXISTS;
 using ::fdiml _LIBCPP_USING_IF_EXISTS;
 using ::fmal _LIBCPP_USING_IF_EXISTS;
 using ::fmaxl _LIBCPP_USING_IF_EXISTS;
 using ::fminl _LIBCPP_USING_IF_EXISTS;
-using ::hypotl _LIBCPP_USING_IF_EXISTS;
+// using ::hypotl _LIBCPP_USING_IF_EXISTS;
 using ::ilogbl _LIBCPP_USING_IF_EXISTS;
-using ::lgammal _LIBCPP_USING_IF_EXISTS;
-using ::llrintl _LIBCPP_USING_IF_EXISTS;
+// using ::lgammal _LIBCPP_USING_IF_EXISTS;
+// using ::llrintl _LIBCPP_USING_IF_EXISTS;
 using ::llroundl _LIBCPP_USING_IF_EXISTS;
-using ::log1pl _LIBCPP_USING_IF_EXISTS;
-using ::log2l _LIBCPP_USING_IF_EXISTS;
-using ::logbl _LIBCPP_USING_IF_EXISTS;
-using ::lrintl _LIBCPP_USING_IF_EXISTS;
+// using ::log1pl _LIBCPP_USING_IF_EXISTS;
+// using ::log2l _LIBCPP_USING_IF_EXISTS;
+// using ::logbl _LIBCPP_USING_IF_EXISTS;
+// using ::lrintl _LIBCPP_USING_IF_EXISTS;
 using ::lroundl _LIBCPP_USING_IF_EXISTS;
-using ::nanl _LIBCPP_USING_IF_EXISTS;
-using ::nearbyintl _LIBCPP_USING_IF_EXISTS;
+// using ::nanl _LIBCPP_USING_IF_EXISTS;
+// using ::nearbyintl _LIBCPP_USING_IF_EXISTS;
 using ::nextafterl _LIBCPP_USING_IF_EXISTS;
 using ::nexttowardl _LIBCPP_USING_IF_EXISTS;
-using ::remainderl _LIBCPP_USING_IF_EXISTS;
-using ::remquol _LIBCPP_USING_IF_EXISTS;
-using ::rintl _LIBCPP_USING_IF_EXISTS;
+// using ::remainderl _LIBCPP_USING_IF_EXISTS;
+// using ::remquol _LIBCPP_USING_IF_EXISTS;
+// using ::rintl _LIBCPP_USING_IF_EXISTS;
 using ::roundl _LIBCPP_USING_IF_EXISTS;
 using ::scalblnl _LIBCPP_USING_IF_EXISTS;
 using ::scalbnl _LIBCPP_USING_IF_EXISTS;
-using ::tgammal _LIBCPP_USING_IF_EXISTS;
+// using ::tgammal _LIBCPP_USING_IF_EXISTS;
 using ::truncl _LIBCPP_USING_IF_EXISTS;
 
 #if _LIBCPP_STD_VER > 14
 inline _LIBCPP_INLINE_VISIBILITY float       hypot(       float __x,       float __y,       float __z ) { return sqrt(__x*__x + __y*__y + __z*__z); }
 inline _LIBCPP_INLINE_VISIBILITY double      hypot(      double __x,      double __y,      double __z ) { return sqrt(__x*__x + __y*__y + __z*__z); }
-inline _LIBCPP_INLINE_VISIBILITY long double hypot( long double __x, long double __y, long double __z ) { return sqrt(__x*__x + __y*__y + __z*__z); }
+// inline _LIBCPP_INLINE_VISIBILITY long double hypot( long double __x, long double __y, long double __z ) { return sqrt(__x*__x + __y*__y + __z*__z); }
 
 template <class _A1, class _A2, class _A3>
 inline _LIBCPP_INLINE_VISIBILITY
