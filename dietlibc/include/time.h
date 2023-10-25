@@ -1,112 +1,76 @@
-/*
- * Copyright (C) 2008 The Android Open Source Project
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *  * Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *  * Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in
- *    the documentation and/or other materials provided with the
- *    distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
- * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
- * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- */
-#ifndef _TIME_H_
-#define _TIME_H_
+#ifndef _TIME_H
+#define _TIME_H
 
 #include <sys/cdefs.h>
 #include <sys/time.h>
-
-#define __ARCH_SI_UID_T __kernel_uid32_t
-
-#undef __ARCH_SI_UID_T
+#include <signal.h>
+#include <unistd.h>
 
 __BEGIN_DECLS
 
-extern time_t   time(time_t *);
+int __isleap(int year);
 
-extern char *strtotimeval(const char *str, struct timeval *tv);
+#define CLOCK_REALTIME           0
+#define CLOCK_MONOTONIC          1
+#define CLOCK_PROCESS_CPUTIME_ID 2
+#define CLOCK_THREAD_CPUTIME_ID  3
+#define CLOCK_REALTIME_HR        4
+#define CLOCK_MONOTONIC_HR       5
 
+int clock_settime(clockid_t clock_id,const struct timespec*tp);
+int clock_gettime(clockid_t clock_id,struct timespec*tp);
+int clock_getres(clockid_t clock_id,struct timespec*res);
+int clock_nanosleep(clockid_t clock_id, int flags,const struct timespec *rqtp, struct timespec *rmtp);
 
-/* defining TM_ZONE indicates that we have a "timezone abbreviation" field in
- * struct tm, the value should be the field name
- */
-#define   TM_ZONE   tm_zone
+#define TIMER_ABSTIME            1
 
-extern char* asctime(const struct tm* a);
-extern char* asctime_r(const struct tm* a, char* buf);
+int timer_create(clockid_t clock_id,struct sigevent*evp,timer_t*timerid) __THROW;
+int timer_delete(timer_t timerid) __THROW;
+int timer_settime(timer_t timerid,int flags,const struct itimerspec*ival,struct itimerspec*oval) __THROW;
+int timer_gettime(timer_t timerid,const struct itimerspec*val) __THROW;
+int timer_getoverrun(timer_t timerid) __THROW;
 
-/* Return the difference between TIME1 and TIME0.  */
-extern double difftime (time_t __time1, time_t __time0);
-extern time_t mktime (struct tm *a);
+int nanosleep(const struct timespec *req, struct timespec *rem) __THROW;
 
-extern struct tm*  localtime(const time_t *t);
-extern struct tm*  localtime_r(const time_t *timep, struct tm *result);
+time_t mktime(struct tm *timeptr) __THROW __pure;
 
-extern struct tm*  gmtime(const time_t *timep);
-extern struct tm*  gmtime_r(const time_t *timep, struct tm *result);
+char *asctime(const struct tm *timeptr) __THROW;
+char *asctime_r(const struct tm *timeptr, char *buf) __THROW;
 
-extern char*       strptime(const char *buf, const char *fmt, struct tm *tm);
-extern size_t      strftime(char *s, size_t max, const char *format, const struct tm *tm);
+char *ctime(const time_t *timep) __THROW;
+char *ctime_r(const time_t *timep, char* buf) __THROW;
 
-/* ANDROID-BEGIN */
-struct strftime_locale {
-    const char *  mon[12];
-    const char *  month[12];
-    const char *  standalone_month[12];
-    const char *  wday[7];
-    const char *  weekday[7];
-    const char *  X_fmt;
-    const char *  x_fmt;
-    const char *  c_fmt;
-    const char *  am;
-    const char *  pm;
-    const char *  date_fmt;
-};
+size_t strftime(char *s, size_t max, const char *format, const struct tm *tm) __THROW __attribute__((__format__(__strftime__,3,0)));
+time_t time(time_t *t) __THROW;
 
-extern size_t      strftime_tz(char *s, size_t max, const char *format, const struct tm *tm, const struct strftime_locale*  lc);
-/* ANDROID-END */
+int stime(time_t *t) __THROW;
 
-extern char *ctime(const time_t *timep);
-extern char *ctime_r(const time_t *timep, char *buf);
+double difftime(time_t time1, time_t time0) __THROW __attribute__((__const__));
 
-extern void  tzset(void);
+#define CLOCKS_PER_SEC 1000000l
 
-/* global includes */
-extern char*     tzname[];
-extern int       daylight;
-extern long int  timezone;
+extern long int timezone;
+extern int daylight;
+extern char* tzname[2];
 
-#define CLOCKS_PER_SEC     1000000
+void tzset (void) __THROW;
 
-extern clock_t   clock(void);
+struct tm* localtime(const time_t* t) __THROW;
+struct tm* gmtime(const time_t* t) __THROW;
+struct tm* localtime_r(const time_t* t, struct tm* r) __THROW;
+struct tm* gmtime_r(const time_t* t, struct tm* r) __THROW;
 
+clock_t clock(void);
 
-#define CLOCK_REALTIME             0
-#define CLOCK_MONOTONIC            1
-#define CLOCK_PROCESS_CPUTIME_ID   2
-#define CLOCK_THREAD_CPUTIME_ID    3
-#define CLOCK_REALTIME_HR          4
-#define CLOCK_MONOTONIC_HR         5
+char *strptime(const char *s, const char *format, struct tm *tm);
 
+#ifdef _GNU_SOURCE
+time_t timegm(struct tm *timeptr) __THROW __attribute_dontuse__ __pure ;
+time_t timelocal(struct tm *timeptr) __THROW __attribute_dontuse__ __pure;
+#endif
 
-extern time_t timelocal(struct tm *tm);
-extern time_t timegm(struct tm* tm);
+#define CLK_TCK ((clock_t)sysconf(_SC_CLK_TCK))
 
 __END_DECLS
 
-#endif /* _TIME_H_ */
+#endif

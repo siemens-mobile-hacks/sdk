@@ -121,6 +121,7 @@ base_of_encoded_value (unsigned char encoding, struct _Unwind_Context *context)
       return _Unwind_GetRegionStart (context);
     }
   //__gxx_abort ();
+  return 0;
 }
 
 #endif

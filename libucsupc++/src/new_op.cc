@@ -57,8 +57,8 @@ operator new (std::size_t sz) throw (std::bad_alloc)
 #ifdef __EXCEPTIONS
 	throw bad_alloc();
 #else
-        //std::abort();
-    return 0;
+    // std::abort();
+    return p;
 #endif
       handler ();
       p = (void *) malloc (sz);

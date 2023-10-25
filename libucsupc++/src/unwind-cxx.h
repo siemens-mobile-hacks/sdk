@@ -171,27 +171,27 @@ __cxa_free_dependent_exception(__cxa_dependent_exception *ex) throw();
 extern "C" void __cxa_throw (void *thrown_exception,
 			     std::type_info *tinfo,
 			     void (*dest) (void *))
-  __attribute__((__noreturn__));
+  /* __attribute__((__noreturn__)) */;
 
 // Used to implement exception handlers.
 extern "C" void *__cxa_get_exception_ptr (void *) throw()
   __attribute__ ((__pure__));
 extern "C" void *__cxa_begin_catch (void *) throw();
 extern "C" void __cxa_end_catch ();
-extern "C" void __cxa_rethrow () __attribute__((__noreturn__));
+extern "C" void __cxa_rethrow () /*__attribute__((__noreturn__)) */;
 
 // These facilitate code generation for recurring situations.
-extern "C" void __cxa_bad_cast () __attribute__((__noreturn__));
-extern "C" void __cxa_bad_typeid () __attribute__((__noreturn__));
+extern "C" void __cxa_bad_cast () /* __attribute__((__noreturn__)) */;
+extern "C" void __cxa_bad_typeid () /* __attribute__((__noreturn__)) */;
 
 // @@@ These are not directly specified by the IA-64 C++ ABI.
 
 // Handles re-checking the exception specification if unexpectedHandler
 // throws, and if bad_exception needs to be thrown.  Called from the
 // compiler.
-extern "C" void __cxa_call_unexpected (void *) __attribute__((__noreturn__));
+extern "C" void __cxa_call_unexpected (void *) /* __attribute__((__noreturn__)) */;
 extern "C" void __cxa_call_terminate (_Unwind_Exception*) throw ()
-  __attribute__((__noreturn__));
+  /* __attribute__((__noreturn__)) */;
 
 #ifdef __ARM_EABI_UNWINDER__
 // Arm EABI specified routines.
@@ -210,9 +210,9 @@ extern "C" void __cxa_end_cleanup (void);
 // Invokes given handler, dying appropriately if the user handler was
 // so inconsiderate as to return.
 extern void __terminate(std::terminate_handler) throw () 
-  __attribute__((__noreturn__));
+  /* __attribute__((__noreturn__)) */;
 extern void __unexpected(std::unexpected_handler)
-  __attribute__((__noreturn__));
+  /* __attribute__((__noreturn__)) */;
 
 // The current installed user handlers.
 extern std::terminate_handler __terminate_handler;

@@ -1,0 +1,1075 @@
+diff --git a/dietlibc/include/fenv.h b/dietlibc/include/fenv.h
+index 893a596..099996f 100644
+--- a/dietlibc/include/fenv.h
++++ b/dietlibc/include/fenv.h
+@@ -64,7 +64,7 @@ extern const fenv_t	__fe_dfl_env;
+ #define	__rfs(__fpsr)	__asm __volatile("rfs %0" : "=r" (*(__fpsr)))
+ #define	__wfs(__fpsr)	__asm __volatile("wfs %0" : : "r" (__fpsr))
+ #else
+-#define __rfs(__fpsr)
++#define __rfs(__fpsr) *__fpsr = 0
+ #define __wfs(__fpsr)
+ #endif
+ 
+diff --git a/dietlibc/include/signal.h b/dietlibc/include/signal.h
+index 5f5b465..dd87865 100644
+--- a/dietlibc/include/signal.h
++++ b/dietlibc/include/signal.h
+@@ -504,8 +504,10 @@ typedef struct sigaltstack {
+ #endif
+ } stack_t;
+ 
++#pragma GCC diagnostic ignored "-Wshadow"
+ int sigaltstack(const struct sigaltstack *newstack, struct sigaltstack *oldstack) __THROW;
+ 
++
+ int sigemptyset(sigset_t *set) __THROW;
+ int sigfillset(sigset_t *set) __THROW;
+ int sigaddset(sigset_t *set, int signum) __THROW;
+@@ -526,6 +528,7 @@ sighandler_t signal(int signum, sighandler_t action);
+ int raise (int sig) __THROW;
+ int kill(pid_t pid, int sig) __THROW;
+ 
++#pragma GCC diagnostic ignored "-Wshadow"
+ int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact) __THROW;
+ 
+ #include <sys/time.h>
+diff --git a/dietlibc/include/stdio.h b/dietlibc/include/stdio.h
+index b6acac6..81b9a4c 100644
+--- a/dietlibc/include/stdio.h
++++ b/dietlibc/include/stdio.h
+@@ -6,49 +6,48 @@
+ #include <stdarg.h>
+ #include <endian.h>
+ 
++#ifdef __NO_LIBC
++#include <swilib.h>
++#endif
++
+ __BEGIN_DECLS
+ 
+ struct __stdio_file;
+ typedef struct __stdio_file FILE;
+ 
+ extern FILE *stdin, *stdout, *stderr;
+-
+-/* setup stdout and stderr stream */
+-int __setup_stdout_fd(int fd);
+-int __setup_stderr_fd(int fd);
+-
+-/* stream hook */
+-FILE *fsetopen( int fd, int flags,
+-               ssize_t (*_read)(int fd, void *buf, size_t sz),
+-               ssize_t (*_write)(int fd, const void *buf, size_t sz),
+-               ssize_t (*_seek)(int fd, long offset, int whence),
+-               int (*_close)(int fd) );
+-
+-FILE *fsetread(FILE *stream, ssize_t (*_read)(int fd, void *buf, size_t sz));
+-FILE *fsetwrite(FILE *stream, ssize_t (*_write)(int fd, const void *buf, size_t sz));
+-FILE *fsetseek(FILE *stream, ssize_t (*_seek)(int fd, long offset, int whence));
+-FILE *fsetclose(FILE *stream, int (*_close)(int fd));
+-
++
++/* setup stdout and stderr stream */
++int __setup_stdout_fd(int fd);
++int __setup_stderr_fd(int fd);
++
++/* stream hook */
++FILE *fsetopen( int fd, int flags,
++               ssize_t (*_read)(int fd, void *buf, size_t sz),
++               ssize_t (*_write)(int fd, const void *buf, size_t sz),
++               ssize_t (*_seek)(int fd, long offset, int whence),
++               int (*_close)(int fd) );
++
++FILE *fsetread(FILE *stream, ssize_t (*_read)(int fd, void *buf, size_t sz));
++FILE *fsetwrite(FILE *stream, ssize_t (*_write)(int fd, const void *buf, size_t sz));
++FILE *fsetseek(FILE *stream, ssize_t (*_seek)(int fd, long offset, int whence));
++FILE *fsetclose(FILE *stream, int (*_close)(int fd));
+ 
+ FILE *fopen (const char *path, const char *mode) __THROW;
+ FILE *fdopen (int fildes, const char *mode) __THROW;
+ FILE *freopen (const char *path, const char *mode, FILE *stream) __THROW;
+ 
+ int printf(const char *format, ...) __THROW __attribute__((__format__(__printf__,1,2)));
+-int fprintf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
+-
++int fprintf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
+ #ifndef __NO_LIBC
+ int sprintf(char *str, const char *format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
+-int snprintf(char *str, size_t size, const char *format, ...) __THROW __attribute__((__format__(__printf__,3,4)));
+-#endif
+-
++#endif
++int snprintf(char *str, size_t size, const char *format, ...) __THROW __attribute__((__format__(__printf__,3,4)));
+ int asprintf(char **ptr, const char* format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
+ 
+ int scanf(const char *format, ...) __THROW __attribute__((__format__(__scanf__,1,2)));
+-int fscanf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__scanf__,2,3)));
+-#ifndef __NO_LIBC
++int fscanf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__scanf__,2,3)));
+ int sscanf(const char *str, const char *format, ...) __THROW __attribute__((__format__(__scanf__,2,3)));
+-#endif
+ 
+ int vprintf(const char *format, va_list ap) __THROW __attribute__((__format__(__printf__,1,0)));
+ int vfprintf(FILE *stream, const char *format, va_list ap) __THROW __attribute__((__format__(__printf__,2,0)));
+@@ -87,8 +86,8 @@ int putchar_unlocked(int c) __THROW;
+ #define putc_unlocked(c,stream) fputc_unlocked(c,stream)
+ #define putchar_unlocked(c) fputc_unlocked(c,stdout)
+ #else
+-static inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
+-static inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
++inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
++inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
+ #endif
+ 
+ #if !defined(__cplusplus)
+@@ -97,8 +96,8 @@ static inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlo
+ #define getc_unlocked(stream) fgetc_unlocked(stream)
+ #define getchar_unlocked() fgetc_unlocked(stdin)
+ #else
+-static inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
+-static inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
++inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
++inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
+ #endif
+ 
+ int puts(const char *s) __THROW;
+@@ -158,7 +157,7 @@ void perror(const char *s) __THROW;
+ 
+ #define EOF (-1)
+ 
+-#define BUFSIZ 128
++#define BUFSIZ 1024
+ 
+ #define _IONBF 0
+ #define _IOLBF 1
+@@ -172,11 +171,11 @@ int setvbuf_unlocked(FILE *stream, char *buf, int mode , size_t size) __THROW;
+ #define setbuffer(stream,buf,size) setvbuf(stream,buf,buf?_IOFBF:_IONBF,size)
+ #define setlinebuf(stream) setvbuf(stream,0,_IOLBF,BUFSIZ)
+ #else
+-static inline int setbuf(FILE *stream, char *buf) __THROW
++inline int setbuf(FILE *stream, char *buf) __THROW
+   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,BUFSIZ); }
+-static inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
++inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
+   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,size); }
+-static inline int setlinebuf(FILE *stream) __THROW
++inline int setlinebuf(FILE *stream) __THROW
+   { return setvbuf(stream,0,_IOLBF,BUFSIZ); }
+ #endif
+ 
+@@ -210,9 +209,16 @@ void funlockfile(FILE* f) __THROW;
+ int ftrylockfile (FILE *__stream) __THROW;
+ 
+ #ifdef _GNU_SOURCE
+-int vasprintf(char **strp, const char *fmt, va_list ap);
+-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+-ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);
++int vasprintf(char **strp, const char *fmt, va_list ap) __THROW;
++ssize_t getline(char **lineptr, size_t *n, FILE *stream) __THROW;
++ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream) __THROW;
++#endif
++
++#if defined(_ATFILE_SOURCE) || ((_XOPEN_SOURCE + 0) >= 700) || ((_POSIX_C_SOURCE + 0) >= 200809L)
++/* also include fcntl.h for the AT_* constants */
++
++int symlinkat(const char *oldpath, int newdirfd, const char *newpath);
++int renameat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath) __THROW;
+ #endif
+ 
+ __END_DECLS
+diff --git a/dietlibc/include/stdlib.h b/dietlibc/include/stdlib.h
+index dd5c3d2..aa4af45 100644
+--- a/dietlibc/include/stdlib.h
++++ b/dietlibc/include/stdlib.h
+@@ -7,35 +7,43 @@
+ #include <sys/types.h>
+ #include <alloca.h>
+ 
++#ifdef __NO_LIBC
++#include <swilib.h>
++#endif
++
+ __BEGIN_DECLS
+-
+-#ifndef __NO_LIBC
+ 
++#ifndef __NO_LIBC
+ void *calloc(size_t nmemb, size_t size) __THROW __attribute_malloc__;
+ void *malloc(size_t size)  __THROW __attribute_malloc__;
+ void free(void *ptr) __THROW;
+-void *realloc(void *ptr, size_t size) __THROW __attribute_malloc__;
++void *realloc(void *ptr, size_t size) __THROW __attribute_malloc__;
++#endif
++
++/* useful OpenBSD extension: */
++void* reallocarray(void* ptr, size_t nmemb, size_t size) __THROW __attribute_malloc__ __attribute_alloc2__(2,3);
+ 
++#ifndef __NO_LIBC
+ char *getenv(const char *name) __THROW __pure;
+ int putenv(const char *string) __THROW;
+ int setenv(const char *name, const char *value, int overwrite) __THROW;
+ int unsetenv(const char *name) __THROW;
+-#endif /*_NO_LIBC */
++#endif
+ 
+ int system (const char * string) __THROW;
+ int atexit(void (*function)(void)) __THROW;
+ 
+ float strtof(const char *nptr, char **endptr) __THROW;
+ double strtod(const char *nptr, char **endptr) __THROW;
+-long double strtold(const char *nptr, char **endptr) __THROW;
+-
++long double strtold(const char *nptr, char **endptr) __THROW;
++
+ #ifndef __NO_LIBC
+ long int strtol(const char *nptr, char **endptr, int base) __THROW;
+ unsigned long int strtoul(const char *nptr, char **endptr, int base) __THROW;
+-#endif
++#endif
+ 
+ extern int __ltostr(char *s, unsigned int size, unsigned long i, unsigned int base, int UpCase) __THROW;
+-extern int __dtostr(double d,char *buf,unsigned int maxlen,unsigned int prec,unsigned int prec2,int g) __THROW;
++extern int __dtostr(double d,char *buf,unsigned int maxlen,unsigned int prec,unsigned int prec2,int flags) __THROW;
+ 
+ #if !defined(__STRICT_ANSI__) || __STDC_VERSION__ + 0 >= 199900L
+ __extension__ long long int strtoll(const char *nptr, char **endptr, int base) __THROW;
+@@ -49,20 +57,15 @@ double atof(const char *nptr) __THROW;
+ __extension__ long long int atoll(const char *nptr);
+ 
+ void exit(int status) __THROW __attribute__((__noreturn__));
+-void abort(void) __THROW;
+-
+-#ifndef __NO_LIBC
+-extern int rand(void) __THROW;
+-#endif
++void abort(void) __THROW __attribute__((__noreturn__));
+ 
+-extern int rand_r(unsigned int *seed) __THROW;
+-
+ #ifndef __NO_LIBC
+-extern void srand(unsigned int seed) __THROW;
+-#endif
+-
+-extern int random(void) __THROW;
+-extern void srandom(unsigned int seed) __THROW;
++extern int rand(void) __THROW;
++#endif
++extern int rand_r(unsigned int *seed) __THROW;
++#ifndef __NO_LIBC
++extern void srand(unsigned int seed) __THROW;
++#endif
+ #ifdef _BSD_SOURCE
+ extern int random(void) __THROW __attribute_dontuse__;
+ extern void srandom(unsigned int seed) __THROW __attribute_dontuse__;
+@@ -90,9 +93,7 @@ int mkstemp(char *_template);
+ char* mkdtemp(char *_template);
+ 
+ char* mktemp(char *_template);
+-
+-#define min(x1, x2) (x1 < x2? x1 : x2)
+-#define max(x1, x2) (x1 > x2? x1 : x2)
++
+ int abs(int i) __THROW __attribute__((__const__));
+ long int labs(long int i) __THROW __attribute__((__const__));
+ __extension__ long long int llabs(long long int i) __THROW __attribute__((__const__));
+@@ -110,7 +111,7 @@ char *ptsname (int fd) __THROW;
+ 
+ #define RAND_MAX 	0x7ffffffe
+ 
+-#define MB_CUR_MAX 1
++#define MB_CUR_MAX 5
+ 
+ /* now these functions are the greatest bullshit I have ever seen.
+  * The ISO people must be out of their minds. */
+@@ -121,11 +122,12 @@ typedef struct { long quot,rem; } ldiv_t;
+ div_t div(int numerator, int denominator);
+ ldiv_t ldiv(long numerator, long denominator);
+ 
+-#ifdef _GNU_SOURCE
+ typedef struct { long long quot,rem; } lldiv_t;
+ lldiv_t lldiv(long long numerator, long long denominator);
+ 
+-int clearenv(void);
++#ifdef _GNU_SOURCE
++int clearenv(void) __THROW;
++char* secure_getenv(const char* name) __THROW;
+ #endif
+ 
+ int mbtowc(wchar_t *pwc, const char *s, size_t n) __THROW;
+@@ -133,6 +135,15 @@ int wctomb(char *s, wchar_t wc) __THROW;
+ size_t mbstowcs(wchar_t *dest, const char *src, size_t n) __THROW;
+ int mblen(const char* s,size_t n) __THROW __pure;
+ 
++size_t wcstombs(char *dest, const wchar_t *src, size_t n) __THROW;
++
++/* These come from OpenBSD: */
++uint32_t arc4random(void) __THROW;
++void arc4random_buf(void* buf, size_t n) __THROW;
++uint32_t arc4random_uniform(uint32_t upper_bound) __THROW;
++void arc4random_stir(void) __THROW;
++void arc4random_addrandom(unsigned char* dat,size_t datlen) __THROW;
++
+ __END_DECLS
+ 
+ #endif
+diff --git a/dietlibc/include/string.h b/dietlibc/include/string.h
+index 1540a63..ce5bcf0 100644
+--- a/dietlibc/include/string.h
++++ b/dietlibc/include/string.h
+@@ -6,14 +6,20 @@
+ 
+ __BEGIN_DECLS
+ 
++#ifndef __NO_LIBC
+ char *strcpy(char* __restrict__ dest, const char* __restrict__ src) __THROW __nonnull((1,2));
++#endif
+ 
+ void *memccpy(void* __restrict__ dest, const void* __restrict__ src, int c, size_t n) __THROW __nonnull((1,2));
++#ifndef __NO_LIBC
+ void *memmove(void* dest, const void *src, size_t n) __THROW __nonnull((1,2));
++#endif
+ 
+ int memccmp(const void* s1, const void* s2, int c, size_t n) __THROW __pure __nonnull((1,2));
+ 
++#ifndef __NO_LIBC
+ void* memset(void* s, int c, size_t n) __THROW __nonnull((1));
++
+ int memcmp(const void* s1, const void* s2, size_t n) __THROW __pure __nonnull((1,2));
+ void* memcpy(void* __restrict__ dest, const void* __restrict__ src, size_t n) __THROW __nonnull((1,2));
+ 
+@@ -26,23 +32,31 @@ char *strncat(char* __restrict__ dest, const char* __restrict__ src, size_t n) _
+ int strcmp(const char *s1, const char *s2) __THROW __pure __nonnull((1,2));
+ 
+ size_t strlen(const char *s) __THROW __pure __nonnull((1));
++#endif
++
+ size_t strnlen(const char *s,size_t maxlen) __THROW __pure __nonnull((1));
+ 
+ #ifdef _GNU_SOURCE
+ int strverscmp(const char* s1,const char* s2) __THROW __pure __nonnull((1,2));
+ #endif
+ 
++#ifndef __NO_LIBC
+ char *strstr(const char *haystack, const char *needle) __THROW __pure __nonnull((1,2));
++#endif
+ 
+ char *strdup(const char *s) __THROW __attribute_malloc__ __nonnull((1));
+ 
++#ifndef __NO_LIBC
+ char *strchr(const char *s, int c) __THROW __pure __nonnull((1));
+ char *strrchr(const char *s, int c) __THROW __pure __nonnull((1));
++#endif
+ 
+ size_t strspn(const char *s, const char *_accept) __THROW __nonnull((1,2));
++#ifndef __NO_LIBC
+ size_t strcspn(const char *s, const char *reject) __THROW __nonnull((1,2));
+ 
+ char *strpbrk(const char *s, const char *_accept) __THROW __nonnull((1,2));
++#endif
+ char *strsep(char ** __restrict__ stringp, const char * __restrict__ delim) __THROW __nonnull((1,2));
+ 
+ void* memchr(const void *s, int c, size_t n) __THROW __pure __nonnull((1));
+diff --git a/dietlibc/include/strings.h b/dietlibc/include/strings.h
+index 800605d..699f9ab 100644
+--- a/dietlibc/include/strings.h
++++ b/dietlibc/include/strings.h
+@@ -3,6 +3,7 @@
+ 
+ #include <stddef.h>
+ #include <sys/cdefs.h>
++#include <string.h>
+ 
+ __BEGIN_DECLS
+ 
+diff --git a/dietlibc/include/sys/cdefs.h b/dietlibc/include/sys/cdefs.h
+index da305a9..1bbda07 100644
+--- a/dietlibc/include/sys/cdefs.h
++++ b/dietlibc/include/sys/cdefs.h
+@@ -1,6 +1,11 @@
+ #ifndef _SYS_CDEFS_H
+ #define _SYS_CDEFS_H
+ 
++// FIXME
++#define __weak_reference(a, b)
++#define __strong_reference(a, b)
++#define __weak_alias(a, b)
++
+ #ifndef __cplusplus
+ #define __THROW
+ #define __BEGIN_DECLS
+diff --git a/dietlibc/include/sys/types.h b/dietlibc/include/sys/types.h
+index 4325e5e..c95653d 100644
+--- a/dietlibc/include/sys/types.h
++++ b/dietlibc/include/sys/types.h
+@@ -173,6 +173,10 @@ typedef uint64_t u_int64_t __attribute_dontuse__;
+ #endif
+ #endif
+ 
++typedef uint8_t u_int8_t;
++typedef uint16_t u_int16_t;
++typedef uint32_t u_int32_t;
++
+ __END_DECLS
+ 
+ #endif
+diff --git a/dietlibc/include/unistd.h b/dietlibc/include/unistd.h
+index bd32a93..f7a8f50 100644
+--- a/dietlibc/include/unistd.h
++++ b/dietlibc/include/unistd.h
+@@ -181,7 +181,7 @@ char* sha256_crypt(const char* key, const char* salt) __THROW;
+ char* sha512_crypt(const char* key, const char* salt) __THROW;
+ #endif
+ 
+-int getpagesize(void) __THROW __attribute__((__const__,__pure__));
++int getpagesize(void) __THROW __attribute__((__const__));
+ 
+ int getdomainname(char *name, size_t len) __THROW;
+ int setdomainname(const char *name, size_t len) __THROW;
+diff --git a/dietlibc/src/lib/__dtostr.c b/dietlibc/src/lib/__dtostr.c
+index 5ccd6ba..4be7bef 100644
+--- a/dietlibc/src/lib/__dtostr.c
++++ b/dietlibc/src/lib/__dtostr.c
+@@ -3,6 +3,8 @@
+ #include <math.h>
+ /* convert double to string.  Helper for sprintf. */
+ 
++int __isnan (double);
++
+ static int copystring(char* buf,int maxlen, const char* s) {
+   int i;
+   for (i=0; i<maxlen; ++i) {
+diff --git a/dietlibc/src/libugly/localtime_r.c b/dietlibc/src/libugly/localtime_r.c
+index b497366..8c3d078 100644
+--- a/dietlibc/src/libugly/localtime_r.c
++++ b/dietlibc/src/libugly/localtime_r.c
+@@ -6,8 +6,8 @@
+ extern void __maplocaltime(void);
+ extern time_t __tzfile_map(time_t t, int *isdst, int forward);
+ #else
+-extern long int timezone;
+-extern int daylight;
++//extern long int timezone;
++//extern int daylight;
+ #endif
+ 
+ struct tm* localtime_r(const time_t* t, struct tm* r) {
+diff --git a/dietlibc/src/libugly/mktime.c b/dietlibc/src/libugly/mktime.c
+index 0def700..d88fd57 100644
+--- a/dietlibc/src/libugly/mktime.c
++++ b/dietlibc/src/libugly/mktime.c
+@@ -9,8 +9,8 @@
+ extern void __maplocaltime(void);
+ extern time_t __tzfile_map(time_t t, int *isdst, int forward);
+ #else
+-extern long int timezone;
+-extern int daylight;
++//extern long int timezone;
++//extern int daylight;
+ #endif
+ 
+ time_t mktime(register struct tm* const t) {
+diff --git a/include/complex.h b/include/complex.h
+index c1e9a54..eb71af5 100644
+--- a/include/complex.h
++++ b/include/complex.h
+@@ -26,6 +26,7 @@
+ #include <features.h>
+ 
+ /* Get general and ISO C99 specific information.  */
++#include <sys/cdefs.h>
+ #include <bits/mathdef.h>
+ 
+ __BEGIN_DECLS
+diff --git a/include/directswicall.h b/include/directswicall.h
+index cb6bbae..ffe4a4b 100644
+--- a/include/directswicall.h
++++ b/include/directswicall.h
+@@ -1041,8 +1041,8 @@ int UnpackABentry(AB_UNPRES * param1,void *abentry,int filesz,int flag)
+ __def( 0x016D, int, param1, abentry, filesz, flag)
+ 
+ __inl
+-int FreeUnpackABentry(AB_UNPRES * param1, void *mfree_adr)
+-__def( 0x016E, int, param1, mfree_adr)
++int FreeUnpackABentry(AB_UNPRES * param1, void *free_fn)
++__def( 0x016E, int, param1, free_fn)
+ 
+ __inl
+ int GetTypeOfAB_UNPRES_ITEM(int param1)
+@@ -1630,16 +1630,16 @@ void UnpackNumPkt(PKT_NUM *pkt, char *buf, int maxlen)
+ __defn( 0x2D5, pkt, buf, maxlen)
+ 
+ __inl
+-void *TViewGetGUI(void *malloc_adr, void *mfree_adr)
+-__def( 0x2D6, void *, malloc_adr, mfree_adr)
++void *TViewGetGUI(void *malloc_fn, void *free_fn)
++__def( 0x2D6, void *, malloc_fn, free_fn)
+ 
+ __inl
+ void TViewSetDefinition(void *gui, const TVIEW_DESC * param2)
+ __defn( 0x2D7, gui, param2)
+ 
+ __inl
+-void TViewSetText(void *gui, WSHDR *text, void *malloc_adr, void *mfree_adr)
+-__defn( 0x2D8, gui, text, malloc_adr, mfree_adr)
++void TViewSetText(void *gui, WSHDR *text, void *malloc_fn, void *free_fn)
++__defn( 0x2D8, gui, text, malloc_fn, free_fn)
+ 
+ __inl
+ void TViewSetUserPointer(void *gui,void *user_pointer)
+@@ -1885,8 +1885,8 @@ int EDIT_IsBusy(void *gui)
+ __def( 0x21C, int, gui)
+ 
+ __inl
+-int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_adr)(int), void (*mfree_adr)(void))
+-__def( 0x21D, int, dest, pkt, len, encoding_type, malloc_adr, mfree_adr)
++int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_fn)(int), void (*free_fn)(void))
++__def( 0x21D, int, dest, pkt, len, encoding_type, malloc_fn, free_fn)
+ 
+ __inl
+ void FocusGUI(int id)
+@@ -2153,12 +2153,12 @@ void UpdateMenuCursorItem(void *gui, int n)
+ __defn( 0x2A3, gui, n)
+ 
+ __inl
+-void *GetMenuGUI(void *malloc_adr, void *mfree_adr)
+-__def( 0x2A4, void *, malloc_adr, mfree_adr)
++void *GetMenuGUI(void *malloc_fn, void *free_fn)
++__def( 0x2A4, void *, malloc_fn, free_fn)
+ 
+ __inl
+-void *GetMultiLinesMenuGUI(void *malloc_adr, void *mfree_adr)
+-__def( 0x2A5, void *, malloc_adr, mfree_adr)
++void *GetMultiLinesMenuGUI(void *malloc_fn, void *free_fn)
++__def( 0x2A5, void *, malloc_fn, free_fn)
+ 
+ __inl
+ void SetMenuToGUI(void *gui, const void *menu_desc)
+@@ -2193,8 +2193,8 @@ void *GetHeaderPointer(void *gui)
+ __def( 0x2AE, void *, gui)
+ 
+ __inl
+-void SetHeaderText(void *hdr_pointer, WSHDR *txt, void *malloc_adr, void *mfree_adr)
+-__defn( 0x2AF, hdr_pointer, txt, malloc_adr, mfree_adr)
++void SetHeaderText(void *hdr_pointer, WSHDR *txt, void *malloc_fn, void *free_fn)
++__defn( 0x2AF, hdr_pointer, txt, malloc_fn, free_fn)
+ 
+ __inl
+ void SetMenuSoftKey(void *gui, const SOFTKEY_DESC * param2,int n)
+@@ -2237,12 +2237,12 @@ unsigned int OpenNativeAddressbook(int type, int unk1, int unk2, void *data)
+ __def( 0x2B9, unsigned int, type, unk1, unk2, data)
+ 
+ __inl
+-void SetHeaderIcon(void *hdr_pointer, const int *icon, void *malloc_adr, void *mfree_adr)
+-__defn( 0x2BA, hdr_pointer, icon, malloc_adr, mfree_adr)
++void SetHeaderIcon(void *hdr_pointer, const int *icon, void *malloc_fn, void *free_fn)
++__defn( 0x2BA, hdr_pointer, icon, malloc_fn, free_fn)
+ 
+ __inl
+-void *GetTabGUI(void *malloc_adr, void *mfree_adr)
+-__def( 0x2BB, void *, malloc_adr, mfree_adr)
++void *GetTabGUI(void *malloc_fn, void *free_fn)
++__def( 0x2BB, void *, malloc_fn, free_fn)
+ 
+ __inl
+ void SetGUIDefinition(void *gui, const void *definition)
+@@ -2326,8 +2326,8 @@ char *RamInputLanguage()
+ __def( 0x829C, char *)
+ 
+ __inl
+-void SetHeaderToMenu(void *gui, const HEADER_DESC *hdr, void *malloc_adr)
+-__defn( 0x2A6, gui, hdr, malloc_adr)
++void SetHeaderToMenu(void *gui, const HEADER_DESC *hdr, void *malloc_fn)
++__defn( 0x2A6, gui, hdr, malloc_fn)
+ 
+ #ifndef __LOADER_BUILD
+ __inl
+diff --git a/include/unwind-pe.h b/include/unwind-pe.h
+index 4fd1191..1e4a963 100644
+--- a/include/unwind-pe.h
++++ b/include/unwind-pe.h
+@@ -121,6 +121,7 @@ base_of_encoded_value (unsigned char encoding, struct _Unwind_Context *context)
+       return _Unwind_GetRegionStart (context);
+     }
+   //__gxx_abort ();
++  return 0;
+ }
+ 
+ #endif
+diff --git a/lib/NSG/libc-1.0.so b/lib/NSG/libc-1.0.so
+index d811970..b85110b 100755
+Binary files a/lib/NSG/libc-1.0.so and b/lib/NSG/libc-1.0.so differ
+diff --git a/lib/SG/libc-1.0.so b/lib/SG/libc-1.0.so
+index e564ece..0128d1a 100755
+Binary files a/lib/SG/libc-1.0.so and b/lib/SG/libc-1.0.so differ
+diff --git a/lib/libm-1.0.so b/lib/libm-1.0.so
+index 2745952..2cbefef 100755
+Binary files a/lib/libm-1.0.so and b/lib/libm-1.0.so differ
+diff --git a/lib/libstdc++-1.2.2.so b/lib/libstdc++-1.2.2.so
+index 63c0035..f323832 100755
+Binary files a/lib/libstdc++-1.2.2.so and b/lib/libstdc++-1.2.2.so differ
+diff --git a/lib/libsupc++-1.2.2.a b/lib/libsupc++-1.2.2.a
+index ac279dc..f0b49c9 100644
+Binary files a/lib/libsupc++-1.2.2.a and b/lib/libsupc++-1.2.2.a differ
+diff --git a/lib/libz-1.2.5.so b/lib/libz-1.2.5.so
+index 6e0bc5d..252f8a7 100755
+Binary files a/lib/libz-1.2.5.so and b/lib/libz-1.2.5.so differ
+diff --git a/libm/src/e_gamma.c b/libm/src/e_gamma.c
+index f52ff17..8ae3cd5 100644
+--- a/libm/src/e_gamma.c
++++ b/libm/src/e_gamma.c
+@@ -25,7 +25,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_gamma.c,v 1.7 2005/02/04 18:
+ #include "math.h"
+ #include "math_private.h"
+ 
+-extern int signgam;
++//extern int signgam;
+ 
+ double
+ __ieee754_gamma(double x)
+diff --git a/libm/src/e_gammaf.c b/libm/src/e_gammaf.c
+index b5c2ec1..2d4352f 100644
+--- a/libm/src/e_gammaf.c
++++ b/libm/src/e_gammaf.c
+@@ -26,7 +26,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_gammaf.c,v 1.6 2002/05/28 17
+ #include "math.h"
+ #include "math_private.h"
+ 
+-extern int signgam;
++//extern int signgam;
+ 
+ float
+ __ieee754_gammaf(float x)
+diff --git a/libm/src/e_j1.c b/libm/src/e_j1.c
+index 4dbf222..3850804 100644
+--- a/libm/src/e_j1.c
++++ b/libm/src/e_j1.c
+@@ -265,7 +265,7 @@ static const double ps2[5] = {
+ 
+ 	static double pone(double x)
+ {
+-	const double *p,*q;
++	const double *p=NULL,*q=NULL;
+ 	double z,r,s;
+         int32_t ix;
+ 	GET_HIGH_WORD(ix,x);
+@@ -361,7 +361,7 @@ static const double qs2[6] = {
+ 
+ 	static double qone(double x)
+ {
+-	const double *p,*q;
++	const double *p=NULL,*q=NULL;
+ 	double  s,r,z;
+ 	int32_t ix;
+ 	GET_HIGH_WORD(ix,x);
+diff --git a/libm/src/e_lgamma.c b/libm/src/e_lgamma.c
+index 87ad41a..21a21f6 100644
+--- a/libm/src/e_lgamma.c
++++ b/libm/src/e_lgamma.c
+@@ -25,7 +25,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_lgamma.c,v 1.8 2005/02/04 18
+ #include "math.h"
+ #include "math_private.h"
+ 
+-extern int signgam;
++//extern int signgam;
+ 
+ double
+ __ieee754_lgamma(double x)
+diff --git a/libm/src/e_lgamma_r.c b/libm/src/e_lgamma_r.c
+index 68dbfd0..b491c9e 100644
+--- a/libm/src/e_lgamma_r.c
++++ b/libm/src/e_lgamma_r.c
+@@ -204,7 +204,7 @@ static const double zero=  0.00000000000000000000e+00;
+ double
+ __ieee754_lgamma_r(double x, int *signgamp)
+ {
+-	double t,y,z,nadj,p,p1,p2,p3,q,r,w;
++	double t,y,z,nadj,p=0,p1,p2,p3,q,r,w;
+ 	int i,hx,lx,ix;
+ 
+ 	EXTRACT_WORDS(hx,lx,x);
+diff --git a/libm/src/e_lgammaf.c b/libm/src/e_lgammaf.c
+index b1f48d5..0a7b2cf 100644
+--- a/libm/src/e_lgammaf.c
++++ b/libm/src/e_lgammaf.c
+@@ -26,7 +26,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_lgammaf.c,v 1.7 2002/05/28 1
+ #include "math.h"
+ #include "math_private.h"
+ 
+-extern int signgam;
++//extern int signgam;
+ 
+ float
+ __ieee754_lgammaf(float x)
+diff --git a/libm/src/e_rem_pio2.c b/libm/src/e_rem_pio2.c
+index 0d3ecee..a4bbb97 100644
+--- a/libm/src/e_rem_pio2.c
++++ b/libm/src/e_rem_pio2.c
+@@ -162,8 +162,7 @@ int __ieee754_rem_pio2(double x, double *y)
+ 	tx[2] = z;
+ 	nx = 3;
+ 	while(tx[nx-1]==zero) nx--;	/* skip zero term */
+-
+-#warning error?
++
+ 	n  =  __kernel_rem_pio2(tx, y, e0, nx, 2, (const int *)&two_over_pi);
+ 	if(hx<0) {y[0] = -y[0]; y[1] = -y[1]; return -n;}
+ 	return n;
+diff --git a/libm/src/fenv.h b/libm/src/fenv.h
+index 893a596..099996f 100644
+--- a/libm/src/fenv.h
++++ b/libm/src/fenv.h
+@@ -64,7 +64,7 @@ extern const fenv_t	__fe_dfl_env;
+ #define	__rfs(__fpsr)	__asm __volatile("rfs %0" : "=r" (*(__fpsr)))
+ #define	__wfs(__fpsr)	__asm __volatile("wfs %0" : : "r" (__fpsr))
+ #else
+-#define __rfs(__fpsr)
++#define __rfs(__fpsr) *__fpsr = 0
+ #define __wfs(__fpsr)
+ #endif
+ 
+diff --git a/libm/src/s_ceill.c b/libm/src/s_ceill.c
+index 7e8817c..d3e4685 100644
+--- a/libm/src/s_ceill.c
++++ b/libm/src/s_ceill.c
+@@ -33,17 +33,17 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/s_ceill.c,v 1.4 2005/04/28 19:
+ #ifdef LDBL_IMPLICIT_NBIT
+ #define	MANH_SIZE	(LDBL_MANH_SIZE + 1)
+ #define	INC_MANH(u, c)	do {					\
+-	uint64_t o = u.bits.manh;				\
++	uint64_t _o = u.bits.manh;				\
+ 	u.bits.manh += (c);					\
+-	if (u.bits.manh < o)					\
++	if (u.bits.manh < _o)					\
+ 		u.bits.exp++;					\
+ } while (0)
+ #else
+ #define	MANH_SIZE	LDBL_MANH_SIZE
+ #define	INC_MANH(u, c)	do {					\
+-	uint64_t o = u.bits.manh;				\
++	uint64_t _o = u.bits.manh;				\
+ 	u.bits.manh += (c);					\
+-	if (u.bits.manh < o) {					\
++	if (u.bits.manh < _o) {					\
+ 		u.bits.exp++;					\
+ 		u.bits.manh |= 1llu << (LDBL_MANH_SIZE - 1);	\
+ 	}							\
+diff --git a/libm/src/s_conjl.c b/libm/src/s_conjl.c
+index 13d80c2..cc34ab1 100644
+--- a/libm/src/s_conjl.c
++++ b/libm/src/s_conjl.c
+@@ -28,6 +28,12 @@
+ 
+ #include <complex.h>
+ 
++long double
++cimagl(long double complex z);
++
++long double
++creall(long double complex z);
++
+ long double complex
+ conjl(long double complex z)
+ {
+diff --git a/libm/src/s_floorl.c b/libm/src/s_floorl.c
+index 2ef0acc..babe21f 100644
+--- a/libm/src/s_floorl.c
++++ b/libm/src/s_floorl.c
+@@ -33,17 +33,17 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/s_floorl.c,v 1.4 2005/04/28 19
+ #ifdef LDBL_IMPLICIT_NBIT
+ #define	MANH_SIZE	(LDBL_MANH_SIZE + 1)
+ #define	INC_MANH(u, c)	do {					\
+-	uint64_t o = u.bits.manh;				\
++	uint64_t _o = u.bits.manh;				\
+ 	u.bits.manh += (c);					\
+-	if (u.bits.manh < o)					\
++	if (u.bits.manh < _o)					\
+ 		u.bits.exp++;					\
+ } while (0)
+ #else
+ #define	MANH_SIZE	LDBL_MANH_SIZE
+ #define	INC_MANH(u, c)	do {					\
+-	uint64_t o = u.bits.manh;				\
++	uint64_t _o = u.bits.manh;				\
+ 	u.bits.manh += (c);					\
+-	if (u.bits.manh < o) {					\
++	if (u.bits.manh < _o) {					\
+ 		u.bits.exp++;					\
+ 		u.bits.manh |= 1llu << (LDBL_MANH_SIZE - 1);	\
+ 	}							\
+diff --git a/libuclibc++/include/bits/c++config.h b/libuclibc++/include/bits/c++config.h
+index 23155c3..f8d48f5 100644
+--- a/libuclibc++/include/bits/c++config.h
++++ b/libuclibc++/include/bits/c++config.h
+@@ -1137,7 +1137,7 @@ namespace std
+ /* #undef _GLIBCXX_HAS_GTHREADS */
+ 
+ /* Define to 1 if a full hosted library is built, or 0 if freestanding. */
+-//#define _GLIBCXX_HOSTED 1
++#define _GLIBCXX_HOSTED 1
+ 
+ /* Define if compatibility should be provided for -mlong-double-64. */
+ 
+diff --git a/libuclibc++/include/cstdio b/libuclibc++/include/cstdio
+index 265ccf0..94ac099 100644
+--- a/libuclibc++/include/cstdio
++++ b/libuclibc++/include/cstdio
+@@ -59,13 +59,13 @@ namespace std{
+ 	using ::remove;
+ 	using ::rename;
+ 	using ::rewind;
+-#ifndef __NO_LIBC
+ 	using ::scanf;
+ 	using ::setbuf;
+ 	using ::setvbuf;
++#ifndef __NO_LIBC
+ 	using ::sprintf;
+-	using ::sscanf;
+ #endif
++	using ::sscanf;
+ 	using ::tmpfile;
+ #if _GLIBCXX_USE_TMPNAM
+ 	using ::tmpnam;
+diff --git a/libuclibc++/include/cstdlib b/libuclibc++/include/cstdlib
+index 7a1c8dd..b85ed36 100644
+--- a/libuclibc++/include/cstdlib
++++ b/libuclibc++/include/cstdlib
+@@ -31,29 +31,21 @@ namespace std{
+ 	using ::atof;
+ 	using ::atoi;
+ 	using ::bsearch;
+-#ifndef __NO_LIBC
+ 	using ::calloc;
+-#endif
+ 	using ::div;
+ 	using ::exit;
+-#ifndef __NO_LIBC
+ 	using ::free;
+ 	using ::getenv;
+-#endif
+ 	using ::labs;
+ 	using ::ldiv;
+-#ifndef __NO_LIBC
+ 	using ::malloc;
+-#endif
+ 	using ::qsort;
+-#ifndef __NO_LIBC
+ 	using ::rand;
+ 	using ::realloc;
+ 	using ::srand;
+ 	using ::strtod;
+ 	using ::strtol;
+ 	using ::strtoul;
+-#endif
+ 	using ::system;
+ #ifdef __UCLIBCXX_HAS_WCHAR__
+ 	using ::mblen;
+diff --git a/libuclibc++/include/cxxabi.h b/libuclibc++/include/cxxabi.h
+index c93085a..3727e87 100644
+--- a/libuclibc++/include/cxxabi.h
++++ b/libuclibc++/include/cxxabi.h
+@@ -125,14 +125,14 @@ namespace __cxxabiv1
+ 
+   // Pure virtual functions.
+   void
+-  __cxa_pure_virtual(void) __attribute__ ((__noreturn__));
++  __cxa_pure_virtual(void) /* __attribute__ ((__noreturn__)) */;
+ 
+   // Exception handling.
+-  void
+-  __cxa_bad_cast();
++//  void
++//  __cxa_bad_cast();
+ 
+-  void
+-  __cxa_bad_typeid();
++//  void
++//  __cxa_bad_typeid();
+ 
+   // DSO destruction.
+   int
+diff --git a/libuclibc++/include/limits b/libuclibc++/include/limits
+index e275eb5..b4ee598 100644
+--- a/libuclibc++/include/limits
++++ b/libuclibc++/include/limits
+@@ -21,7 +21,7 @@
+ #ifndef __STD_HEADER_LIMITS
+ #define __STD_HEADER_LIMITS 1
+ 
+-#warning limits header is nowhere complete or accurate
++// #warning limits header is nowhere complete or accurate
+ 
+ #pragma GCC visibility push(default)
+ 
+diff --git a/libucsupc++/src/cxxabi.h b/libucsupc++/src/cxxabi.h
+index c93085a..f4672b8 100644
+--- a/libucsupc++/src/cxxabi.h
++++ b/libucsupc++/src/cxxabi.h
+@@ -128,11 +128,11 @@ namespace __cxxabiv1
+   __cxa_pure_virtual(void) __attribute__ ((__noreturn__));
+ 
+   // Exception handling.
+-  void
+-  __cxa_bad_cast();
++//  void
++//  __cxa_bad_cast();
+ 
+-  void
+-  __cxa_bad_typeid();
++//  void
++//  __cxa_bad_typeid();
+ 
+   // DSO destruction.
+   int
+diff --git a/libucsupc++/src/eh_call.cc b/libucsupc++/src/eh_call.cc
+index f519f35..82afb68 100644
+--- a/libucsupc++/src/eh_call.cc
++++ b/libucsupc++/src/eh_call.cc
+@@ -138,8 +138,9 @@ __cxa_call_unexpected(void* exc_obj_in)
+ 	  catch_type = (const std::type_info*) (offset);
+ 
+ 	  if (__cxa_type_match(&new_xh->unwindHeader, catch_type, false,
+-			       &new_ptr) != ctm_failed)
++			       &new_ptr) != ctm_failed) {
+ 	    __throw_exception_again;
++	  }
+ 
+ 	  if (catch_type->__do_catch(&bad_exc, 0, 1))
+ 	    bad_exception_allowed = true;
+diff --git a/libucsupc++/src/eh_term_handler.cc b/libucsupc++/src/eh_term_handler.cc
+index 0d9a926..41f5977 100644
+--- a/libucsupc++/src/eh_term_handler.cc
++++ b/libucsupc++/src/eh_term_handler.cc
+@@ -44,9 +44,9 @@ void _term()
+ 
+ /* The current installed user handler.  */
+ std::terminate_handler __cxxabiv1::__terminate_handler =
+-#if _GLIBCXX_HOSTED
+-	__gnu_cxx::__verbose_terminate_handler;
+-#else
++//#if _GLIBCXX_HOSTED
++//	__gnu_cxx::__verbose_terminate_handler;
++//#else
+ 	_term;
+-#endif
++//#endif
+ 
+diff --git a/libucsupc++/src/new_op.cc b/libucsupc++/src/new_op.cc
+index 874955d..0fbdd24 100644
+--- a/libucsupc++/src/new_op.cc
++++ b/libucsupc++/src/new_op.cc
+@@ -57,8 +57,8 @@ operator new (std::size_t sz) throw (std::bad_alloc)
+ #ifdef __EXCEPTIONS
+ 	throw bad_alloc();
+ #else
+-        //std::abort();
+-    return 0;
++    // std::abort();
++    return p;
+ #endif
+       handler ();
+       p = (void *) malloc (sz);
+diff --git a/libucsupc++/src/pure.cc b/libucsupc++/src/pure.cc
+index acf7232..dcdf6d6 100644
+--- a/libucsupc++/src/pure.cc
++++ b/libucsupc++/src/pure.cc
+@@ -26,7 +26,8 @@
+ #include <cxxabi.h>
+ #include "unwind-cxx.h"
+ 
+-#if _GLIBCXX_HOSTED
++#if 0
++// #if _GLIBCXX_HOSTED
+ #ifdef _GLIBCXX_HAVE_UNISTD_H
+ # include <unistd.h>
+ # define writestr(str)	write(2, str, sizeof(str) - 1)
+diff --git a/libucsupc++/src/unwind-cxx.h b/libucsupc++/src/unwind-cxx.h
+index e62ea7c..9dfa4d2 100644
+--- a/libucsupc++/src/unwind-cxx.h
++++ b/libucsupc++/src/unwind-cxx.h
+@@ -171,27 +171,27 @@ __cxa_free_dependent_exception(__cxa_dependent_exception *ex) throw();
+ extern "C" void __cxa_throw (void *thrown_exception,
+ 			     std::type_info *tinfo,
+ 			     void (*dest) (void *))
+-  __attribute__((__noreturn__));
++  /* __attribute__((__noreturn__)) */;
+ 
+ // Used to implement exception handlers.
+ extern "C" void *__cxa_get_exception_ptr (void *) throw()
+   __attribute__ ((__pure__));
+ extern "C" void *__cxa_begin_catch (void *) throw();
+ extern "C" void __cxa_end_catch ();
+-extern "C" void __cxa_rethrow () __attribute__((__noreturn__));
++extern "C" void __cxa_rethrow () /*__attribute__((__noreturn__)) */;
+ 
+ // These facilitate code generation for recurring situations.
+-extern "C" void __cxa_bad_cast () __attribute__((__noreturn__));
+-extern "C" void __cxa_bad_typeid () __attribute__((__noreturn__));
++extern "C" void __cxa_bad_cast () /* __attribute__((__noreturn__)) */;
++extern "C" void __cxa_bad_typeid () /* __attribute__((__noreturn__)) */;
+ 
+ // @@@ These are not directly specified by the IA-64 C++ ABI.
+ 
+ // Handles re-checking the exception specification if unexpectedHandler
+ // throws, and if bad_exception needs to be thrown.  Called from the
+ // compiler.
+-extern "C" void __cxa_call_unexpected (void *) __attribute__((__noreturn__));
++extern "C" void __cxa_call_unexpected (void *) /* __attribute__((__noreturn__)) */;
+ extern "C" void __cxa_call_terminate (_Unwind_Exception*) throw ()
+-  __attribute__((__noreturn__));
++  /* __attribute__((__noreturn__)) */;
+ 
+ #ifdef __ARM_EABI_UNWINDER__
+ // Arm EABI specified routines.
+@@ -210,9 +210,9 @@ extern "C" void __cxa_end_cleanup (void);
+ // Invokes given handler, dying appropriately if the user handler was
+ // so inconsiderate as to return.
+ extern void __terminate(std::terminate_handler) throw () 
+-  __attribute__((__noreturn__));
++  /* __attribute__((__noreturn__)) */;
+ extern void __unexpected(std::unexpected_handler)
+-  __attribute__((__noreturn__));
++  /* __attribute__((__noreturn__)) */;
+ 
+ // The current installed user handlers.
+ extern std::terminate_handler __terminate_handler;
+diff --git a/libucsupc++/src/vterminate.cc b/libucsupc++/src/vterminate.cc
+index 96824bb..f164419 100644
+--- a/libucsupc++/src/vterminate.cc
++++ b/libucsupc++/src/vterminate.cc
+@@ -24,7 +24,8 @@
+ 
+ #include <bits/c++config.h>
+ 
+-#if _GLIBCXX_HOSTED
++// #if _GLIBCXX_HOSTED
++#if 0
+ #include <cstdlib>
+ #include <exception>
+ #include <bits/exception_defines.h>
+diff --git a/rules.mk b/rules.mk
+index 0992395..c1ca833 100644
+--- a/rules.mk
++++ b/rules.mk
+@@ -110,16 +110,19 @@ ifneq ($(SOURCE_ENCODING),cp1251)
+ endif
+ TARGET_COMMON_FLAGS += -fno-builtin -nodefaultlibs -nostdlib -nostdinc
+ 
++WERROR := -Werror -Wno-error=incompatible-pointer-types -Wno-error=cast-function-type -Wno-error=shift-count-overflow -Wno-error=sign-compare -Wno-error=maybe-uninitialized
++WERROR += -Wno-error=shift-negative-value -Wno-error=implicit-fallthrough -Wno-error=missing-prototypes
++
+ TARGET_CFLAGS := $(CSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS)
+ TARGET_CFLAGS += -fno-common -ffunction-sections -fdata-sections
+ TARGET_CFLAGS += -Wextra -Wshadow -Wno-unused-variable -Wno-unused-parameter -Wno-strict-prototypes -Wno-main -Wimplicit-function-declaration
+-TARGET_CFLAGS += -Wredundant-decls -Wmissing-prototypes
++TARGET_CFLAGS += -Wredundant-decls -Wmissing-prototypes $(WERROR)
+ TARGET_CFLAGS += $(CFLAGS)
+ 
+ TARGET_CXXFLAGS := $(CXXSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS) -nostdinc++
+ TARGET_CXXFLAGS += -fno-common -ffunction-sections -fdata-sections -Wno-main -Wno-unused-parameter
+ TARGET_CXXFLAGS += -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions
+-TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls
++TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls $(WERROR)
+ TARGET_CXXFLAGS += $(CXXFLAGS)
+ 
+ TARGET_AFLAGS := $(OPT) $(DEFINES) $(ARCH_FLAGS) $(INCLUDES) $(AFLAGS)

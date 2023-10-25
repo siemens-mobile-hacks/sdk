@@ -26,6 +26,7 @@
 #include <features.h>
 
 /* Get general and ISO C99 specific information.  */
+#include <sys/cdefs.h>
 #include <bits/mathdef.h>
 
 __BEGIN_DECLS

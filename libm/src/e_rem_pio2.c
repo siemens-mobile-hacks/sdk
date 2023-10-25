@@ -163,7 +163,6 @@ int __ieee754_rem_pio2(double x, double *y)
 	nx = 3;
 	while(tx[nx-1]==zero) nx--;	/* skip zero term */
 
-#warning error?
 	n  =  __kernel_rem_pio2(tx, y, e0, nx, 2, (const int *)&two_over_pi);
 	if(hx<0) {y[0] = -y[0]; y[1] = -y[1]; return -n;}
 	return n;

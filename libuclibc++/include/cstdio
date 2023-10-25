@@ -59,13 +59,13 @@ namespace std{
 	using ::remove;
 	using ::rename;
 	using ::rewind;
-#ifndef __NO_LIBC
 	using ::scanf;
 	using ::setbuf;
 	using ::setvbuf;
+#ifndef __NO_LIBC
 	using ::sprintf;
-	using ::sscanf;
 #endif
+	using ::sscanf;
 	using ::tmpfile;
 #if _GLIBCXX_USE_TMPNAM
 	using ::tmpnam;

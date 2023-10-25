@@ -6,6 +6,10 @@
 #include <stdarg.h>
 #include <endian.h>
 
+#ifdef __NO_LIBC
+#include <swilib.h>
+#endif
+
 __BEGIN_DECLS
 
 struct __stdio_file;
@@ -29,26 +33,21 @@ FILE *fsetwrite(FILE *stream, ssize_t (*_write)(int fd, const void *buf, size_t 
 FILE *fsetseek(FILE *stream, ssize_t (*_seek)(int fd, long offset, int whence));
 FILE *fsetclose(FILE *stream, int (*_close)(int fd));
 
-
 FILE *fopen (const char *path, const char *mode) __THROW;
 FILE *fdopen (int fildes, const char *mode) __THROW;
 FILE *freopen (const char *path, const char *mode, FILE *stream) __THROW;
 
 int printf(const char *format, ...) __THROW __attribute__((__format__(__printf__,1,2)));
 int fprintf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
-
 #ifndef __NO_LIBC
 int sprintf(char *str, const char *format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
-int snprintf(char *str, size_t size, const char *format, ...) __THROW __attribute__((__format__(__printf__,3,4)));
 #endif
-
+int snprintf(char *str, size_t size, const char *format, ...) __THROW __attribute__((__format__(__printf__,3,4)));
 int asprintf(char **ptr, const char* format, ...) __THROW __attribute__((__format__(__printf__,2,3)));
 
 int scanf(const char *format, ...) __THROW __attribute__((__format__(__scanf__,1,2)));
 int fscanf(FILE *stream, const char *format, ...) __THROW __attribute__((__format__(__scanf__,2,3)));
-#ifndef __NO_LIBC
 int sscanf(const char *str, const char *format, ...) __THROW __attribute__((__format__(__scanf__,2,3)));
-#endif
 
 int vprintf(const char *format, va_list ap) __THROW __attribute__((__format__(__printf__,1,0)));
 int vfprintf(FILE *stream, const char *format, va_list ap) __THROW __attribute__((__format__(__printf__,2,0)));
@@ -87,8 +86,8 @@ int putchar_unlocked(int c) __THROW;
 #define putc_unlocked(c,stream) fputc_unlocked(c,stream)
 #define putchar_unlocked(c) fputc_unlocked(c,stdout)
 #else
-static inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
-static inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
+inline int putc(int c, FILE *stream) __THROW { return fputc(c,stream); }
+inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlocked(c,stream); }
 #endif
 
 #if !defined(__cplusplus)
@@ -97,8 +96,8 @@ static inline int putc_unlocked(int c, FILE *stream) __THROW { return fputc_unlo
 #define getc_unlocked(stream) fgetc_unlocked(stream)
 #define getchar_unlocked() fgetc_unlocked(stdin)
 #else
-static inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
-static inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
+inline int getc_unlocked(FILE *stream) __THROW { return fgetc_unlocked(stream); }
+inline int getchar_unlocked(void) __THROW { return fgetc_unlocked(stdin); }
 #endif
 
 int puts(const char *s) __THROW;
@@ -158,7 +157,7 @@ void perror(const char *s) __THROW;
 
 #define EOF (-1)
 
-#define BUFSIZ 128
+#define BUFSIZ 1024
 
 #define _IONBF 0
 #define _IOLBF 1
@@ -172,11 +171,11 @@ int setvbuf_unlocked(FILE *stream, char *buf, int mode , size_t size) __THROW;
 #define setbuffer(stream,buf,size) setvbuf(stream,buf,buf?_IOFBF:_IONBF,size)
 #define setlinebuf(stream) setvbuf(stream,0,_IOLBF,BUFSIZ)
 #else
-static inline int setbuf(FILE *stream, char *buf) __THROW
+inline int setbuf(FILE *stream, char *buf) __THROW
   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,BUFSIZ); }
-static inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
+inline int setbuffer(FILE *stream, char *buf, size_t size) __THROW
   { return setvbuf(stream,buf,buf?_IOFBF:_IONBF,size); }
-static inline int setlinebuf(FILE *stream) __THROW
+inline int setlinebuf(FILE *stream) __THROW
   { return setvbuf(stream,0,_IOLBF,BUFSIZ); }
 #endif
 
@@ -210,9 +209,16 @@ void funlockfile(FILE* f) __THROW;
 int ftrylockfile (FILE *__stream) __THROW;
 
 #ifdef _GNU_SOURCE
-int vasprintf(char **strp, const char *fmt, va_list ap);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);
+int vasprintf(char **strp, const char *fmt, va_list ap) __THROW;
+ssize_t getline(char **lineptr, size_t *n, FILE *stream) __THROW;
+ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream) __THROW;
+#endif
+
+#if defined(_ATFILE_SOURCE) || ((_XOPEN_SOURCE + 0) >= 700) || ((_POSIX_C_SOURCE + 0) >= 200809L)
+/* also include fcntl.h for the AT_* constants */
+
+int symlinkat(const char *oldpath, int newdirfd, const char *newpath);
+int renameat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath) __THROW;
 #endif
 
 __END_DECLS

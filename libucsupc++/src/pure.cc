@@ -26,7 +26,8 @@
 #include <cxxabi.h>
 #include "unwind-cxx.h"
 
-#if _GLIBCXX_HOSTED
+#if 0
+// #if _GLIBCXX_HOSTED
 #ifdef _GLIBCXX_HAVE_UNISTD_H
 # include <unistd.h>
 # define writestr(str)	write(2, str, sizeof(str) - 1)

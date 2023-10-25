@@ -31,29 +31,21 @@ namespace std{
 	using ::atof;
 	using ::atoi;
 	using ::bsearch;
-#ifndef __NO_LIBC
 	using ::calloc;
-#endif
 	using ::div;
 	using ::exit;
-#ifndef __NO_LIBC
 	using ::free;
 	using ::getenv;
-#endif
 	using ::labs;
 	using ::ldiv;
-#ifndef __NO_LIBC
 	using ::malloc;
-#endif
 	using ::qsort;
-#ifndef __NO_LIBC
 	using ::rand;
 	using ::realloc;
 	using ::srand;
 	using ::strtod;
 	using ::strtol;
 	using ::strtoul;
-#endif
 	using ::system;
 #ifdef __UCLIBCXX_HAS_WCHAR__
 	using ::mblen;

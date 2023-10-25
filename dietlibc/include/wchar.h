@@ -13,8 +13,7 @@ typedef __WINT_TYPE__ wint_t;
 #else
 typedef unsigned int wint_t;
 #endif
-//typedef int (*wctype_t)(wint_t) __THROW __attribute__((__const__));
-typedef unsigned long int wctype_t;
+typedef int (*wctype_t)(wint_t);
 
 #ifndef WCHAR_MIN
 #define WCHAR_MIN (-2147483647 - 1)
@@ -95,11 +94,9 @@ wchar_t *wmemset(wchar_t *, wchar_t, size_t);
 int wprintf(const wchar_t *__restrict__, ...);
 int wscanf(const wchar_t *__restrict__, ...);
 
-int wctomb(char *, wchar_t);
-size_t wcstombs(char *, const wchar_t *, size_t);
-
 #ifdef _XOPEN_SOURCE
 int wcwidth(wchar_t c);
+int wcswidth(const wchar_t *s, size_t n);
 #endif
 
 __END_DECLS

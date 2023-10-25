@@ -28,6 +28,12 @@
 
 #include <complex.h>
 
+long double
+cimagl(long double complex z);
+
+long double
+creall(long double complex z);
+
 long double complex
 conjl(long double complex z)
 {

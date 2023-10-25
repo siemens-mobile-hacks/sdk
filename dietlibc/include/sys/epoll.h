@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <poll.h>
 #include <signal.h>
+#include <fcntl.h>
 
 __BEGIN_DECLS
 
@@ -42,9 +43,25 @@ enum EPOLL_EVENTS {
 	EPOLLHUP = 0x010,
 #define EPOLLHUP EPOLLHUP
 
+	EPOLLRDHUP = 0x2000,
+#define EPOLLRDHUP EPOLLRDHUP
+
+	EPOLLWAKEUP = (1 << 29),
+#define EPOLLWAKEUP EPOLLWAKEUP
+
+	EPOLLONESHOT = (1<<30),
+#define EPOLLONESHOT EPOLLONESHOT
+
 	EPOLLET = (1<<31)
 #define EPOLLET EPOLLET
 };
+
+/* flags for epoll_create1 */
+enum {
+  EPOLL_CLOEXEC = O_CLOEXEC
+#define EPOLL_CLOEXEC EPOLL_CLOEXEC
+};
+
 
 typedef union epoll_data {
   void *ptr;
@@ -63,6 +80,7 @@ __attribute__((__packed__))
 ;
 
 int epoll_create(int size) __THROW;
+int epoll_create1(int flags) __THROW;
 int epoll_ctl(int epfd, int op, int fd, struct epoll_event* event) __THROW;
 int epoll_wait(int epfd, struct epoll_event *events, int maxevents,
 	       int timeout) __THROW;

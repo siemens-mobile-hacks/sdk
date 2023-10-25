@@ -3,6 +3,8 @@
 #include <math.h>
 /* convert double to string.  Helper for sprintf. */
 
+int __isnan (double);
+
 static int copystring(char* buf,int maxlen, const char* s) {
   int i;
   for (i=0; i<maxlen; ++i) {

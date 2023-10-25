@@ -1041,8 +1041,8 @@ int UnpackABentry(AB_UNPRES * param1,void *abentry,int filesz,int flag)
 __def( 0x016D, int, param1, abentry, filesz, flag)
 
 __inl
-int FreeUnpackABentry(AB_UNPRES * param1, void *mfree_adr)
-__def( 0x016E, int, param1, mfree_adr)
+int FreeUnpackABentry(AB_UNPRES * param1, void *free_fn)
+__def( 0x016E, int, param1, free_fn)
 
 __inl
 int GetTypeOfAB_UNPRES_ITEM(int param1)
@@ -1630,16 +1630,16 @@ void UnpackNumPkt(PKT_NUM *pkt, char *buf, int maxlen)
 __defn( 0x2D5, pkt, buf, maxlen)
 
 __inl
-void *TViewGetGUI(void *malloc_adr, void *mfree_adr)
-__def( 0x2D6, void *, malloc_adr, mfree_adr)
+void *TViewGetGUI(void *malloc_fn, void *free_fn)
+__def( 0x2D6, void *, malloc_fn, free_fn)
 
 __inl
 void TViewSetDefinition(void *gui, const TVIEW_DESC * param2)
 __defn( 0x2D7, gui, param2)
 
 __inl
-void TViewSetText(void *gui, WSHDR *text, void *malloc_adr, void *mfree_adr)
-__defn( 0x2D8, gui, text, malloc_adr, mfree_adr)
+void TViewSetText(void *gui, WSHDR *text, void *malloc_fn, void *free_fn)
+__defn( 0x2D8, gui, text, malloc_fn, free_fn)
 
 __inl
 void TViewSetUserPointer(void *gui,void *user_pointer)
@@ -1885,8 +1885,8 @@ int EDIT_IsBusy(void *gui)
 __def( 0x21C, int, gui)
 
 __inl
-int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_adr)(int), void (*mfree_adr)(void))
-__def( 0x21D, int, dest, pkt, len, encoding_type, malloc_adr, mfree_adr)
+int GSMTXT_Decode(WSHDR *dest,void *pkt,int len,int encoding_type, void *(*malloc_fn)(int), void (*free_fn)(void))
+__def( 0x21D, int, dest, pkt, len, encoding_type, malloc_fn, free_fn)
 
 __inl
 void FocusGUI(int id)
@@ -2153,12 +2153,12 @@ void UpdateMenuCursorItem(void *gui, int n)
 __defn( 0x2A3, gui, n)
 
 __inl
-void *GetMenuGUI(void *malloc_adr, void *mfree_adr)
-__def( 0x2A4, void *, malloc_adr, mfree_adr)
+void *GetMenuGUI(void *malloc_fn, void *free_fn)
+__def( 0x2A4, void *, malloc_fn, free_fn)
 
 __inl
-void *GetMultiLinesMenuGUI(void *malloc_adr, void *mfree_adr)
-__def( 0x2A5, void *, malloc_adr, mfree_adr)
+void *GetMultiLinesMenuGUI(void *malloc_fn, void *free_fn)
+__def( 0x2A5, void *, malloc_fn, free_fn)
 
 __inl
 void SetMenuToGUI(void *gui, const void *menu_desc)
@@ -2193,8 +2193,8 @@ void *GetHeaderPointer(void *gui)
 __def( 0x2AE, void *, gui)
 
 __inl
-void SetHeaderText(void *hdr_pointer, WSHDR *txt, void *malloc_adr, void *mfree_adr)
-__defn( 0x2AF, hdr_pointer, txt, malloc_adr, mfree_adr)
+void SetHeaderText(void *hdr_pointer, WSHDR *txt, void *malloc_fn, void *free_fn)
+__defn( 0x2AF, hdr_pointer, txt, malloc_fn, free_fn)
 
 __inl
 void SetMenuSoftKey(void *gui, const SOFTKEY_DESC * param2,int n)
@@ -2237,12 +2237,12 @@ unsigned int OpenNativeAddressbook(int type, int unk1, int unk2, void *data)
 __def( 0x2B9, unsigned int, type, unk1, unk2, data)
 
 __inl
-void SetHeaderIcon(void *hdr_pointer, const int *icon, void *malloc_adr, void *mfree_adr)
-__defn( 0x2BA, hdr_pointer, icon, malloc_adr, mfree_adr)
+void SetHeaderIcon(void *hdr_pointer, const int *icon, void *malloc_fn, void *free_fn)
+__defn( 0x2BA, hdr_pointer, icon, malloc_fn, free_fn)
 
 __inl
-void *GetTabGUI(void *malloc_adr, void *mfree_adr)
-__def( 0x2BB, void *, malloc_adr, mfree_adr)
+void *GetTabGUI(void *malloc_fn, void *free_fn)
+__def( 0x2BB, void *, malloc_fn, free_fn)
 
 __inl
 void SetGUIDefinition(void *gui, const void *definition)
@@ -2326,8 +2326,8 @@ char *RamInputLanguage()
 __def( 0x829C, char *)
 
 __inl
-void SetHeaderToMenu(void *gui, const HEADER_DESC *hdr, void *malloc_adr)
-__defn( 0x2A6, gui, hdr, malloc_adr)
+void SetHeaderToMenu(void *gui, const HEADER_DESC *hdr, void *malloc_fn)
+__defn( 0x2A6, gui, hdr, malloc_fn)
 
 #ifndef __LOADER_BUILD
 __inl

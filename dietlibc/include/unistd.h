@@ -9,9 +9,6 @@
 
 __BEGIN_DECLS
 
-/* clear cpu cache */
-void libc_clear_cpu_cache();
-
 extern int optind,opterr,optopt;
 extern char *optarg;
 int getopt(int argc, char *const argv[], const char *options);
@@ -37,19 +34,25 @@ int access (const char *__name, int __type) __THROW;
 #define STDERR_FILENO  2
 
 off_t lseek(int fildes, off_t offset, int whence) __THROW;
-#if __WORDSIZE == 32
+#if !defined(__OFF_T_MATCHES_OFF64_T)
 loff_t lseek64(int fildes, loff_t offset, int whence) __THROW;
 #if defined _FILE_OFFSET_BITS && _FILE_OFFSET_BITS == 64
 #define lseek(fildes,offset,whence) lseek64(fildes,offset,whence)
 #endif
+#else
+#define lseek64(fildes,offset,whence) lseek(fildes,offset,whence)
 #endif
 
 int chdir(const char *path) __THROW;
 int fchdir(int fd) __THROW;
 int rmdir(const char *pathname) __THROW;
-char *getcwd(char *buf, size_t size) __THROW;
-int symlink(const char *, const char *);
-int lchown(const char *, uid_t, gid_t);
+char *getcwd(char *buf, size_t size) __THROW __attribute__((__warn_unused_result__));
+
+#ifdef _GNU_SOURCE
+char *get_current_dir_name (void) __THROW __attribute_dontuse__;
+
+int pipe2(int pipefd[2], int flags) __THROW;
+#endif
 
 int open(const char* pathname,int flags, ...) __THROW;
 int open64(const char* pathname,int flags, ...) __THROW;
@@ -66,6 +69,13 @@ ssize_t pwrite(int fd, const void *buf, size_t count, off_t offset);
 ssize_t pread64(int fd, void *buf, size_t count, off64_t offset);
 ssize_t pwrite64(int fd, const void *buf, size_t count, off64_t offset);
 
+int execve(const char *filename, char *const argv [], char *const envp[]) __THROW;
+int execlp(const char *file, const char *arg, ...) __THROW;
+int execv(const char *path, char *const argv[]) __THROW;
+int execvp(const char *file, char *const argv[]) __THROW;
+int execl(const char *path, const char* arg, ...) __THROW;
+int execle(const char *path, const char* arg, ...) __THROW;
+
 pid_t getpid(void) __THROW __pure;
 
 pid_t getppid(void) __THROW;
@@ -78,6 +88,17 @@ pid_t getsid(pid_t pid) __THROW;
 pid_t setsid (void) __THROW;
 int dup (int oldfd) __THROW;
 int dup2 (int oldfd,int newfd) __THROW;
+#ifdef _GNU_SOURCE
+int dup3(int oldfd, int newfd, int flags) __THROW;
+
+/* flags for memfd_create(2) (unsigned int) */
+#define MFD_CLOEXEC		0x0001U
+#define MFD_ALLOW_SEALING	0x0002U
+
+int memfd_create(const char* name, unsigned int flags) __THROW;
+
+int syncfs(int fd) __THROW;
+#endif
 
 struct dirent;
 struct dirent64;
@@ -87,37 +108,42 @@ int getdents64(int fd, struct dirent64 *dirp, unsigned int count) __THROW;
 pid_t fork(void) __THROW;
 pid_t vfork(void) __THROW;
 
-//int readlink(const char *path, char *buf, size_t bufsiz) __THROW;
-//int symlink(const char *oldpath, const char *newpath) __THROW;
-//int link(const char *oldpath, const char *newpath) __THROW;
+int readlink(const char *path, char *buf, size_t bufsiz) __THROW;
+int symlink(const char *oldpath, const char *newpath) __THROW;
+int link(const char *oldpath, const char *newpath) __THROW;
 
-//int chown(const char *path, uid_t owner, gid_t group) __THROW;
-//int fchown(int fd, uid_t owner, gid_t group) __THROW;
-//int lchown(const char *path, uid_t owner, gid_t group) __THROW;
+int chown(const char *path, uid_t owner, gid_t group) __THROW;
+int fchown(int fd, uid_t owner, gid_t group) __THROW;
+int lchown(const char *path, uid_t owner, gid_t group) __THROW;
 
-//int fsync(int fd) __THROW;
+int fsync(int fd) __THROW;
 #define _POSIX_SYNCHRONIZED_IO
-//int fdatasync(int fd) __THROW;
+int fdatasync(int fd) __THROW;
 
-//int pipe(int filedes[2]) __THROW;
+int pipe(int filedes[2]) __THROW;
 
-//char *ttyname (int desc) __THROW;
+char *ttyname (int desc) __THROW;
 
-//int brk(void *end_data_segment) __THROW;
-//void *sbrk(ptrdiff_t increment) __THROW;
+int brk(void *end_data_segment) __THROW;
+void *sbrk(ptrdiff_t increment) __THROW;
 
 int gethostname(char *name, size_t len) __THROW;
 int sethostname(const char *name, size_t len) __THROW;
 
-//int usleep(unsigned long useconds) __THROW;
-//unsigned int sleep(unsigned int seconds) __THROW;
+int usleep(unsigned long useconds) __THROW;
+unsigned int sleep(unsigned int seconds) __THROW;
 
 unsigned int alarm(unsigned int seconds) __THROW;
 int sync(void) __THROW;
 
 int isatty(int desc) __THROW;
 
-//void _exit(int status) __THROW __attribute__((__noreturn__));
+void _exit(int status) __THROW __attribute__((__noreturn__));
+
+int daemon(int nochdir,int noclose) __THROW;
+
+int pause(void) __THROW;
+
 char* getlogin(void) __THROW;
 /* warning: the diet libc getlogin() simply returns getenv("LOGNAME") */
 
@@ -149,7 +175,13 @@ char *crypt(const char *key, const char *salt) __THROW;
 void encrypt(char block[64], int edflag) __THROW;
 void setkey(const char *key) __THROW;
 
-size_t getpagesize(void) __THROW __attribute__((__const__));
+#ifdef _GNU_SOURCE
+char* md5crypt(const char* key, const char* salt) __THROW;
+char* sha256_crypt(const char* key, const char* salt) __THROW;
+char* sha512_crypt(const char* key, const char* salt) __THROW;
+#endif
+
+int getpagesize(void) __THROW __attribute__((__const__));
 
 int getdomainname(char *name, size_t len) __THROW;
 int setdomainname(const char *name, size_t len) __THROW;
@@ -176,6 +208,8 @@ size_t confstr(int name,char*buf,size_t len) __THROW;
 #define _SC_NPROCESSORS_ONLN 6
 #define _SC_NPROCESSORS_CONF _SC_NPROCESSORS_ONLN
 #define _SC_PHYS_PAGES 7
+#define _SC_GETPW_R_SIZE_MAX 8
+#define _SC_GETGR_R_SIZE_MAX 9
 long sysconf(int name) __THROW;
 #define _PC_PATH_MAX 1
 #define _PC_VDISABLE 2
@@ -247,7 +281,7 @@ extern char **__environ;
 #endif
 #endif
 
-#ifdef _LINUX_SOURCE
+#if defined(_LINUX_SOURCE)
 int pivot_root(const char *new_root, const char *put_old) __THROW;
 /* Linux 2.6 module loading infrastructure:
  * init_module takes a buffer where you read the module file into */
@@ -259,9 +293,21 @@ pid_t gettid(void) __THROW __pure;
 int tkill(pid_t tid, int sig) __THROW;
 int tgkill(pid_t tgid, pid_t tid, int sig) __THROW;
 /* see linux/fadvise.h */
-long fadvise64(int fd,off64_t offset,size_t len,int advice);
-long fadvise64_64(int fd,off64_t offset,off64_t len,int advice);
+long fadvise64(int fd,off64_t offset,size_t len,int advice) __THROW;
+long fadvise64_64(int fd,off64_t offset,off64_t len,int advice) __THROW;
+
 #endif
+
+#if defined(_ATFILE_SOURCE) || ((_XOPEN_SOURCE + 0) >= 700) || ((_POSIX_C_SOURCE + 0) >= 200809L)
+/* also include fcntl.h for the AT_* constants */
+
+int faccessat(int dirfd, const char *pathname, int mode, int flags) __THROW;
+int fchownat(int dirfd, const char *pathname, uid_t owner, gid_t group, int flags) __THROW;
+int linkat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath, int flags) __THROW;
+int readlinkat(int dirfd, const char *pathname, char *buf, size_t bufsiz) __THROW;
+#endif
+
+#define _POSIX_MAPPED_FILES 200809L
 
 __END_DECLS
 

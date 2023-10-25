@@ -33,17 +33,17 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/s_ceill.c,v 1.4 2005/04/28 19:
 #ifdef LDBL_IMPLICIT_NBIT
 #define	MANH_SIZE	(LDBL_MANH_SIZE + 1)
 #define	INC_MANH(u, c)	do {					\
-	uint64_t o = u.bits.manh;				\
+	uint64_t _o = u.bits.manh;				\
 	u.bits.manh += (c);					\
-	if (u.bits.manh < o)					\
+	if (u.bits.manh < _o)					\
 		u.bits.exp++;					\
 } while (0)
 #else
 #define	MANH_SIZE	LDBL_MANH_SIZE
 #define	INC_MANH(u, c)	do {					\
-	uint64_t o = u.bits.manh;				\
+	uint64_t _o = u.bits.manh;				\
 	u.bits.manh += (c);					\
-	if (u.bits.manh < o) {					\
+	if (u.bits.manh < _o) {					\
 		u.bits.exp++;					\
 		u.bits.manh |= 1llu << (LDBL_MANH_SIZE - 1);	\
 	}							\

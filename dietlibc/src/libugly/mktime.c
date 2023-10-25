@@ -9,8 +9,8 @@
 extern void __maplocaltime(void);
 extern time_t __tzfile_map(time_t t, int *isdst, int forward);
 #else
-extern long int timezone;
-extern int daylight;
+//extern long int timezone;
+//extern int daylight;
 #endif
 
 time_t mktime(register struct tm* const t) {

@@ -138,8 +138,9 @@ __cxa_call_unexpected(void* exc_obj_in)
 	  catch_type = (const std::type_info*) (offset);
 
 	  if (__cxa_type_match(&new_xh->unwindHeader, catch_type, false,
-			       &new_ptr) != ctm_failed)
+			       &new_ptr) != ctm_failed) {
 	    __throw_exception_again;
+	  }
 
 	  if (catch_type->__do_catch(&bad_exc, 0, 1))
 	    bad_exception_allowed = true;

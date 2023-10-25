@@ -110,16 +110,19 @@ ifneq ($(SOURCE_ENCODING),cp1251)
 endif
 TARGET_COMMON_FLAGS += -fno-builtin -nodefaultlibs -nostdlib -nostdinc
 
+# WERROR := -Werror -Wno-error=incompatible-pointer-types -Wno-error=cast-function-type -Wno-error=shift-count-overflow -Wno-error=sign-compare -Wno-error=maybe-uninitialized
+# WERROR += -Wno-error=shift-negative-value -Wno-error=implicit-fallthrough -Wno-error=missing-prototypes
+
 TARGET_CFLAGS := $(CSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS)
 TARGET_CFLAGS += -fno-common -ffunction-sections -fdata-sections
 TARGET_CFLAGS += -Wextra -Wshadow -Wno-unused-variable -Wno-unused-parameter -Wno-strict-prototypes -Wno-main -Wimplicit-function-declaration
-TARGET_CFLAGS += -Wredundant-decls -Wmissing-prototypes
+TARGET_CFLAGS += -Wredundant-decls -Wmissing-prototypes $(WERROR)
 TARGET_CFLAGS += $(CFLAGS)
 
 TARGET_CXXFLAGS := $(CXXSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS) -nostdinc++
 TARGET_CXXFLAGS += -fno-common -ffunction-sections -fdata-sections -Wno-main -Wno-unused-parameter
 TARGET_CXXFLAGS += -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions
-TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls
+TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls $(WERROR)
 TARGET_CXXFLAGS += $(CXXFLAGS)
 
 TARGET_AFLAGS := $(OPT) $(DEFINES) $(ARCH_FLAGS) $(INCLUDES) $(AFLAGS)

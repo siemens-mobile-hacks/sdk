@@ -24,7 +24,8 @@
 
 #include <bits/c++config.h>
 
-#if _GLIBCXX_HOSTED
+// #if _GLIBCXX_HOSTED
+#if 0
 #include <cstdlib>
 #include <exception>
 #include <bits/exception_defines.h>

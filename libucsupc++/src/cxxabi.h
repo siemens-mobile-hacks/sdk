@@ -128,11 +128,11 @@ namespace __cxxabiv1
   __cxa_pure_virtual(void) __attribute__ ((__noreturn__));
 
   // Exception handling.
-  void
-  __cxa_bad_cast();
+//  void
+//  __cxa_bad_cast();
 
-  void
-  __cxa_bad_typeid();
+//  void
+//  __cxa_bad_typeid();
 
   // DSO destruction.
   int

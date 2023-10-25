@@ -25,7 +25,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_lgamma.c,v 1.8 2005/02/04 18
 #include "math.h"
 #include "math_private.h"
 
-extern int signgam;
+//extern int signgam;
 
 double
 __ieee754_lgamma(double x)

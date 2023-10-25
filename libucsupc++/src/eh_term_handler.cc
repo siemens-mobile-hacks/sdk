@@ -44,9 +44,9 @@ void _term()
 
 /* The current installed user handler.  */
 std::terminate_handler __cxxabiv1::__terminate_handler =
-#if _GLIBCXX_HOSTED
-	__gnu_cxx::__verbose_terminate_handler;
-#else
+//#if _GLIBCXX_HOSTED
+//	__gnu_cxx::__verbose_terminate_handler;
+//#else
 	_term;
-#endif
+//#endif
 

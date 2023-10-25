@@ -25,7 +25,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_gamma.c,v 1.7 2005/02/04 18:
 #include "math.h"
 #include "math_private.h"
 
-extern int signgam;
+//extern int signgam;
 
 double
 __ieee754_gamma(double x)

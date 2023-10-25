@@ -1137,7 +1137,7 @@ namespace std
 /* #undef _GLIBCXX_HAS_GTHREADS */
 
 /* Define to 1 if a full hosted library is built, or 0 if freestanding. */
-//#define _GLIBCXX_HOSTED 1
+#define _GLIBCXX_HOSTED 1
 
 /* Define if compatibility should be provided for -mlong-double-64. */
 

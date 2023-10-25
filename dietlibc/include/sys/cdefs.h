@@ -1,6 +1,11 @@
 #ifndef _SYS_CDEFS_H
 #define _SYS_CDEFS_H
 
+// FIXME
+#define __weak_reference(a, b)
+#define __strong_reference(a, b)
+#define __weak_alias(a, b)
+
 #ifndef __cplusplus
 #define __THROW
 #define __BEGIN_DECLS
@@ -14,6 +19,22 @@
 #ifndef __GNUC__
 #define __attribute__(xyz)
 #define __extension__
+#endif
+
+#if (__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 6))
+#define __leaf , __leaf__
+#else
+#define __leaf
+#endif
+
+#if !defined(__cplusplus) && ((__GNUC__ > 3) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 3)))
+#undef __THROW
+#define __THROW __attribute__((__nothrow__ __leaf))
+#define __THROWNL __attribute__((__nothrow__))
+#endif
+
+#ifndef __THROWNL
+#define __THROWNL __THROW
 #endif
 
 #if (__GNUC__ > 2) || ((__GNUC__ == 2) && (__GNUC_MINOR__ >= 96))
@@ -94,8 +115,8 @@
 #define __attribute_alloc__(x)
 #define __attribute_alloc2__(x,y)
 #else
-#define __attribute_alloc__(x) __attribute__((alloc_size(x))
-#define __attribute_alloc2__(x,y) __attribute__((alloc_size(x,y))
+#define __attribute_alloc__(x) __attribute__((alloc_size(x)))
+#define __attribute_alloc2__(x,y) __attribute__((alloc_size(x,y)))
 #endif
 
 #if (__GNUC__ < 2) || ((__GNUC__ == 2) && (__GNUC_MINOR__ < 5))
@@ -110,8 +131,17 @@
 #define __attribute_formatarg__(x) __attribute__((format_arg(x)))
 #endif
 
+#if (__GNUC__ < 3) || ((__GNUC__ == 3) && (__GNUC_MINOR__ < 1))
+#define __noinline__
+#else
+#define __noinline__ __attribute__((noinline))
+#endif
 
-#define __attribute_constructor __attribute__((constructor))
-#define __attribute_destructor __attribute__((destructor))
+#if (__GNUC__ < 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ < 6))
+#define __hidden__
+#else
+#define __hidden__ __attribute__((visibility("hidden")))
+#endif
+
 
 #endif

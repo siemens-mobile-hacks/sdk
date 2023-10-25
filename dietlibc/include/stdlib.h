@@ -7,20 +7,28 @@
 #include <sys/types.h>
 #include <alloca.h>
 
+#ifdef __NO_LIBC
+#include <swilib.h>
+#endif
+
 __BEGIN_DECLS
 
 #ifndef __NO_LIBC
-
 void *calloc(size_t nmemb, size_t size) __THROW __attribute_malloc__;
 void *malloc(size_t size)  __THROW __attribute_malloc__;
 void free(void *ptr) __THROW;
 void *realloc(void *ptr, size_t size) __THROW __attribute_malloc__;
+#endif
 
+/* useful OpenBSD extension: */
+void* reallocarray(void* ptr, size_t nmemb, size_t size) __THROW __attribute_malloc__ __attribute_alloc2__(2,3);
+
+#ifndef __NO_LIBC
 char *getenv(const char *name) __THROW __pure;
 int putenv(const char *string) __THROW;
 int setenv(const char *name, const char *value, int overwrite) __THROW;
 int unsetenv(const char *name) __THROW;
-#endif /*_NO_LIBC */
+#endif
 
 int system (const char * string) __THROW;
 int atexit(void (*function)(void)) __THROW;
@@ -35,7 +43,7 @@ unsigned long int strtoul(const char *nptr, char **endptr, int base) __THROW;
 #endif
 
 extern int __ltostr(char *s, unsigned int size, unsigned long i, unsigned int base, int UpCase) __THROW;
-extern int __dtostr(double d,char *buf,unsigned int maxlen,unsigned int prec,unsigned int prec2,int g) __THROW;
+extern int __dtostr(double d,char *buf,unsigned int maxlen,unsigned int prec,unsigned int prec2,int flags) __THROW;
 
 #if !defined(__STRICT_ANSI__) || __STDC_VERSION__ + 0 >= 199900L
 __extension__ long long int strtoll(const char *nptr, char **endptr, int base) __THROW;
@@ -49,20 +57,15 @@ double atof(const char *nptr) __THROW;
 __extension__ long long int atoll(const char *nptr);
 
 void exit(int status) __THROW __attribute__((__noreturn__));
-void abort(void) __THROW;
+void abort(void) __THROW __attribute__((__noreturn__));
 
 #ifndef __NO_LIBC
 extern int rand(void) __THROW;
 #endif
-
 extern int rand_r(unsigned int *seed) __THROW;
-
 #ifndef __NO_LIBC
 extern void srand(unsigned int seed) __THROW;
 #endif
-
-extern int random(void) __THROW;
-extern void srandom(unsigned int seed) __THROW;
 #ifdef _BSD_SOURCE
 extern int random(void) __THROW __attribute_dontuse__;
 extern void srandom(unsigned int seed) __THROW __attribute_dontuse__;
@@ -91,8 +94,6 @@ char* mkdtemp(char *_template);
 
 char* mktemp(char *_template);
 
-#define min(x1, x2) (x1 < x2? x1 : x2)
-#define max(x1, x2) (x1 > x2? x1 : x2)
 int abs(int i) __THROW __attribute__((__const__));
 long int labs(long int i) __THROW __attribute__((__const__));
 __extension__ long long int llabs(long long int i) __THROW __attribute__((__const__));
@@ -110,7 +111,7 @@ char *ptsname (int fd) __THROW;
 
 #define RAND_MAX 	0x7ffffffe
 
-#define MB_CUR_MAX 1
+#define MB_CUR_MAX 5
 
 /* now these functions are the greatest bullshit I have ever seen.
  * The ISO people must be out of their minds. */
@@ -121,17 +122,27 @@ typedef struct { long quot,rem; } ldiv_t;
 div_t div(int numerator, int denominator);
 ldiv_t ldiv(long numerator, long denominator);
 
-#ifdef _GNU_SOURCE
 typedef struct { long long quot,rem; } lldiv_t;
 lldiv_t lldiv(long long numerator, long long denominator);
 
-int clearenv(void);
+#ifdef _GNU_SOURCE
+int clearenv(void) __THROW;
+char* secure_getenv(const char* name) __THROW;
 #endif
 
 int mbtowc(wchar_t *pwc, const char *s, size_t n) __THROW;
 int wctomb(char *s, wchar_t wc) __THROW;
 size_t mbstowcs(wchar_t *dest, const char *src, size_t n) __THROW;
 int mblen(const char* s,size_t n) __THROW __pure;
+
+size_t wcstombs(char *dest, const wchar_t *src, size_t n) __THROW;
+
+/* These come from OpenBSD: */
+uint32_t arc4random(void) __THROW;
+void arc4random_buf(void* buf, size_t n) __THROW;
+uint32_t arc4random_uniform(uint32_t upper_bound) __THROW;
+void arc4random_stir(void) __THROW;
+void arc4random_addrandom(unsigned char* dat,size_t datlen) __THROW;
 
 __END_DECLS
 

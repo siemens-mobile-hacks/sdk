@@ -26,7 +26,7 @@ static char rcsid[] = "$FreeBSD: src/lib/msun/src/e_gammaf.c,v 1.6 2002/05/28 17
 #include "math.h"
 #include "math_private.h"
 
-extern int signgam;
+//extern int signgam;
 
 float
 __ieee754_gammaf(float x)
