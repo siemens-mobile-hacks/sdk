@@ -2391,6 +2391,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<char32_t>
 
 #endif  // _LIBCPP_HAS_NO_UNICODE_CHARS
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
 struct _LIBCPP_TEMPLATE_VIS hash<wchar_t>
     : public unary_function<wchar_t, size_t>
@@ -2398,6 +2399,7 @@ struct _LIBCPP_TEMPLATE_VIS hash<wchar_t>
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(wchar_t __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
+#endif
 
 template <>
 struct _LIBCPP_TEMPLATE_VIS hash<short>

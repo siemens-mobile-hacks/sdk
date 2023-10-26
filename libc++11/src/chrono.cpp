@@ -31,7 +31,7 @@
 #endif
 #endif // __ENVIRONMENT_.*_VERSION_MIN_REQUIRED__
 #else
-#define _LIBCXX_USE_CLOCK_GETTIME
+// #define _LIBCXX_USE_CLOCK_GETTIME
 #endif // __APPLE__
 
 #if defined(_LIBCPP_WIN32API)

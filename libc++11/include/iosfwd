@@ -140,7 +140,9 @@ template <class _CharT, class _Traits = char_traits<_CharT> >
     class _LIBCPP_TEMPLATE_VIS ostreambuf_iterator;
 
 typedef basic_ios<char>              ios;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 typedef basic_ios<wchar_t>           wios;
+#endif
 
 typedef basic_streambuf<char>        streambuf;
 typedef basic_istream<char>          istream;
@@ -157,6 +159,7 @@ typedef basic_ifstream<char>         ifstream;
 typedef basic_ofstream<char>         ofstream;
 typedef basic_fstream<char>          fstream;
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 typedef basic_streambuf<wchar_t>     wstreambuf;
 typedef basic_istream<wchar_t>       wistream;
 typedef basic_ostream<wchar_t>       wostream;
@@ -171,10 +174,14 @@ typedef basic_filebuf<wchar_t>       wfilebuf;
 typedef basic_ifstream<wchar_t>      wifstream;
 typedef basic_ofstream<wchar_t>      wofstream;
 typedef basic_fstream<wchar_t>       wfstream;
+#endif
 
 template <class _State>             class _LIBCPP_TEMPLATE_VIS fpos;
+
 typedef fpos<mbstate_t>    streampos;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 typedef fpos<mbstate_t>    wstreampos;
+#endif  // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 #ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
 typedef fpos<mbstate_t>    u16streampos;
 typedef fpos<mbstate_t>    u32streampos;
@@ -198,6 +205,33 @@ typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> > wstring
 // Include other forward declarations here
 template <class _Tp, class _Alloc = allocator<_Tp> >
 class _LIBCPP_TEMPLATE_VIS vector;
+
+template <class _CharT, class _Traits>
+class __save_flags
+{
+    typedef basic_ios<_CharT, _Traits> __stream_type;
+    typedef typename __stream_type::fmtflags fmtflags;
+
+    __stream_type& __stream_;
+    fmtflags       __fmtflags_;
+    _CharT         __fill_;
+
+    __save_flags(const __save_flags&);
+    __save_flags& operator=(const __save_flags&);
+public:
+    _LIBCPP_INLINE_VISIBILITY
+    explicit __save_flags(__stream_type& __stream)
+        : __stream_(__stream),
+          __fmtflags_(__stream.flags()),
+          __fill_(__stream.fill())
+        {}
+    _LIBCPP_INLINE_VISIBILITY
+    ~__save_flags()
+    {
+        __stream_.flags(__fmtflags_);
+        __stream_.fill(__fill_);
+    }
+};
 
 _LIBCPP_END_NAMESPACE_STD
 

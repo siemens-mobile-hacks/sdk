@@ -3978,11 +3978,13 @@ inline namespace literals
         return basic_string<char> (__str, __len);
     }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
     inline _LIBCPP_INLINE_VISIBILITY
     basic_string<wchar_t> operator "" s( const wchar_t *__str, size_t __len )
     {
         return basic_string<wchar_t> (__str, __len);
     }
+#endif
 
     inline _LIBCPP_INLINE_VISIBILITY
     basic_string<char16_t> operator "" s( const char16_t *__str, size_t __len )
@@ -4000,7 +4002,9 @@ inline namespace literals
 #endif
 
 _LIBCPP_EXTERN_TEMPLATE(class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_string<char>)
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 _LIBCPP_EXTERN_TEMPLATE(class _LIBCPP_EXTERN_TEMPLATE_TYPE_VIS basic_string<wchar_t>)
+#endif
 _LIBCPP_EXTERN_TEMPLATE(string operator+<char, char_traits<char>, allocator<char> >(char const*, string const&))
 
 _LIBCPP_END_NAMESPACE_STD

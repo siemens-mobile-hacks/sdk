@@ -26,16 +26,24 @@
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_ios<char>;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_ios<wchar_t>;
+#endif
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_streambuf<char>;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_streambuf<wchar_t>;
+#endif
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_istream<char>;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_istream<wchar_t>;
+#endif
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_ostream<char>;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_ostream<wchar_t>;
+#endif
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_iostream<char>;
 

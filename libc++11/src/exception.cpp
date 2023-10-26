@@ -62,7 +62,7 @@ get_unexpected() _NOEXCEPT
 #if defined(_LIBCPP_ABI_MICROSOFT)
   return ::_get_unexpected();
 #else
-  return __sync_fetch_and_add(&__unexpected_handler, (unexpected_handler)0);
+  return __libcpp_atomic_load(&__unexpected_handler, (unexpected_handler)0);
 #endif
 }
 
@@ -91,7 +91,7 @@ get_terminate() _NOEXCEPT
 #if defined(_LIBCPP_ABI_MICROSOFT)
   return ::_get_terminate();
 #else
-  return __sync_fetch_and_add(&__terminate_handler, (terminate_handler)0);
+  return __libcpp_atomic_load(&__terminate_handler, (terminate_handler)0);
 #endif
 }
 

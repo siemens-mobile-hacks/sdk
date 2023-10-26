@@ -1,0 +1,117 @@
+include/cmath:431:9: error: 'log2f' has not been declared in '::'
+  431 | using ::log2f;
+      |         ^~~~~
+include/cmath:468:9: error: 'acosl' has not been declared in '::'
+  468 | using ::acosl;
+      |         ^~~~~
+include/cmath:469:9: error: 'asinl' has not been declared in '::'
+  469 | using ::asinl;
+      |         ^~~~~
+include/cmath:470:9: error: 'atanl' has not been declared in '::'
+  470 | using ::atanl;
+      |         ^~~~~
+include/cmath:471:9: error: 'atan2l' has not been declared in '::'
+  471 | using ::atan2l;
+      |         ^~~~~~
+include/cmath:473:9: error: 'cosl' has not been declared in '::'
+  473 | using ::cosl;
+      |         ^~~~
+include/cmath:474:9: error: 'coshl' has not been declared in '::'
+  474 | using ::coshl;
+      |         ^~~~~
+include/cmath:475:9: error: 'expl' has not been declared in '::'
+  475 | using ::expl;
+      |         ^~~~
+include/cmath:478:9: error: 'fmodl' has not been declared in '::'
+  478 | using ::fmodl;
+      |         ^~~~~
+include/cmath:481:9: error: 'logl' has not been declared in '::'
+  481 | using ::logl;
+      |         ^~~~
+include/cmath:482:9: error: 'log10l' has not been declared in '::'
+  482 | using ::log10l;
+      |         ^~~~~~
+include/cmath:483:9: error: 'modfl' has not been declared in '::'
+  483 | using ::modfl;
+      |         ^~~~~
+include/cmath:484:9: error: 'powl' has not been declared in '::'
+  484 | using ::powl;
+      |         ^~~~
+include/cmath:485:9: error: 'sinl' has not been declared in '::'
+  485 | using ::sinl;
+      |         ^~~~
+include/cmath:486:9: error: 'sinhl' has not been declared in '::'
+  486 | using ::sinhl;
+      |         ^~~~~
+include/cmath:487:9: error: 'sqrtl' has not been declared in '::'
+  487 | using ::sqrtl;
+      |         ^~~~~
+include/cmath:488:9: error: 'tanl' has not been declared in '::'
+  488 | using ::tanl;
+      |         ^~~~
+include/cmath:490:9: error: 'tanhl' has not been declared in '::'
+  490 | using ::tanhl;
+      |         ^~~~~
+include/cmath:491:9: error: 'acoshl' has not been declared in '::'
+  491 | using ::acoshl;
+      |         ^~~~~~
+include/cmath:492:9: error: 'asinhl' has not been declared in '::'
+  492 | using ::asinhl;
+      |         ^~~~~~
+include/cmath:493:9: error: 'atanhl' has not been declared in '::'
+  493 | using ::atanhl;
+      |         ^~~~~~
+include/cmath:494:9: error: 'cbrtl' has not been declared in '::'
+  494 | using ::cbrtl;
+      |         ^~~~~
+include/cmath:499:9: error: 'erfl' has not been declared in '::'
+  499 | using ::erfl;
+      |         ^~~~
+include/cmath:500:9: error: 'erfcl' has not been declared in '::'
+  500 | using ::erfcl;
+      |         ^~~~~
+include/cmath:501:9: error: 'exp2l' has not been declared in '::'
+  501 | using ::exp2l;
+      |         ^~~~~
+include/cmath:502:9: error: 'expm1l' has not been declared in '::'
+  502 | using ::expm1l;
+      |         ^~~~~~
+include/cmath:507:9: error: 'hypotl' has not been declared in '::'
+  507 | using ::hypotl;
+      |         ^~~~~~
+include/cmath:509:9: error: 'lgammal' has not been declared in '::'
+  509 | using ::lgammal;
+      |         ^~~~~~~
+include/cmath:510:9: error: 'llrintl' has not been declared in '::'
+  510 | using ::llrintl;
+      |         ^~~~~~~
+include/cmath:512:9: error: 'log1pl' has not been declared in '::'
+  512 | using ::log1pl;
+      |         ^~~~~~
+include/cmath:513:9: error: 'log2l' has not been declared in '::'
+  513 | using ::log2l;
+      |         ^~~~~
+include/cmath:514:9: error: 'logbl' has not been declared in '::'
+  514 | using ::logbl;
+      |         ^~~~~
+include/cmath:515:9: error: 'lrintl' has not been declared in '::'
+  515 | using ::lrintl;
+      |         ^~~~~~
+include/cmath:517:9: error: 'nanl' has not been declared in '::'
+  517 | using ::nanl;
+      |         ^~~~
+include/cmath:518:9: error: 'nearbyintl' has not been declared in '::'
+  518 | using ::nearbyintl;
+      |         ^~~~~~~~~~
+include/cmath:521:9: error: 'remainderl' has not been declared in '::'
+  521 | using ::remainderl;
+      |         ^~~~~~~~~~
+include/cmath:522:9: error: 'remquol' has not been declared in '::'
+  522 | using ::remquol;
+      |         ^~~~~~~
+include/cmath:523:9: error: 'rintl' has not been declared in '::'
+  523 | using ::rintl;
+      |         ^~~~~
+include/cmath:527:9: error: 'tgammal' has not been declared in '::'
+  527 | using ::tgammal;
+      |         ^~~~~~~

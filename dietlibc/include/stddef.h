@@ -33,6 +33,21 @@ typedef int wchar_t;
 #define offsetof(type,member) ((size_t) &((type*)0)->member)
 #endif
 
+#if defined(__cplusplus) && __cplusplus >= 201103L
+#ifndef _GXX_NULLPTR_T
+#define _GXX_NULLPTR_T
+  typedef decltype(nullptr) nullptr_t;
+#endif
+#endif /* C++11.  */
+
+#if (defined (__STDC_VERSION__) && __STDC_VERSION__ > 201710L)
+#ifndef _GCC_NULLPTR_T
+#define _GCC_NULLPTR_T
+  typedef __typeof__(nullptr) nullptr_t;
+/* ??? This doesn't define __STDC_VERSION_STDDEF_H__ yet.  */
+#endif
+#endif /* C23.  */
+
 #if (defined (__STDC_VERSION__) && __STDC_VERSION__ >= 201112L) \
   || (defined(__cplusplus) && __cplusplus >= 201103L)
 #if !defined(_GCC_MAX_ALIGN_T) && !defined(__CLANG_MAX_ALIGN_T_DEFINED)

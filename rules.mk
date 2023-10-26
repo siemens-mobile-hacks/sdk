@@ -14,7 +14,7 @@
 # CSTD			- C language standart (default -std=c11).
 # CXXSTD		- C++ language standart (default -std=c++11).
 #
-# LIB_SONAME	- override library soname (default: $(PROJECT).so).
+# SONAME		- override library soname (default: $(PROJECT).so).
 #
 # CFLAGS		- additional gcc flags for C.
 # AFLAGS		- additional gcc flags for ASM.
@@ -24,11 +24,10 @@
 
 OPT ?= -Os
 CSTD ?= -std=c11
-CXXSTD ?= -std=gnu++11
 BUILD_TYPE ?= exe
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
-CXX_TYPE ?= uclibc++
+CXX_TYPE ?= libc++11
 
 ifeq ($(USE_EMULATOR),1)
 	ARCH_FLAGS ?= -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
@@ -46,16 +45,23 @@ CXX		= $(PREFIX)g++
 LD		= $(PREFIX)ld
 AR		= $(PREFIX)ar
 
+# Type of C++ library
+ifeq ($(CXX_TYPE),libc++14)
+	CXXSTD ?= -std=gnu++14
+	INCLUDES += -I$(SDK_PATH)/libc++14-abi/include
+	INCLUDES += -I$(SDK_PATH)/libc++14/include
+else ifeq ($(CXX_TYPE),libc++11)
+	CXXSTD ?= -std=gnu++11
+	INCLUDES += -I$(SDK_PATH)/libc++11-abi/include
+	INCLUDES += -I$(SDK_PATH)/libc++11/include
+else ifeq ($(CXX_TYPE),uclibc++)
+	CXXSTD ?= -std=gnu++11
+	INCLUDES += -I$(SDK_PATH)/libuclibc++/include
+endif
+
 INCLUDES += -I$(SDK_PATH)/include
 INCLUDES += -I$(SDK_PATH)/dietlibc/include
 INCLUDES += -I$(SDK_PATH)/libjpeg/include
-
-# Type of C++ library
-ifeq ($(CXX_TYPE),libcxx)
-	INCLUDES += -I$(SDK_PATH)/libcxx/include
-else ifeq ($(CXX_TYPE),uclibc++)
-	INCLUDES += -I$(SDK_PATH)/libuclibc++/include
-endif
 
 DEFINES += -D__arm__
 DEFINES += -D__ARM_EABI__
@@ -86,7 +92,7 @@ LIBDIRS += -L$(SDK_PATH)/lib
 OUTPUT_EXT := elf
 ifeq ($(BUILD_TYPE),lib)
 	OUTPUT_EXT := so
-	LIB_SONAME ?= $(PROJECT).$(OUTPUT_EXT)
+	SONAME ?= $(PROJECT).$(OUTPUT_EXT)
 	OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
 else ifeq ($(BUILD_TYPE),archive)
 	OUTPUT_EXT := a
@@ -121,7 +127,7 @@ TARGET_CFLAGS += $(CFLAGS)
 
 TARGET_CXXFLAGS := $(CXXSTD) $(OPT) $(DEFINES) $(INCLUDES) $(ARCH_FLAGS) $(TARGET_COMMON_FLAGS) -nostdinc++
 TARGET_CXXFLAGS += -fno-common -ffunction-sections -fdata-sections -Wno-main -Wno-unused-parameter
-TARGET_CXXFLAGS += -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions
+TARGET_CXXFLAGS += -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions -fpermissive
 TARGET_CXXFLAGS += -Wextra -Wshadow -Wredundant-decls $(WERROR)
 TARGET_CXXFLAGS += $(CXXFLAGS)
 
@@ -131,7 +137,7 @@ TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 # Linker flags
 ifeq ($(BUILD_TYPE),lib)
 	TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS)
-	TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function $(STRIP_OR_DEBUG) -soname=$(LIB_SONAME)
+	TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function $(STRIP_OR_DEBUG) -soname=$(SONAME)
 else ifeq ($(BUILD_TYPE),exe)
 	TARGET_LDFLAGS := $(ARCH_LDFLAGS) $(LIBDIRS) $(STRIP_OR_DEBUG) -pie
 else ifeq ($(BUILD_TYPE),archive)

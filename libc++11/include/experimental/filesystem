@@ -217,18 +217,26 @@
 */
 
 #include <experimental/__config>
+
+#if defined(_LIBCPP_HAS_NO_FILESYSTEM_LIBRARY)
+# error "The Filesystem library is not supported by this configuration of libc++"
+#endif
+
 #include <cstddef>
 #include <chrono>
 #include <iterator>
 #include <iosfwd>
-#include <locale>
 #include <memory>
 #include <stack>
 #include <string>
 #include <system_error>
 #include <utility>
-#include <iomanip> // for quoted
 #include <string_view>
+
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
+# include <locale>
+# include <iomanip> // for quoted
+#endif
 
 #include <__debug>
 
@@ -460,10 +468,12 @@ template <> struct __can_convert_char<char> {
     static const bool value = true;
     using __char_type = char;
 };
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <> struct __can_convert_char<wchar_t>  {
     static const bool value = true;
     using __char_type = wchar_t;
 };
+#endif
 template <> struct __can_convert_char<char16_t> {
     static const bool value = true;
     using __char_type = char16_t;
@@ -473,11 +483,13 @@ template <> struct __can_convert_char<char32_t> {
     using __char_type = char32_t;
 };
 
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
 template <class _ECharT>
 typename enable_if<__can_convert_char<_ECharT>::value, bool>::type
 __is_separator(_ECharT __e) {
     return __e == _ECharT('/');
 };
+#endif // !_LIBCPP_HAS_NO_LOCALIZATION
 
 struct _NullSentinal {};
 
@@ -696,6 +708,7 @@ public:
         _PathCVT<_ItVal>::__append_range(__pn_, __first, __last);
     }
 
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
     // TODO Implement locale conversions.
     template <class _Source,
               class = _EnableIfPathable<_Source, void>
@@ -703,6 +716,7 @@ public:
         path(const _Source& __src, const locale& __loc);
     template <class _InputIt>
         path(_InputIt __first, _InputIt _last, const locale& __loc);
+#endif // !_LIBCPP_HAS_NO_LOCALIZATION
 
     _LIBCPP_INLINE_VISIBILITY
     ~path() = default;
@@ -907,6 +921,10 @@ public:
 
     _LIBCPP_INLINE_VISIBILITY operator string_type() const { return __pn_;  }
 
+    _LIBCPP_INLINE_VISIBILITY std::string    string()    const { return __pn_; }
+    _LIBCPP_INLINE_VISIBILITY std::string    u8string()  const { return __pn_; }
+
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
     template <class _ECharT, class _Traits = char_traits<_ECharT>,
               class _Allocator = allocator<_ECharT> >
     basic_string<_ECharT, _Traits, _Allocator>
@@ -919,12 +937,17 @@ public:
         return __s;
     }
 
-    _LIBCPP_INLINE_VISIBILITY std::string    string()    const { return __pn_; }
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
     _LIBCPP_INLINE_VISIBILITY std::wstring   wstring()   const { return string<wchar_t>(); }
-    _LIBCPP_INLINE_VISIBILITY std::string    u8string()  const { return __pn_; }
+#endif
     _LIBCPP_INLINE_VISIBILITY std::u16string u16string() const { return string<char16_t>(); }
     _LIBCPP_INLINE_VISIBILITY std::u32string u32string() const { return string<char32_t>(); }
+#endif // !_LIBCPP_HAS_NO_LOCALIZATION
 
+    std::string    generic_string()    const { return __pn_; }
+    std::string    generic_u8string()  const { return __pn_; }
+
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
     // generic format observers
     template <class _ECharT, class _Traits = char_traits<_ECharT>,
               class _Allocator = allocator<_ECharT>
@@ -934,11 +957,12 @@ public:
         return string<_ECharT, _Traits, _Allocator>(__a);
     }
 
-    std::string    generic_string()    const { return __pn_; }
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
     std::wstring   generic_wstring()   const { return string<wchar_t>(); }
-    std::string    generic_u8string()  const { return __pn_; }
+#endif
     std::u16string generic_u16string() const { return string<char16_t>(); }
     std::u32string generic_u32string() const { return string<char32_t>(); }
+#endif // !_LIBCPP_HAS_NO_LOCALIZATION
 
 private:
     _LIBCPP_FUNC_VIS int __compare(__string_view) const;
@@ -1033,6 +1057,7 @@ path operator/(const path& __lhs, const path& __rhs) {
     return path(__lhs) /= __rhs;
 }
 
+#if !defined(_LIBCPP_HAS_NO_LOCALIZATION)
 template <class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY
 typename enable_if<is_same<_CharT, char>::value &&
@@ -1043,6 +1068,7 @@ operator<<(basic_ostream<_CharT, _Traits>& __os, const path& __p) {
     __os << std::__quoted(__p.native());
     return __os;
 }
+#endif // !_LIBCPP_HAS_NO_LOCALIZATION
 
 template <class _CharT, class _Traits>
 _LIBCPP_INLINE_VISIBILITY

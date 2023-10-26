@@ -283,6 +283,7 @@ __match_any_but_newline<char>::__exec(__state& __s) const
     }
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <>
 void
 __match_any_but_newline<wchar_t>::__exec(__state& __s) const
@@ -311,5 +312,6 @@ __match_any_but_newline<wchar_t>::__exec(__state& __s) const
         __s.__node_ = nullptr;
     }
 }
+#endif
 
 _LIBCPP_END_NAMESPACE_STD

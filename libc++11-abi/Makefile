@@ -1,0 +1,54 @@
+PROJECT := libc++11-abi
+TARGET := NSG
+BUILD_TYPE := archive
+BUILD_DIR := bin
+
+CXX_TYPE ?= none
+
+CXXSTD := -std=gnu++11
+OPT := -Os
+
+CXXFLAGS += -fpermissive -mthumb
+
+INCLUDES += -Iinclude -isystem src -isystem ../libc++11/src -I../libc++11/include
+
+LDLIBS += -lcrt_helper -lgcc -lc-1.0
+
+# reproductive builds
+export SOURCE_DATE_EPOCH=1172750400
+CFLAGS += -frandom-seed=0
+CXXFLAGS += -frandom-seed=0 -fvisibility-inlines-hidden -fvisibility=hidden
+
+DEFINES += 
+
+# C++ABI files
+SOURCES += src/cxa_aux_runtime.cpp
+SOURCES += src/cxa_default_handlers.cpp
+SOURCES += src/cxa_demangle.cpp
+SOURCES += src/cxa_exception_storage.cpp
+SOURCES += src/cxa_guard.cpp
+SOURCES += src/cxa_handlers.cpp
+SOURCES += src/cxa_new_delete.cpp
+SOURCES += src/cxa_unexpected.cpp
+SOURCES += src/cxa_vector.cpp
+SOURCES += src/cxa_virtual.cpp
+# C++ STL files
+SOURCES += src/stdlib_exception.cpp
+SOURCES += src/stdlib_stdexcept.cpp
+SOURCES += src/stdlib_typeinfo.cpp
+# Internal files
+SOURCES += src/abort_message.cpp
+SOURCES += src/fallback_malloc.cpp
+SOURCES += src/private_typeinfo.cpp
+# -fno-exception
+SOURCES += src/cxa_noexception.cpp
+
+SDK_PATH := ..
+include $(SDK_PATH)/rules.mk
+
+ifdef TARGET
+
+install: all
+	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+
+endif

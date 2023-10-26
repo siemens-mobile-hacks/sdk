@@ -301,7 +301,7 @@ set_new_handler(new_handler handler) _NOEXCEPT
 new_handler
 get_new_handler() _NOEXCEPT
 {
-    return __sync_fetch_and_add(&__new_handler, nullptr);
+    return __libcpp_atomic_load(&__new_handler, nullptr);
 }
 
 #endif // !__GLIBCXX__

@@ -37,6 +37,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "include/atomic_support.h"
+
 // On Linux, wint_t and wchar_t have different signed-ness, and this causes
 // lots of noise in the build log, but no bugs that I know of. 
 #if defined(__clang__)
@@ -650,7 +652,7 @@ locale::id::__get()
 void
 locale::id::__init()
 {
-    __id_ = __sync_add_and_fetch(&__next_id, 1);
+    __id_ = __libcpp_atomic_add(&__next_id, 1);
 }
 
 // template <> class collate_byname<char>

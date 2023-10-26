@@ -23,7 +23,9 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS __basic_string_common<true>;
 
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_string<char>;
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template class _LIBCPP_CLASS_TEMPLATE_INSTANTIATION_VIS basic_string<wchar_t>;
+#endif
 
 template
     string
@@ -128,6 +130,7 @@ as_integer( const string& func, const string& s, size_t* idx, int base )
     return as_integer_helper<unsigned long long>( func, s, idx, base, strtoull );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 // wstring
 template<>
 inline
@@ -172,6 +175,7 @@ as_integer( const string& func, const wstring& s, size_t* idx, int base )
 {
     return as_integer_helper<unsigned long long>( func, s, idx, base, wcstoull );
 }
+#endif
 
 // as_float
 
@@ -223,6 +227,7 @@ as_float( const string& func, const string& s, size_t* idx )
     return as_float_helper<long double>( func, s, idx, strtold );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template<>
 inline
 float
@@ -246,6 +251,7 @@ as_float( const string& func, const wstring& s, size_t* idx )
 {
     return as_float_helper<long double>( func, s, idx, wcstold );
 }
+#endif
 
 }  // unnamed namespace
 
@@ -255,11 +261,13 @@ stoi(const string& str, size_t* idx, int base)
     return as_integer<int>( "stoi", str, idx, base );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 int
 stoi(const wstring& str, size_t* idx, int base)
 {
     return as_integer<int>( "stoi", str, idx, base );
 }
+#endif
 
 long
 stol(const string& str, size_t* idx, int base)
@@ -267,11 +275,13 @@ stol(const string& str, size_t* idx, int base)
     return as_integer<long>( "stol", str, idx, base );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 long
 stol(const wstring& str, size_t* idx, int base)
 {
     return as_integer<long>( "stol", str, idx, base );
 }
+#endif
 
 unsigned long
 stoul(const string& str, size_t* idx, int base)
@@ -279,11 +289,13 @@ stoul(const string& str, size_t* idx, int base)
     return as_integer<unsigned long>( "stoul", str, idx, base );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 unsigned long
 stoul(const wstring& str, size_t* idx, int base)
 {
     return as_integer<unsigned long>( "stoul", str, idx, base );
 }
+#endif
 
 long long
 stoll(const string& str, size_t* idx, int base)
@@ -291,11 +303,13 @@ stoll(const string& str, size_t* idx, int base)
     return as_integer<long long>( "stoll", str, idx, base );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 long long
 stoll(const wstring& str, size_t* idx, int base)
 {
     return as_integer<long long>( "stoll", str, idx, base );
 }
+#endif
 
 unsigned long long
 stoull(const string& str, size_t* idx, int base)
@@ -303,11 +317,13 @@ stoull(const string& str, size_t* idx, int base)
     return as_integer<unsigned long long>( "stoull", str, idx, base );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 unsigned long long
 stoull(const wstring& str, size_t* idx, int base)
 {
     return as_integer<unsigned long long>( "stoull", str, idx, base );
 }
+#endif
 
 float
 stof(const string& str, size_t* idx)
@@ -315,11 +331,13 @@ stof(const string& str, size_t* idx)
     return as_float<float>( "stof", str, idx );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 float
 stof(const wstring& str, size_t* idx)
 {
     return as_float<float>( "stof", str, idx );
 }
+#endif
 
 double
 stod(const string& str, size_t* idx)
@@ -327,11 +345,13 @@ stod(const string& str, size_t* idx)
     return as_float<double>( "stod", str, idx );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 double
 stod(const wstring& str, size_t* idx)
 {
     return as_float<double>( "stod", str, idx );
 }
+#endif
 
 long double
 stold(const string& str, size_t* idx)
@@ -339,11 +359,13 @@ stold(const string& str, size_t* idx)
     return as_float<long double>( "stold", str, idx );
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 long double
 stold(const wstring& str, size_t* idx)
 {
     return as_float<long double>( "stold", str, idx );
 }
+#endif
 
 // to_string
 
@@ -394,6 +416,7 @@ struct initial_string<string, V, b>
     }
 };
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 template <class V>
 struct initial_string<wstring, V, false>
 {
@@ -433,6 +456,7 @@ get_swprintf()
     return static_cast<int (__cdecl*)(wchar_t* __restrict, size_t, const wchar_t*__restrict, ...)>(swprintf);
 #endif
 }
+#endif
 
 }  // unnamed namespace
 
@@ -481,6 +505,7 @@ string to_string(long double val)
     return as_string(snprintf, initial_string<string, long double>()(), "%Lf", val);
 }
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 wstring to_wstring(int val)
 {
     return as_string(get_swprintf(), initial_string<wstring, int>()(), L"%d", val);
@@ -525,4 +550,5 @@ wstring to_wstring(long double val)
 {
     return as_string(get_swprintf(), initial_string<wstring, long double>()(), L"%Lf", val);
 }
+#endif
 _LIBCPP_END_NAMESPACE_STD
