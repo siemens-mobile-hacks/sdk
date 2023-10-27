@@ -1,22 +1,21 @@
-PROJECT := libc-1.0
+PROJECT := libc
+LIB_VERSION := 1.0
 BUILD_TYPE := lib
-# NSG == ELKA
 TARGETS := NSG SG
 
 CSTD := -std=gnu99
 OPT := -Os
 
-CFLAGS += -fomit-frame-pointer -Wno-implicit-fallthrough -Wno-missing-prototypes
+CPPFLAGS += -fomit-frame-pointer
+CPPFLAGS += -Werror -Wno-implicit-fallthrough -Wno-missing-prototypes -Wno-missing-attributes \
+	-Wno-misleading-indentation -Wno-unused-variable -Wno-shift-count-overflow -Wno-nonnull-compare \
+	-Wno-unused-but-set-variable -Wno-incompatible-pointer-types
 INCLUDES += -Isrc
 
 LDLIBS += -lgcc -lcrt_helper
 
 LDFLAGS += --init=_init
 LDFLAGS += --fini=_fini
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
 
 # ASM sources
 SOURCES += src/errlist.S
@@ -301,6 +300,7 @@ include $(SDK_PATH)/multi-target.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(TARGET)/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(TARGET)/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib/$(TARGET)
 
 endif

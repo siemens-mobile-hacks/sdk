@@ -1,20 +1,15 @@
-PROJECT := libsigc-2.0
+PROJECT := libsigc
+LIB_VERSION := 2.0
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
-CFLAGS += -mthumb
-CXXFLAGS += -mthumb
-
 CXXSTD := -std=gnu++98
-OPT := -O2
+OPT := -Os
 
-LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lstdc++-1.2.2
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
-CXXFLAGS += -frandom-seed=0 -fvisibility-inlines-hidden
+CPPFLAGS += -mthumb -Wall -Werror -Wno-unused-but-set-variable
+CXXFLAGS += -fvisibility-inlines-hidden
+LDLIBS += -lcrt_helper -lgcc -lc -lucsupc++ -lstdc++
 
 # C++ sources
 SOURCES += src/connection.cc
@@ -30,6 +25,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
 
 endif

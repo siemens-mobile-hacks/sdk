@@ -1,4 +1,5 @@
-PROJECT := libz-1.2.5
+PROJECT := libz
+LIB_VERSION := 1.2.5
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
@@ -6,14 +7,10 @@ BUILD_DIR := bin
 CSTD := -std=c99
 OPT := -Os
 
-CFLAGS += -mthumb -Wno-implicit-fallthrough
+CPPFLAGS += -mthumb -Werror -Wno-implicit-fallthrough
 INCLUDES += -Isrc
 
-LDLIBS += -lcrt_helper -lgcc -lc-1.0
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
+LDLIBS += -lcrt_helper -lgcc -lc
 
 # C sources
 SOURCES += src/adler32.c
@@ -38,6 +35,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
 
 endif

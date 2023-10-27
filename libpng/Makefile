@@ -1,22 +1,16 @@
-PROJECT := libpng-12
+PROJECT := libpng
+LIB_VERSION := 12
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
-CFLAGS += -mthumb
-CXXFLAGS += -mthumb
+CPPFLAGS += -mthumb -Werror -Wno-implicit-fallthrough -Wno-dangling-pointer
 
 CSTD := -std=c99
 OPT := -Os
 
-CFLAGS += -mthumb -Wno-implicit-fallthrough
 INCLUDES += -Isrc
-
-LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lm-1.0 -lz-1.2.5
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
+LDLIBS += -lcrt_helper -lgcc -lc -lm -lz
 
 # C sources
 SOURCES += src/png.c
@@ -43,6 +37,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
 
 endif

@@ -1,4 +1,5 @@
-PROJECT := libstdc++-1.2.2
+PROJECT := libstdc++
+LIB_VERSION := 1.2.2
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
@@ -6,18 +7,13 @@ BUILD_DIR := bin
 CXXSTD := -std=gnu++98
 OPT := -Os
 
-CFLAGS += -mthumb
-CXXFLAGS += -mthumb
+CPPFLAGS += -mthumb -Werror
+CXXFLAGS += -fvisibility-inlines-hidden
 
 DEFINES += -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
 
-LDLIBS += -lcrt_helper -lgcc -lc-1.0 -lsupc++-1.2.2
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
-CXXFLAGS += -frandom-seed=0 -fvisibility-inlines-hidden
+LDLIBS += -lcrt_helper -lgcc -lc -lucsupc++
 
 # C sources
 SOURCES += src/abi/cxa/cp-damagle.c
@@ -77,6 +73,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
 
 endif

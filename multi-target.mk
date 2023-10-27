@@ -1,40 +1,20 @@
+BUILD_TYPE ?= exe
 TARGETS ?= ELKA NSG SG
+BUILD_TYPES ?= $(BUILD_TYPE)
 SDK_PATH ?= $(PWD)/sie-dev
-
-BUILD_TARGETS := $(addprefix build_, $(TARGETS))
-CLEAN_TARGETS := $(addprefix clean_, $(TARGETS))
-INSTALL_TARGETS := $(addprefix install_, $(TARGETS))
 
 ifndef TARGET
 
-all: $(BUILD_TARGETS)
-install: $(INSTALL_TARGETS)
-clean: $(CLEAN_TARGETS)
-	rm -rf bin
-	rm -rf lib
+CURRENT_MAKEFILE := $(abspath $(firstword $(MAKEFILE_LIST)))
 
-build_ELKA:
-	@$(MAKE) TARGET=ELKA
-build_NSG:
-	@$(MAKE) TARGET=NSG
-build_SG:
-	@$(MAKE) TARGET=SG
+.DEFAULT_GOAL := all
 
-clean_ELKA:
-	@$(MAKE) TARGET=ELKA clean
-clean_NSG:
-	@$(MAKE) TARGET=NSG clean
-clean_SG:
-	@$(MAKE) TARGET=SG clean
-
-install_ELKA: build_ELKA
-	@$(MAKE) TARGET=ELKA install
-install_NSG: build_NSG
-	@$(MAKE) TARGET=NSG install
-install_SG: build_SG
-	@$(MAKE) TARGET=SG install
-
-.PHONY: all clean build_ELKA build_NSG build_SG clean_ELKA clean_NSG clean_SG install_ELKA install_NSG install_SG
+.DEFAULT:
+	@for _TARGET in $(TARGETS); do \
+		for _BUILD_TYPE in $(BUILD_TYPES); do \
+			$(MAKE) -C $(CURDIR) -f $(CURRENT_MAKEFILE) $@ TARGET=$$_TARGET BUILD_TYPE=$$_BUILD_TYPE ; \
+		done \
+	done
 
 else
 
@@ -45,6 +25,8 @@ else
 	BUILD_DIR := bin/$(TARGET)
 	LIB_OUT_DIR := lib/$(TARGET)
 endif
+
+GENERATED_FILES += lib bin
 
 include $(SDK_PATH)/rules.mk
 

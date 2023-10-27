@@ -1,12 +1,12 @@
-PROJECT := libsupc++-1.2.2
+PROJECT := libucsupc++
 TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
 
 INCLUDES += -Iinclude
-
-CFLAGS += -mthumb
-CXXFLAGS += -mthumb
+DEFINES += -D__NO_LIBC
+CPPFLAGS += -mthumb -Wall -Werror -Wno-unused-but-set-variable
+CXXFLAGS += -fvisibility-inlines-hidden
 
 CXXSTD := -std=gnu++98
 OPT := -O2
@@ -58,12 +58,6 @@ SOURCES += src/atexit_arm.cc
 SOURCES += src/hash_bytes.cc
 SOURCES += src/del_opnt.cc
 SOURCES += src/eh_ptr.cc
-
-DEFINES += -D__NO_LIBC
-
-# reproductive builds
-export SOURCE_DATE_EPOCH := 1172750400
-CFLAGS += -frandom-seed=0
 
 SDK_PATH := ..
 include $(SDK_PATH)/rules.mk

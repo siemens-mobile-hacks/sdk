@@ -1,19 +1,15 @@
-PROJECT := libft-2.4.6-1
+PROJECT := libft
+LIB_VERSION := 2.4.6-1
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
 
 OPT := -Os
 
-CFLAGS += -mthumb
-CXXFLAGS += -mthumb
+CPPFLAGS += -mthumb -Werror -Wno-address -Wno-dangling-pointer
+CXXFLAGS += -fvisibility-inlines-hidden
 
-LDLIBS += -lcrt_helper -lgcc -lc-1.0
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
-CXXFLAGS += -frandom-seed=0 -fvisibility-inlines-hidden
+LDLIBS += -lcrt_helper -lgcc -lc
 
 SOURCES += main.c
 SOURCES += src/autofit/afangles.c
@@ -47,6 +43,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) ../lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
 
 endif

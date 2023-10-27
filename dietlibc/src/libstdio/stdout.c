@@ -30,4 +30,5 @@ int __fflush_stdout(void) {
 int __setup_stdout_fd(int fd)
 {
     stdout->fd = fd;
+    return 0;
 }
