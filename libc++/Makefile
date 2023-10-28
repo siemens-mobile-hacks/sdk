@@ -9,7 +9,7 @@ CXX_TYPE ?= libcxx
 CXXSTD := -std=gnu++11
 OPT := -Os
 
-CXXFLAGS += -fpermissive -mthumb -fvisibility-inlines-hidden
+CXXFLAGS += -fpermissive -mthumb
 
 DEFINES += -D_LIBCPP_BUILDING_LIBRARY -DLIBCXX_BUILDING_LIBCXXABI
 
