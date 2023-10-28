@@ -60,7 +60,7 @@ SOURCES += src/hash_bytes.cc
 SOURCES += src/del_opnt.cc
 SOURCES += src/eh_ptr.cc
 
-SDK_PATH := ../..
+SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
 ifdef TARGET

@@ -34,7 +34,7 @@ SOURCES += src/private_typeinfo.cpp
 # -fno-exception
 SOURCES += src/cxa_noexception.cpp
 
-SDK_PATH := ../..
+SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
 ifdef TARGET

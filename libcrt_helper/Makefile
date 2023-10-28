@@ -15,7 +15,7 @@ DEFINES += -D__NO_LIBC
 LDFLAGS += --init=__onstart
 LDFLAGS += --fini=__onclose
 
-SDK_PATH := ../..
+SDK_PATH := ..
 include $(SDK_PATH)/rules.mk
 
 ifdef TARGET
