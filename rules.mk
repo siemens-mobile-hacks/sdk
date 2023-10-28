@@ -169,7 +169,11 @@ else ifeq ($(BUILD_TYPE),archive)
 	TARGET_LDFLAGS += $(LIBDIRS) -pie
 endif
 
-TARGET_LDFLAGS += -nostdlib --gc-sections
+ifneq ($(NO_GC_SECTIONS),1)
+	TARGET_LDFLAGS += --gc-sections
+endif
+
+TARGET_LDFLAGS += -nostdlib
 TARGET_LDFLAGS += $(LDFLAGS)
 
 # AR flags

@@ -1,0 +1,3 @@
+[submodule "libc++/tests/cxx11tests"]
+	path = libc++/tests/cxx11tests
+	url = https://github.com/sloede/cxx11tests
