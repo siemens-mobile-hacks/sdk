@@ -10,7 +10,7 @@ OPT := -Os
 
 CXXFLAGS += -mthumb -fvisibility-inlines-hidden -fvisibility=hidden
 
-INCLUDES += -isystem src -isystem ../src
+INCLUDES += -isystem src -isystem ../libc++/src
 
 # C++ABI files
 SOURCES += src/cxa_aux_runtime.cpp

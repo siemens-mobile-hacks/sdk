@@ -19,9 +19,9 @@ if (NOT DEFINED SOURCE_ENCODING)
 	set(SOURCE_ENCODING "utf-8")
 endif()
 
-# C++ variant: libc++ or uclibc++
+# C++ variant: libcxx or uclibc++
 if (NOT DEFINED CXX_TYPE)
-	set(CXX_TYPE "uclibc++")
+	set(CXX_TYPE "libcxx")
 endif()
 
 # Build for linux-emulator
@@ -87,9 +87,10 @@ include_directories(${SDK_PATH}/dietlibc/include)
 include_directories(${SDK_PATH}/libjpeg/include)
 
 if (CXX_TYPE STREQUAL "uclibc++")
-	include_directories(${SDK_PATH}/libuclibc++/include)
-elseif (CXX_TYPE STREQUAL "libc++")
-	include_directories(${SDK_PATH}/libc++11/include)
+	include_directories(${SDK_PATH}/libuc++/include)
+elseif (CXX_TYPE STREQUAL "libcxx")
+	include_directories(${SDK_PATH}/libc++abi/include)
+	include_directories(${SDK_PATH}/libc++/include)
 else()
 	message(FATAL "Invalid CXX_TYPE: ${CXX_TYPE}")
 endif()
