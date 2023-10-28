@@ -57,6 +57,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) $(SDK_PATH)/lib/$(PROJECT).$(OUTPUT_EXT)
+	@rm -vf $(SDK_PATH)/lib/$(TARGET)/$(PROJECT).* $(SDK_PATH)/lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_PATH)/lib
 
 endif
