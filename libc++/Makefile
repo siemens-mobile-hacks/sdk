@@ -9,18 +9,13 @@ CXX_TYPE ?= libcxx
 CXXSTD := -std=gnu++11
 OPT := -Os
 
-CXXFLAGS += -fpermissive -mthumb
+CXXFLAGS += -fpermissive -mthumb -fvisibility-inlines-hidden -fvisibility=hidden
 
 DEFINES += -D_LIBCPP_BUILDING_LIBRARY -DLIBCXX_BUILDING_LIBCXXABI
 
 INCLUDES += -isystem src
 
 LDLIBS += -lcrt_helper -lgcc -lc -lc++abi
-
-# reproductive builds
-export SOURCE_DATE_EPOCH=1172750400
-CFLAGS += -frandom-seed=0
-CXXFLAGS += -frandom-seed=0 -fvisibility-inlines-hidden -fvisibility=hidden
 
 SOURCES += src/memory.cpp
 SOURCES += src/string.cpp

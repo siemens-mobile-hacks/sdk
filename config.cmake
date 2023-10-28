@@ -82,10 +82,6 @@ endfunction()
 # -----------------------------------------------
 # Include dirs
 # -----------------------------------------------
-include_directories(${SDK_PATH}/include)
-include_directories(${SDK_PATH}/dietlibc/include)
-include_directories(${SDK_PATH}/libjpeg/include)
-
 if (CXX_TYPE STREQUAL "uclibc++")
 	include_directories(${SDK_PATH}/libuc++/include)
 elseif (CXX_TYPE STREQUAL "libcxx")
@@ -94,6 +90,16 @@ elseif (CXX_TYPE STREQUAL "libcxx")
 else()
 	message(FATAL "Invalid CXX_TYPE: ${CXX_TYPE}")
 endif()
+
+include_directories(${SDK_PATH}/include)
+include_directories(${SDK_PATH}/libgcc/include)
+include_directories(${SDK_PATH}/dietlibc/include)
+include_directories(${SDK_PATH}/libjpeg/include)
+include_directories(${SDK_PATH}/libpng/include)
+include_directories(${SDK_PATH}/libsigc++/include)
+include_directories(${SDK_PATH}/libft/include)
+include_directories(${SDK_PATH}/libft_server/include)
+include_directories(${SDK_PATH}/libz/include)
 
 # -----------------------------------------------
 # Common

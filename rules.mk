@@ -71,8 +71,14 @@ else ifeq ($(CXX_TYPE),uclibc++)
 endif
 
 INCLUDES += -I$(SDK_PATH)/include
+INCLUDES += -I$(SDK_PATH)/libgcc/include
 INCLUDES += -I$(SDK_PATH)/dietlibc/include
 INCLUDES += -I$(SDK_PATH)/libjpeg/include
+INCLUDES += -I$(SDK_PATH)/libpng/include
+INCLUDES += -I$(SDK_PATH)/libsigc++/include
+INCLUDES += -I$(SDK_PATH)/libft/include
+INCLUDES += -I$(SDK_PATH)/libft_server/include
+INCLUDES += -I$(SDK_PATH)/libz/include
 
 DEFINES += -D__arm__
 DEFINES += -D__ARM_EABI__
