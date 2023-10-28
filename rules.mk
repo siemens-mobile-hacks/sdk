@@ -32,7 +32,7 @@ CSTD ?= -std=c11
 BUILD_TYPE ?= exe
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
-CXX_TYPE ?= uclibc++
+CXX_TYPE ?= libcxx
 
 LIB_VERSION ?= 
 WARNINGS ?= -Wall -Wno-main
@@ -63,11 +63,11 @@ endif
 # Default includes & defines
 ifeq ($(CXX_TYPE),libcxx)
 	CXXSTD ?= -std=gnu++11
-	INCLUDES += -I$(SDK_PATH)/libc++11-abi/include
-	INCLUDES += -I$(SDK_PATH)/libc++11/include
+	INCLUDES += -I$(SDK_PATH)/libc++/abi/include
+	INCLUDES += -I$(SDK_PATH)/libc++/include
 else ifeq ($(CXX_TYPE),uclibc++)
 	CXXSTD ?= -std=gnu++11
-	INCLUDES += -I$(SDK_PATH)/libuclibc++/include
+	INCLUDES += -I$(SDK_PATH)/libuc++/include
 endif
 
 INCLUDES += -I$(SDK_PATH)/include
@@ -104,7 +104,12 @@ ifeq ($(BUILD_TYPE),lib)
 	else
 		SONAME := $(PROJECT)-$(LIB_VERSION).$(OUTPUT_EXT)
 		OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(SONAME)
-		OUTPUT_SYMLINK := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
+		
+		ifneq ($(LIB_SYMLINK_NAME),)
+			OUTPUT_SYMLINK := $(LIB_OUT_DIR)/$(LIB_SYMLINK_NAME).$(OUTPUT_EXT)
+		else
+			OUTPUT_SYMLINK := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
+		endif
 	endif
 else ifeq ($(BUILD_TYPE),archive)
 	OUTPUT_EXT := a
@@ -198,13 +203,13 @@ target_compile: $(OUTPUT_FILENAME)
 
 %.so: $(OBJECTS)
 	@printf "  LD\t$@\n"
-	mkdir -p $(LIB_OUT_DIR)
+	@mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
 	@[ -z "$(OUTPUT_SYMLINK)" ] || ln -sf $(SONAME) $(OUTPUT_SYMLINK)
 
 %.a: $(OBJECTS)
 	@printf "  AR\t$@\n"
-	$(Q)mkdir -p $(LIB_OUT_DIR)
+	@mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(AR) $(TARGET_ARFLAGS) $@ $(OBJECTS)
 
 -include $(DEPENDS)

@@ -1,4 +1,14 @@
-PROJECTS := libcrt libcrt_helper dietlibc libm libucsupc++ libuclibc++ libz libjpeg libpng libsigc++ libft libft_server
+# C
+PROJECTS += libcrt libcrt/helper dietlibc libm
+
+# C++11
+PROJECTS += libc++ libc++/abi
+
+# C++98
+PROJECTS += libuc++ libuc++/abi
+
+# Other libs
+PROJECTS += libz libjpeg libpng libsigc++ libft libft_server
 
 all: create_dirs
 	@for _PROJECT in $(PROJECTS); do \

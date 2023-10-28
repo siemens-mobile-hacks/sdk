@@ -6,7 +6,7 @@ BUILD_DIR := bin
 OPT := -Os
 CPPFLAGS += -mthumb -Werror -Wno-address -Wno-dangling-pointer
 CXXFLAGS += -fvisibility-inlines-hidden
-LDLIBS += -lcrt_helper -lgcc -lc -lucsupc++ -lstdc++ -lm -lft
+LDLIBS += -lcrt_helper -lgcc -lc -lc++ -lc++abi -lm -lft
 
 SOURCES += src/main.cpp src/ft_engine.cpp
 
@@ -16,7 +16,7 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	@rm -vf ../lib/$(TARGET)/$(PROJECT).* ../lib/$(PROJECT)-*
-	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) ../lib
+	@rm -vf $(SDK_PATH)/lib/$(TARGET)/$(PROJECT).* $(SDK_PATH)/lib/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_PATH)/lib
 
 endif

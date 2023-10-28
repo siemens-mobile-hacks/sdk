@@ -19,9 +19,9 @@
  */
 
 #include <sigc++/trackable.h>
-#include <iostream>
+// #include <iostream>
 
-SIGC_USING_STD(ostream)
+// SIGC_USING_STD(ostream)
 
 using namespace std;
 
