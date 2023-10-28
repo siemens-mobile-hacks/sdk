@@ -1,11 +1,8 @@
 # C
 PROJECTS += libcrt libcrt libcrt_helper dietlibc libm
 
-# C++11
-PROJECTS += libc++ libc++abi
-
-# C++98
-PROJECTS += libuc++ libuc++abi
+# C++
+PROJECTS += libc++ libuc++ libsupc++
 
 # Other libs
 PROJECTS += libz libjpeg libpng libsigc++ libft libft_server

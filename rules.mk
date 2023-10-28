@@ -61,9 +61,10 @@ else
 endif
 
 # Default includes & defines
+INCLUDES += -I$(SDK_PATH)/libsupc++/include
+
 ifeq ($(CXX_TYPE),libcxx)
 	CXXSTD ?= -std=gnu++11
-	INCLUDES += -I$(SDK_PATH)/libc++abi/include
 	INCLUDES += -I$(SDK_PATH)/libc++/include
 else ifeq ($(CXX_TYPE),uclibc++)
 	CXXSTD ?= -std=gnu++11

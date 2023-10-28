@@ -34,7 +34,7 @@
 #endif
 
 #ifndef __GLIBCXX__
-
+#error 1
 // Implement all new and delete operators as weak definitions
 // in this shared library, so that they can be overridden by programs
 // that define non-weak copies of the functions.

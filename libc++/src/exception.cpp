@@ -175,6 +175,7 @@ const char* bad_exception::what() const _NOEXCEPT
 
 #endif
 
+#if 0
 #if defined(__GLIBCXX__)
 
 // libsupc++ does not implement the dependent EH ABI and the functionality
@@ -329,5 +330,7 @@ void rethrow_exception(exception_ptr p)
     fprintf(stderr, "exception_ptr not yet implemented\n");
     ::abort();
 #endif
+
 }
+#endif // 0
 } // std

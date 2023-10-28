@@ -1,15 +1,15 @@
-PROJECT := libuc++abi
+PROJECT := libsupc++
 TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
-CXX_TYPE := uclibc++
+CXX_TYPE := none
 
-INCLUDES += -Iinclude
+INCLUDES += -Iinclude -Isrc -I../libc++/include
 DEFINES += -D__NO_LIBC
-CPPFLAGS += -mthumb -Wall -Werror -Wno-unused-but-set-variable
+CPPFLAGS += -mthumb -Wall -Wno-unused-but-set-variable
 CXXFLAGS += -fvisibility-inlines-hidden
 
-CXXSTD := -std=gnu++98
+CXXSTD := -std=gnu++11
 OPT := -O2
 
 SOURCES += src/si_class_type_info.cc

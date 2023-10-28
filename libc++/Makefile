@@ -9,14 +9,15 @@ CXX_TYPE ?= libcxx
 CXXSTD := -std=gnu++11
 OPT := -Os
 
-CXXFLAGS += -fpermissive -mthumb -fvisibility-inlines-hidden -fvisibility=hidden
+CXXFLAGS += -fpermissive -mthumb -fvisibility-inlines-hidden
 
 DEFINES += -D_LIBCPP_BUILDING_LIBRARY -DLIBCXX_BUILDING_LIBCXXABI
 
 INCLUDES += -isystem src
 
-LDLIBS += -lcrt_helper -lgcc -lc -lc++abi
+LDLIBS += -lcrt_helper -lsupc++ -lgcc -lc
 
+SOURCES += src/abi/cxa_atexit.c
 SOURCES += src/memory.cpp
 SOURCES += src/string.cpp
 SOURCES += src/future.cpp
@@ -34,6 +35,7 @@ SOURCES += src/system_error.cpp
 SOURCES += src/any.cpp
 SOURCES += src/optional.cpp
 SOURCES += src/exception.cpp
+SOURCES += src/vector.cpp
 
 # SOURCES += src/thread.cpp
 # SOURCES += src/shared_mutex.cpp

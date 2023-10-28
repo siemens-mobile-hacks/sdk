@@ -6,7 +6,7 @@ BUILD_DIR := bin
 OPT := -Os
 CPPFLAGS += -mthumb -Werror -Wno-address -Wno-dangling-pointer
 CXXFLAGS += -fvisibility-inlines-hidden
-LDLIBS += -lcrt_helper -lgcc -lc -lc++ -lc++abi -lm -lft
+LDLIBS += -lcrt_helper -lgcc -lc -lc++ -lsupc++ -lm -lft
 
 SOURCES += src/main.cpp src/ft_engine.cpp
 

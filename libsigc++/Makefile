@@ -8,7 +8,7 @@ OPT := -Os
 
 CPPFLAGS += -mthumb -Wall -Werror -Wno-unused-but-set-variable
 CXXFLAGS += -fvisibility-inlines-hidden
-LDLIBS += -lcrt_helper -lgcc -lc -lc++ -lc++abi
+LDLIBS += -lcrt_helper -lgcc -lc -lc++ -lsupc++
 
 # C++ sources
 SOURCES += src/connection.cc

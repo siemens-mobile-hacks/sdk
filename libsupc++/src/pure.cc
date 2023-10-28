@@ -26,6 +26,8 @@
 #include <cxxabi.h>
 #include "unwind-cxx.h"
 
+#include <swilib.h>
+
 #if 0
 // #if _GLIBCXX_HOSTED
 #ifdef _GLIBCXX_HAVE_UNISTD_H
@@ -47,6 +49,6 @@
 extern "C" void
 __cxxabiv1::__cxa_pure_virtual (void)
 {
-  writestr ("pure virtual method called\n");
+  ShowMSG(0, (int)"pure virtual method called\n");
   std::terminate ();
 }

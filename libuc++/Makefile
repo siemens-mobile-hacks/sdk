@@ -15,7 +15,7 @@ CXXFLAGS += -fvisibility-inlines-hidden
 DEFINES += -D__ARM_EABI_UNWINDER__ -mthumb
 INCLUDES += -Iinclude -Isrc -Isrc/include
 
-LDLIBS += -lcrt_helper -lgcc -lc -luc++abi
+LDLIBS += -lcrt_helper -lgcc -lc -lsupc++
 
 # C sources
 SOURCES += src/abi/cxa/cp-damagle.c
