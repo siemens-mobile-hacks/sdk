@@ -88,6 +88,6 @@ int main() {
 	fclose(stdout);
 	fclose(stderr);
 	
-	// kill_elf();
+	kill_elf();
 	return 0;
 }

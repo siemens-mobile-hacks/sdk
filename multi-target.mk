@@ -18,13 +18,8 @@ CURRENT_MAKEFILE := $(abspath $(firstword $(MAKEFILE_LIST)))
 
 else
 
-ifeq ($(USE_EMULATOR),1)
-	BUILD_DIR := bin/$(TARGET)-emulator
-	LIB_OUT_DIR := lib/$(TARGET)-emulator
-else
-	BUILD_DIR := bin/$(TARGET)
-	LIB_OUT_DIR := lib/$(TARGET)
-endif
+BUILD_DIR := bin/$(TARGET)
+LIB_OUT_DIR := lib/$(TARGET)
 
 GENERATED_FILES += lib bin
 

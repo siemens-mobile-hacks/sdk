@@ -4,7 +4,7 @@
 #define __attribute_dontuse__
 #include <time.h>
 #include "dietfeatures.h"
-
+#include <stdio.h>
 #ifdef WANT_TZFILE_PARSER
 extern void __maplocaltime(void);
 extern time_t __tzfile_map(time_t t, int *isdst, int forward);

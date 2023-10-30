@@ -300,7 +300,7 @@ include $(SDK_PATH)/multi-target.mk
 ifdef TARGET
 
 install: all
-	@rm -vf $(SDK_PATH)/lib/$(TARGET)/$(PROJECT).* $(SDK_PATH)/lib/$(TARGET)/$(PROJECT)-*
-	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_PATH)/lib/$(TARGET)
+	@rm -vf $(SDK_LIB_ROOT)/$(TARGET)/$(PROJECT).* $(SDK_LIB_ROOT)/$(TARGET)/$(PROJECT)-*
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_LIB_ROOT)/$(TARGET)
 
 endif

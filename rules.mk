@@ -27,6 +27,9 @@
 # NO_DEFAULT_RULES - Don't define "all" and "clean" recipes.
 # --------------------------------------------------------------------------------------------------
 
+SDK_PATH := $(realpath $(SDK_PATH))
+SDK_LIB_ROOT := $(SDK_PATH)/lib
+
 OPT ?= -Os
 CSTD ?= -std=c11
 BUILD_TYPE ?= exe
@@ -52,13 +55,8 @@ LD := $(PREFIX)ld
 AR := $(PREFIX)ar
 
 # Output directories
-ifeq ($(USE_EMULATOR),1)
-	BUILD_DIR ?= bin-emulator
-	LIB_OUT_DIR ?= lib-emulator
-else
-	BUILD_DIR ?= bin
-	LIB_OUT_DIR ?= lib
-endif
+BUILD_DIR ?= bin
+LIB_OUT_DIR ?= lib
 
 # Default includes & defines
 INCLUDES += -I$(SDK_PATH)/libsupc++/include
@@ -87,18 +85,22 @@ DEFINES += -D__ARM_EABI__
 # Target specific settings
 ifeq ($(TARGET),ELKA)
 	DEFINES += -DNEWSGOLD -DELKA
-	LIBDIRS += -L$(SDK_PATH)/lib/ELKA -L$(SDK_PATH)/lib/NSG
+	LIBDIRS += -L$(SDK_LIB_ROOT)/ELKA -L$(SDK_LIB_ROOT)/NSG
+	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/ELKA --rpath-link=$(SDK_LIB_ROOT)/NSG
 	OUTPUT_POSTFIX ?= _ELKA
 else ifeq ($(TARGET),NSG)
 	DEFINES += -DNEWSGOLD
-	LIBDIRS += -L$(SDK_PATH)/lib/NSG
+	LIBDIRS += -L$(SDK_LIB_ROOT)/NSG
+	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/NSG
 	OUTPUT_POSTFIX ?= _NSG
 else ifeq ($(TARGET),SG)
 	DEFINES += -DSGOLD
-	LIBDIRS += -L$(SDK_PATH)/lib/SG
+	LIBDIRS += -L$(SDK_LIB_ROOT)/SG
+	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/SG
 	OUTPUT_POSTFIX ?= _SG
 endif
-LIBDIRS += -L$(SDK_PATH)/lib
+LIBDIRS += -L$(SDK_LIB_ROOT)
+RPATH_LINK += --rpath=$(SDK_LIB_ROOT)
 
 # Build type specific settings
 OUTPUT_EXT := elf
@@ -154,10 +156,14 @@ TARGET_AFLAGS := $(OPT) $(DEFINES) $(INCLUDES) $(AFLAGS)
 TARGET_AFLAGS += $(TARGET_COMMON_FLAGS)
 
 # Linker flags
-ifeq ($(USE_EMULATOR),1)
-	TARGET_LDFLAGS := --defsym=__dso_handle=0 --dynamic-linker=/usr/arm-linux-gnueabi/lib/ld-linux.so.3 -g
+TARGET_LDFLAGS := --defsym=__dso_handle=0 -zmax-page-size=1
+
+ifeq ($(DEBUG),1)
+	TARGET_LDFLAGS += -g
+	TARGET_COMMON_FLAGS += -g
 else
-	TARGET_LDFLAGS := --defsym=__dso_handle=0 -zmax-page-size=1 -s
+	TARGET_LDFLAGS += -s
+	TARGET_COMMON_FLAGS += -s
 endif
 
 ifeq ($(BUILD_TYPE),lib)

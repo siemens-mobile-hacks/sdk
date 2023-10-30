@@ -21,6 +21,6 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) $(SDK_PATH)/lib/$(PROJECT).$(OUTPUT_EXT)
+	cp -v $(OUTPUT_FILENAME) $(SDK_LIB_ROOT)/$(PROJECT).$(OUTPUT_EXT)
 
 endif
