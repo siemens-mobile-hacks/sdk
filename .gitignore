@@ -6,3 +6,6 @@
 *.tar.*
 libgcc/build
 !lib/**
+
+tests/*/bin
+tests/*/*.elf
