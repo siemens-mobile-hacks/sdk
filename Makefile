@@ -1,5 +1,5 @@
 # C
-PROJECTS += libcrt libcrt libcrt_helper dietlibc libm
+PROJECTS += libcrt libcrt_helper dietlibc libm
 
 # C++
 PROJECTS += libc++ libuc++ libsupc++

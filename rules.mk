@@ -86,21 +86,17 @@ DEFINES += -D__ARM_EABI__
 ifeq ($(TARGET),ELKA)
 	DEFINES += -DNEWSGOLD -DELKA
 	LIBDIRS += -L$(SDK_LIB_ROOT)/ELKA -L$(SDK_LIB_ROOT)/NSG
-	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/ELKA --rpath-link=$(SDK_LIB_ROOT)/NSG
 	OUTPUT_POSTFIX ?= _ELKA
 else ifeq ($(TARGET),NSG)
 	DEFINES += -DNEWSGOLD
 	LIBDIRS += -L$(SDK_LIB_ROOT)/NSG
-	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/NSG
 	OUTPUT_POSTFIX ?= _NSG
 else ifeq ($(TARGET),SG)
 	DEFINES += -DSGOLD
 	LIBDIRS += -L$(SDK_LIB_ROOT)/SG
-	RPATH_LINK += --rpath=$(SDK_LIB_ROOT)/SG
 	OUTPUT_POSTFIX ?= _SG
 endif
 LIBDIRS += -L$(SDK_LIB_ROOT)
-RPATH_LINK += --rpath=$(SDK_LIB_ROOT)
 
 # Build type specific settings
 OUTPUT_EXT := elf
@@ -163,7 +159,7 @@ ifeq ($(DEBUG),1)
 	TARGET_COMMON_FLAGS += -g
 else
 	TARGET_LDFLAGS += -s
-	TARGET_COMMON_FLAGS += -s
+	TARGET_COMMON_FLAGS += -g
 endif
 
 ifeq ($(BUILD_TYPE),lib)
