@@ -1,7 +1,7 @@
-set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR ARM)
 
-get_filename_component(SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/../ ABSOLUTE)
+get_filename_component(SDK_PATH ${CMAKE_CURRENT_LIST_DIR} ABSOLUTE)
 set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
 set_property(GLOBAL PROPERTY NO_SONAME TRUE)
 
@@ -24,11 +24,6 @@ if (NOT DEFINED CXX_TYPE)
 	set(CXX_TYPE "libcxx")
 endif()
 
-# Build for linux-emulator
-if (NOT DEFINED USE_EMULATOR)
-	set(USE_EMULATOR FALSE)
-endif()
-
 # -----------------------------------------------
 # Toolchain
 # -----------------------------------------------
@@ -47,6 +42,11 @@ set(CMAKE_ASM_COMPILER ${TOOLCHAIN}-gcc${TOOLCHAIN_EXT})
 
 function(target_sdk_setup target platform)
 	set_property(TARGET ${target} PROPERTY POSITION_INDEPENDENT_CODE OFF)
+	get_target_property(target_type ${target} TYPE)
+	
+	if (target_type STREQUAL "EXECUTABLE")
+		set_property(TARGET ${target} PROPERTY SUFFIX ".elf")
+	endif()
 	
 	file(MAKE_DIRECTORY "${PROJECT_BINARY_DIR}/lib/ELKA" "${PROJECT_BINARY_DIR}/lib/NSG" "${PROJECT_BINARY_DIR}/lib/SG")
 	
@@ -104,24 +104,20 @@ include_directories(${SDK_PATH}/libz/include)
 # -----------------------------------------------
 # Common
 # -----------------------------------------------
-if (USE_EMULATOR)
-	set(SDK_COMMON_LDFLAGS "--defsym=__dso_handle=0 --dynamic-linker=/usr/arm-linux-gnueabi/lib/ld-linux.so.3 -g")
-else()
-	set(SDK_COMMON_LDFLAGS "-Wl,-zmax-page-size=1 -Wl,--defsym=__dso_handle=0 -s")
-endif()
+set(SDK_COMMON_LDFLAGS "-Wl,-zmax-page-size=1 -Wl,--defsym=__dso_handle=0")
 
 set(SDK_COMMON_CFLAGS "-msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork")
 set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-builtin -nodefaultlibs -nostdlib -nostdinc")
 set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-common -ffunction-sections -fdata-sections")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -frandom-seed=0")
-
-set(CMAKE_C_FLAGS "${SDK_COMMON_CFLAGS}")
-set(CMAKE_CXX_FLAGS "${SDK_COMMON_CFLAGS} -nostdinc++ -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions -fpermissive")
-set(CMAKE_ASM_FLAGS "${SDK_COMMON_CFLAGS}")
+set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -frandom-seed=0 -g")
 
 if (NOT SOURCE_ENCODING STREQUAL "cp1251" AND NOT SOURCE_ENCODING STREQUAL "native")
 	set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -finput-charset=${SOURCE_ENCODING} -fexec-charset=cp1251")
 endif()
+
+set(CMAKE_C_FLAGS "${SDK_COMMON_CFLAGS}")
+set(CMAKE_CXX_FLAGS "${SDK_COMMON_CFLAGS} -nostdinc++ -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions -fpermissive")
+set(CMAKE_ASM_FLAGS "${SDK_COMMON_CFLAGS}")
 
 add_compile_definitions(__arm__ __ARM_EABI__)
 
