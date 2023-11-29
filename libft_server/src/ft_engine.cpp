@@ -6,17 +6,6 @@ std::map < std::string, ft_engine* > fonts_base;
 
 
 __attribute__((visibility ("hidden")))
-void fte_cleanMap()
-{
-    std::map< std::string, ft_engine* > ::iterator it;
-    for(it = fonts_base.begin(); it != fonts_base.end(); ++it)
-    {
-        ft_engine * fte = it->second;
-        fte_close(fte, 1);
-    }
-}
-
-__attribute__((visibility ("hidden")))
 bool fte_isexist(const char *name)
 {
     FILE *f = fopen(name, "r");
@@ -73,28 +62,51 @@ err:
     return 0;
 }
 
-
-void _fte_close(ft_engine *fte, int clean_now)
+static bool _fte_try_close(ft_engine *fte, int clean_now)
 {
-    if(!fte) return;
+    if(!fte) return false;
     if(fte->clients > 1)
     {
         fte->clients--;
-        return;
+        return false;
     }
-    if(!clean_now) return;
+    if(!clean_now) return false;
 
     fte_clear_cache(fte);
 
     FT_Done_Face(fte->face);
     FT_Done_FreeType(fte->library);
 
-    fonts_base.erase(fte->file);
-
     delete fte;
+    
+    return true;
 }
 
+void _fte_close(ft_engine *fte, int clean_now)
+{
+    if(!fte) return;
+    
+	std::map< std::string, ft_engine* > ::iterator it = fonts_base.find(fte->file);
+	if (it == fonts_base.end())
+		return;
+	
+	if (_fte_try_close(fte, clean_now))
+		fonts_base.erase(it);
+}
 
+__attribute__((visibility ("hidden")))
+void fte_cleanMap()
+{
+    std::map< std::string, ft_engine* > ::iterator it;
+    for(it = fonts_base.begin(); it != fonts_base.end(); )
+    {
+        if (_fte_try_close(it->second, 1)) {
+			fonts_base.erase(it++);
+		} else {
+			it++;
+		}
+    }
+}
 
 int _fte_cache_symbol(fte_info *fti, uint16_t letter)
 {
