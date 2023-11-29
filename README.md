@@ -13,13 +13,13 @@
 | Name | Required | Description
 | --- | --- | --- |
 | -lc++ | Yes | LLVM libcxxx library for C++11 support. |
-| -lc++abi | Yes | ABI for libcxxx. |
+| -lsupc++ | Yes | C++ ABI for gcc. |
 
 # C++98 core libs (legacy)
 | Name | Required | Description |
 | --- | --- | --- |
 | -luc++ | Yes | uClibc++ library for C++98 support. |
-| -luc++abi | Yes | ABI for uClibc++. |
+| -lsupc++ | Yes | ABI for gcc. |
 
 # Data processing libs
 | Name | Required | Description |
