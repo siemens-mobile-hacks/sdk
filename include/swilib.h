@@ -33,6 +33,11 @@ typedef int jmp_buf[11];
 #define true 1
 #define false 0
 
+typedef void *(*malloc_func_t)(size_t);
+typedef void (*mfree_func_t)(void *);
+
+typedef struct GUI GUI;
+
 /* ======================================================= */
 
 #define PC_FOREGROUND         100
@@ -257,6 +262,11 @@ typedef struct{
   int i;
 }MUTEX;
 
+enum {
+	CSM_STATE_OPEN		= 0,
+	CSM_STATE_CLOSED	= -3,
+};
+
 typedef struct{
   void *next;
   void *prev;
@@ -413,11 +423,41 @@ typedef struct
   unsigned const int *icon2;
 }REGEXPLEXT_ARM_NEW;
 
+enum {
+	CSM_GUI_STATE_CLOSED		= 0,
+	CSM_GUI_STATE_UNFOCUSED		= 1,
+	CSM_GUI_STATE_FOCUSED		= 2,
+};
+
+typedef struct {
+	char zero;
+	char unk1;
+	short keys;
+	GBS_MSG *gbsmsg;
+} GUI_MSG;
+
+typedef struct {
+	void (*onRedraw)(GUI *);
+	void (*onCreate)(GUI *, malloc_func_t);
+	void (*onClose)(GUI *, mfree_func_t);
+	void (*onFocus)(GUI *, malloc_func_t, mfree_func_t);
+	void (*onUnfocus)(GUI *, mfree_func_t);
+	int (*onKey)(GUI *, GUI_MSG *);
+	void *unk0;
+	void (*onDestroy)(void *, mfree_func_t);
+	int (*method8)();
+	int (*method9)();
+	void *unk1;
+} GUI_METHODS;
+
 #ifdef NEWSGOLD
-typedef struct
+struct GUI
 {
   RECT *canvas;
-  void *methods;
+  union {
+	void *methods;
+	GUI_METHODS *methods_fn;
+  };
   void *definition;
   char state;
   char unk2;
@@ -433,12 +473,15 @@ typedef struct
   char unk9;
   int unk10;
   int flag30;
-}GUI;
+};
 #else
-typedef struct
+struct GUI
 {
   RECT *canvas;
-  void *methods;
+  union {
+	void *methods;
+	GUI_METHODS *methods_fn;
+  };
   void *definition;
   char state;
   char unk2;
@@ -454,17 +497,8 @@ typedef struct
   char unk9;
   int unk10;
   int flag30;
-}GUI;
+};
 #endif
-
-
-typedef struct
-{
-  char zero;
-  char unk1;
-  short keys;
-  GBS_MSG *gbsmsg;
-}GUI_MSG;
 
 
 

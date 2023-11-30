@@ -1248,7 +1248,7 @@ __inl
 void StartCpuUsageCount(void)
 __defn( 0x019E)
 
-#ifdef __SWI_LIBZ
+#ifdef __SIE_LIBZ
 __inl
 int inflateInit2_ (z_streamp strm, int windowBits,const char *version, int stream_size)
 __def( 0x019F, int, strm, windowBits, version, stream_size)
