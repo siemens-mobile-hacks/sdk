@@ -106,10 +106,17 @@ include_directories(${SDK_PATH}/libz/include)
 # -----------------------------------------------
 set(SDK_COMMON_LDFLAGS "-Wl,-zmax-page-size=1 -Wl,--defsym=__dso_handle=0")
 
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+	set(SDK_COMMON_LDFLAGS "${SDK_COMMON_LDFLAGS} -g")
+else()
+	set(SDK_COMMON_LDFLAGS "${SDK_COMMON_LDFLAGS} -s")
+endif()
+
 set(SDK_COMMON_CFLAGS "-msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork")
 set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-builtin -nodefaultlibs -nostdlib -nostdinc")
 set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-common -ffunction-sections -fdata-sections")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -frandom-seed=0 -g")
+set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -frandom-seed=0")
+set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -g")
 
 if (NOT SOURCE_ENCODING STREQUAL "cp1251" AND NOT SOURCE_ENCODING STREQUAL "native")
 	set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -finput-charset=${SOURCE_ENCODING} -fexec-charset=cp1251")
