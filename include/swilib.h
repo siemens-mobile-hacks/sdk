@@ -649,6 +649,11 @@ struct GUI
 #define UTF16_FONT_UNK3			0xE01A // FONT_SMALL_BOLD
 #define UTF16_FONT_UNK4			0xE01B // FONT_SMALL
 
+#define UTF16_ALIGN_NONE		0xE01C
+#define UTF16_ALIGN_RIGHT		0xE01D // TEXT_ALIGNRIGHT
+#define UTF16_ALIGN_LEFT		0xE01E // TEXT_ALIGNLEFT
+#define UTF16_ALIGN_CENTER		0xE01F // TEXT_ALIGNMIDDLE
+
 #ifdef NEWSGOLD
 
 #ifdef ELKA
@@ -1496,7 +1501,43 @@ typedef struct I2C_MSG
   int size;   //размер данных
 } I2C_MSG;
 
+#define LCDLAYER_MMI_ID					0
 
+#ifdef ELKA
+	typedef struct {
+		int w;
+		int h;
+		RECT invalidate;
+		RECT rect;
+		void *buffer;
+		void *_unk2;
+		uint8_t depth;
+		char _unk3[3];
+		int _unk4[7];
+		int redraw_requested;
+		char unk5[86];
+	} LCDLAYER;
+	
+	#define LCD_DISPLAYQUEUE_CEPID			0x4200
+	#define LCD_DISPLAYQUEUE_CMD_REDRAW		0x6423
+#elif NEWSGOLD
+	typedef struct {
+		int w;
+		int h;
+		RECT invalidate;
+		RECT rect;
+		void *buffer;
+		void *_unk2;
+		uint8_t depth;
+		char _unk3[3];
+		int _unk4[5];
+		int redraw_requested;
+		char unk5[88];
+	} LCDLAYER;
+	
+	#define LCD_DISPLAYQUEUE_CEPID			0x4200
+	#define LCD_DISPLAYQUEUE_CMD_REDRAW		0x6422
+#endif
 
 #ifdef __cplusplus
 extern "C" {
