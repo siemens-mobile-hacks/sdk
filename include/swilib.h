@@ -1537,6 +1537,23 @@ typedef struct I2C_MSG
 	
 	#define LCD_DISPLAYQUEUE_CEPID			0x4200
 	#define LCD_DISPLAYQUEUE_CMD_REDRAW		0x6422
+#else
+	typedef struct {
+		int w;
+		int h;
+		RECT invalidate;
+		RECT rect;
+		void *buffer;
+		void *_unk2;
+		uint8_t depth;
+		char _unk3[3];
+		int _unk4[5];
+		int redraw_requested;
+		char unk5[88];
+	} LCDLAYER;
+	
+	#define LCD_DISPLAYQUEUE_CEPID			0x4200
+	#define LCD_DISPLAYQUEUE_CMD_REDRAW		0x6422
 #endif
 
 #ifdef __cplusplus
