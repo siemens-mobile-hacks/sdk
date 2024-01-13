@@ -2397,5 +2397,6 @@ __inl
 void ClearClipboard(char _0x12)
 __defn( 0x382, _0x12)
 
+__inl
 LCDLAYER **GetLCDLayerList()
 __def( 0x80F6, LCDLAYER **);
