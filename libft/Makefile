@@ -32,6 +32,7 @@ SOURCES += src/base/ftsystem.c
 # SOURCES += src/gxvalid/gxvalid.c
 # SOURCES += src/lzw/ftlzw.c
 # SOURCES += src/otvalid/otvalid.c
+SOURCES += src/type1/type1.c
 SOURCES += src/raster/raster.c
 SOURCES += src/sfnt/sfnt.c
 SOURCES += src/smooth/smooth.c
