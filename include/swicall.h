@@ -1768,3 +1768,11 @@ void * SHARED_TOP()
 __swi(0x2F9);
 #endif
 
+void *GetGBSProcAddress(short cepid)
+__swi(0x385)
+
+void CreateICL(PGROUP *pg)
+__swi(0x38E)
+
+IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
+__swi(0x394)
