@@ -1556,6 +1556,21 @@ typedef struct I2C_MSG
 	#define LCD_DISPLAYQUEUE_CMD_REDRAW		0x6422
 #endif
 
+typedef struct {
+#ifdef NEWSGOLD
+  unsigned int id;            // ID группы (первый байт от CepID)
+  char           *name;       // Указатель на имя, создаваемого Nucleus таска
+  unsigned short  prio;       // Приоритет, создаваемого Nucleus таска
+  unsigned short  stacksize;  // Размер стека, создаваемого Nucleus таска
+  unsigned int    maxmembers; // Максимальное количество членов в группе
+#else
+  unsigned char   id;
+  unsigned char   prio;
+  unsigned short  stacksize;
+  unsigned short  maxmembers;
+#endif
+} PGROUP;
+
 #ifdef __cplusplus
 extern "C" {
 #endif

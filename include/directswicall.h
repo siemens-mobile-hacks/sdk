@@ -2398,5 +2398,17 @@ void ClearClipboard(char _0x12)
 __defn( 0x382, _0x12)
 
 __inl
+void *GetGBSProcAddress(short cepid)
+__def( 0x385, void *, cepid)
+
+__inl
+void CreateICL(PGROUP *pg)
+__defn( 0x38E, pg)
+
+__inl
+IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
+__def( 0x394, IMGHDR *, CanvasID)
+
+__inl
 LCDLAYER **GetLCDLayerList()
 __def( 0x80F6, LCDLAYER **);
