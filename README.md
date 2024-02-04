@@ -147,3 +147,48 @@ We have two variants of the Makefile buildsystem:
 | --- | --- | --- |
 | OUTPUT_FILENAME | Path to the output file | hello-world_ELKA.elf |
 | OUTPUT_SYMLINK | Path to the lib symlink, if `LIB_SYMLINK_NAME` was set | libpng.so |
+
+# Tips and Tricks for Makefile
+1. Custom recipes.
+    ```Makefile
+    # .... other makefile contents ....
+    include $(SDK_PATH)/multi-target.mk # Add any custom recipes strongly AFTER this line!
+    
+    ifdef TARGET # <-- Required for multi-target.mk
+    
+    # Install ELF to the phone
+    install: all
+        obexftp -b 00:XX:XX:XX:XX:XX -c Data\\Misc --put $(OUTPUT_FILENAME)
+    
+    endif
+    ```
+2. Customize options by target.
+    ```Makefile
+    # .... other makefile contents ....
+    
+    ifdef TARGET # <-- Required for multi-target.mk
+        ifeq ($(TARGET),ELKA)
+            DEFINES += -DSOME_DEFINE_ONLY_FOR_ELKA
+        endif
+    endif
+    
+    include $(SDK_PATH)/multi-target.mk # Add any options strongly BEFORE this line!
+    ```
+3. Own `all` and `clean` recipes.
+```Makefile
+NO_DEFAULT_RULES := 1
+
+# .... other makefile contents ....
+include $(SDK_PATH)/multi-target.mk # Add any custom recipes strongly AFTER this line!
+
+ifdef TARGET # <-- Required for multi-target.mk
+
+all: target_compile
+    echo "Compile!"
+clean: target_clean
+    echo "Clean!"
+
+.PHONY: all clean
+
+endif
+```
