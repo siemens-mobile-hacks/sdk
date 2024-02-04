@@ -139,7 +139,8 @@ We have two variants of the Makefile buildsystem:
 | AR | Name of the archive tool executable | `$(PREFIX)ar` |
 | LIB_OUT_DIR | Output dir for libs | lib |
 | BUILD_DIR | Output dir for temporary files | bin |
-| SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. Output encoding is always `cp1251`. | utf-8 |
+| SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. | utf-8 |
+| OUTPUT_ENCODING | Target encoding of your sources. Used as argument for `-fexec-charset`. | cp1251 |
 | NO_DEFAULT_RULES | Don't define `all` and `clean` recipes. Useful when you want to define your own `all` and `clean` recipes in the Makefile. You can use `target_clean` / `target_compile` instead. | 0 |
 
 **Output variables:**
@@ -175,20 +176,20 @@ We have two variants of the Makefile buildsystem:
     include $(SDK_PATH)/multi-target.mk # Add any options strongly BEFORE this line!
     ```
 3. Own `all` and `clean` recipes.
-```Makefile
-NO_DEFAULT_RULES := 1
-
-# .... other makefile contents ....
-include $(SDK_PATH)/multi-target.mk # Add any custom recipes strongly AFTER this line!
-
-ifdef TARGET # <-- Required for multi-target.mk
-
-all: target_compile
-    echo "Compile!"
-clean: target_clean
-    echo "Clean!"
-
-.PHONY: all clean
-
-endif
-```
+    ```Makefile
+    NO_DEFAULT_RULES := 1
+    
+    # .... other makefile contents ....
+    include $(SDK_PATH)/multi-target.mk # Add any custom recipes strongly AFTER this line!
+    
+    ifdef TARGET # <-- Required for multi-target.mk
+    
+    all: target_compile
+        echo "Compile!"
+    clean: target_clean
+        echo "Clean!"
+    
+    .PHONY: all clean
+    
+    endif
+    ```
