@@ -12,6 +12,9 @@ Main features:
 
 # Docs
 - [How to use SDK - for beginners](https://github.com/siemens-mobile-hacks/sdk/blob/master/docs/how_make_elfs.md)
+- [Advanced options for Makefile](https://github.com/siemens-mobile-hacks/sdk#available-options-for-makefile)
+- [Advanced options for Cmake](https://github.com/siemens-mobile-hacks/sdk#available-options-for-cmake)
+- [Available shared libs](https://github.com/siemens-mobile-hacks/sdk#available-shared-libs)
 
 # SDK structure
 ```
@@ -38,7 +41,7 @@ sdk/
 # Available shared libs
 
 **C core libs**
-| Name | Required | Description
+| Name | Required | Description |
 | --- | --- | --- |
 | -lcrt | Yes | C runtime. This lib is required for all executables (.elf). |
 | -lcrt_helper | Yes | Helper for C runtime. This lib required for both `.elf` and `.so` |
@@ -47,7 +50,7 @@ sdk/
 | -lm | No | Lightweight libm (openlibm). Required when you use <math.h> functions. |
 
 **C++11 core libs**
-| Name | Required | Description
+| Name | Required | Description |
 | --- | --- | --- |
 | -lc++ | Yes | LLVM libcxxx library for C++11 support. |
 | -lsupc++ | Yes | C++ ABI for gcc. |
@@ -64,3 +67,80 @@ sdk/
 | -ljpeg | No  | Library for encoding and decoding JPEG. |
 | -lpng | No  | Library for encoding and decoding PNG. |
 | -lz | No  | Library for gzip/inflate/deflate compression (zlib). |
+
+# Advanced options for Makefile
+
+We have two variants of the Makefile buildsystem:
+1. `multi-target.mk` - Build ELF for multiple platforms simultaneously.
+    
+    How to use:
+    
+    ```Makefile
+    TARGETS := NSG SG ELKA
+    # ...
+    SDK_PATH ?= ../../sdk
+    include $(SDK_PATH)/multi-target.mk
+    ```
+
+    This work using recalling a Makefile by itself with different parameters.
+
+2. `rules.mk` - Build ELF for a single platform.
+    
+    How to use:
+    
+    ```Makefile
+    TARGET := NSG
+    # ...
+    SDK_PATH ?= ../../sdk
+    include $(SDK_PATH)/rules.mk
+    ```
+
+**Required options:**
+| Option | Description | Example |
+| --- | --- | --- |
+| PROJECT | Name of the ELF or LIB | `PROJECT := crack-for-jww87` |
+| SDK_PATH | Path to the this sdk | `SDK_PATH := ../sdk` |
+| SOURCES | List of *.c, *.cpp, *.cc, *.s, *.S files. | `SOURCES := main.c test.S` |
+| LDLIBS | Required libs | `LDLIBS := -lcrt -lcrt-helper -lgcc` |
+| **Only for `multi-target.mk`** |
+| TARGETS | List of the Siemens targets | `TARGETS := NSG SG ELKA` |
+| **Only for `rules.mk`** |
+| TARGET | Build target | `TARGET := NSG` |
+
+**Advanced options:**
+| Option | Description | Default |
+| --- | --- | --- |
+| V | Debug level, 0-99 | 0 |
+| BUILD_TYPE | Type of project: exe (.elf), lib (.so), archive (.a) | exe |
+| LIB_VERSION | Version of shared lib (only for BUILD_TYPE=lib) |
+| LIB_SYMLINK_NAME | | |
+| OPT | Optimization level | -Os |
+| CSTD | C language standart | -std=c11 |
+| CXXSTD | C++ language standart | -std=c++11 |
+| CXX_TYPE | Type of C++ library: uclibc++ or libcxx | libcxx |
+| INCLUDES | Additional preprocessor includes, example: `-Isome_lib` |  |
+| DEFINES | Additional preprocessor defines, example: `-DDEBUG` | |
+| CPPFLAGS | Additional compiler flags for C/C+/ASM |  |
+| CFLAGS | Additional compiler flags for C |  |
+| AFLAGS | Additional compiler flags for ASM |  |
+| CXXFLAGS | Additional compiler flags for C++ |  |
+| LDFLAGS | Additional linker flags |  |
+
+**Customization:**
+| Option | Description | Default |
+| --- | --- | --- |
+| PREFIX | Prefix of the compiler | arm-none-eabi- |
+| CC | Name of the C compiler executable | `$(PREFIX)gcc` |
+| CXX | Name of the C++ compiler executable | `$(PREFIX)g++` |
+| LD | Name of the linker executable | `$(PREFIX)ld` |
+| AR | Name of the archive tool executable | `$(PREFIX)ar` |
+| LIB_OUT_DIR | Output dir for libs | lib |
+| BUILD_DIR | Output dir for temporary files | bin |
+| SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. Output encoding is always `cp1251`. | utf-8 |
+| NO_DEFAULT_RULES | Don't define `all` and `clean` recipes. Useful when you want to define your own `all` and `clean` recipes in the Makefile. You can use `target_clean` / `target_compile` instead. | 0 |
+
+**Output variables:**
+| Variable | Description | Example |
+| --- | --- | --- |
+| OUTPUT_FILENAME | Path to the output file | hello-world_ELKA.elf |
+| OUTPUT_SYMLINK | Path to the lib symlink, if `LIB_SYMLINK_NAME` was set | libpng.so |
