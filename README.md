@@ -11,10 +11,13 @@ Main features:
 - Compiler-neutral swilib. You can still use some parts of this SDK with IAR (coming soon).
 
 # Docs
-- [How to use SDK - for beginners](https://github.com/siemens-mobile-hacks/sdk/blob/master/docs/how_make_elfs.md)
-- [Advanced options for Makefile](https://github.com/siemens-mobile-hacks/sdk#available-options-for-makefile)
-- [Advanced options for Cmake](https://github.com/siemens-mobile-hacks/sdk#available-options-for-cmake)
-- [Available shared libs](https://github.com/siemens-mobile-hacks/sdk#available-shared-libs)
+- SDK:
+    - [How to use SDK - for beginners](https://github.com/siemens-mobile-hacks/sdk/blob/master/docs/how_make_elfs.md)
+    - [Available shared libs](https://github.com/siemens-mobile-hacks/sdk#available-shared-libs)
+
+- Building
+    - [Advanced options for Makefile](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-makefile)
+    - [Tips and Tricks for Makefile](https://github.com/siemens-mobile-hacks/sdk#tips-and-tricks-for-makefile)
 
 # SDK structure
 ```
