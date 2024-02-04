@@ -151,6 +151,7 @@ We have two variants of the Makefile buildsystem:
 
 # Tips and Tricks for Makefile
 1. Custom recipes.
+    
     ```Makefile
     # .... other makefile contents ....
     include $(SDK_PATH)/multi-target.mk # Add any custom recipes strongly AFTER this line!
@@ -164,6 +165,7 @@ We have two variants of the Makefile buildsystem:
     endif
     ```
 2. Customize options by target.
+    
     ```Makefile
     # .... other makefile contents ....
     
@@ -176,6 +178,7 @@ We have two variants of the Makefile buildsystem:
     include $(SDK_PATH)/multi-target.mk # Add any options strongly BEFORE this line!
     ```
 3. Own `all` and `clean` recipes.
+    
     ```Makefile
     NO_DEFAULT_RULES := 1
     
