@@ -1,4 +1,18 @@
-# sdk
+# Siemens ELF's SDK
+This SDK is an attempt to unify tools and the environment for creating ELF's for Siemens mobile phones.
+
+SDK mainly focused on ELFLoader 3.0+, shared libs and ARM GCC as the compiler.
+
+Main features:
+- We use modern and open-source tools for building.
+- A lot of shared libs are available by default.
+- Two build systems: cmake and Makefile.
+- Easy to use.
+- Compiler-neutral swilib. You can still use some parts of this SDK with IAR (coming soon).
+
+# Docs
+- [How to use SDK - for beginners](https://github.com/siemens-mobile-hacks/sdk/blob/master/docs/how_make_elfs.md)
+
 
 # C core libs
 | Name | Required | Description
