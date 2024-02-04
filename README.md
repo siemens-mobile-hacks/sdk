@@ -116,7 +116,7 @@ We have two variants of the Makefile buildsystem:
 | V | Debug level, 0-99 | 0 |
 | BUILD_TYPE | Type of project: exe (.elf), lib (.so), archive (.a) | exe |
 | LIB_VERSION | Version of shared lib (only for BUILD_TYPE=lib) |
-| LIB_SYMLINK_NAME | | |
+| LIB_SYMLINK_NAME | Custom name of the library symlink (only if `LIB_VERSION` was set) | `$(PROJECT).so` |
 | OPT | Optimization level | -Os |
 | CSTD | C language standart | -std=c11 |
 | CXXSTD | C++ language standart | -std=c++11 |
@@ -147,7 +147,7 @@ We have two variants of the Makefile buildsystem:
 | Variable | Description | Example |
 | --- | --- | --- |
 | OUTPUT_FILENAME | Path to the output file | hello-world_ELKA.elf |
-| OUTPUT_SYMLINK | Path to the lib symlink, if `LIB_SYMLINK_NAME` was set | libpng.so |
+| OUTPUT_SYMLINK | Path to the lib symlink, if `LIB_VERSION` was set | libpng.so |
 
 # Tips and Tricks for Makefile
 1. Custom recipes.
