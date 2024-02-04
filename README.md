@@ -80,8 +80,8 @@ We have two variants of the Makefile buildsystem:
     
     ```Makefile
     TARGETS := NSG SG ELKA
-    # ...
-    SDK_PATH ?= ../../sdk
+    # ... other options ...
+    SDK_PATH ?= ../sdk
     include $(SDK_PATH)/multi-target.mk
     ```
 
@@ -93,8 +93,8 @@ We have two variants of the Makefile buildsystem:
     
     ```Makefile
     TARGET := NSG
-    # ...
-    SDK_PATH ?= ../../sdk
+    # ... other options ...
+    SDK_PATH ?= ../sdk
     include $(SDK_PATH)/rules.mk
     ```
 
@@ -102,7 +102,7 @@ We have two variants of the Makefile buildsystem:
 | Option | Description | Example |
 | --- | --- | --- |
 | PROJECT | Name of the ELF or LIB | `PROJECT := crack-for-jww87` |
-| SDK_PATH | Path to the this sdk | `SDK_PATH := ../sdk` |
+| SDK_PATH | Path to this sdk | `SDK_PATH := ../sdk` |
 | SOURCES | List of *.c, *.cpp, *.cc, *.s, *.S files. | `SOURCES := main.c test.S` |
 | LDLIBS | Required libs | `LDLIBS := -lcrt -lcrt-helper -lgcc` |
 | **Only for `multi-target.mk`** |
