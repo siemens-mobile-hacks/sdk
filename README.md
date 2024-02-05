@@ -213,4 +213,4 @@ We have two variants of the Makefile buildsystem:
 **Functions:**
 | Function | Description | Example |
 | --- | --- | --- |
-| `target_sdk_setup(target, platform)` | Set platform type (SG|NSG|ELKA) for the target executable or library | `target_sdk_setup(hello_world, NSG)` |
+| `target_sdk_setup(target, platform)` | Set platform type (SG, NSG, ELKA) for the target executable or library | `target_sdk_setup(hello_world, NSG)` |
