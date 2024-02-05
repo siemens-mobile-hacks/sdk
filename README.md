@@ -19,6 +19,11 @@ Main features:
     - [Advanced options for Makefile](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-makefile)
     - [Tips and Tricks for Makefile](https://github.com/siemens-mobile-hacks/sdk#tips-and-tricks-for-makefile)
     - [Advanced options for CMake](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-cmake)
+- General examples
+    - [Hello World in C](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/hello-world-c), without libc
+    - [Hello World in C++](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/hello-world-cpp), without libc
+    - [Example with libc + libm](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/example-libc-libm)
+    - [Canvas](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/canvas)
 
 # SDK structure
 ```
