@@ -211,6 +211,6 @@ We have two variants of the Makefile buildsystem:
 **Important:** set these properties before `config.cmake` inclusion.
 
 **Functions:**
-| Function | Description | Example |
-| --- | --- | --- |
-| `target_sdk_setup(target, platform)` | Set platform type (SG, NSG, ELKA) for the target executable or library | `target_sdk_setup(hello_world, NSG)` |
+| Function | Description |
+| --- | --- |
+| `target_sdk_setup(target, platform)` | Set platform type (SG, NSG, ELKA) for the target executable or library.<br>Example: `target_sdk_setup(hello_world, NSG)`|
