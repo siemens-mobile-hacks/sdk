@@ -18,6 +18,7 @@ Main features:
 - Building
     - [Advanced options for Makefile](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-makefile)
     - [Tips and Tricks for Makefile](https://github.com/siemens-mobile-hacks/sdk#tips-and-tricks-for-makefile)
+    - [Advanced options for Cmake](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-cmake)
 
 # SDK structure
 ```
@@ -196,3 +197,19 @@ We have two variants of the Makefile buildsystem:
     
     endif
     ```
+
+# Advanced options for Cmake
+
+**Properties:**
+| Option | Description | Default |
+| --- | --- | --- |
+| TOOLCHAIN | Toolchain prefix | arm-none-eabi |
+| SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. | utf-8 |
+| OUTPUT_ENCODING | Target encoding of your sources. Used as argument for `-fexec-charset`. | cp1251 |
+| CXX_TYPE | Type of C++ library: uclibc++ or libcxx | libcxx |
+**Important:** set these properties before `config.cmake` inclusion.
+
+**Functions:**
+| Function | Description | Example |
+| --- | --- | --- |
+| `target_sdk_setup(target, platform)` | Set platform type (SG|NSG|ELKA) for the target executable or library | `target_sdk_setup(hello_world, NSG)` |
