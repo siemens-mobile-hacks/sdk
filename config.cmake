@@ -125,6 +125,9 @@ endif()
 set(CMAKE_C_FLAGS "${SDK_COMMON_CFLAGS}")
 set(CMAKE_CXX_FLAGS "${SDK_COMMON_CFLAGS} -nostdinc++ -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions -fpermissive")
 set(CMAKE_ASM_FLAGS "${SDK_COMMON_CFLAGS}")
+set(CMAKE_C_LINK_FLAGS "")
+set(CMAKE_CXX_LINK_FLAGS "")
+set(CMAKE_ASM_LINK_FLAGS "")
 
 add_compile_definitions(__arm__ __ARM_EABI__)
 
