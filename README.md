@@ -119,7 +119,6 @@ We have two variants of the Makefile buildsystem:
 **Advanced options:**
 | Option | Description | Default |
 | --- | --- | --- |
-| V | Debug level, 0-99 | 0 |
 | BUILD_TYPE | Type of project: exe (.elf), lib (.so), archive (.a) | exe |
 | LIB_VERSION | Version of shared lib (only for BUILD_TYPE=lib) |
 | LIB_SYMLINK_NAME | Custom name of the library symlink (only if `LIB_VERSION` was set) | `$(PROJECT).so` |
@@ -148,6 +147,7 @@ We have two variants of the Makefile buildsystem:
 | SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. | utf-8 |
 | OUTPUT_ENCODING | Target encoding of your sources. Used as argument for `-fexec-charset`. | cp1251 |
 | NO_DEFAULT_RULES | Don't define `all` and `clean` recipes. Useful when you want to define your own `all` and `clean` recipes in the Makefile. You can use `target_clean` / `target_compile` instead. | 0 |
+| V | Makefile debug level, 0-99 | 0 |
 
 **Output variables:**
 | Variable | Description | Example |
