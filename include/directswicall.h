@@ -2410,5 +2410,13 @@ IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
 __def( 0x394, IMGHDR *, CanvasID)
 
 __inl
+void SettingsAE_RegisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+__defn( 0x395, proc, set, entry, keyword)
+
+__inl
+void SettingsAE_DeregisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+__defn( 0x396, proc, set, entry, keyword)
+
+__inl
 LCDLAYER **GetLCDLayerList()
 __def( 0x80F6, LCDLAYER **);
