@@ -209,6 +209,9 @@ __swi(94);
 int GetFreeRamAvail()
 __swi(95);
 
+void MMI_CanvasBuffer_FlushV(int CanvasID)
+__swi(0x63);
+
 SS_RAM *GetScreenSaverRAM(void)
 __swi(0x68);
 

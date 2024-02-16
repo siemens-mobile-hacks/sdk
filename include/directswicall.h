@@ -296,6 +296,10 @@ unsigned char GetCPULoad()
 __def( 93, unsigned char)
 
 __inl
+void MMI_CanvasBuffer_FlushV(int CanvasID)
+__defn( 0x63, CanvasID)
+
+__inl
 int GetFreeRamAvail()
 __def( 95, int)
 
