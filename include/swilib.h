@@ -1571,7 +1571,7 @@ typedef struct {
 #endif
 } PGROUP;
 
-typedef void (*Settings_AE_ListenerProc)(int set, const char *entry, const char *keyword);
+typedef void (*SettingsAE_ListenerProc)(int set, const char *entry, const char *keyword);
 
 #ifdef __cplusplus
 extern "C" {

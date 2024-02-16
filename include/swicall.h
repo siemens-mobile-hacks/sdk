@@ -1777,8 +1777,8 @@ __swi(0x38E)
 IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
 __swi(0x394)
 
-void SettingsAE_RegisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_RegisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __swi(0x395)
 
-void SettingsAE_DeregisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_DeregisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __swi(0x396)
