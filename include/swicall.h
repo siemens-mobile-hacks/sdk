@@ -209,6 +209,9 @@ __swi(94);
 int GetFreeRamAvail()
 __swi(95);
 
+void MMI_CanvasBuffer_FlushV(int CanvasID)
+__swi(0x63);
+
 SS_RAM *GetScreenSaverRAM(void)
 __swi(0x68);
 
@@ -1777,8 +1780,8 @@ __swi(0x38E)
 IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
 __swi(0x394)
 
-void SettingsAE_RegisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_RegisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __swi(0x395)
 
-void SettingsAE_DeregisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_DeregisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __swi(0x396)

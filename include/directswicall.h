@@ -296,6 +296,10 @@ unsigned char GetCPULoad()
 __def( 93, unsigned char)
 
 __inl
+void MMI_CanvasBuffer_FlushV(int CanvasID)
+__defn( 0x63, CanvasID)
+
+__inl
 int GetFreeRamAvail()
 __def( 95, int)
 
@@ -2410,11 +2414,11 @@ IMGHDR *GetIMGHDRFromCanvasCache(unsigned int CanvasID)
 __def( 0x394, IMGHDR *, CanvasID)
 
 __inl
-void SettingsAE_RegisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_RegisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __defn( 0x395, proc, set, entry, keyword)
 
 __inl
-void SettingsAE_DeregisterListener(Settings_AE_ListenerProc proc, int set, const char *entry, const char *keyword)
+void SettingsAE_DeregisterListener(SettingsAE_ListenerProc proc, int set, const char *entry, const char *keyword)
 __defn( 0x396, proc, set, entry, keyword)
 
 __inl
