@@ -52,8 +52,7 @@ typedef enum elf32_type
   EXEC_LIB,
 } Elf32_Type;
 
-typedef struct
-{
+typedef struct {
   char* body;
   unsigned int bin_size;
   Elf32_Ehdr ehdr;
@@ -69,6 +68,9 @@ typedef struct
   char complete, __is_ex_import;
   void *meloaded;
   int *switab;
+  char *fname;
+  char *temp_env;
+  Elf32_Dyn *dynamic;
 } Elf32_Exec;
 
 typedef struct

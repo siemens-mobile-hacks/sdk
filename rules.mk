@@ -82,6 +82,9 @@ INCLUDES += -I$(SDK_PATH)/libz/include
 DEFINES += -D__arm__
 DEFINES += -D__ARM_EABI__
 
+# Stubs for compiler
+LIBDIRS += -L$(SDK_LIB_ROOT)/stubs
+
 # Target specific settings
 ifeq ($(TARGET),ELKA)
 	DEFINES += -DNEWSGOLD -DELKA
@@ -130,7 +133,7 @@ export SOURCE_DATE_EPOCH := 1172750400
 CPPFLAGS += -frandom-seed=0
 
 # Common flags
-TARGET_COMMON_FLAGS := -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork
+TARGET_COMMON_FLAGS := -msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork -Qn
 TARGET_COMMON_FLAGS += -fno-builtin -nodefaultlibs -nostdlib -nostdinc $(WARNINGS) $(CPPFLAGS)
 ifneq ($(SOURCE_ENCODING),cp1251)
 	TARGET_COMMON_FLAGS += -finput-charset=$(SOURCE_ENCODING) -fexec-charset=cp1251

@@ -6,7 +6,6 @@ BUILD_DIR := bin
 OPT := -Os
 
 SOURCES += main.c
-SOURCES += crt.S
 SOURCES += __cxa_atexit.cpp
 
 CPPFLAGS += -Werror
