@@ -36,6 +36,7 @@ BUILD_TYPE ?= exe
 LIBDIRS ?=
 SOURCE_ENCODING ?= utf-8
 CXX_TYPE ?= libcxx
+DEBUG ?= 0
 
 LIB_VERSION ?= 
 WARNINGS ?= -Wall -Wno-main
@@ -223,19 +224,27 @@ target_compile: $(OUTPUT_FILENAME)
 %.elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG)
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) -R .interp -R .ARM.attributes --strip-all $@
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@
-	$(Q)[ "$(DEBUG)" -eq "1" ] || $(OBJCOPY) -R .interp -R .ARM.attributes $@
+	
+	$(Q)if [ "$(DEBUG)" = "1" ]; then \
+		$(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG) ; \
+		$(OBJCOPY) -R .interp -R .ARM.attributes --strip-all $@ ; \
+		$(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@ ; \
+	else \
+		$(OBJCOPY) -R .interp -R .ARM.attributes $@ ; \
+	fi
 
 %.so: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	@mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
+	
 	$(Q)[ -z "$(OUTPUT_SYMLINK)" ] || ln -sf $(SONAME) $(OUTPUT_SYMLINK)
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG)
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --strip-all $@
-	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@
+	
+	$(Q)if [ "$(DEBUG)" = "1" ]; then \
+		$(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG) ; \
+		$(OBJCOPY) --strip-all $@ ; \
+		$(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@ ; \
+	fi
 
 %.a: $(OBJECTS)
 	@printf "  AR\t$@\n"
