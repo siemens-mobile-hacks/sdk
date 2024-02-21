@@ -1,5 +1,5 @@
 # C
-PROJECTS += libcrt libcrt_helper dietlibc libm
+PROJECTS += libcrt-static libcrt libcrt_helper dietlibc libm
 
 # Other libs
 PROJECTS += libz libjpeg libpng libft

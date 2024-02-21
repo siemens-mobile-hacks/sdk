@@ -1,6 +1,8 @@
 #include <swilib.h>
 #include <ep3/loader.h>
 
+extern Elf32_Exec __ex;
+
 /*
  * Free data without returning to the function.
  * This is part of the libcrt which moved to the shared lib for smaller memory usage.
@@ -44,16 +46,12 @@ void __hcrt_run_initarray(void *_ex) {
 /*
  * Now we are just checking the ELFLoader version for compatibility.
  * */
-__attribute__((constructor))
-static void libcrt_helper_init() {
-	extern int __ex;
-	
+__attribute__((visibility("hidden")))
+void libcrt_helper_init() {
 	// The new version of the ELFLoader 3.0 provides "__sys_switab_addres" by itself
 	// "int __sys_switab_addres[4096]" now is deprecated and removed from this library
-	Elf32_Exec *ex = (Elf32_Exec *) &__ex;
-	if (__sys_switab_addres != ex->switab) {
-		void (*SWI_ShowMSG)(int, int) = (__typeof__(SWI_ShowMSG)) ex->switab[0x0148];
-		SWI_ShowMSG(1, (int) "Please, upgrade ELFLoader! (patches.kibab.com)");
+	if (__sys_switab_addres != __ex.switab) {
+		((void (*)(int, int))(__ex.switab[0x0148]))(1, (int) "Upgrade ELFLoader! (patches.kibab.com)");
 		return;
 	}
 }

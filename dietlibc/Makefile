@@ -2,6 +2,7 @@ PROJECT := libc
 LIB_VERSION := 1.0
 BUILD_TYPE := lib
 TARGETS := NSG SG
+DEBUG := 1
 
 CSTD := -std=gnu99
 OPT := -Os
@@ -301,6 +302,6 @@ ifdef TARGET
 
 install: all
 	@rm -vf $(SDK_LIB_ROOT)/$(TARGET)/$(PROJECT).* $(SDK_LIB_ROOT)/$(TARGET)/$(PROJECT)-*
-	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_LIB_ROOT)/$(TARGET)
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_FILENAME_DBG) $(OUTPUT_SYMLINK) $(SDK_LIB_ROOT)/$(TARGET)
 
 endif

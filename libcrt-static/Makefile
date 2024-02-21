@@ -1,4 +1,4 @@
-PROJECT := libcrt
+PROJECT := libcrt-static
 TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
@@ -6,8 +6,7 @@ DEBUG := 1
 
 OPT := -Os
 
-SOURCES += main.c
-SOURCES += __cxa_atexit.cpp
+SOURCES += main.c __cxa_atexit.cpp
 
 CPPFLAGS += -Werror
 CFLAGS += -Wno-missing-prototypes

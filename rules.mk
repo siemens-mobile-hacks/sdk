@@ -48,11 +48,13 @@ ifeq ($(V),0)
 endif
 
 # Toolchain
-PREFIX ?= arm-none-eabi-
-CC := $(PREFIX)gcc
-CXX := $(PREFIX)g++
-LD := $(PREFIX)ld
-AR := $(PREFIX)ar
+PREFIX	?= arm-none-eabi-
+CC		:= $(PREFIX)gcc
+CXX		:= $(PREFIX)g++
+LD		:= $(PREFIX)ld
+AR		:= $(PREFIX)ar
+OBJCOPY	:= $(PREFIX)objcopy
+STRIP	:= $(PREFIX)strip
 
 # Output directories
 BUILD_DIR ?= bin
@@ -109,9 +111,11 @@ ifeq ($(BUILD_TYPE),lib)
 	ifeq ($(LIB_VERSION),)
 		SONAME := $(PROJECT).$(OUTPUT_EXT)
 		OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(SONAME)
+		OUTPUT_FILENAME_DBG := $(OUTPUT_FILENAME:.so=.dbg)
 	else
 		SONAME := $(PROJECT)-$(LIB_VERSION).$(OUTPUT_EXT)
 		OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(SONAME)
+		OUTPUT_FILENAME_DBG := $(OUTPUT_FILENAME:.so=.dbg)
 		
 		ifneq ($(LIB_SYMLINK_NAME),)
 			OUTPUT_SYMLINK := $(LIB_OUT_DIR)/$(LIB_SYMLINK_NAME).$(OUTPUT_EXT)
@@ -124,6 +128,7 @@ else ifeq ($(BUILD_TYPE),archive)
 	OUTPUT_FILENAME := $(LIB_OUT_DIR)/$(PROJECT).$(OUTPUT_EXT)
 else ifeq ($(BUILD_TYPE),exe)
 	OUTPUT_FILENAME := $(PROJECT)$(OUTPUT_POSTFIX).$(OUTPUT_EXT)
+	OUTPUT_FILENAME_DBG := $(OUTPUT_FILENAME:.elf=.dbg)
 endif
 
 # --------------------------------------------------------------------------------------------------
@@ -169,6 +174,8 @@ ifeq ($(BUILD_TYPE),lib)
 	TARGET_LDFLAGS += $(LIBDIRS)
 	TARGET_LDFLAGS += -shared -Bsymbolic -Bsymbolic-function -soname=$(SONAME)
 else ifeq ($(BUILD_TYPE),exe)
+	TARGET_CFLAGS += -fvisibility=hidden
+	TARGET_CXXFLAGS += -fvisibility=hidden
 	TARGET_LDFLAGS += $(LIBDIRS) -pie
 else ifeq ($(BUILD_TYPE),archive)
 	TARGET_LDFLAGS += $(LIBDIRS) -pie
@@ -185,7 +192,7 @@ TARGET_LDFLAGS += $(LDFLAGS)
 TARGET_ARFLAGS := rcsD
 
 # Generated files for clean
-GENERATED_FILES += $(OUTPUT_FILENAME) $(BUILD_DIR) $(LIB_OUT_DIR)
+GENERATED_FILES += $(OUTPUT_FILENAME) $(OUTPUT_FILENAME_DBG) $(BUILD_DIR) $(LIB_OUT_DIR)
 
 # --------------------------------------------------------------------------------------------------
 
@@ -216,12 +223,19 @@ target_compile: $(OUTPUT_FILENAME)
 %.elf: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG)
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) -R .interp -R .ARM.attributes --strip-all $@
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@
+	$(Q)[ "$(DEBUG)" -eq "1" ] || $(OBJCOPY) -R .interp -R .ARM.attributes $@
 
 %.so: $(OBJECTS)
 	@printf "  LD\t$@\n"
 	@mkdir -p $(LIB_OUT_DIR)
 	$(Q)$(LD) $(TARGET_LDFLAGS) $(OBJECTS) $(LDLIBS) -o $@
-	@[ -z "$(OUTPUT_SYMLINK)" ] || ln -sf $(SONAME) $(OUTPUT_SYMLINK)
+	$(Q)[ -z "$(OUTPUT_SYMLINK)" ] || ln -sf $(SONAME) $(OUTPUT_SYMLINK)
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --only-keep-debug $@ $(OUTPUT_FILENAME_DBG)
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --strip-all $@
+	$(Q)[ "$(DEBUG)" -eq "1" ] && $(OBJCOPY) --add-gnu-debuglink=$(OUTPUT_FILENAME_DBG) $@
 
 %.a: $(OBJECTS)
 	@printf "  AR\t$@\n"

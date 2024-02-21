@@ -2,6 +2,7 @@ PROJECT := libc++abi
 TARGET := NSG
 BUILD_TYPE := archive
 BUILD_DIR := bin
+DEBUG := 1
 
 CXX_TYPE ?= libcxx
 
@@ -40,6 +41,6 @@ include $(SDK_PATH)/rules.mk
 ifdef TARGET
 
 install: all
-	cp -v $(OUTPUT_FILENAME) $(SDK_LIB_ROOT)/$(PROJECT).$(OUTPUT_EXT)
+	cp -v $(OUTPUT_FILENAME) $(OUTPUT_FILENAME_DBG) $(SDK_LIB_ROOT)
 
 endif

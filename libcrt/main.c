@@ -1,8 +1,6 @@
 #include <swilib.h>
 #include <ep3/loader.h>
 
-const int *__switab = NULL;	/**< Functions library */
-
 extern void __hcrt_run_initarray(void *_ex);
 
 __attribute__((noinline))
@@ -24,8 +22,6 @@ int main(const char *exe, const char *fname, void *p1, void *p2);
 
 int _start(const char *exe, const char *fname, void *p1, void *p2) {
 	extern Elf32_Exec __ex;
-	__switab = __ex.switab;
-	
 	__hcrt_run_initarray((void *) &__ex);
 	return main(exe, fname, p1, p2);
 }

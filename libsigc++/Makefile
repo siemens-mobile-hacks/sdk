@@ -3,6 +3,7 @@ LIB_VERSION := 2.0
 TARGET := NSG
 BUILD_TYPE := lib
 BUILD_DIR := bin
+DEBUG := 1
 
 OPT := -Os
 
@@ -25,6 +26,6 @@ ifdef TARGET
 
 install: all
 	@rm -vf $(SDK_LIB_ROOT)/$(TARGET)/$(PROJECT).* $(SDK_LIB_ROOT)/$(PROJECT)-*
-	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_SYMLINK) $(SDK_LIB_ROOT)
+	@cp -Pv $(OUTPUT_FILENAME) $(OUTPUT_FILENAME_DBG) $(OUTPUT_SYMLINK) $(SDK_LIB_ROOT)
 
 endif

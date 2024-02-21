@@ -2,6 +2,9 @@
 #ifndef __SWI_HELPER_H__
 #define __SWI_HELPER_H__
 
+#pragma weak __ex
+#pragma weak __sys_switab_addres
+
 #ifdef __cplusplus
 extern "C" const int __sys_switab_addres[];
 #else
