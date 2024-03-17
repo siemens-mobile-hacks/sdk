@@ -1175,6 +1175,9 @@ __swi(0x81FB);
 void CloseCSM(int id)
 __swi(0x1FC);
 
+void MEDIA_PLAYLAST()
+__swi(0x1FF);
+
 void SetProp2ImageOrCanvas(DRWOBJ * param1, RECT * param2, int zero, IMGHDR *Image, int bleed_x, int bleed_y)
 __swi(0x201);
 
