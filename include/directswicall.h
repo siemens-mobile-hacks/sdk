@@ -1780,6 +1780,10 @@ void CloseCSM(int id)
 __defn( 0x1FC, id)
 
 __inl
+void MEDIA_PLAYLAST()
+__defn( 0x1FF)
+
+__inl
 void SetProp2ImageOrCanvas(DRWOBJ * param1, RECT * param2, int zero, IMGHDR *Image, int bleed_x, int bleed_y)
 __defn( 0x201, param1, param2, zero, Image, bleed_x, bleed_y)
 
