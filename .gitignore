@@ -8,6 +8,7 @@
 *.tar.*
 libgcc/build
 !lib/**
+.DS_Store
 
 tests/*/bin
 tests/*/*.elf
