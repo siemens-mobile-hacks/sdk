@@ -1,0 +1,15 @@
+digraph "dh_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="dh_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" meth" ,fontname="Helvetica"];
+  Node2 [label="dh_method",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdh__method.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" counter\ng\nj\np\npriv_key\npub_key\nq" ,fontname="Helvetica"];
+  Node3 [label="bignum_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bn_8h.html#structbignum__st",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ex_data" ,fontname="Helvetica"];
+  Node4 [label="crypto_ex_data_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto_8h.html#structcrypto__ex__data__st",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sk" ,fontname="Helvetica"];
+  Node5 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+}

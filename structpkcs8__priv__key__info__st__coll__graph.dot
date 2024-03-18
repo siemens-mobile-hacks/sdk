@@ -1,0 +1,20 @@
+digraph "pkcs8_priv_key_info_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="pkcs8_priv_key_info_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" attributes" ,fontname="Helvetica"];
+  Node2 [label="stack_st_X509_ATTRIBUTE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___a_t_t_r_i_b_u_t_e",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node3 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" version" ,fontname="Helvetica"];
+  Node4 [label="asn1_string_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__string__st",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkeyalg" ,fontname="Helvetica"];
+  Node5 [label="X509_algor_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#struct_x509__algor__st",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node6 [label="asn1_object_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__object__st",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" parameter" ,fontname="Helvetica"];
+  Node7 [label="asn1_type_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__type__st",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkey" ,fontname="Helvetica"];
+}

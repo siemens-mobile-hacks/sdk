@@ -1,0 +1,21 @@
+digraph "rsa_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="rsa_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" meth" ,fontname="Helvetica"];
+  Node2 [label="rsa_meth_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structrsa__meth__st.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _method_mod_n\n_method_mod_p\n_method_mod_q" ,fontname="Helvetica"];
+  Node3 [label="bn_mont_ctx_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bn_8h.html#structbn__mont__ctx__st",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" N\nNi\nRR" ,fontname="Helvetica"];
+  Node4 [label="bignum_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bn_8h.html#structbignum__st",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" blinding" ,fontname="Helvetica"];
+  Node5 [label="bn_blinding_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bn_8h.html#structbn__blinding__st",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" A\nAi\nmod" ,fontname="Helvetica"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" d\ndmp1\ndmq1\ne\niqmp\nn\np\nq" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ex_data" ,fontname="Helvetica"];
+  Node6 [label="crypto_ex_data_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto_8h.html#structcrypto__ex__data__st",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sk" ,fontname="Helvetica"];
+  Node7 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+}

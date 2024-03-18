@@ -1,0 +1,9 @@
+digraph "GUI_MSG"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="GUI_MSG",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="GUI GBS message for onKey callback."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" gbsmsg" ,fontname="Helvetica"];
+  Node2 [label="GBS_MSG",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_b_s.html#struct_g_b_s___m_s_g",tooltip="GBS Message."];
+}
