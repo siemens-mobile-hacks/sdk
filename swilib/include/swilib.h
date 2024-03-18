@@ -1,6 +1,13 @@
 #pragma once
 /**
  * @mainpage
+ * <b>Choose platform:</b>
+ * - <a href="../SG/index.html">SG</a> - SL65, C65, CX70, ...
+ * - <a href="../SG_X75/index.html">X75</a> - CX75, M75, CF75, ...
+ * - <a href="../NSG/index.html">NSG</a> - C81, S75, SL75, S68, ...
+ * - <a href="../NSG_ELKA/index.html">ELKA</a> - E71, EL71, ...
+ * 
+ * <b>Useful links:</b>
  * - <a href="topics.html">List API methods (swilib.h)</a>
  * - <a href="https://github.com/siemens-mobile-hacks/sdk">SDK</a>
  * @addtogroup SWILIB
