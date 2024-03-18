@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['z_5fstream_5fs_12605',['z_stream_s',['../builtin_2zlib_8h.html#structz__stream__s',1,'']]]
-];
