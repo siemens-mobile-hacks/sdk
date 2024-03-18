@@ -74,7 +74,5 @@ var sound_8h =
     [ "PlayMelody_GetDuration", "group___sound.html#ga2989aa7c6fb9bc15c228032c0c60078e", null ],
     [ "PlayFile", "group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776", null ],
     [ "PlaySoundLoop", "group___sound.html#gac10d3fb6d442bed3c3c17f6a72ffce76", null ],
-    [ "ChangeVolume", "group___sound.html#ga7c24f2a0df404f1878857e7ab58ee6ad", null ],
-    [ "RamMPlayer_CtrlCode", "group___sound.html#ga4f3758bfb90b60a00472d5386e0b5687", null ],
-    [ "MEDIA_PLAYLAST", "group___sound.html#ga7cdf3aebc7324c1292197eca0f37602e", null ]
+    [ "ChangeVolume", "group___sound.html#ga7c24f2a0df404f1878857e7ab58ee6ad", null ]
 ];

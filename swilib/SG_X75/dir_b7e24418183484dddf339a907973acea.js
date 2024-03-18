@@ -22,6 +22,7 @@ var dir_b7e24418183484dddf339a907973acea =
     [ "obs.h", "swilib_2obs_8h.html", "swilib_2obs_8h" ],
     [ "openssl.h", "openssl_8h.html", "openssl_8h" ],
     [ "patch.h", "patch_8h.html", "patch_8h" ],
+    [ "player.h", "player_8h.html", "player_8h" ],
     [ "png.h", "swilib_2png_8h.html", "swilib_2png_8h" ],
     [ "settings.h", "settings_8h.html", "settings_8h" ],
     [ "socket.h", "swilib_2socket_8h.html", "swilib_2socket_8h" ],

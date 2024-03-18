@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"nu__swilib_8h_source.html":[2,0,0,9],
 "nucleus_8h.html":[2,0,0,2,18],
 "nucleus_8h_source.html":[2,0,0,2,18],
 "objects_8h.html":[2,0,0,0,0,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "objects_8h.html#a4eeded65c355a4f51764518b0f113172":[2,0,0,0,0,24,39],
 "objects_8h.html#a4f159264a544c70c8a146a7f00fd7922":[2,0,0,0,0,24,64],
 "objects_8h.html#a4f294f430c3da7edc82a750ea2efe6f0":[2,0,0,0,0,24,313],
-"objects_8h.html#a4f39d4d296bb383eb0b6ea9d736a00ca":[2,0,0,0,0,24,322],
-"objects_8h.html#a4f59296b86719e8596932e51b38881d0":[2,0,0,0,0,24,89]
+"objects_8h.html#a4f39d4d296bb383eb0b6ea9d736a00ca":[2,0,0,0,0,24,322]
 };
