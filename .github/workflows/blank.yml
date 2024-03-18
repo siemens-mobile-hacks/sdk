@@ -18,6 +18,11 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Installing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y doxygen
+
       - name: Build Docs
         run: ./swilib/tools/gen-docs.sh
 
