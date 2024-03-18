@@ -3,4 +3,5 @@ set -e
 set -x
 
 cd $(dirname $0)/../
-doxygen -q Doxyfile
+[[ -d doxygen-awesome-css ]] || git submodule add https://github.com/jothepro/doxygen-awesome-css.git
+doxygen Doxyfile
