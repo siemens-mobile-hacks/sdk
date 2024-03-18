@@ -49,6 +49,7 @@
 #include "swilib/file.h"
 #include "swilib/explorer.h"
 #include "swilib/sound.h"
+#include "swilib/player.h"
 #include "swilib/obs.h"
 #include "swilib/settings.h"
 #include "swilib/system.h"

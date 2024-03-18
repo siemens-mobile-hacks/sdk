@@ -441,25 +441,6 @@ __swi_begin(0x09A)
 int ChangeVolume(uint8_t volume)
 __swi_end(0x09A, ChangeVolume, (volume));
 
-/**
- * Pointer to the magic value for controlling media player.
- * @return pointer
- * 
- * ```C
- * uint32_t ctrl_code = *RamMPlayer_CtrlCode();
- * ```
- * */
-__swi_begin(0x80E1)
-uint32_t *RamMPlayer_CtrlCode()
-__swi_end(0x80E1, RamMPlayer_CtrlCode, ());
-
-/**
- * Play previous song in standart media player.
- * */
-__swi_begin(0x1FF)
-void MEDIA_PLAYLAST()
-__swi_end(0x1FF, MEDIA_PLAYLAST, ());
-
 __swilib_end
 
 /** @} */
