@@ -241,7 +241,6 @@ void test_wprintf() {
 }
 
 void run_tests() {
-	/*
 	test_AllocWS();
 	test_str_2ws();
 	test_CreateWS();
@@ -252,9 +251,7 @@ void run_tests() {
 	test_wsbody();
 	test_find();
 	test_str_ops();
-	*/
 	test_wprintf();
-	
 	
 	fflush(stdout);
 	fflush(stderr);

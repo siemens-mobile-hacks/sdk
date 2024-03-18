@@ -8,7 +8,7 @@
 __BEGIN_DECLS
 
 int inet_aton(const char* cp, struct in_addr* inp) __THROW;
-unsigned long int inet_addr(const char* cp) __THROW;
+// unsigned long int inet_addr(const char* cp) __THROW; // in swilib!
 unsigned long int inet_network(const char* cp) __THROW;
 char* inet_ntoa(struct in_addr in) __THROW;
 char* inet_ntoa_r(struct in_addr in,char* buf) __THROW;

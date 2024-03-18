@@ -62,8 +62,6 @@ BUILD_DIR ?= bin
 LIB_OUT_DIR ?= lib
 
 # Default includes & defines
-INCLUDES += -I$(SDK_PATH)/libsupc++/include
-
 ifeq ($(CXX_TYPE),libcxx)
 	CXXSTD ?= -std=gnu++11
 	INCLUDES += -I$(SDK_PATH)/libc++/include
@@ -72,7 +70,10 @@ else ifeq ($(CXX_TYPE),uclibc++)
 	INCLUDES += -I$(SDK_PATH)/libuc++/include
 endif
 
+INCLUDES += -I$(SDK_PATH)/libsupc++/include
+
 INCLUDES += -I$(SDK_PATH)/include
+INCLUDES += -I$(SDK_PATH)/swilib/include
 INCLUDES += -I$(SDK_PATH)/libgcc/include
 INCLUDES += -I$(SDK_PATH)/dietlibc/include
 INCLUDES += -I$(SDK_PATH)/libjpeg/include

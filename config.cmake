@@ -92,6 +92,7 @@ else()
 endif()
 
 include_directories(${SDK_PATH}/include)
+include_directories(${SDK_PATH}/swilib/include)
 include_directories(${SDK_PATH}/libgcc/include)
 include_directories(${SDK_PATH}/dietlibc/include)
 include_directories(${SDK_PATH}/libjpeg/include)
