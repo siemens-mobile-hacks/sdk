@@ -1,0 +1,13 @@
+digraph "SMS_DATA_ROOT"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="SMS_DATA_ROOT",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Root of the SMS list (Openwave)."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" in_msg\nout_msg" ,fontname="Helvetica"];
+  Node2 [label="SMS_DATA_LLIST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___telephony.html#struct_s_m_s___d_a_t_a___l_l_i_s_t",tooltip="Linked-List of SMS (Openwave)."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" first\nlast" ,fontname="Helvetica"];
+  Node3 [label="SMS_DATA_LIST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___telephony.html#struct_s_m_s___d_a_t_a___l_i_s_t",tooltip="Container of the SMS data."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" index_id_data" ,fontname="Helvetica"];
+  Node4 [label="INDEX_ID_DATA",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___telephony.html#struct_i_n_d_e_x___i_d___d_a_t_a",tooltip="SMS index data."];
+}

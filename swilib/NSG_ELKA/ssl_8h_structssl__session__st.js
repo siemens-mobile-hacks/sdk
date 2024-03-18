@@ -1,0 +1,26 @@
+var ssl_8h_structssl__session__st =
+[
+    [ "ssl_version", "ssl_8h.html#a551e39a73ea78af29979d80d8a6db6f9", null ],
+    [ "key_arg_length", "ssl_8h.html#aa59c33cbe59e8aa9fd097d2034665935", null ],
+    [ "key_arg", "ssl_8h.html#a20d3a5914ab07d0cd336c9fc69f5edcb", null ],
+    [ "master_key_length", "ssl_8h.html#a368c71211d55bcd3528a752c15e14e5d", null ],
+    [ "master_key", "ssl_8h.html#abb68a32ef990c5903fe7331f8c6b079c", null ],
+    [ "session_id_length", "ssl_8h.html#a593371acd210b99ad600853361b807ce", null ],
+    [ "session_id", "ssl_8h.html#ad7ad17d41ac015a5476fba9491abbdb1", null ],
+    [ "sid_ctx_length", "ssl_8h.html#a22ec3aac135c2b8268e0ea69c66fc829", null ],
+    [ "sid_ctx", "ssl_8h.html#ad8f4061672c2a244b44b65cc832ff7cd", null ],
+    [ "not_resumable", "ssl_8h.html#a1b4d198b4cf95c73b1e73b06cf521bac", null ],
+    [ "sess_cert", "ssl_8h.html#abd0e4711818e1c3373870f0e09d718be", null ],
+    [ "peer", "ssl_8h.html#a925bea83587ffedbbdb4aa386b75a2d7", null ],
+    [ "verify_result", "ssl_8h.html#a448769f219815a3a49b726d5ab288783", null ],
+    [ "references", "ssl_8h.html#a1b4fccb7a3ccf9f1521896f8bc900801", null ],
+    [ "timeout", "ssl_8h.html#a69db42a9260a726806b5f6f92923c90b", null ],
+    [ "time", "ssl_8h.html#a3d937bd7a9800a780483e4e45033406b", null ],
+    [ "compress_meth", "ssl_8h.html#a3afb6279a5bfa17da80d488745344ea1", null ],
+    [ "cipher", "ssl_8h.html#ad31ca94be2a300f76f6391297c03a2e2", null ],
+    [ "cipher_id", "ssl_8h.html#a8701f3c1016dda3c59248560eaaddeb6", null ],
+    [ "ciphers", "ssl_8h.html#a50c5f927fa55aa5bac3a194bc2895c5d", null ],
+    [ "ex_data", "ssl_8h.html#a1a25c1960884dde3163cc9f98ec942fe", null ],
+    [ "prev", "ssl_8h.html#a3fa9d04e95c8c04a1ef6b6d87d69fed8", null ],
+    [ "next", "ssl_8h.html#accaac56bcf65fe7626e21071e3253d0e", null ]
+];

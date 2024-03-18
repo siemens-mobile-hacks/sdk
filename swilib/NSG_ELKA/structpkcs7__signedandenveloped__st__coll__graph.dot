@@ -1,0 +1,38 @@
+digraph "pkcs7_signedandenveloped_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="pkcs7_signedandenveloped_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" version" ,fontname="Helvetica"];
+  Node2 [label="asn1_string_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__string__st",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" recipientinfo" ,fontname="Helvetica"];
+  Node3 [label="stack_st_PKCS7_RECIP_INFO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html#structstack__st___p_k_c_s7___r_e_c_i_p___i_n_f_o",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node4 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" md_algs" ,fontname="Helvetica"];
+  Node5 [label="stack_st_X509_ALGOR",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___a_l_g_o_r",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" crl" ,fontname="Helvetica"];
+  Node6 [label="stack_st_X509_CRL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___c_r_l",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cert" ,fontname="Helvetica"];
+  Node7 [label="stack_st_X509",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" enc_data" ,fontname="Helvetica"];
+  Node8 [label="pkcs7_enc_content_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html#structpkcs7__enc__content__st",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cipher" ,fontname="Helvetica"];
+  Node9 [label="evp_cipher_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structevp__cipher__st.html",tooltip=" "];
+  Node2 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" enc_data" ,fontname="Helvetica"];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" content_type" ,fontname="Helvetica"];
+  Node10 [label="asn1_object_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__object__st",tooltip=" "];
+  Node11 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node11 [label="X509_algor_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#struct_x509__algor__st",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node12 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" parameter" ,fontname="Helvetica"];
+  Node12 [label="asn1_type_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__type__st",tooltip=" "];
+  Node13 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" signer_info" ,fontname="Helvetica"];
+  Node13 [label="stack_st_PKCS7_SIGNER_INFO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html#structstack__st___p_k_c_s7___s_i_g_n_e_r___i_n_f_o",tooltip=" "];
+  Node4 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+}

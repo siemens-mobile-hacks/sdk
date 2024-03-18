@@ -1,0 +1,18 @@
+digraph "dsa_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="dsa_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" meth" ,fontname="Helvetica"];
+  Node2 [label="dsa_method",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdsa__method.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dsa_do_sign" ,fontname="Helvetica"];
+  Node3 [label="DSA_SIG_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dsa_8h.html#struct_d_s_a___s_i_g__st",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" r\ns" ,fontname="Helvetica"];
+  Node4 [label="bignum_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bn_8h.html#structbignum__st",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" g\nkinv\np\npriv_key\npub_key\nq\nr" ,fontname="Helvetica"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ex_data" ,fontname="Helvetica"];
+  Node5 [label="crypto_ex_data_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto_8h.html#structcrypto__ex__data__st",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sk" ,fontname="Helvetica"];
+  Node6 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+}

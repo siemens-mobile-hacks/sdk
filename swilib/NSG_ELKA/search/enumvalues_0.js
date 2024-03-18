@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['a_5fappend_17426',['A_Append',['../group___file.html#gga248681daa33e11b68c934862cfe49417aad068f32d60620dfe6be48da508d502a',1,'file.h']]],
+  ['a_5fbin_17427',['A_BIN',['../group___file.html#gga248681daa33e11b68c934862cfe49417a799665313880c93e5976b95adbb4d31d',1,'file.h']]],
+  ['a_5fcreate_17428',['A_Create',['../group___file.html#gga248681daa33e11b68c934862cfe49417af5b8ec64b92a192a404aa33f4a3dd846',1,'file.h']]],
+  ['a_5fexclusive_17429',['A_Exclusive',['../group___file.html#gga248681daa33e11b68c934862cfe49417a516837096207a7c890470cdd8ef29139',1,'file.h']]],
+  ['a_5ffailcreateonexist_17430',['A_FailCreateOnExist',['../group___file.html#gga248681daa33e11b68c934862cfe49417a1b3efd73bfeb46ad0b908131518e3612',1,'file.h']]],
+  ['a_5ffailonreopen_17431',['A_FailOnReopen',['../group___file.html#gga248681daa33e11b68c934862cfe49417a8446b7901d3d0f1fd7d581f14fc79469',1,'file.h']]],
+  ['a_5fmmcstream_17432',['A_MMCStream',['../group___file.html#gga248681daa33e11b68c934862cfe49417aa695f64cb0773ad73feb57d5e27650c3',1,'file.h']]],
+  ['a_5fnoshare_17433',['A_NoShare',['../group___file.html#gga248681daa33e11b68c934862cfe49417a54b11abd04c714837ad6a43856d12f85',1,'file.h']]],
+  ['a_5freadonly_17434',['A_ReadOnly',['../group___file.html#gga248681daa33e11b68c934862cfe49417a6ac3d4a8661f23f6cefde171294f81f8',1,'file.h']]],
+  ['a_5freadwrite_17435',['A_ReadWrite',['../group___file.html#gga248681daa33e11b68c934862cfe49417a2f7a29b2320f331dc3fbcfa51ef5a5c2',1,'file.h']]],
+  ['a_5ftruncate_17436',['A_Truncate',['../group___file.html#gga248681daa33e11b68c934862cfe49417a79b3a4804ef3147e144b1d68807da792',1,'file.h']]],
+  ['a_5ftxt_17437',['A_TXT',['../group___file.html#gga248681daa33e11b68c934862cfe49417a5b3b26e19486cd7c23f7a20fa1f30ee2',1,'file.h']]],
+  ['a_5fwriteonly_17438',['A_WriteOnly',['../group___file.html#gga248681daa33e11b68c934862cfe49417a14a0977be9f62641ee1b3fe2f202a7de',1,'file.h']]],
+  ['acc_5ftype_5fserial_5fcable_17439',['ACC_TYPE_SERIAL_CABLE',['../group___info.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c',1,'info.h']]],
+  ['af_5finet_17440',['AF_INET',['../group___socket.html#gga6a825247fae0cb792769e588f152f1aba9ab67f00ce8b6a0015a0c642f22b7a81',1,'socket.h']]],
+  ['af_5fmax_17441',['AF_MAX',['../group___socket.html#gga6a825247fae0cb792769e588f152f1aba1ecf0e20535446f7fe9fae08714275e0',1,'socket.h']]],
+  ['af_5funspec_17442',['AF_UNSPEC',['../group___socket.html#gga6a825247fae0cb792769e588f152f1abaa0641a57327aef3ea3aef5bda8355c25',1,'socket.h']]]
+];

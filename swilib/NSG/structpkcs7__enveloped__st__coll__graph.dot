@@ -1,0 +1,25 @@
+digraph "pkcs7_enveloped_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="pkcs7_enveloped_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" version" ,fontname="Helvetica"];
+  Node2 [label="asn1_string_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__string__st",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" recipientinfo" ,fontname="Helvetica"];
+  Node3 [label="stack_st_PKCS7_RECIP_INFO",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html#structstack__st___p_k_c_s7___r_e_c_i_p___i_n_f_o",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node4 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" enc_data" ,fontname="Helvetica"];
+  Node5 [label="pkcs7_enc_content_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html#structpkcs7__enc__content__st",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cipher" ,fontname="Helvetica"];
+  Node6 [label="evp_cipher_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structevp__cipher__st.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" enc_data" ,fontname="Helvetica"];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" content_type" ,fontname="Helvetica"];
+  Node7 [label="asn1_object_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__object__st",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node8 [label="X509_algor_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#struct_x509__algor__st",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" parameter" ,fontname="Helvetica"];
+  Node9 [label="asn1_type_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__type__st",tooltip=" "];
+}

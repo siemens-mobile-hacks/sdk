@@ -1,0 +1,28 @@
+digraph "X509_crl_info_st"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="X509_crl_info_st",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" lastUpdate\nnextUpdate\nversion" ,fontname="Helvetica"];
+  Node2 [label="asn1_string_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__string__st",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" extensions" ,fontname="Helvetica"];
+  Node3 [label="stack_st_X509_EXTENSION",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___e_x_t_e_n_s_i_o_n",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node4 [label="stack_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structstack__st.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" issuer" ,fontname="Helvetica"];
+  Node5 [label="X509_name_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#struct_x509__name__st",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" entries" ,fontname="Helvetica"];
+  Node6 [label="stack_st_X509_NAME\l_ENTRY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___n_a_m_e___e_n_t_r_y",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" revoked" ,fontname="Helvetica"];
+  Node7 [label="stack_st_X509_REVOKED",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#structstack__st___x509___r_e_v_o_k_e_d",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stack" ,fontname="Helvetica"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sig_alg" ,fontname="Helvetica"];
+  Node8 [label="X509_algor_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509_8h.html#struct_x509__algor__st",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" algorithm" ,fontname="Helvetica"];
+  Node9 [label="asn1_object_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__object__st",tooltip=" "];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" parameter" ,fontname="Helvetica"];
+  Node10 [label="asn1_type_st",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asn1_8h.html#structasn1__type__st",tooltip=" "];
+}

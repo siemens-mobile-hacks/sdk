@@ -1,0 +1,21 @@
+digraph "ML_MENU_DESC"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ML_MENU_DESC",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Menu definition (multi-line)."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" softkeystab" ,fontname="Helvetica"];
+  Node2 [label="SOFTKEYSTAB",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___u_i.html#struct_s_o_f_t_k_e_y_s_t_a_b",tooltip="List of the softkeys."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" desc" ,fontname="Helvetica"];
+  Node3 [label="SOFTKEY_DESC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___u_i.html#struct_s_o_f_t_k_e_y___d_e_s_c",tooltip="UI softkey definition."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ghook\nonkey" ,fontname="Helvetica"];
+  Node4 [label="GUI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_u_i.html#struct_g_u_i",tooltip="GUI description and state."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" methods" ,fontname="Helvetica"];
+  Node5 [label="GUI_METHODS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_u_i.html#struct_g_u_i___m_e_t_h_o_d_s",tooltip="GUI callbacks."];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" canvas" ,fontname="Helvetica"];
+  Node6 [label="RECT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_u_i.html#struct_r_e_c_t",tooltip="Rectangle region."];
+  Node7 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" item_ll" ,fontname="Helvetica"];
+  Node7 [label="LLQ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___s_w_i_l_i_b.html#struct_l_l_q",tooltip="Linked-List header."];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" items" ,fontname="Helvetica"];
+  Node8 [label="MENUITEM_DESC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___u_i.html#struct_m_e_n_u_i_t_e_m___d_e_s_c",tooltip="Menu item."];
+}

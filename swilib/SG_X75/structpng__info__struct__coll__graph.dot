@@ -1,0 +1,22 @@
+digraph "png_info_struct"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="png_info_struct",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" background\ntrans_values" ,fontname="Helvetica"];
+  Node2 [label="png_color_16_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__color__16__struct",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" text" ,fontname="Helvetica"];
+  Node3 [label="png_text_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__text__struct",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" splt_palettes" ,fontname="Helvetica"];
+  Node4 [label="png_sPLT_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__s_p_l_t__struct",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" entries" ,fontname="Helvetica"];
+  Node5 [label="png_sPLT_entry_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__s_p_l_t__entry__struct",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" unknown_chunks" ,fontname="Helvetica"];
+  Node6 [label="png_unknown_chunk_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__unknown__chunk__t",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" palette" ,fontname="Helvetica"];
+  Node7 [label="png_color_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__color__struct",tooltip=" "];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sig_bit" ,fontname="Helvetica"];
+  Node8 [label="png_color_8_struct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$builtin_2png_8h.html#structpng__color__8__struct",tooltip=" "];
+}
