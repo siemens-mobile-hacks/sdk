@@ -13,6 +13,7 @@ Main features:
 # Docs
 - SDK:
     - [How to use SDK - for beginners](https://github.com/siemens-mobile-hacks/sdk/blob/master/docs/how_make_elfs.md)
+      [SWILIB - functions from the firmware](https://github.com/siemens-mobile-hacks/sdk/blob/master/swilib/README.md)
     - [Available shared libs](https://github.com/siemens-mobile-hacks/sdk#available-shared-libs)
 
 - Building
