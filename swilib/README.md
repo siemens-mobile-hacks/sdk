@@ -5,7 +5,7 @@ Documentation by platforms:
 - [NSG](https://siemens-mobile-hacks.github.io/swilib/NSG/index.html) - C81, S75, SL75, S68, ...
 - [ELKA](https://siemens-mobile-hacks.github.io/swilib/NSG_ELKA/index.html) - E71, EL71, ...
 
-Note: Functions across platforms are mostly the same, but some structures have different fields.
+Note: Functions across platforms are mostly the same, but some structures have different memory layout.
 
 # How add new function?
 1. Fork this repository.
