@@ -48,9 +48,14 @@ __swi_end(0x81B5, isnewSGold, ());
  * SUBPROC(test_func, 1, 2);
  * ```
  * */
+#ifdef SWILIB_MODE_DIRECT
+#define SUBPROC(_callback, ...) \
+	__swi_call(0x171, void, (void *callback, ...), (_callback, ## __VA_ARGS__));
+#else
 __swi_begin(0x171)
 void SUBPROC(void *callback, ...)
 __swi_end(0x171, SUBPROC, (callback));
+#endif
 
 /**
  * Get phone uptime in the ticks (1 tick=4.615 ms).
