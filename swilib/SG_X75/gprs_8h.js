@@ -34,5 +34,5 @@ var gprs_8h =
     [ "RequestLMANConnect", "group___g_p_r_s.html#ga414dc05978ab6d956ae5b9a11f042e9e", null ],
     [ "RefreshGPRSTraffic", "group___g_p_r_s.html#ga0b8abe545a8426ac1987a3d191a1bda2", null ],
     [ "ResetGPRSTraffic", "group___g_p_r_s.html#gad627c8a5929b168f5c2839089ba42dc7", null ],
-    [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#ga898215c900260cdd96b9368b56821112", null ]
+    [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305", null ]
 ];

@@ -1,0 +1,45 @@
+var group___settings =
+[
+    [ "SettingsAE_ListenerProc", "group___settings.html#ga548845c2415c8fb84cb3b68605ff9c43", null ],
+    [ "SettingsID", "group___settings.html#gaa43dfe75c76b723f8ac7092f8e9a57f2", [
+      [ "SETTINGS_ID_FAK", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0", null ],
+      [ "SETTINGS_ID_MYMENU", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a9a6e92d5fc381fab3f5c7a1620e01b2d", null ],
+      [ "SETTINGS_ID_VIBRALIGHT", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a1d9fc9ac71d4a3b7b562b780f68d2d26", null ],
+      [ "SETTINGS_ID_USERPROFILES", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2ab7195dd50eb75dec6148d9d8dcabb2b0", null ],
+      [ "SETTINGS_ID_SETUP", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a71ab4b578e096fd63889d70d8c7db45c", null ],
+      [ "SETTINGS_ID_DEVELOPER_MENU", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a081da01308e9aa1dd70b82f5d2d99213", null ],
+      [ "SETTINGS_ID_APIDC_SETUP", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a8581c1c154835dc7c73daa8344cd5474", null ],
+      [ "SETTINGS_ID_MEDIAPLAYER", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2aebcde1484e2d0c03aa3ecaa9594c822f", null ],
+      [ "SETTINGS_ID_SOUNDRECORDER", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a95969fe14cf630b748f54e202822fe3e", null ],
+      [ "SETTINGS_ID_FRDB", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a08b4e3e320eb456c16f41332b989daf0", null ],
+      [ "SETTINGS_ID_AVATAR", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a0660f7c442e05864c712d0aca228b942", null ],
+      [ "SETTINGS_ID_RADIO", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2af9e2c038eb5e647b41860a74b4352e51", null ],
+      [ "SETTINGS_ID_ORANGEHOMESCREEN", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a5b63782b62a5118393ffbf98e4318bb7", null ]
+    ] ],
+    [ "ProfileVolumeTypeID", "group___settings.html#ga1f713c4f7ac2b3b71ed3aee2d5f42e98", [
+      [ "PROFILE_VOLUME_TYPE_MAIN", "group___settings.html#gga1f713c4f7ac2b3b71ed3aee2d5f42e98a7f5e5799104aeab8883ca329e48bb45d", null ],
+      [ "PROFILE_VOLUME_TYPE_ALARMCLOCK", "group___settings.html#gga1f713c4f7ac2b3b71ed3aee2d5f42e98ae3e6aa3e59c56b2340765130c4b71b57", null ],
+      [ "PROFILE_VOLUME_TYPE_INCALL", "group___settings.html#gga1f713c4f7ac2b3b71ed3aee2d5f42e98abf36258270fa345a2e8ad89d899d1cfa", null ]
+    ] ],
+    [ "SetDateTime", "group___settings.html#ga0fb0e1204577e2d50ab1917e7282f0f7", null ],
+    [ "SaveMaxIllumination", "group___settings.html#gabea52c427719b1c361a37c0001b898c7", null ],
+    [ "SetIlluminationoffTimeout", "group___settings.html#ga70bf2ed8ff9c17ebe633640c43c93201", null ],
+    [ "SettingsAE_GetFlag", "group___settings.html#ga104cea4a9a2d09d180806740757f344a", null ],
+    [ "SettingsAE_Read", "group___settings.html#ga99c2931798c5426653a0e76def98e24c", null ],
+    [ "SettingsAE_GetEntryList", "group___settings.html#gaa0ebe630830e99660516417ac6c23eb2", null ],
+    [ "SettingsAE_Read_ws", "group___settings.html#ga9ef2c6e7ff6cecf31e908319652c3f9c", null ],
+    [ "SettingsAE_Update", "group___settings.html#ga8c2822b8781c3bdb51583c8d76361c66", null ],
+    [ "SettingsAE_Update_ws", "group___settings.html#gabaa3aa98de0e99babe3308f1a607fedc", null ],
+    [ "SettingsAE_SetFlag", "group___settings.html#gae8d1dc64eadde6e85c8181e92079fc9d", null ],
+    [ "SettingsAE_RemoveEntry", "group___settings.html#ga827565a4d80a15271b33c91d40953f11", null ],
+    [ "SettingsAE_RegisterListener", "group___settings.html#ga61c1e13ce94bacd4e5d039889d2f5fa3", null ],
+    [ "SettingsAE_DeregisterListener", "group___settings.html#gabd21a127f59912dd5ca4b268635779c7", null ],
+    [ "Registry_GetHMIKeyID", "group___settings.html#ga818776870f2a7757b85f0b490d6e77a3", null ],
+    [ "Registry_GetResourcePathFromLevel", "group___settings.html#ga0a422f5e79a22b80a420b22de8960b94", null ],
+    [ "Registry_SetResourcePath", "group___settings.html#gab28b7bc49dbe550f6894d0c319c73881", null ],
+    [ "Registry_DeleteResourcePath", "group___settings.html#ga8fdf6d05e1fb97d9069516904bf693e9", null ],
+    [ "GetProfile", "group___settings.html#ga6c4352c3ee1df4631e1a89a133cd5cbd", null ],
+    [ "SetProfile", "group___settings.html#ga57fd3c680f9e11659ab4f0be19fe1ef1", null ],
+    [ "getProfileNameByN", "group___settings.html#gab7077ad07201d20b9ac147a26d9b824e", null ],
+    [ "GetProfileVolumeSetting", "group___settings.html#ga52b1ace9ad90c42a67a0777e69c24844", null ]
+];

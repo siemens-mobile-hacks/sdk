@@ -23,5 +23,6 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
+{text:"API methods",url:"topics.html"},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"}]}]}

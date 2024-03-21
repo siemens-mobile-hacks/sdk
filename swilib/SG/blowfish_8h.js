@@ -1,9 +1,6 @@
 var blowfish_8h =
 [
-    [ "bf_key_st", "blowfish_8h.html#structbf__key__st", [
-      [ "P", "blowfish_8h.html#a6f44c5754724e9c50ec913f5801dea0a", null ],
-      [ "S", "blowfish_8h.html#a87109bdab22085b5ab497a17630a710e", null ]
-    ] ],
+    [ "bf_key_st", "blowfish_8h.html#structbf__key__st", null ],
     [ "BF_ENCRYPT", "blowfish_8h.html#a986684e72821b64345d0ddeedfd79cf6", null ],
     [ "BF_DECRYPT", "blowfish_8h.html#a64530f390d3db20395b15eca83a4375c", null ],
     [ "BF_LONG", "blowfish_8h.html#a10d45274394a4cb51d39209f66754558", null ],
@@ -17,5 +14,5 @@ var blowfish_8h =
     [ "BF_cbc_encrypt", "blowfish_8h.html#aded66494cc29d6fad4bb695a55b5b26b", null ],
     [ "BF_cfb64_encrypt", "blowfish_8h.html#a29bcde862c5ec830e382f2220a4591f0", null ],
     [ "BF_ofb64_encrypt", "blowfish_8h.html#ac0d417bc5f354cdea76c3c628f3557b5", null ],
-    [ "BF_options", "blowfish_8h.html#a93227fcc212b482c1dc898e11ef3dc75", null ]
+    [ "BF_options", "blowfish_8h.html#aa12741a273b7501ad6ab6fb46f106585", null ]
 ];

@@ -44,6 +44,6 @@ var gbs_8h =
     [ "GBS_WaitForMsg", "group___g_b_s.html#gad13affaaf335b2fcddf15b8b68d06c32", null ],
     [ "CreateGBSproc", "group___g_b_s.html#gae8b02e0f3fafdaf2b41542ddc43967da", null ],
     [ "KillGBSproc", "group___g_b_s.html#gad681a51f284313593d7e5ae948124979", null ],
-    [ "GetGBSProcAddress", "group___g_b_s.html#gaa907f270adec03634ce5b5527f07d1e8", null ],
+    [ "GetGBSProcAddress", "group___g_b_s.html#gac6dfa841fc5b90395e2ad2b80ef4e3bf", null ],
     [ "CreateICL", "group___g_b_s.html#gab5d2564beb4eed2c03e1bd7fe4af423f", null ]
 ];

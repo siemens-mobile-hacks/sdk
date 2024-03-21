@@ -1,9 +1,0 @@
-digraph "AB_UNPRES"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="AB_UNPRES",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Uncompressed APO entry."];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" record_list" ,fontname="Helvetica"];
-  Node2 [label="AB_UNPRES_ITEM",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___addressbook.html#struct_a_b___u_n_p_r_e_s___i_t_e_m",tooltip="Item of the AB_UNPRES."];
-}

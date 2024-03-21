@@ -26,7 +26,7 @@ var settings_8h =
     [ "SetIlluminationoffTimeout", "group___settings.html#ga70bf2ed8ff9c17ebe633640c43c93201", null ],
     [ "SettingsAE_GetFlag", "group___settings.html#ga104cea4a9a2d09d180806740757f344a", null ],
     [ "SettingsAE_Read", "group___settings.html#ga99c2931798c5426653a0e76def98e24c", null ],
-    [ "SettingsAE_GetEntryList", "group___settings.html#gae2f81ec961dd90edd870bc5f770469a9", null ],
+    [ "SettingsAE_GetEntryList", "group___settings.html#gaa0ebe630830e99660516417ac6c23eb2", null ],
     [ "SettingsAE_Read_ws", "group___settings.html#ga9ef2c6e7ff6cecf31e908319652c3f9c", null ],
     [ "SettingsAE_Update", "group___settings.html#ga8c2822b8781c3bdb51583c8d76361c66", null ],
     [ "SettingsAE_Update_ws", "group___settings.html#gabaa3aa98de0e99babe3308f1a607fedc", null ],

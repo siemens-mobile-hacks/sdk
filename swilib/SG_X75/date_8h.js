@@ -5,7 +5,7 @@ var date_8h =
     [ "TDateTimeSettings", "group___date_time.html#gade8ab8f5da755820c4cc04163da4a04c", null ],
     [ "InitDate", "group___date_time.html#ga92554ba6901d8a60a0b3525e0b8f6ceb", null ],
     [ "InitTime", "group___date_time.html#ga834636c64c9c4f5dd21ba3e77e731473", null ],
-    [ "RamDateTimeSettings", "group___date_time.html#ga33a46da014d836483a23e854d5f06c40", null ],
+    [ "RamDateTimeSettings", "group___date_time.html#ga38b1d54997b61510f8f99afae5b4d3d7", null ],
     [ "GetDateTime", "group___date_time.html#gaf57ed7501e66e5b6c17422c484108a5a", null ],
     [ "GetTimeZoneShift", "group___date_time.html#ga2e8ac83eb8effe6c224eedfa65131ef7", null ],
     [ "GetWeek", "group___date_time.html#gafbf2787f486102f8fd113190dfd6b443", null ],

@@ -1,9 +1,6 @@
 var cast_8h =
 [
-    [ "cast_key_st", "cast_8h.html#structcast__key__st", [
-      [ "data", "cast_8h.html#a35292b8477d8cb3e5be4ce9e0d50a1c5", null ],
-      [ "short_key", "cast_8h.html#a34043464743188eea278cc583540db15", null ]
-    ] ],
+    [ "cast_key_st", "cast_8h.html#structcast__key__st", null ],
     [ "CAST_ENCRYPT", "cast_8h.html#a2dd9614369cb809df925f5142a17727b", null ],
     [ "CAST_DECRYPT", "cast_8h.html#acf2e449d0236085311dd1fd2f5850ba4", null ],
     [ "CAST_LONG", "cast_8h.html#a5f536ad3c10c7a7a51cdb6c75e8ae165", null ],

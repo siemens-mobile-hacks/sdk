@@ -2,7 +2,7 @@ var base_8h =
 [
     [ "__SWILIB__", "group___s_w_i_l_i_b.html#gaad9f633a5f0598144d9524d1dedd6294", null ],
     [ "__int16", "group___s_w_i_l_i_b.html#ga6d658629cbd06fe6109fcf9d0729cc78", null ],
-    [ "malloc_func_t", "group___s_w_i_l_i_b.html#ga6408e643d64bbfc3ff583f849c527762", null ],
+    [ "malloc_func_t", "group___s_w_i_l_i_b.html#gac307b6481b55d2f9ed0b5437a2ccb383", null ],
     [ "mfree_func_t", "group___s_w_i_l_i_b.html#gad933b4910fa156b13de77fa0d097ab71", null ],
     [ "LLQ", "group___s_w_i_l_i_b.html#ga40799a1b9f7179f2d73a056435fcdab1", null ],
     [ "LLIST", "group___s_w_i_l_i_b.html#ga6ab2718e854f59f787fb9426616b156d", null ],

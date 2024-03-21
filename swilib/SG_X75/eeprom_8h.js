@@ -2,7 +2,7 @@ var eeprom_8h =
 [
     [ "GetEELiteMaxID", "group___e_e_p_r_o_m.html#gacc9f6fbaad6ec9bdbd7d074c001e7600", null ],
     [ "GetEELiteBlockSizeVersion", "group___e_e_p_r_o_m.html#ga8fa11b2c8d0afce5b321a8e8de4b63d0", null ],
-    [ "GetEELiteBlockAddress", "group___e_e_p_r_o_m.html#gaad6e1afd06f9bc7533351eb05adb9b9b", null ],
+    [ "GetEELiteBlockAddress", "group___e_e_p_r_o_m.html#gae283180ad6c65a280c5f93fed844a4d3", null ],
     [ "StartWriteEELiteBlock", "group___e_e_p_r_o_m.html#gac3dc456825b55f344b7f5325f904b1e9", null ],
     [ "WriteEELiteBlock", "group___e_e_p_r_o_m.html#gabc52a29a8d47072a36e54f56c1853347", null ],
     [ "FinishWriteEELiteBlock", "group___e_e_p_r_o_m.html#ga280b6f100f91ff0bca3bf4fc21a64a5e", null ],

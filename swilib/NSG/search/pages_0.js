@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_24615',['Deprecated List',['../deprecated.html',1,'']]]
+  ['api_20nsg_20nbsp_20nbsp_20nbsp_20nbsp_0',['SWILIB API (NSG)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;',['../index.html',1,'']]]
 ];

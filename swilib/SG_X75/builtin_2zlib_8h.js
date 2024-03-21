@@ -1,24 +1,7 @@
 var builtin_2zlib_8h =
 [
-    [ "z_stream_s", "builtin_2zlib_8h.html#structz__stream__s", [
-      [ "next_in", "builtin_2zlib_8h.html#a21d2c026f0f2fcd67f33011231f8ed00", null ],
-      [ "avail_in", "builtin_2zlib_8h.html#a0cf177f50dbb49692f27480cbcfde794", null ],
-      [ "total_in", "builtin_2zlib_8h.html#aa8f408b9632737dc21519fa1ed34b08d", null ],
-      [ "next_out", "builtin_2zlib_8h.html#aed4a02cfe93e975314fed50b04427bf3", null ],
-      [ "avail_out", "builtin_2zlib_8h.html#a45ad2364307af9d944fd39d4eca3ca3c", null ],
-      [ "total_out", "builtin_2zlib_8h.html#abae26f1f236cf920250b9d37fdf009c1", null ],
-      [ "msg", "builtin_2zlib_8h.html#a9b2f745fc780e3b33e2935f8c650a326", null ],
-      [ "state", "builtin_2zlib_8h.html#aff003303512a6c0abd17440abdf66956", null ],
-      [ "zalloc", "builtin_2zlib_8h.html#a23a2299c384f808e76e9908f21216b0f", null ],
-      [ "zfree", "builtin_2zlib_8h.html#a89eb750ade7f4f0b56bfdadf13344982", null ],
-      [ "opaque", "builtin_2zlib_8h.html#ab72467f908d2ce65d5b42ee6556ef8bb", null ],
-      [ "data_type", "builtin_2zlib_8h.html#a9d8f63877d7639a8bca60f9fc3704fc4", null ],
-      [ "adler", "builtin_2zlib_8h.html#ade2217fe31e671be1257731883201223", null ],
-      [ "reserved", "builtin_2zlib_8h.html#add73791dd19b49c9c68f3f3d328c37db", null ]
-    ] ],
-    [ "internal_state", "builtin_2zlib_8h.html#structinternal__state", [
-      [ "dummy", "builtin_2zlib_8h.html#ab000a3e3c901dd063859521988ad7e52", null ]
-    ] ],
+    [ "z_stream_s", "builtin_2zlib_8h.html#structz__stream__s", null ],
+    [ "internal_state", "builtin_2zlib_8h.html#structinternal__state", null ],
     [ "ZLIB_VERSION", "builtin_2zlib_8h.html#a51dc9dc65e483b3222c1f0f6a87eb76e", null ],
     [ "ZLIB_VERNUM", "builtin_2zlib_8h.html#a6413cdfb4cdc0b5a09cf9b5f3f8f48ef", null ],
     [ "Z_NO_FLUSH", "builtin_2zlib_8h.html#ac3b62e37b9922d9496014515acd6083a", null ],
@@ -62,7 +45,7 @@ var builtin_2zlib_8h =
     [ "in_func", "builtin_2zlib_8h.html#aa4a83c1d617f6a45248992ae397d787a", null ],
     [ "out_func", "builtin_2zlib_8h.html#aa61d8668bba379ccd195ceaa93e7e666", null ],
     [ "gzFile", "builtin_2zlib_8h.html#acd0143ddd532551631ecc7093fd7adfc", null ],
-    [ "zlibVersion", "builtin_2zlib_8h.html#abce074566fe1761a0bc1746663ea3124", null ],
+    [ "zlibVersion", "builtin_2zlib_8h.html#acfc417f0f1431f493a8d09684ea3910b", null ],
     [ "deflate", "builtin_2zlib_8h.html#a599c64964d883e17aa8e0c272522e474", null ],
     [ "deflateEnd", "builtin_2zlib_8h.html#a76d5d113b3e84d27c5654b452f80dbdc", null ],
     [ "deflateSetDictionary", "builtin_2zlib_8h.html#adb4cae33cbcd71c3abcfa1e2005f1fbf", null ],
@@ -89,7 +72,7 @@ var builtin_2zlib_8h =
     [ "gzwrite", "builtin_2zlib_8h.html#a9e275a784606f8b2ae63569c8a59076e", null ],
     [ "gzprintf", "builtin_2zlib_8h.html#a4a2a9186c4a21cf2032e813f40466ad0", null ],
     [ "gzputs", "builtin_2zlib_8h.html#ac41c37d4e14b0e87d43866e7395d7683", null ],
-    [ "gzgets", "builtin_2zlib_8h.html#a2278a94d5999c8a939476a915ee6c924", null ],
+    [ "gzgets", "builtin_2zlib_8h.html#a99c12295c9361a3619586d8046dbefa8", null ],
     [ "gzputc", "builtin_2zlib_8h.html#ad58e376fd354414421c2b10f395d37b0", null ],
     [ "gzgetc", "builtin_2zlib_8h.html#a322014ec15696f3650eedf4b30eb703d", null ],
     [ "gzungetc", "builtin_2zlib_8h.html#a0916bed0b751310ef2e79ba07d382884", null ],
@@ -99,7 +82,7 @@ var builtin_2zlib_8h =
     [ "gztell", "builtin_2zlib_8h.html#a12a766c517aea3ae3a59b22959049bb9", null ],
     [ "gzeof", "builtin_2zlib_8h.html#a64c8b210e7230c74417a3f6dd07d3119", null ],
     [ "gzclose", "builtin_2zlib_8h.html#a6010d2f602a06d4c42eafdce2d252252", null ],
-    [ "gzerror", "builtin_2zlib_8h.html#acc4473baa9a30856df76a19f22e8316a", null ],
+    [ "gzerror", "builtin_2zlib_8h.html#a83c9a2eacf6adbf4bbf96f8e3656ad98", null ],
     [ "gzclearerr", "builtin_2zlib_8h.html#aa3ae0c2a6612dbd04984e91eebc98b8b", null ],
     [ "adler32", "builtin_2zlib_8h.html#a154683f5b7c8527aee6e9f54d2a469e7", null ],
     [ "crc32", "builtin_2zlib_8h.html#ae594a92daa59da8ef2c346cea7abdf68", null ],
@@ -107,7 +90,7 @@ var builtin_2zlib_8h =
     [ "inflateInit_", "builtin_2zlib_8h.html#af05ac251e4d6b723e96170e66e614ddb", null ],
     [ "deflateInit2_", "builtin_2zlib_8h.html#aeb60dc2e4671a1d3ae5e43f5cace4dd7", null ],
     [ "inflateBackInit_", "builtin_2zlib_8h.html#a30c77ac5987236a9bc883723d9b52382", null ],
-    [ "zError", "builtin_2zlib_8h.html#a87ceacafbe5ce56c16c353ceea4019d5", null ],
+    [ "zError", "builtin_2zlib_8h.html#a5c1ed1653062c72e436637531e83c74d", null ],
     [ "inflateSyncPoint", "builtin_2zlib_8h.html#ad460ac10d1dd6f0efe235cf2258ae545", null ],
-    [ "get_crc_table", "builtin_2zlib_8h.html#abf10d55579884b151b1633f6d1a11357", null ]
+    [ "get_crc_table", "builtin_2zlib_8h.html#abe6c82c38443fdc04577fd761d7fbdec", null ]
 ];

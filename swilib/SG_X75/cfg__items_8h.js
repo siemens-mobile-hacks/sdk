@@ -1,14 +1,7 @@
 var cfg__items_8h =
 [
-    [ "CFG_HDR", "cfg__items_8h.html#struct_c_f_g___h_d_r", [
-      [ "type", "cfg__items_8h.html#abc5ae756929ea20f00b7752a96a1987c", null ],
-      [ "name", "cfg__items_8h.html#adb85f2e867a91723de564ce2b54bbf54", null ],
-      [ "min", "cfg__items_8h.html#ab0546f9afc14268f17f249c8c943265e", null ],
-      [ "max", "cfg__items_8h.html#a03399cbe16cecbf90c3eae7dbac664e5", null ]
-    ] ],
-    [ "CFG_CBOX_ITEM", "cfg__items_8h.html#struct_c_f_g___c_b_o_x___i_t_e_m", [
-      [ "cbox_text", "cfg__items_8h.html#aa0fe7b4c804a4bbf4d24fff701e1fb7b", null ]
-    ] ],
+    [ "CFG_HDR", "cfg__items_8h.html#struct_c_f_g___h_d_r", null ],
+    [ "CFG_CBOX_ITEM", "cfg__items_8h.html#struct_c_f_g___c_b_o_x___i_t_e_m", null ],
     [ "CFG_UINT", "cfg__items_8h.html#aacc84ed9e612af3b5a4a6a71b6a6aaf8", null ],
     [ "CFG_STR_UTF8", "cfg__items_8h.html#aa97ac6ee7b8bb0cd71323f40ff644953", null ],
     [ "CFG_INT", "cfg__items_8h.html#a7d1135c7b62498f490ca92f6d5ae7d8f", null ],

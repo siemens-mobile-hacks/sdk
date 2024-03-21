@@ -1,25 +1,8 @@
 var rsaref_8h =
 [
-    [ "RSArefPublicKey_st", "rsaref_8h.html#struct_r_s_aref_public_key__st", [
-      [ "bits", "rsaref_8h.html#a59bbdc24b5e6ceedb428b7b8c95ae4b0", null ],
-      [ "m", "rsaref_8h.html#a213ed3a33dd38fa621d0e982e90a22b7", null ],
-      [ "e", "rsaref_8h.html#a01ef844afb9b0610c4ca73cfea621a42", null ]
-    ] ],
-    [ "RSArefPrivateKey_st", "rsaref_8h.html#struct_r_s_aref_private_key__st", [
-      [ "bits", "rsaref_8h.html#a8747801b14d86894f22abe7173f34cf6", null ],
-      [ "m", "rsaref_8h.html#a1d1fb4d80fbbe81f85920703bb054bc7", null ],
-      [ "e", "rsaref_8h.html#af5801c377140f278ca3caedbd98ff644", null ],
-      [ "d", "rsaref_8h.html#a99a88874061d1ca6c6cdb1d0a08926c1", null ],
-      [ "prime", "rsaref_8h.html#aafc938c6b12481023318e1d4d60ca69a", null ],
-      [ "pexp", "rsaref_8h.html#aa5b2d38334b333ff261b2eaac4457996", null ],
-      [ "coef", "rsaref_8h.html#a5c973d1d839b941becebd0e7f5d87a23", null ]
-    ] ],
-    [ "RSARandomState_st", "rsaref_8h.html#struct_r_s_a_random_state__st", [
-      [ "needed", "rsaref_8h.html#a6c967a232dc6b53f049af472c30cfbd5", null ],
-      [ "state", "rsaref_8h.html#a6a77266df52a3971f11c4c1d67e49521", null ],
-      [ "outputnum", "rsaref_8h.html#aa243f723e63fb122f43a032b7977c492", null ],
-      [ "output", "rsaref_8h.html#ae7373fe4223b0de4b2f22adfe3e57944", null ]
-    ] ],
+    [ "RSArefPublicKey_st", "rsaref_8h.html#struct_r_s_aref_public_key__st", null ],
+    [ "RSArefPrivateKey_st", "rsaref_8h.html#struct_r_s_aref_private_key__st", null ],
+    [ "RSARandomState_st", "rsaref_8h.html#struct_r_s_a_random_state__st", null ],
     [ "RSAref_MAX_BITS", "rsaref_8h.html#a7614ccaecdc2048e771f615c195455ad", null ],
     [ "RSAref_MIN_BITS", "rsaref_8h.html#a5f8247e2b40af28c1c9667b09fad674c", null ],
     [ "RSAref_MAX_LEN", "rsaref_8h.html#aee30e3743aefbf6135f5db6d7d04cdb0", null ],
@@ -78,5 +61,5 @@ var rsaref_8h =
     [ "R_RandomUpdate", "rsaref_8h.html#ac0110667b5295d54b53413dca79f9fca", null ],
     [ "R_RandomFinal", "rsaref_8h.html#ae7f8a23384f4640a3941492c9212d72f", null ],
     [ "ERR_load_RSAREF_strings", "rsaref_8h.html#ad001bd3fe62f7407cb877e3c8053aac8", null ],
-    [ "RSA_PKCS1_RSAref", "rsaref_8h.html#a43ef81ff2484cfbe96fac03221bdcc2c", null ]
+    [ "RSA_PKCS1_RSAref", "rsaref_8h.html#ae51976cbbf87a6352e5fb5debc764e90", null ]
 ];

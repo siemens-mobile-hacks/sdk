@@ -1,9 +1,6 @@
 var rc5_8h =
 [
-    [ "rc5_key_st", "rc5_8h.html#structrc5__key__st", [
-      [ "rounds", "rc5_8h.html#ad9106df6b5ba463da94185b253798fd3", null ],
-      [ "data", "rc5_8h.html#a0f3122d5c619c9e04883558138f70b5a", null ]
-    ] ],
+    [ "rc5_key_st", "rc5_8h.html#structrc5__key__st", null ],
     [ "RC5_ENCRYPT", "rc5_8h.html#a1d98ce22693e44179490dfb287bfab5f", null ],
     [ "RC5_DECRYPT", "rc5_8h.html#a8629756455f8fce4365105a6c4c7ba4a", null ],
     [ "RC5_32_INT", "rc5_8h.html#ab62e736162fb3319500365b7773caf16", null ],

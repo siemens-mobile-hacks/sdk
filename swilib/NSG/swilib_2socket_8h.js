@@ -46,6 +46,6 @@ var swilib_2socket_8h =
     [ "recv", "group___socket.html#ga6bd484d9bdee112a6f2c449490bebd89", null ],
     [ "send", "group___socket.html#ga27cec9296f3f668cf8594f7aa5e65fa4", null ],
     [ "available0", "group___socket.html#ga3df20ac7098741fa850337e9b9a81918", null ],
-    [ "socklasterr", "group___socket.html#ga5e2c165aa24b9bb995ef6c8d75ac1479", null ],
+    [ "socklasterr", "group___socket.html#ga04e7c1a8d2c7787e27ce895e5ff5e4b7", null ],
     [ "closesocket", "group___socket.html#gad4725afcb96cfe437fd7a748129b1f33", null ]
 ];

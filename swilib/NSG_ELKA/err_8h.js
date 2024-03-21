@@ -1,19 +1,7 @@
 var err_8h =
 [
-    [ "err_state_st", "err_8h.html#structerr__state__st", [
-      [ "pid", "err_8h.html#ac60af191596e4c9f96f42701d42fe2ea", null ],
-      [ "err_buffer", "err_8h.html#afda878a7e75331f915bd836e8b471ee7", null ],
-      [ "err_data", "err_8h.html#ac9d12574e0442a3e147814c434f004b3", null ],
-      [ "err_data_flags", "err_8h.html#a788e5310e2b8ffb4a49e3098625c3960", null ],
-      [ "err_file", "err_8h.html#aa2429a63d062dee1e7662401ebac6d36", null ],
-      [ "err_line", "err_8h.html#a871752acbfb47ae80040d5239135f500", null ],
-      [ "top", "err_8h.html#a02b49831a2d90a87b14ae7ad28f0bfb7", null ],
-      [ "bottom", "err_8h.html#a91a24fe0ee64f2618dac094713874c01", null ]
-    ] ],
-    [ "ERR_string_data_st", "err_8h.html#struct_e_r_r__string__data__st", [
-      [ "error", "err_8h.html#a31cec2470a4a78675d42e43bca29eb73", null ],
-      [ "string", "err_8h.html#a8533e685b5daab9b3860db861e468361", null ]
-    ] ],
+    [ "err_state_st", "err_8h.html#structerr__state__st", null ],
+    [ "ERR_string_data_st", "err_8h.html#struct_e_r_r__string__data__st", null ],
     [ "ERR_file_name", "err_8h.html#a42ab93db513011dc93f424bef250b950", null ],
     [ "ERR_PUT_error", "err_8h.html#a46bcf35fa3c776dbe1c1e939e962d04f", null ],
     [ "ERR_TXT_MALLOCED", "err_8h.html#a5c7d4743070cc1b475e607b5c953c6f7", null ],
@@ -130,18 +118,18 @@ var err_8h =
     [ "ERR_peek_error_line", "err_8h.html#a96f9dfa7a037807f186ca75f0612e31d", null ],
     [ "ERR_peek_error_line_data", "err_8h.html#a7f09fc7b1d5d01c41e9097028eb6bf07", null ],
     [ "ERR_clear_error", "err_8h.html#ae562e57f2e66f238d774cbfddc6bf7a4", null ],
-    [ "ERR_error_string", "err_8h.html#a5269a2553a640e8a2db88f80049a98bf", null ],
-    [ "ERR_lib_error_string", "err_8h.html#a701a848ff99b4b43137247869f6bfc08", null ],
-    [ "ERR_func_error_string", "err_8h.html#a2ed805099ef84b85d1d7ab85cc2bfdab", null ],
-    [ "ERR_reason_error_string", "err_8h.html#abbf425b4ae0a69b6fa5b340d8e0e37b3", null ],
+    [ "ERR_error_string", "err_8h.html#a3faa84f5abd079275c7092efb9560915", null ],
+    [ "ERR_lib_error_string", "err_8h.html#a2b59155dfa0e8514fd82bb317dcf2e8b", null ],
+    [ "ERR_func_error_string", "err_8h.html#a1807618977fa8f91eaea0f2870826901", null ],
+    [ "ERR_reason_error_string", "err_8h.html#a5e36692892437b36a8084b5b24177e4d", null ],
     [ "ERR_print_errors_fp", "err_8h.html#ae677e395b09f61df20dd6ed7a89c8a2c", null ],
     [ "ERR_load_strings", "err_8h.html#a2f399af1a6abeaf0baaab2ac3384a716", null ],
     [ "ERR_load_ERR_strings", "err_8h.html#a435865f03442c40a38b9796915952bed", null ],
     [ "ERR_load_crypto_strings", "err_8h.html#a527a5db2050ae96addd60ca647553cb0", null ],
     [ "ERR_free_strings", "err_8h.html#a2a0343659076e8a41b39475869ecdfa2", null ],
     [ "ERR_remove_state", "err_8h.html#aa3a75fa5e11243175e866fbf808a7d57", null ],
-    [ "ERR_get_state", "err_8h.html#a846553bc742c3a4d3eab1b492f7644af", null ],
-    [ "ERR_get_string_table", "err_8h.html#acc25233456d0cbd432885d32c1ad6768", null ],
-    [ "ERR_get_err_state_table", "err_8h.html#a49cc3962108274fe91b50fa124cf28a9", null ],
+    [ "ERR_get_state", "err_8h.html#a6315a7e9a267a707d5f814d4e6d0163a", null ],
+    [ "ERR_get_string_table", "err_8h.html#af5d20835ad50407d5de0d623eb6c1376", null ],
+    [ "ERR_get_err_state_table", "err_8h.html#abb61533ed509a0a38664be3d16b04c48", null ],
     [ "ERR_get_next_error_library", "err_8h.html#a1f520607a0a8cced4ea2d264b865c3fc", null ]
 ];

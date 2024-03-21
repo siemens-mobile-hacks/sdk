@@ -1,13 +1,7 @@
 var des_8h =
 [
-    [ "des_ks_struct", "des_8h.html#structdes__ks__struct", [
-      [ "ks", "des_8h.html#aa0041b97defc6d741bc2aeab61f41015", null ],
-      [ "weak_key", "des_8h.html#a5cb2dd1a5e2faf62015c12e1538408a8", null ]
-    ] ],
-    [ "des_ks_struct.ks", "des_8h.html#uniondes__ks__struct_8ks", [
-      [ "cblock", "des_8h.html#a711340d73cec57b7157e8d4d6a7459ef", null ],
-      [ "deslong", "des_8h.html#afa5e28120fa05ea1173cb148d49591f9", null ]
-    ] ],
+    [ "des_ks_struct", "des_8h.html#structdes__ks__struct", null ],
+    [ "des_ks_struct.ks", "des_8h.html#uniondes__ks__struct_8ks", null ],
     [ "DES_KEY_SZ", "des_8h.html#aaa5a2a97dcb6f597ea17f34872d7d2eb", null ],
     [ "DES_SCHEDULE_SZ", "des_8h.html#ad5916c39b84ebf70f8a0abcc3cf1d71a", null ],
     [ "DES_ENCRYPT", "des_8h.html#a89730e026cc6082480f070985e91e8aa", null ],
@@ -42,7 +36,7 @@ var des_8h =
     [ "const_des_cblock", "des_8h.html#a4023fa8150d5e8520503f8576b2e4252", null ],
     [ "des_key_schedule", "des_8h.html#a07cf534bb760c473688d7a19e8b8662f", null ],
     [ "bit_64", "des_8h.html#aacfb81848d00aeee38fc2804ccd00177", null ],
-    [ "des_options", "des_8h.html#aee007389f04aa6a42cdd6438925c7cfa", null ],
+    [ "des_options", "des_8h.html#a8e59de1ea604a64707472fba0134a18e", null ],
     [ "des_ecb3_encrypt", "des_8h.html#aa9e97d0f2367f8cc5801a921e5f26326", null ],
     [ "des_cbc_cksum", "des_8h.html#acdf43c772c144d40dbd98d8bc78cdb15", null ],
     [ "des_cbc_encrypt", "des_8h.html#a4040ffb0f660836bb073a5a5f39bcdb2", null ],
@@ -61,9 +55,9 @@ var des_8h =
     [ "des_xwhite_in2out", "des_8h.html#a475c23d17bd2baf2d3ecf60a052fe879", null ],
     [ "des_enc_read", "des_8h.html#a7cb77fab27628a6187bb1765eafce611", null ],
     [ "des_enc_write", "des_8h.html#ad6c4371bfda0ccdf8207b8b85ae9dc71", null ],
-    [ "des_fcrypt", "des_8h.html#abee7f66e87c50479406edf0d7bb8d09d", null ],
-    [ "des_crypt", "des_8h.html#add12c31dc0babcc8ecb9eed9757addc6", null ],
-    [ "crypt", "des_8h.html#aa154e7a359d0bacd8d3d3335632843db", null ],
+    [ "des_fcrypt", "des_8h.html#af841c4d13a9149d6744d6e27bbde1202", null ],
+    [ "des_crypt", "des_8h.html#a79a13f39fd5167c5403bea1aa6dfdc58", null ],
+    [ "crypt", "des_8h.html#a418e147390afb8f076f5d5f36d16f86c", null ],
     [ "des_ofb_encrypt", "des_8h.html#a5fa521ce8e3a8cd60eb64c9efb956f89", null ],
     [ "des_pcbc_encrypt", "des_8h.html#ad1b64d34853bf98dd1d511479741d50a", null ],
     [ "des_quad_cksum", "des_8h.html#a26a658e209a45811f1e52d5baf440e1d", null ],

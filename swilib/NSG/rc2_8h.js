@@ -1,8 +1,6 @@
 var rc2_8h =
 [
-    [ "rc2_key_st", "rc2_8h.html#structrc2__key__st", [
-      [ "data", "rc2_8h.html#a4626a56b45c5ae4d5971705c55eea281", null ]
-    ] ],
+    [ "rc2_key_st", "rc2_8h.html#structrc2__key__st", null ],
     [ "RC2_ENCRYPT", "rc2_8h.html#a12db6dfbdbe815c3e1ddcd8137689a1d", null ],
     [ "RC2_DECRYPT", "rc2_8h.html#a70125829da49b3e1b21c9b851a5c940a", null ],
     [ "RC2_BLOCK", "rc2_8h.html#a24dbb15e6a46fcaa3513227e2903a17d", null ],
