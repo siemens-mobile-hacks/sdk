@@ -1,21 +1,36 @@
 #!/bin/bash
 set -e
-set -x
 
 export PATH="/opt/doxygen/bin/:$PATH"
 
 cd $(dirname $0)/../
-[[ -d doxygen-awesome-css ]] || git submodule add https://github.com/jothepro/doxygen-awesome-css.git
-
-PREDEFINED="SWILIB_LIBC SWILIB_LIBPNG SWILIB_ZLIB SWILIB_OPENSSL SWILIB_LEGACY_COMPAT SWILIB_MODERN __swilib_begin __swilib_end DOXYGEN"
-PROJECT_NAME="SWILIB API"
+[[ -d doxygen-awesome-css ]] || git clone https://github.com/jothepro/doxygen-awesome-css --depth 1
 
 mkdir -p html/swilib/SG
 mkdir -p html/swilib/SG_X75
 mkdir -p html/swilib/NSG
 mkdir -p html/swilib/NSG_ELKA
 
-( cat Doxyfile ; echo "HTML_OUTPUT=html/swilib/SG"; echo "PREDEFINED=$PREDEFINED"; echo "PROJECT_NAME=$PROJECT_NAME (SG)&nbsp;&nbsp;&nbsp;&nbsp;" ) | doxygen -
-( cat Doxyfile ; echo "HTML_OUTPUT=html/swilib/SG_X75"; echo "PREDEFINED=$PREDEFINED X75"; echo "PROJECT_NAME=$PROJECT_NAME (X75)&nbsp;&nbsp;&nbsp;&nbsp;" ) | doxygen -
-( cat Doxyfile ; echo "HTML_OUTPUT=html/swilib/NSG"; echo "PREDEFINED=$PREDEFINED NEWSGOLD"; echo "PROJECT_NAME=$PROJECT_NAME (NSG)&nbsp;&nbsp;&nbsp;&nbsp;" ) | doxygen -
-( cat Doxyfile ; echo "HTML_OUTPUT=html/swilib/NSG_ELKA"; echo "PREDEFINED=$PREDEFINED NEWSGOLD"; echo "PROJECT_NAME=$PROJECT_NAME (ELKA)&nbsp;&nbsp;&nbsp;&nbsp;" ) | doxygen -
+function doxygen_run() {
+	name=$1
+	dir=$2
+	defines=$3
+	
+	mkdir -p "html/swilib/$dir"
+	
+	echo "Gen docs: $dir"
+	
+	cp Doxyfile Doxyfile.tmp
+	echo "HTML_OUTPUT=html/swilib/$dir" >> Doxyfile.tmp
+	echo "PROJECT_NAME=SWILIB API $name&nbsp;&nbsp;&nbsp;&nbsp;" >> Doxyfile.tmp
+	echo "PREDEFINED=SWILIB_LIBC SWILIB_LIBPNG SWILIB_ZLIB SWILIB_OPENSSL SWILIB_LEGACY_COMPAT SWILIB_MODERN __swilib_begin __swilib_end DOXYGEN $defines" >> Doxyfile.tmp
+	doxygen -q Doxyfile.tmp
+	rm Doxyfile.tmp
+
+	echo "------------------------------------------------------"
+}
+
+doxygen_run "(SG)" "SG" ""
+doxygen_run "(X75)" "SG_X75" "X75"
+doxygen_run "(NSG)" "NSG" "NEWSGOLD"
+doxygen_run "(ELKA)" "NSG_ELKA" "NEWSGOLD ELKA"
