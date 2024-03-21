@@ -18,6 +18,8 @@ var swilib_2obs_8h =
       [ "OBS_EV_StopCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea9323428b2c50480b290266a37c72cfb7", null ],
       [ "OBS_EV_PauseCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea5ca650f79bd0445acdab0a2f66c80ba1", null ],
       [ "OBS_EV_ResumeCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea29c691ef42f1f730c8db59e2c52bac0a", null ],
+      [ "OBS_EV_PrepareCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaeae9b05c6402c3352c72beee6d3c90e27c", null ],
+      [ "OBS_EV_GetCapabilityCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea2099570e619191534430653c882a7683", null ],
       [ "OBS_EV_EndList", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea7f975e944077dba9ceb6cd8a68eb296d", null ]
     ] ],
     [ "Obs_CreateObject", "group___o_b_s.html#ga8cf82296e8c32face89f3cb12fe5c83b", null ],

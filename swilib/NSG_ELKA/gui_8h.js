@@ -126,7 +126,9 @@ var gui_8h =
       [ "LEFT_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718acc7c999423bde38a6b6156b77c4f194e", null ],
       [ "RIGHT_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718a2f7db56ce29bb4a148cae5ab0198709a", null ],
       [ "ENTER_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718ab42cc4bbdbed78b08763c32419fb5796", null ],
-      [ "INTERNET_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718a3ed7679e699276199a830e2471f36aab", null ],
+      [ "POC_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718aab14f351d5923590eb8c986eac8c46bd", null ],
+      [ "MEDIA_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718a6f5d335c4df3ca6ff3f6e2e0dfc96a51", null ],
+      [ "EL_PLAY_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718ab028924859eb5fbdbdd98765d65a76a7", null ],
       [ "PLAY_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718a539b5c085fbd6533b483a13ce487758a", null ],
       [ "CAMERA_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718ae173abbf97a9fe551833c4d898d021f2", null ],
       [ "PTT_BUTTON", "group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718aaac96a60c6282d42eb318168277efb85", null ]

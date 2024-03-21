@@ -56,7 +56,7 @@ var searchData=
   ['_5ftruncate_53',['_truncate',['../group___file.html#ga62752d1c8ec29dad973c6c9c14959578',1,'file.h']]],
   ['_5funk2_54',['_unk2',['../group___g_u_i.html#a552eb7a202b3f2ffb18bd32c6a6478cd',1,'LCDLAYER']]],
   ['_5funk3_55',['_unk3',['../group___g_u_i.html#a6bd62fca2cf3457a814024e4eb34e38c',1,'LCDLAYER']]],
-  ['_5funk4_56',['_unk4',['../group___g_u_i.html#a04700e61d1808ec5176efa88e6a4cf91',1,'LCDLAYER']]],
+  ['_5funk4_56',['_unk4',['../group___g_u_i.html#a6340c9c1c3012c42011d4063191e7903',1,'LCDLAYER']]],
   ['_5funlink_57',['_unlink',['../group___file.html#ga6f7db1a3d1ef0336f2edafb215172bde',1,'file.h']]],
   ['_5fwrite_58',['_write',['../group___file.html#ga829f80af62dae789478d1136ced891bb',1,'file.h']]]
 ];
