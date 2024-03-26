@@ -42,6 +42,15 @@ __swi_begin(0x082)
 const WSHDR *GetLastAudioTrackFilename()
 __swi_end(0x082, GetLastAudioTrackFilename, ());
 
+/**
+ * Get the directory of the last audio track in media player.
+ * @return pointer to the WSHDR
+ * */
+
+__swi_begin(0x3B2)
+const WSHDR *GetLastAudioTrackDir()
+__swi_end(0x3B2, GetLastAudioTrackDir, ());
+
 __swilib_end
 
 /** @} */
