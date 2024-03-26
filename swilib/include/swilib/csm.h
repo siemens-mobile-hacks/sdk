@@ -55,10 +55,10 @@ struct CSM_DESC {
 	int (*onMessage)(CSM_RAM *, GBS_MSG *);	/**< Callback for GBS messages. */
 	void (*onCreate)(CSM_RAM *);				/**< CSM constructor */
 #ifdef NEWSGOLD
-	int zero1;		/**< Unknown, set to 0 */
-	int zero2;		/**< Unknown, set to 0 */
-	int zero3;		/**< Unknown, set to 0 */
-	int zero4;		/**< Unknown, set to 0 */
+	int zero1;		/**< CSM_ToBackground, set to 0 */
+	int zero2;		/**< CSM_ReEnter, set to 0 */
+	int zero3;		/**< CSM_HasToBeSavedInBackground, set to 0 */
+	int zero4;		/**< CSM_GetAppId, set to 0 */
 #endif
 	void (*onClose)(CSM_RAM *);				/**< CSM destructor */
 	int datasize;							/**< Size of the CSM with custom payload */
