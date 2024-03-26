@@ -35,12 +35,12 @@ void MEDIA_PLAYLAST()
 __swi_end(0x1FF, MEDIA_PLAYLAST, ());
 
 /**
- * Get the filename of the current song in the media player.
+ * Get the filename of the last audio track in the media player.
  * @return pointer to the WSHDR
  * */
 __swi_begin(0x082)
-const WSHDR *GetCurrentTrackFilename()
-__swi_end(0x082, GetCurrentTrackFilename, ());
+const WSHDR *GetLastAudioTrackFilename()
+__swi_end(0x082, GetLastAudioTrackFilename, ());
 
 __swilib_end
 
