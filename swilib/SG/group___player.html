@@ -114,9 +114,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7cdf3aebc7324c1292197eca0f37602e" id="r_ga7cdf3aebc7324c1292197eca0f37602e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7cdf3aebc7324c1292197eca0f37602e">MEDIA_PLAYLAST</a> ()</td></tr>
 <tr class="memdesc:ga7cdf3aebc7324c1292197eca0f37602e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play previous song in standart media player.  <br /></td></tr>
 <tr class="separator:ga7cdf3aebc7324c1292197eca0f37602e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga67afdfde18a13737e12901c552376d7f" id="r_ga67afdfde18a13737e12901c552376d7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67afdfde18a13737e12901c552376d7f">GetCurrentTrackFilename</a> ()</td></tr>
-<tr class="memdesc:ga67afdfde18a13737e12901c552376d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the filename of the current song in the media player.  <br /></td></tr>
-<tr class="separator:ga67afdfde18a13737e12901c552376d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafcf6bb8f0aeb125aaf10ea02e321ebfe" id="r_gafcf6bb8f0aeb125aaf10ea02e321ebfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafcf6bb8f0aeb125aaf10ea02e321ebfe">GetLastAudioTrackFilename</a> ()</td></tr>
+<tr class="memdesc:gafcf6bb8f0aeb125aaf10ea02e321ebfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the filename of the last audio track in the media player.  <br /></td></tr>
+<tr class="separator:gafcf6bb8f0aeb125aaf10ea02e321ebfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f85db4a59af8c9ccce18148563206a8" id="r_ga5f85db4a59af8c9ccce18148563206a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5f85db4a59af8c9ccce18148563206a8">GetLastAudioTrackDir</a> ()</td></tr>
+<tr class="memdesc:ga5f85db4a59af8c9ccce18148563206a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the directory of the last audio track in media player.  <br /></td></tr>
+<tr class="separator:ga5f85db4a59af8c9ccce18148563206a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga3e44895cc1a130fa1dc8a513ba891211" name="ga3e44895cc1a130fa1dc8a513ba891211"></a>
@@ -160,14 +163,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga67afdfde18a13737e12901c552376d7f" name="ga67afdfde18a13737e12901c552376d7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga67afdfde18a13737e12901c552376d7f">&#9670;&#160;</a></span>GetCurrentTrackFilename()</h2>
+<a id="gafcf6bb8f0aeb125aaf10ea02e321ebfe" name="gafcf6bb8f0aeb125aaf10ea02e321ebfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafcf6bb8f0aeb125aaf10ea02e321ebfe">&#9670;&#160;</a></span>GetLastAudioTrackFilename()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> * GetCurrentTrackFilename </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> * GetLastAudioTrackFilename </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -175,7 +178,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the filename of the current song in the media player. </p>
+<p>Get the filename of the last audio track in the media player. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga5f85db4a59af8c9ccce18148563206a8" name="ga5f85db4a59af8c9ccce18148563206a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f85db4a59af8c9ccce18148563206a8">&#9670;&#160;</a></span>GetLastAudioTrackDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> * GetLastAudioTrackDir </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the directory of the last audio track in media player. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </dd></dl>
 
 </div>
