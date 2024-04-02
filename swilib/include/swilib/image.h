@@ -166,9 +166,9 @@ __swi_end(0x2E0, GetIMGHDRFromThemeCache, (index));
  * @param canvas_id		ID of the "canvas"
  * @return pointer to the image
  * */
-__swi_begin(0x394)
+__swi_begin(0x3B3)
 IMGHDR *GetIMGHDRFromCanvasCache(int canvas_id)
-__swi_end(0x394, GetIMGHDRFromCanvasCache, (canvas_id));
+__swi_end(0x3B3, GetIMGHDRFromCanvasCache, (canvas_id));
 
 /**
  * Flush "canvas" in cache.
