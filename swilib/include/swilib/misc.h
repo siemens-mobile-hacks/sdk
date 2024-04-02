@@ -24,8 +24,8 @@ typedef struct LIGHT_PARAM LIGHT_PARAM;
  * Illumination device.
  * */
 enum IlluminationDeviceID {
-	ILLUMINATION_DEV_KEYBOARD	= 0,	/**< Keyboard */
-	ILLUMINATION_DEV_DISPLAY	= 1,	/**< LCD */
+    ILLUMINATION_DEV_DISPLAY	= 0,	/**< LCD */
+	ILLUMINATION_DEV_KEYBOARD	= 1,	/**< Keyboard */
 };
 
 /**
