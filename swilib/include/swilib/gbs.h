@@ -327,9 +327,9 @@ __swi_end(0x154, KillGBSproc, (cepid));
  * @param cepid		CEPID of event processor
  * @return pointer
  * */
-__swi_begin(0x38E)
+__swi_begin(0x385)
 void* GetGBSProcAddress(short cepid)
-__swi_end(0x38E, GetGBSProcAddress, (cepid));
+__swi_end(0x385, GetGBSProcAddress, (cepid));
 
 /**
  * Create new GBS Process Group.
