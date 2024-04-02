@@ -4,8 +4,8 @@ var misc_8h =
     [ "shortcut", "group___m_i_s_c.html#ga887c43e70c99ce34df2f7fd13d8278ef", null ],
     [ "LIGHT_PARAM", "group___m_i_s_c.html#gab6b1a35c597b76fe6af020a30262c183", null ],
     [ "IlluminationDeviceID", "group___m_i_s_c.html#ga9238916ae1e072ff903506a94fff667f", [
-      [ "ILLUMINATION_DEV_KEYBOARD", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404", null ],
-      [ "ILLUMINATION_DEV_DISPLAY", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fa580985b0f7d39e6da52448c32961624e", null ]
+      [ "ILLUMINATION_DEV_DISPLAY", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fa580985b0f7d39e6da52448c32961624e", null ],
+      [ "ILLUMINATION_DEV_KEYBOARD", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404", null ]
     ] ],
     [ "TempSetLightFlags", "group___m_i_s_c.html#gaa262c83353778b84f48947378c85ccb8", [
       [ "TEMP_SET_LIGHT_DISPLAY", "group___m_i_s_c.html#ggaa262c83353778b84f48947378c85ccb8a8a0513ce5908afe68e33501720b23d37", null ],
