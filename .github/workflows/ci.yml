@@ -21,7 +21,8 @@ jobs:
       - name: Installing dependencies
         run: |
           wget https://github.com/siemens-mobile-hacks/doxygen/releases/download/v1.10.4/doxygen_1.0_amd64.deb
-          sudo dpkg -i doxygen_1.0_amd64.deb          
+          sudo dpkg -i doxygen_1.0_amd64.deb
+          sudo apt-get -y install gcc-arm-none-eabi
 
       - name: Smoke Test
         run: ./swilib/tools/smoke-test.sh
