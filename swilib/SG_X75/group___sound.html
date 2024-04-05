@@ -241,6 +241,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gaeac995d1bab995b3f95b86cde51ebf5a" id="r_gaeac995d1bab995b3f95b86cde51ebf5a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeac995d1bab995b3f95b86cde51ebf5a">RamVolumeLevel</a> ()</td></tr>
+<tr class="memdesc:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current volume level.  <br /></td></tr>
+<tr class="separator:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25f546e713d427446c3d26bf78eedfee" id="r_ga25f546e713d427446c3d26bf78eedfee"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25f546e713d427446c3d26bf78eedfee">RamMediaIsPlaying</a> ()</td></tr>
 <tr class="memdesc:ga25f546e713d427446c3d26bf78eedfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checking if any sound is currently played.  <br /></td></tr>
 <tr class="separator:ga25f546e713d427446c3d26bf78eedfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,12 +292,33 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa72dd56ff46de16afed8c90775c80716" id="r_gaa72dd56ff46de16afed8c90775c80716"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa72dd56ff46de16afed8c90775c80716">PlayFile</a> (int flags, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *folder, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file, int zero, int cepid, int msgid, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_p_l_a_y_f_i_l_e___o_p_t">PLAYFILE_OPT</a> *sfo)</td></tr>
 <tr class="memdesc:gaa72dd56ff46de16afed8c90775c80716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play file from filesystem (path=folder\file).  <br /></td></tr>
 <tr class="separator:gaa72dd56ff46de16afed8c90775c80716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacaeae14a320eb3ad6d22095b563c91ba" id="r_gacaeae14a320eb3ad6d22095b563c91ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacaeae14a320eb3ad6d22095b563c91ba">Audio_GetCurrAudioPath</a> ()</td></tr>
+<tr class="memdesc:gacaeae14a320eb3ad6d22095b563c91ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current audio path.  <br /></td></tr>
+<tr class="separator:gacaeae14a320eb3ad6d22095b563c91ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85c85e25b9ff0084453517f541b7ba3f" id="r_ga85c85e25b9ff0084453517f541b7ba3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga85c85e25b9ff0084453517f541b7ba3f">Audio_GetObjectHandle</a> ()</td></tr>
+<tr class="memdesc:ga85c85e25b9ff0084453517f541b7ba3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current object handle.  <br /></td></tr>
+<tr class="separator:ga85c85e25b9ff0084453517f541b7ba3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ff2744cc9df632d76f6ec05b18e9341" id="r_ga4ff2744cc9df632d76f6ec05b18e9341"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ff2744cc9df632d76f6ec05b18e9341">AACC_AudioTransferReq</a> (int oh, uint32_t type_and_conn)</td></tr>
+<tr class="memdesc:ga4ff2744cc9df632d76f6ec05b18e9341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change audio output.  <br /></td></tr>
+<tr class="separator:ga4ff2744cc9df632d76f6ec05b18e9341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac10d3fb6d442bed3c3c17f6a72ffce76" id="r_gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac10d3fb6d442bed3c3c17f6a72ffce76">PlaySoundLoop</a> (int unk1, int unk2, int duration)</td></tr>
 <tr class="memdesc:gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play vibra tone (???).  <br /></td></tr>
 <tr class="separator:gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c24f2a0df404f1878857e7ab58ee6ad" id="r_ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c24f2a0df404f1878857e7ab58ee6ad">ChangeVolume</a> (uint8_t volume)</td></tr>
 <tr class="memdesc:ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change volume (unknown function).  <br /></td></tr>
 <tr class="separator:ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5be66231d8816001aca1a5feb47e627b" id="r_ga5be66231d8816001aca1a5feb47e627b"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5be66231d8816001aca1a5feb47e627b">SoundAE_PlayFileAsEvent</a> (int event_id, int cepid, int msg_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *folder, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file)</td></tr>
+<tr class="memdesc:ga5be66231d8816001aca1a5feb47e627b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play custom sound.  <br /></td></tr>
+<tr class="separator:ga5be66231d8816001aca1a5feb47e627b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541" id="r_ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e7bb9d09a996dbbd3e2c5f5a5f7b541">RamAudioHook</a> ()</td></tr>
+<tr class="memdesc:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the AudioHook.  <br /></td></tr>
+<tr class="separator:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c3fed1da880a2015c219cebd29dc3ea" id="r_ga6c3fed1da880a2015c219cebd29dc3ea"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c3fed1da880a2015c219cebd29dc3ea">RamIsSoundRecordingActive</a> ()</td></tr>
+<tr class="memdesc:ga6c3fed1da880a2015c219cebd29dc3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if active recording of the sound.  <br /></td></tr>
+<tr class="separator:ga6c3fed1da880a2015c219cebd29dc3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6dfbc1dd05ec10a52987bb1691cd8ea6" id="r_ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6dfbc1dd05ec10a52987bb1691cd8ea6">RamSoundRecordingQuality</a> ()</td></tr>
+<tr class="memdesc:ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality of the current sound recording.  <br /></td></tr>
+<tr class="separator:ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_g_b_s___p_s_o_u_n_d___m_s_g" id="struct_g_b_s___p_s_o_u_n_d___m_s_g"></a>
@@ -469,6 +493,26 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gaeac995d1bab995b3f95b86cde51ebf5a" name="gaeac995d1bab995b3f95b86cde51ebf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeac995d1bab995b3f95b86cde51ebf5a">&#9670;&#160;</a></span>RamVolumeLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamVolumeLevel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current volume level. </p>
+<dl class="section return"><dt>Returns</dt><dd>volume level </dd></dl>
+
+</div>
+</div>
 <a id="ga25f546e713d427446c3d26bf78eedfee" name="ga25f546e713d427446c3d26bf78eedfee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga25f546e713d427446c3d26bf78eedfee">&#9670;&#160;</a></span>RamMediaIsPlaying()</h2>
 
@@ -903,7 +947,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00374">374</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00382">382</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -944,7 +988,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00384">384</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00392">392</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -1010,6 +1054,77 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 
 </div>
 </div>
+<a id="gacaeae14a320eb3ad6d22095b563c91ba" name="gacaeae14a320eb3ad6d22095b563c91ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacaeae14a320eb3ad6d22095b563c91ba">&#9670;&#160;</a></span>Audio_GetCurrAudioPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Audio_GetCurrAudioPath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current audio path. </p>
+<dl class="section return"><dt>Returns</dt><dd>id </dd></dl>
+
+</div>
+</div>
+<a id="ga85c85e25b9ff0084453517f541b7ba3f" name="ga85c85e25b9ff0084453517f541b7ba3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85c85e25b9ff0084453517f541b7ba3f">&#9670;&#160;</a></span>Audio_GetObjectHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Audio_GetObjectHandle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current object handle. </p>
+<dl class="section return"><dt>Returns</dt><dd>object handle </dd></dl>
+
+</div>
+</div>
+<a id="ga4ff2744cc9df632d76f6ec05b18e9341" name="ga4ff2744cc9df632d76f6ec05b18e9341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ff2744cc9df632d76f6ec05b18e9341">&#9670;&#160;</a></span>AACC_AudioTransferReq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AACC_AudioTransferReq </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>oh</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>type_and_conn</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change audio output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oh</td><td>object handle, use <a class="el" href="#ga85c85e25b9ff0084453517f541b7ba3f" title="Get current object handle.">Audio_GetObjectHandle</a> </td></tr>
+    <tr><td class="paramname">type_and_conn</td><td>conn &lt;&lt; 16 | type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
 <a id="gac10d3fb6d442bed3c3c17f6a72ffce76" name="gac10d3fb6d442bed3c3c17f6a72ffce76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac10d3fb6d442bed3c3c17f6a72ffce76">&#9670;&#160;</a></span>PlaySoundLoop()</h2>
 
@@ -1071,6 +1186,116 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unknown </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Untested function that is not found in any ELF's. </dd></dl>
+
+</div>
+</div>
+<a id="ga5be66231d8816001aca1a5feb47e627b" name="ga5be66231d8816001aca1a5feb47e627b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5be66231d8816001aca1a5feb47e627b">&#9670;&#160;</a></span>SoundAE_PlayFileAsEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short SoundAE_PlayFileAsEvent </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>event_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cepid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>msg_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>folder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Play custom sound. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event_id</td><td>event ID </td></tr>
+    <tr><td class="paramname">cepid</td><td>GBS message CEPID </td></tr>
+    <tr><td class="paramname">msg_id</td><td>GBS message ID </td></tr>
+    <tr><td class="paramname">folder</td><td>folder for custom sound, can be NULL </td></tr>
+    <tr><td class="paramname">file</td><td>file for custom sound, can be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Untested function that is not found in any ELF's. </dd></dl>
+
+</div>
+</div>
+<a id="ga0e7bb9d09a996dbbd3e2c5f5a5f7b541" name="ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e7bb9d09a996dbbd3e2c5f5a5f7b541">&#9670;&#160;</a></span>RamAudioHook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamAudioHook </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the AudioHook. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+
+</div>
+</div>
+<a id="ga6c3fed1da880a2015c219cebd29dc3ea" name="ga6c3fed1da880a2015c219cebd29dc3ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c3fed1da880a2015c219cebd29dc3ea">&#9670;&#160;</a></span>RamIsSoundRecordingActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamIsSoundRecordingActive </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if active recording of the sound. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+
+</div>
+</div>
+<a id="ga6dfbc1dd05ec10a52987bb1691cd8ea6" name="ga6dfbc1dd05ec10a52987bb1691cd8ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6dfbc1dd05ec10a52987bb1691cd8ea6">&#9670;&#160;</a></span>RamSoundRecordingQuality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamSoundRecordingQuality </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quality of the current sound recording. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
 
 </div>
 </div>

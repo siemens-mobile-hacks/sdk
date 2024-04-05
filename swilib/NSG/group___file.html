@@ -248,6 +248,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6b7f28abc85d626d57100e777f1df80e" id="r_ga6b7f28abc85d626d57100e777f1df80e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e">sys_truncate</a> (int fd, int length, uint32_t *err)</td></tr>
 <tr class="memdesc:ga6b7f28abc85d626d57100e777f1df80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate the file to the given size.  <br /></td></tr>
 <tr class="separator:ga6b7f28abc85d626d57100e777f1df80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98e3866225de4a2360c23e31c7f86f7e" id="r_ga98e3866225de4a2360c23e31c7f86f7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga98e3866225de4a2360c23e31c7f86f7e">sys_stat</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, <a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *stat, uint32_t *err)</td></tr>
+<tr class="memdesc:ga98e3866225de4a2360c23e31c7f86f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the file or directory.  <br /></td></tr>
+<tr class="separator:ga98e3866225de4a2360c23e31c7f86f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f0d84fbfbe19afd6c1b6e0e13e67047" id="r_ga3f0d84fbfbe19afd6c1b6e0e13e67047"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f0d84fbfbe19afd6c1b6e0e13e67047">sys_fstat</a> (int fd, <a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *stat, uint32_t *err)</td></tr>
+<tr class="memdesc:ga3f0d84fbfbe19afd6c1b6e0e13e67047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the file or directory by fd.  <br /></td></tr>
+<tr class="separator:ga3f0d84fbfbe19afd6c1b6e0e13e67047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab746480168bad1f06dcc65b3578323c9" id="r_gab746480168bad1f06dcc65b3578323c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab746480168bad1f06dcc65b3578323c9">sys_format</a> (uint16_t drive, uint32_t *err)</td></tr>
+<tr class="memdesc:gab746480168bad1f06dcc65b3578323c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format drive by index.  <br /></td></tr>
+<tr class="separator:gab746480168bad1f06dcc65b3578323c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeb80310d75b8b8edc0ce3d2fa2a9dea4" id="r_gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeb80310d75b8b8edc0ce3d2fa2a9dea4">setfilesize</a> (int fd, uint32_t length, uint32_t *err)</td></tr>
 <tr class="memdesc:gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate or grow the file to the given size.  <br /></td></tr>
 <tr class="separator:gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,9 +275,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3bdbff6d98f50d4074613115a197cabd" id="r_ga3bdbff6d98f50d4074613115a197cabd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bdbff6d98f50d4074613115a197cabd">SetFileAttrib</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, uint8_t attr, uint32_t *err)</td></tr>
 <tr class="memdesc:ga3bdbff6d98f50d4074613115a197cabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set attributes for the file or directory.  <br /></td></tr>
 <tr class="separator:ga3bdbff6d98f50d4074613115a197cabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga85d6d0cb81f7293274e03497a6fadfca" id="r_ga85d6d0cb81f7293274e03497a6fadfca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga85d6d0cb81f7293274e03497a6fadfca">GetFileStats</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, <a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *stat, uint32_t *err)</td></tr>
-<tr class="memdesc:ga85d6d0cb81f7293274e03497a6fadfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the file or directory.  <br /></td></tr>
-<tr class="separator:ga85d6d0cb81f7293274e03497a6fadfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad5da703a03c070901e1f5fc4b66e4176" id="r_gad5da703a03c070901e1f5fc4b66e4176"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad5da703a03c070901e1f5fc4b66e4176">GetFileProp</a> (<a class="el" href="#struct_f_i_l_e___p_r_o_p">FILE_PROP</a> *props, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path)</td></tr>
 <tr class="memdesc:gad5da703a03c070901e1f5fc4b66e4176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get extended file properties.  <br /></td></tr>
 <tr class="separator:gad5da703a03c070901e1f5fc4b66e4176"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +300,9 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Legacy names for old GCC code.</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>These functions have a bad underscore name, which is bad for the public API. </p>
 </td></tr>
+<tr class="memitem:ga85d6d0cb81f7293274e03497a6fadfca" id="r_ga85d6d0cb81f7293274e03497a6fadfca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga85d6d0cb81f7293274e03497a6fadfca">GetFileStats</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, <a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *stat, uint32_t *err)</td></tr>
+<tr class="memdesc:ga85d6d0cb81f7293274e03497a6fadfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the file or directory.     <br /></td></tr>
+<tr class="separator:ga85d6d0cb81f7293274e03497a6fadfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga523cb78ce765d4620f7fa96b15e1d91a" id="r_ga523cb78ce765d4620f7fa96b15e1d91a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga523cb78ce765d4620f7fa96b15e1d91a">_open</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, uint32_t mode, uint32_t permission, uint32_t *err)</td></tr>
 <tr class="memdesc:ga523cb78ce765d4620f7fa96b15e1d91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file.     <br /></td></tr>
 <tr class="separator:ga523cb78ce765d4620f7fa96b15e1d91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -587,7 +596,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00094">94</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00095">95</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -633,7 +642,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00150">150</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00151">151</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -1045,6 +1054,111 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga98e3866225de4a2360c23e31c7f86f7e" name="ga98e3866225de4a2360c23e31c7f86f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98e3866225de4a2360c23e31c7f86f7e">&#9670;&#160;</a></span>sys_stat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_stat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *</td>          <td class="paramname"><span class="paramname"><em>stat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get information about the file or directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">path</td><td>path to the file or directory. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">stat</td><td>pointer where the information will be written (<a class="el" href="#struct_f_s_t_a_t_s" title="Information about a file or directory.">FSTATS</a>) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga3f0d84fbfbe19afd6c1b6e0e13e67047" name="ga3f0d84fbfbe19afd6c1b6e0e13e67047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f0d84fbfbe19afd6c1b6e0e13e67047">&#9670;&#160;</a></span>sys_fstat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_fstat </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *</td>          <td class="paramname"><span class="paramname"><em>stat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get information about the file or directory by fd. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">fd</td><td>file descriptor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">stat</td><td>pointer where the information will be written (<a class="el" href="#struct_f_s_t_a_t_s" title="Information about a file or directory.">FSTATS</a>) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="gab746480168bad1f06dcc65b3578323c9" name="gab746480168bad1f06dcc65b3578323c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab746480168bad1f06dcc65b3578323c9">&#9670;&#160;</a></span>sys_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_format </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>drive</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format drive by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">drive</td><td>drive index (0 - 0:, 1 - 1:, 2 - 2:, 3 - 4:) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
 <a id="gaeb80310d75b8b8edc0ce3d2fa2a9dea4" name="gaeb80310d75b8b8edc0ce3d2fa2a9dea4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeb80310d75b8b8edc0ce3d2fa2a9dea4">&#9670;&#160;</a></span>setfilesize()</h2>
 
@@ -1116,7 +1230,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga702c596a387e5fbe8ac2e39d3f37ad69" title="Rename file or directory.">sys_rename</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga702c596a387e5fbe8ac2e39d3f37ad69" title="Rename file or directory.">sys_rename</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1251,43 +1365,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga85d6d0cb81f7293274e03497a6fadfca" name="ga85d6d0cb81f7293274e03497a6fadfca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85d6d0cb81f7293274e03497a6fadfca">&#9670;&#160;</a></span>GetFileStats()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GetFileStats </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *</td>          <td class="paramname"><span class="paramname"><em>stat</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get information about the file or directory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">path</td><td>path to the file or directory. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">stat</td><td>pointer where the information will be written (<a class="el" href="#struct_f_s_t_a_t_s" title="Information about a file or directory.">FSTATS</a>) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
-
-</div>
-</div>
 <a id="gad5da703a03c070901e1f5fc4b66e4176" name="gad5da703a03c070901e1f5fc4b66e4176"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad5da703a03c070901e1f5fc4b66e4176">&#9670;&#160;</a></span>GetFileProp()</h2>
 
@@ -1348,7 +1425,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>length in clocks (1 tick - 4.615 ms) </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>Different function signatures across platforms! Always use: <a class="el" href="#gad5da703a03c070901e1f5fc4b66e4176" title="Get extended file properties.">GetFileProp</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>Different function signatures across platforms! Always use: <a class="el" href="#gad5da703a03c070901e1f5fc4b66e4176" title="Get extended file properties.">GetFileProp</a> </dd></dl>
 
 </div>
 </div>
@@ -1518,6 +1595,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga85d6d0cb81f7293274e03497a6fadfca" name="ga85d6d0cb81f7293274e03497a6fadfca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85d6d0cb81f7293274e03497a6fadfca">&#9670;&#160;</a></span>GetFileStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetFileStats </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#struct_f_s_t_a_t_s">FSTATS</a> *</td>          <td class="paramname"><span class="paramname"><em>stat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get information about the file or directory.    </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">path</td><td>path to the file or directory. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">stat</td><td>pointer where the information will be written (<a class="el" href="#struct_f_s_t_a_t_s" title="Information about a file or directory.">FSTATS</a>) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga98e3866225de4a2360c23e31c7f86f7e" title="Get information about the file or directory.">sys_stat</a> instead. </dd></dl>
+
+</div>
+</div>
 <a id="ga523cb78ce765d4620f7fa96b15e1d91a" name="ga523cb78ce765d4620f7fa96b15e1d91a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga523cb78ce765d4620f7fa96b15e1d91a">&#9670;&#160;</a></span>_open()</h2>
 
@@ -1558,7 +1673,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>file descriptor or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#gad2ac302502bbce06a205ea21ceb15fcc" title="Open the file.">sys_open</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#gad2ac302502bbce06a205ea21ceb15fcc" title="Open the file.">sys_open</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1602,7 +1717,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>count of read bytes or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga564d3c3db7c866e575ba90e6ef022715" title="Read data from a file.">sys_read</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga564d3c3db7c866e575ba90e6ef022715" title="Read data from a file.">sys_read</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1646,7 +1761,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>count of written bytes or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#gaaba4ef3eac230afc28257ed316ae1d7b" title="Write data to a file.">sys_write</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#gaaba4ef3eac230afc28257ed316ae1d7b" title="Write data to a file.">sys_write</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1678,7 +1793,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga204c5463285740ee8c16b41f2635fbc5" title="Close file descriptor.">sys_close</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga204c5463285740ee8c16b41f2635fbc5" title="Close file descriptor.">sys_close</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1710,7 +1825,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga0246788938acb06e57501a927da65b69" title="Force write data from the OS write buffer.">sys_fflush</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga0246788938acb06e57501a927da65b69" title="Force write data from the OS write buffer.">sys_fflush</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1760,7 +1875,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga84d3d342c2e503e01e6f4ba5977f4076" title="Move to the desired position within the file.">sys_lseek</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga84d3d342c2e503e01e6f4ba5977f4076" title="Move to the desired position within the file.">sys_lseek</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1792,7 +1907,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga4b9cce0e14322f30472d0d6c3c14e7d6" title="Create a new directory.">sys_mkdir</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga4b9cce0e14322f30472d0d6c3c14e7d6" title="Create a new directory.">sys_mkdir</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1824,7 +1939,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga684968556ddc2ee3a74a3488bb20d49d" title="Remove directory.">sys_rmdir</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga684968556ddc2ee3a74a3488bb20d49d" title="Remove directory.">sys_rmdir</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1856,7 +1971,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga47df247922f3c07a98268136b6bb7a81" title="Remove file.">sys_unlink</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga47df247922f3c07a98268136b6bb7a81" title="Remove file.">sys_unlink</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1894,7 +2009,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e" title="Truncate the file to the given size.">sys_truncate</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e" title="Truncate the file to the given size.">sys_truncate</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1938,7 +2053,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>file descriptor or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#gad2ac302502bbce06a205ea21ceb15fcc" title="Open the file.">sys_open</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#gad2ac302502bbce06a205ea21ceb15fcc" title="Open the file.">sys_open</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1982,7 +2097,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>count of read bytes or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga564d3c3db7c866e575ba90e6ef022715" title="Read data from a file.">sys_read</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga564d3c3db7c866e575ba90e6ef022715" title="Read data from a file.">sys_read</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2014,7 +2129,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga204c5463285740ee8c16b41f2635fbc5" title="Close file descriptor.">sys_close</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga204c5463285740ee8c16b41f2635fbc5" title="Close file descriptor.">sys_close</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2046,7 +2161,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga0246788938acb06e57501a927da65b69" title="Force write data from the OS write buffer.">sys_fflush</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga0246788938acb06e57501a927da65b69" title="Force write data from the OS write buffer.">sys_fflush</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2090,7 +2205,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>count of written bytes or error (&lt; 0)    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#gaaba4ef3eac230afc28257ed316ae1d7b" title="Write data to a file.">sys_write</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#gaaba4ef3eac230afc28257ed316ae1d7b" title="Write data to a file.">sys_write</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2140,7 +2255,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga84d3d342c2e503e01e6f4ba5977f4076" title="Move to the desired position within the file.">sys_lseek</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga84d3d342c2e503e01e6f4ba5977f4076" title="Move to the desired position within the file.">sys_lseek</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2172,7 +2287,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga4b9cce0e14322f30472d0d6c3c14e7d6" title="Create a new directory.">sys_mkdir</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000040">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga4b9cce0e14322f30472d0d6c3c14e7d6" title="Create a new directory.">sys_mkdir</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2204,7 +2319,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga684968556ddc2ee3a74a3488bb20d49d" title="Remove directory.">sys_rmdir</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000041">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga684968556ddc2ee3a74a3488bb20d49d" title="Remove directory.">sys_rmdir</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2236,7 +2351,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga47df247922f3c07a98268136b6bb7a81" title="Remove file.">sys_unlink</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga47df247922f3c07a98268136b6bb7a81" title="Remove file.">sys_unlink</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -2274,7 +2389,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e" title="Truncate the file to the given size.">sys_truncate</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated</a></b></dt><dd>For compatibility with old IAR code. Use <a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e" title="Truncate the file to the given size.">sys_truncate</a> instead. </dd></dl>
 
 </div>
 </div>

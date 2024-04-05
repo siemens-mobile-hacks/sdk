@@ -16,6 +16,7 @@ var dir_b7e24418183484dddf339a907973acea =
     [ "image.h", "image_8h.html", "image_8h" ],
     [ "info.h", "info_8h.html", "info_8h" ],
     [ "java.h", "java_8h.html", "java_8h" ],
+    [ "legacy.h", "legacy_8h.html", "legacy_8h" ],
     [ "libc.h", "libc_8h.html", "libc_8h" ],
     [ "misc.h", "misc_8h.html", "misc_8h" ],
     [ "nucleus.h", "nucleus_8h.html", "nucleus_8h" ],

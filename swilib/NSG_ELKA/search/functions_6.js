@@ -25,5 +25,6 @@ var searchData=
   ['freeunpackabentry_22',['FreeUnpackABentry',['../group___addressbook.html#gad0850336b65c3f8591cbda507367cb00',1,'addressbook.h']]],
   ['freeussd_23',['freeUSSD',['../group___telephony.html#gac56cc133240d272cc165e6a7a30f4a2f',1,'telephony.h']]],
   ['freews_24',['FreeWS',['../group___w_s_h_d_r.html#ga83da28feb6a9675353bfcbabb5aa1014',1,'wstring.h']]],
-  ['fwrite_25',['fwrite',['../group___file.html#gaee40b8f8ad394f1a8d491d9ada7ad2b2',1,'file.h']]]
+  ['freews_5f2_25',['FreeWS_2',['../group___l_e_g_a_c_y.html#gab6cd57f4117d9b9bf20e242cc27921ad',1,'legacy.h']]],
+  ['fwrite_26',['fwrite',['../group___file.html#gaee40b8f8ad394f1a8d491d9ada7ad2b2',1,'file.h']]]
 ];

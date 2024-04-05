@@ -257,144 +257,197 @@ $(function(){initNavTree('swilib_2obs_8h_source.html',''); initResizable(true); 
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga1905ba224d3468dc7cb63a2e9ade5c5a">  314</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga1905ba224d3468dc7cb63a2e9ade5c5a">Obs_Sound_GetVolume</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">char</span> *volume)</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x26D, <a class="code hl_function" href="group___o_b_s.html#ga1905ba224d3468dc7cb63a2e9ade5c5a">Obs_Sound_GetVolume</a>, (obs, volume));</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x27B)</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">  323</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <a class="code hl_struct" href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a> *csm)</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x27B, <a class="code hl_function" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a>, (obs, csm));</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment">//  other events for elka (//NSG)</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment">00 ObsCallback_NoMessage // e_obs_ev_no_message</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="comment">01 ObsCallback_GetInfoConfirmation</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">02 ObsCallback_ConversionStarted</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment">03 ObsCallback_ConversionCompleted</span></div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">04 ObsCallback_ConversionAborted</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment">05 ObsCallback_ConversionDestroyed</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="comment">06 ObsCallback_ParamChanged</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="comment">07 //unk //ObsCallback_ParamUpdated //unk</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">08 ObsCallback_StatusChanged  r0 -obs r1-live_mode = %d, r2 -err-code = %d</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment">09 ObsCallback_StatusUpdated</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="comment">0A ObsCallback_FrameUpdate</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="comment">0B ObsCallback_LoopUpdate </span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="comment">0C ObsCallback_Error</span></div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="comment">0D //e_obs_ev_emb_found</span></div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment">0E //e_obs_ev_emb_processed</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="comment">0F ObsCallback_OutputReady  (must call Obs_Output_GetData);</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="comment">10 ObsCallback_InputConsumed</span></div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment">11 ObsCallback_InputMoreData</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment">12 ObsCallback_InputSeek  //setposition</span></div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="comment">13 Jnf_PlaybackStoppedIndication //e_obs_ev_stop_ind</span></div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="comment">14 Jnf_PlaybackPausedIndication</span></div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment">15 Jnf_PlaybackResumeIndication</span></div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="comment">16 Jnf_PlaybackStopConfirmation</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="comment">17 Jnf_PlaybackPauseConfirmation</span></div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="comment">18 Jnf_PlaybackResumeConfirmation</span></div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="comment">19 //e_obs_ev_init_req</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="comment">1A //e_obs_ev_prepare_req</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="comment">1B //e_obs_ev_get_header_size</span></div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="comment">1C //e_obs_ev_data_correct</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="comment">1D //e_obs_ev_get_info_req&quot;</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="comment">1E //e_obs_ev_convert_req</span></div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="comment">1F //e_obs_ev_pause_object_req</span></div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span><span class="comment">20 //e_obs_ev_resume_object_req</span></div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="comment">21 //e_obs_ev_abort_conversion_req</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="comment">22 //e_obs_ev_finalise_object_req</span></div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment">23 //e_obs_ev_destroy_object_req</span></div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment">24 //e_obs_ev_stop_object_req</span></div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">25 //e_obs_ev_rewind_req</span></div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">26 //e_obs_ev_start_timer_req</span></div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">27 //e_obs_ev_capability_req</span></div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="comment">28 //e_obs_ev_passify_object_req</span></div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="comment">29 //unk</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="comment">2A //e_obs_ev_timer_ind</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="comment">2B //e_obs_live_postponed</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="comment"></span> </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="comment">2C //-  e_obs_ev_mam_performance_ind</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="comment">2D //2C e_obs_ev_abort_conversion_con</span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="comment">2E //2D e_obs_ev_pause_object_con</span></div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="comment">2F //2E e_obs_ev_resume_object_con</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="comment">30 //2F e_obs_ev_finalise_object_con</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="comment">31 //30 e_obs_ev_destroy_object_con</span></div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="comment">32 /31/e_obs_ev_stop_object_con</span></div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="comment">33 //32e_obs_ev_init_con</span></div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="comment">34 //33 e_obs_ev_cannot_process</span></div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="comment">35 //34  Jnf_PlaybackPrepareConfirmation</span></div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="comment">36 //35 e_obs_ev_convert_con</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="comment">37 //36Jnf_PlaybackCapabilityConfirmation</span></div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="comment">38 //e_obs_ev_frame_done_object_con</span></div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="comment">39 //e_obs_ev_mam_prio_start</span></div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="comment">3A //e_obs_ev_mam_prio_stop</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="comment">3B //e_obs_ev_mam_prio_pause</span></div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="comment">3C //e_obs_ev_mam_prio_resume</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="comment">3D //e_obs_ev_mam_none_req</span></div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="comment">3E //e_obs_ev_mam_register_req</span></div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span><span class="comment">3F //e_obs_ev_mam_start_req</span></div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="comment">40 //e_obs_ev_mam_pause_req</span></div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="comment">41 //e_obs_ev_mam_stop_req</span></div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="comment">42 //e_obs_ev_mam_resume_req</span></div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span><span class="comment">43 //e_obs_ev_mam_deregister_req</span></div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="comment">44 //e_obs_ev_mam_register_grant</span></div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span><span class="comment">45 //e_obs_ev_mam_deregister_grant</span></div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span><span class="comment">46 //e_obs_ev_mam_start_grant</span></div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="comment">47 //e_obs_ev_mam_start_reject</span></div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="comment">48 //e_obs_ev_mam_start_postpone</span></div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="comment">49 //e_obs_ev_mam_pause_grant</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="comment">4A //e_obs_ev_mam_resume_grant</span></div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="comment">4B //e_obs_ev_mam_resume_reject</span></div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="comment">4C //e_obs_ev_mam_resume_postpone</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="comment">4D //e_obs_ev_mam_stop_grant</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="comment">4E //e_obs_ev_mam_cannotprocessnow</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span><span class="comment">4F //unk</span></div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="comment">50 //unk</span></div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="comment">51 //unk</span></div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="comment">52 //e_obs_ev_mm_vplayer_stop_con</span></div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span><span class="comment">53 //unk</span></div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><span class="comment">54 //e_obs_ev_mm_vplayer_eos_reached</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span><span class="comment">55 //unk</span></div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="comment">56 //e_obs_ev_mm_vplayer_init_error</span></div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span><span class="comment">57 //e_obs_ev_mm_vplayer_play_error</span></div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span><span class="comment">58 //e_obs_ev_mm_vplayer_stop_error</span></div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="comment">59 //e_obs_ev_mm_vplayer_finalise_error</span></div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="comment">5A //e_obs_ev_mm_vplayer_dec_error</span></div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><span class="comment">5B //unk</span></div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><span class="comment">5C //unk</span></div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="comment">5D //e_obs_ev_mm_stop_con</span></div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="comment">5E //e_obs_ev_mm_snapshot_req</span></div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="comment">5F //e_obs_ev_mm_redraw_req</span></div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span><span class="comment">60 //e_obs_ev_mm_av_input_ready</span></div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="comment">61 // 51 e_obs_ev_mm_finalise_req</span></div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="comment">62 //e_obs_ev_mm_poll_pv_scheduler_req&quot;</span></div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="comment">63 //e_obs_ev_mm_poll_pv_scheduler_con</span></div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span><span class="comment">64 //unk</span></div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span><span class="comment">65 //e_obs_ev_tobj_change_state</span></div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span><span class="comment">66 //57 end</span></div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span><span class="comment">//sgold 2f</span></div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="comment"></span> </div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span><a class="code hl_define" href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">__swilib_end</a></div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x26F)</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga462f2393ec3a2d81620dedf450d51a31">  324</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga462f2393ec3a2d81620dedf450d51a31">Obs_Sound_SetAMRFormat</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> format)</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x26F, <a class="code hl_function" href="group___o_b_s.html#ga462f2393ec3a2d81620dedf450d51a31">Obs_Sound_SetAMRFormat</a>, (obs, format));</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x270)</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga07bd12ae9eb107cb40936f62b271d8b1">  334</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga07bd12ae9eb107cb40936f62b271d8b1">Obs_Sound_SetAMRDTX</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> dtx)</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x270, <a class="code hl_function" href="group___o_b_s.html#ga07bd12ae9eb107cb40936f62b271d8b1">Obs_Sound_SetAMRDTX</a>, (obs, dtx));</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x271)</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="group___o_b_s.html#gada0646629bbf3aa328e18e67062081df">  344</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#gada0646629bbf3aa328e18e67062081df">Obs_Sound_SetNofChannels</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> num_channels)</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x271, <a class="code hl_function" href="group___o_b_s.html#gada0646629bbf3aa328e18e67062081df">Obs_Sound_SetNofChannels</a>, (obs, num_channels));</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x272)</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga363af70ab1875821701e921bdf1840ac">  354</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga363af70ab1875821701e921bdf1840ac">Obs_Sound_SetAMRMode</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> data_rate)</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x272, <a class="code hl_function" href="group___o_b_s.html#ga363af70ab1875821701e921bdf1840ac">Obs_Sound_SetAMRMode</a>, (obs, data_rate));</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x273)</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga1d7bd17c143c219790e0930120a664a8">  364</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga1d7bd17c143c219790e0930120a664a8">Obs_Sound_SetFIsRecording</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> is_recording)</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x273, <a class="code hl_function" href="group___o_b_s.html#ga1d7bd17c143c219790e0930120a664a8">Obs_Sound_SetFIsRecording</a>, (obs, is_recording));</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x274)</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="group___o_b_s.html#gad906c0127f9840b8f7c3cda6e4e3b1ef">  374</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#gad906c0127f9840b8f7c3cda6e4e3b1ef">Obs_Sound_SetMaxFileSize</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> max_file_size)</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x274, <a class="code hl_function" href="group___o_b_s.html#gad906c0127f9840b8f7c3cda6e4e3b1ef">Obs_Sound_SetMaxFileSize</a>, (obs, max_file_size));</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x275)</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga1132ce1697cc051f0a2b587addc1e12b">  384</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga1132ce1697cc051f0a2b587addc1e12b">Obs_Sound_SetRecordingMode</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> recording_mode)</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x275, <a class="code hl_function" href="group___o_b_s.html#ga1132ce1697cc051f0a2b587addc1e12b">Obs_Sound_SetRecordingMode</a>, (obs, recording_mode));</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="preprocessor">#ifdef NEWSGOLD</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x276)</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>int <a class="code hl_function" href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">Obs_SetOutput_File</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <a class="code hl_define" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="code hl_struct" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *filename)</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x276, <a class="code hl_function" href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">Obs_SetOutput_File</a>, (obs, filename));</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x276)</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">  400</a></span>int <a class="code hl_function" href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">Obs_SetOutput_File</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <a class="code hl_define" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <span class="keywordtype">char</span> *filename)</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x276, <a class="code hl_function" href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">Obs_SetOutput_File</a>, (obs, filename));</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x277)</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno"><a class="line" href="group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4">  411</a></span>int <a class="code hl_function" href="group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4">Obs_SetOutput_Uid</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> uid)</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x277, <a class="code hl_function" href="group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4">Obs_SetOutput_Uid</a>, (obs, uid));</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x278)</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno"><a class="line" href="group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5">  421</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5">Obs_Sound_SetBitrate</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <span class="keywordtype">int</span> bitrate)</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x278, <a class="code hl_function" href="group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5">Obs_Sound_SetBitrate</a>, (obs, bitrate));</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span><a class="code hl_define" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(0x27B)</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">  431</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a>(<a class="code hl_typedef" href="group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <a class="code hl_struct" href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a> *csm)</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span><a class="code hl_define" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(0x27B, <a class="code hl_function" href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a>, (obs, csm));</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span><span class="comment">//  other events for elka (//NSG)</span></div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span><span class="comment">00 ObsCallback_NoMessage // e_obs_ev_no_message</span></div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span><span class="comment">01 ObsCallback_GetInfoConfirmation</span></div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span><span class="comment">02 ObsCallback_ConversionStarted</span></div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span><span class="comment">03 ObsCallback_ConversionCompleted</span></div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span><span class="comment">04 ObsCallback_ConversionAborted</span></div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span><span class="comment">05 ObsCallback_ConversionDestroyed</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span><span class="comment">06 ObsCallback_ParamChanged</span></div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span><span class="comment">07 //unk //ObsCallback_ParamUpdated //unk</span></div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span><span class="comment">08 ObsCallback_StatusChanged  r0 -obs r1-live_mode = %d, r2 -err-code = %d</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span><span class="comment">09 ObsCallback_StatusUpdated</span></div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span><span class="comment">0A ObsCallback_FrameUpdate</span></div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span><span class="comment">0B ObsCallback_LoopUpdate </span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="comment">0C ObsCallback_Error</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="comment">0D //e_obs_ev_emb_found</span></div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span><span class="comment">0E //e_obs_ev_emb_processed</span></div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span><span class="comment">0F ObsCallback_OutputReady  (must call Obs_Output_GetData);</span></div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="comment">10 ObsCallback_InputConsumed</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="comment">11 ObsCallback_InputMoreData</span></div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="comment">12 ObsCallback_InputSeek  //setposition</span></div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span><span class="comment">13 Jnf_PlaybackStoppedIndication //e_obs_ev_stop_ind</span></div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span><span class="comment">14 Jnf_PlaybackPausedIndication</span></div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span><span class="comment">15 Jnf_PlaybackResumeIndication</span></div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="comment">16 Jnf_PlaybackStopConfirmation</span></div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span><span class="comment">17 Jnf_PlaybackPauseConfirmation</span></div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span><span class="comment">18 Jnf_PlaybackResumeConfirmation</span></div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span><span class="comment">19 //e_obs_ev_init_req</span></div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><span class="comment">1A //e_obs_ev_prepare_req</span></div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="comment">1B //e_obs_ev_get_header_size</span></div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span><span class="comment">1C //e_obs_ev_data_correct</span></div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span><span class="comment">1D //e_obs_ev_get_info_req&quot;</span></div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span><span class="comment">1E //e_obs_ev_convert_req</span></div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span><span class="comment">1F //e_obs_ev_pause_object_req</span></div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span><span class="comment">20 //e_obs_ev_resume_object_req</span></div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span><span class="comment">21 //e_obs_ev_abort_conversion_req</span></div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span><span class="comment">22 //e_obs_ev_finalise_object_req</span></div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span><span class="comment">23 //e_obs_ev_destroy_object_req</span></div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span><span class="comment">24 //e_obs_ev_stop_object_req</span></div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span><span class="comment">25 //e_obs_ev_rewind_req</span></div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span><span class="comment">26 //e_obs_ev_start_timer_req</span></div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span><span class="comment">27 //e_obs_ev_capability_req</span></div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span><span class="comment">28 //e_obs_ev_passify_object_req</span></div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span><span class="comment">29 //unk</span></div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span><span class="comment">2A //e_obs_ev_timer_ind</span></div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span><span class="comment">2B //e_obs_live_postponed</span></div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span><span class="comment"></span> </div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span><span class="comment">2C //-  e_obs_ev_mam_performance_ind</span></div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span><span class="comment">2D //2C e_obs_ev_abort_conversion_con</span></div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span><span class="comment">2E //2D e_obs_ev_pause_object_con</span></div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span><span class="comment">2F //2E e_obs_ev_resume_object_con</span></div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span><span class="comment">30 //2F e_obs_ev_finalise_object_con</span></div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="comment">31 //30 e_obs_ev_destroy_object_con</span></div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="comment">32 /31/e_obs_ev_stop_object_con</span></div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span><span class="comment">33 //32e_obs_ev_init_con</span></div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span><span class="comment">34 //33 e_obs_ev_cannot_process</span></div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span><span class="comment">35 //34  Jnf_PlaybackPrepareConfirmation</span></div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="comment">36 //35 e_obs_ev_convert_con</span></div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span><span class="comment">37 //36Jnf_PlaybackCapabilityConfirmation</span></div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span><span class="comment">38 //e_obs_ev_frame_done_object_con</span></div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="comment">39 //e_obs_ev_mam_prio_start</span></div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span><span class="comment">3A //e_obs_ev_mam_prio_stop</span></div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span><span class="comment">3B //e_obs_ev_mam_prio_pause</span></div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span><span class="comment">3C //e_obs_ev_mam_prio_resume</span></div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span><span class="comment">3D //e_obs_ev_mam_none_req</span></div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span><span class="comment">3E //e_obs_ev_mam_register_req</span></div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span><span class="comment">3F //e_obs_ev_mam_start_req</span></div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span><span class="comment">40 //e_obs_ev_mam_pause_req</span></div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="comment">41 //e_obs_ev_mam_stop_req</span></div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="comment">42 //e_obs_ev_mam_resume_req</span></div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="comment">43 //e_obs_ev_mam_deregister_req</span></div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span><span class="comment">44 //e_obs_ev_mam_register_grant</span></div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span><span class="comment">45 //e_obs_ev_mam_deregister_grant</span></div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span><span class="comment">46 //e_obs_ev_mam_start_grant</span></div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><span class="comment">47 //e_obs_ev_mam_start_reject</span></div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span><span class="comment">48 //e_obs_ev_mam_start_postpone</span></div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span><span class="comment">49 //e_obs_ev_mam_pause_grant</span></div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span><span class="comment">4A //e_obs_ev_mam_resume_grant</span></div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span><span class="comment">4B //e_obs_ev_mam_resume_reject</span></div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span><span class="comment">4C //e_obs_ev_mam_resume_postpone</span></div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="comment">4D //e_obs_ev_mam_stop_grant</span></div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span><span class="comment">4E //e_obs_ev_mam_cannotprocessnow</span></div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="comment">4F //unk</span></div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="comment">50 //unk</span></div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span><span class="comment">51 //unk</span></div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span><span class="comment">52 //e_obs_ev_mm_vplayer_stop_con</span></div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span><span class="comment">53 //unk</span></div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span><span class="comment">54 //e_obs_ev_mm_vplayer_eos_reached</span></div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span><span class="comment">55 //unk</span></div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span><span class="comment">56 //e_obs_ev_mm_vplayer_init_error</span></div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span><span class="comment">57 //e_obs_ev_mm_vplayer_play_error</span></div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span><span class="comment">58 //e_obs_ev_mm_vplayer_stop_error</span></div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span><span class="comment">59 //e_obs_ev_mm_vplayer_finalise_error</span></div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span><span class="comment">5A //e_obs_ev_mm_vplayer_dec_error</span></div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span><span class="comment">5B //unk</span></div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="comment">5C //unk</span></div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span><span class="comment">5D //e_obs_ev_mm_stop_con</span></div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span><span class="comment">5E //e_obs_ev_mm_snapshot_req</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span><span class="comment">5F //e_obs_ev_mm_redraw_req</span></div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span><span class="comment">60 //e_obs_ev_mm_av_input_ready</span></div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span><span class="comment">61 // 51 e_obs_ev_mm_finalise_req</span></div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span><span class="comment">62 //e_obs_ev_mm_poll_pv_scheduler_req&quot;</span></div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span><span class="comment">63 //e_obs_ev_mm_poll_pv_scheduler_con</span></div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span><span class="comment">64 //unk</span></div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span><span class="comment">65 //e_obs_ev_tobj_change_state</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="comment">66 //57 end</span></div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span><span class="comment">//sgold 2f</span></div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span><span class="comment"></span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span><a class="code hl_define" href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">__swilib_end</a></div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
 <div class="ttc" id="abase_8h_html"><div class="ttname"><a href="base_8h.html">base.h</a></div></div>
 <div class="ttc" id="acsm_8h_html"><div class="ttname"><a href="csm_8h.html">csm.h</a></div></div>
-<div class="ttc" id="adoxygen_8h_html_a29c180570710dd0fbf1cc1e90b8d511b"><div class="ttname"><a href="doxygen_8h.html#a29c180570710dd0fbf1cc1e90b8d511b">__swilib_begin</a></div><div class="ttdeci">#define __swilib_begin</div><div class="ttdoc">Doxygen parser support.</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00007">doxygen.h:7</a></div></div>
-<div class="ttc" id="adoxygen_8h_html_a69fa9d5bc04573fff4c69974f0c3cc9f"><div class="ttname"><a href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a></div><div class="ttdeci">#define __swi_end(number, func, call)</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00011">doxygen.h:11</a></div></div>
-<div class="ttc" id="adoxygen_8h_html_abd349c4a0c9890aaba1618f5cc6eccb4"><div class="ttname"><a href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a></div><div class="ttdeci">#define __swi_begin(number)</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00010">doxygen.h:10</a></div></div>
-<div class="ttc" id="adoxygen_8h_html_aec0b55b8d210767e0f458236ba02f733"><div class="ttname"><a href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">__swilib_end</a></div><div class="ttdeci">#define __swilib_end</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00008">doxygen.h:8</a></div></div>
+<div class="ttc" id="adoxygen_8h_html_a29c180570710dd0fbf1cc1e90b8d511b"><div class="ttname"><a href="doxygen_8h.html#a29c180570710dd0fbf1cc1e90b8d511b">__swilib_begin</a></div><div class="ttdeci">#define __swilib_begin</div><div class="ttdoc">Doxygen parser support.</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00018">doxygen.h:18</a></div></div>
+<div class="ttc" id="adoxygen_8h_html_a69fa9d5bc04573fff4c69974f0c3cc9f"><div class="ttname"><a href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a></div><div class="ttdeci">#define __swi_end(number, func, call)</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00022">doxygen.h:22</a></div></div>
+<div class="ttc" id="adoxygen_8h_html_abd349c4a0c9890aaba1618f5cc6eccb4"><div class="ttname"><a href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a></div><div class="ttdeci">#define __swi_begin(number)</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00021">doxygen.h:21</a></div></div>
+<div class="ttc" id="adoxygen_8h_html_aec0b55b8d210767e0f458236ba02f733"><div class="ttname"><a href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">__swilib_end</a></div><div class="ttdeci">#define __swilib_end</div><div class="ttdef"><b>Definition</b> <a href="doxygen_8h_source.html#l00019">doxygen.h:19</a></div></div>
 <div class="ttc" id="agroup___c_s_m_html_struct_c_s_m___r_a_m"><div class="ttname"><a href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a></div><div class="ttdoc">CSM object.</div><div class="ttdef"><b>Definition</b> <a href="csm_8h_source.html#l00040">csm.h:40</a></div></div>
 <div class="ttc" id="agroup___g_b_s_html_struct_g_b_s___m_s_g"><div class="ttname"><a href="group___g_b_s.html#struct_g_b_s___m_s_g">GBS_MSG</a></div><div class="ttdoc">GBS Message.</div><div class="ttdef"><b>Definition</b> <a href="gbs_8h_source.html#l00111">gbs.h:111</a></div></div>
 <div class="ttc" id="agroup___image_html_struct_i_m_g_h_d_r"><div class="ttname"><a href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a></div><div class="ttdoc">Image header.</div><div class="ttdef"><b>Definition</b> <a href="image_8h_source.html#l00054">image.h:54</a></div></div>
 <div class="ttc" id="agroup___o_b_s_html_aeb3e2c0d81c754c2687640e92928e150"><div class="ttname"><a href="group___o_b_s.html#aeb3e2c0d81c754c2687640e92928e150">OBSevent::func</a></div><div class="ttdeci">void * func</div><div class="ttdoc">event callback</div><div class="ttdef"><b>Definition</b> <a href="#l00029">obs.h:29</a></div></div>
 <div class="ttc" id="agroup___o_b_s_html_afa7d47d4035007f8c432b90823cc0671"><div class="ttname"><a href="group___o_b_s.html#afa7d47d4035007f8c432b90823cc0671">OBSevent::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">see ObsEventID</div><div class="ttdef"><b>Definition</b> <a href="#l00028">obs.h:28</a></div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga07bd12ae9eb107cb40936f62b271d8b1"><div class="ttname"><a href="group___o_b_s.html#ga07bd12ae9eb107cb40936f62b271d8b1">Obs_Sound_SetAMRDTX</a></div><div class="ttdeci">int Obs_Sound_SetAMRDTX(HObj obs, int dtx)</div><div class="ttdoc">Set AMR DTX.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga0c1a78d39f0308672423ad63f228ebec"><div class="ttname"><a href="group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec">Obs_SetOutput_File</a></div><div class="ttdeci">int Obs_SetOutput_File(HObj obs, const char *filename)</div><div class="ttdoc">Set output filename.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga0f146d519ae1f882f26e9b527336b4d9"><div class="ttname"><a href="group___o_b_s.html#ga0f146d519ae1f882f26e9b527336b4d9">Obs_Pause</a></div><div class="ttdeci">int Obs_Pause(HObj obs)</div><div class="ttdoc">Pause processing.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga1132ce1697cc051f0a2b587addc1e12b"><div class="ttname"><a href="group___o_b_s.html#ga1132ce1697cc051f0a2b587addc1e12b">Obs_Sound_SetRecordingMode</a></div><div class="ttdeci">int Obs_Sound_SetRecordingMode(HObj obs, int recording_mode)</div><div class="ttdoc">Set mode of the recording.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga1430d097799a7eac1ce96127714c7921"><div class="ttname"><a href="group___o_b_s.html#ga1430d097799a7eac1ce96127714c7921">Obs_TranslateMessageGBS</a></div><div class="ttdeci">int Obs_TranslateMessageGBS(const GBS_MSG *msg, const OBSevent *handlers)</div><div class="ttdoc">Process async callbacks from GBS message.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga1905ba224d3468dc7cb63a2e9ade5c5a"><div class="ttname"><a href="group___o_b_s.html#ga1905ba224d3468dc7cb63a2e9ade5c5a">Obs_Sound_GetVolume</a></div><div class="ttdeci">int Obs_Sound_GetVolume(HObj obs, char *volume)</div><div class="ttdoc">Get current sound volume.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga1a3b48028242bd7b6e898f112cb3651b"><div class="ttname"><a href="group___o_b_s.html#ga1a3b48028242bd7b6e898f112cb3651b">Obs_Sound_SetVolumeEx</a></div><div class="ttdeci">int Obs_Sound_SetVolumeEx(HObj obs, char volume, char delta)</div><div class="ttdoc">Set sound volume.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga1b4d1488640e52ba05ed42b0b0416afa"><div class="ttname"><a href="group___o_b_s.html#ga1b4d1488640e52ba05ed42b0b0416afa">Obs_Resume</a></div><div class="ttdeci">int Obs_Resume(HObj obs)</div><div class="ttdoc">Resume paused processing.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga1d7bd17c143c219790e0930120a664a8"><div class="ttname"><a href="group___o_b_s.html#ga1d7bd17c143c219790e0930120a664a8">Obs_Sound_SetFIsRecording</a></div><div class="ttdeci">int Obs_Sound_SetFIsRecording(HObj obs, int is_recording)</div><div class="ttdoc">Set recording mode.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga1ec293b61943056912882a2f3ef6aa9b"><div class="ttname"><a href="group___o_b_s.html#ga1ec293b61943056912882a2f3ef6aa9b">Obs_GetDuration</a></div><div class="ttdeci">static int Obs_GetDuration(HObj obs, int *position)</div><div class="ttdoc">Get the duration of playing audio or video.</div><div class="ttdef"><b>Definition</b> <a href="#l00272">obs.h:272</a></div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga27636c60e1b47ca9d2078cf1cab6835f"><div class="ttname"><a href="group___o_b_s.html#ga27636c60e1b47ca9d2078cf1cab6835f">Obs_SetInput_Memory</a></div><div class="ttdeci">int Obs_SetInput_Memory(HObj obs, int unk, char *buf, int len)</div><div class="ttdoc">Use the memory as input.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga2aae043f7fe82120c8cc5c808a1523bd"><div class="ttname"><a href="group___o_b_s.html#ga2aae043f7fe82120c8cc5c808a1523bd">Obs_Mam_SetPurpose</a></div><div class="ttdeci">int Obs_Mam_SetPurpose(HObj obs, char purpose)</div><div class="ttdoc">Set purpose for MAM.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga2f29c2b5a0e5cfe2fa51ad960662a306"><div class="ttname"><a href="group___o_b_s.html#ga2f29c2b5a0e5cfe2fa51ad960662a306">Obs_GetInputImageSize</a></div><div class="ttdeci">int Obs_GetInputImageSize(HObj obs, short *w, short *h)</div><div class="ttdoc">Get the resolution of the input image.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga363af70ab1875821701e921bdf1840ac"><div class="ttname"><a href="group___o_b_s.html#ga363af70ab1875821701e921bdf1840ac">Obs_Sound_SetAMRMode</a></div><div class="ttdeci">int Obs_Sound_SetAMRMode(HObj obs, int data_rate)</div><div class="ttdoc">Set AMR data rate.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga462f2393ec3a2d81620dedf450d51a31"><div class="ttname"><a href="group___o_b_s.html#ga462f2393ec3a2d81620dedf450d51a31">Obs_Sound_SetAMRFormat</a></div><div class="ttdeci">int Obs_Sound_SetAMRFormat(HObj obs, int format)</div><div class="ttdoc">Set AMR format.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga53e1efec82f37e288da233b1da6b8226"><div class="ttname"><a href="group___o_b_s.html#ga53e1efec82f37e288da233b1da6b8226">Obs_SetRotation</a></div><div class="ttdeci">int Obs_SetRotation(HObj obs, int angle)</div><div class="ttdoc">Rotate image.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga5996e1c5c62e6374c0a2fdbee807fdae"><div class="ttname"><a href="group___o_b_s.html#ga5996e1c5c62e6374c0a2fdbee807fdae">ObsEventID</a></div><div class="ttdeci">ObsEventID</div><div class="ttdoc">OBS events for async mode.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">obs.h:35</a></div></div>
+<div class="ttc" id="agroup___o_b_s_html_ga5cd7b5e94738f95b264e3dfa855473c5"><div class="ttname"><a href="group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5">Obs_Sound_SetBitrate</a></div><div class="ttdeci">int Obs_Sound_SetBitrate(HObj obs, int bitrate)</div><div class="ttdoc">Set sound bitrate.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga6e6cd9a0aa593e2edea283fbeea00d42"><div class="ttname"><a href="group___o_b_s.html#ga6e6cd9a0aa593e2edea283fbeea00d42">Obs_DestroyObject</a></div><div class="ttdeci">int Obs_DestroyObject(HObj obs)</div><div class="ttdoc">Destroy OBS object.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga8cf82296e8c32face89f3cb12fe5c83b"><div class="ttname"><a href="group___o_b_s.html#ga8cf82296e8c32face89f3cb12fe5c83b">Obs_CreateObject</a></div><div class="ttdeci">HObj Obs_CreateObject(int uid_in, int uid_out, int prio, int msg_callback, int emb4, int sync, uint32_t *err)</div><div class="ttdoc">Create OBS object.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_ga9128328a79fa46e4381eb2b1275395ec"><div class="ttname"><a href="group___o_b_s.html#ga9128328a79fa46e4381eb2b1275395ec">Obs_Output_GetPictstruct</a></div><div class="ttdeci">int Obs_Output_GetPictstruct(HObj obs, IMGHDR **img)</div><div class="ttdoc">Get the IMGHDR of the input image.</div></div>
@@ -407,6 +460,9 @@ $(function(){initNavTree('swilib_2obs_8h_source.html',''); initResizable(true); 
 <div class="ttc" id="agroup___o_b_s_html_gabcba30d23e302d004fbfdb80f68c554b"><div class="ttname"><a href="group___o_b_s.html#gabcba30d23e302d004fbfdb80f68c554b">Obs_SetOutputImageSize</a></div><div class="ttdeci">int Obs_SetOutputImageSize(HObj obs, short w, short h)</div><div class="ttdoc">Resize image.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_gac1e4a9bdd0418c8375fb12c587c80413"><div class="ttname"><a href="group___o_b_s.html#gac1e4a9bdd0418c8375fb12c587c80413">Obs_GetPosition</a></div><div class="ttdeci">static int Obs_GetPosition(HObj obs, int *position)</div><div class="ttdoc">Get the current position of playing audio or video.</div><div class="ttdef"><b>Definition</b> <a href="#l00262">obs.h:262</a></div></div>
 <div class="ttc" id="agroup___o_b_s_html_gad373977a42dde2df05f429bd10e6ef8b"><div class="ttname"><a href="group___o_b_s.html#gad373977a42dde2df05f429bd10e6ef8b">Obs_SetRenderOffset</a></div><div class="ttdeci">int Obs_SetRenderOffset(HObj obs, short x, short y)</div><div class="ttdoc">Set render offset.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_gad79a9162a9b0eb195f501ff1cc9ac2c4"><div class="ttname"><a href="group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4">Obs_SetOutput_Uid</a></div><div class="ttdeci">int Obs_SetOutput_Uid(HObj obs, int uid)</div><div class="ttdoc">Set output file type (extension UID).</div></div>
+<div class="ttc" id="agroup___o_b_s_html_gad906c0127f9840b8f7c3cda6e4e3b1ef"><div class="ttname"><a href="group___o_b_s.html#gad906c0127f9840b8f7c3cda6e4e3b1ef">Obs_Sound_SetMaxFileSize</a></div><div class="ttdeci">int Obs_Sound_SetMaxFileSize(HObj obs, int max_file_size)</div><div class="ttdoc">Set maximum file size.</div></div>
+<div class="ttc" id="agroup___o_b_s_html_gada0646629bbf3aa328e18e67062081df"><div class="ttname"><a href="group___o_b_s.html#gada0646629bbf3aa328e18e67062081df">Obs_Sound_SetNofChannels</a></div><div class="ttdeci">int Obs_Sound_SetNofChannels(HObj obs, int num_channels)</div><div class="ttdoc">Set count of the channels.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_gadebd304e3940d2ae6e7b069355060002"><div class="ttname"><a href="group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a></div><div class="ttdeci">int Obs_SetCSM(HObj obs, CSM_RAM *csm)</div><div class="ttdoc">Link CSM to the OBS object.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_gae37e57f4e63dd1342c36f22453ad66b2"><div class="ttname"><a href="group___o_b_s.html#gae37e57f4e63dd1342c36f22453ad66b2">Obs_SetPosition</a></div><div class="ttdeci">int Obs_SetPosition(HObj obs, int position)</div><div class="ttdoc">Set the given position for playing audio or video.</div></div>
 <div class="ttc" id="agroup___o_b_s_html_gae6ccecc3a554a62a005e5e55fc09330b"><div class="ttname"><a href="group___o_b_s.html#gae6ccecc3a554a62a005e5e55fc09330b">Obs_Prepare</a></div><div class="ttdeci">int Obs_Prepare(HObj obs)</div><div class="ttdoc">Prepare before start.</div></div>

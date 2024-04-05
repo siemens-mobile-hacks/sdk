@@ -217,6 +217,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2063592f72da57aa51db808c39fa78de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the CPU frequency to the maximum value.  <br /></td></tr>
 <tr class="separator:ga2063592f72da57aa51db808c39fa78de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Misc system functions</h2></td></tr>
+<tr class="memitem:ga18d57cd1471978edc7d09430a9530ddb" id="r_ga18d57cd1471978edc7d09430a9530ddb"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga18d57cd1471978edc7d09430a9530ddb">RamRandSeed</a> ()</td></tr>
+<tr class="memdesc:ga18d57cd1471978edc7d09430a9530ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get PRNG seed value.  <br /></td></tr>
+<tr class="separator:ga18d57cd1471978edc7d09430a9530ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74839418e5906214a0d4b6036422131e" id="r_ga74839418e5906214a0d4b6036422131e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74839418e5906214a0d4b6036422131e">RamLastStoreString</a> ()</td></tr>
+<tr class="memdesc:ga74839418e5906214a0d4b6036422131e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current pickoff error string.  <br /></td></tr>
+<tr class="separator:ga74839418e5906214a0d4b6036422131e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3f3f6bb3fdc947a2744ce5efe3f8c82" id="r_gac3f3f6bb3fdc947a2744ce5efe3f8c82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac3f3f6bb3fdc947a2744ce5efe3f8c82">GSM_L1_Disable</a> ()</td></tr>
+<tr class="memdesc:gac3f3f6bb3fdc947a2744ce5efe3f8c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable GSM L1 layer (NetOff).  <br /></td></tr>
+<tr class="separator:gac3f3f6bb3fdc947a2744ce5efe3f8c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Stub functions</h2></td></tr>
 <tr class="memitem:ga0554ccb97a74a009af3ed551e3d38423" id="r_ga0554ccb97a74a009af3ed551e3d38423"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0554ccb97a74a009af3ed551e3d38423">loopback0</a> ()</td></tr>
 <tr class="memdesc:ga0554ccb97a74a009af3ed551e3d38423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Syscall, which is used by the phone OS, swi 0.  <br /></td></tr>
@@ -957,6 +968,66 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga18d57cd1471978edc7d09430a9530ddb" name="ga18d57cd1471978edc7d09430a9530ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18d57cd1471978edc7d09430a9530ddb">&#9670;&#160;</a></span>RamRandSeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * RamRandSeed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get PRNG seed value. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the seed. </dd></dl>
+
+</div>
+</div>
+<a id="ga74839418e5906214a0d4b6036422131e" name="ga74839418e5906214a0d4b6036422131e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74839418e5906214a0d4b6036422131e">&#9670;&#160;</a></span>RamLastStoreString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * RamLastStoreString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Current pickoff error string. </p>
+<dl class="section return"><dt>Returns</dt><dd>C-string </dd></dl>
+
+</div>
+</div>
+<a id="gac3f3f6bb3fdc947a2744ce5efe3f8c82" name="gac3f3f6bb3fdc947a2744ce5efe3f8c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3f3f6bb3fdc947a2744ce5efe3f8c82">&#9670;&#160;</a></span>GSM_L1_Disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * GSM_L1_Disable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable GSM L1 layer (NetOff). </p>
+<dl class="section return"><dt>Returns</dt><dd>C-string </dd></dl>
 
 </div>
 </div>

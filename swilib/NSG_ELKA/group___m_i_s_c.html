@@ -132,6 +132,10 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#gga9238916ae1e072ff903506a94fff667fa580985b0f7d39e6da52448c32961624e">ILLUMINATION_DEV_DISPLAY</a> = 0
 , <br />
 &#160;&#160;<a class="el" href="#gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404">ILLUMINATION_DEV_KEYBOARD</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="#gga9238916ae1e072ff903506a94fff667fac7eb827fa62ad48c2fafed3e5872642b">ILLUMINATION_DEV_DYNLIGHT</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="#gga9238916ae1e072ff903506a94fff667fa80c943e52667fe91e55b2d6fb84108d6">ILLUMINATION_DEV_LIGHTER</a> = 3
 <br />
  }</td></tr>
 <tr class="memdesc:ga9238916ae1e072ff903506a94fff667f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Illumination device.  <a href="#ga9238916ae1e072ff903506a94fff667f">More...</a><br /></td></tr>
@@ -152,6 +156,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga9e75e3bc7d09e0043987cf673f2fd57c" id="r_ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9e75e3bc7d09e0043987cf673f2fd57c">RebootPhone</a> ()</td></tr>
 <tr class="memdesc:ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reboot phone.  <br /></td></tr>
 <tr class="separator:ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89d4247039a4d2c121e9467dac27874b" id="r_ga89d4247039a4d2c121e9467dac27874b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga89d4247039a4d2c121e9467dac27874b">SLI_SetState</a> (uint8_t state)</td></tr>
+<tr class="memdesc:ga89d4247039a4d2c121e9467dac27874b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state for SLI indicator.  <br /></td></tr>
+<tr class="separator:ga89d4247039a4d2c121e9467dac27874b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">IDLE</h2></td></tr>
 <tr class="memitem:gaa3b1f06a83f7ca45019c1f813c933062" id="r_gaa3b1f06a83f7ca45019c1f813c933062"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa3b1f06a83f7ca45019c1f813c933062">DisableIDLETMR</a> (void)</td></tr>
@@ -164,10 +171,19 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga509da8df60685fcab57f6ac75bf6357c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart the default idle timer.  <br /></td></tr>
 <tr class="separator:ga509da8df60685fcab57f6ac75bf6357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Keyboard locking</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Keyboard</h2></td></tr>
+<tr class="memitem:ga67476e7001af550f8025991c23920033" id="r_ga67476e7001af550f8025991c23920033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67476e7001af550f8025991c23920033">KeypressOn</a> (int keycode)</td></tr>
+<tr class="memdesc:ga67476e7001af550f8025991c23920033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Press key (simulation).  <br /></td></tr>
+<tr class="separator:ga67476e7001af550f8025991c23920033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga637d15f99d214c0b0e0bf6233c71c592" id="r_ga637d15f99d214c0b0e0bf6233c71c592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga637d15f99d214c0b0e0bf6233c71c592">KeypressOff</a> (int keycode)</td></tr>
+<tr class="memdesc:ga637d15f99d214c0b0e0bf6233c71c592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release key (simulation).  <br /></td></tr>
+<tr class="separator:ga637d15f99d214c0b0e0bf6233c71c592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42c3b79b4d2efbf09eea65c9ea12948b" id="r_ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42c3b79b4d2efbf09eea65c9ea12948b">IsUnlocked</a> (void)</td></tr>
 <tr class="memdesc:ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get keyboard lock status.  <br /></td></tr>
 <tr class="separator:ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga227fbade826f16f032f973e08eaf9973" id="r_ga227fbade826f16f032f973e08eaf9973"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga227fbade826f16f032f973e08eaf9973">RamIsLocked</a> (void)</td></tr>
+<tr class="memdesc:ga227fbade826f16f032f973e08eaf9973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get keyboard lock status.  <br /></td></tr>
+<tr class="separator:ga227fbade826f16f032f973e08eaf9973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadc55070fa3caa6804828580aa601f5b7" id="r_gadc55070fa3caa6804828580aa601f5b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadc55070fa3caa6804828580aa601f5b7">KbdLock</a> ()</td></tr>
 <tr class="memdesc:gadc55070fa3caa6804828580aa601f5b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock keyboard.  <br /></td></tr>
 <tr class="separator:gadc55070fa3caa6804828580aa601f5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +215,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gad68eab1388351b1ec514ca164ab43f31" id="r_gad68eab1388351b1ec514ca164ab43f31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad68eab1388351b1ec514ca164ab43f31">GetVibraStatus</a> (void)</td></tr>
 <tr class="memdesc:gad68eab1388351b1ec514ca164ab43f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if vibration enabled.  <br /></td></tr>
 <tr class="separator:gad68eab1388351b1ec514ca164ab43f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f159b7365ea0575d532cc6cd6200385" id="r_ga3f159b7365ea0575d532cc6cd6200385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f159b7365ea0575d532cc6cd6200385">SetVibraStatus</a> (int status)</td></tr>
+<tr class="memdesc:ga3f159b7365ea0575d532cc6cd6200385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable vibration.  <br /></td></tr>
+<tr class="separator:ga3f159b7365ea0575d532cc6cd6200385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga84e082085e0997fe160b90b48f020f50" id="r_ga84e082085e0997fe160b90b48f020f50"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84e082085e0997fe160b90b48f020f50">SetVibration</a> (uint32_t power)</td></tr>
 <tr class="memdesc:ga84e082085e0997fe160b90b48f020f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start vibration.  <br /></td></tr>
 <tr class="separator:ga84e082085e0997fe160b90b48f020f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,14 +237,35 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gae28779b4c90bcb86eb922458d2b5be93" id="r_gae28779b4c90bcb86eb922458d2b5be93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae28779b4c90bcb86eb922458d2b5be93">AlarmClockRing</a> ()</td></tr>
 <tr class="memdesc:gae28779b4c90bcb86eb922458d2b5be93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run AlarmClock ringing.  <br /></td></tr>
 <tr class="separator:gae28779b4c90bcb86eb922458d2b5be93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa982edc01907f47852ddf70d050c970" id="r_gafa982edc01907f47852ddf70d050c970"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafa982edc01907f47852ddf70d050c970">GetAlarmclockState</a> (int state)</td></tr>
-<tr class="memdesc:gafa982edc01907f47852ddf70d050c970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AlarmClock state.  <br /></td></tr>
-<tr class="separator:gafa982edc01907f47852ddf70d050c970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3e1add5549e2646b6d183a26e50de3a" id="r_gab3e1add5549e2646b6d183a26e50de3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab3e1add5549e2646b6d183a26e50de3a">GetAlarmClockState</a> (int state)</td></tr>
+<tr class="memdesc:gab3e1add5549e2646b6d183a26e50de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AlarmClock state.  <br /></td></tr>
+<tr class="separator:gab3e1add5549e2646b6d183a26e50de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d37bf5b15aecd3b31434709690ca4e2" id="r_ga7d37bf5b15aecd3b31434709690ca4e2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7d37bf5b15aecd3b31434709690ca4e2">RamAlarmClockState</a> ()</td></tr>
+<tr class="memdesc:ga7d37bf5b15aecd3b31434709690ca4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the AlarmClock state.  <br /></td></tr>
+<tr class="separator:ga7d37bf5b15aecd3b31434709690ca4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1317196a4b8a6ff8632fcd49b88dce62" id="r_ga1317196a4b8a6ff8632fcd49b88dce62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1317196a4b8a6ff8632fcd49b88dce62">RefreshAlarmClock</a> ()</td></tr>
 <tr class="memdesc:ga1317196a4b8a6ff8632fcd49b88dce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-read changed alarmclock.pd.  <br /></td></tr>
 <tr class="separator:ga1317196a4b8a6ff8632fcd49b88dce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8788c836c73d65b2e46ed04d26e025cd" id="r_ga8788c836c73d65b2e46ed04d26e025cd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8788c836c73d65b2e46ed04d26e025cd">RamIsAlarmClockAutorepeatOn</a> ()</td></tr>
+<tr class="memdesc:ga8788c836c73d65b2e46ed04d26e025cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if auto-repeat is enabled in AlarmClock.  <br /></td></tr>
+<tr class="separator:ga8788c836c73d65b2e46ed04d26e025cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8b5d9f4278b76675dbe246465a5e8ca" id="r_gae8b5d9f4278b76675dbe246465a5e8ca"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8b5d9f4278b76675dbe246465a5e8ca">RamAlarmClockHours</a> ()</td></tr>
+<tr class="memdesc:gae8b5d9f4278b76675dbe246465a5e8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlarmClock scheduled time (hours).  <br /></td></tr>
+<tr class="separator:gae8b5d9f4278b76675dbe246465a5e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bcfe1add9622bdd4fa20ba9abf67bb4" id="r_ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1bcfe1add9622bdd4fa20ba9abf67bb4">RamAlarmClockMinutes</a> ()</td></tr>
+<tr class="memdesc:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlarmClock scheduled time (minutes).  <br /></td></tr>
+<tr class="separator:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Other functions</h2></td></tr>
+<tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
+<tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>
+<tr class="separator:ga4a20e4d245e664ef2df0ca82f864be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga912b218cc7bbfadee40de173539e405f" id="r_ga912b218cc7bbfadee40de173539e405f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga912b218cc7bbfadee40de173539e405f">ShowNativeMenu</a> ()</td></tr>
+<tr class="memdesc:ga912b218cc7bbfadee40de173539e405f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open NativeMenu.  <br /></td></tr>
+<tr class="separator:ga912b218cc7bbfadee40de173539e405f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2ec5c39551bc6e08b46875e3f0d25d4" id="r_gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2ec5c39551bc6e08b46875e3f0d25d4">Devmenu_Config_IsCheckboxOff</a> (int checkbox_id)</td></tr>
+<tr class="memdesc:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get checkbox state from the devmenu.  <br /></td></tr>
+<tr class="separator:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0c0549b08a17bf1e74e4e8aeebf9e171" id="r_ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0c0549b08a17bf1e74e4e8aeebf9e171">GetFunctionPointer</a> (char *shortcut_name)</td></tr>
 <tr class="memdesc:ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get function by shortcut name.  <br /></td></tr>
 <tr class="separator:ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,6 +370,10 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404" name="gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404"></a>ILLUMINATION_DEV_KEYBOARD&#160;</td><td class="fielddoc"><p>Keyboard. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="gga9238916ae1e072ff903506a94fff667fac7eb827fa62ad48c2fafed3e5872642b" name="gga9238916ae1e072ff903506a94fff667fac7eb827fa62ad48c2fafed3e5872642b"></a>ILLUMINATION_DEV_DYNLIGHT&#160;</td><td class="fielddoc"><p>Dynamic Light. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9238916ae1e072ff903506a94fff667fa80c943e52667fe91e55b2d6fb84108d6" name="gga9238916ae1e072ff903506a94fff667fa80c943e52667fe91e55b2d6fb84108d6"></a>ILLUMINATION_DEV_LIGHTER&#160;</td><td class="fielddoc"><p>Camera flashlight as lighter. </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00026">26</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
@@ -356,7 +400,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00034">34</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00036">36</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -396,6 +440,31 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reboot phone. </p>
+
+</div>
+</div>
+<a id="ga89d4247039a4d2c121e9467dac27874b" name="ga89d4247039a4d2c121e9467dac27874b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89d4247039a4d2c121e9467dac27874b">&#9670;&#160;</a></span>SLI_SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SLI_SetState </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set state for SLI indicator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>state value 0...4 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -468,6 +537,56 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="ga67476e7001af550f8025991c23920033" name="ga67476e7001af550f8025991c23920033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67476e7001af550f8025991c23920033">&#9670;&#160;</a></span>KeypressOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeypressOn </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>keycode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Press key (simulation). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keycode</td><td>code of the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga637d15f99d214c0b0e0bf6233c71c592" name="ga637d15f99d214c0b0e0bf6233c71c592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga637d15f99d214c0b0e0bf6233c71c592">&#9670;&#160;</a></span>KeypressOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeypressOff </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>keycode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release key (simulation). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keycode</td><td>code of the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga42c3b79b4d2efbf09eea65c9ea12948b" name="ga42c3b79b4d2efbf09eea65c9ea12948b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga42c3b79b4d2efbf09eea65c9ea12948b">&#9670;&#160;</a></span>IsUnlocked()</h2>
 
@@ -485,6 +604,27 @@ Enumerations</h2></td></tr>
 
 <p>Get keyboard lock status. </p>
 <dl class="section return"><dt>Returns</dt><dd>0: locked, 1: unlocked </dd></dl>
+
+</div>
+</div>
+<a id="ga227fbade826f16f032f973e08eaf9973" name="ga227fbade826f16f032f973e08eaf9973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga227fbade826f16f032f973e08eaf9973">&#9670;&#160;</a></span>RamIsLocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * RamIsLocked </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get keyboard lock status. </p>
+<dl class="section return"><dt>Returns</dt><dd>1: locked, 0: unlocked </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated</a></b></dt><dd>use <a class="el" href="#ga42c3b79b4d2efbf09eea65c9ea12948b" title="Get keyboard lock status.">IsUnlocked</a> </dd></dl>
 
 </div>
 </div>
@@ -600,7 +740,7 @@ Enumerations</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">dev</td><td>device, see <a class="el" href="#ga9238916ae1e072ff903506a94fff667f" title="Illumination device.">IlluminationDeviceID</a> </td></tr>
     <tr><td class="paramname">unk</td><td>set to 1 </td></tr>
-    <tr><td class="paramname">level</td><td>illumination level: 0-255 </td></tr>
+    <tr><td class="paramname">level</td><td>illumination level: 0-100 </td></tr>
     <tr><td class="paramname">delay</td><td>delay in ms for smooth illumination change (fade-in/fade-out) </td></tr>
   </table>
   </dd>
@@ -636,12 +776,12 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Always ON: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#gafa4669a0a6ddb614cb2aef09b34302db">IllumTimeRelease</a>(4, 3); <span class="comment">// Keep</span></div>
-<div class="line"><a class="code hl_function" href="#ga7aa51c18a3ef18a55dc4f16df3a365ad">IllumTimeRequest</a>(4, 3); <span class="comment">// Release</span></div>
+<p>Always ON: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#ga7aa51c18a3ef18a55dc4f16df3a365ad">IllumTimeRequest</a>(4, 3); <span class="comment">// Keep</span></div>
+<div class="line"><a class="code hl_function" href="#gafa4669a0a6ddb614cb2aef09b34302db">IllumTimeRelease</a>(4, 3); <span class="comment">// Release</span></div>
 <div class="ttc" id="agroup___m_i_s_c_html_ga7aa51c18a3ef18a55dc4f16df3a365ad"><div class="ttname"><a href="#ga7aa51c18a3ef18a55dc4f16df3a365ad">IllumTimeRequest</a></div><div class="ttdeci">void IllumTimeRequest(int time_mode, int counter)</div><div class="ttdoc">Keep the backlight on.</div></div>
 <div class="ttc" id="agroup___m_i_s_c_html_gafa4669a0a6ddb614cb2aef09b34302db"><div class="ttname"><a href="#gafa4669a0a6ddb614cb2aef09b34302db">IllumTimeRelease</a></div><div class="ttdeci">void IllumTimeRelease(int time_mode, int counter)</div><div class="ttdoc">Allow backlight to turn off again.</div></div>
-</div><!-- fragment --><p>As in "mediaplayer" (???): </p><div class="fragment"><div class="line"><a class="code hl_function" href="#gafa4669a0a6ddb614cb2aef09b34302db">IllumTimeRelease</a>(1, 1); <span class="comment">// Keep</span></div>
-<div class="line"><a class="code hl_function" href="#ga7aa51c18a3ef18a55dc4f16df3a365ad">IllumTimeRequest</a>(1, 1); <span class="comment">// Release</span></div>
+</div><!-- fragment --><p>As in "mediaplayer" (???): </p><div class="fragment"><div class="line"><a class="code hl_function" href="#ga7aa51c18a3ef18a55dc4f16df3a365ad">IllumTimeRequest</a>(1, 1); <span class="comment">// Keep</span></div>
+<div class="line"><a class="code hl_function" href="#gafa4669a0a6ddb614cb2aef09b34302db">IllumTimeRelease</a>(1, 1); <span class="comment">// Release</span></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -722,6 +862,31 @@ Enumerations</h2></td></tr>
 
 <p>Check if vibration enabled. </p>
 <dl class="section return"><dt>Returns</dt><dd>1: enabled, 0: disabled </dd></dl>
+
+</div>
+</div>
+<a id="ga3f159b7365ea0575d532cc6cd6200385" name="ga3f159b7365ea0575d532cc6cd6200385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f159b7365ea0575d532cc6cd6200385">&#9670;&#160;</a></span>SetVibraStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetVibraStatus </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>status</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable vibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>1: enabled, 0: disabled </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -851,14 +1016,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="gafa982edc01907f47852ddf70d050c970" name="gafa982edc01907f47852ddf70d050c970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafa982edc01907f47852ddf70d050c970">&#9670;&#160;</a></span>GetAlarmclockState()</h2>
+<a id="gab3e1add5549e2646b6d183a26e50de3a" name="gab3e1add5549e2646b6d183a26e50de3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3e1add5549e2646b6d183a26e50de3a">&#9670;&#160;</a></span>GetAlarmClockState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GetAlarmclockState </td>
+          <td class="memname">int GetAlarmClockState </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
           <td></td>
@@ -874,6 +1039,27 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 - enabled, 0 - disabled </dd></dl>
+
+</div>
+</div>
+<a id="ga7d37bf5b15aecd3b31434709690ca4e2" name="ga7d37bf5b15aecd3b31434709690ca4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d37bf5b15aecd3b31434709690ca4e2">&#9670;&#160;</a></span>RamAlarmClockState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamAlarmClockState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the AlarmClock state. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 - enabled, 0 - disabled </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000048">Deprecated</a></b></dt><dd>use <a class="el" href="#gab3e1add5549e2646b6d183a26e50de3a" title="Get AlarmClock state.">GetAlarmClockState</a> </dd></dl>
 
 </div>
 </div>
@@ -894,6 +1080,130 @@ Enumerations</h2></td></tr>
 
 <p>Re-read changed alarmclock.pd. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga8788c836c73d65b2e46ed04d26e025cd" name="ga8788c836c73d65b2e46ed04d26e025cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8788c836c73d65b2e46ed04d26e025cd">&#9670;&#160;</a></span>RamIsAlarmClockAutorepeatOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamIsAlarmClockAutorepeatOn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if auto-repeat is enabled in AlarmClock. </p>
+<dl class="section return"><dt>Returns</dt><dd>unknown </dd></dl>
+
+</div>
+</div>
+<a id="gae8b5d9f4278b76675dbe246465a5e8ca" name="gae8b5d9f4278b76675dbe246465a5e8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8b5d9f4278b76675dbe246465a5e8ca">&#9670;&#160;</a></span>RamAlarmClockHours()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamAlarmClockHours </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AlarmClock scheduled time (hours). </p>
+<dl class="section return"><dt>Returns</dt><dd>unknown </dd></dl>
+
+</div>
+</div>
+<a id="ga1bcfe1add9622bdd4fa20ba9abf67bb4" name="ga1bcfe1add9622bdd4fa20ba9abf67bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bcfe1add9622bdd4fa20ba9abf67bb4">&#9670;&#160;</a></span>RamAlarmClockMinutes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * RamAlarmClockMinutes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AlarmClock scheduled time (minutes). </p>
+<dl class="section return"><dt>Returns</dt><dd>unknown </dd></dl>
+
+</div>
+</div>
+<a id="ga4a20e4d245e664ef2df0ca82f864be81" name="ga4a20e4d245e664ef2df0ca82f864be81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a20e4d245e664ef2df0ca82f864be81">&#9670;&#160;</a></span>ShowMainMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShowMainMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open FlexMenu. </p>
+
+</div>
+</div>
+<a id="ga912b218cc7bbfadee40de173539e405f" name="ga912b218cc7bbfadee40de173539e405f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga912b218cc7bbfadee40de173539e405f">&#9670;&#160;</a></span>ShowNativeMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShowNativeMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open NativeMenu. </p>
+
+</div>
+</div>
+<a id="gad2ec5c39551bc6e08b46875e3f0d25d4" name="gad2ec5c39551bc6e08b46875e3f0d25d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2ec5c39551bc6e08b46875e3f0d25d4">&#9670;&#160;</a></span>Devmenu_Config_IsCheckboxOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Devmenu_Config_IsCheckboxOff </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>checkbox_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get checkbox state from the devmenu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox_id</td><td>devmenu checkbox ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if unchecked, 0 if checked </dd></dl>
 
 </div>
 </div>
@@ -921,7 +1231,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>function pointer</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_function" href="#ga0c0549b08a17bf1e74e4e8aeebf9e171">GetFunctionPointer</a>(<span class="stringliteral">&quot;ALARM_CLOCK&quot;</span>)-&gt;<a class="code hl_variable" href="#abd2dccd307232dc53db4fc6d1a9d585e">pointer</a>();</div>
-<div class="ttc" id="agroup___m_i_s_c_html_abd2dccd307232dc53db4fc6d1a9d585e"><div class="ttname"><a href="#abd2dccd307232dc53db4fc6d1a9d585e">shortcut::pointer</a></div><div class="ttdeci">shortcut_func pointer</div><div class="ttdoc">Function which is called by shortcut.</div><div class="ttdef"><b>Definition</b> <a href="misc_8h_source.html#l00044">misc.h:44</a></div></div>
+<div class="ttc" id="agroup___m_i_s_c_html_abd2dccd307232dc53db4fc6d1a9d585e"><div class="ttname"><a href="#abd2dccd307232dc53db4fc6d1a9d585e">shortcut::pointer</a></div><div class="ttdeci">shortcut_func pointer</div><div class="ttdoc">Function which is called by shortcut.</div><div class="ttdef"><b>Definition</b> <a href="misc_8h_source.html#l00046">misc.h:46</a></div></div>
 <div class="ttc" id="agroup___m_i_s_c_html_ga0c0549b08a17bf1e74e4e8aeebf9e171"><div class="ttname"><a href="#ga0c0549b08a17bf1e74e4e8aeebf9e171">GetFunctionPointer</a></div><div class="ttdeci">shortcut * GetFunctionPointer(char *shortcut_name)</div><div class="ttdoc">Get function by shortcut name.</div></div>
 </div><!-- fragment --> 
 </div>

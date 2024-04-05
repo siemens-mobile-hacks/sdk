@@ -134,6 +134,10 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fa580985b0f7d39e6da52448c32961624e">ILLUMINATION_DEV_DISPLAY</a> = 0
 , <br />
 &#160;&#160;<a class="el" href="group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fad4239f1ffa1fa0d365d6c20055b59404">ILLUMINATION_DEV_KEYBOARD</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fac7eb827fa62ad48c2fafed3e5872642b">ILLUMINATION_DEV_DYNLIGHT</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fa80c943e52667fe91e55b2d6fb84108d6">ILLUMINATION_DEV_LIGHTER</a> = 3
 <br />
  }</td></tr>
 <tr class="memdesc:ga9238916ae1e072ff903506a94fff667f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Illumination device.  <a href="group___m_i_s_c.html#ga9238916ae1e072ff903506a94fff667f">More...</a><br /></td></tr>
@@ -156,6 +160,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9e75e3bc7d09e0043987cf673f2fd57c" id="r_ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga9e75e3bc7d09e0043987cf673f2fd57c">RebootPhone</a> ()</td></tr>
 <tr class="memdesc:ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reboot phone.  <br /></td></tr>
 <tr class="separator:ga9e75e3bc7d09e0043987cf673f2fd57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89d4247039a4d2c121e9467dac27874b" id="r_ga89d4247039a4d2c121e9467dac27874b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga89d4247039a4d2c121e9467dac27874b">SLI_SetState</a> (uint8_t state)</td></tr>
+<tr class="memdesc:ga89d4247039a4d2c121e9467dac27874b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state for SLI indicator.  <br /></td></tr>
+<tr class="separator:ga89d4247039a4d2c121e9467dac27874b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">IDLE</div></td></tr>
 <tr class="memitem:gaa3b1f06a83f7ca45019c1f813c933062" id="r_gaa3b1f06a83f7ca45019c1f813c933062"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gaa3b1f06a83f7ca45019c1f813c933062">DisableIDLETMR</a> (void)</td></tr>
 <tr class="memdesc:gaa3b1f06a83f7ca45019c1f813c933062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the IDLE timer - the phone never goes to the IDLE screen.  <br /></td></tr>
@@ -166,10 +173,19 @@ Functions</h2></td></tr>
 <tr class="memitem:ga509da8df60685fcab57f6ac75bf6357c" id="r_ga509da8df60685fcab57f6ac75bf6357c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga509da8df60685fcab57f6ac75bf6357c">RestartIDLETMR</a> (void)</td></tr>
 <tr class="memdesc:ga509da8df60685fcab57f6ac75bf6357c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart the default idle timer.  <br /></td></tr>
 <tr class="separator:ga509da8df60685fcab57f6ac75bf6357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Keyboard locking</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Keyboard</div></td></tr>
+<tr class="memitem:ga67476e7001af550f8025991c23920033" id="r_ga67476e7001af550f8025991c23920033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga67476e7001af550f8025991c23920033">KeypressOn</a> (int keycode)</td></tr>
+<tr class="memdesc:ga67476e7001af550f8025991c23920033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Press key (simulation).  <br /></td></tr>
+<tr class="separator:ga67476e7001af550f8025991c23920033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga637d15f99d214c0b0e0bf6233c71c592" id="r_ga637d15f99d214c0b0e0bf6233c71c592"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga637d15f99d214c0b0e0bf6233c71c592">KeypressOff</a> (int keycode)</td></tr>
+<tr class="memdesc:ga637d15f99d214c0b0e0bf6233c71c592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release key (simulation).  <br /></td></tr>
+<tr class="separator:ga637d15f99d214c0b0e0bf6233c71c592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42c3b79b4d2efbf09eea65c9ea12948b" id="r_ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga42c3b79b4d2efbf09eea65c9ea12948b">IsUnlocked</a> (void)</td></tr>
 <tr class="memdesc:ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get keyboard lock status.  <br /></td></tr>
 <tr class="separator:ga42c3b79b4d2efbf09eea65c9ea12948b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga227fbade826f16f032f973e08eaf9973" id="r_ga227fbade826f16f032f973e08eaf9973"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga227fbade826f16f032f973e08eaf9973">RamIsLocked</a> (void)</td></tr>
+<tr class="memdesc:ga227fbade826f16f032f973e08eaf9973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get keyboard lock status.  <br /></td></tr>
+<tr class="separator:ga227fbade826f16f032f973e08eaf9973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadc55070fa3caa6804828580aa601f5b7" id="r_gadc55070fa3caa6804828580aa601f5b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gadc55070fa3caa6804828580aa601f5b7">KbdLock</a> ()</td></tr>
 <tr class="memdesc:gadc55070fa3caa6804828580aa601f5b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock keyboard.  <br /></td></tr>
 <tr class="separator:gadc55070fa3caa6804828580aa601f5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +215,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad68eab1388351b1ec514ca164ab43f31" id="r_gad68eab1388351b1ec514ca164ab43f31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gad68eab1388351b1ec514ca164ab43f31">GetVibraStatus</a> (void)</td></tr>
 <tr class="memdesc:gad68eab1388351b1ec514ca164ab43f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if vibration enabled.  <br /></td></tr>
 <tr class="separator:gad68eab1388351b1ec514ca164ab43f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f159b7365ea0575d532cc6cd6200385" id="r_ga3f159b7365ea0575d532cc6cd6200385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga3f159b7365ea0575d532cc6cd6200385">SetVibraStatus</a> (int status)</td></tr>
+<tr class="memdesc:ga3f159b7365ea0575d532cc6cd6200385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable vibration.  <br /></td></tr>
+<tr class="separator:ga3f159b7365ea0575d532cc6cd6200385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga84e082085e0997fe160b90b48f020f50" id="r_ga84e082085e0997fe160b90b48f020f50"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga84e082085e0997fe160b90b48f020f50">SetVibration</a> (uint32_t power)</td></tr>
 <tr class="memdesc:ga84e082085e0997fe160b90b48f020f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start vibration.  <br /></td></tr>
 <tr class="separator:ga84e082085e0997fe160b90b48f020f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,13 +235,34 @@ Functions</h2></td></tr>
 <tr class="memitem:gae28779b4c90bcb86eb922458d2b5be93" id="r_gae28779b4c90bcb86eb922458d2b5be93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gae28779b4c90bcb86eb922458d2b5be93">AlarmClockRing</a> ()</td></tr>
 <tr class="memdesc:gae28779b4c90bcb86eb922458d2b5be93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run AlarmClock ringing.  <br /></td></tr>
 <tr class="separator:gae28779b4c90bcb86eb922458d2b5be93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa982edc01907f47852ddf70d050c970" id="r_gafa982edc01907f47852ddf70d050c970"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gafa982edc01907f47852ddf70d050c970">GetAlarmclockState</a> (int state)</td></tr>
-<tr class="memdesc:gafa982edc01907f47852ddf70d050c970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AlarmClock state.  <br /></td></tr>
-<tr class="separator:gafa982edc01907f47852ddf70d050c970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3e1add5549e2646b6d183a26e50de3a" id="r_gab3e1add5549e2646b6d183a26e50de3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gab3e1add5549e2646b6d183a26e50de3a">GetAlarmClockState</a> (int state)</td></tr>
+<tr class="memdesc:gab3e1add5549e2646b6d183a26e50de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get AlarmClock state.  <br /></td></tr>
+<tr class="separator:gab3e1add5549e2646b6d183a26e50de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d37bf5b15aecd3b31434709690ca4e2" id="r_ga7d37bf5b15aecd3b31434709690ca4e2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga7d37bf5b15aecd3b31434709690ca4e2">RamAlarmClockState</a> ()</td></tr>
+<tr class="memdesc:ga7d37bf5b15aecd3b31434709690ca4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the AlarmClock state.  <br /></td></tr>
+<tr class="separator:ga7d37bf5b15aecd3b31434709690ca4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1317196a4b8a6ff8632fcd49b88dce62" id="r_ga1317196a4b8a6ff8632fcd49b88dce62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga1317196a4b8a6ff8632fcd49b88dce62">RefreshAlarmClock</a> ()</td></tr>
 <tr class="memdesc:ga1317196a4b8a6ff8632fcd49b88dce62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-read changed alarmclock.pd.  <br /></td></tr>
 <tr class="separator:ga1317196a4b8a6ff8632fcd49b88dce62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8788c836c73d65b2e46ed04d26e025cd" id="r_ga8788c836c73d65b2e46ed04d26e025cd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga8788c836c73d65b2e46ed04d26e025cd">RamIsAlarmClockAutorepeatOn</a> ()</td></tr>
+<tr class="memdesc:ga8788c836c73d65b2e46ed04d26e025cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if auto-repeat is enabled in AlarmClock.  <br /></td></tr>
+<tr class="separator:ga8788c836c73d65b2e46ed04d26e025cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8b5d9f4278b76675dbe246465a5e8ca" id="r_gae8b5d9f4278b76675dbe246465a5e8ca"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gae8b5d9f4278b76675dbe246465a5e8ca">RamAlarmClockHours</a> ()</td></tr>
+<tr class="memdesc:gae8b5d9f4278b76675dbe246465a5e8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlarmClock scheduled time (hours).  <br /></td></tr>
+<tr class="separator:gae8b5d9f4278b76675dbe246465a5e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bcfe1add9622bdd4fa20ba9abf67bb4" id="r_ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga1bcfe1add9622bdd4fa20ba9abf67bb4">RamAlarmClockMinutes</a> ()</td></tr>
+<tr class="memdesc:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlarmClock scheduled time (minutes).  <br /></td></tr>
+<tr class="separator:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other functions</div></td></tr>
+<tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
+<tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>
+<tr class="separator:ga4a20e4d245e664ef2df0ca82f864be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga912b218cc7bbfadee40de173539e405f" id="r_ga912b218cc7bbfadee40de173539e405f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga912b218cc7bbfadee40de173539e405f">ShowNativeMenu</a> ()</td></tr>
+<tr class="memdesc:ga912b218cc7bbfadee40de173539e405f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open NativeMenu.  <br /></td></tr>
+<tr class="separator:ga912b218cc7bbfadee40de173539e405f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2ec5c39551bc6e08b46875e3f0d25d4" id="r_gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gad2ec5c39551bc6e08b46875e3f0d25d4">Devmenu_Config_IsCheckboxOff</a> (int checkbox_id)</td></tr>
+<tr class="memdesc:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get checkbox state from the devmenu.  <br /></td></tr>
+<tr class="separator:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0c0549b08a17bf1e74e4e8aeebf9e171" id="r_ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___m_i_s_c.html#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga0c0549b08a17bf1e74e4e8aeebf9e171">GetFunctionPointer</a> (char *shortcut_name)</td></tr>
 <tr class="memdesc:ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get function by shortcut name.  <br /></td></tr>
 <tr class="separator:ga0c0549b08a17bf1e74e4e8aeebf9e171"><td class="memSeparator" colspan="2">&#160;</td></tr>

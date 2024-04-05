@@ -14,16 +14,15 @@ var info_8h =
       [ "PI_LG", "group___info.html#gga37de38f349f79c35bd4a4b698812c1aea611bd0a0144808b986a5248f064c1ab7", null ],
       [ "PI_T9", "group___info.html#gga37de38f349f79c35bd4a4b698812c1aeab1431eb56a76cbef09f57465daf17c88", null ]
     ] ],
-    [ "AccessoryTypeID", "group___info.html#ga5e5284fcda8cf4ee1a398ea520d5128e", [
-      [ "ACC_TYPE_SERIAL_CABLE", "group___info.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c", null ]
-    ] ],
-    [ "BatCharhingStateID", "group___info.html#ga1864725dd9e79f12454d867e671b4ddb", [
-      [ "BAT_STATE_DISCHARGING", "group___info.html#gga1864725dd9e79f12454d867e671b4ddba95dd13a3695f4cae16ebe9cb8ae9fb05", null ],
-      [ "BAT_STATE_UNKNOWN", "group___info.html#gga1864725dd9e79f12454d867e671b4ddba1e00a11bfcf4c121c5705dc841ca9c24", null ],
-      [ "BAT_STATE_CHARGING", "group___info.html#gga1864725dd9e79f12454d867e671b4ddbad759ac9d51a4857fd1e72ce7d01ea9a0", null ],
-      [ "BAT_STATE_FULLY_CHARGED", "group___info.html#gga1864725dd9e79f12454d867e671b4ddbaa7dcda1d7fe5724ff185568de3254021", null ]
+    [ "BatChargingStateID", "group___info.html#gadd97b1a912f1a9951344c41d04922e03", [
+      [ "BAT_STATE_DISCHARGING", "group___info.html#ggadd97b1a912f1a9951344c41d04922e03a95dd13a3695f4cae16ebe9cb8ae9fb05", null ],
+      [ "BAT_STATE_UNKNOWN", "group___info.html#ggadd97b1a912f1a9951344c41d04922e03a1e00a11bfcf4c121c5705dc841ca9c24", null ],
+      [ "BAT_STATE_CHARGING", "group___info.html#ggadd97b1a912f1a9951344c41d04922e03ad759ac9d51a4857fd1e72ce7d01ea9a0", null ],
+      [ "BAT_STATE_FULLY_CHARGED", "group___info.html#ggadd97b1a912f1a9951344c41d04922e03aa7dcda1d7fe5724ff185568de3254021", null ]
     ] ],
     [ "GetFreeRamAvail", "group___info.html#gae30a267a93bf549b900609f1e37e3c36", null ],
+    [ "RamTotalHeapSize", "group___info.html#ga97946b7c90c932eb045c12d5c5dc07bb", null ],
+    [ "RamTemporaryHeapSize", "group___info.html#ga89cd46cbda0cd0955626eb5bea3cf2d6", null ],
     [ "GetMMIMemUsed", "group___info.html#gaf99b21f4ed93491163604cfee3962288", null ],
     [ "Get_Phone_Info", "group___info.html#ga922f5001ef201e4abab843b9ce15a43a", null ],
     [ "GetCurrentLocale", "group___info.html#ga0aa60d7cecfddf9f343f8c944f6d44db", null ],
@@ -34,8 +33,21 @@ var info_8h =
     [ "RamCap", "group___info.html#ga09945d720beb754bb6879b63f28ab62c", null ],
     [ "RamLS", "group___info.html#ga9aff59685b166118538199b31bf1ab99", null ],
     [ "RamAccPoint", "group___info.html#ga951ea31ae5b5f733f4fb5a4d417c3278", null ],
-    [ "GetAccessoryType", "group___info.html#gab94c11ffa6216b557289e6b3ac55f0a2", null ],
     [ "GetPeripheryState", "group___info.html#gac10f74829a3815d9374460b155c02747", null ],
+    [ "BT_GetLocVisibility", "group___info.html#ga3ffe888e2510354804fdaec7d09eaed6", null ],
+    [ "RamBluetoothDeviceName", "group___info.html#ga8ad8ffa9c92e50b3fb5be7b19958774a", null ],
+    [ "RamIsBTConnected", "group___info.html#ga6eb2bcec4db82379f0f0c404102affff", null ],
+    [ "RamIsBTHeadsetConnected", "group___info.html#gaa5166f10462a25b2235d25ce4aa88406", null ],
+    [ "GetMissedEventsPtr", "group___info.html#gaa25c6198ceaeb95b23ae604048c0c9ef", null ],
+    [ "GetMissedEventCount", "group___info.html#gaa1998662d4123b86735f43ef56f8c848", null ],
+    [ "IsSliderClosed", "group___info.html#gaf0e918e1b6541a9ec198c7c1653957ee", null ],
+    [ "RamIsSimPresent", "group___info.html#ga1491b71024e049c9dee128996a2806f7", null ],
+    [ "RamIsRunCamera", "group___info.html#gaaf18ce92bd310ce1da1223dc5f696ccf", null ],
+    [ "RamIsShutdown", "group___info.html#gaabdefcf37c5b56a3558d00ac8d2858db", null ],
+    [ "RamIsStandby", "group___info.html#ga88c078a65c3779f3b88c1489ad40d51e", null ],
     [ "RamExtendedCameraState", "group___info.html#gafd235bc0cc678ad1d5a383487d5ee7be", null ],
-    [ "RamRingtoneStatus", "group___info.html#ga1d4f6964d63e9eedf91d04f78f75aa14", null ]
+    [ "RamIsCameraLighterOn", "group___info.html#gacbd3cbe883beb742bd8dbca7dc514257", null ],
+    [ "RamActiveAppointment", "group___info.html#gafc1e6ae06b9a3c3a631af4d189909a59", null ],
+    [ "RamRingtoneStatus", "group___info.html#ga1d4f6964d63e9eedf91d04f78f75aa14", null ],
+    [ "RamIsFileCache", "group___info.html#ga7bd3c52de3d16db6e8a385208fd8450f", null ]
 ];

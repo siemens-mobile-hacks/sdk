@@ -220,18 +220,27 @@ Functions</h2></td></tr>
 <tr class="memitem:gad6b911bad0036b219d639d279045f6eb" id="r_gad6b911bad0036b219d639d279045f6eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#gad6b911bad0036b219d639d279045f6eb">GetIMGHDRFromThemeCache</a> (int index)</td></tr>
 <tr class="memdesc:gad6b911bad0036b219d639d279045f6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an image from the phone theme.  <br /></td></tr>
 <tr class="separator:gad6b911bad0036b219d639d279045f6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga829a12e0e094843add075f41acfc4366" id="r_ga829a12e0e094843add075f41acfc4366"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga829a12e0e094843add075f41acfc4366">GetIMGHDRFromCanvasCache</a> (int canvas_id)</td></tr>
-<tr class="memdesc:ga829a12e0e094843add075f41acfc4366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an image from the "canvas" cache.  <br /></td></tr>
-<tr class="separator:ga829a12e0e094843add075f41acfc4366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga20122db806e1a477af697a206de063d1" id="r_ga20122db806e1a477af697a206de063d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga20122db806e1a477af697a206de063d1">MMI_CanvasBuffer_FlushV</a> (int canvas_id)</td></tr>
-<tr class="memdesc:ga20122db806e1a477af697a206de063d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush "canvas" in cache.  <br /></td></tr>
-<tr class="separator:ga20122db806e1a477af697a206de063d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab740578517b0b7878190b79fae382633" id="r_gab740578517b0b7878190b79fae382633"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#gab740578517b0b7878190b79fae382633">GetPicNByUnicodeSymbol</a> (int symbol)</td></tr>
 <tr class="memdesc:gab740578517b0b7878190b79fae382633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get image from U+E1XX "emoji".  <br /></td></tr>
 <tr class="separator:gab740578517b0b7878190b79fae382633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef5a44645bbf1ddb2b554930f1b8a150" id="r_gaef5a44645bbf1ddb2b554930f1b8a150"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#gaef5a44645bbf1ddb2b554930f1b8a150">CalcBitmapSize</a> (short w, short h, char type)</td></tr>
 <tr class="memdesc:gaef5a44645bbf1ddb2b554930f1b8a150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate bitmap size by WxH and type.  <br /></td></tr>
 <tr class="separator:gaef5a44645bbf1ddb2b554930f1b8a150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Canvas</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>"Canvas" is a really meaning for standard UI background. </p>
+</div></td></tr>
+<tr class="memitem:ga1e45fd231416856f15616b3b19f0da00" id="r_ga1e45fd231416856f15616b3b19f0da00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga1e45fd231416856f15616b3b19f0da00">GetIMGHDRFromCanvasCache</a> (char canvas_id)</td></tr>
+<tr class="memdesc:ga1e45fd231416856f15616b3b19f0da00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an image by canvas_id from cache.  <br /></td></tr>
+<tr class="separator:ga1e45fd231416856f15616b3b19f0da00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18bbba1284a25cfae38b34b5145cab7a" id="r_ga18bbba1284a25cfae38b34b5145cab7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga18bbba1284a25cfae38b34b5145cab7a">GetIMGHDRFromCanvas</a> (char canvas_id)</td></tr>
+<tr class="memdesc:ga18bbba1284a25cfae38b34b5145cab7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an image by canvas_id (low level).  <br /></td></tr>
+<tr class="separator:ga18bbba1284a25cfae38b34b5145cab7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f75c8dd3bc8d07cfea153460f89eb61" id="r_ga0f75c8dd3bc8d07cfea153460f89eb61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga0f75c8dd3bc8d07cfea153460f89eb61">IsCanvasBufferSet</a> (char canvas_id)</td></tr>
+<tr class="memdesc:ga0f75c8dd3bc8d07cfea153460f89eb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if canvas exists for the given <code>canvas_id</code>.  <br /></td></tr>
+<tr class="separator:ga0f75c8dd3bc8d07cfea153460f89eb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e6e0ad8bef60a87ee5f3519f59138d4" id="r_ga3e6e0ad8bef60a87ee5f3519f59138d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___image.html#ga3e6e0ad8bef60a87ee5f3519f59138d4">MMI_CanvasBuffer_FlushV</a> (char canvas_id)</td></tr>
+<tr class="memdesc:ga3e6e0ad8bef60a87ee5f3519f59138d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush "canvas" in cache.  <br /></td></tr>
+<tr class="separator:ga3e6e0ad8bef60a87ee5f3519f59138d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Dynamic icons</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Dynamic icons - are those icons which can be used as U+E2XX unicode sequences in the standard UI.</p>
 <p>XX in U+E2XX is the dynamic image slot number. </p>

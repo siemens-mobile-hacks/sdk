@@ -293,6 +293,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gaeac995d1bab995b3f95b86cde51ebf5a" id="r_gaeac995d1bab995b3f95b86cde51ebf5a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gaeac995d1bab995b3f95b86cde51ebf5a">RamVolumeLevel</a> ()</td></tr>
+<tr class="memdesc:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current volume level.  <br /></td></tr>
+<tr class="separator:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25f546e713d427446c3d26bf78eedfee" id="r_ga25f546e713d427446c3d26bf78eedfee"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga25f546e713d427446c3d26bf78eedfee">RamMediaIsPlaying</a> ()</td></tr>
 <tr class="memdesc:ga25f546e713d427446c3d26bf78eedfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checking if any sound is currently played.  <br /></td></tr>
 <tr class="separator:ga25f546e713d427446c3d26bf78eedfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,12 +344,33 @@ Functions</h2></td></tr>
 <tr class="memitem:gafc75a10382cd8b26ad9ba59a3e75e776" id="r_gafc75a10382cd8b26ad9ba59a3e75e776"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776">PlayFile</a> (int flags, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *folder, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file, int cepid, int msgid, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___sound.html#struct_p_l_a_y_f_i_l_e___o_p_t">PLAYFILE_OPT</a> *sfo)</td></tr>
 <tr class="memdesc:gafc75a10382cd8b26ad9ba59a3e75e776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play file from filesystem (path=folder\file).  <br /></td></tr>
 <tr class="separator:gafc75a10382cd8b26ad9ba59a3e75e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacaeae14a320eb3ad6d22095b563c91ba" id="r_gacaeae14a320eb3ad6d22095b563c91ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gacaeae14a320eb3ad6d22095b563c91ba">Audio_GetCurrAudioPath</a> ()</td></tr>
+<tr class="memdesc:gacaeae14a320eb3ad6d22095b563c91ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current audio path.  <br /></td></tr>
+<tr class="separator:gacaeae14a320eb3ad6d22095b563c91ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85c85e25b9ff0084453517f541b7ba3f" id="r_ga85c85e25b9ff0084453517f541b7ba3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga85c85e25b9ff0084453517f541b7ba3f">Audio_GetObjectHandle</a> ()</td></tr>
+<tr class="memdesc:ga85c85e25b9ff0084453517f541b7ba3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current object handle.  <br /></td></tr>
+<tr class="separator:ga85c85e25b9ff0084453517f541b7ba3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ff2744cc9df632d76f6ec05b18e9341" id="r_ga4ff2744cc9df632d76f6ec05b18e9341"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga4ff2744cc9df632d76f6ec05b18e9341">AACC_AudioTransferReq</a> (int oh, uint32_t type_and_conn)</td></tr>
+<tr class="memdesc:ga4ff2744cc9df632d76f6ec05b18e9341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change audio output.  <br /></td></tr>
+<tr class="separator:ga4ff2744cc9df632d76f6ec05b18e9341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac10d3fb6d442bed3c3c17f6a72ffce76" id="r_gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gac10d3fb6d442bed3c3c17f6a72ffce76">PlaySoundLoop</a> (int unk1, int unk2, int duration)</td></tr>
 <tr class="memdesc:gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play vibra tone (???).  <br /></td></tr>
 <tr class="separator:gac10d3fb6d442bed3c3c17f6a72ffce76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c24f2a0df404f1878857e7ab58ee6ad" id="r_ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga7c24f2a0df404f1878857e7ab58ee6ad">ChangeVolume</a> (uint8_t volume)</td></tr>
 <tr class="memdesc:ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change volume (unknown function).  <br /></td></tr>
 <tr class="separator:ga7c24f2a0df404f1878857e7ab58ee6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5be66231d8816001aca1a5feb47e627b" id="r_ga5be66231d8816001aca1a5feb47e627b"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga5be66231d8816001aca1a5feb47e627b">SoundAE_PlayFileAsEvent</a> (int event_id, int cepid, int msg_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *folder, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file)</td></tr>
+<tr class="memdesc:ga5be66231d8816001aca1a5feb47e627b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play custom sound.  <br /></td></tr>
+<tr class="separator:ga5be66231d8816001aca1a5feb47e627b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541" id="r_ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga0e7bb9d09a996dbbd3e2c5f5a5f7b541">RamAudioHook</a> ()</td></tr>
+<tr class="memdesc:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the AudioHook.  <br /></td></tr>
+<tr class="separator:ga0e7bb9d09a996dbbd3e2c5f5a5f7b541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c3fed1da880a2015c219cebd29dc3ea" id="r_ga6c3fed1da880a2015c219cebd29dc3ea"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga6c3fed1da880a2015c219cebd29dc3ea">RamIsSoundRecordingActive</a> ()</td></tr>
+<tr class="memdesc:ga6c3fed1da880a2015c219cebd29dc3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if active recording of the sound.  <br /></td></tr>
+<tr class="separator:ga6c3fed1da880a2015c219cebd29dc3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6dfbc1dd05ec10a52987bb1691cd8ea6" id="r_ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga6dfbc1dd05ec10a52987bb1691cd8ea6">RamSoundRecordingQuality</a> ()</td></tr>
+<tr class="memdesc:ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality of the current sound recording.  <br /></td></tr>
+<tr class="separator:ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

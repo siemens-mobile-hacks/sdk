@@ -59,6 +59,7 @@ var group___sound =
       [ "VOLUME_ORGANISER", "group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182aefabddf2642ff13b2c21088a9d8cfc3a", null ],
       [ "VOLUME_APPLICATIONS", "group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182a72244be02ec85a8c52d75fdaa31d658b", null ]
     ] ],
+    [ "RamVolumeLevel", "group___sound.html#gaeac995d1bab995b3f95b86cde51ebf5a", null ],
     [ "RamMediaIsPlaying", "group___sound.html#ga25f546e713d427446c3d26bf78eedfee", null ],
     [ "IsPlayerOn", "group___sound.html#ga1f0d40b59a1ad5bdcc156df5dbba1a71", null ],
     [ "GetPlayStatus", "group___sound.html#ga8b458f020a130911922204d5b11f8339", null ],
@@ -75,6 +76,13 @@ var group___sound =
     [ "PlayMelody_GetPosition", "group___sound.html#gad3bd5ebede0583620de217ff6220a330", null ],
     [ "PlayMelody_GetDuration", "group___sound.html#ga2989aa7c6fb9bc15c228032c0c60078e", null ],
     [ "PlayFile", "group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776", null ],
+    [ "Audio_GetCurrAudioPath", "group___sound.html#gacaeae14a320eb3ad6d22095b563c91ba", null ],
+    [ "Audio_GetObjectHandle", "group___sound.html#ga85c85e25b9ff0084453517f541b7ba3f", null ],
+    [ "AACC_AudioTransferReq", "group___sound.html#ga4ff2744cc9df632d76f6ec05b18e9341", null ],
     [ "PlaySoundLoop", "group___sound.html#gac10d3fb6d442bed3c3c17f6a72ffce76", null ],
-    [ "ChangeVolume", "group___sound.html#ga7c24f2a0df404f1878857e7ab58ee6ad", null ]
+    [ "ChangeVolume", "group___sound.html#ga7c24f2a0df404f1878857e7ab58ee6ad", null ],
+    [ "SoundAE_PlayFileAsEvent", "group___sound.html#ga5be66231d8816001aca1a5feb47e627b", null ],
+    [ "RamAudioHook", "group___sound.html#ga0e7bb9d09a996dbbd3e2c5f5a5f7b541", null ],
+    [ "RamIsSoundRecordingActive", "group___sound.html#ga6c3fed1da880a2015c219cebd29dc3ea", null ],
+    [ "RamSoundRecordingQuality", "group___sound.html#ga6dfbc1dd05ec10a52987bb1691cd8ea6", null ]
 ];

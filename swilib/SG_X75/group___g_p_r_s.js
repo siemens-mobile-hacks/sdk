@@ -27,6 +27,8 @@ var group___g_p_r_s =
       [ "ENIP_DNR_HOST_BY_NAME", "group___g_p_r_s.html#ggaec164bb3a90a0babb2b6f6af8d959b31a7205beadaa3377d82279f73a7712ba25", null ]
     ] ],
     [ "IsGPRSEnabled", "group___g_p_r_s.html#gac532c8674668b7e1fc939cdd03a838a4", null ],
+    [ "IsGPRSAvailable", "group___g_p_r_s.html#ga347bf71ee18a591775acbdf35b4200d4", null ],
+    [ "IsEDGEAvailable", "group___g_p_r_s.html#gafa8562e08bdcfbce1b87d4b14f6e7071", null ],
     [ "IsGPRSConnected", "group___g_p_r_s.html#ga6f98903b9d58a13c85c5ee71d96a7e1f", null ],
     [ "GPRS_OnOff", "group___g_p_r_s.html#gab7e6794e50eb6e643039e83822857e73", null ],
     [ "GetCurrentGPRSProfile", "group___g_p_r_s.html#ga91a28f795146567f506c701de0fb5201", null ],
@@ -36,6 +38,7 @@ var group___g_p_r_s =
     [ "GetDisconnectTime", "group___g_p_r_s.html#ga991f6c6403eda23c5d974d6f6efe285b", null ],
     [ "RegisterCepidForSocketWork", "group___g_p_r_s.html#ga6c5a2900a8121325b0b85cbb2ce748a7", null ],
     [ "RequestLMANConnect", "group___g_p_r_s.html#ga414dc05978ab6d956ae5b9a11f042e9e", null ],
+    [ "RamActiveGPRSProfileName", "group___g_p_r_s.html#ga7fcef0d5cf9f21a3ab59f057de08f2d3", null ],
     [ "RefreshGPRSTraffic", "group___g_p_r_s.html#ga0b8abe545a8426ac1987a3d191a1bda2", null ],
     [ "ResetGPRSTraffic", "group___g_p_r_s.html#gad627c8a5929b168f5c2839089ba42dc7", null ],
     [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305", null ]

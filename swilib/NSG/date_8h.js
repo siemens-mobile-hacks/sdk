@@ -6,6 +6,7 @@ var date_8h =
     [ "InitDate", "group___date_time.html#ga92554ba6901d8a60a0b3525e0b8f6ceb", null ],
     [ "InitTime", "group___date_time.html#ga834636c64c9c4f5dd21ba3e77e731473", null ],
     [ "RamDateTimeSettings", "group___date_time.html#ga38b1d54997b61510f8f99afae5b4d3d7", null ],
+    [ "RamIsAutoTimeEnabled", "group___date_time.html#gaac75f8358206e8ce71892a2a42a1f3d4", null ],
     [ "GetDateTime", "group___date_time.html#gaf57ed7501e66e5b6c17422c484108a5a", null ],
     [ "GetTimeZoneShift", "group___date_time.html#ga2e8ac83eb8effe6c224eedfa65131ef7", null ],
     [ "GetWeek", "group___date_time.html#gafbf2787f486102f8fd113190dfd6b443", null ],

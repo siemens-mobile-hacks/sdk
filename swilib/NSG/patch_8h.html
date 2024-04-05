@@ -100,11 +100,13 @@ $(function(){initNavTree('patch_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">patch.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="base_8h_source.html">base.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="date_8h_source.html">date.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="wstring_8h_source.html">wstring.h</a>&quot;</code><br />
 </div>
 <p><a href="patch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -124,20 +126,90 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gad8c94240dec551a2d9546468b15b4ad7" id="r_gad8c94240dec551a2d9546468b15b4ad7"><td class="memItemLeft" align="right" valign="top">typedef struct SFN_DATA&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gad8c94240dec551a2d9546468b15b4ad7">SFN_DATA</a></td></tr>
 <tr class="separator:gad8c94240dec551a2d9546468b15b4ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga5e5284fcda8cf4ee1a398ea520d5128e" id="r_ga5e5284fcda8cf4ee1a398ea520d5128e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga5e5284fcda8cf4ee1a398ea520d5128e">AccessoryTypeID</a> { <a class="el" href="group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c">ACC_TYPE_SERIAL_CABLE</a> = 15
+ }</td></tr>
+<tr class="memdesc:ga5e5284fcda8cf4ee1a398ea520d5128e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessory types.  <a href="group___p_a_t_c_h.html#ga5e5284fcda8cf4ee1a398ea520d5128e">More...</a><br /></td></tr>
+<tr class="separator:ga5e5284fcda8cf4ee1a398ea520d5128e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad4bc1138351b18db9eff0493ea711bf1" id="r_gad4bc1138351b18db9eff0493ea711bf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___p_a_t_c_h.html#struct_s_f_n___d_a_t_a">SFN_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gad4bc1138351b18db9eff0493ea711bf1">DATA_N_SFB</a> (void)</td></tr>
-<tr class="memdesc:gad4bc1138351b18db9eff0493ea711bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of the GSM channels RX levels.  <br /></td></tr>
-<tr class="separator:gad4bc1138351b18db9eff0493ea711bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91df4e5a1c68bd1c9b11e3469c41900e" id="r_ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga91df4e5a1c68bd1c9b11e3469c41900e">FreeRAM</a> ()</td></tr>
-<tr class="memdesc:ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the free memory for MasterPatch patches.  <br /></td></tr>
-<tr class="separator:ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">MasterPatch</div></td></tr>
+<tr class="memitem:ga31420a120ae02b6c4ab460abb18bf385" id="r_ga31420a120ae02b6c4ab460abb18bf385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga31420a120ae02b6c4ab460abb18bf385">RunDispatcher</a> ()</td></tr>
+<tr class="memdesc:ga31420a120ae02b6c4ab460abb18bf385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run MasterPatch dispatcher.  <br /></td></tr>
+<tr class="separator:ga31420a120ae02b6c4ab460abb18bf385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa44d5cb6142c1fe7a1cee3e92594efbd" id="r_gaa44d5cb6142c1fe7a1cee3e92594efbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaa44d5cb6142c1fe7a1cee3e92594efbd">GetAllPatchesByInject</a> ()</td></tr>
+<tr class="memdesc:gaa44d5cb6142c1fe7a1cee3e92594efbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown.  <br /></td></tr>
+<tr class="separator:gaa44d5cb6142c1fe7a1cee3e92594efbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa4d22e5431a4d82fb57581a579c7702e" id="r_gaa4d22e5431a4d82fb57581a579c7702e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaa4d22e5431a4d82fb57581a579c7702e">GetBuffer</a> (int patch_id)</td></tr>
 <tr class="memdesc:gaa4d22e5431a4d82fb57581a579c7702e"><td class="mdescLeft">&#160;</td><td class="mdescRight">[MasterPatch] Get memory buffer for the patch by ID.  <br /></td></tr>
 <tr class="separator:gaa4d22e5431a4d82fb57581a579c7702e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab22f68cd92d5a1ee2df993baffad7f00" id="r_gab22f68cd92d5a1ee2df993baffad7f00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gab22f68cd92d5a1ee2df993baffad7f00">RunScaner</a> ()</td></tr>
+<tr class="memdesc:gab22f68cd92d5a1ee2df993baffad7f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run MasterPatch scaner.  <br /></td></tr>
+<tr class="separator:gab22f68cd92d5a1ee2df993baffad7f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91df4e5a1c68bd1c9b11e3469c41900e" id="r_ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga91df4e5a1c68bd1c9b11e3469c41900e">FreeRAM</a> ()</td></tr>
+<tr class="memdesc:ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the free memory for MasterPatch patches.  <br /></td></tr>
+<tr class="separator:ga91df4e5a1c68bd1c9b11e3469c41900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">API</div></td></tr>
+<tr class="memitem:ga0c465b9f2d8b3e571b8bf868947febe4" id="r_ga0c465b9f2d8b3e571b8bf868947febe4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga0c465b9f2d8b3e571b8bf868947febe4">OpenReadCloseFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, void *ram)</td></tr>
+<tr class="memdesc:ga0c465b9f2d8b3e571b8bf868947febe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read file content.  <br /></td></tr>
+<tr class="separator:ga0c465b9f2d8b3e571b8bf868947febe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9929f6498e27e2502acc43ae943ed23" id="r_gae9929f6498e27e2502acc43ae943ed23"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gae9929f6498e27e2502acc43ae943ed23">GetLP</a> (int lgp_id)</td></tr>
+<tr class="memdesc:gae9929f6498e27e2502acc43ae943ed23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get message from langpack.  <br /></td></tr>
+<tr class="separator:gae9929f6498e27e2502acc43ae943ed23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e796c3883ccbe6c923e01b1fd678009" id="r_ga4e796c3883ccbe6c923e01b1fd678009"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga4e796c3883ccbe6c923e01b1fd678009">SendMP_cmd</a> (uint16_t cmd, int16_t substract)</td></tr>
+<tr class="memdesc:ga4e796c3883ccbe6c923e01b1fd678009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send cmd to the MediaPlayer.  <br /></td></tr>
+<tr class="separator:ga4e796c3883ccbe6c923e01b1fd678009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae351c8f8c9018abf1a9886f7ac7fad7" id="r_gaae351c8f8c9018abf1a9886f7ac7fad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaae351c8f8c9018abf1a9886f7ac7fad7">StrAnsi2Uni</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, uint16_t *out)</td></tr>
+<tr class="memdesc:gaae351c8f8c9018abf1a9886f7ac7fad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert ANSI string to Unicode (1st word - len).  <br /></td></tr>
+<tr class="separator:gaae351c8f8c9018abf1a9886f7ac7fad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf458f365a95a35e1a3378207d04322a4" id="r_gaf458f365a95a35e1a3378207d04322a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaf458f365a95a35e1a3378207d04322a4">StrUni2Ansi</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint16_t *in, char *out)</td></tr>
+<tr class="memdesc:gaf458f365a95a35e1a3378207d04322a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Unicode string (1st word - len) to ANSI.  <br /></td></tr>
+<tr class="separator:gaf458f365a95a35e1a3378207d04322a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga990f43df2b40b9b267aa0f41287a6fe1" id="r_ga990f43df2b40b9b267aa0f41287a6fe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga990f43df2b40b9b267aa0f41287a6fe1">DrawPicWithCanvas</a> (int x, int y, int picture)</td></tr>
+<tr class="memdesc:ga990f43df2b40b9b267aa0f41287a6fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw image from the PIT table with "canvas" on background.  <br /></td></tr>
+<tr class="separator:ga990f43df2b40b9b267aa0f41287a6fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9586dc830e93193c84867a348a1a9cd2" id="r_ga9586dc830e93193c84867a348a1a9cd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga9586dc830e93193c84867a348a1a9cd2">DrawColorPicWithCanvas</a> (int x, int y, int picture, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *pen)</td></tr>
+<tr class="memdesc:ga9586dc830e93193c84867a348a1a9cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw image from the PIT table with "canvas" on background.  <br /></td></tr>
+<tr class="separator:ga9586dc830e93193c84867a348a1a9cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d4c9cf8d73ca1f19bad4118c007f51a" id="r_ga8d4c9cf8d73ca1f19bad4118c007f51a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga8d4c9cf8d73ca1f19bad4118c007f51a">DrawText</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *text, int x, int y, int font, int w, int h, int align, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *pen, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *brush, int inversion)</td></tr>
+<tr class="memdesc:ga8d4c9cf8d73ca1f19bad4118c007f51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a multi-line string.  <br /></td></tr>
+<tr class="separator:ga8d4c9cf8d73ca1f19bad4118c007f51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45d3121b87a2979579db1b3350f17640" id="r_ga45d3121b87a2979579db1b3350f17640"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga45d3121b87a2979579db1b3350f17640">ProcessFiles</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, void(*callback)(<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *text))</td></tr>
+<tr class="memdesc:ga45d3121b87a2979579db1b3350f17640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all files in the specified folder and run a callback for each.  <br /></td></tr>
+<tr class="separator:ga45d3121b87a2979579db1b3350f17640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ffb7f433f29d11b376255aa0bb3a1d4" id="r_ga6ffb7f433f29d11b376255aa0bb3a1d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga6ffb7f433f29d11b376255aa0bb3a1d4">PlayVibra</a> (int freq, int duration, int force)</td></tr>
+<tr class="memdesc:ga6ffb7f433f29d11b376255aa0bb3a1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play vibration.  <br /></td></tr>
+<tr class="separator:ga6ffb7f433f29d11b376255aa0bb3a1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c88b069cbfbe67208c61543f149c7ce" id="r_ga0c88b069cbfbe67208c61543f149c7ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga0c88b069cbfbe67208c61543f149c7ce">PlaySoundVibra</a> (int sound_n, int vibra_freq, int vibra_duration, int vibra_force)</td></tr>
+<tr class="memdesc:ga0c88b069cbfbe67208c61543f149c7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play sound with vibration.  <br /></td></tr>
+<tr class="separator:ga0c88b069cbfbe67208c61543f149c7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67941cbf2633a91978a1c9aaf3f611eb" id="r_ga67941cbf2633a91978a1c9aaf3f611eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga67941cbf2633a91978a1c9aaf3f611eb">CreatePath</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path)</td></tr>
+<tr class="memdesc:ga67941cbf2633a91978a1c9aaf3f611eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive mkdir.  <br /></td></tr>
+<tr class="separator:ga67941cbf2633a91978a1c9aaf3f611eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab924f4ea4e7ee3caca8765aadc588876" id="r_gab924f4ea4e7ee3caca8765aadc588876"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gab924f4ea4e7ee3caca8765aadc588876">Seconds2iTime</a> (int timeval)</td></tr>
+<tr class="memdesc:gab924f4ea4e7ee3caca8765aadc588876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown.  <br /></td></tr>
+<tr class="separator:gab924f4ea4e7ee3caca8765aadc588876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81b92b377a8404b264063556f3446a05" id="r_ga81b92b377a8404b264063556f3446a05"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga81b92b377a8404b264063556f3446a05">GetFileSize</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path)</td></tr>
+<tr class="memdesc:ga81b92b377a8404b264063556f3446a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get file size.  <br /></td></tr>
+<tr class="separator:ga81b92b377a8404b264063556f3446a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab94c11ffa6216b557289e6b3ac55f0a2" id="r_gab94c11ffa6216b557289e6b3ac55f0a2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gab94c11ffa6216b557289e6b3ac55f0a2">GetAccessoryType</a> (void)</td></tr>
+<tr class="memdesc:gab94c11ffa6216b557289e6b3ac55f0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of current accessory connected to the phone.  <br /></td></tr>
+<tr class="separator:gab94c11ffa6216b557289e6b3ac55f0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Screen Shooter</div></td></tr>
+<tr class="memitem:gaca89d2e7c8ad58a057376c68fe563f79" id="r_gaca89d2e7c8ad58a057376c68fe563f79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaca89d2e7c8ad58a057376c68fe563f79">ScreenShoot</a> ()</td></tr>
+<tr class="memdesc:gaca89d2e7c8ad58a057376c68fe563f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make screenshot.  <br /></td></tr>
+<tr class="separator:gaca89d2e7c8ad58a057376c68fe563f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Talking phone</div></td></tr>
 <tr class="memitem:gaa81eb182448395ab8346222e8674cb10" id="r_gaa81eb182448395ab8346222e8674cb10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaa81eb182448395ab8346222e8674cb10">SpellTime</a> ()</td></tr>
 <tr class="memdesc:gaa81eb182448395ab8346222e8674cb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spell current time.  <br /></td></tr>
 <tr class="separator:gaa81eb182448395ab8346222e8674cb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Channel Banner</div></td></tr>
+<tr class="memitem:gad4bc1138351b18db9eff0493ea711bf1" id="r_gad4bc1138351b18db9eff0493ea711bf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___p_a_t_c_h.html#struct_s_f_n___d_a_t_a">SFN_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gad4bc1138351b18db9eff0493ea711bf1">DATA_N_SFB</a> (void)</td></tr>
+<tr class="memdesc:gad4bc1138351b18db9eff0493ea711bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of the GSM channels RX levels.  <br /></td></tr>
+<tr class="separator:gad4bc1138351b18db9eff0493ea711bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">BoBaPack</div></td></tr>
 <tr class="memitem:ga6d908dfacbc563397348f1eb7c416113" id="r_ga6d908dfacbc563397348f1eb7c416113"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga6d908dfacbc563397348f1eb7c416113">GetConfig</a> (uint32_t id)</td></tr>
 <tr class="memdesc:ga6d908dfacbc563397348f1eb7c416113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown function.  <br /></td></tr>
 <tr class="separator:ga6d908dfacbc563397348f1eb7c416113"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +222,94 @@ Functions</h2></td></tr>
 <tr class="memitem:ga15714be37c76a3b60c61d8d0bcfe7cd5" id="r_ga15714be37c76a3b60c61d8d0bcfe7cd5"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga15714be37c76a3b60c61d8d0bcfe7cd5">GetMaxAdrScan</a> ()</td></tr>
 <tr class="memdesc:ga15714be37c76a3b60c61d8d0bcfe7cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown function.  <br /></td></tr>
 <tr class="separator:ga15714be37c76a3b60c61d8d0bcfe7cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Langpack</div></td></tr>
+<tr class="memitem:ga6fb91db12566894ab334ddda389f4733" id="r_ga6fb91db12566894ab334ddda389f4733"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga6fb91db12566894ab334ddda389f4733">LP_MonthsShort</a> ()</td></tr>
+<tr class="memdesc:ga6fb91db12566894ab334ddda389f4733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get start index of the months short names.  <br /></td></tr>
+<tr class="separator:ga6fb91db12566894ab334ddda389f4733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac091a3309fe03acc039f4a301ad9cca2" id="r_gac091a3309fe03acc039f4a301ad9cca2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gac091a3309fe03acc039f4a301ad9cca2">LP_MonthsLong</a> ()</td></tr>
+<tr class="memdesc:gac091a3309fe03acc039f4a301ad9cca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get start index of the months full names.  <br /></td></tr>
+<tr class="separator:gac091a3309fe03acc039f4a301ad9cca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61db82c4d92e1cf8db648ebd6253ea5c" id="r_ga61db82c4d92e1cf8db648ebd6253ea5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga61db82c4d92e1cf8db648ebd6253ea5c">LP_Weekdays</a> ()</td></tr>
+<tr class="memdesc:ga61db82c4d92e1cf8db648ebd6253ea5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get start index of the week days names.  <br /></td></tr>
+<tr class="separator:ga61db82c4d92e1cf8db648ebd6253ea5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Icons</div></td></tr>
+<tr class="memitem:gae877e891a7416a614dd48286ceaa60d9" id="r_gae877e891a7416a614dd48286ceaa60d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gae877e891a7416a614dd48286ceaa60d9">PIT_Pic_Big</a> ()</td></tr>
+<tr class="memdesc:gae877e891a7416a614dd48286ceaa60d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "big" icon.  <br /></td></tr>
+<tr class="separator:gae877e891a7416a614dd48286ceaa60d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac52e781ea9f37950821a66144b416891" id="r_gac52e781ea9f37950821a66144b416891"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gac52e781ea9f37950821a66144b416891">PIT_Pic_Little</a> ()</td></tr>
+<tr class="memdesc:gac52e781ea9f37950821a66144b416891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "little" icon.  <br /></td></tr>
+<tr class="separator:gac52e781ea9f37950821a66144b416891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga309e6e8256edadb58257b3ad7ff5d409" id="r_ga309e6e8256edadb58257b3ad7ff5d409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga309e6e8256edadb58257b3ad7ff5d409">PIT_Pic_Extra</a> ()</td></tr>
+<tr class="memdesc:ga309e6e8256edadb58257b3ad7ff5d409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "extra" icon.  <br /></td></tr>
+<tr class="separator:ga309e6e8256edadb58257b3ad7ff5d409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52739d816aa7622434fc56cef10a5f0b" id="r_ga52739d816aa7622434fc56cef10a5f0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga52739d816aa7622434fc56cef10a5f0b">PIT_Pic_Profiles</a> ()</td></tr>
+<tr class="memdesc:ga52739d816aa7622434fc56cef10a5f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "profiles" icon.  <br /></td></tr>
+<tr class="separator:ga52739d816aa7622434fc56cef10a5f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga947445d269139fa3ef63bc868644a8d9" id="r_ga947445d269139fa3ef63bc868644a8d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga947445d269139fa3ef63bc868644a8d9">PIT_Pic_Vibra</a> ()</td></tr>
+<tr class="memdesc:ga947445d269139fa3ef63bc868644a8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "vibra" icon.  <br /></td></tr>
+<tr class="separator:ga947445d269139fa3ef63bc868644a8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e2bbf4e461ec11490b5ff0e48498536" id="r_ga1e2bbf4e461ec11490b5ff0e48498536"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga1e2bbf4e461ec11490b5ff0e48498536">PIT_Pic_Call</a> ()</td></tr>
+<tr class="memdesc:ga1e2bbf4e461ec11490b5ff0e48498536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "call" icon.  <br /></td></tr>
+<tr class="separator:ga1e2bbf4e461ec11490b5ff0e48498536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaecc781c53ef9da444268e0ab572f3dfb" id="r_gaecc781c53ef9da444268e0ab572f3dfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaecc781c53ef9da444268e0ab572f3dfb">PIT_Pic_AdvNet</a> ()</td></tr>
+<tr class="memdesc:gaecc781c53ef9da444268e0ab572f3dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "advnet" icon.  <br /></td></tr>
+<tr class="separator:gaecc781c53ef9da444268e0ab572f3dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d59a27ad54515a37f8f5f256ae68685" id="r_ga7d59a27ad54515a37f8f5f256ae68685"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga7d59a27ad54515a37f8f5f256ae68685">PIT_Pic_Calendar</a> ()</td></tr>
+<tr class="memdesc:ga7d59a27ad54515a37f8f5f256ae68685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "calendar" icon.  <br /></td></tr>
+<tr class="separator:ga7d59a27ad54515a37f8f5f256ae68685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3791a644a2a594026df84625f83bcad" id="r_gae3791a644a2a594026df84625f83bcad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gae3791a644a2a594026df84625f83bcad">PIT_Pic_AccuGraph</a> ()</td></tr>
+<tr class="memdesc:gae3791a644a2a594026df84625f83bcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "accumulator" icon.  <br /></td></tr>
+<tr class="separator:gae3791a644a2a594026df84625f83bcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga273563bd7f00efab9d798879024c9943" id="r_ga273563bd7f00efab9d798879024c9943"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga273563bd7f00efab9d798879024c9943">PIT_Pic_Lani</a> ()</td></tr>
+<tr class="memdesc:ga273563bd7f00efab9d798879024c9943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get "lani" icon.  <br /></td></tr>
+<tr class="separator:ga273563bd7f00efab9d798879024c9943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Extending PIT and Shortcuts.</div></td></tr>
+<tr class="memitem:ga479c091809435ae8b25359f14fb35a02" id="r_ga479c091809435ae8b25359f14fb35a02"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga479c091809435ae8b25359f14fb35a02">ShortcutsTableAddr</a> ()</td></tr>
+<tr class="memdesc:ga479c091809435ae8b25359f14fb35a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcuts table address.  <br /></td></tr>
+<tr class="separator:ga479c091809435ae8b25359f14fb35a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7659f8b7fbdab97a77d9778ccbfcba1" id="r_gac7659f8b7fbdab97a77d9778ccbfcba1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gac7659f8b7fbdab97a77d9778ccbfcba1">PictureRelocationTableAddr</a> ()</td></tr>
+<tr class="memdesc:gac7659f8b7fbdab97a77d9778ccbfcba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picture relocation table address.  <br /></td></tr>
+<tr class="separator:gac7659f8b7fbdab97a77d9778ccbfcba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa861baf2f559b912a74e6579cd7119ad" id="r_gaa861baf2f559b912a74e6579cd7119ad"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gaa861baf2f559b912a74e6579cd7119ad">PictureRelocationBaseAddr</a> ()</td></tr>
+<tr class="memdesc:gaa861baf2f559b912a74e6579cd7119ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picture relocation base address.  <br /></td></tr>
+<tr class="separator:gaa861baf2f559b912a74e6579cd7119ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a80a6713d33366d445a4ee52d1e3923" id="r_ga8a80a6713d33366d445a4ee52d1e3923"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga8a80a6713d33366d445a4ee52d1e3923">NextPictureMagicValue</a> ()</td></tr>
+<tr class="memdesc:ga8a80a6713d33366d445a4ee52d1e3923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magic value for the next picture.  <br /></td></tr>
+<tr class="separator:ga8a80a6713d33366d445a4ee52d1e3923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d7cee2c8c3091ca7db431a5e3aafd91" id="r_ga8d7cee2c8c3091ca7db431a5e3aafd91"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga8d7cee2c8c3091ca7db431a5e3aafd91">Additional_PIT_address</a> ()</td></tr>
+<tr class="memdesc:ga8d7cee2c8c3091ca7db431a5e3aafd91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional PIT address.  <br /></td></tr>
+<tr class="separator:ga8d7cee2c8c3091ca7db431a5e3aafd91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82b521e4bae1e4e1d60e190a5bd57a88" id="r_ga82b521e4bae1e4e1d60e190a5bd57a88"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga82b521e4bae1e4e1d60e190a5bd57a88">Additional_PIT_start</a> ()</td></tr>
+<tr class="memdesc:ga82b521e4bae1e4e1d60e190a5bd57a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">First PIT number for additional table.  <br /></td></tr>
+<tr class="separator:ga82b521e4bae1e4e1d60e190a5bd57a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga865e1c309d68c5e3446a23ac2d4e824d" id="r_ga865e1c309d68c5e3446a23ac2d4e824d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga865e1c309d68c5e3446a23ac2d4e824d">Additional_PIT_end</a> ()</td></tr>
+<tr class="memdesc:ga865e1c309d68c5e3446a23ac2d4e824d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last PIT number for additional table.  <br /></td></tr>
+<tr class="separator:ga865e1c309d68c5e3446a23ac2d4e824d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">MiniGPS.</div></td></tr>
+<tr class="memitem:gae098cc1761029d79ab57338d998a1890" id="r_gae098cc1761029d79ab57338d998a1890"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gae098cc1761029d79ab57338d998a1890">MiniGPS</a> ()</td></tr>
+<tr class="memdesc:gae098cc1761029d79ab57338d998a1890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run MiniGPS patch.  <br /></td></tr>
+<tr class="separator:gae098cc1761029d79ab57338d998a1890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Extra Info on ProgressBars.</div></td></tr>
+<tr class="memitem:gadb0e334f95705dd26cb3f64b8386c204" id="r_gadb0e334f95705dd26cb3f64b8386c204"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gadb0e334f95705dd26cb3f64b8386c204">ProgressCalculate</a> (int current, int total)</td></tr>
+<tr class="memdesc:gadb0e334f95705dd26cb3f64b8386c204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate current progress by current &amp; total.  <br /></td></tr>
+<tr class="separator:gadb0e334f95705dd26cb3f64b8386c204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Chinese patches.</div></td></tr>
+<tr class="memitem:ga8fec73ba9b385149f39e0f7e58fc9e4b" id="r_ga8fec73ba9b385149f39e0f7e58fc9e4b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga8fec73ba9b385149f39e0f7e58fc9e4b">GetBuildCanvas</a> ()</td></tr>
+<tr class="memdesc:ga8fec73ba9b385149f39e0f7e58fc9e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown.  <br /></td></tr>
+<tr class="separator:ga8fec73ba9b385149f39e0f7e58fc9e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c727596e1b67e2c6a77c25c9c950563" id="r_ga9c727596e1b67e2c6a77c25c9c950563"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga9c727596e1b67e2c6a77c25c9c950563">GetLunarDate</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___date_time.html#struct_t_date">TDate</a> *date, <a class="el" href="group___date_time.html#struct_t_date">TDate</a> *lunar_date)</td></tr>
+<tr class="memdesc:ga9c727596e1b67e2c6a77c25c9c950563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert normal date to the Lunar date.  <br /></td></tr>
+<tr class="separator:ga9c727596e1b67e2c6a77c25c9c950563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae20fc5a3e1f04ee73aea7de23c429231" id="r_gae20fc5a3e1f04ee73aea7de23c429231"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gae20fc5a3e1f04ee73aea7de23c429231">GetLunarYearID</a> (int year)</td></tr>
+<tr class="memdesc:gae20fc5a3e1f04ee73aea7de23c429231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Lunar Year ID by year.  <br /></td></tr>
+<tr class="separator:gae20fc5a3e1f04ee73aea7de23c429231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab57841a034fcf50facc191552761dc83" id="r_gab57841a034fcf50facc191552761dc83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#gab57841a034fcf50facc191552761dc83">GetLunarAnimal</a> (int year)</td></tr>
+<tr class="memdesc:gab57841a034fcf50facc191552761dc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Lunar Year animal picture by year.  <br /></td></tr>
+<tr class="separator:gab57841a034fcf50facc191552761dc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Unknown functions from unknown patches.</div></td></tr>
+<tr class="memitem:ga3b87a2b51932f7635d88d45ca17d3aef" id="r_ga3b87a2b51932f7635d88d45ca17d3aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_a_t_c_h.html#ga3b87a2b51932f7635d88d45ca17d3aef">CallLibFunByNumber</a> (int func_id)</td></tr>
+<tr class="memdesc:ga3b87a2b51932f7635d88d45ca17d3aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown.  <br /></td></tr>
+<tr class="separator:ga3b87a2b51932f7635d88d45ca17d3aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

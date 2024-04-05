@@ -92,8 +92,8 @@ var searchData=
   ['fopen_89',['fopen',['../group___file.html#ga56c8a75a862bc345bdde79252c316388',1,'file.h']]],
   ['format_90',['format',['../group___addressbook.html#abef61ab9a00f90db3e3d32d0e603bf0a',1,'PKT_NUM']]],
   ['fread_91',['fread',['../group___file.html#ga9a126c55f702048281a7d7650c682d39',1,'file.h']]],
-  ['free_92',['Free',['../crypto_8h.html#ad73135040b3c4b3449261eaac7378a17',1,'crypto.h']]],
-  ['free_93',['free',['../group__libc.html#gafbedc913aa4651b3c3b4b3aecd9b4711',1,'libc.h']]],
+  ['free_92',['free',['../group__libc.html#gafbedc913aa4651b3c3b4b3aecd9b4711',1,'libc.h']]],
+  ['free_93',['Free',['../crypto_8h.html#ad73135040b3c4b3449261eaac7378a17',1,'crypto.h']]],
   ['free_5ffn_94',['free_fn',['../builtin_2png_8h.html#a56b0a75676a1e0f1be627ba5463730dd',1,'png_struct_def']]],
   ['free_5ffunc_95',['free_func',['../crypto_8h.html#acce7bd60712d1319e666f1bd9fbdeabf',1,'crypto_ex_data_func_st::free_func'],['../builtin_2zlib_8h.html#a3f5c24bc1470b5d545fad3d50c1c5b50',1,'free_func:&#160;zlib.h']]],
   ['free_5flocked_96',['Free_locked',['../crypto_8h.html#a812849770d9c9bf3181ac00fe6ad901b',1,'crypto.h']]],
@@ -109,10 +109,11 @@ var searchData=
   ['freeunpackabentry_106',['FreeUnpackABentry',['../group___addressbook.html#gad0850336b65c3f8591cbda507367cb00',1,'addressbook.h']]],
   ['freeussd_107',['freeUSSD',['../group___telephony.html#gac56cc133240d272cc165e6a7a30f4a2f',1,'telephony.h']]],
   ['freews_108',['FreeWS',['../group___w_s_h_d_r.html#ga83da28feb6a9675353bfcbabb5aa1014',1,'wstring.h']]],
-  ['frequency_109',['frequency',['../builtin_2png_8h.html#ad8095a15bb5a054c12ef911478c5f3a3',1,'png_sPLT_entry_struct']]],
-  ['fstats_110',['FSTATS',['../group___file.html#struct_f_s_t_a_t_s',1,'FSTATS'],['../group___file.html#ga1e77b4d2dc71903e1178c3478e40899e',1,'FSTATS:&#160;file.h']]],
-  ['full_5ffilename_111',['full_filename',['../group___explorer.html#a1758b74735e4c933b14e374aeb21b28c',1,'NativeExplorerData']]],
-  ['fullname_112',['fullname',['../x509v3_8h.html#aa52c38ff3b6725b04de52ceb0dd18f72',1,'DIST_POINT_NAME_st']]],
-  ['func_113',['func',['../group___o_b_s.html#aeb3e2c0d81c754c2687640e92928e150',1,'OBSevent']]],
-  ['fwrite_114',['fwrite',['../group___file.html#gaee40b8f8ad394f1a8d491d9ada7ad2b2',1,'file.h']]]
+  ['freews_5f2_109',['FreeWS_2',['../group___l_e_g_a_c_y.html#gab6cd57f4117d9b9bf20e242cc27921ad',1,'legacy.h']]],
+  ['frequency_110',['frequency',['../builtin_2png_8h.html#ad8095a15bb5a054c12ef911478c5f3a3',1,'png_sPLT_entry_struct']]],
+  ['fstats_111',['FSTATS',['../group___file.html#struct_f_s_t_a_t_s',1,'FSTATS'],['../group___file.html#ga1e77b4d2dc71903e1178c3478e40899e',1,'FSTATS:&#160;file.h']]],
+  ['full_5ffilename_112',['full_filename',['../group___explorer.html#a1758b74735e4c933b14e374aeb21b28c',1,'NativeExplorerData']]],
+  ['fullname_113',['fullname',['../x509v3_8h.html#aa52c38ff3b6725b04de52ceb0dd18f72',1,'DIST_POINT_NAME_st']]],
+  ['func_114',['func',['../group___o_b_s.html#aeb3e2c0d81c754c2687640e92928e150',1,'OBSevent']]],
+  ['fwrite_115',['fwrite',['../group___file.html#gaee40b8f8ad394f1a8d491d9ada7ad2b2',1,'file.h']]]
 ];

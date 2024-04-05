@@ -661,6 +661,11 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga8b75db47e227cc4a56eedab904dc915f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get custom user pointer from TextView.  <br /></td></tr>
 <tr class="separator:ga8b75db47e227cc4a56eedab904dc915f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">RadioButtonList</h2></td></tr>
+<tr class="memitem:ga8255da09902a222ab737efaae5e272e2" id="r_ga8255da09902a222ab737efaae5e272e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8255da09902a222ab737efaae5e272e2">CreateRadioButtonList</a> (void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void(*handler)(int), int flags)</td></tr>
+<tr class="memdesc:ga8255da09902a222ab737efaae5e272e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create radios button list.  <br /></td></tr>
+<tr class="separator:ga8255da09902a222ab737efaae5e272e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Hacks</h2></td></tr>
 <tr class="memitem:gaf8201f9eea97087c165fd841ea136a49" id="r_gaf8201f9eea97087c165fd841ea136a49"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8201f9eea97087c165fd841ea136a49">RamMenuAnywhere</a> ()</td></tr>
 <tr class="memdesc:gaf8201f9eea97087c165fd841ea136a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the currently opened menu.  <br /></td></tr>
@@ -3441,7 +3446,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>Function with wrong name, use instead <a class="el" href="#ga02491a3a5b6f97f90ce1237bc644612c" title="Set text attributes.">SetTextAttrToEditCOptions</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>Function with wrong name, use instead <a class="el" href="#ga02491a3a5b6f97f90ce1237bc644612c" title="Set text attributes.">SetTextAttrToEditCOptions</a> </dd></dl>
 
 </div>
 </div>
@@ -4082,7 +4087,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga5cf6c0a5a3d4aace3410ac7b46bb8b78" title="Scroll to the given menu item.">SetCursorToMenuItem</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga5cf6c0a5a3d4aace3410ac7b46bb8b78" title="Scroll to the given menu item.">SetCursorToMenuItem</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -4149,7 +4154,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga0a4e25abe9240a5d76ad3f5faa81df42" title="Add softkey to the GUI.">SetSoftKey</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga0a4e25abe9240a5d76ad3f5faa81df42" title="Add softkey to the GUI.">SetSoftKey</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -4689,6 +4694,67 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer </dd></dl>
+
+</div>
+</div>
+<a id="ga8255da09902a222ab737efaae5e272e2" name="ga8255da09902a222ab737efaae5e272e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8255da09902a222ab737efaae5e272e2">&#9670;&#160;</a></span>CreateRadioButtonList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CreateRadioButtonList </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>desc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_zero0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_zero1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>selected_item</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>handler&#160;</em></span>)(int), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create radios button list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desc</td><td>gui description </td></tr>
+    <tr><td class="paramname">num</td><td>number of the items </td></tr>
+    <tr><td class="paramname">unk_zero0</td><td>unknown, set to 0 </td></tr>
+    <tr><td class="paramname">unk_zero1</td><td>unknown, set to 0 </td></tr>
+    <tr><td class="paramname">selected_item</td><td>selected item index </td></tr>
+    <tr><td class="paramname">handler</td><td>item handler </td></tr>
+    <tr><td class="paramname">flags</td><td>unknown flags </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> ID </dd></dl>
 
 </div>
 </div>

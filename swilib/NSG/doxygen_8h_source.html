@@ -102,11 +102,23 @@ $(function(){initNavTree('doxygen_8h_source.html',''); initResizable(true); });
 <div class="contents">
 <a href="doxygen_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="doxygen_8h.html#a29c180570710dd0fbf1cc1e90b8d511b">    7</a></span><span class="preprocessor">#define __swilib_begin</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">    8</a></span><span class="preprocessor">#define __swilib_end</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">   10</a></span><span class="preprocessor">#define __swi_begin(number)</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">   11</a></span><span class="preprocessor">#define __swi_end(number, func, call)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef SWILIB_MODERN</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    #define SWILIB_MODERN</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifdef SWILIB_PARSE_FUNCTIONS</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    #define __swilib_begin</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    #define __swilib_end</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    #define __swi_begin(number) __swi_begin</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    #define __swi_end(number, func, call) __swi_end(number, func)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="doxygen_8h.html#a29c180570710dd0fbf1cc1e90b8d511b">   18</a></span><span class="preprocessor">    #define __swilib_begin</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733">   19</a></span><span class="preprocessor">    #define __swilib_end</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">   21</a></span><span class="preprocessor">    #define __swi_begin(number)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="doxygen_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f">   22</a></span><span class="preprocessor">    #define __swi_end(number, func, call)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

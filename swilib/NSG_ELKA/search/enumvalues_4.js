@@ -43,5 +43,7 @@ var searchData=
   ['enip_5fsock_5fdata_5fread_40',['ENIP_SOCK_DATA_READ',['../group___g_p_r_s.html#ggaec164bb3a90a0babb2b6f6af8d959b31a0665ed2f40903e78ec72e33ed409c011',1,'gprs.h']]],
   ['enip_5fsock_5ficmp_5ferror_41',['ENIP_SOCK_ICMP_ERROR',['../group___g_p_r_s.html#ggaec164bb3a90a0babb2b6f6af8d959b31a1f6324633df35d07fac9ef61817fa19a',1,'gprs.h']]],
   ['enip_5fsock_5fremote_5fclosed_42',['ENIP_SOCK_REMOTE_CLOSED',['../group___g_p_r_s.html#ggaec164bb3a90a0babb2b6f6af8d959b31a2da2d7d821848a4de7be6e4ae1f0f884',1,'gprs.h']]],
-  ['enter_5fbutton_43',['ENTER_BUTTON',['../group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718ab42cc4bbdbed78b08763c32419fb5796',1,'gui.h']]]
+  ['enter_5fbutton_43',['ENTER_BUTTON',['../group___g_u_i.html#gga8071c23e5ca850e22bbe6454bde07718ab42cc4bbdbed78b08763c32419fb5796',1,'gui.h']]],
+  ['explorer_5ftransfer_5fstate_5frunning_44',['EXPLORER_TRANSFER_STATE_RUNNING',['../group___explorer.html#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75',1,'explorer.h']]],
+  ['explorer_5ftransfer_5fstate_5fstop_45',['EXPLORER_TRANSFER_STATE_STOP',['../group___explorer.html#ggaab69e3ef9996de6fe27edbd6f55d6dbdab3360545e5d174c516ccb37132e7d023',1,'explorer.h']]]
 ];

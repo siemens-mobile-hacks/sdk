@@ -144,6 +144,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gab6419c027b1b9461f27159be9424b970" id="r_gab6419c027b1b9461f27159be9424b970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6419c027b1b9461f27159be9424b970">wsAppendChar</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, int character)</td></tr>
 <tr class="memdesc:gab6419c027b1b9461f27159be9424b970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a character to the end of <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
 <tr class="separator:gab6419c027b1b9461f27159be9424b970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab666c0b1402704682d910e0ebe00d347" id="r_gab666c0b1402704682d910e0ebe00d347"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab666c0b1402704682d910e0ebe00d347">wsCharAt</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *str, short pos)</td></tr>
+<tr class="memdesc:gab666c0b1402704682d910e0ebe00d347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get charater at the given position (safe).  <br /></td></tr>
+<tr class="separator:gab666c0b1402704682d910e0ebe00d347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad918ce22fae114b4c626b5d983943749" id="r_gad918ce22fae114b4c626b5d983943749"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad918ce22fae114b4c626b5d983943749">wsInsertChar</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, int character, int position)</td></tr>
 <tr class="memdesc:gad918ce22fae114b4c626b5d983943749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a character at the given position of the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
 <tr class="separator:gad918ce22fae114b4c626b5d983943749"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +457,37 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gab666c0b1402704682d910e0ebe00d347" name="gab666c0b1402704682d910e0ebe00d347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab666c0b1402704682d910e0ebe00d347">&#9670;&#160;</a></span>wsCharAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t wsCharAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get charater at the given position (safe). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>pointer to the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </td></tr>
+    <tr><td class="paramname">pos</td><td>position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>charater </dd></dl>
 
 </div>
 </div>

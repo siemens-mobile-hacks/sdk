@@ -178,6 +178,12 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gac532c8674668b7e1fc939cdd03a838a4" id="r_gac532c8674668b7e1fc939cdd03a838a4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac532c8674668b7e1fc939cdd03a838a4">IsGPRSEnabled</a> ()</td></tr>
 <tr class="memdesc:gac532c8674668b7e1fc939cdd03a838a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPRS enabled.  <br /></td></tr>
 <tr class="separator:gac532c8674668b7e1fc939cdd03a838a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga347bf71ee18a591775acbdf35b4200d4" id="r_ga347bf71ee18a591775acbdf35b4200d4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga347bf71ee18a591775acbdf35b4200d4">IsGPRSAvailable</a> ()</td></tr>
+<tr class="memdesc:ga347bf71ee18a591775acbdf35b4200d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPRS available in the current network.  <br /></td></tr>
+<tr class="separator:ga347bf71ee18a591775acbdf35b4200d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa8562e08bdcfbce1b87d4b14f6e7071" id="r_gafa8562e08bdcfbce1b87d4b14f6e7071"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafa8562e08bdcfbce1b87d4b14f6e7071">IsEDGEAvailable</a> ()</td></tr>
+<tr class="memdesc:gafa8562e08bdcfbce1b87d4b14f6e7071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if EDGE available in the current network.  <br /></td></tr>
+<tr class="separator:gafa8562e08bdcfbce1b87d4b14f6e7071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6f98903b9d58a13c85c5ee71d96a7e1f" id="r_ga6f98903b9d58a13c85c5ee71d96a7e1f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6f98903b9d58a13c85c5ee71d96a7e1f">IsGPRSConnected</a> ()</td></tr>
 <tr class="memdesc:ga6f98903b9d58a13c85c5ee71d96a7e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the GPRS session is established.  <br /></td></tr>
 <tr class="separator:ga6f98903b9d58a13c85c5ee71d96a7e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +215,11 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga414dc05978ab6d956ae5b9a11f042e9e" id="r_ga414dc05978ab6d956ae5b9a11f042e9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga414dc05978ab6d956ae5b9a11f042e9e">RequestLMANConnect</a> (<a class="el" href="#struct_l_m_a_n___d_a_t_a">LMAN_DATA</a> *data)</td></tr>
 <tr class="memdesc:ga414dc05978ab6d956ae5b9a11f042e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the GPRS.  <br /></td></tr>
 <tr class="separator:ga414dc05978ab6d956ae5b9a11f042e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Profile</h2></td></tr>
+<tr class="memitem:ga7fcef0d5cf9f21a3ab59f057de08f2d3" id="r_ga7fcef0d5cf9f21a3ab59f057de08f2d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7fcef0d5cf9f21a3ab59f057de08f2d3">RamActiveGPRSProfileName</a> ()</td></tr>
+<tr class="memdesc:ga7fcef0d5cf9f21a3ab59f057de08f2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of the current internet profile.  <br /></td></tr>
+<tr class="separator:ga7fcef0d5cf9f21a3ab59f057de08f2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Statistic</h2></td></tr>
 <tr class="memitem:ga0b8abe545a8426ac1987a3d191a1bda2" id="r_ga0b8abe545a8426ac1987a3d191a1bda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0b8abe545a8426ac1987a3d191a1bda2">RefreshGPRSTraffic</a> ()</td></tr>
@@ -415,6 +426,46 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if GPRS enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+
+</div>
+</div>
+<a id="ga347bf71ee18a591775acbdf35b4200d4" name="ga347bf71ee18a591775acbdf35b4200d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga347bf71ee18a591775acbdf35b4200d4">&#9670;&#160;</a></span>IsGPRSAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char IsGPRSAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if GPRS available in the current network. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+
+</div>
+</div>
+<a id="gafa8562e08bdcfbce1b87d4b14f6e7071" name="gafa8562e08bdcfbce1b87d4b14f6e7071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa8562e08bdcfbce1b87d4b14f6e7071">&#9670;&#160;</a></span>IsEDGEAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char IsEDGEAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if EDGE available in the current network. </p>
 <dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
 
 </div>
@@ -657,6 +708,26 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LMAN connect ID </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Call only from SUBPROC, NewSGOLD only. </dd></dl>
+
+</div>
+</div>
+<a id="ga7fcef0d5cf9f21a3ab59f057de08f2d3" name="ga7fcef0d5cf9f21a3ab59f057de08f2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fcef0d5cf9f21a3ab59f057de08f2d3">&#9670;&#160;</a></span>RamActiveGPRSProfileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * RamActiveGPRSProfileName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get name of the current internet profile. </p>
+<dl class="section return"><dt>Returns</dt><dd>C-string </dd></dl>
 
 </div>
 </div>

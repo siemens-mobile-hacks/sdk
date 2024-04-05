@@ -124,6 +124,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga440a6eac77137de971ffbaf574bbbf33" id="r_ga440a6eac77137de971ffbaf574bbbf33"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group___explorer.html#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga440a6eac77137de971ffbaf574bbbf33">ExplorerTransferStates</a></td></tr>
+<tr class="separator:ga440a6eac77137de971ffbaf574bbbf33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87ff9ed698f34aa227d9d7e057e3bd42" id="r_ga87ff9ed698f34aa227d9d7e057e3bd42"><td class="memItemLeft" align="right" valign="top">typedef struct NativeExplorerData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga87ff9ed698f34aa227d9d7e057e3bd42">NativeExplorerData</a></td></tr>
 <tr class="separator:ga87ff9ed698f34aa227d9d7e057e3bd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga088c9e5ecfe10087accd8f14c144ed57" id="r_ga088c9e5ecfe10087accd8f14c144ed57"><td class="memItemLeft" align="right" valign="top">typedef struct REGEXPLEXT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga088c9e5ecfe10087accd8f14c144ed57">REGEXPLEXT</a></td></tr>
@@ -135,6 +137,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:gaab69e3ef9996de6fe27edbd6f55d6dbd" id="r_gaab69e3ef9996de6fe27edbd6f55d6dbd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a> { <br />
+&#160;&#160;<a class="el" href="group___explorer.html#ggaab69e3ef9996de6fe27edbd6f55d6dbdab3360545e5d174c516ccb37132e7d023">EXPLORER_TRANSFER_STATE_STOP</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="group___explorer.html#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a> = 2
+<br />
+ }</td></tr>
+<tr class="separator:gaab69e3ef9996de6fe27edbd6f55d6dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b571a48c9424f779ceaa1b4f458bea6" id="r_ga5b571a48c9424f779ceaa1b4f458bea6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga5b571a48c9424f779ceaa1b4f458bea6">NativeExplorerMode</a> { <br />
 &#160;&#160;<a class="el" href="group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6aef0b04c4e141d975d5303a64ab923609">NATIVE_EXPLORER_MODE_DEFAULT</a>
 , <br />
@@ -182,6 +191,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gac8eb4a154a2b8a782ab52dfe2aa794b4" id="r_gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#gac8eb4a154a2b8a782ab52dfe2aa794b4">ExecuteFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *filepath, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime, void *param)</td></tr>
 <tr class="memdesc:gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute file by the NativeExplorer.  <br /></td></tr>
 <tr class="separator:gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ab4e930eb3a58fed514ca93e972058f" id="r_ga4ab4e930eb3a58fed514ca93e972058f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *from, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *to, int overwrite, char transfer_id, uint32_t *errp)</td></tr>
+<tr class="memdesc:ga4ab4e930eb3a58fed514ca93e972058f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy file.  <br /></td></tr>
+<tr class="separator:ga4ab4e930eb3a58fed514ca93e972058f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga684b13c109c05553083a6dc922b45387" id="r_ga684b13c109c05553083a6dc922b45387"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___explorer.html#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a> (char transfer_id, int state)</td></tr>
+<tr class="memdesc:ga684b13c109c05553083a6dc922b45387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transfer state.  <br /></td></tr>
+<tr class="separator:ga684b13c109c05553083a6dc922b45387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

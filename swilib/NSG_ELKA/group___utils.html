@@ -116,9 +116,21 @@ Functions</h2></td></tr>
 <tr class="separator:ga322be01692eff035835dda8abcd06032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">String utils</h2></td></tr>
-<tr class="memitem:ga0c5a04164694a6808befa72a46f58042" id="r_ga0c5a04164694a6808befa72a46f58042"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0c5a04164694a6808befa72a46f58042">StrToInt</a> (char *s, char **endp)</td></tr>
-<tr class="memdesc:ga0c5a04164694a6808befa72a46f58042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to int.  <br /></td></tr>
-<tr class="separator:ga0c5a04164694a6808befa72a46f58042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5053c2c90347015ee1ffc2ce2803619f" id="r_ga5053c2c90347015ee1ffc2ce2803619f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5053c2c90347015ee1ffc2ce2803619f">StrToInt</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s, char **endp)</td></tr>
+<tr class="memdesc:ga5053c2c90347015ee1ffc2ce2803619f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to int.  <br /></td></tr>
+<tr class="separator:ga5053c2c90347015ee1ffc2ce2803619f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a1b94ffa6d085f370aed09aeb3d6a3d" id="r_ga1a1b94ffa6d085f370aed09aeb3d6a3d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a1b94ffa6d085f370aed09aeb3d6a3d">HexToInt</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s)</td></tr>
+<tr class="memdesc:ga1a1b94ffa6d085f370aed09aeb3d6a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert HEX-string to int.  <br /></td></tr>
+<tr class="separator:ga1a1b94ffa6d085f370aed09aeb3d6a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad37c7ad276b582086fb804706d0df716" id="r_gad37c7ad276b582086fb804706d0df716"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad37c7ad276b582086fb804706d0df716">HexCharToInt</a> (char c)</td></tr>
+<tr class="memdesc:gad37c7ad276b582086fb804706d0df716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert HEX char to int.  <br /></td></tr>
+<tr class="separator:gad37c7ad276b582086fb804706d0df716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1716ed98b8668b299bf9e3b1e812c274" id="r_ga1716ed98b8668b299bf9e3b1e812c274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1716ed98b8668b299bf9e3b1e812c274">StrToHex</a> (char *hex_out, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *str, int len)</td></tr>
+<tr class="memdesc:ga1716ed98b8668b299bf9e3b1e812c274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to int.  <br /></td></tr>
+<tr class="separator:ga1716ed98b8668b299bf9e3b1e812c274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0098296d78a9594cca138dd374dcc7f" id="r_gac0098296d78a9594cca138dd374dcc7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac0098296d78a9594cca138dd374dcc7f">GetLangpackString</a> (int lgp_id, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *str)</td></tr>
+<tr class="memdesc:gac0098296d78a9594cca138dd374dcc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to int.  <br /></td></tr>
+<tr class="separator:gac0098296d78a9594cca138dd374dcc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Base64 encoding/decoding</h2></td></tr>
 <tr class="memitem:gaff683743c044412606932c887d25e00f" id="r_gaff683743c044412606932c887d25e00f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff683743c044412606932c887d25e00f">Base64Encode</a> (void *inbuf, int insize, void *outbuf, int outsize)</td></tr>
@@ -202,8 +214,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0c5a04164694a6808befa72a46f58042" name="ga0c5a04164694a6808befa72a46f58042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0c5a04164694a6808befa72a46f58042">&#9670;&#160;</a></span>StrToInt()</h2>
+<a id="ga5053c2c90347015ee1ffc2ce2803619f" name="ga5053c2c90347015ee1ffc2ce2803619f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5053c2c90347015ee1ffc2ce2803619f">&#9670;&#160;</a></span>StrToInt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +223,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int StrToInt </td>
           <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -230,6 +242,124 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="ga1a1b94ffa6d085f370aed09aeb3d6a3d" name="ga1a1b94ffa6d085f370aed09aeb3d6a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a1b94ffa6d085f370aed09aeb3d6a3d">&#9670;&#160;</a></span>HexToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t HexToInt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert HEX-string to int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>string with HEX </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="gad37c7ad276b582086fb804706d0df716" name="gad37c7ad276b582086fb804706d0df716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad37c7ad276b582086fb804706d0df716">&#9670;&#160;</a></span>HexCharToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int HexCharToInt </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert HEX char to int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>HEX char </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="ga1716ed98b8668b299bf9e3b1e812c274" name="ga1716ed98b8668b299bf9e3b1e812c274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1716ed98b8668b299bf9e3b1e812c274">&#9670;&#160;</a></span>StrToHex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StrToHex </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>hex_out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert string to int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">hex_out</td><td>output for hex string (len * 2 + 1) </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">str</td><td>input string </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">len</td><td>input string length </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac0098296d78a9594cca138dd374dcc7f" name="gac0098296d78a9594cca138dd374dcc7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0098296d78a9594cca138dd374dcc7f">&#9670;&#160;</a></span>GetLangpackString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetLangpackString </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lgp_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert string to int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">lgp_id</td><td>langpack ID </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">str</td><td>output for LGP string value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -123,6 +123,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga440a6eac77137de971ffbaf574bbbf33" id="r_ga440a6eac77137de971ffbaf574bbbf33"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga440a6eac77137de971ffbaf574bbbf33">ExplorerTransferStates</a></td></tr>
+<tr class="separator:ga440a6eac77137de971ffbaf574bbbf33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87ff9ed698f34aa227d9d7e057e3bd42" id="r_ga87ff9ed698f34aa227d9d7e057e3bd42"><td class="memItemLeft" align="right" valign="top">typedef struct NativeExplorerData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87ff9ed698f34aa227d9d7e057e3bd42">NativeExplorerData</a></td></tr>
 <tr class="separator:ga87ff9ed698f34aa227d9d7e057e3bd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga088c9e5ecfe10087accd8f14c144ed57" id="r_ga088c9e5ecfe10087accd8f14c144ed57"><td class="memItemLeft" align="right" valign="top">typedef struct REGEXPLEXT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga088c9e5ecfe10087accd8f14c144ed57">REGEXPLEXT</a></td></tr>
@@ -134,6 +136,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:gaab69e3ef9996de6fe27edbd6f55d6dbd" id="r_gaab69e3ef9996de6fe27edbd6f55d6dbd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a> { <br />
+&#160;&#160;<a class="el" href="#ggaab69e3ef9996de6fe27edbd6f55d6dbdab3360545e5d174c516ccb37132e7d023">EXPLORER_TRANSFER_STATE_STOP</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a> = 2
+<br />
+ }</td></tr>
+<tr class="separator:gaab69e3ef9996de6fe27edbd6f55d6dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b571a48c9424f779ceaa1b4f458bea6" id="r_ga5b571a48c9424f779ceaa1b4f458bea6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b571a48c9424f779ceaa1b4f458bea6">NativeExplorerMode</a> { <br />
 &#160;&#160;<a class="el" href="#gga5b571a48c9424f779ceaa1b4f458bea6aef0b04c4e141d975d5303a64ab923609">NATIVE_EXPLORER_MODE_DEFAULT</a>
 , <br />
@@ -181,6 +190,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gac8eb4a154a2b8a782ab52dfe2aa794b4" id="r_gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8eb4a154a2b8a782ab52dfe2aa794b4">ExecuteFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *filepath, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime, void *param)</td></tr>
 <tr class="memdesc:gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute file by the NativeExplorer.  <br /></td></tr>
 <tr class="separator:gac8eb4a154a2b8a782ab52dfe2aa794b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ab4e930eb3a58fed514ca93e972058f" id="r_ga4ab4e930eb3a58fed514ca93e972058f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *from, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *to, int overwrite, char transfer_id, uint32_t *errp)</td></tr>
+<tr class="memdesc:ga4ab4e930eb3a58fed514ca93e972058f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy file.  <br /></td></tr>
+<tr class="separator:ga4ab4e930eb3a58fed514ca93e972058f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga684b13c109c05553083a6dc922b45387" id="r_ga684b13c109c05553083a6dc922b45387"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a> (char transfer_id, int state)</td></tr>
+<tr class="memdesc:ga684b13c109c05553083a6dc922b45387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transfer state.  <br /></td></tr>
+<tr class="separator:ga684b13c109c05553083a6dc922b45387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_native_explorer_data" id="struct_native_explorer_data"></a>
@@ -226,6 +241,22 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga440a6eac77137de971ffbaf574bbbf33" name="ga440a6eac77137de971ffbaf574bbbf33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga440a6eac77137de971ffbaf574bbbf33">&#9670;&#160;</a></span>ExplorerTransferStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a> <a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00018">18</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+
+</div>
+</div>
 <a id="ga87ff9ed698f34aa227d9d7e057e3bd42" name="ga87ff9ed698f34aa227d9d7e057e3bd42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga87ff9ed698f34aa227d9d7e057e3bd42">&#9670;&#160;</a></span>NativeExplorerData</h2>
 
@@ -238,7 +269,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00018">18</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00020">20</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +285,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00019">19</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00021">21</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
 
 </div>
 </div>
@@ -270,7 +301,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00020">20</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00022">22</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
 
 </div>
 </div>
@@ -286,11 +317,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00023">23</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00025">25</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaab69e3ef9996de6fe27edbd6f55d6dbd" name="gaab69e3ef9996de6fe27edbd6f55d6dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">&#9670;&#160;</a></span>ExplorerTransferStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaab69e3ef9996de6fe27edbd6f55d6dbdab3360545e5d174c516ccb37132e7d023" name="ggaab69e3ef9996de6fe27edbd6f55d6dbdab3360545e5d174c516ccb37132e7d023"></a>EXPLORER_TRANSFER_STATE_STOP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75" name="ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75"></a>EXPLORER_TRANSFER_STATE_RUNNING&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00030">30</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+
+</div>
+</div>
 <a id="ga5b571a48c9424f779ceaa1b4f458bea6" name="ga5b571a48c9424f779ceaa1b4f458bea6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5b571a48c9424f779ceaa1b4f458bea6">&#9670;&#160;</a></span>NativeExplorerMode</h2>
 
@@ -311,7 +362,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00031">31</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="explorer_8h_source.html#l00038">38</a> of file <a class="el" href="explorer_8h_source.html">explorer.h</a>.</p>
 
 </div>
 </div>
@@ -643,6 +694,92 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>return code from the extension handler </dd></dl>
+
+</div>
+</div>
+<a id="ga4ab4e930eb3a58fed514ca93e972058f" name="ga4ab4e930eb3a58fed514ca93e972058f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ab4e930eb3a58fed514ca93e972058f">&#9670;&#160;</a></span>ExplorerCopyFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ExplorerCopyFile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>overwrite</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>transfer_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>errp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">from</td><td>source file path </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">to</td><td>destination file path </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">overwrite</td><td>allow overwrite if exists </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">transfer_id</td><td>transfer ID (0 ... 31) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">errp</td><td>variable for error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> transfer_id = 0; <span class="comment">// warning: needed function for safe transfer_id allocation</span></div>
+<div class="line"><a class="code hl_function" href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a>(transfer_id, <a class="code hl_enumvalue" href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a>);</div>
+<div class="line"><a class="code hl_function" href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a>(from, to, 1, transfer_id, &amp;err);</div>
+<div class="ttc" id="agroup___explorer_html_ga4ab4e930eb3a58fed514ca93e972058f"><div class="ttname"><a href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a></div><div class="ttdeci">int ExplorerCopyFile(const WSHDR *from, const WSHDR *to, int overwrite, char transfer_id, uint32_t *errp)</div><div class="ttdoc">Copy file.</div></div>
+<div class="ttc" id="agroup___explorer_html_ga684b13c109c05553083a6dc922b45387"><div class="ttname"><a href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a></div><div class="ttdeci">int ExplorerSetTransferState(char transfer_id, int state)</div><div class="ttdoc">Set transfer state.</div></div>
+<div class="ttc" id="agroup___explorer_html_ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75"><div class="ttname"><a href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a></div><div class="ttdeci">@ EXPLORER_TRANSFER_STATE_RUNNING</div><div class="ttdef"><b>Definition</b> <a href="explorer_8h_source.html#l00032">explorer.h:32</a></div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga684b13c109c05553083a6dc922b45387" name="ga684b13c109c05553083a6dc922b45387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga684b13c109c05553083a6dc922b45387">&#9670;&#160;</a></span>ExplorerSetTransferState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ExplorerSetTransferState </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>transfer_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set transfer state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transfer_id</td><td>transfer ID (0 ... 31) </td></tr>
+    <tr><td class="paramname">state</td><td>see <a class="el" href="#gaab69e3ef9996de6fe27edbd6f55d6dbd">ExplorerTransferStates</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
 
 </div>
 </div>

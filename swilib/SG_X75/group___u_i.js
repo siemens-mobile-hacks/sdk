@@ -205,5 +205,6 @@ var group___u_i =
     [ "TViewSetText", "group___u_i.html#ga377bc11a63fd66dee50a538ba000aad9", null ],
     [ "TViewSetUserPointer", "group___u_i.html#ga2a2bfc59416cb3f25fc0a7af6c326bd6", null ],
     [ "TViewGetUserPointer", "group___u_i.html#ga8b75db47e227cc4a56eedab904dc915f", null ],
+    [ "CreateRadioButtonList", "group___u_i.html#ga8255da09902a222ab737efaae5e272e2", null ],
     [ "RamMenuAnywhere", "group___u_i.html#gaf8201f9eea97087c165fd841ea136a49", null ]
 ];

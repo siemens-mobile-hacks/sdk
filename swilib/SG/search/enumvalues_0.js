@@ -13,7 +13,7 @@ var searchData=
   ['a_5ftruncate_10',['A_Truncate',['../group___file.html#gga248681daa33e11b68c934862cfe49417a79b3a4804ef3147e144b1d68807da792',1,'file.h']]],
   ['a_5ftxt_11',['A_TXT',['../group___file.html#gga248681daa33e11b68c934862cfe49417a5b3b26e19486cd7c23f7a20fa1f30ee2',1,'file.h']]],
   ['a_5fwriteonly_12',['A_WriteOnly',['../group___file.html#gga248681daa33e11b68c934862cfe49417a14a0977be9f62641ee1b3fe2f202a7de',1,'file.h']]],
-  ['acc_5ftype_5fserial_5fcable_13',['ACC_TYPE_SERIAL_CABLE',['../group___info.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c',1,'info.h']]],
+  ['acc_5ftype_5fserial_5fcable_13',['ACC_TYPE_SERIAL_CABLE',['../group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c',1,'patch.h']]],
   ['af_5finet_14',['AF_INET',['../group___socket.html#gga6a825247fae0cb792769e588f152f1aba9ab67f00ce8b6a0015a0c642f22b7a81',1,'socket.h']]],
   ['af_5fmax_15',['AF_MAX',['../group___socket.html#gga6a825247fae0cb792769e588f152f1aba1ecf0e20535446f7fe9fae08714275e0',1,'socket.h']]],
   ['af_5funspec_16',['AF_UNSPEC',['../group___socket.html#gga6a825247fae0cb792769e588f152f1abaa0641a57327aef3ea3aef5bda8355c25',1,'socket.h']]]

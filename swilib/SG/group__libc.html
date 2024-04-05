@@ -120,7 +120,7 @@ Just add <code>-DSWILIB_LIBC</code> to your definitions and remove <code>-lc</co
 <li><a class="el" href="#ga39697c2a2fccb8d3eb0aa6a2c1c7e19b">strcmpi</a></li>
 <li><a class="el" href="#ga2ed3fe228c28d746e221652dff22303a">zeromem</a></li>
 <li><a class="el" href="#ga374cda7fc0f7ec3ab2b4ac04fb858922">bzero</a></li>
-<li><a class="el" href="#gadf3c576bf333b29bf2218c8b75e9ede6">ClearMemory</a> </li>
+<li><a class="el" href="group___l_e_g_a_c_y.html#gadf3c576bf333b29bf2218c8b75e9ede6">ClearMemory</a> </li>
 </ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -163,15 +163,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga1e7d61eb280250fb55dce370ba1a1709" id="r_ga1e7d61eb280250fb55dce370ba1a1709"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e7d61eb280250fb55dce370ba1a1709">memcmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *ptr1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *ptr2, size_t num)</td></tr>
 <tr class="memdesc:ga1e7d61eb280250fb55dce370ba1a1709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two blocks of memory.  <br /></td></tr>
 <tr class="separator:ga1e7d61eb280250fb55dce370ba1a1709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga922d78c98fda41c4bb22ad3f4025e589" id="r_ga922d78c98fda41c4bb22ad3f4025e589"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga922d78c98fda41c4bb22ad3f4025e589">memchr</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *str, int c, size_t num)</td></tr>
+<tr class="memdesc:ga922d78c98fda41c4bb22ad3f4025e589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate character in block of memory.  <br /></td></tr>
+<tr class="separator:ga922d78c98fda41c4bb22ad3f4025e589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2ed3fe228c28d746e221652dff22303a" id="r_ga2ed3fe228c28d746e221652dff22303a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2ed3fe228c28d746e221652dff22303a">zeromem</a> (void *ptr, int num)</td></tr>
 <tr class="memdesc:ga2ed3fe228c28d746e221652dff22303a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill block of memory with zero.  <br /></td></tr>
 <tr class="separator:ga2ed3fe228c28d746e221652dff22303a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga374cda7fc0f7ec3ab2b4ac04fb858922" id="r_ga374cda7fc0f7ec3ab2b4ac04fb858922"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga374cda7fc0f7ec3ab2b4ac04fb858922">bzero</a> (void *ptr, int num)</td></tr>
 <tr class="memdesc:ga374cda7fc0f7ec3ab2b4ac04fb858922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill block of memory with zero.     <br /></td></tr>
 <tr class="separator:ga374cda7fc0f7ec3ab2b4ac04fb858922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadf3c576bf333b29bf2218c8b75e9ede6" id="r_gadf3c576bf333b29bf2218c8b75e9ede6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf3c576bf333b29bf2218c8b75e9ede6">ClearMemory</a> (void *ptr, int num)</td></tr>
-<tr class="memdesc:gadf3c576bf333b29bf2218c8b75e9ede6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill block of memory with zero.     <br /></td></tr>
-<tr class="separator:gadf3c576bf333b29bf2218c8b75e9ede6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0d3e68388fc48b7543d538d9c5245c15" id="r_ga0d3e68388fc48b7543d538d9c5245c15"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d3e68388fc48b7543d538d9c5245c15">memset</a> (void *ptr, int val, size_t num)</td></tr>
 <tr class="memdesc:ga0d3e68388fc48b7543d538d9c5245c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill block of memory with zero.  <br /></td></tr>
 <tr class="separator:ga0d3e68388fc48b7543d538d9c5245c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -575,6 +575,43 @@ A null-pointer indicates that the function failed to allocate storage, and thus 
 
 </div>
 </div>
+<a id="ga922d78c98fda41c4bb22ad3f4025e589" name="ga922d78c98fda41c4bb22ad3f4025e589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga922d78c98fda41c4bb22ad3f4025e589">&#9670;&#160;</a></span>memchr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * memchr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Locate character in block of memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>This is the pointer to the block of memory where the search is performed. </td></tr>
+    <tr><td class="paramname">c</td><td>This is the value to be passed as an int, but the function performs a byte per byte search using the unsigned char conversion of this value. </td></tr>
+    <tr><td class="paramname">num</td><td>This is the number of bytes to be analyzed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns a pointer to the matching byte or NULL if the character does not occur in the given memory area. </dd></dl>
+
+</div>
+</div>
 <a id="ga2ed3fe228c28d746e221652dff22303a" name="ga2ed3fe228c28d746e221652dff22303a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2ed3fe228c28d746e221652dff22303a">&#9670;&#160;</a></span>zeromem()</h2>
 
@@ -633,37 +670,6 @@ A null-pointer indicates that the function failed to allocate storage, and thus 
   </dd>
 </dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>use <a class="el" href="#ga0d3e68388fc48b7543d538d9c5245c15" title="Fill block of memory with zero.">memset</a> </dd></dl>
-
-</div>
-</div>
-<a id="gadf3c576bf333b29bf2218c8b75e9ede6" name="gadf3c576bf333b29bf2218c8b75e9ede6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf3c576bf333b29bf2218c8b75e9ede6">&#9670;&#160;</a></span>ClearMemory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ClearMemory </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fill block of memory with zero.    </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ptr</td><td>Pointer to the block of memory to fill. </td></tr>
-    <tr><td class="paramname">num</td><td>Number of bytes to be set to the zero.    </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>use <a class="el" href="#ga0d3e68388fc48b7543d538d9c5245c15" title="Fill block of memory with zero.">memset</a> </dd></dl>
 
 </div>
 </div>

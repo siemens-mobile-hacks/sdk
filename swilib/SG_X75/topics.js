@@ -30,6 +30,7 @@ var topics =
     [ "MISC", "group___m_i_s_c.html", "group___m_i_s_c" ],
     [ "PATCH", "group___p_a_t_c_h.html", "group___p_a_t_c_h" ],
     [ "IDLE", "group___i_d_l_e.html", "group___i_d_l_e" ],
+    [ "LEGACY", "group___l_e_g_a_c_y.html", "group___l_e_g_a_c_y" ],
     [ "NUCLEUS", "group___n_u_c_l_e_u_s.html", "group___n_u_c_l_e_u_s" ],
     [ "Player", "group___player.html", "group___player" ]
 ];

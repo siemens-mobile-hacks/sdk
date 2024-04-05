@@ -45,9 +45,15 @@ var group___g_b_s =
     [ "GBS_AcceptMessage", "group___g_b_s.html#ga751070ca379cfe601fe8ad6694624927", null ],
     [ "GBS_ClearMessage", "group___g_b_s.html#gafe9775d061dfb7887bb0470ba3dc73d0", null ],
     [ "GBS_PendMessage", "group___g_b_s.html#gaebf7f154a4c3f04142e6e7ada1a718bf", null ],
+    [ "GBS_DestroyMessage", "group___g_b_s.html#gae9eb1939f65fb85903a55bf67d02f37b", null ],
     [ "GBS_WaitForMsg", "group___g_b_s.html#gad13affaaf335b2fcddf15b8b68d06c32", null ],
     [ "CreateGBSproc", "group___g_b_s.html#gae8b02e0f3fafdaf2b41542ddc43967da", null ],
     [ "KillGBSproc", "group___g_b_s.html#gad681a51f284313593d7e5ae948124979", null ],
     [ "GetGBSProcAddress", "group___g_b_s.html#gac6dfa841fc5b90395e2ad2b80ef4e3bf", null ],
-    [ "CreateICL", "group___g_b_s.html#gab5d2564beb4eed2c03e1bd7fe4af423f", null ]
+    [ "CreateICL", "group___g_b_s.html#gab5d2564beb4eed2c03e1bd7fe4af423f", null ],
+    [ "GBS_CreateProcessGroupResource", "group___g_b_s.html#ga517b1a97f352d3d76564df8db17b88fc", null ],
+    [ "GBS_GetCurrentTask", "group___g_b_s.html#ga0a6a999a1146f8de5cf6ed1142be525e", null ],
+    [ "MemMBPAlloc", "group___g_b_s.html#ga35d6a4fb12f54ff5d9beb418064dc9c9", null ],
+    [ "MemMBPFree", "group___g_b_s.html#gaad63758c33e017f4a41ad69db3b0aa0d", null ],
+    [ "RamMopiResourcePool", "group___g_b_s.html#ga62d9b6e1582957fa23060a6d891af385", null ]
 ];

@@ -227,6 +227,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaebf7f154a4c3f04142e6e7ada1a718bf" id="r_gaebf7f154a4c3f04142e6e7ada1a718bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gaebf7f154a4c3f04142e6e7ada1a718bf">GBS_PendMessage</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___g_b_s.html#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
 <tr class="memdesc:gaebf7f154a4c3f04142e6e7ada1a718bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pend the message for future processing.  <br /></td></tr>
 <tr class="separator:gaebf7f154a4c3f04142e6e7ada1a718bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9eb1939f65fb85903a55bf67d02f37b" id="r_gae9eb1939f65fb85903a55bf67d02f37b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gae9eb1939f65fb85903a55bf67d02f37b">GBS_DestroyMessage</a> (<a class="el" href="group___g_b_s.html#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
+<tr class="memdesc:gae9eb1939f65fb85903a55bf67d02f37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy GSB_MSG object.  <br /></td></tr>
+<tr class="separator:gae9eb1939f65fb85903a55bf67d02f37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad13affaaf335b2fcddf15b8b68d06c32" id="r_gad13affaaf335b2fcddf15b8b68d06c32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gad13affaaf335b2fcddf15b8b68d06c32">GBS_WaitForMsg</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *msg_list, int msgs_num, <a class="el" href="group___g_b_s.html#struct_g_b_s___m_s_g">GBS_MSG</a> *msgs, int timeout_ticks)</td></tr>
 <tr class="memdesc:gad13affaaf335b2fcddf15b8b68d06c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the GBS messages.  <br /></td></tr>
 <tr class="separator:gad13affaaf335b2fcddf15b8b68d06c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,11 +241,26 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad681a51f284313593d7e5ae948124979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete GBS Event Processor.  <br /></td></tr>
 <tr class="separator:gad681a51f284313593d7e5ae948124979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6dfa841fc5b90395e2ad2b80ef4e3bf" id="r_gac6dfa841fc5b90395e2ad2b80ef4e3bf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gac6dfa841fc5b90395e2ad2b80ef4e3bf">GetGBSProcAddress</a> (short cepid)</td></tr>
-<tr class="memdesc:gac6dfa841fc5b90395e2ad2b80ef4e3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get address to the GBS event processor.  <br /></td></tr>
+<tr class="memdesc:gac6dfa841fc5b90395e2ad2b80ef4e3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get address of the GBS event processor.  <br /></td></tr>
 <tr class="separator:gac6dfa841fc5b90395e2ad2b80ef4e3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab5d2564beb4eed2c03e1bd7fe4af423f" id="r_gab5d2564beb4eed2c03e1bd7fe4af423f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gab5d2564beb4eed2c03e1bd7fe4af423f">CreateICL</a> (<a class="el" href="group___g_b_s.html#struct_p_g_r_o_u_p">PGROUP</a> *pgroup)</td></tr>
 <tr class="memdesc:gab5d2564beb4eed2c03e1bd7fe4af423f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new GBS Process Group.  <br /></td></tr>
 <tr class="separator:gab5d2564beb4eed2c03e1bd7fe4af423f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga517b1a97f352d3d76564df8db17b88fc" id="r_ga517b1a97f352d3d76564df8db17b88fc"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#ga517b1a97f352d3d76564df8db17b88fc">GBS_CreateProcessGroupResource</a> (int mask, int unk_zero, <a class="el" href="group___g_b_s.html#struct_p_g_r_o_u_p">PGROUP</a> *pgroup, int size)</td></tr>
+<tr class="memdesc:ga517b1a97f352d3d76564df8db17b88fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new GBS Process Group Resource.  <br /></td></tr>
+<tr class="separator:ga517b1a97f352d3d76564df8db17b88fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a6a999a1146f8de5cf6ed1142be525e" id="r_ga0a6a999a1146f8de5cf6ed1142be525e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#ga0a6a999a1146f8de5cf6ed1142be525e">GBS_GetCurrentTask</a> ()</td></tr>
+<tr class="memdesc:ga0a6a999a1146f8de5cf6ed1142be525e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current GBS task.  <br /></td></tr>
+<tr class="separator:ga0a6a999a1146f8de5cf6ed1142be525e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35d6a4fb12f54ff5d9beb418064dc9c9" id="r_ga35d6a4fb12f54ff5d9beb418064dc9c9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#ga35d6a4fb12f54ff5d9beb418064dc9c9">MemMBPAlloc</a> (void *pool, int size)</td></tr>
+<tr class="memdesc:ga35d6a4fb12f54ff5d9beb418064dc9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alloc memory in the given memory pool.  <br /></td></tr>
+<tr class="separator:ga35d6a4fb12f54ff5d9beb418064dc9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad63758c33e017f4a41ad69db3b0aa0d" id="r_gaad63758c33e017f4a41ad69db3b0aa0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#gaad63758c33e017f4a41ad69db3b0aa0d">MemMBPFree</a> (void *pool, void *ptr)</td></tr>
+<tr class="memdesc:gaad63758c33e017f4a41ad69db3b0aa0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory allocated with <a class="el" href="group___g_b_s.html#ga35d6a4fb12f54ff5d9beb418064dc9c9" title="Alloc memory in the given memory pool.">MemMBPAlloc</a>.  <br /></td></tr>
+<tr class="separator:gaad63758c33e017f4a41ad69db3b0aa0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62d9b6e1582957fa23060a6d891af385" id="r_ga62d9b6e1582957fa23060a6d891af385"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_b_s.html#ga62d9b6e1582957fa23060a6d891af385">RamMopiResourcePool</a> ()</td></tr>
+<tr class="memdesc:ga62d9b6e1582957fa23060a6d891af385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the MOPI memory pool.  <br /></td></tr>
+<tr class="separator:ga62d9b6e1582957fa23060a6d891af385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

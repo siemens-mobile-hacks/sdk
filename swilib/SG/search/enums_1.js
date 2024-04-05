@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['batcharhingstateid_0',['BatCharhingStateID',['../group___info.html#ga1864725dd9e79f12454d867e671b4ddb',1,'info.h']]]
+  ['batchargingstateid_0',['BatChargingStateID',['../group___info.html#gadd97b1a912f1a9951344c41d04922e03',1,'info.h']]]
 ];

@@ -48,5 +48,15 @@ var group___o_b_s =
     [ "Obs_Sound_SetPurpose", "group___o_b_s.html#gaf610aa7734d16eb18548ab0b3e3b58c6", null ],
     [ "Obs_Sound_SetVolumeEx", "group___o_b_s.html#ga1a3b48028242bd7b6e898f112cb3651b", null ],
     [ "Obs_Sound_GetVolume", "group___o_b_s.html#ga1905ba224d3468dc7cb63a2e9ade5c5a", null ],
+    [ "Obs_Sound_SetAMRFormat", "group___o_b_s.html#ga462f2393ec3a2d81620dedf450d51a31", null ],
+    [ "Obs_Sound_SetAMRDTX", "group___o_b_s.html#ga07bd12ae9eb107cb40936f62b271d8b1", null ],
+    [ "Obs_Sound_SetNofChannels", "group___o_b_s.html#gada0646629bbf3aa328e18e67062081df", null ],
+    [ "Obs_Sound_SetAMRMode", "group___o_b_s.html#ga363af70ab1875821701e921bdf1840ac", null ],
+    [ "Obs_Sound_SetFIsRecording", "group___o_b_s.html#ga1d7bd17c143c219790e0930120a664a8", null ],
+    [ "Obs_Sound_SetMaxFileSize", "group___o_b_s.html#gad906c0127f9840b8f7c3cda6e4e3b1ef", null ],
+    [ "Obs_Sound_SetRecordingMode", "group___o_b_s.html#ga1132ce1697cc051f0a2b587addc1e12b", null ],
+    [ "Obs_SetOutput_File", "group___o_b_s.html#gad761a71b23f108eec9c8b1bb73811578", null ],
+    [ "Obs_SetOutput_Uid", "group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4", null ],
+    [ "Obs_Sound_SetBitrate", "group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5", null ],
     [ "Obs_SetCSM", "group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002", null ]
 ];

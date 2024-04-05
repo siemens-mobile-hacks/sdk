@@ -39,7 +39,12 @@ var settings_8h =
     [ "Registry_SetResourcePath", "group___settings.html#gab28b7bc49dbe550f6894d0c319c73881", null ],
     [ "Registry_DeleteResourcePath", "group___settings.html#ga8fdf6d05e1fb97d9069516904bf693e9", null ],
     [ "GetProfile", "group___settings.html#ga6c4352c3ee1df4631e1a89a133cd5cbd", null ],
+    [ "RamProfileNum", "group___settings.html#ga10b24ec808c0abfc55c1564d21da208a", null ],
     [ "SetProfile", "group___settings.html#ga57fd3c680f9e11659ab4f0be19fe1ef1", null ],
-    [ "getProfileNameByN", "group___settings.html#gab7077ad07201d20b9ac147a26d9b824e", null ],
-    [ "GetProfileVolumeSetting", "group___settings.html#ga52b1ace9ad90c42a67a0777e69c24844", null ]
+    [ "getProfileNameByN", "group___settings.html#ga964b72731ea572eead179440811e3342", null ],
+    [ "getCurrentProfileName", "group___settings.html#ga7fc3d68accbf6261061a6196206de225", null ],
+    [ "GetProfileVolumeSetting", "group___settings.html#ga52b1ace9ad90c42a67a0777e69c24844", null ],
+    [ "Ringtones_SetState", "group___settings.html#ga258e7f9407c4af9e9d3d3b644c86fd46", null ],
+    [ "pdcache_getval", "group___settings.html#gaa163b453a5ac30510c60e84ab9e6a357", null ],
+    [ "pdcache_setval", "group___settings.html#ga6518748255727d86277643d18e495f72", null ]
 ];
