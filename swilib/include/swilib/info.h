@@ -33,16 +33,9 @@ enum PhoneInfoID {
 };
 
 /**
- * Accessory types.
+ * Battery charging state.
  * */
-enum AccessoryTypeID {
-	ACC_TYPE_SERIAL_CABLE	= 15,	/**< DCA-510 */
-};
-
-/**
- * Battery charhing state.
- * */
-enum BatCharhingStateID {
+enum BatChargingStateID {
 	BAT_STATE_DISCHARGING	= 0,
 	BAT_STATE_UNKNOWN		= 1,
 	BAT_STATE_CHARGING		= 2,
@@ -56,6 +49,22 @@ enum BatCharhingStateID {
 __swi_begin(0x05F)
 int GetFreeRamAvail()
 __swi_end(0x05F, GetFreeRamAvail, ());
+
+/**
+ * Get total size of the HEAP.
+ * @return size
+ * */
+__swi_begin(0x828B)
+int *RamTotalHeapSize()
+__swi_end(0x828B, RamTotalHeapSize, ());
+
+/**
+ * Get total size of the non-perm HEAP.
+ * @return size
+ * */
+__swi_begin(0x828C)
+int *RamTemporaryHeapSize()
+__swi_end(0x828C, RamTemporaryHeapSize, ());
 
 /**
  * Get memory used by MMI.
@@ -156,7 +165,7 @@ __swi_end(0x80C8, RamCap, ());
 
 /**
  * Get pointer to the charging state of the battery.
- * @return see #BatCharhingStateID
+ * @return see #BatChargingStateID
  * 
  * ```C
  * int charging_state = *RamLS();
@@ -182,14 +191,6 @@ void *RamAccPoint(void)
 __swi_end(0x80D0, RamAccPoint, ());
 
 /**
- * Get the type of current accessory connected to the phone.
- * @return see #AccessoryTypeID
- * */
-__swi_begin(0x088)
-char GetAccessoryType(void)
-__swi_end(0x088, GetAccessoryType, ());
-
-/**
  * Get the state of the various peripheries.
  * @param device	ID of the periphery: 4-gprs, 0-BT, 1-irda, 2-COM ?
  * @param check		which state to check: 4-IsActive, (1|2)-IsOn  
@@ -201,9 +202,113 @@ __swi_end(0x24C, GetPeripheryState, (device, check));
 /** @} */
 
 /**
+ * @name Bluetooth
+ * @{
+ * */
+
+/**
+ * Get bluetooth visibility.
+ * @return visibility
+ * */
+__swi_begin(0x287)
+int BT_GetLocVisibility()
+__swi_end(0x287, BT_GetLocVisibility, ());
+
+/**
+ * Own bluetooth name.
+ * @return C-string
+ * */
+__swi_begin(0x828D)
+const char *RamBluetoothDeviceName()
+__swi_end(0x828D, RamBluetoothDeviceName, ());
+
+/**
+ * Check if bluetooth connected to the another device.
+ * @return C-string
+ * */
+__swi_begin(0x829E)
+char *RamIsBTConnected()
+__swi_end(0x829E, RamIsBTConnected, ());
+
+/**
+ * Check if bluetooth connected to the headset.
+ * @return C-string
+ * */
+__swi_begin(0x829F)
+char *RamIsBTHeadsetConnected()
+__swi_end(0x829F, RamIsBTHeadsetConnected, ());
+
+/** @} */
+
+
+
+/**
+ * @name Events
+ * @{
+ * */
+
+/**
+ * Get missed events ptr.
+ * @return unknown
+ * */
+__swi_begin(0x009D)
+void *GetMissedEventsPtr()
+__swi_end(0x009D, GetMissedEventsPtr, ());
+
+/**
+ * Get missed events count.
+ * @return count
+ * */
+__swi_begin(0x009E)
+int GetMissedEventCount()
+__swi_end(0x009E, GetMissedEventCount, ());
+
+/** @} */
+
+/**
  * @name Other functions
  * @{
  * */
+
+/**
+ * Check if slider closed.
+ * @return 1 or 0
+ * */
+__swi_begin(0x220)
+char IsSliderClosed()
+__swi_end(0x220, IsSliderClosed, ());
+
+/**
+ * Check if SIM-card is present.
+ * @return SIM status
+ * */
+__swi_begin(0x80DE)
+char *RamIsSimPresent()
+__swi_end(0x80DE, RamIsSimPresent, ());
+
+/**
+ * Check if Camera is running.
+ * @return 1 or 0
+ * */
+__swi_begin(0x8282)
+char *RamIsRunCamera()
+__swi_end(0x8282, RamIsRunCamera, ());
+
+/**
+ * Check if phone in shutdown process.
+ * @return 1 or 0
+ * */
+__swi_begin(0x80DA)
+char *RamIsShutdown()
+__swi_end(0x80DA, RamIsShutdown, ());
+
+/**
+ * Check if phone in standby mode.
+ * @return 1 or 0
+ * */
+__swi_begin(0x80D3)
+char *RamIsStandby()
+__swi_end(0x80D3, RamIsStandby, ());
 
 /**
  * Get a pointer to the camera state.
@@ -218,6 +323,22 @@ char *RamExtendedCameraState()
 __swi_end(0x8299, RamExtendedCameraState, ());
 
 /**
+ * Check if camera lighter is ON.
+ * @return 1 or 0
+ * */
+__swi_begin(0x81FE)
+char *RamIsCameraLighterOn()
+__swi_end(0x81FE, RamIsCameraLighterOn, ());
+
+/**
+ * Pointer to the active appointment (organizer)
+ * @return 1 or 0
+ * */
+__swi_begin(0x8231)
+void *RamActiveAppointment()
+__swi_end(0x8231, RamActiveAppointment, ());
+
+/**
  * Pointer to the ringtone sound status.
  * 
  * @return pointer
@@ -229,6 +350,14 @@ __swi_end(0x8299, RamExtendedCameraState, ());
 __swi_begin(0x80CB)
 char *RamRingtoneStatus()
 __swi_end(0x80CB, RamRingtoneStatus, ());
+
+/**
+ * Pointer to the information about current file operations.
+ * @return unknown
+ * */
+__swi_begin(0x828A)
+void *RamIsFileCache()
+__swi_end(0x828A, RamIsFileCache, ());
 
 /** @} */
 

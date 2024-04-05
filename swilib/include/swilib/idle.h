@@ -35,6 +35,14 @@ void DoIDLE(void)
 __swi_end(0x109, DoIDLE, ());
 
 /**
+ * Check if the IDLE is currently displayed.
+ * @return 1 or 0
+ * */
+__swi_begin(0x0C5)
+int IsIdleUiOnTop(void)
+__swi_end(0x0C5, IsIdleUiOnTop, ());
+
+/**
  * Redraw IDLE screen.
  * */
 __swi_begin(0x01F)
@@ -70,6 +78,23 @@ __swi_end(0x09C, CloseScreensaver, ());
 __swi_begin(0x068)
 SS_RAM *GetScreenSaverRAM(void)
 __swi_end(0x068, GetScreenSaverRAM, ());
+
+/**
+ * Get screensaver CSM.
+ * @return pointer to the screensaver CSM
+ * @deprecated use #GetScreenSaverRAM
+ * */
+__swi_begin(0x80D1)
+SS_RAM *RamScreenSaverCSM(void)
+__swi_end(0x80D1, RamScreenSaverCSM, ());
+
+/**
+ * Return GBS command ID for refreshing screensaver.
+ * @return ID
+ * */
+__swi_begin(0x8211)
+int GBS_Cmd_4209_RefreshScreensaver()
+__swi_end(0x8211, GBS_Cmd_4209_RefreshScreensaver, ());
 
 __swilib_end
 

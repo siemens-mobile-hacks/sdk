@@ -161,25 +161,6 @@ IMGHDR *GetIMGHDRFromThemeCache(int index)
 __swi_end(0x2E0, GetIMGHDRFromThemeCache, (index));
 
 /**
- * Get an image from the "canvas" cache.
- * "Canvas" is a really meaning for standard UI background.
- * @param canvas_id		ID of the "canvas"
- * @return pointer to the image
- * */
-__swi_begin(0x3B3)
-IMGHDR *GetIMGHDRFromCanvasCache(int canvas_id)
-__swi_end(0x3B3, GetIMGHDRFromCanvasCache, (canvas_id));
-
-/**
- * Flush "canvas" in cache.
- * "Canvas" is a really meaning for standard UI background.
- * @param canvas_id		ID of the "canvas"
- * */
-__swi_begin(0x063)
-void MMI_CanvasBuffer_FlushV(int canvas_id)
-__swi_end(0x063, MMI_CanvasBuffer_FlushV, (canvas_id));
-
-/**
  * Get image from U+E1XX "emoji".
  * @param symbol	unicode codepoint E1XX
  * @return number in PIT table
@@ -196,6 +177,51 @@ __swi_end(0x1E4, GetPicNByUnicodeSymbol, (symbol));
 __swi_begin(0x258)
 int CalcBitmapSize(short w, short h, char type)
 __swi_end(0x258, CalcBitmapSize, (w, h, type));
+
+/**
+ * @name Canvas
+ * "Canvas" is a really meaning for standard UI background.
+ * @{
+ * */
+
+/**
+ * Get an image by canvas_id from cache.
+ * "Canvas" is a really meaning for standard UI background.
+ * @param canvas_id		ID of the "canvas"
+ * @return pointer to the image
+ * */
+__swi_begin(0x3B3)
+IMGHDR *GetIMGHDRFromCanvasCache(char canvas_id)
+__swi_end(0x3B3, GetIMGHDRFromCanvasCache, (canvas_id));
+
+/**
+ * Get an image by canvas_id (low level).
+ * "Canvas" is a really meaning for standard UI background.
+ * @param canvas_id		ID of the "canvas"
+ * @return pointer to the image
+ * */
+__swi_begin(0x076)
+IMGHDR *GetIMGHDRFromCanvas(char canvas_id)
+__swi_end(0x076, GetIMGHDRFromCanvas, (canvas_id));
+
+/**
+ * Check if canvas exists for the given `canvas_id`.
+ * @return 1 or 0
+ * */
+__swi_begin(0x075)
+int IsCanvasBufferSet(char canvas_id)
+__swi_end(0x075, IsCanvasBufferSet, (canvas_id));
+
+/**
+ * Flush "canvas" in cache.
+ * "Canvas" is a really meaning for standard UI background.
+ * @param canvas_id		ID of the "canvas"
+ * */
+__swi_begin(0x063)
+void MMI_CanvasBuffer_FlushV(char canvas_id)
+__swi_end(0x063, MMI_CanvasBuffer_FlushV, (canvas_id));
+
+/** @} */
 
 /**
  * @name Dynamic icons

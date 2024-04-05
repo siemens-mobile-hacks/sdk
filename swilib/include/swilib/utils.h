@@ -2,6 +2,7 @@
 
 #ifndef __IN_SWILIB__
 #include "base.h"
+#include "wstring.h"
 #endif
 
 __swilib_begin
@@ -52,8 +53,45 @@ __swi_end(0x819C, SEQKILLER_ADR, ());
  * @return int
  * */
 __swi_begin(0x054)
-int StrToInt(char *s, char **endp)
+int StrToInt(const char *s, char **endp)
 __swi_end(0x054, StrToInt, (s, endp));
+
+/**
+ * Convert HEX-string to int.
+ * @param s		string with HEX
+ * @return int
+ * */
+__swi_begin(0x0AF)
+uint32_t HexToInt(const char *s)
+__swi_end(0x0AF, HexToInt, (s));
+
+/**
+ * Convert HEX char to int.
+ * @param c		HEX char
+ * @return int
+ * */
+__swi_begin(0x081)
+int HexCharToInt(char c)
+__swi_end(0x081, HexCharToInt, (c));
+
+/**
+ * Convert string to int.
+ * @param[out] hex_out		output for hex string (len * 2 + 1)
+ * @param str				input string
+ * @param len				input string length
+ * */
+__swi_begin(0x005)
+void StrToHex(char *hex_out, const char *str, int len)
+__swi_end(0x005, StrToHex, (hex_out, str, len));
+
+/**
+ * Convert string to int.
+ * @param lgp_id		langpack ID
+ * @param[out] str		output for LGP string value
+ * */
+__swi_begin(0x089)
+void GetLangpackString(int lgp_id, WSHDR *str)
+__swi_end(0x089, GetLangpackString, (lgp_id, str));
 
 /** @} */
 

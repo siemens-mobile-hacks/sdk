@@ -284,6 +284,14 @@ void GBS_PendMessage(const GBS_MSG *msg)
 __swi_end(0x104, GBS_PendMessage, (msg));
 
 /**
+ * Destroy GSB_MSG object.
+ * @param msg	pointer to the #GBS_MSG
+ * */
+__swi_begin(0x232)
+void GBS_DestroyMessage(GBS_MSG *msg)
+__swi_end(0x232, GBS_DestroyMessage, (msg));
+
+/**
  * Wait for the GBS messages.
  * @param msg_list			list of message IDs to wait for
  * @param msgs_num			count message IDs in `msg_list`
@@ -323,7 +331,7 @@ void KillGBSproc(int cepid)
 __swi_end(0x154, KillGBSproc, (cepid));
 
 /**
- * Get address to the GBS event processor.
+ * Get address of the GBS event processor.
  * @param cepid		CEPID of event processor
  * @return pointer
  * */
@@ -338,6 +346,52 @@ __swi_end(0x385, GetGBSProcAddress, (cepid));
 __swi_begin(0x38E)
 void CreateICL(PGROUP *pgroup)
 __swi_end(0x38E, CreateICL, (pgroup));
+
+/**
+ * Create new GBS Process Group Resource.
+ * @param mask			resource mask (???)
+ * @param unk_zero		set to 0
+ * @param pgroup		process group config
+ * @param size			size of the resource
+ * */
+__swi_begin(0x38F)
+void *GBS_CreateProcessGroupResource(int mask, int unk_zero, PGROUP *pgroup, int size)
+__swi_end(0x38F, GBS_CreateProcessGroupResource, (mask, unk_zero, pgroup, size));
+
+/**
+ * Get current GBS task.
+ * @return pointer to the GBS task
+ * */
+__swi_begin(0x390)
+void *GBS_GetCurrentTask()
+__swi_end(0x390, GBS_GetCurrentTask, ());
+
+/**
+ * Alloc memory in the given memory pool.
+ * @param pool		memory pool
+ * @param size		requested memory size
+ * @return pointer to the allocated memory
+ * */
+__swi_begin(0x391)
+void *MemMBPAlloc(void *pool, int size)
+__swi_end(0x391, MemMBPAlloc, (pool, size));
+
+/**
+ * Free memory allocated with #MemMBPAlloc.
+ * @param pool		memory pool
+ * @param ptr		pointer to the allocated memory
+ * */
+__swi_begin(0x392)
+void MemMBPFree(void *pool, void *ptr)
+__swi_end(0x392, MemMBPFree, (pool, ptr));
+
+/**
+ * Pointer to the MOPI memory pool.
+ * @return pointer
+ * */
+__swi_begin(0x8393)
+void *RamMopiResourcePool()
+__swi_end(0x8393, RamMopiResourcePool, ());
 
 /** @} */
 

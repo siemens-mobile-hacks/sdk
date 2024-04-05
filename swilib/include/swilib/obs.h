@@ -315,9 +315,117 @@ int Obs_Sound_GetVolume(HObj obs, char *volume)
 __swi_end(0x26D, Obs_Sound_GetVolume, (obs, volume));
 
 /**
+ * Set AMR format.
+ * @param obs			OBS object
+ * @param format		AMR format
+ * @return 0 or error
+ * */
+__swi_begin(0x26F)
+int Obs_Sound_SetAMRFormat(HObj obs, int format)
+__swi_end(0x26F, Obs_Sound_SetAMRFormat, (obs, format));
+
+/**
+ * Set AMR DTX.
+ * @param obs			OBS object
+ * @param dtx			ARM DTX value
+ * @return 0 or error
+ * */
+__swi_begin(0x270)
+int Obs_Sound_SetAMRDTX(HObj obs, int dtx)
+__swi_end(0x270, Obs_Sound_SetAMRDTX, (obs, dtx));
+
+/**
+ * Set count of the channels.
+ * @param obs			OBS object
+ * @param num_channels	channels count
+ * @return 0 or error
+ * */
+__swi_begin(0x271)
+int Obs_Sound_SetNofChannels(HObj obs, int num_channels)
+__swi_end(0x271, Obs_Sound_SetNofChannels, (obs, num_channels));
+
+/**
+ * Set AMR data rate.
+ * @param obs			OBS object
+ * @param data_rate		AMR data rate value
+ * @return 0 or error
+ * */
+__swi_begin(0x272)
+int Obs_Sound_SetAMRMode(HObj obs, int data_rate)
+__swi_end(0x272, Obs_Sound_SetAMRMode, (obs, data_rate));
+
+/**
+ * Set recording mode.
+ * @param obs			OBS object
+ * @param is_recording	set to 1 when recording
+ * @return 0 or error
+ * */
+__swi_begin(0x273)
+int Obs_Sound_SetFIsRecording(HObj obs, int is_recording)
+__swi_end(0x273, Obs_Sound_SetFIsRecording, (obs, is_recording));
+
+/**
+ * Set maximum file size.
+ * @param obs				OBS object
+ * @param max_file_size		maximum file szie value
+ * @return 0 or error
+ * */
+__swi_begin(0x274)
+int Obs_Sound_SetMaxFileSize(HObj obs, int max_file_size)
+__swi_end(0x274, Obs_Sound_SetMaxFileSize, (obs, max_file_size));
+
+/**
+ * Set mode of the recording.
+ * @param obs				OBS object
+ * @param recording_mode	mode of the recording
+ * @return 0 or error
+ * */
+__swi_begin(0x275)
+int Obs_Sound_SetRecordingMode(HObj obs, int recording_mode)
+__swi_end(0x275, Obs_Sound_SetRecordingMode, (obs, recording_mode));
+
+/**
+ * Set output filename.
+ * @param obs			OBS object
+ * @param filename		filename for output file
+ * @return 0 or error
+ * @warning Different function signatures across platforms!
+ * */
+#ifdef NEWSGOLD
+__swi_begin(0x276)
+int Obs_SetOutput_File(HObj obs, const WSHDR *filename)
+__swi_end(0x276, Obs_SetOutput_File, (obs, filename));
+#else
+__swi_begin(0x276)
+int Obs_SetOutput_File(HObj obs, const char *filename)
+__swi_end(0x276, Obs_SetOutput_File, (obs, filename));
+#endif
+
+/**
+ * Set output file type (extension UID).
+ * @param obs			OBS object
+ * @param uid			extension UID
+ * @return 0 or error
+ * */
+__swi_begin(0x277)
+int Obs_SetOutput_Uid(HObj obs, int uid)
+__swi_end(0x277, Obs_SetOutput_Uid, (obs, uid));
+
+/**
+ * Set sound bitrate.
+ * @param obs			OBS object
+ * @param bitrate		bitrate value
+ * @return 0 or error
+ * */
+__swi_begin(0x278)
+int Obs_Sound_SetBitrate(HObj obs, int bitrate)
+__swi_end(0x278, Obs_Sound_SetBitrate, (obs, bitrate));
+
+/**
  * Link CSM to the OBS object.
  * @param obs		OBS object
  * @param csm		pointer to the csm
+ * @return 0 or error
  * */
 __swi_begin(0x27B)
 int Obs_SetCSM(HObj obs, CSM_RAM *csm)

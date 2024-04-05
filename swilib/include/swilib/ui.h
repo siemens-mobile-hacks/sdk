@@ -1456,6 +1456,28 @@ __swi_end(0x2DA, TViewGetUserPointer, (gui));
 /** @} */
 
 /**
+ * @name RadioButtonList
+ * @{
+ * */
+
+/**
+ * Create radios button list.
+ * @param desc				gui description
+ * @param num				number of the items
+ * @param unk_zero0			unknown, set to 0
+ * @param unk_zero1			unknown, set to 0
+ * @param selected_item		selected item index
+ * @param handler			item handler
+ * @param flags				unknown flags
+ * @return GUI ID
+ * */
+__swi_begin(0x22B)
+int CreateRadioButtonList(void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void (*handler)(int), int flags)
+__swi_end(0x22B, CreateRadioButtonList, (desc, num, unk_zero0, unk_zero1, selected_item, handler, flags));
+
+/** @} */
+
+/**
  * @name Hacks
  * @{
  * */

@@ -141,6 +141,17 @@ __swi_begin(0x11C)
 int memcmp(const void *ptr1, const void *ptr2, size_t num)
 __swi_end(0x11C, memcmp, (ptr1, ptr2, num));
 
+/**
+ * Locate character in block of memory.
+ * @param str		This is the pointer to the block of memory where the search is performed.
+ * @param c			This is the value to be passed as an int, but the function performs a byte per byte search using the unsigned char conversion of this value.
+ * @param num		This is the number of bytes to be analyzed.
+ * @return This function returns a pointer to the matching byte or NULL if the character does not occur in the given memory area.
+ * */
+__swi_begin(0x03B)
+void *memchr(const void *str, int c, size_t num)
+__swi_end(0x03B, memchr, (str, c, num));
+
 #endif /* SWILIB_LIBC */
 
 /* ----------------------------------------- */
@@ -161,14 +172,6 @@ __swi_end(0x11D, zeromem, (ptr, num));
 __swi_begin(0x11D)
 void bzero(void *ptr, int num)
 __swi_end(0x11D, bzero, (ptr, num));
-
-/**
- * @copydoc zeromem
- * @deprecated use #memset
- */
-__swi_begin(0x058)
-void ClearMemory(void *ptr, int num)
-__swi_end(0x058, ClearMemory, (ptr, num));
 
 /* ----------------------------------------- */
 

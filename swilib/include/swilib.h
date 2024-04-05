@@ -35,7 +35,11 @@
 #include "swilib/gbs.h"
 #include "swilib/csm.h"
 #include "swilib/idle.h"
-// #include "swilib/nucleus.h"
+
+#ifdef SWILIB_INCLUDE_ALL
+#include "swilib/nucleus.h"
+#endif
+
 #include "swilib/image.h"
 #include "swilib/gui.h"
 #include "swilib/ui.h"
@@ -59,7 +63,11 @@
 #include "swilib/misc.h"
 #include "swilib/utils.h"
 #include "swilib/zlib.h"
-// #include "swilib/patch.h"
+
+#ifdef SWILIB_INCLUDE_ALL
+#include "swilib/patch.h"
+#include "swilib/legacy.h"
+#endif
 
 #undef __IN_SWILIB__
 

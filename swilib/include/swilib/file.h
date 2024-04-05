@@ -89,6 +89,7 @@ struct FSTATS {
 	uint32_t size;	/*!< Size in bytes */
 	char unk5[28];
 	int file_attr;	/*!< File attribute: #FileAttributes */
+	int unk;
 };
 
 enum FilePropTypeID {
@@ -300,6 +301,38 @@ int sys_truncate(int fd, int length, uint32_t *err)
 __swi_end(0x090, sys_truncate, (fd, length, err));
 
 /**
+ * Get information about the file or directory.
+ * @param path		path to the file or directory.
+ * @param stat 		pointer where the information will be written (#FSTATS)
+ * @param[out] err	error code
+ * @return 0 or error
+ * */
+__swi_begin(0x084)
+int sys_stat(const char *path, FSTATS *stat, uint32_t *err)
+__swi_end(0x084, sys_stat, (path, stat, err));
+
+/**
+ * Get information about the file or directory by fd.
+ * @param fd		file descriptor
+ * @param stat 		pointer where the information will be written (#FSTATS)
+ * @param[out] err	error code
+ * @return 0 or error
+ * */
+__swi_begin(0x38D)
+int sys_fstat(int fd, FSTATS *stat, uint32_t *err)
+__swi_end(0x38D, sys_fstat, (fd, stat, err));
+
+/**
+ * Format drive by index.
+ * @param drive			drive index (0 - 0:, 1 - 1:, 2 - 2:, 3 - 4:)
+ * @param[out] err		error code
+ * @return 0 or error
+ * */
+__swi_begin(0x38C)
+int sys_format(uint16_t drive, uint32_t *err)
+__swi_end(0x38C, sys_format, (drive, err));
+
+/**
  * Truncate or grow the file to the given size.
  * @param fd			file descriptor
  * @param length		new size of the file
@@ -358,17 +391,6 @@ __swi_end(0x012, GetFileAttrib, (path, attr, err));
 __swi_begin(0x013)
 int SetFileAttrib(const char *path, uint8_t attr, uint32_t *err)
 __swi_end(0x013, SetFileAttrib, (path, attr, err));
-
-/**
- * Get information about the file or directory.
- * @param path		path to the file or directory.
- * @param stat 		pointer where the information will be written (#FSTATS)
- * @param[out] err	error code
- * @return 0 or error
- * */
-__swi_begin(0x084)
-int GetFileStats(const char *path, FSTATS *stat, uint32_t *err)
-__swi_end(0x084, GetFileStats, (path, stat, err));
 
 /**
  * Get extended file properties.
@@ -465,6 +487,14 @@ __swi_end(0x08B, GetTotalFlexSpace, (drive, err));
  * These functions have a bad underscore name, which is bad for the public API.
  * @{
  * */
+
+/**
+ * @copydoc sys_stat
+ * @deprecated For compatibility with old GCC code. Use #sys_stat instead.
+ * */
+__swi_begin(0x084)
+int GetFileStats(const char *path, FSTATS *stat, uint32_t *err)
+__swi_end(0x084, GetFileStats, (path, stat, err));
 
 /**
  * @copydoc sys_open

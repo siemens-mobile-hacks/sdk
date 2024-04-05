@@ -63,7 +63,7 @@
 extern "C" {
 #endif
 
-#include <time.h>
+// #include <time.h>
 #include "bn.h"
 #include "stack.h"
 #include "safestack.h"
@@ -577,11 +577,11 @@ ASN1_ENUMERATED *d2i_ASN1_ENUMERATED(ASN1_ENUMERATED **a,unsigned char **pp,
 			long length);
 
 int ASN1_UTCTIME_check(ASN1_UTCTIME *a);
-ASN1_UTCTIME *ASN1_UTCTIME_set(ASN1_UTCTIME *s,time_t t);
+// ASN1_UTCTIME *ASN1_UTCTIME_set(ASN1_UTCTIME *s,time_t t);
 int ASN1_UTCTIME_set_string(ASN1_UTCTIME *s, char *str); 
 
 int ASN1_GENERALIZEDTIME_check(ASN1_GENERALIZEDTIME *a);
-ASN1_GENERALIZEDTIME *ASN1_GENERALIZEDTIME_set(ASN1_GENERALIZEDTIME *s,time_t t);
+// ASN1_GENERALIZEDTIME *ASN1_GENERALIZEDTIME_set(ASN1_GENERALIZEDTIME *s,time_t t);
 int ASN1_GENERALIZEDTIME_set_string(ASN1_GENERALIZEDTIME *s, char *str); 
 
 ASN1_OCTET_STRING *	ASN1_OCTET_STRING_new(void);
@@ -668,7 +668,7 @@ ASN1_TIME *	ASN1_TIME_new(void);
 void		ASN1_TIME_free(ASN1_TIME *a);
 int		i2d_ASN1_TIME(ASN1_TIME *a,unsigned char **pp);
 ASN1_TIME *	d2i_ASN1_TIME(ASN1_TIME **a,unsigned char **pp, long length);
-ASN1_TIME *ASN1_TIME_set(ASN1_TIME *s,time_t t);
+// ASN1_TIME *ASN1_TIME_set(ASN1_TIME *s,time_t t);
 
 int		i2d_ASN1_SET(STACK *a, unsigned char **pp,
 			int (*func)(), int ex_tag, int ex_class, int is_set);

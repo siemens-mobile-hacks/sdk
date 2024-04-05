@@ -112,6 +112,22 @@ char IsGPRSEnabled()
 __swi_end(0x0A7, IsGPRSEnabled, ());
 
 /**
+ * Check if GPRS available in the current network.
+ * @return 1 or 0
+ * */
+__swi_begin(0x284)
+char IsGPRSAvailable()
+__swi_end(0x284, IsGPRSAvailable, ());
+
+/**
+ * Check if EDGE available in the current network.
+ * @return 1 or 0
+ * */
+__swi_begin(0x285)
+char IsEDGEAvailable()
+__swi_end(0x285, IsEDGEAvailable, ());
+
+/**
  * Check if the GPRS session is established.
  * @return 1 or 0
  * */
@@ -210,6 +226,21 @@ __swi_end(0x186, RegisterCepidForSocketWork, (reg));
 __swi_begin(0x187)
 int RequestLMANConnect(LMAN_DATA *data)
 __swi_end(0x187, RequestLMANConnect, (data));
+
+/** @} */
+
+/**
+ * @name Profile
+ * @{
+ * */
+
+/**
+ * Get name of the current internet profile.
+ * @return C-string
+ * */
+__swi_begin(0x828E)
+const char *RamActiveGPRSProfileName()
+__swi_end(0x828E, RamActiveGPRSProfileName, ());
 
 /** @} */
 

@@ -11,15 +11,15 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#ifdef __ICCARM__ // Compatibility with IAR code.
+#if defined(__ICCARM__) || defined(SWILIB_INCLUDE_ALL)
 	#define SWILIB_LIBC
 	#define SWILIB_LIBPNG
 	#define SWILIB_ZLIB
 	#define SWILIB_OPENSSL
-	
-	#ifndef SWILIB_MODERN
-		#define SWILIB_LEGACY_COMPAT
-	#endif
+#endif
+
+#if defined(__ICCARM__) && !defined(SWILIB_MODERN) // Compatibility with IAR code.
+	#define SWILIB_LEGACY_COMPAT
 #endif
 
 #if defined(DOXYGEN)

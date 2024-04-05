@@ -313,6 +313,37 @@ __swi_end(0x222, SetCpuClockTempHi, (unk));
 /** @} */
 
 /**
+ * @name Misc system functions
+ * @{
+ * */
+
+/**
+ * Get PRNG seed value.
+ * @return pointer to the seed.
+ * */
+__swi_begin(0x80DC)
+int *RamRandSeed()
+__swi_end(0x80DC, RamRandSeed, ());
+
+/**
+ * Current pickoff error string.
+ * @return C-string
+ * */
+__swi_begin(0x838B)
+const char *RamLastStoreString()
+__swi_end(0x838B, RamLastStoreString, ());
+
+/**
+ * Disable GSM L1 layer (NetOff).
+ * @return C-string
+ * */
+__swi_begin(0x247)
+const char *GSM_L1_Disable()
+__swi_end(0x247, GSM_L1_Disable, ());
+
+/** @} */
+
+/**
  * @name Stub functions
  * @{
  * */

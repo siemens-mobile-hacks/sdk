@@ -199,6 +199,14 @@ int MakeVoiceCall(const char *number, int unk1, int unk2)
 __swi_end(0x170, MakeVoiceCall, (number, unk1, unk2));
 
 /**
+ * Get SMS status.
+ * @return 1 - send, 2 - recv, 3 - both
+ * */
+__swi_begin(0x286)
+int GetSMSState()
+__swi_end(0x286, GetSMSState, ());
+
+/**
  * Check for new SMS.
  * @return 1: when there has new SMS
  * @return 0: no new SMS
@@ -266,6 +274,38 @@ int IsCalling(void)
 __swi_end(0x06E, IsCalling, ());
 
 /**
+ * Get current call diration.
+ * @return seconds
+ * */
+__swi_begin(0x072)
+int GetDurationFromCurrentCall(void)
+__swi_end(0x072, GetDurationFromCurrentCall, ());
+
+/**
+ * Check if current call in decryption state.
+ * @return 1 or 0
+ * */
+__swi_begin(0x289)
+int isDecryption(void)
+__swi_end(0x289, isDecryption, ());
+
+/**
+ * Checking if current call don't have number.
+ * @return 1 or 0
+ * */
+__swi_begin(0x07D)
+int IsIncognitoCall(void)
+__swi_end(0x07D, IsIncognitoCall, ());
+
+/**
+ * Checking for an active direct call.
+ * @return 1 or 0
+ * */
+__swi_begin(0x067)
+int IsDirectCallActive(void)
+__swi_end(0x067, IsDirectCallActive, ());
+
+/**
  * State of the current call.
  * @return unknown
  * */
@@ -325,12 +365,36 @@ char *RAM_IMSI(void)
 __swi_end(0x81EB, RAM_IMSI, ());
 
 /**
+ * Get cellurar operator name.
+ * @return FF-terminated C-string
+ * */
+__swi_begin(0x81F4)
+char *RamServiceProviderName(void)
+__swi_end(0x81F4, RamServiceProviderName, ());
+
+/**
  * Current cellular network state.
  * @return pointer to the network state
  * */
 __swi_begin(0x80CA)
 RAMNET *RamNet()
 __swi_end(0x80CA, RamNet, ());
+
+/**
+ * Check if cellular network is online.
+ * @return 1 or 0
+ * */
+__swi_begin(0x80D6)
+RAMNET *RamNetOnline()
+__swi_end(0x80D6, RamNetOnline, ());
+
+/**
+ * Get current network access mode.
+ * @return mdoe
+ * */
+__swi_begin(0x0051)
+int GetNetAccessMode()
+__swi_end(0x0051, GetNetAccessMode, ());
 
 /**
  * Get network roaming status.
@@ -495,6 +559,27 @@ __swi_end(0x21D, GSMTXT_Decode, (result, pkt, len, encoding_type, malloc_fn, mfr
 __swi_begin(0x22A)
 void FreeGSMTXTpkt(void *pkt)
 __swi_end(0x22A, FreeGSMTXTpkt, (pkt));
+
+/**
+ * Open new received SMS in SMS UI.
+ * */
+__swi_begin(0x048)
+void ReadNewSMS()
+__swi_end(0x048, ReadNewSMS, ());
+
+/**
+ * Open new received flash SMS in SMS UI.
+ * */
+__swi_begin(0x049)
+void ReadFlashSMS()
+__swi_end(0x049, ReadFlashSMS, ());
+
+/**
+ * Starts "opwvmsg:RGetAllEmail" in Openwave.
+ * */
+__swi_begin(0x233)
+void GetAllEmail()
+__swi_end(0x233, GetAllEmail, ());
 
 __swilib_end
 

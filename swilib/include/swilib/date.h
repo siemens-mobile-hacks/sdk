@@ -76,6 +76,14 @@ TDateTimeSettings *RamDateTimeSettings(void)
 __swi_end(0x822F, RamDateTimeSettings, ());
 
 /**
+ * Check if "Auto Time" setting enabled.
+ * @return 1 or 0
+ * */
+__swi_begin(0x80D2)
+char *RamIsAutoTimeEnabled(void)
+__swi_end(0x80D2, RamIsAutoTimeEnabled, ());
+
+/**
  * Get current date and time.
  * @param[out] date	output for current date
  * @param[out] time	output for current date
@@ -209,41 +217,6 @@ __swi_end(0x2CE, CmpDates, (date1, date2));
 __swi_begin(0x2CF)
 int CmpTimes(const TTime *time1, const TTime *time2)
 __swi_end(0x2CF, CmpTimes, (time1, time2));
-
-#if 0
-
-/**
- * Convert normal date to the Lunar date.
- * @param date				normal date
- * @param[out] lunar_date	output for converted date
- * @return 0 or error
- * @warning Only in Chinese firmware.
- * */
-__swi_begin(0x234)
-int GetLunarDate(const TDate *date, TDate *lunar_date)
-__swi_end(0x234, GetLunarDate, (date, lunar_date));
-
-/**
- * Get Lunar Year ID by year
- * @param year	given year
- * @return 0-11
- * @warning Only in Chinese firmware.
- * */
-__swi_begin(0x235)
-int GetLunarYearID(int year)
-__swi_end(0x235, GetLunarYearID, (year));
-
-/**
- * Get Lunar Year animal picture by year
- * @param year	given year
- * @return picture number in PIT
- * @warning Only in Chinese firmware.
- * */
-__swi_begin(0x236)
-int GetLunarAnimal(int year)
-__swi_end(0x236, GetLunarAnimal, (year));
-
-#endif
 
 __swilib_end
 

@@ -97,6 +97,16 @@ void wsAppendChar(WSHDR *destination, int character)
 __swi_end(0x01C, wsAppendChar, (destination, character));
 
 /**
+ * Get charater at the given position (safe).
+ * @param str		pointer to the WSHDR 
+ * @param pos		position
+ * @return charater
+ * */
+__swi_begin(0x0A2)
+uint16_t wsCharAt(const WSHDR *str, short pos)
+__swi_end(0x0A2, wsCharAt, (str, pos));
+
+/**
  * Insert a character at the given position of the WSHDR.
  * @param destination	pointer to the destination WSHDR
  * @param character		character to be inserted

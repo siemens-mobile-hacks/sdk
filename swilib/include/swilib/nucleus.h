@@ -386,9 +386,9 @@ int NU_Suspend_Task(NU_TASK *task)
 __swi_end(0x305, NU_Suspend_Task, (task));
 
 
-__swi_begin(0x300)
+__swi_begin(0x306)
 void NU_Relinquish(void)
-__swi_end(0x300, NU_Relinquish, ());
+__swi_end(0x306, NU_Relinquish, ());
 
 
 __swi_begin(0x307)
@@ -853,7 +853,7 @@ int NU_Local_Control_Interrupts(INT new_level)
 __swi_end(0x34F, NU_Local_Control_Interrupts, (new_level));
 
 
-__swi_begin(0x305)
+__swi_begin(0x350)
 void NU_Restore_Interrupts(void)
 __swi_end(0x305, NU_Restore_Interrupts, ());
 
@@ -911,9 +911,9 @@ void NU_Protect(NU_PROTECT *protect_struct)
 __swi_end(0x35A, NU_Protect, (protect_struct));
 
 
-__swi_begin(0x305)
+__swi_begin(0x35B)
 void NU_Unprotect(void)
-__swi_end(0x305, NU_Unprotect, ());
+__swi_end(0x35B, NU_Unprotect, ());
 
 /** @} */
 
@@ -989,14 +989,14 @@ char *NU_License_Information(void)
 __swi_end(0x366, NU_License_Information, ());
 
 
-__swi_begin(0x306)
+__swi_begin(0x367)
 void NU_Disable_History_Saving(void)
-__swi_end(0x306, NU_Disable_History_Saving, ());
+__swi_end(0x367, NU_Disable_History_Saving, ());
 
 
-__swi_begin(0x306)
+__swi_begin(0x368)
 void NU_Enable_History_Saving(void)
-__swi_end(0x306, NU_Enable_History_Saving, ());
+__swi_end(0x368, NU_Enable_History_Saving, ());
 
 
 __swi_begin(0x369)

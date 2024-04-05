@@ -299,6 +299,15 @@ char GetProfile()
 __swi_end(0x0B6, GetProfile, ());
 
 /**
+ * Get ID of the active profile.
+ * @return pointer to the ID
+ * @deprecated use #GetProfile
+ * */
+__swi_begin(0x80E3)
+char *RamProfileNum()
+__swi_end(0x80E3, RamProfileNum, ());
+
+/**
  * Change profile.
  * @param profile_id	profile ID
  * @return 0 or error
@@ -314,8 +323,16 @@ __swi_end(0x0B7, SetProfile, (profile_id));
  * @param unk			set to 0
  * */
 __swi_begin(0x296)
-void getProfileNameByN(const WSHDR *name, int profile_id, int unk)
+void getProfileNameByN(WSHDR *name, int profile_id, int unk)
 __swi_end(0x296, getProfileNameByN, (name, profile_id, unk));
+
+/**
+ * Get current profile name.
+ * @param[out] name		profile name
+ * */
+__swi_begin(0x08D)
+void getCurrentProfileName(WSHDR *name)
+__swi_end(0x08D, getCurrentProfileName, (name));
 
 /**
  * Get volume from the profile.
@@ -325,6 +342,53 @@ __swi_end(0x296, getProfileNameByN, (name, profile_id, unk));
 __swi_begin(0x2C4)
 int GetProfileVolumeSetting(int profile_id, int type)
 __swi_end(0x2C4, GetProfileVolumeSetting, (profile_id, type));
+
+/** @} */
+
+/**
+ * @name Ringtones
+ * @{
+ * */
+
+/**
+ * Set ringtones state.
+ * @param state		1 - on, 0 - off
+ * */
+__swi_begin(0x0037)
+void Ringtones_SetState(uint8_t state)
+__swi_end(0x0037, Ringtones_SetState, (state));
+
+/** @} */
+
+/**
+ * @name Low-level functions for settings cache.
+ * @{
+ * */
+
+/**
+ * Get raw setting value from cache.
+ * @param value		pointer where the result will be written
+ * @param maxlen	maximum size of the value buffer
+ * @param set_id	settings file id (#SettingsID)
+ * @param entry		entry id
+ * @param keyword	key
+ * @return 0 or error
+ * */
+__swi_begin(0x22C)
+int pdcache_getval(char *value, int maxlen, int set_id, const char *entry, const char *keyword)
+__swi_end(0x22C, pdcache_getval, (value, maxlen, set_id, entry, keyword));
+
+/**
+ * Set raw setting value to cache.
+ * @param value		raw value
+ * @param set_id	settings file id (#SettingsID)
+ * @param entry		entry id
+ * @param keyword	key
+ * @return 0 or error
+ * */
+__swi_begin(0x22D)
+int pdcache_setval(const char *value, int set_id, const char *entry, const char *keyword)
+__swi_end(0x22D, pdcache_setval, (value, set_id, entry, keyword));
 
 /** @} */
 

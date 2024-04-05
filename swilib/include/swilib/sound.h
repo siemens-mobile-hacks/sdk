@@ -236,6 +236,14 @@ struct PLAYFILE_OPT {
 };
 
 /**
+ * Get current volume level.
+ * @return volume level
+ * */
+__swi_begin(0x81FA)
+char *RamVolumeLevel()
+__swi_end(0x81FA, RamVolumeLevel, ());
+
+/**
  * Checking if any sound is currently played
  * @return pointer to the value of an unknown PASIC register
  * @return SG: RamMediaIsPlaying() != 2 // sound is playing
@@ -420,6 +428,34 @@ short PlayFile(int flags, const WSHDR *folder, const WSHDR *file, int cepid, int
 __swi_end(0x04A, PlayFile, (flags, folder, file, cepid, msgid, sfo));
 #endif
 
+
+
+/**
+ * Get current audio path.
+ * @return id
+ * */
+__swi_begin(0x288)
+int Audio_GetCurrAudioPath()
+__swi_end(0x288, Audio_GetCurrAudioPath, ());
+
+/**
+ * Get current object handle.
+ * @return object handle
+ * */
+__swi_begin(0x29B)
+int Audio_GetObjectHandle()
+__swi_end(0x29B, Audio_GetObjectHandle, ());
+
+/**
+ * Change audio output.
+ * @param oh				object handle, use #Audio_GetObjectHandle
+ * @param type_and_conn		conn << 16 | type
+ * @return 0 or error
+ * */
+__swi_begin(0x29A)
+int AACC_AudioTransferReq(int oh, uint32_t type_and_conn)
+__swi_end(0x29A, AACC_AudioTransferReq, (oh, type_and_conn));
+
 /**
  * Play vibra tone (???).
  * @param unk1			unknown, set to 0x2F
@@ -440,6 +476,44 @@ __swi_end(0x034, PlaySoundLoop, (unk1, unk2, duration));
 __swi_begin(0x09A)
 int ChangeVolume(uint8_t volume)
 __swi_end(0x09A, ChangeVolume, (volume));
+
+/**
+ * Play custom sound.
+ * @param event_id		event ID
+ * @param cepid			GBS message CEPID
+ * @param msg_id		GBS message ID
+ * @param folder		folder for custom sound, can be NULL
+ * @param file			file for custom sound, can be NULL
+ * @return 0 or error
+ * @warning Untested function that is not found in any ELF's.
+ * */
+__swi_begin(0x033)
+short SoundAE_PlayFileAsEvent(int event_id, int cepid, int msg_id, const WSHDR *folder, const WSHDR *file)
+__swi_end(0x033, SoundAE_PlayFileAsEvent, (event_id, cepid, msg_id, folder, file));
+
+/**
+ * Pointer to the AudioHook.
+ * @return 1 or 0
+ * */
+__swi_begin(0x838A)
+void *RamAudioHook()
+__swi_end(0x838A, RamAudioHook, ());
+
+/**
+ * Check if active recording of the sound.
+ * @return 1 or 0
+ * */
+__swi_begin(0x8297)
+char *RamIsSoundRecordingActive()
+__swi_end(0x8297, RamIsSoundRecordingActive, ());
+
+/**
+ * Quality of the current sound recording.
+ * @return 1 or 0
+ * */
+__swi_begin(0x8298)
+char *RamSoundRecordingQuality()
+__swi_end(0x8298, RamSoundRecordingQuality, ());
 
 __swilib_end
 

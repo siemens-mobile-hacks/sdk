@@ -24,7 +24,8 @@ typedef struct GUI_MSG GUI_MSG;
 typedef struct GUI_METHODS GUI_METHODS;
 typedef struct DRWOBJ DRWOBJ;
 typedef struct LCDLAYER LCDLAYER;
-typedef struct LCDLAYER_CONTAINER LCDLAYER_CONTAINER;
+typedef struct LCDLAYER_LIST LCDLAYER_LIST;
+typedef struct RAP_LCDLAYER_LIST RAP_LCDLAYER_LIST;
 
 typedef int (*KeybMsgHookProc)(int submsg, int msg);
 
@@ -414,11 +415,24 @@ struct LCDLAYER {
 /**
  * LCD drawing layer container.
  * */
-struct LCDLAYER_CONTAINER {
+struct LCDLAYER_LIST {
 	LCDLAYER *layer;
 	malloc_func_t malloc_func;
 	mfree_func_t mfree_func;
 	uint32_t unk;
+};
+
+/**
+ * LCD drawing layer container (RAP).
+ * */
+struct RAP_LCDLAYER_LIST {
+	LCDLAYER *layer;
+	int unk1[3];
+	short cepid;
+	short unk2;
+	int unk3;
+	void *app;
+	int unk4;
 };
 
 /**
@@ -564,10 +578,19 @@ __swi_end(0x134, StoreXYXYtoRECT, (rect, x, y, x2, y2));
 /**
  * Check if the GUI is in focus on the screen.
  * @param id	GUI ID
+ * @return 1 or 0
  * */
 __swi_begin(0x135)
 int IsGuiOnTop(int id)
 __swi_end(0x135, IsGuiOnTop, (id));
+
+/**
+ * Get current focused GUI.
+ * @return GUI ID
+ * */
+__swi_begin(0x210)
+int GetCurGuiID()
+__swi_end(0x210, GetCurGuiID, ());
 
 /**
  * Create new GUI.
@@ -984,6 +1007,32 @@ __swi_end(0x12A, DrawObject, (drwobj));
  * @{
  * */
 
+#if 0
+/**
+ * Init #DRWOBJ which draw line.
+ * @param flags			drawing flags bitmask, see #LineDrawingFlags
+ * @param x1, y1		1-st point coordinates
+ * @param x2, y2		2-nd point coordinates
+ * */
+__swi_begin(0xXXX)
+void DrwObj_InitLine(DRWOBJ *drwobj, RECT *rect, int flags, int x, int y, int x2, int y2)
+__swi_end(0xXXX, DrwObj_InitLine, (drwobj, rect, flags, x, y, x2, y2));
+
+/**
+ * Init #DRWOBJ which draw triangle.
+ * @param drwobj		draw object
+ * @param x1, y1		1st point of the triangle
+ * @param x2, y2		2nd point of the triangle
+ * @param x3, y3		3rd point of the triangle
+ * @param flags			drawing flags, see #RectDrawingFlags
+ * @param pen			stroke color
+ * @param brush			fill color
+ * */
+__swi_begin(0xXXX)
+void DrwObj_InitTriangle(DRWOBJ *drwobj, int x1, int y1, int x2, int y2, int x3, int y3, int flags, char *pen, char *brush)
+__swi_end(0xXXX, DrwObj_InitTriangle, (drwobj, x1, y1, x2, y2, x3, y3, flags, pen, brush));
+#endif
+
 /**
  * Init #DRWOBJ which draw rectangle.
  * @param drwobj			draw object
@@ -1127,20 +1176,53 @@ __swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout, callback));
  * */
 
 /**
+ * Set LCDLAYER buffer depth.
+ * @param layer		pointer to the #LCDLAYER
+ * @param depth		buffer depth
+ * */
+__swi_begin(0x389)
+void LCDLAYER_SetBufferDepth(LCDLAYER *layer, char depth)
+__swi_end(0x389, LCDLAYER_SetBufferDepth, (layer, depth));
+
+/**
  * Get an LCD layer which is associated with the current CEPID.
  * @return pointer to the #LCDLAYER
  * */
 __swi_begin(0x387)
-LCDLAYER *GetLCDLAYERByCurCepID()
-__swi_end(0x387, GetLCDLAYERByCurCepID, ());
+LCDLAYER *LCDLAYER_GetCurrent()
+__swi_end(0x387, LCDLAYER_GetCurrent, ());
 
 /**
- * Request redrawing of the given LCDLAYER.
+ * Request redrawing of the given LCDLAYER (delayed).
  * @param layer		pointer to the #LCDLAYER
  * */
 __swi_begin(0x384)
-void LCDRedrawLAYER(LCDLAYER *layer)
-__swi_end(0x384, LCDRedrawLAYER, (layer));
+void LCDLAYER_Redraw(LCDLAYER *layer)
+__swi_end(0x384, LCDLAYER_Redraw, (layer));
+
+/**
+ * Do redrawing of the given LCDLAYER (immediate).
+ * @param layer		pointer to the #LCDLAYER
+ * */
+__swi_begin(0x07A)
+void LCDLAYER_Flush(LCDLAYER *layer)
+__swi_end(0x07A, LCDLAYER_Flush, (layer));
+
+/**
+ * Limit drawing region on current LCDLAYER (selected by current CEPID).
+ * @param x, y, x2, y2	drawing region	
+ * */
+__swi_begin(0x3A4)
+void LCDLAYER_Current_SetClipRegion(int x, int y, int x2, int y2)
+__swi_end(0x3A4, LCDLAYER_Current_SetClipRegion, (x, y, x2, y2));
+
+/**
+ * Set LCDLAYER buffer depth on current LCDLAYER (selected by current CEPID).
+ * @param depth		buffer depth
+ * */
+__swi_begin(0x388)
+void LCDLAYER_Current_SetBufferDepth(char depth)
+__swi_end(0x388, LCDLAYER_Current_SetBufferDepth, (depth));
 
 /**
  * Push #DRWOBJ to the given LCDLAYER (with redraw!)
@@ -1161,20 +1243,20 @@ void PushDRWOBJOnLAYER(DRWOBJ *drwobj, LCDLAYER *layer)
 __swi_end(0x383, PushDRWOBJOnLAYER, (drwobj, layer));
 
 /**
- * Limit drawing region on current LCDLAYER (#GetLCDLAYERByCurCepID).
- * @param x, y, x2, y2	drawing region	
- * */
-__swi_begin(0x3A4)
-void SetDrawingCanvas(int x, int y, int x2, int y2)
-__swi_end(0x3A4, SetDrawingCanvas, (x, y, x2, y2));
-
-/**
- * Pointer to the list of the LCDLAYER's.
- * @return pointer to the array of #LCDLAYER_CONTAINER
+ * Pointer to the list of the LCDLAYER's (main).
+ * @return pointer to the array of #LCDLAYER_LIST
  * */
 __swi_begin(0x80F6)
-LCDLAYER_CONTAINER *GetLCDLAYERList()
-__swi_end(0x80F6, GetLCDLAYERList, ());
+LCDLAYER_LIST *RamLcdMainLayersList()
+__swi_end(0x80F6, RamLcdMainLayersList, ());
+
+/**
+ * Pointer to the list of the LCDLAYER's (RAP).
+ * @return pointer to the array of #LCDLAYER_LIST
+ * */
+__swi_begin(0x80F7)
+RAP_LCDLAYER_LIST *RamLcdRapLayersList()
+__swi_end(0x80F7, RamLcdRapLayersList, ());
 
 /**
  * Unknown
@@ -1278,6 +1360,38 @@ __swi_end(0x3A6, Get_Obj1_WH, (drwobj, w, h));
 __swi_begin(0x14A)
 void FreeDrawObject_subobj(DRWOBJ *drwobj)
 __swi_end(0x14A, FreeDrawObject_subobj, (drwobj));
+
+/**
+ * @copydoc LCDLAYER_SetBufferDepth
+ * @deprecated use #LCDLAYER_SetBufferDepth
+ * */
+__swi_begin(0x389)
+void SetDepthBufferOnLCDLAYER(LCDLAYER *layer, char depth)
+__swi_end(0x389, SetDepthBufferOnLCDLAYER, (layer, depth));
+
+/**
+ * @copydoc LCDLAYER_GetCurrent
+ * @deprecated use #LCDLAYER_GetCurrent
+ * */
+__swi_begin(0x387)
+LCDLAYER *GetLCDLAYERByCurCepID()
+__swi_end(0x387, GetLCDLAYERByCurCepID, ());
+
+/**
+ * @copydoc LCDLAYER_Redraw
+ * @deprecated use #LCDLAYER_Redraw
+ * */
+__swi_begin(0x384)
+void LCDRedrawLAYER(LCDLAYER *layer)
+__swi_end(0x384, LCDRedrawLAYER, (layer));
+
+/**
+ * @copydoc LCDLAYER_Current_SetClipRegion
+ * @deprecated use #LCDLAYER_Current_SetClipRegion
+ * */
+__swi_begin(0x3A4)
+void SetDrawingCanvas(int x, int y, int x2, int y2)
+__swi_end(0x3A4, SetDrawingCanvas, (x, y, x2, y2));
 
 /** @} */
 

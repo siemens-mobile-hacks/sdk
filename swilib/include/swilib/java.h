@@ -32,6 +32,14 @@ int IsNoJava()
 __swi_end(0x1E8, IsNoJava, ());
 
 /**
+ * Check if Java IS running.
+ * @return 2 - is no java running
+ * */
+__swi_begin(0x8281)
+int8_t *RamIsRunJava()
+__swi_end(0x8281, RamIsRunJava, ());
+
+/**
  * Open file with java midlet.
  * Launches a java midlet passing it a file name.
  * @param midlet	path to the .jar

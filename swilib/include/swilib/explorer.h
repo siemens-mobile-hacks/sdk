@@ -15,6 +15,8 @@
 
 __swilib_begin
 
+typedef enum ExplorerTransferStates ExplorerTransferStates;
+
 typedef struct NativeExplorerData NativeExplorerData;
 typedef struct REGEXPLEXT REGEXPLEXT;
 typedef struct REGEXPLEXT_ARM_NEW REGEXPLEXT_ARM_NEW;
@@ -24,6 +26,11 @@ typedef struct REGEXPLEXT TREGEXPLEXT;
 #else
 typedef struct REGEXPLEXT_ARM_NEW TREGEXPLEXT;
 #endif
+
+enum ExplorerTransferStates {
+	EXPLORER_TRANSFER_STATE_STOP		= 1,
+	EXPLORER_TRANSFER_STATE_RUNNING		= 2,
+};
 
 /**
  * Mode of the NativeExplorer.
@@ -213,6 +220,35 @@ __swi_end(0x213, CardExplGetFName, (csm, index, filename));
 __swi_begin(0x094)
 int ExecuteFile(const WSHDR *filepath, const WSHDR *mime, void *param)
 __swi_end(0x094, ExecuteFile, (filepath, mime, param));
+
+/**
+ * Copy file.
+ * @param from			source file path
+ * @param to			destination file path
+ * @param overwrite		allow overwrite if exists
+ * @param transfer_id	transfer ID (0 ... 31)
+ * @param[out] errp		variable for error
+ * @return 0 or error
+ * 
+ * ```
+ * int transfer_id = 0; // warning: needed function for safe transfer_id allocation
+ * ExplorerSetTransferState(transfer_id, EXPLORER_TRANSFER_STATE_RUNNING);
+ * ExplorerCopyFile(from, to, 1, transfer_id, &err);
+ * ```
+ * */
+__swi_begin(0x1F0)
+int ExplorerCopyFile(const WSHDR *from, const WSHDR *to, int overwrite, char transfer_id, uint32_t *errp)
+__swi_end(0x1F0, ExplorerCopyFile, (from, to, overwrite, transfer_id, errp));
+
+/**
+ * Set transfer state.
+ * @param transfer_id	transfer ID (0 ... 31)
+ * @param state			see #ExplorerTransferStates
+ * @return 0 or error
+ * */
+__swi_begin(0x1F1)
+int ExplorerSetTransferState(char transfer_id, int state)
+__swi_end(0x1F1, ExplorerSetTransferState, (transfer_id, state));
 
 __swilib_end
 

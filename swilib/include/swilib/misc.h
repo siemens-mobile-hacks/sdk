@@ -24,8 +24,10 @@ typedef struct LIGHT_PARAM LIGHT_PARAM;
  * Illumination device.
  * */
 enum IlluminationDeviceID {
-    ILLUMINATION_DEV_DISPLAY	= 0,	/**< LCD */
-    ILLUMINATION_DEV_KEYBOARD	= 1,	/**< Keyboard */
+	ILLUMINATION_DEV_DISPLAY	= 0,	/**< LCD */
+	ILLUMINATION_DEV_KEYBOARD	= 1,	/**< Keyboard */
+	ILLUMINATION_DEV_DYNLIGHT	= 2,	/**< Dynamic Light */
+	ILLUMINATION_DEV_LIGHTER	= 3,	/**< Camera flashlight as lighter */
 };
 
 /**
@@ -82,6 +84,14 @@ __swi_begin(0x093)
 void RebootPhone()
 __swi_end(0x093, RebootPhone, ());
 
+/**
+ * Set state for SLI indicator.
+ * @param state		state value 0...4
+ * */
+__swi_begin(0x036)
+void SLI_SetState(uint8_t state)
+__swi_end(0x036, SLI_SetState, (state));
+
 /** @} */
 
 /**
@@ -117,9 +127,25 @@ __swi_end(0x17E, RestartIDLETMR, ());
 /** @} */
 
 /**
- * @name Keyboard locking
+ * @name Keyboard
  * @{
  * */
+
+/**
+ * Press key (simulation).
+ * @param keycode	code of the key
+ * */
+__swi_begin(0x05A)
+void KeypressOn(int keycode)
+__swi_end(0x05A, KeypressOn, (keycode));
+
+/**
+ * Release key (simulation).
+ * @param keycode	code of the key
+ * */
+__swi_begin(0x05B)
+void KeypressOff(int keycode)
+__swi_end(0x05B, KeypressOff, (keycode));
 
 /**
  * Get keyboard lock status.
@@ -128,6 +154,15 @@ __swi_end(0x17E, RestartIDLETMR, ());
 __swi_begin(0x043)
 int IsUnlocked(void)
 __swi_end(0x043, IsUnlocked, ());
+
+/**
+ * Get keyboard lock status.
+ * @return 1: locked, 0: unlocked
+ * @deprecated use #IsUnlocked
+ * */
+__swi_begin(0x80D5)
+int *RamIsLocked(void)
+__swi_end(0x80D5, RamIsLocked, ());
 
 /**
  * Lock keyboard.
@@ -176,7 +211,7 @@ __swi_end(0x80D7, RamScreenBrightness, ());
  * Change illumination level for keyboard or LCD.
  * @param dev		device, see #IlluminationDeviceID
  * @param unk		set to 1
- * @param level		illumination level: 0-255
+ * @param level		illumination level: 0-100
  * @param delay		delay in ms for smooth illumination change (fade-in/fade-out)
  * @return 0 or error
  * */
@@ -192,14 +227,14 @@ __swi_end(0x008, SetIllumination, (dev, unk, level, delay));
  * 
  * Always ON:
  * ```C
- * IllumTimeRelease(4, 3); // Keep
- * IllumTimeRequest(4, 3); // Release
+ * IllumTimeRequest(4, 3); // Keep
+ * IllumTimeRelease(4, 3); // Release
  * ```
  * 
  * As in "mediaplayer" (???):
  * ```C
- * IllumTimeRelease(1, 1); // Keep
- * IllumTimeRequest(1, 1); // Release
+ * IllumTimeRequest(1, 1); // Keep
+ * IllumTimeRelease(1, 1); // Release
  * ```
  * */
 __swi_begin(0x2DE)
@@ -238,6 +273,14 @@ __swi_end(0x044, TempLightOn, (flags, unk));
 __swi_begin(0x040)
 int GetVibraStatus(void)
 __swi_end(0x040, GetVibraStatus, ());
+
+/**
+ * Enable or disable vibration.
+ * @param status	1: enabled, 0: disabled
+ * */
+__swi_begin(0x062)
+void SetVibraStatus(int status)
+__swi_end(0x062, SetVibraStatus, (status));
 
 /**
  * Start vibration.
@@ -301,8 +344,17 @@ __swi_end(0x035, AlarmClockRing, ());
  * @return 1 - enabled, 0 - disabled
  * */
 __swi_begin(0x2A0)
-int GetAlarmclockState(int state)
-__swi_end(0x2A0, GetAlarmclockState, (state));
+int GetAlarmClockState(int state)
+__swi_end(0x2A0, GetAlarmClockState, (state));
+
+/**
+ * Pointer to the AlarmClock state.
+ * @return 1 - enabled, 0 - disabled
+ * @deprecated use #GetAlarmClockState
+ * */
+__swi_begin(0x80CF)
+char *RamAlarmClockState()
+__swi_end(0x80CF, RamAlarmClockState, ());
 
 /**
  * Re-read changed alarmclock.pd
@@ -312,12 +364,59 @@ __swi_begin(0x291)
 int RefreshAlarmClock()
 __swi_end(0x291, RefreshAlarmClock, ());
 
+/**
+ * Check if auto-repeat is enabled in AlarmClock.
+ * @return unknown
+ * */
+__swi_begin(0x8292)
+char *RamIsAlarmClockAutorepeatOn()
+__swi_end(0x8292, RamIsAlarmClockAutorepeatOn, ());
+
+/**
+ * AlarmClock scheduled time (hours).
+ * @return unknown
+ * */
+__swi_begin(0x8293)
+char *RamAlarmClockHours()
+__swi_end(0x8293, RamAlarmClockHours, ());
+
+/**
+ * AlarmClock scheduled time (minutes).
+ * @return unknown
+ * */
+__swi_begin(0x8294)
+char *RamAlarmClockMinutes()
+__swi_end(0x8294, RamAlarmClockMinutes, ());
+
 /** @} */
 
 /**
  * @name Other functions
  * @{
  * */
+
+/**
+ * Open FlexMenu.
+ * */
+__swi_begin(0x060)
+void ShowMainMenu()
+__swi_end(0x060, ShowMainMenu, ());
+
+/**
+ * Open NativeMenu.
+ * */
+__swi_begin(0x061)
+void ShowNativeMenu()
+__swi_end(0x061, ShowNativeMenu, ());
+
+/**
+ * Get checkbox state from the devmenu.
+ * @param checkbox_id	devmenu checkbox ID
+ * @return 1 if unchecked, 0 if checked
+ * */
+__swi_begin(0x1F2)
+int Devmenu_Config_IsCheckboxOff(int checkbox_id)
+__swi_end(0x1F2, Devmenu_Config_IsCheckboxOff, (checkbox_id));
 
 /**
  * Get function by shortcut name.
