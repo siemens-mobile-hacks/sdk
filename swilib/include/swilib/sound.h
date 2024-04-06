@@ -493,7 +493,7 @@ __swi_end(0x033, SoundAE_PlayFileAsEvent, (event_id, cepid, msg_id, folder, file
 
 /**
  * Pointer to the AudioHook.
- * @return 1 or 0
+ * @return implementation specific
  * */
 __swi_begin(0x838A)
 void *RamAudioHook()
@@ -501,7 +501,7 @@ __swi_end(0x838A, RamAudioHook, ());
 
 /**
  * Check if active recording of the sound.
- * @return 1 or 0
+ * @return pointer to 1 or 0
  * */
 __swi_begin(0x8297)
 char *RamIsSoundRecordingActive()
@@ -509,7 +509,7 @@ __swi_end(0x8297, RamIsSoundRecordingActive, ());
 
 /**
  * Quality of the current sound recording.
- * @return 1 or 0
+ * @return pointer to 1 or 0
  * */
 __swi_begin(0x8298)
 char *RamSoundRecordingQuality()
