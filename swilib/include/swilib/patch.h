@@ -23,6 +23,7 @@ __swilib_begin
  * */
 enum AccessoryTypeID {
 	ACC_TYPE_SERIAL_CABLE	= 15,	/**< DCA-510 */
+	ACC_TYPE_IMS_700		= 29,	/**< IMS-700 */
 };
 
 typedef struct CHAN_BAN_Q CHAN_BAN_Q;
