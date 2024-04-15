@@ -218,6 +218,26 @@ __swi_begin(0x2CF)
 int CmpTimes(const TTime *time1, const TTime *time2)
 __swi_end(0x2CF, CmpTimes, (time1, time2));
 
+/**
+ * Put date into ws string.
+ * @param[out] ws	output ws string
+ * @param date		date
+ * @param unk		unknown parameter for formatting: 0x7, 0xF, ...
+ * */
+__swi_begin(0x3B4)
+void GetDate_ws(WSHDR *ws, const TDate *date, unsigned int unk)
+__swi_end(0x3B4, GetDate_ws, (ws, date, unk));
+
+/**
+ * Put time into ws string.
+ * @param[out] ws	output ws string
+ * @param time		time
+ * @param unk		unkwnow parameter for formatting: 0x223, 0x227, ...
+ * */
+__swi_begin(0x3B5)
+void GetTime_ws(WSHDR *ws, const TTime *time, unsigned int unk)
+__swi_end(0x3B5, GetTime_ws, (ws, time, unk));
+
 __swilib_end
 
 /** @} */
