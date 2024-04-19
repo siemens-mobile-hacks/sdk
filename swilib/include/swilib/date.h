@@ -10,6 +10,7 @@
 
 #ifndef __IN_SWILIB__
 #include "base.h"
+#include "wstring.h"
 #endif
 
 __swilib_begin
