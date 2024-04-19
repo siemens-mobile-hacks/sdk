@@ -5,7 +5,8 @@ var group___p_a_t_c_h =
     [ "CHAN_BAN_Q", "group___p_a_t_c_h.html#ga21af42c0f07a348965f464c677ab7dab", null ],
     [ "SFN_DATA", "group___p_a_t_c_h.html#gad8c94240dec551a2d9546468b15b4ad7", null ],
     [ "AccessoryTypeID", "group___p_a_t_c_h.html#ga5e5284fcda8cf4ee1a398ea520d5128e", [
-      [ "ACC_TYPE_SERIAL_CABLE", "group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c", null ]
+      [ "ACC_TYPE_SERIAL_CABLE", "group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c", null ],
+      [ "ACC_TYPE_IMS_700", "group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eace715a27f4cf4de446582f037fc32fcd", null ]
     ] ],
     [ "RunDispatcher", "group___p_a_t_c_h.html#ga31420a120ae02b6c4ab460abb18bf385", null ],
     [ "GetAllPatchesByInject", "group___p_a_t_c_h.html#gaa44d5cb6142c1fe7a1cee3e92594efbd", null ],

@@ -182,6 +182,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga241444c3dbeb96b8a5f0c407c847fc65" id="r_ga241444c3dbeb96b8a5f0c407c847fc65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga241444c3dbeb96b8a5f0c407c847fc65">CmpTimes</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *time1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *time2)</td></tr>
 <tr class="memdesc:ga241444c3dbeb96b8a5f0c407c847fc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two timestamps.  <br /></td></tr>
 <tr class="separator:ga241444c3dbeb96b8a5f0c407c847fc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5faf0aa00d8cdd3365646e27dcd59f86" id="r_ga5faf0aa00d8cdd3365646e27dcd59f86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5faf0aa00d8cdd3365646e27dcd59f86">GetDate_ws</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *date, unsigned int unk)</td></tr>
+<tr class="memdesc:ga5faf0aa00d8cdd3365646e27dcd59f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put date into ws string.  <br /></td></tr>
+<tr class="separator:ga5faf0aa00d8cdd3365646e27dcd59f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9e80cd1047b0614c74df1132eb42cff" id="r_gad9e80cd1047b0614c74df1132eb42cff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9e80cd1047b0614c74df1132eb42cff">GetTime_ws</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *time, unsigned int unk)</td></tr>
+<tr class="memdesc:gad9e80cd1047b0614c74df1132eb42cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put time into ws string.  <br /></td></tr>
+<tr class="separator:gad9e80cd1047b0614c74df1132eb42cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_t_date" id="struct_t_date"></a>
@@ -239,7 +245,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00017">17</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00018">18</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +261,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00018">18</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00019">19</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
 
 </div>
 </div>
@@ -271,7 +277,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00019">19</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00020">20</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
 
 </div>
 </div>
@@ -829,6 +835,78 @@ Functions</h2></td></tr>
 0 - time1 == time2 </dd>
 <dd>
 1 - time1 &gt; time2 </dd></dl>
+
+</div>
+</div>
+<a id="ga5faf0aa00d8cdd3365646e27dcd59f86" name="ga5faf0aa00d8cdd3365646e27dcd59f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5faf0aa00d8cdd3365646e27dcd59f86">&#9670;&#160;</a></span>GetDate_ws()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetDate_ws </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>unk</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put date into ws string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">ws</td><td>output ws string </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">date</td><td>date </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">unk</td><td>unknown parameter for formatting: 0x7, 0xF, ... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad9e80cd1047b0614c74df1132eb42cff" name="gad9e80cd1047b0614c74df1132eb42cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9e80cd1047b0614c74df1132eb42cff">&#9670;&#160;</a></span>GetTime_ws()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetTime_ws </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *</td>          <td class="paramname"><span class="paramname"><em>time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>unk</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put time into ws string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">ws</td><td>output ws string </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">time</td><td>time </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">unk</td><td>unkwnow parameter for formatting: 0x223, 0x227, ... </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

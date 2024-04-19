@@ -22,5 +22,7 @@ var group___date_time =
     [ "GetDateTimeFromSeconds", "group___date_time.html#ga75d6141307ee4ffbb8cd0d475814abbf", null ],
     [ "GetDateTimeFromSecondsSince1997", "group___date_time.html#ga784f6c58342844e43afddac3e8fcf3da", null ],
     [ "CmpDates", "group___date_time.html#ga50a090750c901b3ef72488b678db5f6e", null ],
-    [ "CmpTimes", "group___date_time.html#ga241444c3dbeb96b8a5f0c407c847fc65", null ]
+    [ "CmpTimes", "group___date_time.html#ga241444c3dbeb96b8a5f0c407c847fc65", null ],
+    [ "GetDate_ws", "group___date_time.html#ga5faf0aa00d8cdd3365646e27dcd59f86", null ],
+    [ "GetTime_ws", "group___date_time.html#gad9e80cd1047b0614c74df1132eb42cff", null ]
 ];
