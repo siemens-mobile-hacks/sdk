@@ -65,6 +65,8 @@ enum DefaultLgpID {
 	LGP_NULL		= 0x7FFF, 		/**< Empty LGP */
 #endif
 	LGP_DOIT_PIC	= 0x7FFFC0FB,	/**< OK icon */
+	LGP_CHANGE_PIC	= 0x7FFFC10D,	/**< Change icon */
+	LGP_SAVE_PIC	= 0x7FFFC113,	/**< Save icon */
 };
 
 /**
