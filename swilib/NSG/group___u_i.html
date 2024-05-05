@@ -414,6 +414,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga45a264214eb8357c9bb949c3aa4783f7" id="r_ga45a264214eb8357c9bb949c3aa4783f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga45a264214eb8357c9bb949c3aa4783f7">MsgBoxOkCancel</a> (int flags, int message, void(*callback)(int canceled))</td></tr>
 <tr class="memdesc:ga45a264214eb8357c9bb949c3aa4783f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirmation popup with Ok/Cancel.  <br /></td></tr>
 <tr class="separator:ga45a264214eb8357c9bb949c3aa4783f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e16951186e374de26ab5b67852cebfb" id="r_ga4e16951186e374de26ab5b67852cebfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e16951186e374de26ab5b67852cebfb">ShowWaitBox</a> (int flags, int message)</td></tr>
+<tr class="memdesc:ga4e16951186e374de26ab5b67852cebfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show wait popup.  <br /></td></tr>
+<tr class="separator:ga4e16951186e374de26ab5b67852cebfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f5b79dd7f303962aec7e19c99b0ae64" id="r_ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f5b79dd7f303962aec7e19c99b0ae64">CreatePopupGUI</a> (int flags, void *user_pointer, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_p_o_p_u_p___d_e_s_c">POPUP_DESC</a> *popup, int lgp_id)</td></tr>
 <tr class="memdesc:ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create custom Popup.  <br /></td></tr>
 <tr class="separator:ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2047,6 +2050,37 @@ Enumerations</h2></td></tr>
 <div class="line"><a class="code hl_function" href="#ga45a264214eb8357c9bb949c3aa4783f7">MsgBoxOkCancel</a>(0, (<span class="keywordtype">int</span>) <span class="stringliteral">&quot;Erase EEPROM?&quot;</span>, erase_eeprom_handler)</div>
 <div class="ttc" id="agroup___u_i_html_ga45a264214eb8357c9bb949c3aa4783f7"><div class="ttname"><a href="#ga45a264214eb8357c9bb949c3aa4783f7">MsgBoxOkCancel</a></div><div class="ttdeci">int MsgBoxOkCancel(int flags, int message, void(*callback)(int canceled))</div><div class="ttdoc">Confirmation popup with Ok/Cancel.</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="ga4e16951186e374de26ab5b67852cebfb" name="ga4e16951186e374de26ab5b67852cebfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e16951186e374de26ab5b67852cebfb">&#9670;&#160;</a></span>ShowWaitBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowWaitBox </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show wait popup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td></td></tr>
+    <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>GUI_ID </dd></dl>
+
 </div>
 </div>
 <a id="ga1f5b79dd7f303962aec7e19c99b0ae64" name="ga1f5b79dd7f303962aec7e19c99b0ae64"></a>

@@ -8,7 +8,9 @@ var base_8h =
     [ "LLIST", "group___s_w_i_l_i_b.html#ga6ab2718e854f59f787fb9426616b156d", null ],
     [ "DefaultLgpID", "group___s_w_i_l_i_b.html#ga36cbe9b0f3c43a0109bf0957c62bcb1d", [
       [ "LGP_NULL", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da58539cd2431843468ac1945206c903a7", null ],
-      [ "LGP_DOIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da4e0924a38c8b6b3e31d67f5153cfa38b", null ]
+      [ "LGP_DOIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da4e0924a38c8b6b3e31d67f5153cfa38b", null ],
+      [ "LGP_CHANGE_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da5d3c7c89a5feadadebf45b5a4df04ceb", null ],
+      [ "LGP_SAVE_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da56745b7a82251500151646ddc6ffde8a", null ]
     ] ],
     [ "LegacyStructOffsets", "group___s_w_i_l_i_b.html#gabaeeccd035a3a67d5f5c0687b254af18", [
       [ "DISPLACE_OF_EDGUI", "group___s_w_i_l_i_b.html#ggabaeeccd035a3a67d5f5c0687b254af18a221a197ec01350b96f577091dbfb04bd", null ],

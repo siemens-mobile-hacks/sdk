@@ -126,6 +126,7 @@ var group___u_i =
     [ "MsgBoxError", "group___u_i.html#ga7e83a5e507a29732db71d5c4cfaad177", null ],
     [ "MsgBoxYesNo", "group___u_i.html#ga2db5f3afeb7ce1f15eebf9a42de8a15b", null ],
     [ "MsgBoxOkCancel", "group___u_i.html#ga45a264214eb8357c9bb949c3aa4783f7", null ],
+    [ "ShowWaitBox", "group___u_i.html#ga4e16951186e374de26ab5b67852cebfb", null ],
     [ "CreatePopupGUI", "group___u_i.html#ga1f5b79dd7f303962aec7e19c99b0ae64", null ],
     [ "CreatePopupGUI_ws", "group___u_i.html#gae4a80681afffce07c23d9cac24f58f16", null ],
     [ "GetPopupUserPointer", "group___u_i.html#ga1e53bd53a47572b0bb5f6697d634aa67", null ],
