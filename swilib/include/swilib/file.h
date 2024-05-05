@@ -259,6 +259,13 @@ int sys_mkdir(const char *dirname, uint32_t *err)
 __swi_end(0x010, sys_mkdir, (dirname, err));
 
 /**
+ * @copydoc sys_mkdir
+ * */
+__swi_begin(0x3B7)
+int sys_mkdir_ws(const WSHDR *dirname, uint32_t *err)
+__swi_end(0x3B7, sys_mkdir_ws, (dirname, err));
+
+/**
  * Remove directory.
  * @param dirname		path to the directory
  * @param[out] err		error code
@@ -360,6 +367,13 @@ __swi_end(0x08E, fmove, (old_name, new_name, err));
 __swi_begin(0x091)
 int isdir(const char *path, uint32_t *err)
 __swi_end(0x091, isdir, (path, err));
+
+/**
+ * @copydoc isdir
+ * */
+__swi_begin(0x3BC)
+int isdir_ws(const WSHDR *path, uint32_t *err)
+__swi_end(0x3BC, isdir_ws, (path, err));
 
 /**
  * Check if a file or directory exists.

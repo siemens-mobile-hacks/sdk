@@ -609,6 +609,16 @@ int MsgBoxOkCancel(int flags, int message, void (*callback)(int canceled))
 __swi_end(0x050, MsgBoxOkCancel, (flags, message, callback));
 
 /**
+ * Show wait popup.
+ * @param flags
+ * @param message		id from the langpack or pointer to the C-string
+ * @return GUI_ID
+ * */
+__swi_begin(0x3C0)
+int ShowWaitBox(int flags, int message)
+__swi_end(0x3C0, ShowWaitBox, (flags, message));
+
+/**
  * Create custom Popup.
  * @param flags				see #PopupDialogFlags
  * @param user_pointer		custom user pointer
