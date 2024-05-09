@@ -287,6 +287,13 @@ int sys_rename(const char *old_name, const char *new_name, uint32_t *err)
 __swi_end(0x08E, sys_rename, (old_name, new_name, err));
 
 /**
+ * @copydoc sys_rename
+ * */
+__swi_begin(0x3B9)
+int sys_rename_ws(const WSHDR *old_name, const WSHDR *new_name, uint32_t *err)
+__swi_end(0x3B9, sys_rename_ws, (old_name, new_name, err));
+
+/**
  * Remove file.
  * @param path			path to the file
  * @param[out] err		error code

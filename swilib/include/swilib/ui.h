@@ -609,7 +609,7 @@ int MsgBoxOkCancel(int flags, int message, void (*callback)(int canceled))
 __swi_end(0x050, MsgBoxOkCancel, (flags, message, callback));
 
 /**
- * Show wait popup.
+ * Wait popup.
  * @param flags
  * @param message		id from the langpack or pointer to the C-string
  * @return GUI_ID
@@ -617,6 +617,39 @@ __swi_end(0x050, MsgBoxOkCancel, (flags, message, callback));
 __swi_begin(0x3C0)
 int ShowWaitBox(int flags, int message)
 __swi_end(0x3C0, ShowWaitBox, (flags, message));
+
+/**
+ * Progressbar popup.
+ * @param flags
+ * @param message		id from the langpack or pointer to the C-string
+ * @param pbar_desc		unknown struct, use NULL
+ * @param initial_value	initial value 0-100
+ * @param initial_ws	pointer to initial WSHDR string or NULL, don't need to free memory
+ * @return GUI_ID
+ * */
+__swi_begin(0x3C2)
+int ShowPBarBox(int flags, int message, void *pbar_desc, int initial_value, WSHDR *initial_ws)
+__swi_end(0x3C2, ShowPBarBox, (flags, message, pbar_desc, initial_value, initial_ws));
+
+/**
+ * Set value to progressbar popup
+ * @param gui_id		progressbar GUI ID
+ * @param value			value
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x3C3)
+int SetPBarValue(int gui_id, int value)
+__swi_end(0x3C3, SetPBarValue, (gui_id, value));
+
+/**
+ * Set WSHDR string to progressbar popup
+ * @param gui_id		progressbar GUI ID
+ * @param ws			pointer to WSHDR string, don't need to free memory
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x3C4)
+int SetPBarText(int gui_id, WSHDR *ws)
+__swi_end(0x3C4, SetPBarText, (gui_id, ws));
 
 /**
  * Create custom Popup.
