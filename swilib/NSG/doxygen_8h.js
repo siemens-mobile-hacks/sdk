@@ -1,5 +1,6 @@
 var doxygen_8h =
 [
+    [ "SWILIB_LEGACY_COMPAT", "doxygen_8h.html#ab01f4ac14760e5d3f2d05510ea5a8259", null ],
     [ "__swilib_begin", "doxygen_8h.html#a29c180570710dd0fbf1cc1e90b8d511b", null ],
     [ "__swilib_end", "doxygen_8h.html#aec0b55b8d210767e0f458236ba02f733", null ],
     [ "__swi_begin", "doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4", null ],

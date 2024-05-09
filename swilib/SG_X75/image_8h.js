@@ -42,7 +42,7 @@ var image_8h =
     [ "GetPicNByUnicodeSymbol", "group___image.html#gab740578517b0b7878190b79fae382633", null ],
     [ "CalcBitmapSize", "group___image.html#gaef5a44645bbf1ddb2b554930f1b8a150", null ],
     [ "GetIMGHDRFromCanvasCache", "group___image.html#ga1e45fd231416856f15616b3b19f0da00", null ],
-    [ "GetIMGHDRFromCanvas", "group___image.html#ga18bbba1284a25cfae38b34b5145cab7a", null ],
+    [ "GetCanvasBufferPicPtr", "group___image.html#ga9a9de6752198d91ca3d2f98fcf8378c3", null ],
     [ "IsCanvasBufferSet", "group___image.html#ga0f75c8dd3bc8d07cfea153460f89eb61", null ],
     [ "MMI_CanvasBuffer_FlushV", "group___image.html#ga3e6e0ad8bef60a87ee5f3519f59138d4", null ],
     [ "GetPitAdrBy0xE200Symbol", "group___image.html#ga8ca78f289f9ae58e0d3e4dd2402cfbe2", null ],

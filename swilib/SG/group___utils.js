@@ -6,7 +6,7 @@ var group___utils =
     [ "HexToInt", "group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d", null ],
     [ "HexCharToInt", "group___utils.html#gad37c7ad276b582086fb804706d0df716", null ],
     [ "StrToHex", "group___utils.html#ga1716ed98b8668b299bf9e3b1e812c274", null ],
-    [ "GetLangpackString", "group___utils.html#gac0098296d78a9594cca138dd374dcc7f", null ],
+    [ "GetLangMesIntoWS", "group___utils.html#gaababc8e359806301a0a39ad6aa492676", null ],
     [ "Base64Encode", "group___utils.html#gaff683743c044412606932c887d25e00f", null ],
     [ "Base64Decode", "group___utils.html#ga648e0194f141676b5cc2e5df15c7adbf", null ],
     [ "sdiv", "group___utils.html#ga264df0163b0340795379f1eecb4d1c65", null ],

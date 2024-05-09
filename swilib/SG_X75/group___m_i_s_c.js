@@ -49,6 +49,7 @@ var group___m_i_s_c =
     [ "ShowMainMenu", "group___m_i_s_c.html#ga4a20e4d245e664ef2df0ca82f864be81", null ],
     [ "ShowNativeMenu", "group___m_i_s_c.html#ga912b218cc7bbfadee40de173539e405f", null ],
     [ "Devmenu_Config_IsCheckboxOff", "group___m_i_s_c.html#gad2ec5c39551bc6e08b46875e3f0d25d4", null ],
-    [ "GetFunctionPointer", "group___m_i_s_c.html#ga0c0549b08a17bf1e74e4e8aeebf9e171", null ],
+    [ "GetShortcutRecordByName", "group___m_i_s_c.html#ga5a8fa635fa2e2a451b94e3a50c18bd06", null ],
+    [ "GetFunctionPointer", "group___m_i_s_c.html#ga9728c36cc15ce3d100a6910456b7dfbd", null ],
     [ "StartNativeBrowserCore", "group___m_i_s_c.html#ga42c043e1eda0a6a15f09b5bee5fed21a", null ]
 ];
