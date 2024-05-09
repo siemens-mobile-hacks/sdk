@@ -11,7 +11,7 @@ __swilib_begin
 /**
  * @addtogroup MISC
  * @brief Miscellaneous phone functions.
- * 
+ *
  * Usage: `#include <swilib.h>` or `#include <swilib/misc.h>`
  * @{
  */
@@ -42,6 +42,7 @@ enum TempSetLightFlags {
  * Shortcuts.
  * */
 struct shortcut {
+#ifdef NEWSGOLD
 	char name[16];				/**< Name of the shortcut */
 	shortcut_func pointer;		/**< Function which is called by shortcut */
 	void *get_status;			/**< Pointer to the function which check if this shortcut is enabled (optional) */
@@ -52,6 +53,9 @@ struct shortcut {
 	int lgp_short_name;			/**< LGP ID for short title */
 	int unk_4;
 	int lgp_comment_msg;		/**< LGP ID for description or path to the ELF (in the patch) */
+#else
+	shortcut_func pointer;		/**< Function which is called by shortcut */
+#endif
 };
 
 /**
@@ -221,16 +225,16 @@ __swi_end(0x008, SetIllumination, (dev, unk, level, delay));
 
 /**
  * Keep the backlight on.
- * 
+ *
  * @param time_mode		usually 1 or 4
  * @param counter		usually 3 or 1
- * 
+ *
  * Always ON:
  * ```C
  * IllumTimeRequest(4, 3); // Keep
  * IllumTimeRelease(4, 3); // Release
  * ```
- * 
+ *
  * As in "mediaplayer" (???):
  * ```C
  * IllumTimeRequest(1, 1); // Keep
@@ -419,16 +423,24 @@ int Devmenu_Config_IsCheckboxOff(int checkbox_id)
 __swi_end(0x1F2, Devmenu_Config_IsCheckboxOff, (checkbox_id));
 
 /**
- * Get function by shortcut name.
+ * Get shortcut by shortcut name.
  * @param shortcut_name		name of the shortcut, for example: "ALARM_CLOCK"
  * @return function pointer
- * 
+ *
  * ```C
- * GetFunctionPointer("ALARM_CLOCK")->pointer();
+ * GetShortcutRecordByName("ALARM_CLOCK")->pointer();
  * ```
  * */
 __swi_begin(0x074)
-shortcut *GetFunctionPointer(char *shortcut_name)
+const shortcut *GetShortcutRecordByName(char *shortcut_name)
+__swi_end(0x074, GetShortcutRecordByName, (shortcut_name));
+
+/**
+ * @copydoc GetShortcutRecordByName
+ * @deprecated use #GetShortcutRecordByName()
+ * */
+__swi_begin(0x074)
+const shortcut *GetFunctionPointer(char *shortcut_name)
 __swi_end(0x074, GetFunctionPointer, (shortcut_name));
 
 /**
