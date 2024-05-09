@@ -3,7 +3,7 @@
 /**
  * @addtogroup Image
  * @brief Basic function for working with images.
- * 
+ *
  * Usage: `#include <swilib.h>` or `#include <swilib/images.h>`
  * @{
  */
@@ -36,7 +36,7 @@ struct PNGTOP_DESC {
 	PNGLIST *pltop;
 	char *bitmap;
 	DYNPNGICONLIST *dyn_pltop;
-};  
+};
 
 /**
  * Type of IMGHDR bitmap.
@@ -201,8 +201,8 @@ __swi_end(0x3B3, GetIMGHDRFromCanvasCache, (canvas_id));
  * @return pointer to the image
  * */
 __swi_begin(0x076)
-IMGHDR *GetIMGHDRFromCanvas(char canvas_id)
-__swi_end(0x076, GetIMGHDRFromCanvas, (canvas_id));
+IMGHDR *GetCanvasBufferPicPtr(char canvas_id)
+__swi_end(0x076, GetCanvasBufferPicPtr, (canvas_id));
 
 /**
  * Check if canvas exists for the given `canvas_id`.

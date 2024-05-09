@@ -8,6 +8,8 @@
 	#define SWILIB_MODERN
 #endif
 
+#define SWILIB_LEGACY_COMPAT // for docs
+
 #ifdef SWILIB_PARSE_FUNCTIONS
 	#define __swilib_begin
 	#define __swilib_end

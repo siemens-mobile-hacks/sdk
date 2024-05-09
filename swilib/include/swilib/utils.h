@@ -10,7 +10,7 @@ __swilib_begin
 /**
  * @addtogroup Utils
  * @brief Miscellaneous utility functions.
- * 
+ *
  * Usage: `#include <swilib.h>` or `#include <swilib/utils.h>`
  * @{
  */
@@ -20,7 +20,7 @@ __swilib_begin
  * @param data			data passed to the next_in_seq
  * @param next_in_seq	destructor
  * @param data_to_kill	pointer to be freed
- * 
+ *
  * Strange function with unknown purpose.
  * ```C
  * void SEQKILLER(void *data, void(*next_in_seq)(void *), void *data_to_kill) {
@@ -90,8 +90,8 @@ __swi_end(0x005, StrToHex, (hex_out, str, len));
  * @param[out] str		output for LGP string value
  * */
 __swi_begin(0x089)
-void GetLangpackString(int lgp_id, WSHDR *str)
-__swi_end(0x089, GetLangpackString, (lgp_id, str));
+void GetLangMesIntoWS(int lgp_id, WSHDR *str)
+__swi_end(0x089, GetLangMesIntoWS, (lgp_id, str));
 
 /** @} */
 
@@ -107,7 +107,7 @@ __swi_end(0x089, GetLangpackString, (lgp_id, str));
  * @param[out] outbuf	output string buffer for the base64-encoded string
  * @param outsize		output string buffer size (max size)
  * @return encoded string length or 0
- * 
+ *
  * ```C
  * char outbuf[1024];
  * int outbuf_len = Base64Encode(inbuf, inbuf_len, outbuf, sizeof(outbuf));
@@ -126,7 +126,7 @@ __swi_end(0x244, Base64Encode, (inbuf, insize, outbuf, outsize));
  * @param _null			set to NULL
  * @param unk5			pointer to the dummy int
  * @return decoded buffer size or 0
- * 
+ *
  * ```C
  * uint8_t outbuf[1024];
  * int unk = 0;
@@ -146,7 +146,7 @@ __swi_end(0x245, Base64Decode, (inbuf, insize, outbuf, outsize, _null, unk5));
 
 /**
  * Signed int div.
- * @param divisor		the number by which we divide.	
+ * @param divisor		the number by which we divide.
  * @param divident		the number we are dividing
  * @return divident / divisor
  * */
@@ -156,7 +156,7 @@ __swi_end(0x0B8, sdiv, (divisor, divident));
 
 /**
  * Unsigned int div.
- * @param divisor		the number by which we divide.	
+ * @param divisor		the number by which we divide.
  * @param divident		the number we are dividing
  * @return divident / divisor
  * */
