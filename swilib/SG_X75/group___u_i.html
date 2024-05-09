@@ -415,8 +415,17 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga45a264214eb8357c9bb949c3aa4783f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirmation popup with Ok/Cancel.  <br /></td></tr>
 <tr class="separator:ga45a264214eb8357c9bb949c3aa4783f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4e16951186e374de26ab5b67852cebfb" id="r_ga4e16951186e374de26ab5b67852cebfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e16951186e374de26ab5b67852cebfb">ShowWaitBox</a> (int flags, int message)</td></tr>
-<tr class="memdesc:ga4e16951186e374de26ab5b67852cebfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show wait popup.  <br /></td></tr>
+<tr class="memdesc:ga4e16951186e374de26ab5b67852cebfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait popup.  <br /></td></tr>
 <tr class="separator:ga4e16951186e374de26ab5b67852cebfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad600dfcf0a42f2cb23fb68577f0ff38b" id="r_gad600dfcf0a42f2cb23fb68577f0ff38b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad600dfcf0a42f2cb23fb68577f0ff38b">ShowPBarBox</a> (int flags, int message, void *pbar_desc, int initial_value, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *initial_ws)</td></tr>
+<tr class="memdesc:gad600dfcf0a42f2cb23fb68577f0ff38b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progressbar popup.  <br /></td></tr>
+<tr class="separator:gad600dfcf0a42f2cb23fb68577f0ff38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c37895a3660c013784f03cf2d937e9f" id="r_ga5c37895a3660c013784f03cf2d937e9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5c37895a3660c013784f03cf2d937e9f">SetPBarValue</a> (int gui_id, int value)</td></tr>
+<tr class="memdesc:ga5c37895a3660c013784f03cf2d937e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value to progressbar popup.  <br /></td></tr>
+<tr class="separator:ga5c37895a3660c013784f03cf2d937e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5550376cc7cc8918cc439bc9895bd2d" id="r_gac5550376cc7cc8918cc439bc9895bd2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac5550376cc7cc8918cc439bc9895bd2d">SetPBarText</a> (int gui_id, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws)</td></tr>
+<tr class="memdesc:gac5550376cc7cc8918cc439bc9895bd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to progressbar popup.  <br /></td></tr>
+<tr class="separator:gac5550376cc7cc8918cc439bc9895bd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f5b79dd7f303962aec7e19c99b0ae64" id="r_ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f5b79dd7f303962aec7e19c99b0ae64">CreatePopupGUI</a> (int flags, void *user_pointer, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_p_o_p_u_p___d_e_s_c">POPUP_DESC</a> *popup, int lgp_id)</td></tr>
 <tr class="memdesc:ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create custom Popup.  <br /></td></tr>
 <tr class="separator:ga1f5b79dd7f303962aec7e19c99b0ae64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2071,7 +2080,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Show wait popup. </p>
+<p>Wait popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flags</td><td></td></tr>
@@ -2080,6 +2089,117 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>GUI_ID </dd></dl>
+
+</div>
+</div>
+<a id="gad600dfcf0a42f2cb23fb68577f0ff38b" name="gad600dfcf0a42f2cb23fb68577f0ff38b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad600dfcf0a42f2cb23fb68577f0ff38b">&#9670;&#160;</a></span>ShowPBarBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowPBarBox </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pbar_desc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>initial_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>initial_ws</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Progressbar popup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td></td></tr>
+    <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
+    <tr><td class="paramname">pbar_desc</td><td>unknown struct, use NULL </td></tr>
+    <tr><td class="paramname">initial_value</td><td>initial value 0-100 </td></tr>
+    <tr><td class="paramname">initial_ws</td><td>pointer to initial <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string or NULL, don't need to free memory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>GUI_ID </dd></dl>
+
+</div>
+</div>
+<a id="ga5c37895a3660c013784f03cf2d937e9f" name="ga5c37895a3660c013784f03cf2d937e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5c37895a3660c013784f03cf2d937e9f">&#9670;&#160;</a></span>SetPBarValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SetPBarValue </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>gui_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set value to progressbar popup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gui_id</td><td>progressbar <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> ID </td></tr>
+    <tr><td class="paramname">value</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
+
+</div>
+</div>
+<a id="gac5550376cc7cc8918cc439bc9895bd2d" name="gac5550376cc7cc8918cc439bc9895bd2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5550376cc7cc8918cc439bc9895bd2d">&#9670;&#160;</a></span>SetPBarText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SetPBarText </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>gui_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to progressbar popup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gui_id</td><td>progressbar <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> ID </td></tr>
+    <tr><td class="paramname">ws</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string, don't need to free memory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
 
 </div>
 </div>

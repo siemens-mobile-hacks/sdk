@@ -241,6 +241,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga702c596a387e5fbe8ac2e39d3f37ad69" id="r_ga702c596a387e5fbe8ac2e39d3f37ad69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga702c596a387e5fbe8ac2e39d3f37ad69">sys_rename</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *old_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *new_name, uint32_t *err)</td></tr>
 <tr class="memdesc:ga702c596a387e5fbe8ac2e39d3f37ad69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename file or directory.  <br /></td></tr>
 <tr class="separator:ga702c596a387e5fbe8ac2e39d3f37ad69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04c586e69709a46e2c464d2ee564f027" id="r_ga04c586e69709a46e2c464d2ee564f027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga04c586e69709a46e2c464d2ee564f027">sys_rename_ws</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *old_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *new_name, uint32_t *err)</td></tr>
+<tr class="memdesc:ga04c586e69709a46e2c464d2ee564f027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename file or directory.     <br /></td></tr>
+<tr class="separator:ga04c586e69709a46e2c464d2ee564f027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47df247922f3c07a98268136b6bb7a81" id="r_ga47df247922f3c07a98268136b6bb7a81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47df247922f3c07a98268136b6bb7a81">sys_unlink</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, uint32_t *err)</td></tr>
 <tr class="memdesc:ga47df247922f3c07a98268136b6bb7a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove file.  <br /></td></tr>
 <tr class="separator:ga47df247922f3c07a98268136b6bb7a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1012,6 +1015,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga04c586e69709a46e2c464d2ee564f027" name="ga04c586e69709a46e2c464d2ee564f027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04c586e69709a46e2c464d2ee564f027">&#9670;&#160;</a></span>sys_rename_ws()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_rename_ws </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>old_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>new_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rename file or directory.    </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">old_name</td><td>old file/dir name (full path) </td></tr>
+    <tr><td class="paramname">new_name</td><td>new file/dir name (full path) </td></tr>
+    <tr><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
 
 </div>
 </div>

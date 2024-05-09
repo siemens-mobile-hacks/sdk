@@ -56,6 +56,7 @@ var group___file =
     [ "sys_mkdir_ws", "group___file.html#ga7d7c646026e59e78f4bd6babf255b8ce", null ],
     [ "sys_rmdir", "group___file.html#ga684968556ddc2ee3a74a3488bb20d49d", null ],
     [ "sys_rename", "group___file.html#ga702c596a387e5fbe8ac2e39d3f37ad69", null ],
+    [ "sys_rename_ws", "group___file.html#ga04c586e69709a46e2c464d2ee564f027", null ],
     [ "sys_unlink", "group___file.html#ga47df247922f3c07a98268136b6bb7a81", null ],
     [ "sys_truncate", "group___file.html#ga6b7f28abc85d626d57100e777f1df80e", null ],
     [ "sys_stat", "group___file.html#ga98e3866225de4a2360c23e31c7f86f7e", null ],
