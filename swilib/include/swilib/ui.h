@@ -31,6 +31,7 @@ typedef struct ML_MENU_DESC ML_MENU_DESC;
 typedef struct POPUP_DESC POPUP_DESC;
 typedef struct TABGUI_DESC TABGUI_DESC;
 typedef struct TVIEW_DESC TVIEW_DESC;
+typedef struct PBAR_DESC PBAR_DESC;
 
 /**
  * Menu item draw callback.
@@ -406,6 +407,19 @@ struct TABGUI_DESC {
 };
 
 /**
+ * Progressbar deinition.
+ * */
+struct PBAR_DESC {
+    int flag;						/**< 0, 8 */
+    GUI_ONKEY_CALLBACK onkey;		/**< Key handler */
+    GUI_GHOOK_CALLBACK ghook;		/**< Global hook handler (ghook) */
+    void *proc3;					/**< Pointer to the function, see #GetPBarProc3() */
+    const int *softkeys;			/**< Softkeys mapping from softkeystab, example: {0, 1, 2} */
+    const SOFTKEYSTAB *softkeystab;	/**< Pointer to the softkeys definition */
+    char zero[32];					/**< Unknown data */
+};
+
+/**
  * @name Common UI functions.
  * @{
  * */
@@ -619,16 +633,23 @@ int ShowWaitBox(int flags, int message)
 __swi_end(0x3C0, ShowWaitBox, (flags, message));
 
 /**
+ * Get pointer for proc3 method of #PBAR_DESC struct.
+ * @return pointer
+ * */
+__swi_begin(0x83C5)
+void *GetPBarProc3()
+__swi_end(0x83C5, GetPBarProc3, ());
+/**
  * Progressbar popup.
  * @param flags
  * @param message		id from the langpack or pointer to the C-string
- * @param pbar_desc		unknown struct, use NULL
+ * @param pbar_desc		pointer to the #PBAR_DESC or NULL
  * @param initial_value	initial value 0-100
  * @param initial_ws	pointer to initial WSHDR string or NULL, don't need to free memory
  * @return GUI_ID
  * */
 __swi_begin(0x3C2)
-int ShowPBarBox(int flags, int message, void *pbar_desc, int initial_value, WSHDR *initial_ws)
+int ShowPBarBox(int flags, int message, PBAR_DESC *pbar_desc, int initial_value, WSHDR *initial_ws)
 __swi_end(0x3C2, ShowPBarBox, (flags, message, pbar_desc, initial_value, initial_ws));
 
 /**
