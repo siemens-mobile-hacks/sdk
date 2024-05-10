@@ -633,6 +633,13 @@ int ShowWaitBox(int flags, int message)
 __swi_end(0x3C0, ShowWaitBox, (flags, message));
 
 /**
+ * Get pointer for proc3 method of #PBAR_DESC struct.
+ * @return pointer
+ * */
+__swi_begin(0x83C5)
+void *GetPBarProc3()
+__swi_end(0x83C5, GetPBarProc3, ());
+/**
  * Progressbar popup.
  * @param flags
  * @param message		id from the langpack or pointer to the C-string
