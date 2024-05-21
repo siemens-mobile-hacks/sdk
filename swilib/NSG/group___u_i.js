@@ -115,6 +115,8 @@ var group___u_i =
     ] ],
     [ "GetHeaderPointer", "group___u_i.html#ga612dacbbe9c358d16a244b8e1bfb70a9", null ],
     [ "SetHeaderText", "group___u_i.html#gac97b4931da578a71cb285b45c9984f29", null ],
+    [ "SetHeaderScrollText", "group___u_i.html#gab8bcb3e90a862406e022beeeaa2eb49c", null ],
+    [ "SetHeaderExtraText", "group___u_i.html#gafcc87f436ad27add8894f44d22adcae4", null ],
     [ "SetHeaderIcon", "group___u_i.html#gafc7451d541e3726c8c679d8d1d520029", null ],
     [ "SetSoftKey", "group___u_i.html#ga0a4e25abe9240a5d76ad3f5faa81df42", null ],
     [ "RefreshGUI", "group___u_i.html#ga8239199e1bc92db20620796514ad4689", null ],
