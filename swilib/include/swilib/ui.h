@@ -434,7 +434,7 @@ void *GetHeaderPointer(void *gui)
 __swi_end(0x2AE, GetHeaderPointer, (gui));
 
 /**
- * Get pointer to the UI header.
+ * Set main text to the UI header.
  * @param header		pointer to the header (#GetHeaderPointer)
  * @param title			new title value
  * @param malloc_fn		result of #malloc_adr()
@@ -443,6 +443,28 @@ __swi_end(0x2AE, GetHeaderPointer, (gui));
 __swi_begin(0x2AF)
 void SetHeaderText(void *header, const WSHDR *title, const void *malloc_fn, const void *mfree_fn)
 __swi_end(0x2AF, SetHeaderText, (header, title, malloc_fn, mfree_fn));
+
+/**
+ * Set scolled text to the UI header.
+ * @param header		pointer to the header (#GetHeaderPointer)
+ * @param title			new title value
+ * @param malloc_fn		result of #malloc_adr()
+ * @param mfree_fn		result of #mfree_adr()
+ * */
+__swi_begin(0x3C6)
+void SetHeaderScrollText(void *header, const WSHDR *title, const void *malloc_fn, const void *mfree_fn)
+__swi_end(0x3C6, SetHeaderScrollText, (header, title, malloc_fn, mfree_fn));
+
+/**
+ * Set extra text to the UI header.
+ * @param header		pointer to the header (#GetHeaderPointer)
+ * @param ws			new extra title value
+ * @param malloc_fn		result of #malloc_adr()
+ * @param mfree_fn		result of #mfree_adr()
+ * */
+__swi_begin(0x3C7)
+void SetHeaderExtraText(void *header, const WSHDR *ws, const void *malloc_fn, const void *mfree_fn)
+__swi_end(0x3C7, SetHeaderExtraText, (header, ws, malloc_fn, mfree_fn));
 
 /**
  * Get pointer to the UI header.
