@@ -434,7 +434,7 @@ void *GetHeaderPointer(void *gui)
 __swi_end(0x2AE, GetHeaderPointer, (gui));
 
 /**
- * Get pointer to the UI header.
+ * Set main text to the UI header.
  * @param header		pointer to the header (#GetHeaderPointer)
  * @param title			new title value
  * @param malloc_fn		result of #malloc_adr()
