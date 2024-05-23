@@ -224,6 +224,19 @@ int wstrcmp(WSHDR *str1, WSHDR *str2)
 __swi_end(0x2E2, wstrcmp, (str1, str2));
 
 /**
+ * Compare two WSHDR strings, up to a specific length
+ * @param ws1	WSHDR to be compared
+ * @param ws2	WSHDR to be compared
+ * @param n		length
+ * @return <0	- the first character that does not match has a lower value in ws1 than in ws2
+ * @return 0	- the contents of both strings are equal
+ * @return >0	- the first character that does not match has a greater value in ws1 than in ws2
+ * */
+__swi_begin(0x3C9)
+int wstrncmp(const WSHDR *ws1, const WSHDR *ws2, size_t n)
+__swi_end(0x3C9, wstrncmp, (ws1, ws2, n));
+
+/**
  * Get WSHDR length.
  * @param str	pointer to the WSHDR
  * @return The length of WSHDR string

@@ -174,6 +174,18 @@ void MediaSendCSM_Open(const WSHDR *file, const WSHDR *path)
 __swi_end(0x2DB, MediaSendCSM_Open, (file, path));
 
 /**
+ * Open menu for setting resource as Wallpaper, Logo, Ringtone, etc..
+ * @param file_name	name of the file, example "beans_recipe.jpg"
+ * @param dir		directory of the file, example "0:\\Pictures"
+ * @param flag		0 or 2
+ * @param open_mode	unknown param, set 0
+ * @return CSM ID
+ * */
+__swi_begin(0x3CC)
+int PersMenuCSM_Open(const WSHDR *file_name, const WSHDR *dir, int flag, int open_mode)
+__swi_end(0x3CC, PersMenuCSM_Open, (file_name, dir, flag, open_mode));
+
+/**
  * Open NativeExplorer.
  * @param data		options for the opening explorer
  * @return CSM ID
@@ -249,6 +261,17 @@ __swi_end(0x1F0, ExplorerCopyFile, (from, to, overwrite, transfer_id, errp));
 __swi_begin(0x1F1)
 int ExplorerSetTransferState(char transfer_id, int state)
 __swi_end(0x1F1, ExplorerSetTransferState, (transfer_id, state));
+
+/**
+ * Get MIME type
+ * @param uid				file uid, see #GetExtUid_ws, #GetExtUidByFileName_ws
+ * @param[out] mime_type	pointer to WSHDR string
+ * @param unk_0				unknown param, set to 0
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x3C8)
+int GetMimeType(int uid, WSHDR *mime_type, int unk_0)
+__swi_end(0x3C8, GetMimeType, (uid, mime_type, unk_0));
 
 __swilib_end
 
