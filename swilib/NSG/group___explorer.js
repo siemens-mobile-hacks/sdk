@@ -23,11 +23,13 @@ var group___explorer =
     [ "GetExtUid_ws", "group___explorer.html#ga031efc82e27b00dd3c14d8d9fb0ffc7c", null ],
     [ "GetExtUidByFileName_ws", "group___explorer.html#gab52df224d39da12eb8cc411e449896d2", null ],
     [ "MediaSendCSM_Open", "group___explorer.html#gac049d43feb86c2a4b9e34e8431955495", null ],
+    [ "PersMenuCSM_Open", "group___explorer.html#gac9285e8e12854ce6da407146605f471f", null ],
     [ "StartNativeExplorer", "group___explorer.html#gad152ba579f80dd148c21d23030957392", null ],
     [ "OpenExplorer", "group___explorer.html#gaa76f5eed5e8b4a222e97813f4294f1fb", null ],
     [ "CardExplGetCurItem", "group___explorer.html#ga01014f4710d09f567936400fc209f810", null ],
     [ "CardExplGetFName", "group___explorer.html#ga9f422ce2d40e95a05012b96aa5c15829", null ],
     [ "ExecuteFile", "group___explorer.html#gac8eb4a154a2b8a782ab52dfe2aa794b4", null ],
     [ "ExplorerCopyFile", "group___explorer.html#ga4ab4e930eb3a58fed514ca93e972058f", null ],
-    [ "ExplorerSetTransferState", "group___explorer.html#ga684b13c109c05553083a6dc922b45387", null ]
+    [ "ExplorerSetTransferState", "group___explorer.html#ga684b13c109c05553083a6dc922b45387", null ],
+    [ "GetMimeType", "group___explorer.html#gaa38d21ed3c3af0f66614dec0f037acc3", null ]
 ];

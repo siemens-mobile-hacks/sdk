@@ -180,6 +180,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3a75567b7245f823d5cf1f75796b2017" id="r_ga3a75567b7245f823d5cf1f75796b2017"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3a75567b7245f823d5cf1f75796b2017">wstrcmp</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *str1, <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *str2)</td></tr>
 <tr class="memdesc:ga3a75567b7245f823d5cf1f75796b2017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings.  <br /></td></tr>
 <tr class="separator:ga3a75567b7245f823d5cf1f75796b2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b86757d9a93e442083d6501a262b405" id="r_ga1b86757d9a93e442083d6501a262b405"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b86757d9a93e442083d6501a262b405">wstrncmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws2, size_t n)</td></tr>
+<tr class="memdesc:ga1b86757d9a93e442083d6501a262b405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings, up to a specific length.  <br /></td></tr>
+<tr class="separator:ga1b86757d9a93e442083d6501a262b405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae435e16a4dbf0301a04cfcd4ba3c5dd8" id="r_gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae435e16a4dbf0301a04cfcd4ba3c5dd8">wstrlen</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *str)</td></tr>
 <tr class="memdesc:gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> length.  <br /></td></tr>
 <tr class="separator:gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -878,6 +881,47 @@ Functions</h2></td></tr>
 0 - the contents of both strings are equal </dd>
 <dd>
 &gt;0 - the first character that does not match has a greater value in ptr1 than in ptr2 </dd></dl>
+
+</div>
+</div>
+<a id="ga1b86757d9a93e442083d6501a262b405" name="ga1b86757d9a93e442083d6501a262b405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b86757d9a93e442083d6501a262b405">&#9670;&#160;</a></span>wstrncmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wstrncmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings, up to a specific length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws1</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+    <tr><td class="paramname">ws2</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+    <tr><td class="paramname">n</td><td>length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&lt;0 - the first character that does not match has a lower value in ws1 than in ws2 </dd>
+<dd>
+0 - the contents of both strings are equal </dd>
+<dd>
+&gt;0 - the first character that does not match has a greater value in ws1 than in ws2 </dd></dl>
 
 </div>
 </div>

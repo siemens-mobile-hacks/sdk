@@ -175,6 +175,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gac049d43feb86c2a4b9e34e8431955495" id="r_gac049d43feb86c2a4b9e34e8431955495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac049d43feb86c2a4b9e34e8431955495">MediaSendCSM_Open</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path)</td></tr>
 <tr class="memdesc:gac049d43feb86c2a4b9e34e8431955495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open menu for sending file.  <br /></td></tr>
 <tr class="separator:gac049d43feb86c2a4b9e34e8431955495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9285e8e12854ce6da407146605f471f" id="r_gac9285e8e12854ce6da407146605f471f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac9285e8e12854ce6da407146605f471f">PersMenuCSM_Open</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *dir, int flag, int open_mode)</td></tr>
+<tr class="memdesc:gac9285e8e12854ce6da407146605f471f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open menu for setting resource as Wallpaper, Logo, Ringtone, etc.  <br /></td></tr>
+<tr class="separator:gac9285e8e12854ce6da407146605f471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad152ba579f80dd148c21d23030957392" id="r_gad152ba579f80dd148c21d23030957392"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad152ba579f80dd148c21d23030957392">StartNativeExplorer</a> (<a class="el" href="#struct_native_explorer_data">NativeExplorerData</a> *data)</td></tr>
 <tr class="memdesc:gad152ba579f80dd148c21d23030957392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open NativeExplorer.  <br /></td></tr>
 <tr class="separator:gad152ba579f80dd148c21d23030957392"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +199,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga684b13c109c05553083a6dc922b45387" id="r_ga684b13c109c05553083a6dc922b45387"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a> (char transfer_id, int state)</td></tr>
 <tr class="memdesc:ga684b13c109c05553083a6dc922b45387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transfer state.  <br /></td></tr>
 <tr class="separator:ga684b13c109c05553083a6dc922b45387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa38d21ed3c3af0f66614dec0f037acc3" id="r_gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa38d21ed3c3af0f66614dec0f037acc3">GetMimeType</a> (int uid, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime_type, int unk_0)</td></tr>
+<tr class="memdesc:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get MIME type.  <br /></td></tr>
+<tr class="separator:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_native_explorer_data" id="struct_native_explorer_data"></a>
@@ -546,6 +552,49 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gac9285e8e12854ce6da407146605f471f" name="gac9285e8e12854ce6da407146605f471f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9285e8e12854ce6da407146605f471f">&#9670;&#160;</a></span>PersMenuCSM_Open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PersMenuCSM_Open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>open_mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open menu for setting resource as Wallpaper, Logo, Ringtone, etc. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td>name of the file, example "beans_recipe.jpg" </td></tr>
+    <tr><td class="paramname">dir</td><td>directory of the file, example "0:\\Pictures" </td></tr>
+    <tr><td class="paramname">flag</td><td>0 or 2 </td></tr>
+    <tr><td class="paramname">open_mode</td><td>unknown param, set 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CSM ID </dd></dl>
+
+</div>
+</div>
 <a id="gad152ba579f80dd148c21d23030957392" name="gad152ba579f80dd148c21d23030957392"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad152ba579f80dd148c21d23030957392">&#9670;&#160;</a></span>StartNativeExplorer()</h2>
 
@@ -780,6 +829,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="gaa38d21ed3c3af0f66614dec0f037acc3" name="gaa38d21ed3c3af0f66614dec0f037acc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa38d21ed3c3af0f66614dec0f037acc3">&#9670;&#160;</a></span>GetMimeType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetMimeType </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>mime_type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_0</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get MIME type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">uid</td><td>file uid, see <a class="el" href="#ga031efc82e27b00dd3c14d8d9fb0ffc7c" title="Get the ID of the registered extension by its name.">GetExtUid_ws</a>, <a class="el" href="#gab52df224d39da12eb8cc411e449896d2" title="Get the ID of the registered extension by path to the file.">GetExtUidByFileName_ws</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">mime_type</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">unk_0</td><td>unknown param, set to 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
 
 </div>
 </div>
