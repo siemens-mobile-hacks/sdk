@@ -1071,9 +1071,9 @@ __swi_begin(0x374)
 void NU_USER_MODE(unsigned long nu_svc_usr_var)
 __swi_end(0x374, NU_USER_MODE, (nu_svc_usr_var));
 
-
+// FIXME: NU_SUPERV_USER_VARIABLES is macro...
 __swi_begin(0x8375)
-unsigned long NU_SUPERV_USER_VARIABLES(void)
+void *NU_SUPERV_USER_VARIABLES(void)
 __swi_end(0x8375, NU_SUPERV_USER_VARIABLES, ());
 
 /** @} */
