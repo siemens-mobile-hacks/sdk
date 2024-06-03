@@ -601,7 +601,7 @@ var searchData=
   ['nu_5fstatus_598',['NU_STATUS',['../group___n_u_c_l_e_u_s.html#gafead16acfe84949a5fc9e750e5e6a5b7',1,'nucleus.h']]],
   ['nu_5fstatus_5fstruct_599',['NU_STATUS_STRUCT',['../group___n_u_c_l_e_u_s.html#struct_n_u___s_t_a_t_u_s___s_t_r_u_c_t',1,'']]],
   ['nu_5fsuccess_600',['NU_SUCCESS',['../group___n_u_c_l_e_u_s.html#ga45c71ee907a0b87e85d6c1882a269a48',1,'nucleus.h']]],
-  ['nu_5fsuperv_5fuser_5fvariables_601',['NU_SUPERV_USER_VARIABLES',['../group___n_u_c_l_e_u_s.html#ga7d9675adf0be7314d0a736be8b8b3f02',1,'nucleus.h']]],
+  ['nu_5fsuperv_5fuser_5fvariables_601',['NU_SUPERV_USER_VARIABLES',['../group___n_u_c_l_e_u_s.html#gacf9f2b963875c9c57dbdbf89652792a1',1,'nucleus.h']]],
   ['nu_5fsupervisor_5fmode_602',['NU_SUPERVISOR_MODE',['../group___n_u_c_l_e_u_s.html#ga869e9b304ed5a24a576299d8081e1450',1,'nucleus.h']]],
   ['nu_5fsupplemental_603',['nu_supplemental',['../group___n_u_c_l_e_u_s.html#a04c4bc136dc3ea9d21d8eecd55269be3',1,'NU_DRIVER_REQUEST_STRUCT']]],
   ['nu_5fsupplemental_5fptr_604',['nu_supplemental_ptr',['../group___n_u_c_l_e_u_s.html#aca7b94f2a089f05c0adceac58c5cdad8',1,'NU_DRIVER_REQUEST_STRUCT']]],

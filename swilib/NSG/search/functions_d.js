@@ -120,7 +120,7 @@ var searchData=
   ['nu_5fset_5fevents_117',['NU_Set_Events',['../group___n_u_c_l_e_u_s.html#gac2debdd5d07a6264d2fe4ec57935e123',1,'nucleus.h']]],
   ['nu_5fsetup_5fvector_118',['NU_Setup_Vector',['../group___n_u_c_l_e_u_s.html#ga56ee92ae1508eaa4bd0056e5b923e4ae',1,'nucleus.h']]],
   ['nu_5fsleep_119',['NU_Sleep',['../group___n_u_c_l_e_u_s.html#gaf569b1250b176e37160a8a543f3241f7',1,'nucleus.h']]],
-  ['nu_5fsuperv_5fuser_5fvariables_120',['NU_SUPERV_USER_VARIABLES',['../group___n_u_c_l_e_u_s.html#ga7d9675adf0be7314d0a736be8b8b3f02',1,'nucleus.h']]],
+  ['nu_5fsuperv_5fuser_5fvariables_120',['NU_SUPERV_USER_VARIABLES',['../group___n_u_c_l_e_u_s.html#gacf9f2b963875c9c57dbdbf89652792a1',1,'nucleus.h']]],
   ['nu_5fsupervisor_5fmode_121',['NU_SUPERVISOR_MODE',['../group___n_u_c_l_e_u_s.html#ga869e9b304ed5a24a576299d8081e1450',1,'nucleus.h']]],
   ['nu_5fsuspend_5fdriver_122',['NU_Suspend_Driver',['../group___n_u_c_l_e_u_s.html#ga500eb33f3b5626f837e75aa91dc2dca5',1,'nucleus.h']]],
   ['nu_5fsuspend_5ftask_123',['NU_Suspend_Task',['../group___n_u_c_l_e_u_s.html#ga7fdbf4850021a635774c56e0eeb07478',1,'nucleus.h']]],

@@ -350,5 +350,5 @@ var group___n_u_c_l_e_u_s =
     [ "NU_IS_SUPERVISOR_MODE", "group___n_u_c_l_e_u_s.html#ga43afb977364175631c9ae55e8fabef20", null ],
     [ "NU_SUPERVISOR_MODE", "group___n_u_c_l_e_u_s.html#ga869e9b304ed5a24a576299d8081e1450", null ],
     [ "NU_USER_MODE", "group___n_u_c_l_e_u_s.html#ga521586f85ece3e63b8a2ca3f63b8c13f", null ],
-    [ "NU_SUPERV_USER_VARIABLES", "group___n_u_c_l_e_u_s.html#ga7d9675adf0be7314d0a736be8b8b3f02", null ]
+    [ "NU_SUPERV_USER_VARIABLES", "group___n_u_c_l_e_u_s.html#gacf9f2b963875c9c57dbdbf89652792a1", null ]
 ];
