@@ -137,7 +137,7 @@ __swi_end(0x191, MutexDestroy, (mtx));
  * @return address in memory
  * */
 __swi_begin(0x80FF)
-uint32_t AddrLibrary()
+void *AddrLibrary()
 __swi_end(0x80FF, AddrLibrary, ());
 
 /**
