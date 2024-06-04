@@ -104,7 +104,7 @@ var searchData=
   ['getmimetype_101',['GetMimeType',['../group___explorer.html#gaa38d21ed3c3af0f66614dec0f037acc3',1,'explorer.h']]],
   ['getminadrscan_102',['GetMinAdrScan',['../group___p_a_t_c_h.html#ga7f0a77327129e100b2a56e15b4920720',1,'patch.h']]],
   ['getmissedcallscount_103',['GetMissedCallsCount',['../group___telephony.html#ga8724e7cc450f238ca7d6ad14d3716943',1,'telephony.h']]],
-  ['getmissedeventcount_104',['GetMissedEventCount',['../group___info.html#gaa1998662d4123b86735f43ef56f8c848',1,'info.h']]],
+  ['getmissedeventcount_104',['GetMissedEventCount',['../group___p_a_t_c_h.html#ga54f265d41bedbdf60e2ec7c7fc74ba2c',1,'patch.h']]],
   ['getmissedeventsptr_105',['GetMissedEventsPtr',['../group___info.html#gaa25c6198ceaeb95b23ae604048c0c9ef',1,'info.h']]],
   ['getmmimemused_106',['GetMMIMemUsed',['../group___info.html#gaf99b21f4ed93491163604cfee3962288',1,'info.h']]],
   ['getmultilinesmenugui_107',['GetMultiLinesMenuGUI',['../group___u_i.html#gaa6199bc317d236168ec327d64e8cc53e',1,'ui.h']]],

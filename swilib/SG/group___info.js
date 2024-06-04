@@ -39,7 +39,6 @@ var group___info =
     [ "RamIsBTConnected", "group___info.html#ga6eb2bcec4db82379f0f0c404102affff", null ],
     [ "RamIsBTHeadsetConnected", "group___info.html#gaa5166f10462a25b2235d25ce4aa88406", null ],
     [ "GetMissedEventsPtr", "group___info.html#gaa25c6198ceaeb95b23ae604048c0c9ef", null ],
-    [ "GetMissedEventCount", "group___info.html#gaa1998662d4123b86735f43ef56f8c848", null ],
     [ "IsSliderClosed", "group___info.html#gaf0e918e1b6541a9ec198c7c1653957ee", null ],
     [ "RamIsSimPresent", "group___info.html#ga1491b71024e049c9dee128996a2806f7", null ],
     [ "RamIsRunCamera", "group___info.html#gaaf18ce92bd310ce1da1223dc5f696ccf", null ],

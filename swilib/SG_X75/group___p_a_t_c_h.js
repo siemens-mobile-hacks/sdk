@@ -8,6 +8,12 @@ var group___p_a_t_c_h =
       [ "ACC_TYPE_SERIAL_CABLE", "group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eae36e1ff3952e2196b4b9e2ea79188d7c", null ],
       [ "ACC_TYPE_IMS_700", "group___p_a_t_c_h.html#gga5e5284fcda8cf4ee1a398ea520d5128eace715a27f4cf4de446582f037fc32fcd", null ]
     ] ],
+    [ "MissedEvent", "group___p_a_t_c_h.html#gaa00d6ab23f2f7db8a914503e692d6f41", [
+      [ "MISSED_EVENT_ALL", "group___p_a_t_c_h.html#ggaa00d6ab23f2f7db8a914503e692d6f41a599b3468429818ae36e843806a9ec10f", null ],
+      [ "MISSED_EVENT_CALLS", "group___p_a_t_c_h.html#ggaa00d6ab23f2f7db8a914503e692d6f41a797b02f09872a68358a8df99b43e0e1c", null ],
+      [ "MISSED_EVENT_SMS", "group___p_a_t_c_h.html#ggaa00d6ab23f2f7db8a914503e692d6f41a129869ab79852d167091fb64c5efeba6", null ],
+      [ "MISSED_EVENT_OTHER", "group___p_a_t_c_h.html#ggaa00d6ab23f2f7db8a914503e692d6f41a27e623a598a6fa8126d3b9e933577bf7", null ]
+    ] ],
     [ "RunDispatcher", "group___p_a_t_c_h.html#ga31420a120ae02b6c4ab460abb18bf385", null ],
     [ "GetAllPatchesByInject", "group___p_a_t_c_h.html#gaa44d5cb6142c1fe7a1cee3e92594efbd", null ],
     [ "GetBuffer", "group___p_a_t_c_h.html#gaa4d22e5431a4d82fb57581a579c7702e", null ],
@@ -28,6 +34,7 @@ var group___p_a_t_c_h =
     [ "Seconds2iTime", "group___p_a_t_c_h.html#gab924f4ea4e7ee3caca8765aadc588876", null ],
     [ "GetFileSize", "group___p_a_t_c_h.html#ga81b92b377a8404b264063556f3446a05", null ],
     [ "GetAccessoryType", "group___p_a_t_c_h.html#gab94c11ffa6216b557289e6b3ac55f0a2", null ],
+    [ "GetMissedEventCount", "group___p_a_t_c_h.html#ga54f265d41bedbdf60e2ec7c7fc74ba2c", null ],
     [ "ScreenShoot", "group___p_a_t_c_h.html#gaca89d2e7c8ad58a057376c68fe563f79", null ],
     [ "SpellTime", "group___p_a_t_c_h.html#gaa81eb182448395ab8346222e8674cb10", null ],
     [ "DATA_N_SFB", "group___p_a_t_c_h.html#gad4bc1138351b18db9eff0493ea711bf1", null ],
