@@ -515,7 +515,7 @@ __swi_end(0x80FC, PictureRelocationTableAddr, ());
  * @return address
  * */
 __swi_begin(0x80FD)
-void *PictureRelocationBaseAddr()
+uint32_t PictureRelocationBaseAddr()
 __swi_end(0x80FD, PictureRelocationBaseAddr, ());
 
 /**
@@ -531,7 +531,7 @@ __swi_end(0x80FE, NextPictureMagicValue, ());
  * @return address
  * */
 __swi_begin(0x80F8)
-uint32_t Additional_PIT_address()
+void *Additional_PIT_address()
 __swi_end(0x80F8, Additional_PIT_address, ());
 
 /**
