@@ -45,6 +45,16 @@ struct SFN_DATA {
 };
 
 /**
+ * Missed event types.
+ * */
+enum MissedEvent {
+    MISSED_EVENT_ALL	= 0,
+    MISSED_EVENT_CALLS	= 1,
+    MISSED_EVENT_SMS	= 2,
+    MISSED_EVENT_OTHER	= 3,
+};
+
+/**
  * @name MasterPatch
  * @{
  * */
@@ -261,6 +271,16 @@ __swi_end(0x1F7, GetFileSize, (path));
 __swi_begin(0x088)
 char GetAccessoryType(void)
 __swi_end(0x088, GetAccessoryType, ());
+
+/**
+ * Get missed events count.
+ * @param Event		see #MissedEvent
+ * @return count
+ * @warning Function from the patch "API", see: https://patches.kibab.com/patches/search.php5?action=search&kw=API
+ * */
+__swi_begin(0x009E)
+int GetMissedEventCount(uint32_t Event)
+__swi_end(0x009E, GetMissedEventCount, (Event));
 
 /** @} */
 

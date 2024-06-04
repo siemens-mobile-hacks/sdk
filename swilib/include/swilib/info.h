@@ -255,14 +255,6 @@ __swi_begin(0x009D)
 void *GetMissedEventsPtr()
 __swi_end(0x009D, GetMissedEventsPtr, ());
 
-/**
- * Get missed events count.
- * @return count
- * */
-__swi_begin(0x009E)
-int GetMissedEventCount()
-__swi_end(0x009E, GetMissedEventCount, ());
-
 /** @} */
 
 /**
