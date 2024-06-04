@@ -22,7 +22,7 @@ var searchData=
   ['pem_5fwrite_5fbio_5fpkcs8privatekey_5fnid_19',['PEM_write_bio_PKCS8PrivateKey_nid',['../pem_8h.html#a12ee8f88f926a11f285b10724c3344b0',1,'pem.h']]],
   ['pendedredrawgui_20',['PendedRedrawGUI',['../group___g_u_i.html#ga2986774c20d80aa0ed1c979a99202e4b',1,'gui.h']]],
   ['persmenucsm_5fopen_21',['PersMenuCSM_Open',['../group___explorer.html#gac9285e8e12854ce6da407146605f471f',1,'explorer.h']]],
-  ['picturerelocationbaseaddr_22',['PictureRelocationBaseAddr',['../group___p_a_t_c_h.html#gaa861baf2f559b912a74e6579cd7119ad',1,'patch.h']]],
+  ['picturerelocationbaseaddr_22',['PictureRelocationBaseAddr',['../group___p_a_t_c_h.html#gad06714813ec07c8c793f160639cb4dcf',1,'patch.h']]],
   ['picturerelocationtableaddr_23',['PictureRelocationTableAddr',['../group___p_a_t_c_h.html#gac7659f8b7fbdab97a77d9778ccbfcba1',1,'patch.h']]],
   ['pit_5fpic_5faccugraph_24',['PIT_Pic_AccuGraph',['../group___p_a_t_c_h.html#gae3791a644a2a594026df84625f83bcad',1,'patch.h']]],
   ['pit_5fpic_5fadvnet_25',['PIT_Pic_AdvNet',['../group___p_a_t_c_h.html#gaecc781c53ef9da444268e0ab572f3dfb',1,'patch.h']]],

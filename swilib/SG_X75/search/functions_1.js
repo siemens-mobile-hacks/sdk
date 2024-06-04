@@ -7,7 +7,7 @@ var searchData=
   ['activatedialupprofile_4',['ActivateDialUpProfile',['../group___g_p_r_s.html#ga8602b4b014baddd2b5bd530ed62bc427',1,'gprs.h']]],
   ['addeditcontroltoeditqend_5',['AddEditControlToEditQend',['../group___u_i.html#ga59a9ef5758539517b0a6157656dd2d90',1,'ui.h']]],
   ['addicontoiconbar_6',['AddIconToIconBar',['../group___u_i.html#ga5641011ca064183ad4c39b1a5e0d2df1',1,'ui.h']]],
-  ['additional_5fpit_5faddress_7',['Additional_PIT_address',['../group___p_a_t_c_h.html#ga8d7cee2c8c3091ca7db431a5e3aafd91',1,'patch.h']]],
+  ['additional_5fpit_5faddress_7',['Additional_PIT_address',['../group___p_a_t_c_h.html#ga8436fdbd95159024f2793fdd697c9e56',1,'patch.h']]],
   ['additional_5fpit_5fend_8',['Additional_PIT_end',['../group___p_a_t_c_h.html#ga865e1c309d68c5e3446a23ac2d4e824d',1,'patch.h']]],
   ['additional_5fpit_5fstart_9',['Additional_PIT_start',['../group___p_a_t_c_h.html#ga82b521e4bae1e4e1d60e190a5bd57a88',1,'patch.h']]],
   ['addkeybmsghook_10',['AddKeybMsgHook',['../group___g_u_i.html#ga19256403678b09500a4d4a3b4d1dd757',1,'gui.h']]],

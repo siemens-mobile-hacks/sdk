@@ -217,7 +217,7 @@ var searchData=
   ['pi_5fsw_5fnumber_214',['PI_SW_NUMBER',['../group___info.html#gga37de38f349f79c35bd4a4b698812c1aeadd24a23707effb85ba174050e87573e3',1,'info.h']]],
   ['pi_5ft9_215',['PI_T9',['../group___info.html#gga37de38f349f79c35bd4a4b698812c1aeab1431eb56a76cbef09f57465daf17c88',1,'info.h']]],
   ['pi_5fvendor_216',['PI_VENDOR',['../group___info.html#gga37de38f349f79c35bd4a4b698812c1aeab7b84f3bc7ccefc294d61975b5211812',1,'info.h']]],
-  ['picturerelocationbaseaddr_217',['PictureRelocationBaseAddr',['../group___p_a_t_c_h.html#gaa861baf2f559b912a74e6579cd7119ad',1,'patch.h']]],
+  ['picturerelocationbaseaddr_217',['PictureRelocationBaseAddr',['../group___p_a_t_c_h.html#gad06714813ec07c8c793f160639cb4dcf',1,'patch.h']]],
   ['picturerelocationtableaddr_218',['PictureRelocationTableAddr',['../group___p_a_t_c_h.html#gac7659f8b7fbdab97a77d9778ccbfcba1',1,'patch.h']]],
   ['pid_219',['pid',['../err_8h.html#ac60af191596e4c9f96f42701d42fe2ea',1,'err_state_st']]],
   ['pid_5ffrom_220',['pid_from',['../group___g_b_s.html#a651c0cc54be2a274cfa22a8a5a83047d',1,'GBS_MSG::pid_from'],['../group___sound.html#a02dd922b596b35a8e3be408816830d5f',1,'GBS_PSOUND_MSG::pid_from'],['../group___telephony.html#a1bfc8c13a41fbb67cf471bf618d63cf2',1,'GBS_USSD_MSG::pid_from']]],

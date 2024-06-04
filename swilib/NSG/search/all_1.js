@@ -90,7 +90,7 @@ var searchData=
   ['add_87',['add',['../rand_8h.html#a5587c9d9c28a2abf0136fcc499028f5b',1,'rand_meth_st']]],
   ['addeditcontroltoeditqend_88',['AddEditControlToEditQend',['../group___u_i.html#ga59a9ef5758539517b0a6157656dd2d90',1,'ui.h']]],
   ['addicontoiconbar_89',['AddIconToIconBar',['../group___u_i.html#ga5641011ca064183ad4c39b1a5e0d2df1',1,'ui.h']]],
-  ['additional_5fpit_5faddress_90',['Additional_PIT_address',['../group___p_a_t_c_h.html#ga8d7cee2c8c3091ca7db431a5e3aafd91',1,'patch.h']]],
+  ['additional_5fpit_5faddress_90',['Additional_PIT_address',['../group___p_a_t_c_h.html#ga8436fdbd95159024f2793fdd697c9e56',1,'patch.h']]],
   ['additional_5fpit_5fend_91',['Additional_PIT_end',['../group___p_a_t_c_h.html#ga865e1c309d68c5e3446a23ac2d4e824d',1,'patch.h']]],
   ['additional_5fpit_5fstart_92',['Additional_PIT_start',['../group___p_a_t_c_h.html#ga82b521e4bae1e4e1d60e190a5bd57a88',1,'patch.h']]],
   ['addkeybmsghook_93',['AddKeybMsgHook',['../group___g_u_i.html#ga19256403678b09500a4d4a3b4d1dd757',1,'gui.h']]],
