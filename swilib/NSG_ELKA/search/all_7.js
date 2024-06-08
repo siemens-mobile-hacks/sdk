@@ -9,7 +9,7 @@ var searchData=
   ['gamma_5fshift_6',['gamma_shift',['../builtin_2png_8h.html#a3459e4958374e7e571bcadcc7a79eef4',1,'png_struct_def']]],
   ['gamma_5ftable_7',['gamma_table',['../builtin_2png_8h.html#a4e97701069f1d5bb563f607591350200',1,'png_struct_def']]],
   ['gamma_5fto_5f1_8',['gamma_to_1',['../builtin_2png_8h.html#a1fde49c336ba766ff4ceb837dcc1c1b9',1,'png_struct_def']]],
-  ['gb2ws_9',['gb2ws',['../group___w_s_h_d_r.html#ga91491d9aa425df819a677e928853bf3b',1,'wstring.h']]],
+  ['gb2ws_9',['gb2ws',['../group___p_a_t_c_h.html#ga91491d9aa425df819a677e928853bf3b',1,'patch.h']]],
   ['gbs_10',['GBS',['../group___g_b_s.html',1,'']]],
   ['gbs_2eh_11',['gbs.h',['../gbs_8h.html',1,'']]],
   ['gbs_5facceptmessage_12',['GBS_AcceptMessage',['../group___g_b_s.html#ga751070ca379cfe601fe8ad6694624927',1,'gbs.h']]],

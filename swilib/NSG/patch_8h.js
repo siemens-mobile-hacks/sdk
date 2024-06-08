@@ -33,6 +33,8 @@ var patch_8h =
     [ "GetFileSize", "group___p_a_t_c_h.html#ga81b92b377a8404b264063556f3446a05", null ],
     [ "GetAccessoryType", "group___p_a_t_c_h.html#gab94c11ffa6216b557289e6b3ac55f0a2", null ],
     [ "GetMissedEventCount", "group___p_a_t_c_h.html#ga54f265d41bedbdf60e2ec7c7fc74ba2c", null ],
+    [ "gb2ws", "group___p_a_t_c_h.html#ga91491d9aa425df819a677e928853bf3b", null ],
+    [ "ws2gb", "group___p_a_t_c_h.html#ga53b62fd6e2e8c8956d07c7f9791befac", null ],
     [ "ScreenShoot", "group___p_a_t_c_h.html#gaca89d2e7c8ad58a057376c68fe563f79", null ],
     [ "SpellTime", "group___p_a_t_c_h.html#gaa81eb182448395ab8346222e8674cb10", null ],
     [ "DATA_N_SFB", "group___p_a_t_c_h.html#gad4bc1138351b18db9eff0493ea711bf1", null ],

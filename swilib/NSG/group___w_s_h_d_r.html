@@ -208,12 +208,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa2702f522f00dbea5c2151aac9c4d638" id="r_gaa2702f522f00dbea5c2151aac9c4d638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2702f522f00dbea5c2151aac9c4d638">ws_2str</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *source, char *destination, uint32_t size)</td></tr>
 <tr class="memdesc:gaa2702f522f00dbea5c2151aac9c4d638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to the UTF-8 C-string with special mark.  <br /></td></tr>
 <tr class="separator:gaa2702f522f00dbea5c2151aac9c4d638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91491d9aa425df819a677e928853bf3b" id="r_ga91491d9aa425df819a677e928853bf3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga91491d9aa425df819a677e928853bf3b">gb2ws</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *source, int size)</td></tr>
-<tr class="memdesc:ga91491d9aa425df819a677e928853bf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Chinese one-byte C-string to WHSDR.  <br /></td></tr>
-<tr class="separator:ga91491d9aa425df819a677e928853bf3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53b62fd6e2e8c8956d07c7f9791befac" id="r_ga53b62fd6e2e8c8956d07c7f9791befac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga53b62fd6e2e8c8956d07c7f9791befac">ws2gb</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *source, char *destination, int size)</td></tr>
-<tr class="memdesc:ga53b62fd6e2e8c8956d07c7f9791befac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to the Chinese one-byte C-string.  <br /></td></tr>
-<tr class="separator:ga53b62fd6e2e8c8956d07c7f9791befac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_w_s_b_o_d_y" id="struct_w_s_b_o_d_y"></a>
@@ -1187,80 +1181,6 @@ Notice that only when this returned value is non-negative and less than n, the s
   </dd>
 </dl>
 <p>Also, 0x1F (mark of UTF-8 string) will be added at the beginning of the string. This is useful for filesystem functions. </p>
-
-</div>
-</div>
-<a id="ga91491d9aa425df819a677e928853bf3b" name="ga91491d9aa425df819a677e928853bf3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga91491d9aa425df819a677e928853bf3b">&#9670;&#160;</a></span>gb2ws()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gb2ws </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convert Chinese one-byte C-string to WHSDR. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">destination</td><td>pointer to the destination <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>, which should be large enough to contain the source string </td></tr>
-    <tr><td class="paramname">source</td><td>input C-string to be converted to <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </td></tr>
-    <tr><td class="paramname">size</td><td>maximum number of characters to be converted </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>Only for Chinese firmwares. </dd></dl>
-
-</div>
-</div>
-<a id="ga53b62fd6e2e8c8956d07c7f9791befac" name="ga53b62fd6e2e8c8956d07c7f9791befac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga53b62fd6e2e8c8956d07c7f9791befac">&#9670;&#160;</a></span>ws2gb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ws2gb </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to the Chinese one-byte C-string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>input <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be converted to C-string </td></tr>
-    <tr><td class="paramname">destination</td><td>pointer to the destination C-string, which should be large enough to contain the source <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </td></tr>
-    <tr><td class="paramname">size</td><td>maximum number of characters to be converted </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>Only for Chinese firmwares. </dd></dl>
 
 </div>
 </div>

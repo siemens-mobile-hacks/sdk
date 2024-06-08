@@ -32,7 +32,7 @@ var searchData=
   ['writeeeliteblock_29',['WriteEELiteBlock',['../group___e_e_p_r_o_m.html#gabc52a29a8d47072a36e54f56c1853347',1,'eeprom.h']]],
   ['writesocket_30',['writesocket',['../e__os_8h.html#a05f1d6d32766eccc035656203c140843',1,'e_os.h']]],
   ['ws_31',['ws',['../group___u_i.html#aa5ec391218d68c147a31db5a72646f4f',1,'USR_MENU_ITEM']]],
-  ['ws2gb_32',['ws2gb',['../group___w_s_h_d_r.html#ga53b62fd6e2e8c8956d07c7f9791befac',1,'wstring.h']]],
+  ['ws2gb_32',['ws2gb',['../group___p_a_t_c_h.html#ga53b62fd6e2e8c8956d07c7f9791befac',1,'patch.h']]],
   ['ws_5f2str_33',['ws_2str',['../group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638',1,'wstring.h']]],
   ['ws_5f2utf8_34',['ws_2utf8',['../group___w_s_h_d_r.html#gabe1cc6090a6f2a144a09e59976efb8e9',1,'wstring.h']]],
   ['ws_5fmalloc_35',['ws_malloc',['../group___w_s_h_d_r.html#ada03ce4f8b9fe7c4388c95af47bc4b17',1,'WSHDR']]],

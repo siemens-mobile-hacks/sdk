@@ -1,7 +1,7 @@
 var searchData=
 [
   ['writeeeliteblock_0',['WriteEELiteBlock',['../group___e_e_p_r_o_m.html#gabc52a29a8d47072a36e54f56c1853347',1,'eeprom.h']]],
-  ['ws2gb_1',['ws2gb',['../group___w_s_h_d_r.html#ga53b62fd6e2e8c8956d07c7f9791befac',1,'wstring.h']]],
+  ['ws2gb_1',['ws2gb',['../group___p_a_t_c_h.html#ga53b62fd6e2e8c8956d07c7f9791befac',1,'patch.h']]],
   ['ws_5f2str_2',['ws_2str',['../group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638',1,'wstring.h']]],
   ['ws_5f2utf8_3',['ws_2utf8',['../group___w_s_h_d_r.html#gabe1cc6090a6f2a144a09e59976efb8e9',1,'wstring.h']]],
   ['wsappendchar_4',['wsAppendChar',['../group___w_s_h_d_r.html#gab6419c027b1b9461f27159be9424b970',1,'wstring.h']]],

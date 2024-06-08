@@ -29,7 +29,5 @@ var group___w_s_h_d_r =
     [ "ws_2utf8", "group___w_s_h_d_r.html#gabe1cc6090a6f2a144a09e59976efb8e9", null ],
     [ "utf8_2ws", "group___w_s_h_d_r.html#ga1223a9f3844cf4497f16ee9a2f594b31", null ],
     [ "str_2ws", "group___w_s_h_d_r.html#ga4f7c0551d27f70c967f5f6fc177debaf", null ],
-    [ "ws_2str", "group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638", null ],
-    [ "gb2ws", "group___w_s_h_d_r.html#ga91491d9aa425df819a677e928853bf3b", null ],
-    [ "ws2gb", "group___w_s_h_d_r.html#ga53b62fd6e2e8c8956d07c7f9791befac", null ]
+    [ "ws_2str", "group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638", null ]
 ];
