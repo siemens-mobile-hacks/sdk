@@ -1,0 +1,17 @@
+CompileFlags:
+  Remove: [-arch, --target]
+  Add:
+    - -Ilibc++/include
+    - -Ilibsupc++/include
+    - -Iinclude
+    - -Iswilib/include
+    - -Ilibgcc/include
+    - -Idietlibc/include
+    - -Ilibjpeg/include
+    - -Ilibpng/include
+    - -Ilibsigc++/include
+    - -Ilibft/include
+    - -Ilibft_server/include
+    - -Ilibz/include
+    - --target=arm
+    - -DNEWSGOLD -DELKA
