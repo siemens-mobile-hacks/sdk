@@ -20,7 +20,7 @@ __swilib_begin
  * @param data			data passed to the next_in_seq
  * @param next_in_seq	destructor
  * @param data_to_kill	pointer to be freed
- * @builtin ELKA|NSG|X75|SG
+ * @builtin ELKA, NSG, X75, SG
  *
  * Strange function with unknown purpose.
  * ```C

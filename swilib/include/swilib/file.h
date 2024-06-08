@@ -198,7 +198,7 @@ __swi_end(0x00A, sys_open, (path, mode, permission, err));
  * @param length		maximum size for read
  * @param[out] err		error code
  * @return count of read bytes or error (< 0)
- * @builtin X75|SG
+ * @builtin X75, SG
  * */
 __swi_begin(0x00B)
 int sys_read(int fd, void *buffer, int length, uint32_t *err)
@@ -211,7 +211,7 @@ __swi_end(0x00B, sys_read, (fd, buffer, length, err));
  * @param length		maximum size for write
  * @param[out] err		error code
  * @return count of written bytes or error (< 0)
- * @builtin X75|SG
+ * @builtin X75, SG
  * */
 __swi_begin(0x00C)
 int sys_write(int fd, const void *buffer, int length, uint32_t *err)
