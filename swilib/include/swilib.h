@@ -63,6 +63,7 @@
 #include "swilib/misc.h"
 #include "swilib/utils.h"
 #include "swilib/zlib.h"
+#include "swilib/const.h"
 
 #ifdef SWILIB_INCLUDE_ALL
 #include "swilib/patch.h"
