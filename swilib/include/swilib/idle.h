@@ -77,7 +77,7 @@ __swi_end(0x09C, CloseScreensaver, ());
  * */
 __swi_begin(0x3D0)
 int ShowScreenSaverCodeProtection()
-__swi_end(0x3D0, ShowScreenSaverCodeProtection, ())
+__swi_end(0x3D0, ShowScreenSaverCodeProtection, ());
 
 /**
  * Get screensaver CSM.
