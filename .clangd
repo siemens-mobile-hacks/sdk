@@ -14,4 +14,4 @@ CompileFlags:
     - -Ilibft_server/include
     - -Ilibz/include
     - --target=arm
-    - -DNEWSGOLD -DELKA
+    - -DNEWSGOLD -DELKA -DSWILIB_LIBC

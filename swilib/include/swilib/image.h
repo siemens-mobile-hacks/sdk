@@ -110,6 +110,7 @@ enum ThemeCacheImageID {
 /**
  * Get a pointer to the PNG list (PIT overrides).
  * @return pointer
+ * @builtin ELKA, NSG, X75, SG
  * */
 __swi_begin(0x81B9)
 PNGTOP_DESC *PNG_TOP(void)
@@ -146,6 +147,7 @@ __swi_end(0x022, GetImgWidth, (picture));
  * Load PNG image from the filesystem.
  * @param path		path ot the filename
  * @param type		unknown, set to 0
+ * @builtin ELKA, NSG, X75, SG
  * */
 __swi_begin(0x1E9)
 IMGHDR *CreateIMGHDRFromPngFile(const char *path, int type)

@@ -39,6 +39,7 @@ __swi_end(0x81B5, isnewSGold, ());
  * You can pass up to two additional (32 bit) parameters that are passed to the callback.
  * Callbacks will be called in the RAP queue instead of the MMI.
  * @param callback		pointer to the callback
+ * @builtin ELKA, NSG, X75, SG
  * 
  * ```C
  * void test_func(int p1, int p2) {
@@ -143,6 +144,7 @@ __swi_end(0x80FF, AddrLibrary, ());
 /**
  * Get a pointer to the loaded blib.
  * @return pointer
+ * @builtin ELKA, NSG, X75, SG
  * */
 __swi_begin(0x81BA)
 void *LIB_TOP(void)
@@ -151,6 +153,7 @@ __swi_end(0x81BA, LIB_TOP, ());
 /**
  * Get a pointer to the list of loaded shared libs.
  * @return pointer to the first element of the linked-list
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F9)
@@ -160,6 +163,7 @@ __swi_end(0x2F9, SHARED_TOP, ());
 /**
  * Get a pointer to a list of environment variables.
  * @return pointer to the C-like array of strings
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F6)
@@ -170,6 +174,7 @@ __swi_end(0x2F6, getBaseEnviron, ());
  * Close ELF.
  * @param ex	pointer to the opened ELF
  * @return 0 or error
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2EE)
@@ -203,6 +208,7 @@ extern void kill_data(void *p, void (*func_p)(void *));
  * Load the dynamic shared object (.so).
  * @param name	path to the `.so` file or only name (`libNAME.so`)
  * @return 0 or error
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2EF)
@@ -214,6 +220,7 @@ __swi_end(0x2EF, _dlopen, (name));
  * @param handle	descriptor obtained from _dlopen
  * @param name		name of the symbol
  * @return pointer to the symbol
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F0)
@@ -224,6 +231,7 @@ __swi_end(0x2F0, _dlsym, (handle, name));
  * Close previously loaded dynamic object.
  * @param handle	descriptor obtained from _dlopen
  * @return 0 or error
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F1)
@@ -233,6 +241,7 @@ __swi_end(0x2F1, _dlclose, (handle));
 /**
  * Get a string representation of the last error in _dlopen.
  * @return C-string
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F7)
@@ -242,6 +251,7 @@ __swi_end(0x2F7, _dlerror, ());
 /**
  * Call the garbage collector for the loaded dynamic objects.
  * @return 0 or error
+ * @builtin ELKA, NSG, X75, SG
  * @note Only for Elfloader 3.0+
  * */
 __swi_begin(0x2F8)
