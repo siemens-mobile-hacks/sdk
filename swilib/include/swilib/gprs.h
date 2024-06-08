@@ -145,8 +145,10 @@ void GPRS_OnOff(int enable, int unk)
 __swi_end(0x18E, GPRS_OnOff, (enable, unk));
 
 /**
- * Get an ID of the active internet profile (SGOLD only).
+ * Get an ID of the active internet profile.
  * @return ID
+ * @platforms X75, SG
+ * @warning SGOLD only
  * */
 __swi_begin(0x1A3)
 int GetCurrentGPRSProfile(void)
@@ -156,6 +158,7 @@ __swi_end(0x1A3, GetCurrentGPRSProfile, ());
  * Change current internet profile.
  * @param profile_id		ID of the profile
  * @return status
+ * @platforms X75, SG
  * @warning SGOLD only
  * */
 __swi_begin(0x23C)
@@ -174,6 +177,7 @@ __swi_end(0x23C, SetCurrentGPRSProfile, (profile_id));
  * @param cepid			current CEPID, use #GBS_GetCurCepid
  * @param profile_id	GPRS profile ID, use #GetCurrentGPRSProfile
  * @return status
+ * @platforms X75, SG
  * @warning SGOLD only, call only from SUBPROC.
  * */
 __swi_begin(0x1A2)
@@ -185,6 +189,7 @@ __swi_end(0x1A2, ActivateDialUpProfile, (cepid, profile_id));
  * @param cepid			current CEPID, use #GBS_GetCurCepid
  * @param profile_id	GPRS profile ID, use #GetCurrentGPRSProfile
  * @param is_gprs		connection type, 1: GPRS, 0: CSD
+ * @platforms X75, SG
  * @warning SGOLD only, call only from SUBPROC.
  * */
 __swi_begin(0x1A5)
@@ -194,6 +199,7 @@ __swi_end(0x1A5, RegisterCepIdForCurProfile, (cepid, profile_id, is_gprs));
 /**
  * Get internet connection timeout for disconnect when there is no activity.
  * @return seconds
+ * @platforms X75, SG
  * @warning SGOLD only
  * */
 __swi_begin(0x1A4)

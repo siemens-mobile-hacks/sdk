@@ -348,28 +348,6 @@ __swi_begin(0x0A3)
 void ws_2str(const WSHDR *source, char *destination, uint32_t size)
 __swi_end(0x0A3, ws_2str, (source, destination, size));
 
-/**
- * Convert Chinese one-byte C-string to WHSDR.
- * @param destination	pointer to the destination WSHDR, which should be large enough to contain the source string
- * @param source		input C-string to be converted to WSHDR
- * @param size			maximum number of characters to be converted
- * @warning Only for Chinese firmwares.
- * */
-__swi_begin(0x242)
-void gb2ws(WSHDR *destination, const char *source, int size)
-__swi_end(0x242, gb2ws, (destination, source, size));
-
-/**
- * Convert WSHDR to the Chinese one-byte C-string.
- * @param source		input WSHDR to be converted to C-string
- * @param destination	pointer to the destination C-string, which should be large enough to contain the source WSHDR
- * @param size			maximum number of characters to be converted
- * @warning Only for Chinese firmwares.
- * */
-__swi_begin(0x243)
-void ws2gb(const WSHDR *source, char *destination, int size)
-__swi_end(0x243, ws2gb, (source, destination, size));
-
 /** @} */
 
 __swilib_end

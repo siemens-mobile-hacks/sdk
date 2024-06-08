@@ -91,6 +91,7 @@ __swi_end(0x093, RebootPhone, ());
 /**
  * Set state for SLI indicator.
  * @param state		state value 0...4
+ * @platforms ELKA
  * */
 __swi_begin(0x036)
 void SLI_SetState(uint8_t state)

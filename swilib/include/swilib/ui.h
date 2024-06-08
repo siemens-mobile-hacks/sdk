@@ -546,6 +546,7 @@ __swi_end(0x027, AddIconToIconBar, (pic, num));
 /**
  * Pointer to the status of iconbar (EL/E71).
  * @return 1: enabled, 0: disabled
+ * @platforms ELKA
  * 
  * ```C
  * int iconbar_is_enabled = *RamIconBar();
