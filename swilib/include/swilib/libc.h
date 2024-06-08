@@ -557,7 +557,7 @@ __swi_end(0x3AB, bsearch, (key, first, nitems, size, comparator));
  * @param value		new value for the variable
  * @param replace	allow overwriting already existing variables
  * @return 0 or error
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F2)
 int setenv(const char *name, const char *value, int replace)
@@ -567,7 +567,7 @@ __swi_end(0x2F2, setenv, (name, value, replace));
  * Remove environment variable.
  * @param name		name of the variable
  * @return 0 or error
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F3)
 int unsetenv(const char *name)
@@ -577,7 +577,7 @@ __swi_end(0x2F3, unsetenv, (name));
  * Get value for the environment variable.
  * @param name		name of the variable
  * @return C-string
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F4)
 char *getenv(const char *name)
@@ -586,7 +586,7 @@ __swi_end(0x2F4, getenv, (name));
 /**
  * Remove all environment variables.
  * @return 0 or error
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F5)
 int clearenv(void)
@@ -603,7 +603,7 @@ __swi_end(0x2F5, clearenv, ());
  * Load the dynamic shared object (.so).
  * @param name	path to the `.so` file or only name (`libNAME.so`)
  * @return 0 or error
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2EF)
 int dlopen(const char *name)
@@ -614,7 +614,7 @@ __swi_end(0x2EF, dlopen, (name));
  * @param handle	descriptor obtained from _dlopen
  * @param name		name of the symbol
  * @return pointer to the symbol
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F0)
 void *dlsym(int handle, const char *name)
@@ -624,7 +624,7 @@ __swi_end(0x2F0, dlsym, (handle, name));
  * Close previously loaded dynamic object.
  * @param handle	descriptor obtained from _dlopen
  * @return 0 or error
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F1)
 int dlclose(int handle)
@@ -633,7 +633,7 @@ __swi_end(0x2F1, dlclose, (handle));
 /**
  * Get a string representation of the last error in _dlopen.
  * @return C-string
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x2F7)
 const char *dlerror()

@@ -727,7 +727,7 @@ __swi_end(0x21F, UnfocusGUI, ());
  * Request redraw of the GUI.
  * 
  * @note Platform independent function. Use it where possible.
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x172)
 void REDRAW(void)
@@ -773,7 +773,7 @@ __swi_end(0x141, PendedRedrawGUI, ());
 /**
  * Add global keyhook to the beginning of the list.
  * @param callback		int callback(int submsg, int msg)
- * @builtin X75, SG
+ * @builtin X75|SG
  * */
 __swi_begin(0x12B)
 void AddKeybMsgHook(KeybMsgHookProc callback)
@@ -783,7 +783,7 @@ __swi_end(0x12B, AddKeybMsgHook, (callback));
  * Add global keyhook to the end of the list.
  * @param callback		int callback(int submsg, int msg)
  * @return 1: success, 0: error
- * @builtin X75, SG
+ * @builtin X75|SG
  * */
 __swi_begin(0x12C)
 int AddKeybMsgHook_end(KeybMsgHookProc callback)
@@ -792,7 +792,7 @@ __swi_end(0x12C, AddKeybMsgHook_end, (callback));
 /**
  * Remove global keyhook from the list.
  * @param callback		int callback(int submsg, int msg)
- * @builtin X75, SG
+ * @builtin X75|SG
  * */
 __swi_begin(0x12D)
 void RemoveKeybMsgHook(KeybMsgHookProc callback)

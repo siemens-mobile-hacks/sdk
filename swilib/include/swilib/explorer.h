@@ -124,7 +124,7 @@ __swi_end(0x08C, RegExplorerExt, (ext));
  * Unregister extension from the NativeExplorer.
  * @param ext	extension definition structure, see #REGEXPLEXT
  * @return number of registered extensions
- * @builtin X75, SG
+ * @builtin X75|SG
  * */
 __swi_begin(0x095)
 int UnRegExplorerExt(const REGEXPLEXT *ext)
@@ -133,7 +133,7 @@ __swi_end(0x095, UnRegExplorerExt, (ext));
 /**
  * Get a pointer to the explorer extensions.
  * @return pointer
- * @builtin ELKA, NSG, X75, SG
+ * @builtin ELKA|NSG|X75|SG
  * */
 __swi_begin(0x81B8)
 TREGEXPLEXT *EXT_TOP(void)
