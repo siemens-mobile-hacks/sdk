@@ -180,6 +180,7 @@ __swi_end(0x1C0, RSA_free, (rsa));
 /**
  * Get selected random method.
  * @return pointer to random method
+ * @pointer-type FLASH
  * */
 __swi_begin(0x8394)
 RAND_METHOD *RAND_get_rand_method(void)

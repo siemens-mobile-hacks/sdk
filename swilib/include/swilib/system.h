@@ -136,6 +136,7 @@ __swi_end(0x191, MutexDestroy, (mtx));
 /**
  * Get function library address.
  * @return address in memory
+ * @pointer-type FLASH
  * */
 __swi_begin(0x80FF)
 void *AddrLibrary()

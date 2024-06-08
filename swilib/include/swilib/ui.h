@@ -658,6 +658,7 @@ __swi_end(0x3C0, ShowWaitBox, (flags, message));
 /**
  * Get pointer for proc3 method of #PBAR_DESC struct.
  * @return pointer
+ * @pointer-type FLASH
  * */
 __swi_begin(0x83C5)
 void *GetPBarProc3()

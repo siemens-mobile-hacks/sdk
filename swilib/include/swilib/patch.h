@@ -411,6 +411,7 @@ __swi_end(0x80FB, ShortcutsTableAddr, ());
 /**
  * Picture relocation table address.
  * @return address
+ * @pointer-type FLASH
  * */
 __swi_begin(0x80FC)
 void *PictureRelocationTableAddr()
@@ -435,6 +436,7 @@ __swi_end(0x80FE, NextPictureMagicValue, ());
 /**
  * Additional PIT address.
  * @return address
+ * @pointer-type FLASH
  * */
 __swi_begin(0x80F8)
 void *Additional_PIT_address()

@@ -979,6 +979,7 @@ __swi_end(0x207, DrawScrollString, (text, x1, y1, x2, y2, xdisp, font, text_flag
  * "Canvas" is a really meaning for standard UI background.
  * @note Useful for painting widgets to the IDLE screen.
  * @return pointer to the "canvas" object
+ * @pointer-type FLASH
  * */
 __swi_begin(0x80F1)
 void *BuildCanvas(void)
