@@ -29,8 +29,8 @@ var searchData=
   ['loopback2_26',['loopback2',['../group___system.html#gab13abbec8d73087f7006073788de6b4b',1,'system.h']]],
   ['loopback3_27',['loopback3',['../group___system.html#ga3405c1bac43909cafaf4a1da9ebde360',1,'system.h']]],
   ['loopback4_28',['loopback4',['../group___system.html#ga49c2c25dbedd63be5260f8567166594d',1,'system.h']]],
-  ['lp_5fmonthslong_29',['LP_MonthsLong',['../group___p_a_t_c_h.html#gac091a3309fe03acc039f4a301ad9cca2',1,'patch.h']]],
-  ['lp_5fmonthsshort_30',['LP_MonthsShort',['../group___p_a_t_c_h.html#ga6fb91db12566894ab334ddda389f4733',1,'patch.h']]],
-  ['lp_5fweekdays_31',['LP_Weekdays',['../group___p_a_t_c_h.html#ga61db82c4d92e1cf8db648ebd6253ea5c',1,'patch.h']]],
+  ['lp_5fmonthslong_29',['LP_MonthsLong',['../group___c_o_n_s_t.html#gac091a3309fe03acc039f4a301ad9cca2',1,'const.h']]],
+  ['lp_5fmonthsshort_30',['LP_MonthsShort',['../group___c_o_n_s_t.html#ga6fb91db12566894ab334ddda389f4733',1,'const.h']]],
+  ['lp_5fweekdays_31',['LP_Weekdays',['../group___c_o_n_s_t.html#ga61db82c4d92e1cf8db648ebd6253ea5c',1,'const.h']]],
   ['lseek_32',['lseek',['../group___file.html#ga68bdd3ad630bcbfe561257f99d733e9e',1,'file.h']]]
 ];

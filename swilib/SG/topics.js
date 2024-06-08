@@ -29,6 +29,7 @@ var topics =
     [ "Utils", "group___utils.html", "group___utils" ],
     [ "MISC", "group___m_i_s_c.html", "group___m_i_s_c" ],
     [ "PATCH", "group___p_a_t_c_h.html", "group___p_a_t_c_h" ],
+    [ "CONST", "group___c_o_n_s_t.html", "group___c_o_n_s_t" ],
     [ "IDLE", "group___i_d_l_e.html", "group___i_d_l_e" ],
     [ "LEGACY", "group___l_e_g_a_c_y.html", "group___l_e_g_a_c_y" ],
     [ "NUCLEUS", "group___n_u_c_l_e_u_s.html", "group___n_u_c_l_e_u_s" ],
