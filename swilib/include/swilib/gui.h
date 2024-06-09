@@ -28,6 +28,7 @@ typedef struct LCDLAYER_LIST LCDLAYER_LIST;
 typedef struct RAP_LCDLAYER_LIST RAP_LCDLAYER_LIST;
 
 typedef int (*KeybMsgHookProc)(int submsg, int msg);
+typedef void (*GUI_TimerProc)(void *gui);
 
 /**
  * Colors indexes in the .col
@@ -1149,7 +1150,7 @@ __swi_end(0x14A, DrwObj_Free, (drwobj));
  * @return ID of the created GUI timer.
  * */
 __swi_begin(0x3A7)
-int GUI_NewTimer(GUI *gui)
+int GUI_NewTimer(void *gui)
 __swi_end(0x3A7, GUI_NewTimer, (gui));
 
 /**
@@ -1159,19 +1160,19 @@ __swi_end(0x3A7, GUI_NewTimer, (gui));
  * @return 0 on success
  * */
 __swi_begin(0x3A8)
-int GUI_DeleteTimer(GUI *gui, int id)
+int GUI_DeleteTimer(void *gui, int id)
 __swi_end(0x3A8, GUI_DeleteTimer, (gui, id));
 
 /**
  * Schedule GUI timer.
  * @param gui		pointer to the #GUI
  * @param id		timer ID
- * @param timeout	timeout in clocks (1 clock = 4.615 ms)
+ * @param timeout	timeout in ms
  * @param callback	timer callback
  * */
 __swi_begin(0x3A9)
-void GUI_StartTimerProc(GUI *gui, int id, long timeout, void (*callback)())
-__swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout, callback));
+void GUI_StartTimerProc(void *gui, int id, long timeout_ms, GUI_TimerProc callback)
+__swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout_ms, callback));
 
 /** @} */
 
