@@ -155,6 +155,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga46339f838298dbbd0f0cac1341d1fcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab7187100bf12445b6adb9729686ad5f5" id="r_gab7187100bf12445b6adb9729686ad5f5"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7187100bf12445b6adb9729686ad5f5">KeybMsgHookProc</a>) (int submsg, int msg)</td></tr>
 <tr class="separator:gab7187100bf12445b6adb9729686ad5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e208279b7213304b0cb8a36b9639ce3" id="r_ga1e208279b7213304b0cb8a36b9639ce3"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e208279b7213304b0cb8a36b9639ce3">GUI_TimerProc</a>) (void *gui)</td></tr>
+<tr class="separator:ga1e208279b7213304b0cb8a36b9639ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -625,15 +627,15 @@ Enumerations</h2></td></tr>
 <tr class="separator:gad7ced58d98e9acfc0c76f1d41ef97057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">GUI timers</h2></td></tr>
-<tr class="memitem:ga475d11b603530660242b5bf9d22e9247" id="r_ga475d11b603530660242b5bf9d22e9247"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga475d11b603530660242b5bf9d22e9247">GUI_NewTimer</a> (<a class="el" href="#struct_g_u_i">GUI</a> *gui)</td></tr>
-<tr class="memdesc:ga475d11b603530660242b5bf9d22e9247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:ga475d11b603530660242b5bf9d22e9247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga93962b57c472dddea06983e1be5ce4d6" id="r_ga93962b57c472dddea06983e1be5ce4d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga93962b57c472dddea06983e1be5ce4d6">GUI_DeleteTimer</a> (<a class="el" href="#struct_g_u_i">GUI</a> *gui, int id)</td></tr>
-<tr class="memdesc:ga93962b57c472dddea06983e1be5ce4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:ga93962b57c472dddea06983e1be5ce4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad83ce156da2a2ac506f9a438d6009b7b" id="r_gad83ce156da2a2ac506f9a438d6009b7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad83ce156da2a2ac506f9a438d6009b7b">GUI_StartTimerProc</a> (<a class="el" href="#struct_g_u_i">GUI</a> *gui, int id, long timeout, void(*callback)())</td></tr>
-<tr class="memdesc:gad83ce156da2a2ac506f9a438d6009b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:gad83ce156da2a2ac506f9a438d6009b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52e68c7124f68fa3216f6da808b31cd0" id="r_ga52e68c7124f68fa3216f6da808b31cd0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga52e68c7124f68fa3216f6da808b31cd0">GUI_NewTimer</a> (void *gui)</td></tr>
+<tr class="memdesc:ga52e68c7124f68fa3216f6da808b31cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:ga52e68c7124f68fa3216f6da808b31cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga719c1c7dfe482e07bd1555542bec0526" id="r_ga719c1c7dfe482e07bd1555542bec0526"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga719c1c7dfe482e07bd1555542bec0526">GUI_DeleteTimer</a> (void *gui, int id)</td></tr>
+<tr class="memdesc:ga719c1c7dfe482e07bd1555542bec0526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:ga719c1c7dfe482e07bd1555542bec0526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada46bcc4e5824dde9e74df4de5a8d1ef" id="r_gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gada46bcc4e5824dde9e74df4de5a8d1ef">GUI_StartTimerProc</a> (void *gui, int id, long timeout_ms, <a class="el" href="#ga1e208279b7213304b0cb8a36b9639ce3">GUI_TimerProc</a> callback)</td></tr>
+<tr class="memdesc:gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">LCD layers</h2></td></tr>
 <tr class="memitem:ga9a9eb6ee71ca4cc4a02f6207afb171d5" id="r_ga9a9eb6ee71ca4cc4a02f6207afb171d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a9eb6ee71ca4cc4a02f6207afb171d5">LCDLAYER_SetBufferDepth</a> (<a class="el" href="#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> *layer, char depth)</td></tr>
@@ -975,6 +977,22 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="ga1e208279b7213304b0cb8a36b9639ce3" name="ga1e208279b7213304b0cb8a36b9639ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e208279b7213304b0cb8a36b9639ce3">&#9670;&#160;</a></span>GUI_TimerProc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* GUI_TimerProc) (void *gui)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00031">31</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga7b1f9d0949ba754d9dff5f36c24085ff" name="ga7b1f9d0949ba754d9dff5f36c24085ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7b1f9d0949ba754d9dff5f36c24085ff">&#9670;&#160;</a></span>ThemePeletteColorID</h2>
@@ -1013,7 +1031,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga7b1f9d0949ba754d9dff5f36c24085ffa5066aae4e8f23feb88f48f062c8310ab" name="gga7b1f9d0949ba754d9dff5f36c24085ffa5066aae4e8f23feb88f48f062c8310ab"></a>PC_PROGRESSBORDER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00035">35</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00036">36</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1050,7 +1068,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga000409a90f3a2fc2ef4b1e3336e934bdae8ab0f1ba12be2674fd90ba86cfa311e" name="gga000409a90f3a2fc2ef4b1e3336e934bdae8ab0f1ba12be2674fd90ba86cfa311e"></a>FONT_NUMERIC_MEDIUM&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00062">62</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00063">63</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1120,7 +1138,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00123">123</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00124">124</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1176,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00163">163</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00164">164</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1200,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00178">178</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00179">179</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1208,7 +1226,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00186">186</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00187">187</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1236,7 +1254,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00195">195</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00196">196</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1260,7 +1278,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga355a7aabcb531ee6c1e9b09220abca43a0b2e3689b289334ef2bef8bd52cbd47d" name="gga355a7aabcb531ee6c1e9b09220abca43a0b2e3689b289334ef2bef8bd52cbd47d"></a>DRWOBJ_ELLIPSE_SECTION_LOWER_RIGHT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00205">205</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00206">206</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1304,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00215">215</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00216">216</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1333,7 +1351,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00228">228</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00229">229</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1379,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00276">276</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00277">277</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -1387,7 +1405,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00286">286</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui_8h_source.html#l00287">287</a> of file <a class="el" href="gui_8h_source.html">gui.h</a>.</p>
 
 </div>
 </div>
@@ -3498,8 +3516,8 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 
 </div>
 </div>
-<a id="ga475d11b603530660242b5bf9d22e9247" name="ga475d11b603530660242b5bf9d22e9247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga475d11b603530660242b5bf9d22e9247">&#9670;&#160;</a></span>GUI_NewTimer()</h2>
+<a id="ga52e68c7124f68fa3216f6da808b31cd0" name="ga52e68c7124f68fa3216f6da808b31cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52e68c7124f68fa3216f6da808b31cd0">&#9670;&#160;</a></span>GUI_NewTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3507,7 +3525,7 @@ Call only from MMI! (not SUBPROC) </dd></dl>
         <tr>
           <td class="memname">int GUI_NewTimer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#struct_g_u_i">GUI</a> *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span></td><td>)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3524,8 +3542,8 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 
 </div>
 </div>
-<a id="ga93962b57c472dddea06983e1be5ce4d6" name="ga93962b57c472dddea06983e1be5ce4d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga93962b57c472dddea06983e1be5ce4d6">&#9670;&#160;</a></span>GUI_DeleteTimer()</h2>
+<a id="ga719c1c7dfe482e07bd1555542bec0526" name="ga719c1c7dfe482e07bd1555542bec0526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga719c1c7dfe482e07bd1555542bec0526">&#9670;&#160;</a></span>GUI_DeleteTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3533,7 +3551,7 @@ Call only from MMI! (not SUBPROC) </dd></dl>
         <tr>
           <td class="memname">int GUI_DeleteTimer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#struct_g_u_i">GUI</a> *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3555,8 +3573,8 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 
 </div>
 </div>
-<a id="gad83ce156da2a2ac506f9a438d6009b7b" name="gad83ce156da2a2ac506f9a438d6009b7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad83ce156da2a2ac506f9a438d6009b7b">&#9670;&#160;</a></span>GUI_StartTimerProc()</h2>
+<a id="gada46bcc4e5824dde9e74df4de5a8d1ef" name="gada46bcc4e5824dde9e74df4de5a8d1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada46bcc4e5824dde9e74df4de5a8d1ef">&#9670;&#160;</a></span>GUI_StartTimerProc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3564,7 +3582,7 @@ Call only from MMI! (not SUBPROC) </dd></dl>
         <tr>
           <td class="memname">void GUI_StartTimerProc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#struct_g_u_i">GUI</a> *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3574,12 +3592,12 @@ Call only from MMI! (not SUBPROC) </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>, </td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>timeout_ms</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>callback&#160;</em></span>)()&#160;)</td>
+          <td class="paramtype"><a class="el" href="#ga1e208279b7213304b0cb8a36b9639ce3">GUI_TimerProc</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3589,7 +3607,7 @@ Call only from MMI! (not SUBPROC) </dd></dl>
   <table class="params">
     <tr><td class="paramname">gui</td><td>pointer to the <a class="el" href="#struct_g_u_i" title="GUI description and state.">GUI</a> </td></tr>
     <tr><td class="paramname">id</td><td>timer ID </td></tr>
-    <tr><td class="paramname">timeout</td><td>timeout in clocks (1 clock = 4.615 ms) </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout in ms </td></tr>
     <tr><td class="paramname">callback</td><td>timer callback </td></tr>
   </table>
   </dd>

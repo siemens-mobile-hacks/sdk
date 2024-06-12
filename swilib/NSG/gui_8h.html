@@ -159,6 +159,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga46339f838298dbbd0f0cac1341d1fcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab7187100bf12445b6adb9729686ad5f5" id="r_gab7187100bf12445b6adb9729686ad5f5"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#gab7187100bf12445b6adb9729686ad5f5">KeybMsgHookProc</a>) (int submsg, int msg)</td></tr>
 <tr class="separator:gab7187100bf12445b6adb9729686ad5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e208279b7213304b0cb8a36b9639ce3" id="r_ga1e208279b7213304b0cb8a36b9639ce3"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga1e208279b7213304b0cb8a36b9639ce3">GUI_TimerProc</a>) (void *gui)</td></tr>
+<tr class="separator:ga1e208279b7213304b0cb8a36b9639ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -626,15 +628,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad7ced58d98e9acfc0c76f1d41ef97057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free draw object internal resources.  <br /></td></tr>
 <tr class="separator:gad7ced58d98e9acfc0c76f1d41ef97057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">GUI timers</div></td></tr>
-<tr class="memitem:ga475d11b603530660242b5bf9d22e9247" id="r_ga475d11b603530660242b5bf9d22e9247"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga475d11b603530660242b5bf9d22e9247">GUI_NewTimer</a> (<a class="el" href="group___g_u_i.html#struct_g_u_i">GUI</a> *gui)</td></tr>
-<tr class="memdesc:ga475d11b603530660242b5bf9d22e9247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:ga475d11b603530660242b5bf9d22e9247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga93962b57c472dddea06983e1be5ce4d6" id="r_ga93962b57c472dddea06983e1be5ce4d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga93962b57c472dddea06983e1be5ce4d6">GUI_DeleteTimer</a> (<a class="el" href="group___g_u_i.html#struct_g_u_i">GUI</a> *gui, int id)</td></tr>
-<tr class="memdesc:ga93962b57c472dddea06983e1be5ce4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:ga93962b57c472dddea06983e1be5ce4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad83ce156da2a2ac506f9a438d6009b7b" id="r_gad83ce156da2a2ac506f9a438d6009b7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#gad83ce156da2a2ac506f9a438d6009b7b">GUI_StartTimerProc</a> (<a class="el" href="group___g_u_i.html#struct_g_u_i">GUI</a> *gui, int id, long timeout, void(*callback)())</td></tr>
-<tr class="memdesc:gad83ce156da2a2ac506f9a438d6009b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
-<tr class="separator:gad83ce156da2a2ac506f9a438d6009b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52e68c7124f68fa3216f6da808b31cd0" id="r_ga52e68c7124f68fa3216f6da808b31cd0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga52e68c7124f68fa3216f6da808b31cd0">GUI_NewTimer</a> (void *gui)</td></tr>
+<tr class="memdesc:ga52e68c7124f68fa3216f6da808b31cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:ga52e68c7124f68fa3216f6da808b31cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga719c1c7dfe482e07bd1555542bec0526" id="r_ga719c1c7dfe482e07bd1555542bec0526"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga719c1c7dfe482e07bd1555542bec0526">GUI_DeleteTimer</a> (void *gui, int id)</td></tr>
+<tr class="memdesc:ga719c1c7dfe482e07bd1555542bec0526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:ga719c1c7dfe482e07bd1555542bec0526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada46bcc4e5824dde9e74df4de5a8d1ef" id="r_gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#gada46bcc4e5824dde9e74df4de5a8d1ef">GUI_StartTimerProc</a> (void *gui, int id, long timeout_ms, <a class="el" href="group___g_u_i.html#ga1e208279b7213304b0cb8a36b9639ce3">GUI_TimerProc</a> callback)</td></tr>
+<tr class="memdesc:gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> timer.  <br /></td></tr>
+<tr class="separator:gada46bcc4e5824dde9e74df4de5a8d1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">LCD layers</div></td></tr>
 <tr class="memitem:ga9a9eb6ee71ca4cc4a02f6207afb171d5" id="r_ga9a9eb6ee71ca4cc4a02f6207afb171d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_u_i.html#ga9a9eb6ee71ca4cc4a02f6207afb171d5">LCDLAYER_SetBufferDepth</a> (<a class="el" href="group___g_u_i.html#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> *layer, char depth)</td></tr>
 <tr class="memdesc:ga9a9eb6ee71ca4cc4a02f6207afb171d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="group___g_u_i.html#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a> buffer depth.  <br /></td></tr>

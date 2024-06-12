@@ -13,5 +13,6 @@ var searchData=
   ['gui_5fmethods_10',['GUI_METHODS',['../group___g_u_i.html#ga25c71d5c524d9f4bd0be9c28d88e4a8a',1,'gui.h']]],
   ['gui_5fmsg_11',['GUI_MSG',['../group___g_u_i.html#ga36dc679830a955676302a0c1b5be00c1',1,'gui.h']]],
   ['gui_5fonkey_5fcallback_12',['GUI_ONKEY_CALLBACK',['../group___u_i.html#ga61adfd2854bb30ad9d2664d42e54d1dd',1,'ui.h']]],
-  ['gzfile_13',['gzFile',['../builtin_2zlib_8h.html#acd0143ddd532551631ecc7093fd7adfc',1,'zlib.h']]]
+  ['gui_5ftimerproc_13',['GUI_TimerProc',['../group___g_u_i.html#ga1e208279b7213304b0cb8a36b9639ce3',1,'gui.h']]],
+  ['gzfile_14',['gzFile',['../builtin_2zlib_8h.html#acd0143ddd532551631ecc7093fd7adfc',1,'zlib.h']]]
 ];
