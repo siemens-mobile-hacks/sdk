@@ -35,6 +35,13 @@ void MEDIA_PLAYLAST()
 __swi_end(0x1FF, MEDIA_PLAYLAST, ());
 
 /**
+ * Play last song in standart media player. Always creates a new copy of media player.
+ * */
+__swi_begin(0x3D1)
+void MediaProc_LaunchLastPlayback()
+__swi_end(0x3D1, MediaProc_LaunchLastPlayback, ());
+
+/**
  * Check if MediaPlayer in the background.
  * @return 1 or 0
  * */
