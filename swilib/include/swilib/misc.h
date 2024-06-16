@@ -31,11 +31,11 @@ enum IlluminationDeviceID {
 };
 
 /**
- * Flags for #TempLightOn
+ * Set light flags.
  * */
-enum TempSetLightFlags {
-	TEMP_SET_LIGHT_DISPLAY	= 1 << 0,	/**< Trigger LCD backlight */
-	TEMP_SET_LIGHT_KEYBOARD	= 1 << 1,	/**< Trigger Keyboard backlight */
+enum SetLightFlags {
+	SET_LIGHT_DISPLAY	= 1 << 0,	/**< Trigger LCD backlight */
+	SET_LIGHT_KEYBOARD	= 1 << 1,	/**< Trigger Keyboard backlight */
 };
 
 /**
@@ -257,7 +257,7 @@ __swi_end(0x2DF, IllumTimeRelease, (time_mode, counter));
 
 /**
  * Trigger backlight (temporary set ON).
- * @param flags		bitmask, see #TempSetLightFlags
+ * @param flags		bitmask, see #SetLightFlags
  * @param unk		unknown, set to 0x7FFF
  * */
 __swi_begin(0x044)
