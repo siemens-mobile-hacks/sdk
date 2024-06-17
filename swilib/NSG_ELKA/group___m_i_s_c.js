@@ -11,9 +11,9 @@ var group___m_i_s_c =
       [ "ILLUMINATION_DEV_DYNLIGHT", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fac7eb827fa62ad48c2fafed3e5872642b", null ],
       [ "ILLUMINATION_DEV_LIGHTER", "group___m_i_s_c.html#gga9238916ae1e072ff903506a94fff667fa80c943e52667fe91e55b2d6fb84108d6", null ]
     ] ],
-    [ "TempSetLightFlags", "group___m_i_s_c.html#gaa262c83353778b84f48947378c85ccb8", [
-      [ "TEMP_SET_LIGHT_DISPLAY", "group___m_i_s_c.html#ggaa262c83353778b84f48947378c85ccb8a8a0513ce5908afe68e33501720b23d37", null ],
-      [ "TEMP_SET_LIGHT_KEYBOARD", "group___m_i_s_c.html#ggaa262c83353778b84f48947378c85ccb8a662b7c806f54d8fdcd9323afa97867a4", null ]
+    [ "SetLightFlags", "group___m_i_s_c.html#ga9cda6019d659b3b66671bf05116179d7", [
+      [ "SET_LIGHT_DISPLAY", "group___m_i_s_c.html#gga9cda6019d659b3b66671bf05116179d7ad58eace941e28987f5b8315357b32ebe", null ],
+      [ "SET_LIGHT_KEYBOARD", "group___m_i_s_c.html#gga9cda6019d659b3b66671bf05116179d7a3997293b50b91c5a7cafaab72b9c58c5", null ]
     ] ],
     [ "SwitchPhoneOff", "group___m_i_s_c.html#ga618e25b6c8787fd8b9fabcf48ff9bf3f", null ],
     [ "RebootPhone", "group___m_i_s_c.html#ga9e75e3bc7d09e0043987cf673f2fd57c", null ],
@@ -33,6 +33,7 @@ var group___m_i_s_c =
     [ "IllumTimeRequest", "group___m_i_s_c.html#ga7aa51c18a3ef18a55dc4f16df3a365ad", null ],
     [ "IllumTimeRelease", "group___m_i_s_c.html#gafa4669a0a6ddb614cb2aef09b34302db", null ],
     [ "TempLightOn", "group___m_i_s_c.html#ga6c5c99cbac0ad507e56080474ace2c8f", null ],
+    [ "IllumFilterSet", "group___m_i_s_c.html#ga1aa2ebbdc13104d9c9a3f2cee444507f", null ],
     [ "GetVibraStatus", "group___m_i_s_c.html#gad68eab1388351b1ec514ca164ab43f31", null ],
     [ "SetVibraStatus", "group___m_i_s_c.html#ga3f159b7365ea0575d532cc6cd6200385", null ],
     [ "SetVibration", "group___m_i_s_c.html#ga84e082085e0997fe160b90b48f020f50", null ],
