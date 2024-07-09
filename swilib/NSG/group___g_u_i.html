@@ -558,6 +558,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga2539167d773b2e207b61ef07019c1576" id="r_ga2539167d773b2e207b61ef07019c1576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2539167d773b2e207b61ef07019c1576">DrawIMGHDR</a> (int x, int y, <a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *img)</td></tr>
 <tr class="memdesc:ga2539167d773b2e207b61ef07019c1576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw image.  <br /></td></tr>
 <tr class="separator:ga2539167d773b2e207b61ef07019c1576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga966a0402be378601fd72f55e58881471" id="r_ga966a0402be378601fd72f55e58881471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga966a0402be378601fd72f55e58881471">DrawCroppedIMGHDR</a> (int x, int y, int offset_x, int offset_y, int w, int h, int flags, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *img)</td></tr>
+<tr class="memdesc:ga966a0402be378601fd72f55e58881471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw cropped image.  <br /></td></tr>
+<tr class="separator:ga966a0402be378601fd72f55e58881471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga730c786623977e9041768f0736831784" id="r_ga730c786623977e9041768f0736831784"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga730c786623977e9041768f0736831784">DrawImg</a> (int x, int y, int picture)</td></tr>
 <tr class="memdesc:ga730c786623977e9041768f0736831784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw image from the PIT table.  <br /></td></tr>
 <tr class="separator:ga730c786623977e9041768f0736831784"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2454,6 +2457,70 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x,y</td><td>image coordinates </td></tr>
+    <tr><td class="paramname">img</td><td>pointer to the <a class="el" href="group___image.html#struct_i_m_g_h_d_r" title="Image header.">IMGHDR</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga966a0402be378601fd72f55e58881471" name="ga966a0402be378601fd72f55e58881471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga966a0402be378601fd72f55e58881471">&#9670;&#160;</a></span>DrawCroppedIMGHDR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawCroppedIMGHDR </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset_y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>img</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw cropped image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>coordinates </td></tr>
+    <tr><td class="paramname">offset_x,offset_y</td><td>offsets </td></tr>
+    <tr><td class="paramname">w</td><td>width </td></tr>
+    <tr><td class="paramname">h</td><td>height </td></tr>
+    <tr><td class="paramname">flags</td><td>drawing flags </td></tr>
     <tr><td class="paramname">img</td><td>pointer to the <a class="el" href="group___image.html#struct_i_m_g_h_d_r" title="Image header.">IMGHDR</a> </td></tr>
   </table>
   </dd>

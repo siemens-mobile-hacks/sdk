@@ -192,6 +192,7 @@ var group___g_u_i =
     [ "GetSymbolWidth", "group___g_u_i.html#ga39dcbb9331c4c62a305eb05697c01da4", null ],
     [ "Get_WS_width", "group___g_u_i.html#ga2f5628595c466e40d480c3abc0835cda", null ],
     [ "DrawIMGHDR", "group___g_u_i.html#ga2539167d773b2e207b61ef07019c1576", null ],
+    [ "DrawCroppedIMGHDR", "group___g_u_i.html#ga966a0402be378601fd72f55e58881471", null ],
     [ "DrawImg", "group___g_u_i.html#ga730c786623977e9041768f0736831784", null ],
     [ "DrawImgBW", "group___g_u_i.html#ga88354cd919b0848dc00704addc17705a", null ],
     [ "DrawPixel", "group___g_u_i.html#ga2839e2f266d93a245509521024065e2c", null ],
