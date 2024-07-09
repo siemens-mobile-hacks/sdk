@@ -852,6 +852,19 @@ void DrawIMGHDR(int x, int y, IMGHDR *img)
 __swi_end(0x3A5, DrawIMGHDR, (x, y, img));
 
 /**
+ * Draw cropped image.
+ * @param x, y					coordinates
+ * @param offset_x, offset_y	offsets
+ * @param w						width
+ * @param h						height
+ * @param flags					drawing flags
+ * @param img					pointer to the #IMGHDR
+ * */
+__swi_begin(0x3D4)
+void DrawCroppedIMGHDR(int x, int y, int offset_x, int offset_y, int w, int h, int flags, const IMGHDR *img)
+__swi_end(0x3D4, DrawCroppedIMGHDR, (x, y, offset_x, offset_y, w, h, flags, img));
+
+/**
  * Draw image from the PIT table.
  * @param x, y		image coordinates
  * @param picture	image number
