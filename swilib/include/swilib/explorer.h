@@ -265,7 +265,7 @@ int ExplorerSetTransferState(char transfer_id, int state)
 __swi_end(0x1F1, ExplorerSetTransferState, (transfer_id, state));
 
 /**
- * Get MIME type
+ * Get MIME type.
  * @param uid				file uid, see #GetExtUid_ws, #GetExtUidByFileName_ws
  * @param[out] mime_type	pointer to WSHDR string
  * @param unk_0				unknown param, set to 0
@@ -274,6 +274,17 @@ __swi_end(0x1F1, ExplorerSetTransferState, (transfer_id, state));
 __swi_begin(0x3C8)
 int GetMimeType(int uid, WSHDR *mime_type, int unk_0)
 __swi_end(0x3C8, GetMimeType, (uid, mime_type, unk_0));
+
+/**
+ * Build a full path by a file name and a directory name.
+ * @param[out] path	pointer to WSHDR string
+ * @param file_name	pointer to WSHDR string, that contains a file name
+ * @param dir		pointer to WSHDR string, that contains a directory name
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x3D5)
+int BuildPath(WSHDR *path, const WSHDR *file_name, const WSHDR *dir)
+__swi_end(0x3D5, BuildPath, (path, file_name, dir));
 
 __swilib_end
 
