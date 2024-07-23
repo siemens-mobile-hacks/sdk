@@ -28,5 +28,6 @@ var explorer_8h =
     [ "ExecuteFile", "group___explorer.html#gac8eb4a154a2b8a782ab52dfe2aa794b4", null ],
     [ "ExplorerCopyFile", "group___explorer.html#ga4ab4e930eb3a58fed514ca93e972058f", null ],
     [ "ExplorerSetTransferState", "group___explorer.html#ga684b13c109c05553083a6dc922b45387", null ],
-    [ "GetMimeType", "group___explorer.html#gaa38d21ed3c3af0f66614dec0f037acc3", null ]
+    [ "GetMimeType", "group___explorer.html#gaa38d21ed3c3af0f66614dec0f037acc3", null ],
+    [ "BuildPath", "group___explorer.html#gae79533b0b95f6badc5d4d34551483ac4", null ]
 ];

@@ -202,6 +202,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa38d21ed3c3af0f66614dec0f037acc3" id="r_gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa38d21ed3c3af0f66614dec0f037acc3">GetMimeType</a> (int uid, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime_type, int unk_0)</td></tr>
 <tr class="memdesc:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get MIME type.  <br /></td></tr>
 <tr class="separator:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae79533b0b95f6badc5d4d34551483ac4" id="r_gae79533b0b95f6badc5d4d34551483ac4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae79533b0b95f6badc5d4d34551483ac4">BuildPath</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *dir)</td></tr>
+<tr class="memdesc:gae79533b0b95f6badc5d4d34551483ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a full path by a file name and a directory name.  <br /></td></tr>
+<tr class="separator:gae79533b0b95f6badc5d4d34551483ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_native_explorer_data" id="struct_native_explorer_data"></a>
@@ -864,6 +867,43 @@ Functions</h2></td></tr>
     <tr><td class="paramdir"></td><td class="paramname">uid</td><td>file uid, see <a class="el" href="#ga031efc82e27b00dd3c14d8d9fb0ffc7c" title="Get the ID of the registered extension by its name.">GetExtUid_ws</a>, <a class="el" href="#gab52df224d39da12eb8cc411e449896d2" title="Get the ID of the registered extension by path to the file.">GetExtUidByFileName_ws</a> </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">mime_type</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">unk_0</td><td>unknown param, set to 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
+
+</div>
+</div>
+<a id="gae79533b0b95f6badc5d4d34551483ac4" name="gae79533b0b95f6badc5d4d34551483ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae79533b0b95f6badc5d4d34551483ac4">&#9670;&#160;</a></span>BuildPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BuildPath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build a full path by a file name and a directory name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">path</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">file_name</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string, that contains a file name </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">dir</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string, that contains a directory name </td></tr>
   </table>
   </dd>
 </dl>

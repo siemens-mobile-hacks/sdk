@@ -185,5 +185,6 @@ var searchData=
   ['buf_5fmem_5fnew_182',['BUF_MEM_new',['../buffer_8h.html#a2ef2d5c1f3c48d765772d579c5520a77',1,'buffer.h']]],
   ['buf_5fstrdup_183',['BUF_strdup',['../buffer_8h.html#adc52668f5e2cc669bd2d17ac341e9359',1,'buffer.h']]],
   ['buildcanvas_184',['BuildCanvas',['../group___g_u_i.html#ga024971abffcbb4d49025da695a7b288d',1,'gui.h']]],
-  ['bzero_185',['bzero',['../group__libc.html#ga374cda7fc0f7ec3ab2b4ac04fb858922',1,'libc.h']]]
+  ['buildpath_185',['BuildPath',['../group___explorer.html#gae79533b0b95f6badc5d4d34551483ac4',1,'explorer.h']]],
+  ['bzero_186',['bzero',['../group__libc.html#ga374cda7fc0f7ec3ab2b4ac04fb858922',1,'libc.h']]]
 ];
