@@ -15,6 +15,11 @@
 
 __swilib_begin
 
+enum ExplorerTransferStates {
+        EXPLORER_TRANSFER_STATE_STOP            = 1,
+        EXPLORER_TRANSFER_STATE_RUNNING         = 2,
+};
+
 typedef enum ExplorerTransferStates ExplorerTransferStates;
 
 typedef struct NativeExplorerData NativeExplorerData;
@@ -26,11 +31,6 @@ typedef struct REGEXPLEXT TREGEXPLEXT;
 #else
 typedef struct REGEXPLEXT_ARM_NEW TREGEXPLEXT;
 #endif
-
-enum ExplorerTransferStates {
-	EXPLORER_TRANSFER_STATE_STOP		= 1,
-	EXPLORER_TRANSFER_STATE_RUNNING		= 2,
-};
 
 /**
  * Mode of the NativeExplorer.
