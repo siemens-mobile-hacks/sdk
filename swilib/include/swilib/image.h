@@ -277,6 +277,15 @@ __swi_begin(0x1EC)
 void FreeDynIcon(int picture)
 __swi_end(0x1EC, FreeDynIcon, (picture));
 
+
+/**
+ * Get the maximum count of PIT icons.
+ * @return count
+ * */
+__swi_begin(0x3D9)
+int GetPITSize()
+__swi_end(0x3D9, GetPITSize, ());
+
 /** @} */
 
 __swilib_end

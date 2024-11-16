@@ -1578,6 +1578,30 @@ __swi_begin(0x80D8)
 void *RamMenuAnywhere()
 __swi_end(0x80D8, RamMenuAnywhere, ());
 
+/**
+ * Size of UI header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D6)
+RECT *GetHeaderRECT(void)
+__swi_end(0x83D6, GetHeaderRECT, ());
+
+/**
+ * Size of UI options header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D7)
+RECT *GetOptionsHeaderRect(void)
+__swi_end(0x83D7, GetOptionsHeaderRect, ());
+
+/**
+ * Size of UI main area.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D8)
+RECT *GetMainAreaRECT(void)
+__swi_end(0x83D8, GetMainAreaRECT, ());
+
 /** @} */
 
 __swilib_end
