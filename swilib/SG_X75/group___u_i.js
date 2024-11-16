@@ -215,5 +215,8 @@ var group___u_i =
     [ "TViewSetUserPointer", "group___u_i.html#ga2a2bfc59416cb3f25fc0a7af6c326bd6", null ],
     [ "TViewGetUserPointer", "group___u_i.html#ga8b75db47e227cc4a56eedab904dc915f", null ],
     [ "CreateRadioButtonList", "group___u_i.html#ga8255da09902a222ab737efaae5e272e2", null ],
-    [ "RamMenuAnywhere", "group___u_i.html#gaf8201f9eea97087c165fd841ea136a49", null ]
+    [ "RamMenuAnywhere", "group___u_i.html#gaf8201f9eea97087c165fd841ea136a49", null ],
+    [ "GetHeaderRECT", "group___u_i.html#ga237f1fbccdd6176b4e5206117d665aa4", null ],
+    [ "GetOptionsHeaderRect", "group___u_i.html#ga0fe661225be3dcf55742a3d8e8979f45", null ],
+    [ "GetMainAreaRECT", "group___u_i.html#gac956c658df04174bbf26b00a5f0343fb", null ]
 ];
