@@ -60,13 +60,15 @@ typedef struct LLIST LLIST;
  * */
 enum DefaultLgpID {
 #ifdef NEWSGOLD
-	LGP_NULL		= 0x7FFFFFFF, 	/**< Empty LGP */
-#else
-	LGP_NULL		= 0x7FFF, 		/**< Empty LGP */
-#endif
+	LGP_NULL		= 0x7FFFFFFF,	/**< Empty LGP */
 	LGP_DOIT_PIC	= 0x7FFFC0FB,	/**< OK icon */
 	LGP_CHANGE_PIC	= 0x7FFFC10D,	/**< Change icon */
 	LGP_SAVE_PIC	= 0x7FFFC113,	/**< Save icon */
+#else
+	LGP_NULL		= 0x7FFF,		/**< Empty LGP */
+	LGP_DOIT_PIC	= 0x4E48,		/**< OK icon */
+	LGP_MENU_PIC	= 0x4E4A,		/**< Menu icon */
+#endif
 };
 
 /**
