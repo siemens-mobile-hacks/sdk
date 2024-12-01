@@ -27,6 +27,8 @@ struct WSBODY {
 };
 #pragma pack()
 
+#define wsbody(ws) ((WSBODY *) ((ws)->wsbody))
+
 /**
  * Wide-string header.
  * */
@@ -242,7 +244,7 @@ __swi_end(0x3C9, wstrncmp, (ws1, ws2, n));
  * @return The length of WSHDR string
 */
 __swi_begin(0x123)
-int wstrlen(WSHDR *str)
+uint16_t wstrlen(const WSHDR *str)
 __swi_end(0x123, wstrlen, (str));
 
 /**

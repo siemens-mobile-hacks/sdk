@@ -22,7 +22,9 @@
 	#define SWILIB_LEGACY_COMPAT
 #endif
 
-#if defined(DOXYGEN)
+#if defined(__linux__)
+	#include "compiler/gcc_linux.h"
+#elif defined(DOXYGEN)
 	#include "compiler/doxygen.h"
 #elif defined(__ICCARM__)
 	#include "compiler/iar.h"

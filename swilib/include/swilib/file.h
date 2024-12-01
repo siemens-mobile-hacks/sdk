@@ -66,13 +66,13 @@ struct DIR_ENTRY {
 	short wsfolder_name[128 + 1];	/*!< Name of the parent dir в UTF-16 */
 	short wsfile_name[128 + 1];		/*!< Name of the file в UTF-16 */
 #else
-	char unk1[14];
+	char unk0[14];
 	short file_attr;				/*!< File attributes#FileAttributes */
 	uint32_t create_date_time;		/*!< File creation time in unix-time */
 	uint32_t file_size;				/*!< Size in bytes */
-	char unk2[16];
+	char unk1[16];
 	char folder_name[128];			/*!< Name of the parent dir */
-	char unk3;
+	char unk2;
 	char file_name[271];			/*!< Name of the file */
 #endif
 };

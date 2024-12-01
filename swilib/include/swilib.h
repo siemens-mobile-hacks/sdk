@@ -44,8 +44,15 @@
 #include "swilib/gui.h"
 #include "swilib/ui.h"
 #include "swilib/i2c.h"
+
+#ifdef SWILIB_LIBPNG
 #include "swilib/png.h"
+#endif
+
+#ifdef SWILIB_OPENSSL
 #include "swilib/openssl.h"
+#endif
+
 #include "swilib/gprs.h"
 #include "swilib/socket.h"
 #include "swilib/info.h"
@@ -62,7 +69,11 @@
 #include "swilib/java.h"
 #include "swilib/misc.h"
 #include "swilib/utils.h"
+
+#ifdef SWILIB_ZLIB
 #include "swilib/zlib.h"
+#endif
+
 #include "swilib/const.h"
 
 #ifdef SWILIB_INCLUDE_ALL

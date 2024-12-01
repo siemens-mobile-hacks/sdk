@@ -18,8 +18,6 @@ __swilib_begin
  * @{
  */
 
-#if !defined(__IN_SWILIB__) || defined(SWILIB_LIBPNG)
-
 #include "../builtin/png.h"
 
 __swi_begin(0x155)
@@ -127,8 +125,6 @@ __swi_end(0x1D6, png_set_gray_1_2_4_to_8, (png_ptr));
 __swi_begin(0x1D7)
 void png_set_invert_mono(png_structp png_ptr)
 __swi_end(0x1D7, png_set_invert_mono, (png_ptr));
-
-#endif /* SWILIB_LIBPNG */
 
 __swilib_end
 

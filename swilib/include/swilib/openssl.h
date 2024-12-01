@@ -21,8 +21,6 @@ __swilib_begin
  * @{
  */
 
-#if !defined(__IN_SWILIB__) || defined(SWILIB_OPENSSL)
-
 #include "../builtin/openssl/rsa.h"
 #include "../builtin/openssl/md5.h"
 #include "../builtin/openssl/sha.h"
@@ -344,8 +342,6 @@ int EVP_add_cipher(EVP_CIPHER *c)
 __swi_end(0x3AC, EVP_add_cipher, (c));
 
 /** @} */
-
-#endif /* SWILIB_OPENSSL */
 
 __swilib_end
 

@@ -20,6 +20,7 @@ __swilib_begin
 
 typedef struct RECT RECT;
 typedef struct GUI GUI;
+typedef struct GUI_RAM GUI_RAM;
 typedef struct GUI_MSG GUI_MSG;
 typedef struct GUI_METHODS GUI_METHODS;
 typedef struct DRWOBJ DRWOBJ;
@@ -332,6 +333,16 @@ struct GUI_METHODS {
 	int (*method8)();
 	int (*method9)();
 	void *unk1;
+};
+
+/**
+ * GUI RAM representation.
+ */
+struct GUI_RAM {
+	GUI_RAM *next;
+	GUI_RAM *prev;
+	GUI *gui;
+	int id;
 };
 
 /**
@@ -1184,8 +1195,8 @@ __swi_end(0x3A8, GUI_DeleteTimer, (gui, id));
  * @param callback	timer callback
  * */
 __swi_begin(0x3A9)
-void GUI_StartTimerProc(void *gui, int id, long timeout_ms, GUI_TimerProc callback)
-__swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout_ms, callback));
+void GUI_StartTimerProc(void *gui, int id, long timeout, GUI_TimerProc callback)
+__swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout, callback));
 
 /** @} */
 

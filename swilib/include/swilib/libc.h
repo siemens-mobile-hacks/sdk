@@ -23,7 +23,6 @@ __swilib_begin
  * - @ref mfree_adr
  * - @ref strcmpi
  * - @ref zeromem
- * - @ref bzero
  * - @ref ClearMemory
  * @{
  */
@@ -165,6 +164,10 @@ __swi_begin(0x11D)
 void zeromem(void *ptr, int num)
 __swi_end(0x11D, zeromem, (ptr, num));
 
+/* ----------------------------------------- */
+
+#ifdef SWILIB_LIBC
+
 /**
  * @copydoc zeromem
  * @deprecated use #memset
@@ -172,10 +175,6 @@ __swi_end(0x11D, zeromem, (ptr, num));
 __swi_begin(0x11D)
 void bzero(void *ptr, int num)
 __swi_end(0x11D, bzero, (ptr, num));
-
-/* ----------------------------------------- */
-
-#ifdef SWILIB_LIBC
 
 /**
  * Fill block of memory with zero.

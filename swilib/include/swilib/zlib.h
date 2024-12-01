@@ -18,8 +18,6 @@ __swilib_begin
  * @{
  */
 
-#if !defined(__IN_SWILIB__) || defined(SWILIB_ZLIB)
-
 #include "../builtin/zlib.h"
 
 /**
@@ -52,8 +50,6 @@ __swi_end(0x1A0, inflate, (strm, flush));
 __swi_begin(0x1A1)
 int inflateEnd(z_streamp strm)
 __swi_end(0x1A1, inflateEnd, (strm));
-
-#endif /* SWILIB_ZLIB */
 
 __swilib_end
 
