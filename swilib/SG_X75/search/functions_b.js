@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['lcdlayer_5fcurrent_5fsetbufferdepth_0',['LCDLAYER_Current_SetBufferDepth',['../group___g_u_i.html#ga8bb35a12a2ec96d39db261bd11bac11a',1,'gui.h']]],
-  ['lcdlayer_5fcurrent_5fsetclipregion_1',['LCDLAYER_Current_SetClipRegion',['../group___g_u_i.html#ga6c012a58a35eaeca0fbb36fa6e753562',1,'gui.h']]],
-  ['lcdlayer_5fflush_2',['LCDLAYER_Flush',['../group___g_u_i.html#ga6a069221eddd4aed0ac31a71d887c0e2',1,'gui.h']]],
-  ['lcdlayer_5fgetcurrent_3',['LCDLAYER_GetCurrent',['../group___g_u_i.html#ga16a8a060b9762891c470356f97a53fa2',1,'gui.h']]],
+  ['lcd_5fgetcurrentlayer_0',['LCD_GetCurrentLayer',['../group___g_u_i.html#ga853990e28b97d61c388ddbe414163a55',1,'gui.h']]],
+  ['lcd_5fsetbufferdepth_1',['LCD_SetBufferDepth',['../group___g_u_i.html#gad81f804bd0b57d3739865aec56d997ba',1,'gui.h']]],
+  ['lcd_5fsetdrawingregion_2',['LCD_SetDrawingRegion',['../group___g_u_i.html#gabc1a1517feb23300260de729b1b7f8f5',1,'gui.h']]],
+  ['lcdlayer_5fflush_3',['LCDLAYER_Flush',['../group___g_u_i.html#ga6a069221eddd4aed0ac31a71d887c0e2',1,'gui.h']]],
   ['lcdlayer_5fredraw_4',['LCDLAYER_Redraw',['../group___g_u_i.html#ga9c36b73f18365422cbed01b91bce3bf5',1,'gui.h']]],
   ['lcdlayer_5fsetbufferdepth_5',['LCDLAYER_SetBufferDepth',['../group___g_u_i.html#ga9a9eb6ee71ca4cc4a02f6207afb171d5',1,'gui.h']]],
   ['lcdredrawlayer_6',['LCDRedrawLAYER',['../group___g_u_i.html#gadae9723a37daba06ea6327e4e89e70ad',1,'gui.h']]],

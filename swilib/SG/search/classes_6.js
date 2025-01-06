@@ -8,5 +8,6 @@ var searchData=
   ['general_5fname_5fst_2ed_5',['GENERAL_NAME_st.d',['../x509v3_8h.html#union_g_e_n_e_r_a_l___n_a_m_e__st_8d',1,'']]],
   ['gui_6',['GUI',['../group___g_u_i.html#struct_g_u_i',1,'']]],
   ['gui_5fmethods_7',['GUI_METHODS',['../group___g_u_i.html#struct_g_u_i___m_e_t_h_o_d_s',1,'']]],
-  ['gui_5fmsg_8',['GUI_MSG',['../group___g_u_i.html#struct_g_u_i___m_s_g',1,'']]]
+  ['gui_5fmsg_8',['GUI_MSG',['../group___g_u_i.html#struct_g_u_i___m_s_g',1,'']]],
+  ['gui_5fram_9',['GUI_RAM',['../group___g_u_i.html#struct_g_u_i___r_a_m',1,'']]]
 ];

@@ -13,9 +13,9 @@ var group___image =
     [ "PNGTOP_DESC", "group___image.html#ga9088742b710d656bd0403cb36c2fb922", null ],
     [ "ImghdrBitmapType", "group___image.html#gab7b159e75233e88b5dfac2ffb70abc6f", [
       [ "IMGHDR_TYPE_WB", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa96d0930612358fcdc9fe32840bca1540", null ],
-      [ "IMGHDR_TYPE_RGB332", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa2dd6f01ed4a7926c92c6445e9a7c1b21", null ],
-      [ "IMGHDR_TYPE_RGB565", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa79ceb0e6db8521febf2e7421c4c4b59a", null ],
-      [ "IMGHDR_TYPE_RGB8888", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa4240209f50ed7af5060cadd8bb5887cc", null ]
+      [ "IMGHDR_TYPE_BGR233", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa1c2a273059ec771915da24db51a69ce6", null ],
+      [ "IMGHDR_TYPE_BGR565", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fac107ec5dd77fdbfce8c57dde28410849", null ],
+      [ "IMGHDR_TYPE_BGRA8888", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa502a56905981f0d0c3f6f286c5a3576e", null ]
     ] ],
     [ "ThemeCacheImageID", "group___image.html#ga9a5bdfef0e3fca789fb7aa126ef14316", [
       [ "HEADLINE_STANDART", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316adb7306cd290e163195375fa84461f5a7", null ],

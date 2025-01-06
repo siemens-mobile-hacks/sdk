@@ -1,5 +1,6 @@
 var wstring_8h =
 [
+    [ "wsbody", "group___w_s_h_d_r.html#ga819abcb35c5a8117b133d870e0ea3e71", null ],
     [ "WSBODY", "group___w_s_h_d_r.html#ga91e6a89eab1f76984100ab19c41ce256", null ],
     [ "WSHDR", "group___w_s_h_d_r.html#ga814cc2acb43e271f1991a0fee8850f22", null ],
     [ "AllocWS", "group___w_s_h_d_r.html#gaba70ce634108f879f073a7573be23790", null ],
@@ -21,7 +22,7 @@ var wstring_8h =
     [ "wstrrchr", "group___w_s_h_d_r.html#gae34bc636e2c83fd8d66be1b0c2dacc01", null ],
     [ "wstrcmp", "group___w_s_h_d_r.html#ga3a75567b7245f823d5cf1f75796b2017", null ],
     [ "wstrncmp", "group___w_s_h_d_r.html#ga1b86757d9a93e442083d6501a262b405", null ],
-    [ "wstrlen", "group___w_s_h_d_r.html#gae435e16a4dbf0301a04cfcd4ba3c5dd8", null ],
+    [ "wstrlen", "group___w_s_h_d_r.html#ga4014531ec86a71b5202f55ba30d17448", null ],
     [ "wsprintf", "group___w_s_h_d_r.html#ga98c564bf5795bcdd4712e08a7363045c", null ],
     [ "wstrcatprintf", "group___w_s_h_d_r.html#ga2737ce1afc859ac3e01e6a6a33b8b139", null ],
     [ "ws_2utf8", "group___w_s_h_d_r.html#gabe1cc6090a6f2a144a09e59976efb8e9", null ],

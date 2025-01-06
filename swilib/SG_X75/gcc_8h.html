@@ -114,13 +114,13 @@ Macros</h2></td></tr>
 <tr class="separator:a29c180570710dd0fbf1cc1e90b8d511b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec0b55b8d210767e0f458236ba02f733" id="r_aec0b55b8d210767e0f458236ba02f733"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec0b55b8d210767e0f458236ba02f733">__swilib_end</a>&#160;&#160;&#160;		_Pragma(&quot;GCC diagnostic pop&quot;)</td></tr>
 <tr class="separator:aec0b55b8d210767e0f458236ba02f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd349c4a0c9890aaba1618f5cc6eccb4" id="r_abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(number)&#160;&#160;&#160;static inline __attribute__((flatten))</td></tr>
+<tr class="memitem:abd349c4a0c9890aaba1618f5cc6eccb4" id="r_abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(number)&#160;&#160;&#160;static inline <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((flatten))</td></tr>
 <tr class="separator:abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fa9d5bc04573fff4c69974f0c3cc9f" id="r_a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(number,  func,  call)</td></tr>
 <tr class="separator:a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1b09208176460b653d16f530ce9c31" id="r_a7f1b09208176460b653d16f530ce9c31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1b09208176460b653d16f530ce9c31">__swi_call</a>(number,  ret,  signature,  call)&#160;&#160;&#160;    (((ret (*)signature)(<a class="el" href="#a5531fab7e2e3df017333a5a9ff33d9ff">__sys_switab_addres</a>[number]))call)</td></tr>
 <tr class="separator:a7f1b09208176460b653d16f530ce9c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa115e6e289233f6fd57987c1a9a0cc70" id="r_aa115e6e289233f6fd57987c1a9a0cc70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa115e6e289233f6fd57987c1a9a0cc70">__swi_format</a>(type, ...)&#160;&#160;&#160;    __attribute__((format(type, ##__VA_ARGS__)))</td></tr>
+<tr class="memitem:aa115e6e289233f6fd57987c1a9a0cc70" id="r_aa115e6e289233f6fd57987c1a9a0cc70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa115e6e289233f6fd57987c1a9a0cc70">__swi_format</a>(type, ...)&#160;&#160;&#160;    <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((format(type, ##__VA_ARGS__)))</td></tr>
 <tr class="separator:aa115e6e289233f6fd57987c1a9a0cc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b5af00d87ed36f3938b9b4d03c7bc8" id="r_a47b5af00d87ed36f3938b9b4d03c7bc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47b5af00d87ed36f3938b9b4d03c7bc8">__inl</a>&#160;&#160;&#160;static inline</td></tr>
 <tr class="separator:a47b5af00d87ed36f3938b9b4d03c7bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,7 +206,7 @@ Variables</h2></td></tr>
           <td class="memname">#define __swi_begin</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
-          <td>&#160;&#160;&#160;static inline __attribute__((flatten))</td>
+          <td>&#160;&#160;&#160;static inline <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((flatten))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -298,7 +298,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)&#160;&#160;&#160;    __attribute__((format(type, ##__VA_ARGS__)))</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)&#160;&#160;&#160;    <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((format(type, ##__VA_ARGS__)))</td>
         </tr>
       </table>
 </div><div class="memdoc">

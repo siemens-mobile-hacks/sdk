@@ -99,6 +99,7 @@ $(function(){initNavTree('wstring_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">wstring.h File Reference</div></div>
@@ -116,6 +117,11 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_w_s_h_d_r" id="r_struct_w_s_h_d_r"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a></td></tr>
 <tr class="memdesc:struct_w_s_h_d_r"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wide-string header.  <a href="group___w_s_h_d_r.html#struct_w_s_h_d_r">More...</a><br /></td></tr>
 <tr class="separator:struct_w_s_h_d_r"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga819abcb35c5a8117b133d870e0ea3e71" id="r_ga819abcb35c5a8117b133d870e0ea3e71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#ga819abcb35c5a8117b133d870e0ea3e71">wsbody</a>(ws)&#160;&#160;&#160;((<a class="el" href="group___w_s_h_d_r.html#struct_w_s_b_o_d_y">WSBODY</a> *) ((ws)-&gt;wsbody))</td></tr>
+<tr class="separator:ga819abcb35c5a8117b133d870e0ea3e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -183,9 +189,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1b86757d9a93e442083d6501a262b405" id="r_ga1b86757d9a93e442083d6501a262b405"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#ga1b86757d9a93e442083d6501a262b405">wstrncmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws2, size_t n)</td></tr>
 <tr class="memdesc:ga1b86757d9a93e442083d6501a262b405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings, up to a specific length.  <br /></td></tr>
 <tr class="separator:ga1b86757d9a93e442083d6501a262b405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae435e16a4dbf0301a04cfcd4ba3c5dd8" id="r_gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#gae435e16a4dbf0301a04cfcd4ba3c5dd8">wstrlen</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *str)</td></tr>
-<tr class="memdesc:gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> length.  <br /></td></tr>
-<tr class="separator:gae435e16a4dbf0301a04cfcd4ba3c5dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4014531ec86a71b5202f55ba30d17448" id="r_ga4014531ec86a71b5202f55ba30d17448"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#ga4014531ec86a71b5202f55ba30d17448">wstrlen</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *str)</td></tr>
+<tr class="memdesc:ga4014531ec86a71b5202f55ba30d17448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> length.  <br /></td></tr>
+<tr class="separator:ga4014531ec86a71b5202f55ba30d17448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Formatting</div></td></tr>
 <tr class="memitem:ga98c564bf5795bcdd4712e08a7363045c" id="r_ga98c564bf5795bcdd4712e08a7363045c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___w_s_h_d_r.html#ga98c564bf5795bcdd4712e08a7363045c">wsprintf</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
 <tr class="memdesc:ga98c564bf5795bcdd4712e08a7363045c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>

@@ -19,5 +19,5 @@ var searchData=
   ['_5fopenssl_5fos_5ftoebcdic_16',['_openssl_os_toebcdic',['../ebcdic_8h.html#a6259c8fe416b738cb36ec75f95938cb7',1,'ebcdic.h']]],
   ['_5funk2_17',['_unk2',['../group___g_u_i.html#a552eb7a202b3f2ffb18bd32c6a6478cd',1,'LCDLAYER']]],
   ['_5funk3_18',['_unk3',['../group___g_u_i.html#a6bd62fca2cf3457a814024e4eb34e38c',1,'LCDLAYER']]],
-  ['_5funk4_19',['_unk4',['../group___g_u_i.html#a6340c9c1c3012c42011d4063191e7903',1,'LCDLAYER']]]
+  ['_5funk4_19',['_unk4',['../group___g_u_i.html#a296237011075bfbeb9d8c41232575033',1,'LCDLAYER']]]
 ];

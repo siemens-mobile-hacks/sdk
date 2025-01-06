@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['b_0',['B',['../md5_8h.html#ab84c8a8b85066a54ccfd2c338bf70553',1,'MD5state_st::B'],['../ripemd_8h.html#aab8d099db79f8d8fbdf5035bbb24538c',1,'RIPEMD160state_st::B']]],
-  ['b_1',['b',['../lhash_8h.html#a270d10bf31f3f917e12d700b27960458',1,'lhash_st']]],
+  ['b_0',['b',['../lhash_8h.html#a270d10bf31f3f917e12d700b27960458',1,'lhash_st']]],
+  ['b_1',['B',['../md5_8h.html#ab84c8a8b85066a54ccfd2c338bf70553',1,'MD5state_st::B'],['../ripemd_8h.html#aab8d099db79f8d8fbdf5035bbb24538c',1,'RIPEMD160state_st::B']]],
   ['background_2',['background',['../builtin_2png_8h.html#a66e29accd9f0e1faf0950e72d2121f33',1,'png_info_struct::background'],['../builtin_2png_8h.html#a5176d0fc24966a534e71b64a0f8eb763',1,'png_struct_def::background']]],
   ['background_5f1_3',['background_1',['../builtin_2png_8h.html#aaf3c55b65526060835b089f49b65189a',1,'png_struct_def']]],
   ['background_5fgamma_4',['background_gamma',['../builtin_2png_8h.html#a39e06c269454f5d93f55f2855da735af',1,'png_struct_def']]],
