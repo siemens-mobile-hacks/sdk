@@ -11,7 +11,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-#if defined(__ICCARM__) || defined(SWILIB_INCLUDE_ALL)
+#if defined(__ICCARM__) || defined(SWILIB_INCLUDE_ALL) || defined(SWILIB_PATCH_SDK)
 	#define SWILIB_LIBC
 	#define SWILIB_LIBPNG
 	#define SWILIB_ZLIB
@@ -22,16 +22,26 @@
 	#define SWILIB_LEGACY_COMPAT
 #endif
 
-#if defined(__linux__)
-	#include "compiler/gcc_linux.h"
-#elif defined(DOXYGEN)
-	#include "compiler/doxygen.h"
-#elif defined(__ICCARM__)
-	#include "compiler/iar.h"
-#elif defined(__GNUC__)
-	#include "compiler/gcc.h"
+#if defined(SWILIB_PATCH_SDK)
+	#include <swilib-values.h>
+
+	#if defined(__GNUC__)
+		#include "compiler/gcc_patch.h"
+	#else
+		#error Unknown compiler!
+	#endif
 #else
-	#error Unknown compiler!
+	#if defined(SWILIB_LINUX_SIMULATOR)
+		#include "compiler/gcc_linux.h"
+	#elif defined(DOXYGEN)
+		#include "compiler/doxygen.h"
+	#elif defined(__ICCARM__)
+		#include "compiler/iar.h"
+	#elif defined(__GNUC__)
+		#include "compiler/gcc.h"
+	#else
+		#error Unknown compiler!
+	#endif
 #endif
 
 /* Compatibility with old defines */

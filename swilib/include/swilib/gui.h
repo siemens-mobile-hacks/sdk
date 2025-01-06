@@ -211,6 +211,17 @@ enum DrwObjEllipseSectionID {
 	DRWOBJ_ELLIPSE_SECTION_LOWER_RIGHT,
 };
 
+/*
+ * Depth of LCD layer buffer.
+ * */
+enum LcdLayerDepth {
+	LCDLAYER_DEPTH_WB			= 1,
+	LCDLAYER_DEPTH_BGR233		= 2,
+	LCDLAYER_DEPTH_BGRA4444		= 3,
+	LCDLAYER_DEPTH_BGR565		= 4,
+	LCDLAYER_DEPTH_BGRA8888		= 5,
+};
+
 /**
  * Key event types (onKey).
  * */
@@ -408,15 +419,17 @@ struct LCDLAYER {
 	RECT rect;				/**< Rectangle region on the LCD */
 	void *buffer;			/**< Layer buffer */
 	void *_unk2;
-	uint8_t depth;			/**< Color depth */
+	uint8_t depth;			/**< Color depth, see #LcdLayerDepth */
 #ifdef ELKA
 	char _unk3[3];
-	int _unk4[7];
+	int allocated_size;		/**< Layer allocated buffer size */
+	int _unk4[6];
 	int redraw_requested;	/**< 1 when redraw is requested */
 	char unk5[86];
 #elif defined(NEWSGOLD)
 	char _unk3[3];
-	int _unk4[5];
+	int allocated_size;		/**< Layer allocated buffer size */
+	int _unk4[4];
 	int redraw_requested;	/**< 1 when redraw is requested */
 	char unk5[88];
 #else
@@ -431,7 +444,8 @@ struct LCDLAYER_LIST {
 	LCDLAYER *layer;
 	malloc_func_t malloc_func;
 	mfree_func_t mfree_func;
-	uint32_t unk;
+	short cepid;
+	short unk;
 };
 
 /**
@@ -843,7 +857,7 @@ __swi_end(0x1E1, GetSymbolWidth, (character, font_id));
  * @return width in px
  * */
 __swi_begin(0x208)
-int Get_WS_width(WSHDR *text, int font_id)
+int Get_WS_width(const WSHDR *text, int font_id)
 __swi_end(0x208, Get_WS_width, (text, font_id));
 
 /** @} */
@@ -859,7 +873,7 @@ __swi_end(0x208, Get_WS_width, (text, font_id));
  * @param img		pointer to the #IMGHDR
  * */
 __swi_begin(0x3A5)
-void DrawIMGHDR(int x, int y, IMGHDR *img)
+void DrawIMGHDR(int x, int y, const IMGHDR *img)
 __swi_end(0x3A5, DrawIMGHDR, (x, y, img));
 
 /**
@@ -1070,7 +1084,7 @@ __swi_end(0xXXX, DrwObj_InitTriangle, (drwobj, x1, y1, x2, y2, x3, y3, flags, pe
  * @param flags				drawing flags
  * */
 __swi_begin(0x1FD)
-void DrwObj_InitRect(DRWOBJ *drwobj, RECT *rect, int flags)
+void DrwObj_InitRect(DRWOBJ *drwobj, const RECT *rect, int flags)
 __swi_end(0x1FD, DrwObj_InitRect, (drwobj, rect, flags));
 
 /**
@@ -1082,7 +1096,7 @@ __swi_end(0x1FD, DrwObj_InitRect, (drwobj, rect, flags));
  * @param fill_pattern		bit pattern, for example: 0b10101010
  * */
 __swi_begin(0x205)
-void DrwObj_InitRectEx(DRWOBJ *drwobj, RECT *rect, int flags, int fill_type, int fill_pattern)
+void DrwObj_InitRectEx(DRWOBJ *drwobj, const RECT *rect, int flags, int fill_type, int fill_pattern)
 __swi_end(0x205, DrwObj_InitRectEx, (drwobj, rect, flags, fill_type, fill_pattern));
 
 /**
@@ -1095,7 +1109,7 @@ __swi_end(0x205, DrwObj_InitRectEx, (drwobj, rect, flags, fill_type, fill_patter
  * @param text_flags	drawing flags bitmask, see #TextAttributesFlags
  * */
 __swi_begin(0x149)
-void DrwObj_InitText(DRWOBJ *drwobj, RECT *rect, int flags, WSHDR *text, int font, int text_flags)
+void DrwObj_InitText(DRWOBJ *drwobj, const RECT *rect, int flags, const WSHDR *text, int font, int text_flags)
 __swi_end(0x149, DrwObj_InitText, (drwobj, rect, flags, text, font, text_flags));
 
 /**
@@ -1106,7 +1120,7 @@ __swi_end(0x149, DrwObj_InitText, (drwobj, rect, flags, text, font, text_flags))
  * @param img		pointer to the image
  * */
 __swi_begin(0x151)
-void DrwObj_InitImage(DRWOBJ *drwobj, RECT *rect, int flags, IMGHDR *img)
+void DrwObj_InitImage(DRWOBJ *drwobj, const RECT *rect, int flags, const IMGHDR *img)
 __swi_end(0x151, DrwObj_InitImage, (drwobj, rect, flags, img));
 
 /**
@@ -1118,7 +1132,7 @@ __swi_end(0x151, DrwObj_InitImage, (drwobj, rect, flags, img));
  * @param offset_x, offset_y	tile offset in image
  * */
 __swi_begin(0x201)
-void DrwObj_InitTiledImage(DRWOBJ *drwobj, RECT *rect, int flags, IMGHDR *img, int offset_x, int offset_y)
+void DrwObj_InitTiledImage(DRWOBJ *drwobj, const RECT *rect, int flags, const IMGHDR *img, int offset_x, int offset_y)
 __swi_end(0x201, DrwObj_InitTiledImage, (drwobj, rect, flags, img, offset_x, offset_y));
 
 /**
@@ -1130,7 +1144,7 @@ __swi_end(0x201, DrwObj_InitTiledImage, (drwobj, rect, flags, img, offset_x, off
  * @param offset_x, offset_y	tile offset in image
  * */
 __swi_begin(0x386)
-void DrwObj_InitTiledImageEx(DRWOBJ *drwobj, RECT *rect, int flags, EIMGHDR *img, int offset_x, int offset_y)
+void DrwObj_InitTiledImageEx(DRWOBJ *drwobj, const RECT *rect, int flags, const EIMGHDR *img, int offset_x, int offset_y)
 __swi_end(0x386, DrwObj_InitTiledImageEx, (drwobj, rect, flags, img, offset_x, offset_y));
 
 /**
@@ -1206,21 +1220,37 @@ __swi_end(0x3A9, GUI_StartTimerProc, (gui, id, timeout, callback));
  * */
 
 /**
- * Set LCDLAYER buffer depth.
- * @param layer		pointer to the #LCDLAYER
- * @param depth		buffer depth
- * */
-__swi_begin(0x389)
-void LCDLAYER_SetBufferDepth(LCDLAYER *layer, char depth)
-__swi_end(0x389, LCDLAYER_SetBufferDepth, (layer, depth));
-
-/**
  * Get an LCD layer which is associated with the current CEPID.
  * @return pointer to the #LCDLAYER
  * */
 __swi_begin(0x387)
-LCDLAYER *LCDLAYER_GetCurrent()
-__swi_end(0x387, LCDLAYER_GetCurrent, ());
+LCDLAYER *LCD_GetCurrentLayer()
+__swi_end(0x387, LCD_GetCurrentLayer, ());
+
+/**
+ * Limit drawing region on current LCDLAYER (selected by current CEPID).
+ * @param x, y, x2, y2	drawing region
+ * */
+__swi_begin(0x3A4)
+void LCD_SetDrawingRegion(int x, int y, int x2, int y2)
+__swi_end(0x3A4, LCD_SetDrawingRegion, (x, y, x2, y2));
+
+/**
+ * Set LCDLAYER buffer depth on current LCDLAYER (selected by current CEPID).
+ * @param depth		buffer depth, see #LcdLayerDepth
+ * */
+__swi_begin(0x388)
+void LCD_SetBufferDepth(char depth)
+__swi_end(0x388, LCD_SetBufferDepth, (depth));
+
+/**
+ * Set LCDLAYER buffer depth.
+ * @param layer		pointer to the #LCDLAYER
+ * @param depth		buffer depth, see #LcdLayerDepth
+ * */
+__swi_begin(0x389)
+void LCDLAYER_SetBufferDepth(LCDLAYER *layer, char depth)
+__swi_end(0x389, LCDLAYER_SetBufferDepth, (layer, depth));
 
 /**
  * Request redrawing of the given LCDLAYER (delayed).
@@ -1239,22 +1269,6 @@ void LCDLAYER_Flush(LCDLAYER *layer)
 __swi_end(0x07A, LCDLAYER_Flush, (layer));
 
 /**
- * Limit drawing region on current LCDLAYER (selected by current CEPID).
- * @param x, y, x2, y2	drawing region	
- * */
-__swi_begin(0x3A4)
-void LCDLAYER_Current_SetClipRegion(int x, int y, int x2, int y2)
-__swi_end(0x3A4, LCDLAYER_Current_SetClipRegion, (x, y, x2, y2));
-
-/**
- * Set LCDLAYER buffer depth on current LCDLAYER (selected by current CEPID).
- * @param depth		buffer depth
- * */
-__swi_begin(0x388)
-void LCDLAYER_Current_SetBufferDepth(char depth)
-__swi_end(0x388, LCDLAYER_Current_SetBufferDepth, (depth));
-
-/**
  * Push #DRWOBJ to the given LCDLAYER (with redraw!)
  * @param drwobj	source #DRWOBJ
  * @param layer		destination #LCDLAYER
@@ -1265,11 +1279,17 @@ __swi_end(0x079, DrawObject2Layer, (layer, drwobj));
 
 /**
  * Push #DRWOBJ to the given LCDLAYER (without redraw!)
+ *
+ * ```
+ * while (PushDRWOBJOnLAYER(drwobj, layer) != 0);
+ * ```
+ *
  * @param drwobj	source #DRWOBJ
  * @param layer		destination #LCDLAYER
+ * @return zero if success, not zero if need restart
  * */
 __swi_begin(0x383)
-void PushDRWOBJOnLAYER(DRWOBJ *drwobj, LCDLAYER *layer)
+int PushDRWOBJOnLAYER(DRWOBJ *drwobj, LCDLAYER *layer)
 __swi_end(0x383, PushDRWOBJOnLAYER, (drwobj, layer));
 
 /**
@@ -1332,7 +1352,7 @@ __swi_end(0x204, drawArc, (x1, y1, x2, y2, start_angle, end_start, flags, pen, b
  * @deprecated Use #DrwObj_InitImage
  * */
 __swi_begin(0x151)
-void SetPropTo_Obj5(DRWOBJ *drwobj, RECT *rect, int flags, IMGHDR *img)
+void SetPropTo_Obj5(DRWOBJ *drwobj, const RECT *rect, int flags, const IMGHDR *img)
 __swi_end(0x151, SetPropTo_Obj5, (drwobj, rect, flags, img));
 
 /**
@@ -1340,7 +1360,7 @@ __swi_end(0x151, SetPropTo_Obj5, (drwobj, rect, flags, img));
  * @deprecated Use #DrwObj_InitText
  * */
 __swi_begin(0x149)
-void SetPropTo_Obj1(DRWOBJ *drwobj, RECT *rect, int flags, WSHDR *text, int font, int text_flags)
+void SetPropTo_Obj1(DRWOBJ *drwobj, const RECT *rect, int flags, const WSHDR *text, int font, int text_flags)
 __swi_end(0x149, SetPropTo_Obj1, (drwobj, rect, flags, text, font, text_flags));
 
 /**
@@ -1348,7 +1368,7 @@ __swi_end(0x149, SetPropTo_Obj1, (drwobj, rect, flags, text, font, text_flags));
  * @deprecated Use #DrwObj_InitTiledImage
  * */
 __swi_begin(0x201)
-void SetProp2ImageOrCanvas(DRWOBJ *drwobj, RECT *rect, int flags, IMGHDR *img, int offset_x, int offset_y)
+void SetProp2ImageOrCanvas(DRWOBJ *drwobj, const RECT *rect, int flags, const IMGHDR *img, int offset_x, int offset_y)
 __swi_end(0x201, SetProp2ImageOrCanvas, (drwobj, rect, flags, img, offset_x, offset_y));
 
 /**
@@ -1356,7 +1376,7 @@ __swi_end(0x201, SetProp2ImageOrCanvas, (drwobj, rect, flags, img, offset_x, off
  * @deprecated Use #DrwObj_InitTiledImageEx
  * */
 __swi_begin(0x386)
-void SetPropTo_obj0x17(DRWOBJ *drwobj, RECT *rect, int flags, EIMGHDR *img, int offset_x, int offset_y)
+void SetPropTo_obj0x17(DRWOBJ *drwobj, const RECT *rect, int flags, const EIMGHDR *img, int offset_x, int offset_y)
 __swi_end(0x386, SetPropTo_obj0x17, (drwobj, rect, flags, img, offset_x, offset_y));
 
 /**
@@ -1364,7 +1384,7 @@ __swi_end(0x386, SetPropTo_obj0x17, (drwobj, rect, flags, img, offset_x, offset_
  * @deprecated Use #DrwObj_InitRectEx
  * */
 __swi_begin(0x205)
-void SetProp2Square_v1(DRWOBJ *drwobj, RECT *rect, int flags, int fill_type, int fill_pattern)
+void SetProp2Square_v1(DRWOBJ *drwobj, const RECT *rect, int flags, int fill_type, int fill_pattern)
 __swi_end(0x205, SetProp2Square_v1, (drwobj, rect, flags, fill_type, fill_pattern));
 
 /**

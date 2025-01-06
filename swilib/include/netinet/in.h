@@ -1,4 +1,4 @@
-#ifdef __linux__
+#ifdef SWILIB_LINUX_SIMULATOR
 #include_next <netinet/in.h>
 #else
 #ifndef _SYS_SOCKET_H_
@@ -13,4 +13,4 @@
 #include <swilib.h>
 
 #endif // _SYS_SOCKET_H_
-#endif // __linux__
+#endif // SWILIB_LINUX_SIMULATOR

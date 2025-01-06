@@ -28,57 +28,57 @@
 #define __IN_SWILIB__
 
 /* Swilib modules */
-#include "swilib/base.h"
-#include "swilib/libc.h"
-#include "swilib/wstring.h"
-#include "swilib/date.h"
-#include "swilib/gbs.h"
-#include "swilib/csm.h"
-#include "swilib/idle.h"
+#include <swilib/base.h>
+#include <swilib/libc.h>
+#include <swilib/wstring.h>
+#include <swilib/date.h>
+#include <swilib/gbs.h>
+#include <swilib/csm.h>
+#include <swilib/idle.h>
 
 #ifdef SWILIB_INCLUDE_ALL
-#include "swilib/nucleus.h"
+#include <swilib/nucleus.h>
 #endif
 
-#include "swilib/image.h"
-#include "swilib/gui.h"
-#include "swilib/ui.h"
-#include "swilib/i2c.h"
+#include <swilib/image.h>
+#include <swilib/gui.h>
+#include <swilib/ui.h>
+#include <swilib/i2c.h>
 
 #ifdef SWILIB_LIBPNG
-#include "swilib/png.h"
+#include <swilib/png.h>
 #endif
 
 #ifdef SWILIB_OPENSSL
-#include "swilib/openssl.h"
+#include <swilib/openssl.h>
 #endif
 
-#include "swilib/gprs.h"
-#include "swilib/socket.h"
-#include "swilib/info.h"
-#include "swilib/eeprom.h"
-#include "swilib/file.h"
-#include "swilib/explorer.h"
-#include "swilib/sound.h"
-#include "swilib/player.h"
-#include "swilib/obs.h"
-#include "swilib/settings.h"
-#include "swilib/system.h"
-#include "swilib/telephony.h"
-#include "swilib/addressbook.h"
-#include "swilib/java.h"
-#include "swilib/misc.h"
-#include "swilib/utils.h"
+#include <swilib/gprs.h>
+#include <swilib/socket.h>
+#include <swilib/info.h>
+#include <swilib/eeprom.h>
+#include <swilib/file.h>
+#include <swilib/explorer.h>
+#include <swilib/sound.h>
+#include <swilib/player.h>
+#include <swilib/obs.h>
+#include <swilib/settings.h>
+#include <swilib/system.h>
+#include <swilib/telephony.h>
+#include <swilib/addressbook.h>
+#include <swilib/java.h>
+#include <swilib/misc.h>
+#include <swilib/utils.h>
 
 #ifdef SWILIB_ZLIB
-#include "swilib/zlib.h"
+#include <swilib/zlib.h>
 #endif
 
-#include "swilib/const.h"
+#include <swilib/const.h>
 
 #ifdef SWILIB_INCLUDE_ALL
-#include "swilib/patch.h"
-#include "swilib/legacy.h"
+#include <swilib/patch.h>
+#include <swilib/legacy.h>
 #endif
 
 #undef __IN_SWILIB__

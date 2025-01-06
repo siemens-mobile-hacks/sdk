@@ -4,46 +4,6 @@
 #include "base.h"
 #endif
 
-#ifdef __linux__
-#define in_port_t		bsd_in_port_t
-#define sa_family_t		bsd_sa_family_t
-#define in_addr_t		bsd_in_addr_t
-#define socklen_t		bsd_socklen_t
-#define sockaddr		bsd_sockaddr
-#define sockaddr_in		bsd_sockaddr_in
-#define hostent			bsd_hostent
-
-#define IPPROTO_IP		BSD_IPPROTO_IP
-#define IPPROTO_TCP		BSD_IPPROTO_TCP
-#define IPPROTO_UDP		BSD_IPPROTO_UDP
-#define IPPROTO_MAX		BSD_IPPROTO_MAX
-
-#define SOCK_DGRAM		BSD_SOCK_DGRAM
-#define SOCK_STREAM		BSD_SOCK_STREAM
-
-#define AF_UNSPEC		BSD_AF_UNSPEC
-#define AF_INET			BSD_AF_INET
-#define AF_MAX			BSD_AF_MAX
-
-#define SHUT_RD			BSD_SHUT_RD
-#define SHUT_WR			BSD_SHUT_WR
-#define SHUT_RDWR		BSD_SHUT_RDWR
-
-#define socket					bsd_socket
-#define connect					bsd_connect
-#define bind					bsd_bind
-#define closesocket				bsd_closesocket
-#define send					bsd_send
-#define recv					bsd_recv
-#define shutdown				bsd_shutdown
-#define htons					bsd_htons
-#define htonl					bsd_htonl
-#define socklasterr				bsd_socklasterr
-#define available0				bsd_available0
-#define async_gethostbyname		bsd_async_gethostbyname
-#define str2ip					bsd_str2ip
-#endif
-
 __swilib_begin
 
 /**
@@ -64,7 +24,7 @@ typedef struct sockaddr_in		SOCKADDR_IN;	/**< Windows-style */
 typedef struct sockaddr			SOCKADDR;		/**< Windows-style */
 typedef struct hostent			HOSTENT;		/**< Windows-style */
 
-#ifndef __linux__
+#ifndef SWILIB_LINUX_SIMULATOR
 /**
  * Definitions of bits in internet address integers.
  * On subnets, the decomposition of addresses to host and net parts
@@ -319,46 +279,6 @@ __swi_end(0x817C, socklasterr, ());
 __swi_begin(0x176)
 int closesocket(int socket)
 __swi_end(0x176, closesocket, (socket));
-
-#ifdef __linux__
-#undef in_port_t
-#undef sa_family_t
-#undef in_addr_t
-#undef socklen_t
-#undef sockaddr
-#undef sockaddr_in
-#undef hostent
-
-#undef IPPROTO_IP
-#undef IPPROTO_TCP
-#undef IPPROTO_UDP
-#undef IPPROTO_MAX
-
-#undef SOCK_DGRAM
-#undef SOCK_STREAM
-
-#undef AF_UNSPEC
-#undef AF_INET
-#undef AF_MAX
-
-#undef SHUT_RD
-#undef SHUT_WR
-#undef SHUT_RDWR
-
-#undef socket
-#undef connect
-#undef bind
-#undef closesocket
-#undef send
-#undef recv
-#undef shutdown
-#undef htons
-#undef htonl
-#undef socklasterr
-#undef available0
-#undef async_gethostbyname
-#undef str2ip
-#endif
 
 __swilib_end
 
