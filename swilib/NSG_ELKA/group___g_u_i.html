@@ -739,11 +739,13 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:gae34129fa1e42815f8d2088aa003de6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a> buffer depth.     <br /></td></tr>
 <tr class="separator:gae34129fa1e42815f8d2088aa003de6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0aa179d07c5d0a48e6fbb1b356ff5d29" id="r_ga0aa179d07c5d0a48e6fbb1b356ff5d29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0aa179d07c5d0a48e6fbb1b356ff5d29">GetLCDLAYERByCurCepID</a> ()</td></tr>
+<tr class="memdesc:ga0aa179d07c5d0a48e6fbb1b356ff5d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an LCD layer which is associated with the current CEPID.     <br /></td></tr>
 <tr class="separator:ga0aa179d07c5d0a48e6fbb1b356ff5d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadae9723a37daba06ea6327e4e89e70ad" id="r_gadae9723a37daba06ea6327e4e89e70ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadae9723a37daba06ea6327e4e89e70ad">LCDRedrawLAYER</a> (<a class="el" href="#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> *layer)</td></tr>
 <tr class="memdesc:gadae9723a37daba06ea6327e4e89e70ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request redrawing of the given <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a> (delayed).     <br /></td></tr>
 <tr class="separator:gadae9723a37daba06ea6327e4e89e70ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gada7c9d2506c024fc56713c13a7c1145b" id="r_gada7c9d2506c024fc56713c13a7c1145b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gada7c9d2506c024fc56713c13a7c1145b">SetDrawingCanvas</a> (int x, int y, int x2, int y2)</td></tr>
+<tr class="memdesc:gada7c9d2506c024fc56713c13a7c1145b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit drawing region on current <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a> (selected by current CEPID).     <br /></td></tr>
 <tr class="separator:gada7c9d2506c024fc56713c13a7c1145b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -4632,8 +4634,9 @@ Call only from MMI! (not SUBPROC) </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p></p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>use #LCDLAYER_GetCurrent </dd></dl>
+<p>Get an LCD layer which is associated with the current CEPID.    </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a>    </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>use <a class="el" href="#ga853990e28b97d61c388ddbe414163a55" title="Get an LCD layer which is associated with the current CEPID.">LCD_GetCurrentLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -4692,8 +4695,14 @@ Call only from MMI! (not SUBPROC) </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p></p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>use #LCDLAYER_Current_SetClipRegion </dd></dl>
+<p>Limit drawing region on current <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a> (selected by current CEPID).    </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y,x2,y2</td><td>drawing region    </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>use <a class="el" href="#gabc1a1517feb23300260de729b1b7f8f5" title="Limit drawing region on current LCDLAYER (selected by current CEPID).">LCD_SetDrawingRegion</a> </dd></dl>
 
 </div>
 </div>
