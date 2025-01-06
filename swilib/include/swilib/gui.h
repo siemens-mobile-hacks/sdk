@@ -1420,8 +1420,8 @@ void SetDepthBufferOnLCDLAYER(LCDLAYER *layer, char depth)
 __swi_end(0x389, SetDepthBufferOnLCDLAYER, (layer, depth));
 
 /**
- * @copydoc LCDLAYER_GetCurrent
- * @deprecated use #LCDLAYER_GetCurrent
+ * @copydoc LCD_GetCurrentLayer
+ * @deprecated use #LCD_GetCurrentLayer
  * */
 __swi_begin(0x387)
 LCDLAYER *GetLCDLAYERByCurCepID()
@@ -1436,8 +1436,8 @@ void LCDRedrawLAYER(LCDLAYER *layer)
 __swi_end(0x384, LCDRedrawLAYER, (layer));
 
 /**
- * @copydoc LCDLAYER_Current_SetClipRegion
- * @deprecated use #LCDLAYER_Current_SetClipRegion
+ * @copydoc LCD_SetDrawingRegion
+ * @deprecated use #LCD_SetDrawingRegion
  * */
 __swi_begin(0x3A4)
 void SetDrawingCanvas(int x, int y, int x2, int y2)
