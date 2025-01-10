@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"pem_8h.html#structpem__ctx__st_8proc__type":[1,0,0,0,0,27,3],
+"pem_8h.html#structpem__recip__st":[1,0,0,0,0,27,1],
 "pem_8h_source.html":[1,0,0,0,0,27],
 "pkcs12_8h.html":[1,0,0,0,0,29],
 "pkcs12_8h.html#a009b87be8870464f2327050e78531413":[1,0,0,0,0,29,83],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "pkcs7_8h.html#a804e299f1c28c2669bd7508a1ee11824":[1,0,0,0,0,30,115],
 "pkcs7_8h.html#a82c3ef996be7eade3430df5956698273":[1,0,0,0,0,30,214],
 "pkcs7_8h.html#a83d84f73f2c88f0fe63b5ce1a821aae7":[1,0,0,0,0,30,190],
-"pkcs7_8h.html#a852a7427b8e37e3d1fbddc4497ec275d":[1,0,0,0,0,30,110],
-"pkcs7_8h.html#a85d4c674f3a6f03715836b3aa896ad97":[1,0,0,0,0,30,153],
-"pkcs7_8h.html#a86bb4cc640b1bec36e1a5d082390a06e":[1,0,0,0,0,30,111]
+"pkcs7_8h.html#a852a7427b8e37e3d1fbddc4497ec275d":[1,0,0,0,0,30,110]
 };

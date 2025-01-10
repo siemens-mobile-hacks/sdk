@@ -14,7 +14,9 @@ var group___explorer =
     ] ],
     [ "NativeExplorerMode", "group___explorer.html#ga5b571a48c9424f779ceaa1b4f458bea6", [
       [ "NATIVE_EXPLORER_MODE_DEFAULT", "group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6aef0b04c4e141d975d5303a64ab923609", null ],
-      [ "NATIVE_EXPLORER_MODE_SELECT", "group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6a2cc36bcc2d9c866d3004768e1d939035", null ]
+      [ "NATIVE_EXPLORER_MODE_SELECT", "group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6a2cc36bcc2d9c866d3004768e1d939035", null ],
+      [ "NATIVE_EXPLORER_MODE_COPY", "group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6a89b8e9dacbd86426b2bd1cbbe1612cfe", null ],
+      [ "NATIVE_EXPLORER_MODE_MOVE", "group___explorer.html#gga5b571a48c9424f779ceaa1b4f458bea6afeeea33e13e1d683ce33174c3cc7a912", null ]
     ] ],
     [ "RegExplorerExt", "group___explorer.html#gadc932a402cec6b4ddf1c9f16f7400689", null ],
     [ "UnRegExplorerExt", "group___explorer.html#ga50ba95ccc45f700e68483aa82b56c15c", null ],
