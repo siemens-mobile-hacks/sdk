@@ -36,8 +36,10 @@ typedef struct REGEXPLEXT_ARM_NEW TREGEXPLEXT;
  * Mode of the NativeExplorer.
  * */
 enum NativeExplorerMode {
-	NATIVE_EXPLORER_MODE_DEFAULT,	/**< Explore files, default mode */
-	NATIVE_EXPLORER_MODE_SELECT,	/**< Select file */
+	NATIVE_EXPLORER_MODE_DEFAULT	= 0x00,	/**< Explore files, default mode */
+	NATIVE_EXPLORER_MODE_SELECT		= 0x01,	/**< Select file */
+	NATIVE_EXPLORER_MODE_COPY		= 0x09,	/**< Copy file mode */
+	NATIVE_EXPLORER_MODE_MOVE		= 0x0B, /**< Move file mode */
 };
 
 /**
