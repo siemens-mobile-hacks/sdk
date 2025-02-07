@@ -80,14 +80,6 @@ void CloseScreensaver()
 __swi_end(0x09C, CloseScreensaver, ());
 
 /**
- * Open screensaver code protection.
- * @return CSM_ID
- * */
-__swi_begin(0x3D0)
-int ShowScreenSaverCodeProtection()
-__swi_end(0x3D0, ShowScreenSaverCodeProtection, ());
-
-/**
  * Get a type of the current screensaver.
  * @return #ScreenSaverType
  * */

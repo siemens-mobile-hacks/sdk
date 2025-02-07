@@ -183,6 +183,13 @@ __swi_begin(0x0B9)
 void KbdUnlock()
 __swi_end(0x0B9, KbdUnlock, ());
 
+/**
+ * Restart screensaver and keyboard lock timers.
+ * */
+__swi_begin(0x3D0)
+void RestartLockTimers()
+__swi_end(0x3D0, RestartLockTimers, ());
+
 /** @} */
 
 /**
