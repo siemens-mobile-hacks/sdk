@@ -27,6 +27,7 @@ var group___m_i_s_c =
     [ "RamIsLocked", "group___m_i_s_c.html#ga227fbade826f16f032f973e08eaf9973", null ],
     [ "KbdLock", "group___m_i_s_c.html#gadc55070fa3caa6804828580aa601f5b7", null ],
     [ "KbdUnlock", "group___m_i_s_c.html#gadd52fd2b4c97c441cde71556a1f6c33d", null ],
+    [ "RestartLockTimers", "group___m_i_s_c.html#ga96e9a125040a6aabb6278ca4651028dc", null ],
     [ "GetIlluminationDataTable", "group___m_i_s_c.html#ga1e21c7fe1be4e05c74ea1fd8a1b146e6", null ],
     [ "RamScreenBrightness", "group___m_i_s_c.html#gafa730abc04e34b3c7a5c03768299392d", null ],
     [ "SetIllumination", "group___m_i_s_c.html#ga821714070a71235a7366cc14a8718f73", null ],
