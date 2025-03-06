@@ -398,7 +398,7 @@ __swi_end(0x2E3, fexists, (path));
  * @param path		path to the file or directory.
  * @param attr 		pointer where the attributes will be written
  * @param[out] err	error code
- * @return 0 or error
+ * @return 1: success, 0: error
  * */
 __swi_begin(0x012)
 int GetFileAttrib(const char *path, uint8_t *attr, uint32_t *err)
