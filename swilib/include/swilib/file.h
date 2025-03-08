@@ -328,6 +328,13 @@ int sys_stat(const char *path, FSTATS *stat, uint32_t *err)
 __swi_end(0x084, sys_stat, (path, stat, err));
 
 /**
+ * @copydoc sys_stat
+ * */
+__swi_begin(0x3BB)
+int sys_stat_ws(const WSHDR *path, FSTATS *stat, uint32_t *err)
+__swi_end(0x3BB, sys_stat_ws, (path, stat, err));
+
+/**
  * Get information about the file or directory by fd.
  * @param fd		file descriptor
  * @param stat 		pointer where the information will be written (#FSTATS)
@@ -405,6 +412,13 @@ int GetFileAttrib(const char *path, uint8_t *attr, uint32_t *err)
 __swi_end(0x012, GetFileAttrib, (path, attr, err));
 
 /**
+ * @copydoc GetFileAttrib
+ * */
+__swi_begin(0x3BD)
+int GetFileAttrib_ws(const WSHDR *path, uint8_t *attr, uint32_t *err)
+__swi_end(0x3BD, GetFileAttrib_ws, (path, attr, err));
+
+/**
  * Set attributes for the file or directory.
  * @param path		path to the file or directory.
  * @param attr		bitmask: #FileAttributes
@@ -414,6 +428,13 @@ __swi_end(0x012, GetFileAttrib, (path, attr, err));
 __swi_begin(0x013)
 int SetFileAttrib(const char *path, uint8_t attr, uint32_t *err)
 __swi_end(0x013, SetFileAttrib, (path, attr, err));
+
+/**
+ * @copydoc SetFileAttrib
+ * */
+__swi_begin(0x3BE)
+int SetFileAttrib_ws(const WSHDR *path, uint8_t attr, uint32_t *err)
+__swi_end(0x3BE, SetFileAttrib_ws, (path, attr, err));
 
 /**
  * Get extended file properties.
