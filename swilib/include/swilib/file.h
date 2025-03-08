@@ -87,9 +87,8 @@ struct FSTATS {
 	char unk3;
 	char unk4;
 	uint32_t size;	/*!< Size in bytes */
-	char unk5[28];
+	char unk5[16];
 	int file_attr;	/*!< File attribute: #FileAttributes */
-	int unk;
 };
 
 enum FilePropTypeID {
