@@ -24,6 +24,8 @@ struct PNGLIST {
 	void *next;
 	char *pngname;
 	IMGHDR *img;
+	uint32_t hash;
+	uint32_t pic;
 };
 
 struct DYNPNGICONLIST {
@@ -36,6 +38,7 @@ struct PNGTOP_DESC {
 	PNGLIST *pltop;
 	char *bitmap;
 	DYNPNGICONLIST *dyn_pltop;
+	DYNPNGICONLIST *dynamic_pit;
 };
 
 /**
