@@ -38,7 +38,7 @@ struct PNGTOP_DESC {
 	PNGLIST *pltop;
 	char *bitmap;
 	DYNPNGICONLIST *dyn_pltop;
-	DYNPNGICONLIST *dynamic_pit;
+	DYNPNGICONLIST *dyn_pltop2;
 };
 
 /**
@@ -234,15 +234,23 @@ __swi_end(0x063, MMI_CanvasBuffer_FlushV, (canvas_id));
  * */
 
 /**
+ * Clear the in‑memory PIT image cache.
+ * @builtin ELKA, NSG, X75, SG
+ */
+__swi_begin(0x2FB)
+void PIT_ClearCache(void)
+__swi_end(0x2FB, PIT_ClearCache, ());
+
+/**
  * Override the default image for a given PIT slot.
  * Replaces the built‑in image at the specified index with a custom one.
  * @builtin ELKA, NSG, X75, SG
  * @param picture	index of the picture in the PIT.
  * @param img		pointer to the new image.
  */
-__swi_begin(0x2FB)
+__swi_begin(0x2FC)
 void PIT_SetImage(uint32_t picture, IMGHDR *img)
-__swi_end(0x2FB, PIT_SetImage, (picture, img));
+__swi_end(0x2FC, PIT_SetImage, (picture, img));
 
 /**
  * Restore the original image for a given PIT slot.
@@ -250,17 +258,9 @@ __swi_end(0x2FB, PIT_SetImage, (picture, img));
  * @builtin ELKA, NSG, X75, SG
  * @param picture	index of the picture in the PIT.
  */
-__swi_begin(0x2FC)
-void PIT_FreeImage(uint32_t picture)
-__swi_end(0x2FC, PIT_FreeImage, (picture));
-
-/**
- * Clear the in‑memory PIT image cache.
- * @builtin ELKA, NSG, X75, SG
- */
 __swi_begin(0x2FD)
-void PIT_ClearCache(void)
-__swi_end(0x2FD, PIT_ClearCache, ());
+void PIT_FreeImage(uint32_t picture)
+__swi_end(0x2FD, PIT_FreeImage, (picture));
 
 /** @} */
 
