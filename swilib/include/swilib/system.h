@@ -133,6 +133,17 @@ __swi_end(0x191, MutexDestroy, (mtx));
  * @{
  * */
 
+
+/**
+ * Get ELFLoader version.
+ * @return 0x030201 -> 3.2.1
+ * @builtin ELKA, NSG, X75, SG
+ * */
+__swi_begin(0x82FA)
+uint32_t GetLoaderVersion()
+__swi_end(0x82FA, GetLoaderVersion, ());
+
+
 /**
  * Get function library address.
  * @return address in memory
