@@ -65,5 +65,5 @@ var searchData=
   ['duration_5fwav_62',['duration_wav',['../group___file.html#af474f6723a9ec8abb58d2c3586d72696',1,'FILE_PROP']]],
   ['duration_5fwav_5fws_63',['duration_wav_ws',['../group___file.html#adaf76f9ef88f552eee34f4ace7bcf19e',1,'FILE_PROP']]],
   ['dyn_5fpltop_64',['dyn_pltop',['../group___image.html#a2d7100ad3c208c65286041a55a42a6f9',1,'PNGTOP_DESC']]],
-  ['dynamic_5fpit_65',['dynamic_pit',['../group___image.html#a0c0b917055bc0ab3db5c4b7114906e80',1,'PNGTOP_DESC']]]
+  ['dyn_5fpltop2_65',['dyn_pltop2',['../group___image.html#ae9be0f05e81796e18ecd6d0bba002eae',1,'PNGTOP_DESC']]]
 ];
