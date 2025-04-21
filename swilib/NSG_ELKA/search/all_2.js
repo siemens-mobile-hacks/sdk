@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['b_0',['b',['../lhash_8h.html#a270d10bf31f3f917e12d700b27960458',1,'lhash_st']]],
-  ['b_1',['B',['../md5_8h.html#ab84c8a8b85066a54ccfd2c338bf70553',1,'MD5state_st::B'],['../ripemd_8h.html#aab8d099db79f8d8fbdf5035bbb24538c',1,'RIPEMD160state_st::B']]],
+  ['b_0',['B',['../md5_8h.html#ab84c8a8b85066a54ccfd2c338bf70553',1,'MD5state_st::B'],['../ripemd_8h.html#aab8d099db79f8d8fbdf5035bbb24538c',1,'RIPEMD160state_st::B']]],
+  ['b_1',['b',['../lhash_8h.html#a270d10bf31f3f917e12d700b27960458',1,'lhash_st']]],
   ['b_5fasn1_5fbit_5fstring_2',['B_ASN1_BIT_STRING',['../asn1_8h.html#a962adf17b1b7859fbc0221d75bb975c8',1,'asn1.h']]],
   ['b_5fasn1_5fbmpstring_3',['B_ASN1_BMPSTRING',['../asn1_8h.html#a9a64724eaa04dd8438871484ab1e2297',1,'asn1.h']]],
   ['b_5fasn1_5fgeneralstring_4',['B_ASN1_GENERALSTRING',['../asn1_8h.html#a43cbb87ee574da4b0b61b93e2e00dbe8',1,'asn1.h']]],

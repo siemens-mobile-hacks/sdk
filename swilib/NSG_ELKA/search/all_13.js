@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../dsa_8h.html#ae7c55f852d6ca0b46b5d5c99dcfb8c2d',1,'DSA_SIG_st']]],
-  ['s_1',['S',['../blowfish_8h.html#a87109bdab22085b5ab497a17630a710e',1,'bf_key_st']]],
+  ['s_0',['S',['../blowfish_8h.html#a87109bdab22085b5ab497a17630a710e',1,'bf_key_st']]],
+  ['s_1',['s',['../dsa_8h.html#ae7c55f852d6ca0b46b5d5c99dcfb8c2d',1,'DSA_SIG_st']]],
   ['s2_2',['s2',['../ssl_8h.html#a19bb259618f022fae28970b385507815',1,'ssl_st']]],
   ['s2i_3',['s2i',['../x509v3_8h.html#afe843df7c11d126f43aa7ed05538d572',1,'v3_ext_method']]],
   ['s2i_5fasn1_5finteger_4',['s2i_ASN1_INTEGER',['../x509v3_8h.html#a5821f43eced5afe13eae2f507a213a70',1,'x509v3.h']]],
