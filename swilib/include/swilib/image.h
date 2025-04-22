@@ -249,7 +249,7 @@ __swi_end(0x2FB, PIT_ClearCache, ());
  * @param img		pointer to the new image.
  */
 __swi_begin(0x2FC)
-void PIT_SetImage(uint32_t picture, IMGHDR *img)
+void PIT_SetImage(uint32_t picture, const IMGHDR *img)
 __swi_end(0x2FC, PIT_SetImage, (picture, img));
 
 /**
@@ -259,8 +259,8 @@ __swi_end(0x2FC, PIT_SetImage, (picture, img));
  * @param picture	index of the picture in the PIT.
  */
 __swi_begin(0x2FD)
-void PIT_FreeImage(uint32_t picture)
-__swi_end(0x2FD, PIT_FreeImage, (picture));
+void PIT_ResetImage(uint32_t picture)
+__swi_end(0x2FD, PIT_ResetImage, (picture));
 
 /** @} */
 
