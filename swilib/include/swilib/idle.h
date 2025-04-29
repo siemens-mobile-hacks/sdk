@@ -27,14 +27,6 @@ struct SS_RAM {
 	int keylock_gui_id;		/**< GUI ID of the keylock */
 };
 
-enum ScreenSaverType {
-	SCREENSAVER_PICTURE			= 0x00,
-	SCREENSAVER_ANALOGUE_CLOCK	= 0x01,
-	SCREENSAVER_ENERGY_SAVER	= 0x04,
-	SCREENSAVER_DIGITAL_CLOCK	= 0x05,
-	SCREENSAVER_OFF				= 0xFF,
-};
-
 /**
  * Go to the IDLE screen.
  * */
@@ -78,14 +70,6 @@ __swi_end(0x020, DrawScreenSaver, ());
 __swi_begin(0x09C)
 void CloseScreensaver()
 __swi_end(0x09C, CloseScreensaver, ());
-
-/**
- * Get a type of the current screensaver.
- * @return #ScreenSaverType
- * */
-__swi_begin(0x3D2)
-int GetScreenSaverType()
-__swi_end(0x3D2, GetScreenSaverType, ());
 
 /**
  * Get screensaver CSM.
