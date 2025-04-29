@@ -100,7 +100,6 @@ $(function(){initNavTree('group___i_d_l_e.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">IDLE</div></div>
 </div><!--header-->
@@ -119,22 +118,6 @@ Data Structures</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:gacc6136f133a64861a32011909cb5708a" id="r_gacc6136f133a64861a32011909cb5708a"><td class="memItemLeft" align="right" valign="top">typedef struct SS_RAM&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc6136f133a64861a32011909cb5708a">SS_RAM</a></td></tr>
 <tr class="separator:gacc6136f133a64861a32011909cb5708a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga2b71afc3089fb5c52a22cb14b7e6e50d" id="r_ga2b71afc3089fb5c52a22cb14b7e6e50d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2b71afc3089fb5c52a22cb14b7e6e50d">ScreenSaverType</a> { <br />
-&#160;&#160;<a class="el" href="#gga2b71afc3089fb5c52a22cb14b7e6e50da9e9520f6b638958d4f10c5f409cc521c">SCREENSAVER_PICTURE</a> = 0x00
-, <br />
-&#160;&#160;<a class="el" href="#gga2b71afc3089fb5c52a22cb14b7e6e50daf3043b9cecb9967e2043ee29a0253d44">SCREENSAVER_ANALOGUE_CLOCK</a> = 0x01
-, <br />
-&#160;&#160;<a class="el" href="#gga2b71afc3089fb5c52a22cb14b7e6e50dac4c02623cfb2a71348ad868de100c1b4">SCREENSAVER_ENERGY_SAVER</a> = 0x04
-, <br />
-&#160;&#160;<a class="el" href="#gga2b71afc3089fb5c52a22cb14b7e6e50da4ddd1d419691df13b530bd1e3731356b">SCREENSAVER_DIGITAL_CLOCK</a> = 0x05
-, <br />
-&#160;&#160;<a class="el" href="#gga2b71afc3089fb5c52a22cb14b7e6e50dafe314301198dd367ce4092401ba81fd3">SCREENSAVER_OFF</a> = 0xFF
-<br />
- }</td></tr>
-<tr class="separator:ga2b71afc3089fb5c52a22cb14b7e6e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -156,9 +139,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1b8e20b5a681908cab98d034d133da60" id="r_ga1b8e20b5a681908cab98d034d133da60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b8e20b5a681908cab98d034d133da60">CloseScreensaver</a> ()</td></tr>
 <tr class="memdesc:ga1b8e20b5a681908cab98d034d133da60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close screensaver screen.  <br /></td></tr>
 <tr class="separator:ga1b8e20b5a681908cab98d034d133da60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5cb5df6b5d31e0058a9d1fb43e1eefa5" id="r_ga5cb5df6b5d31e0058a9d1fb43e1eefa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5cb5df6b5d31e0058a9d1fb43e1eefa5">GetScreenSaverType</a> ()</td></tr>
-<tr class="memdesc:ga5cb5df6b5d31e0058a9d1fb43e1eefa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a type of the current screensaver.  <br /></td></tr>
-<tr class="separator:ga5cb5df6b5d31e0058a9d1fb43e1eefa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga16d40b171eca372cc1df31974454a524" id="r_ga16d40b171eca372cc1df31974454a524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_s___r_a_m">SS_RAM</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16d40b171eca372cc1df31974454a524">GetScreenSaverRAM</a> (void)</td></tr>
 <tr class="memdesc:ga16d40b171eca372cc1df31974454a524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get screensaver CSM.  <br /></td></tr>
 <tr class="separator:ga16d40b171eca372cc1df31974454a524"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,30 +178,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="idle_8h_source.html#l00018">18</a> of file <a class="el" href="idle_8h_source.html">idle.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga2b71afc3089fb5c52a22cb14b7e6e50d" name="ga2b71afc3089fb5c52a22cb14b7e6e50d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b71afc3089fb5c52a22cb14b7e6e50d">&#9670;&#160;</a></span>ScreenSaverType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#ga2b71afc3089fb5c52a22cb14b7e6e50d">ScreenSaverType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga2b71afc3089fb5c52a22cb14b7e6e50da9e9520f6b638958d4f10c5f409cc521c" name="gga2b71afc3089fb5c52a22cb14b7e6e50da9e9520f6b638958d4f10c5f409cc521c"></a>SCREENSAVER_PICTURE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga2b71afc3089fb5c52a22cb14b7e6e50daf3043b9cecb9967e2043ee29a0253d44" name="gga2b71afc3089fb5c52a22cb14b7e6e50daf3043b9cecb9967e2043ee29a0253d44"></a>SCREENSAVER_ANALOGUE_CLOCK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga2b71afc3089fb5c52a22cb14b7e6e50dac4c02623cfb2a71348ad868de100c1b4" name="gga2b71afc3089fb5c52a22cb14b7e6e50dac4c02623cfb2a71348ad868de100c1b4"></a>SCREENSAVER_ENERGY_SAVER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga2b71afc3089fb5c52a22cb14b7e6e50da4ddd1d419691df13b530bd1e3731356b" name="gga2b71afc3089fb5c52a22cb14b7e6e50da4ddd1d419691df13b530bd1e3731356b"></a>SCREENSAVER_DIGITAL_CLOCK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga2b71afc3089fb5c52a22cb14b7e6e50dafe314301198dd367ce4092401ba81fd3" name="gga2b71afc3089fb5c52a22cb14b7e6e50dafe314301198dd367ce4092401ba81fd3"></a>SCREENSAVER_OFF&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="idle_8h_source.html#l00030">30</a> of file <a class="el" href="idle_8h_source.html">idle.h</a>.</p>
 
 </div>
 </div>
@@ -339,26 +295,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close screensaver screen. </p>
-
-</div>
-</div>
-<a id="ga5cb5df6b5d31e0058a9d1fb43e1eefa5" name="ga5cb5df6b5d31e0058a9d1fb43e1eefa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5cb5df6b5d31e0058a9d1fb43e1eefa5">&#9670;&#160;</a></span>GetScreenSaverType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GetScreenSaverType </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get a type of the current screensaver. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="#ga2b71afc3089fb5c52a22cb14b7e6e50d">ScreenSaverType</a> </dd></dl>
 
 </div>
 </div>

@@ -125,6 +125,7 @@ var group___u_i =
     [ "GetDataOfItemByID", "group___u_i.html#gad8fa4f071746bee941128f00b663a13d", null ],
     [ "AddIconToIconBar", "group___u_i.html#ga5641011ca064183ad4c39b1a5e0d2df1", null ],
     [ "RamIconBar", "group___u_i.html#gaf02eef6eeb7edee2e3eaf4be83188bb1", null ],
+    [ "IsIconBarDisabled", "group___u_i.html#gad6caaef9e9006a50055ec7f907b44673", null ],
     [ "DisableIconBar", "group___u_i.html#ga5aa5d69658d5437e2fb0b54b830e9a80", null ],
     [ "ShowMSG", "group___u_i.html#gae2b652167c996bd235043ce17e12e19e", null ],
     [ "MsgBoxError", "group___u_i.html#ga7e83a5e507a29732db71d5c4cfaad177", null ],
