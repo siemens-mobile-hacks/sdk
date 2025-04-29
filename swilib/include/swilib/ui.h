@@ -557,6 +557,14 @@ char *RamIconBar()
 __swi_end(0x8237, RamIconBar, ());
 
 /**
+ * Check state of iconbar (EL71/E71). It can be disabled by #DisableIconBar function.
+ * @return 1 or 0
+ * */
+__swi_begin(0x3D2)
+int IsIconBarDisabled()
+__swi_end(0x3D2, IsIconBarDisabled, ());
+
+/**
  * Enable or disable global iconbar on EL/E71.
  * @param disable		1 for disable, 0 for enable
  * */
