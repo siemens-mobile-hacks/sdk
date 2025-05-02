@@ -608,10 +608,11 @@ var searchData=
   ['msgboxflags_605',['MsgBoxFlags',['../group___u_i.html#ga0726c0db7c874c6a1d55aa2371172f68',1,'ui.h']]],
   ['msgboxokcancel_606',['MsgBoxOkCancel',['../group___u_i.html#ga45a264214eb8357c9bb949c3aa4783f7',1,'ui.h']]],
   ['msgboxyesno_607',['MsgBoxYesNo',['../group___u_i.html#ga2db5f3afeb7ce1f15eebf9a42de8a15b',1,'ui.h']]],
-  ['mutex_608',['MUTEX',['../group___system.html#struct_m_u_t_e_x',1,'MUTEX'],['../group___system.html#ga699769fac077c464e4da2fa6a4a50116',1,'MUTEX:&#160;system.h']]],
-  ['mutexcreate_609',['MutexCreate',['../group___system.html#ga28e02746ae678b884fe21fbb166650e4',1,'system.h']]],
-  ['mutexdestroy_610',['MutexDestroy',['../group___system.html#gae965e24d63a37fd34d5b6f5ea3e28f22',1,'system.h']]],
-  ['mutexlock_611',['MutexLock',['../group___system.html#ga047ed039420da3f311d6bb25953b7f67',1,'system.h']]],
-  ['mutexlockex_612',['MutexLockEx',['../group___system.html#ga75d6e2489d934a2062df34d5295c68c1',1,'system.h']]],
-  ['mutexunlock_613',['MutexUnlock',['../group___system.html#ga65c6e44283ced6dbaea3c40abfecefc3',1,'system.h']]]
+  ['mstoticks_608',['MsToTicks',['../group___system.html#ga688c0bf974ad22cd4d9f2323f891f981',1,'system.h']]],
+  ['mutex_609',['MUTEX',['../group___system.html#struct_m_u_t_e_x',1,'MUTEX'],['../group___system.html#ga699769fac077c464e4da2fa6a4a50116',1,'MUTEX:&#160;system.h']]],
+  ['mutexcreate_610',['MutexCreate',['../group___system.html#ga28e02746ae678b884fe21fbb166650e4',1,'system.h']]],
+  ['mutexdestroy_611',['MutexDestroy',['../group___system.html#gae965e24d63a37fd34d5b6f5ea3e28f22',1,'system.h']]],
+  ['mutexlock_612',['MutexLock',['../group___system.html#ga047ed039420da3f311d6bb25953b7f67',1,'system.h']]],
+  ['mutexlockex_613',['MutexLockEx',['../group___system.html#ga75d6e2489d934a2062df34d5295c68c1',1,'system.h']]],
+  ['mutexunlock_614',['MutexUnlock',['../group___system.html#ga65c6e44283ced6dbaea3c40abfecefc3',1,'system.h']]]
 ];

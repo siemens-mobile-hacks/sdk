@@ -99,6 +99,7 @@ $(function(){initNavTree('system_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">system.h File Reference</div></div>
@@ -113,6 +114,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_m_u_t_e_x" id="r_struct_m_u_t_e_x"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#struct_m_u_t_e_x">MUTEX</a></td></tr>
 <tr class="memdesc:struct_m_u_t_e_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex object.  <a href="group___system.html#struct_m_u_t_e_x">More...</a><br /></td></tr>
 <tr class="separator:struct_m_u_t_e_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga4c4b2c3774f79780ca9df923db9b035f" id="r_ga4c4b2c3774f79780ca9df923db9b035f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga4c4b2c3774f79780ca9df923db9b035f">OS_TICK_PERIOD_US</a>&#160;&#160;&#160;4615</td></tr>
+<tr class="memdesc:ga4c4b2c3774f79780ca9df923db9b035f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of one OS tick in microseconds.  <br /></td></tr>
+<tr class="separator:ga4c4b2c3774f79780ca9df923db9b035f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -130,6 +137,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8efae23a08f4e77290848385bc0bb4c3" id="r_ga8efae23a08f4e77290848385bc0bb4c3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga8efae23a08f4e77290848385bc0bb4c3">GetSessionAge</a> (void)</td></tr>
 <tr class="memdesc:ga8efae23a08f4e77290848385bc0bb4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get phone uptime in the ticks (1 tick=4.615 ms).  <br /></td></tr>
 <tr class="separator:ga8efae23a08f4e77290848385bc0bb4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84aedd6d38b635f732323faca77220f9" id="r_ga84aedd6d38b635f732323faca77220f9"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga84aedd6d38b635f732323faca77220f9">TicksToMs</a> (uint32_t ticks)</td></tr>
+<tr class="memdesc:ga84aedd6d38b635f732323faca77220f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts OS ticks to milliseconds.  <br /></td></tr>
+<tr class="separator:ga84aedd6d38b635f732323faca77220f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8edb0dbe05637b7f6894ecffd44f9b5" id="r_gac8edb0dbe05637b7f6894ecffd44f9b5"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#gac8edb0dbe05637b7f6894ecffd44f9b5">TicksToSec</a> (uint32_t ticks)</td></tr>
+<tr class="memdesc:gac8edb0dbe05637b7f6894ecffd44f9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts OS ticks to seconds.  <br /></td></tr>
+<tr class="separator:gac8edb0dbe05637b7f6894ecffd44f9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga451ce3f9a1c0b7d32647cef6437d5253" id="r_ga451ce3f9a1c0b7d32647cef6437d5253"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga451ce3f9a1c0b7d32647cef6437d5253">TicksToUs</a> (uint32_t ticks)</td></tr>
+<tr class="memdesc:ga451ce3f9a1c0b7d32647cef6437d5253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts OS ticks to microseconds.  <br /></td></tr>
+<tr class="separator:ga451ce3f9a1c0b7d32647cef6437d5253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga688c0bf974ad22cd4d9f2323f891f981" id="r_ga688c0bf974ad22cd4d9f2323f891f981"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga688c0bf974ad22cd4d9f2323f891f981">MsToTicks</a> (uint32_t ms)</td></tr>
+<tr class="memdesc:ga688c0bf974ad22cd4d9f2323f891f981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts milliseconds to OS ticks.  <br /></td></tr>
+<tr class="separator:ga688c0bf974ad22cd4d9f2323f891f981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b25cb38e7c2e1f157b4b3d322019a31" id="r_ga2b25cb38e7c2e1f157b4b3d322019a31"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga2b25cb38e7c2e1f157b4b3d322019a31">SecToTicks</a> (uint32_t sec)</td></tr>
+<tr class="memdesc:ga2b25cb38e7c2e1f157b4b3d322019a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts seconds to OS ticks.  <br /></td></tr>
+<tr class="separator:ga2b25cb38e7c2e1f157b4b3d322019a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4de0e3eac99957d8df3b88f29b7578d" id="r_gad4de0e3eac99957d8df3b88f29b7578d"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#gad4de0e3eac99957d8df3b88f29b7578d">UsToTicks</a> (uint32_t us)</td></tr>
+<tr class="memdesc:gad4de0e3eac99957d8df3b88f29b7578d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts microseconds to OS ticks.  <br /></td></tr>
+<tr class="separator:gad4de0e3eac99957d8df3b88f29b7578d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Locking functions</div></td></tr>
 <tr class="memitem:ga240927a50b48c12fcc4786be7b9adab5" id="r_ga240927a50b48c12fcc4786be7b9adab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___system.html#ga240927a50b48c12fcc4786be7b9adab5">LockSched</a> (void)</td></tr>
 <tr class="memdesc:ga240927a50b48c12fcc4786be7b9adab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock OS scheduler.  <br /></td></tr>

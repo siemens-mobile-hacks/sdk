@@ -15,7 +15,8 @@ var searchData=
   ['updatetab1stitem_12',['UpdateTab1stItem',['../group___u_i.html#ga0a3b0f161f602f1698776455c811b38d',1,'ui.h']]],
   ['usernotice_5ffree_13',['USERNOTICE_free',['../x509v3_8h.html#a8a18d34ec1ae7662544011206bde21b2',1,'x509v3.h']]],
   ['usernotice_5fnew_14',['USERNOTICE_new',['../x509v3_8h.html#aa7f0f969ec0112854d9d880964c69fc1',1,'x509v3.h']]],
-  ['utf8_5f2ws_15',['utf8_2ws',['../group___w_s_h_d_r.html#ga1223a9f3844cf4497f16ee9a2f594b31',1,'wstring.h']]],
-  ['utf8_5fgetc_16',['UTF8_getc',['../asn1_8h.html#a068200ae693bfec1c9a3995bc1d595fb',1,'asn1.h']]],
-  ['utf8_5fputc_17',['UTF8_putc',['../asn1_8h.html#a5e3bf91569ebdf293d264a4233ca6573',1,'asn1.h']]]
+  ['ustoticks_15',['UsToTicks',['../group___system.html#gad4de0e3eac99957d8df3b88f29b7578d',1,'system.h']]],
+  ['utf8_5f2ws_16',['utf8_2ws',['../group___w_s_h_d_r.html#ga1223a9f3844cf4497f16ee9a2f594b31',1,'wstring.h']]],
+  ['utf8_5fgetc_17',['UTF8_getc',['../asn1_8h.html#a068200ae693bfec1c9a3995bc1d595fb',1,'asn1.h']]],
+  ['utf8_5fputc_18',['UTF8_putc',['../asn1_8h.html#a5e3bf91569ebdf293d264a4233ca6573',1,'asn1.h']]]
 ];

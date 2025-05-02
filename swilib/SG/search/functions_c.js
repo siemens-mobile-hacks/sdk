@@ -55,9 +55,10 @@ var searchData=
   ['msgboxerror_52',['MsgBoxError',['../group___u_i.html#ga7e83a5e507a29732db71d5c4cfaad177',1,'ui.h']]],
   ['msgboxokcancel_53',['MsgBoxOkCancel',['../group___u_i.html#ga45a264214eb8357c9bb949c3aa4783f7',1,'ui.h']]],
   ['msgboxyesno_54',['MsgBoxYesNo',['../group___u_i.html#ga2db5f3afeb7ce1f15eebf9a42de8a15b',1,'ui.h']]],
-  ['mutexcreate_55',['MutexCreate',['../group___system.html#ga28e02746ae678b884fe21fbb166650e4',1,'system.h']]],
-  ['mutexdestroy_56',['MutexDestroy',['../group___system.html#gae965e24d63a37fd34d5b6f5ea3e28f22',1,'system.h']]],
-  ['mutexlock_57',['MutexLock',['../group___system.html#ga047ed039420da3f311d6bb25953b7f67',1,'system.h']]],
-  ['mutexlockex_58',['MutexLockEx',['../group___system.html#ga75d6e2489d934a2062df34d5295c68c1',1,'system.h']]],
-  ['mutexunlock_59',['MutexUnlock',['../group___system.html#ga65c6e44283ced6dbaea3c40abfecefc3',1,'system.h']]]
+  ['mstoticks_55',['MsToTicks',['../group___system.html#ga688c0bf974ad22cd4d9f2323f891f981',1,'system.h']]],
+  ['mutexcreate_56',['MutexCreate',['../group___system.html#ga28e02746ae678b884fe21fbb166650e4',1,'system.h']]],
+  ['mutexdestroy_57',['MutexDestroy',['../group___system.html#gae965e24d63a37fd34d5b6f5ea3e28f22',1,'system.h']]],
+  ['mutexlock_58',['MutexLock',['../group___system.html#ga047ed039420da3f311d6bb25953b7f67',1,'system.h']]],
+  ['mutexlockex_59',['MutexLockEx',['../group___system.html#ga75d6e2489d934a2062df34d5295c68c1',1,'system.h']]],
+  ['mutexunlock_60',['MutexUnlock',['../group___system.html#ga65c6e44283ced6dbaea3c40abfecefc3',1,'system.h']]]
 ];

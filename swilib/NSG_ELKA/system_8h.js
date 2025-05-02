@@ -1,9 +1,16 @@
 var system_8h =
 [
+    [ "OS_TICK_PERIOD_US", "group___system.html#ga4c4b2c3774f79780ca9df923db9b035f", null ],
     [ "MUTEX", "group___system.html#ga699769fac077c464e4da2fa6a4a50116", null ],
     [ "isnewSGold", "group___system.html#gab3f1b4cbe5ec1839400b166225858ef8", null ],
     [ "SUBPROC", "group___system.html#ga29b55e42343b540e8335f86e5c090387", null ],
     [ "GetSessionAge", "group___system.html#ga8efae23a08f4e77290848385bc0bb4c3", null ],
+    [ "TicksToMs", "group___system.html#ga84aedd6d38b635f732323faca77220f9", null ],
+    [ "TicksToSec", "group___system.html#gac8edb0dbe05637b7f6894ecffd44f9b5", null ],
+    [ "TicksToUs", "group___system.html#ga451ce3f9a1c0b7d32647cef6437d5253", null ],
+    [ "MsToTicks", "group___system.html#ga688c0bf974ad22cd4d9f2323f891f981", null ],
+    [ "SecToTicks", "group___system.html#ga2b25cb38e7c2e1f157b4b3d322019a31", null ],
+    [ "UsToTicks", "group___system.html#gad4de0e3eac99957d8df3b88f29b7578d", null ],
     [ "LockSched", "group___system.html#ga240927a50b48c12fcc4786be7b9adab5", null ],
     [ "UnlockSched", "group___system.html#gac25cb423e5c7c13f5f26158199cde214", null ],
     [ "MutexCreate", "group___system.html#ga28e02746ae678b884fe21fbb166650e4", null ],
