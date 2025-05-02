@@ -17,6 +17,17 @@ __swilib_begin
 typedef struct MUTEX MUTEX;
 
 /**
+ * @def OS_TICK_PERIOD_US
+ * @brief Duration of one OS tick in microseconds.
+ *
+ * Defines the period of a single system tick. All conversions between
+ * ticks and real time are based on this value.
+ *
+ * 1 tick = 4.615 ms = 4615 µs
+ */
+#define OS_TICK_PERIOD_US 4615
+
+/**
  * Mutex object.
  * */
 struct MUTEX {
@@ -65,6 +76,60 @@ __swi_end(0x171, SUBPROC, (callback));
 __swi_begin(0x1F3)
 uint32_t GetSessionAge(void)
 __swi_end(0x1F3, GetSessionAge, ());
+
+/**
+ * @brief Converts OS ticks to milliseconds.
+ * @param ticks Number of ticks (1 tick = 4.615 ms).
+ * @return Time in milliseconds.
+ */
+static inline uint32_t TicksToMs(uint32_t ticks) {
+    return (uint32_t)(((uint64_t) ticks * OS_TICK_PERIOD_US) / 1000);
+}
+
+/**
+ * @brief Converts OS ticks to seconds.
+ * @param ticks Number of ticks (1 tick = 4.615 ms).
+ * @return Time in seconds.
+ */
+static inline uint32_t TicksToSec(uint32_t ticks) {
+    return (uint32_t)(((uint64_t) ticks * OS_TICK_PERIOD_US) / 1000000);
+}
+
+/**
+ * @brief Converts OS ticks to microseconds.
+ * @param ticks Number of ticks (1 tick = 4615 µs).
+ * @return Time in microseconds.
+ */
+static inline uint32_t TicksToUs(uint32_t ticks) {
+    return (uint32_t)((uint64_t) ticks * OS_TICK_PERIOD_US);
+}
+
+/**
+ * @brief Converts milliseconds to OS ticks.
+ * @param ms Time in milliseconds.
+ * @return Number of ticks (1 tick = 4.615 ms).
+ */
+static inline uint32_t MsToTicks(uint32_t ms) {
+    return (uint32_t)(((uint64_t) ms * 1000) / OS_TICK_PERIOD_US);
+}
+
+/**
+ * @brief Converts seconds to OS ticks.
+ * @param sec Time in seconds.
+ * @return Number of ticks (1 tick = 4.615 ms).
+ */
+static inline uint32_t SecToTicks(uint32_t sec) {
+    return (uint32_t)(((uint64_t) sec * 1000000) / OS_TICK_PERIOD_US);
+}
+
+/**
+ * @brief Converts microseconds to OS ticks.
+ * @param us Time in microseconds.
+ * @return Number of ticks (1 tick = 4615 µs).
+ */
+static inline uint32_t UsToTicks(uint32_t us) {
+    return us / OS_TICK_PERIOD_US;
+}
 
 /**
  * @name Locking functions
