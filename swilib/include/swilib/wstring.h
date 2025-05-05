@@ -109,6 +109,15 @@ uint16_t wsCharAt(const WSHDR *str, short pos)
 __swi_end(0x0A2, wsCharAt, (str, pos));
 
 /**
+ * Get character by dynamic icon id.
+ * @param dyn_icon	dynamic icon id, more than 2000
+ * @return character
+ * */
+__swi_begin(0x3DC)
+int GetUnicodeSymbolByDynIcon(int dyn_icon)
+__swi_end(0x3DC, GetUnicodeSymbolByDynIcon, (dyn_icon));
+
+/**
  * Insert a character at the given position of the WSHDR.
  * @param destination	pointer to the destination WSHDR
  * @param character		character to be inserted
