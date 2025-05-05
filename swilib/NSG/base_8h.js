@@ -11,6 +11,7 @@ var base_8h =
       [ "LGP_DOIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da4e0924a38c8b6b3e31d67f5153cfa38b", null ],
       [ "LGP_CHANGE_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da5d3c7c89a5feadadebf45b5a4df04ceb", null ],
       [ "LGP_MENU_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1daaf9305e4e425eb172c46c0e14b2b6f0d", null ],
+      [ "LGP_EDIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da97ca11e93c79a7923ab27734caaa0a08", null ],
       [ "LGP_SAVE_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da56745b7a82251500151646ddc6ffde8a", null ]
     ] ],
     [ "LegacyStructOffsets", "group___s_w_i_l_i_b.html#gabaeeccd035a3a67d5f5c0687b254af18", [

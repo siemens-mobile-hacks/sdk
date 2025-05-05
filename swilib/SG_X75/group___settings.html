@@ -230,6 +230,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga8fdf6d05e1fb97d9069516904bf693e9" id="r_ga8fdf6d05e1fb97d9069516904bf693e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8fdf6d05e1fb97d9069516904bf693e9">Registry_DeleteResourcePath</a> (int hmi_key_id, int prio)</td></tr>
 <tr class="memdesc:ga8fdf6d05e1fb97d9069516904bf693e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the path with given priority from the registry.  <br /></td></tr>
 <tr class="separator:ga8fdf6d05e1fb97d9069516904bf693e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50720efb839c2f6687920928de6c7921" id="r_ga50720efb839c2f6687920928de6c7921"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50720efb839c2f6687920928de6c7921">ReadValueFromPDFile</a> (uint32_t file_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key, char *value, uint32_t *size)</td></tr>
+<tr class="memdesc:ga50720efb839c2f6687920928de6c7921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the setting value from PD file.  <br /></td></tr>
+<tr class="separator:ga50720efb839c2f6687920928de6c7921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Profiles</h2></td></tr>
 <tr class="memitem:ga6c4352c3ee1df4631e1a89a133cd5cbd" id="r_ga6c4352c3ee1df4631e1a89a133cd5cbd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c4352c3ee1df4631e1a89a133cd5cbd">GetProfile</a> ()</td></tr>
@@ -970,6 +973,49 @@ Enumerations</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">hmi_key_id</td><td>HMID key ID, see <a class="el" href="#ga818776870f2a7757b85f0b490d6e77a3" title="Converting string key to the HMI key ID.">Registry_GetHMIKeyID</a> </td></tr>
     <tr><td class="paramname">prio</td><td>priority of resource path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga50720efb839c2f6687920928de6c7921" name="ga50720efb839c2f6687920928de6c7921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50720efb839c2f6687920928de6c7921">&#9670;&#160;</a></span>ReadValueFromPDFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ReadValueFromPDFile </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>file_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the setting value from PD file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_id</td><td>unique file id </td></tr>
+    <tr><td class="paramname">key</td><td>keyword </td></tr>
+    <tr><td class="paramname">value</td><td>pointer where the result will be written </td></tr>
+    <tr><td class="paramname">size</td><td>max length, read size will be written in variable </td></tr>
   </table>
   </dd>
 </dl>

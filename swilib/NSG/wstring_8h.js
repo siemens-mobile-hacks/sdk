@@ -10,6 +10,7 @@ var wstring_8h =
     [ "CutWSTR", "group___w_s_h_d_r.html#ga4e7947820be6bd2a5904ac7dc11b306c", null ],
     [ "wsAppendChar", "group___w_s_h_d_r.html#gab6419c027b1b9461f27159be9424b970", null ],
     [ "wsCharAt", "group___w_s_h_d_r.html#gab666c0b1402704682d910e0ebe00d347", null ],
+    [ "GetUnicodeSymbolByDynIcon", "group___w_s_h_d_r.html#gab0100111647a65be7f4a8a5b133bd2b5", null ],
     [ "wsInsertChar", "group___w_s_h_d_r.html#gad918ce22fae114b4c626b5d983943749", null ],
     [ "wsRemoveChars", "group___w_s_h_d_r.html#gaf48f14f06cb9082566f704044ce5928f", null ],
     [ "wstrcpy", "group___w_s_h_d_r.html#gac7d2bd2d1ce1b3de91e5e513059a13ac", null ],

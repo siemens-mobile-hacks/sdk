@@ -38,6 +38,7 @@ var group___settings =
     [ "Registry_GetResourcePathFromLevel", "group___settings.html#ga0a422f5e79a22b80a420b22de8960b94", null ],
     [ "Registry_SetResourcePath", "group___settings.html#gab28b7bc49dbe550f6894d0c319c73881", null ],
     [ "Registry_DeleteResourcePath", "group___settings.html#ga8fdf6d05e1fb97d9069516904bf693e9", null ],
+    [ "ReadValueFromPDFile", "group___settings.html#ga50720efb839c2f6687920928de6c7921", null ],
     [ "GetProfile", "group___settings.html#ga6c4352c3ee1df4631e1a89a133cd5cbd", null ],
     [ "RamProfileNum", "group___settings.html#ga10b24ec808c0abfc55c1564d21da208a", null ],
     [ "SetProfile", "group___settings.html#ga57fd3c680f9e11659ab4f0be19fe1ef1", null ],
