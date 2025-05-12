@@ -18,6 +18,7 @@ __swilib_begin
 typedef struct TDate TDate;
 typedef struct TTime TTime;
 typedef struct TDateTimeSettings TDateTimeSettings;
+typedef struct TZ TZ;
 
 /**
  * Date of the day
@@ -48,6 +49,15 @@ struct TDateTimeSettings {
 	char timeZone;		/**< Internal ID of the selected timezone */
 	char isAutoTime1;	/**< Unknown */
 	char isAutoTime2;	/**< Unknown */
+};
+
+/**
+ * Time zone
+ * */
+struct TZ {
+	int lgp_id;
+	int city_id;
+	char *gmt;
 };
 
 /**
@@ -238,6 +248,48 @@ __swi_end(0x3B4, GetDate_ws, (ws, date, unk));
 __swi_begin(0x3B5)
 void GetTime_ws(WSHDR *ws, const TTime *time, unsigned int unk)
 __swi_end(0x3B5, GetTime_ws, (ws, time, unk));
+
+/**
+ * Get array of time zones.
+ * @return pointer to the array
+ * */
+__swi_begin(0x83DF)
+TZ *RamTimeZones()
+__swi_end(0x83DF, RamTimeZones, ());
+
+/**
+ * Get current time zone id.
+ * @return time zone id
+ * */
+__swi_begin(0x3E0)
+int GetCurrentTimeZone()
+__swi_end(0x3E0, GetCurrentTimeZone, ());
+
+/**
+ * Get time zone id by time zone.
+ * @param gmt	pointer to the time zone (GMT+03:00, GMT+04:00, etc...).
+ * @return time zone id
+ * */
+__swi_begin(0x3E1)
+int GetTimeZoneByGMT(const char *gmt)
+__swi_end(0x3E1, GetTimeZoneByGMT, (gmt));
+
+/**
+ * Check time zone for summer time.
+ * @param time_zone	time zone id
+ * @return 0 or 1
+ * */
+__swi_begin(0x3E2)
+int IsSummerTime(int time_zone)
+__swi_end(0x3E2, IsSummerTime, (time_zone));
+
+/**
+ * Set time zone.
+ * @param time_zone	time zone id
+ * */
+__swi_begin(0x3E3)
+void SetTimeZone(int time_zone)
+__swi_end(0x3E3, SetTimeZone, (time_zone));
 
 __swilib_end
 
