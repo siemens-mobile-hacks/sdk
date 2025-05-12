@@ -285,10 +285,10 @@ __swi_end(0x03A, Registry_DeleteResourcePath, (hmi_key_id, prio));
 
 /**
  * Get the setting value from PD file.
- * @param file_id	unique file id
- * @param key		keyword
- * @param value		pointer where the result will be written
- * @param size		max length, read size will be written in variable
+ * @param file_id		unique file id
+ * @param key			keyword
+ * @param[out] value	pointer where the result will be written
+ * @param size			max length, read size will be written in variable
  * @return 0 or error
  * */
 __swi_begin(0x3DD)
