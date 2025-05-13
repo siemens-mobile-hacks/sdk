@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['n_0',['n',['../group___u_i.html#a9e430fd92f9918262fb98c3ae0882474',1,'SOFTKEYSTAB::n'],['../rsa_8h.html#a017d8cb5fef3f0ca9432e7616743a8c9',1,'rsa_st::n']]],
-  ['n_1',['N',['../bn_8h.html#ab39e1c073bfde3c58c515d52f129e5fb',1,'bn_mont_ctx_st::N'],['../bn_8h.html#ab52e6e895e525fba79d3a18ef2b3dcb8',1,'bn_recp_ctx_st::N']]],
+  ['n_0',['N',['../bn_8h.html#ab39e1c073bfde3c58c515d52f129e5fb',1,'bn_mont_ctx_st::N'],['../bn_8h.html#ab52e6e895e525fba79d3a18ef2b3dcb8',1,'bn_recp_ctx_st::N']]],
+  ['n_1',['n',['../group___u_i.html#a9e430fd92f9918262fb98c3ae0882474',1,'SOFTKEYSTAB::n'],['../rsa_8h.html#a017d8cb5fef3f0ca9432e7616743a8c9',1,'rsa_st::n']]],
   ['n0_2',['n0',['../bn_8h.html#a3a7ecbbbc63d0308ecb45fdb30d0b3a5',1,'bn_mont_ctx_st']]],
   ['n_5fitems_3',['n_items',['../group___u_i.html#a159885beb97565a77cd36a220dbc5404',1,'MENU_DESC::n_items'],['../group___u_i.html#aec1f97053cfbcf9593380765e128fb1d',1,'ML_MENU_DESC::n_items']]],
   ['n_5flines_4',['n_lines',['../group___u_i.html#ab77ccd9c83560794f7d9314da94faea8',1,'ML_MENU_DESC']]],
@@ -505,8 +505,8 @@ var searchData=
   ['nu_5fpool_5fdeleted_502',['NU_POOL_DELETED',['../group___n_u_c_l_e_u_s.html#gac1f70201cc22177b48375a5da66258c9',1,'nucleus.h']]],
   ['nu_5fpreempt_503',['NU_PREEMPT',['../group___n_u_c_l_e_u_s.html#ga4b38b4fa4b2321d69c0dc1d7ef5f5307',1,'nucleus.h']]],
   ['nu_5fpriority_504',['NU_PRIORITY',['../group___n_u_c_l_e_u_s.html#ga256a4b199852f8f0de1db570a0b25dc3',1,'nucleus.h']]],
-  ['nu_5fprotect_505',['NU_PROTECT',['../group___n_u_c_l_e_u_s.html#ga5b71b75902636962dd57e9e07516b838',1,'nucleus.h']]],
-  ['nu_5fprotect_506',['NU_Protect',['../group___n_u_c_l_e_u_s.html#ga1dee73729e8a6b99a580c7dea9f7b681',1,'nucleus.h']]],
+  ['nu_5fprotect_505',['NU_Protect',['../group___n_u_c_l_e_u_s.html#ga1dee73729e8a6b99a580c7dea9f7b681',1,'nucleus.h']]],
+  ['nu_5fprotect_506',['NU_PROTECT',['../group___n_u_c_l_e_u_s.html#ga5b71b75902636962dd57e9e07516b838',1,'nucleus.h']]],
   ['nu_5fprotect_5fsize_507',['NU_PROTECT_SIZE',['../group___n_u_c_l_e_u_s.html#ga82f61e9298217d68f560ddf4dfbafb2d',1,'nucleus.h']]],
   ['nu_5fprotect_5fstruct_508',['NU_PROTECT_STRUCT',['../group___n_u_c_l_e_u_s.html#struct_n_u___p_r_o_t_e_c_t___s_t_r_u_c_t',1,'']]],
   ['nu_5fpure_5fsuspend_509',['NU_PURE_SUSPEND',['../group___n_u_c_l_e_u_s.html#ga8556a30c6aa129cd85bea04b181b554c',1,'nucleus.h']]],

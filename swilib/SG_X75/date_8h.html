@@ -120,6 +120,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_t_date_time_settings" id="r_struct_t_date_time_settings"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#struct_t_date_time_settings">TDateTimeSettings</a></td></tr>
 <tr class="memdesc:struct_t_date_time_settings"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date &amp; Time settings.  <a href="group___date_time.html#struct_t_date_time_settings">More...</a><br /></td></tr>
 <tr class="separator:struct_t_date_time_settings"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_t_z" id="r_struct_t_z"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#struct_t_z">TZ</a></td></tr>
+<tr class="memdesc:struct_t_z"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time zone.  <a href="group___date_time.html#struct_t_z">More...</a><br /></td></tr>
+<tr class="separator:struct_t_z"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -129,6 +132,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gaa9f6d8dbd7ff603146db4681866bc5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gade8ab8f5da755820c4cc04163da4a04c" id="r_gade8ab8f5da755820c4cc04163da4a04c"><td class="memItemLeft" align="right" valign="top">typedef struct TDateTimeSettings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#gade8ab8f5da755820c4cc04163da4a04c">TDateTimeSettings</a></td></tr>
 <tr class="separator:gade8ab8f5da755820c4cc04163da4a04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac30bc2a26b8914d1e31f4cb614f4040e" id="r_gac30bc2a26b8914d1e31f4cb614f4040e"><td class="memItemLeft" align="right" valign="top">typedef struct TZ&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#gac30bc2a26b8914d1e31f4cb614f4040e">TZ</a></td></tr>
+<tr class="separator:gac30bc2a26b8914d1e31f4cb614f4040e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -189,6 +194,21 @@ Functions</h2></td></tr>
 <tr class="memitem:gad9e80cd1047b0614c74df1132eb42cff" id="r_gad9e80cd1047b0614c74df1132eb42cff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#gad9e80cd1047b0614c74df1132eb42cff">GetTime_ws</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___date_time.html#struct_t_time">TTime</a> *time, unsigned int unk)</td></tr>
 <tr class="memdesc:gad9e80cd1047b0614c74df1132eb42cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put time into ws string.  <br /></td></tr>
 <tr class="separator:gad9e80cd1047b0614c74df1132eb42cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f73c896773c93dd5e8974e13cadec95" id="r_ga2f73c896773c93dd5e8974e13cadec95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___date_time.html#struct_t_z">TZ</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#ga2f73c896773c93dd5e8974e13cadec95">RamTimeZones</a> ()</td></tr>
+<tr class="memdesc:ga2f73c896773c93dd5e8974e13cadec95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array of time zones.  <br /></td></tr>
+<tr class="separator:ga2f73c896773c93dd5e8974e13cadec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea8707d0ee6104da0aa40af09c70661f" id="r_gaea8707d0ee6104da0aa40af09c70661f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#gaea8707d0ee6104da0aa40af09c70661f">GetCurrentTimeZone</a> ()</td></tr>
+<tr class="memdesc:gaea8707d0ee6104da0aa40af09c70661f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current time zone id.  <br /></td></tr>
+<tr class="separator:gaea8707d0ee6104da0aa40af09c70661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ac973780271fe36fab04013f020daa5" id="r_ga8ac973780271fe36fab04013f020daa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#ga8ac973780271fe36fab04013f020daa5">GetTimeZoneByGMT</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *gmt)</td></tr>
+<tr class="memdesc:ga8ac973780271fe36fab04013f020daa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time zone id by time zone.  <br /></td></tr>
+<tr class="separator:ga8ac973780271fe36fab04013f020daa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cba565dc64bc5a97ec9cc8f23ce5a08" id="r_ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#ga2cba565dc64bc5a97ec9cc8f23ce5a08">IsSummerTime</a> (int time_zone)</td></tr>
+<tr class="memdesc:ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check time zone for summer time.  <br /></td></tr>
+<tr class="separator:ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdb0b56ddfde9a85a330f25efb83befc" id="r_gafdb0b56ddfde9a85a330f25efb83befc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___date_time.html#gafdb0b56ddfde9a85a330f25efb83befc">SetTimeZone</a> (int time_zone)</td></tr>
+<tr class="memdesc:gafdb0b56ddfde9a85a330f25efb83befc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set time zone.  <br /></td></tr>
+<tr class="separator:gafdb0b56ddfde9a85a330f25efb83befc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

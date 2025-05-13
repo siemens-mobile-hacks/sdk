@@ -119,6 +119,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_t_date_time_settings" id="r_struct_t_date_time_settings"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_t_date_time_settings">TDateTimeSettings</a></td></tr>
 <tr class="memdesc:struct_t_date_time_settings"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date &amp; Time settings.  <a href="#struct_t_date_time_settings">More...</a><br /></td></tr>
 <tr class="separator:struct_t_date_time_settings"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_t_z" id="r_struct_t_z"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_t_z">TZ</a></td></tr>
+<tr class="memdesc:struct_t_z"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time zone.  <a href="#struct_t_z">More...</a><br /></td></tr>
+<tr class="separator:struct_t_z"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -128,6 +131,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gaa9f6d8dbd7ff603146db4681866bc5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gade8ab8f5da755820c4cc04163da4a04c" id="r_gade8ab8f5da755820c4cc04163da4a04c"><td class="memItemLeft" align="right" valign="top">typedef struct TDateTimeSettings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade8ab8f5da755820c4cc04163da4a04c">TDateTimeSettings</a></td></tr>
 <tr class="separator:gade8ab8f5da755820c4cc04163da4a04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac30bc2a26b8914d1e31f4cb614f4040e" id="r_gac30bc2a26b8914d1e31f4cb614f4040e"><td class="memItemLeft" align="right" valign="top">typedef struct TZ&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac30bc2a26b8914d1e31f4cb614f4040e">TZ</a></td></tr>
+<tr class="separator:gac30bc2a26b8914d1e31f4cb614f4040e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -188,6 +193,21 @@ Functions</h2></td></tr>
 <tr class="memitem:gad9e80cd1047b0614c74df1132eb42cff" id="r_gad9e80cd1047b0614c74df1132eb42cff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9e80cd1047b0614c74df1132eb42cff">GetTime_ws</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *time, unsigned int unk)</td></tr>
 <tr class="memdesc:gad9e80cd1047b0614c74df1132eb42cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put time into ws string.  <br /></td></tr>
 <tr class="separator:gad9e80cd1047b0614c74df1132eb42cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f73c896773c93dd5e8974e13cadec95" id="r_ga2f73c896773c93dd5e8974e13cadec95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_t_z">TZ</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f73c896773c93dd5e8974e13cadec95">RamTimeZones</a> ()</td></tr>
+<tr class="memdesc:ga2f73c896773c93dd5e8974e13cadec95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array of time zones.  <br /></td></tr>
+<tr class="separator:ga2f73c896773c93dd5e8974e13cadec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea8707d0ee6104da0aa40af09c70661f" id="r_gaea8707d0ee6104da0aa40af09c70661f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea8707d0ee6104da0aa40af09c70661f">GetCurrentTimeZone</a> ()</td></tr>
+<tr class="memdesc:gaea8707d0ee6104da0aa40af09c70661f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current time zone id.  <br /></td></tr>
+<tr class="separator:gaea8707d0ee6104da0aa40af09c70661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ac973780271fe36fab04013f020daa5" id="r_ga8ac973780271fe36fab04013f020daa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ac973780271fe36fab04013f020daa5">GetTimeZoneByGMT</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *gmt)</td></tr>
+<tr class="memdesc:ga8ac973780271fe36fab04013f020daa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time zone id by time zone.  <br /></td></tr>
+<tr class="separator:ga8ac973780271fe36fab04013f020daa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cba565dc64bc5a97ec9cc8f23ce5a08" id="r_ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2cba565dc64bc5a97ec9cc8f23ce5a08">IsSummerTime</a> (int time_zone)</td></tr>
+<tr class="memdesc:ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check time zone for summer time.  <br /></td></tr>
+<tr class="separator:ga2cba565dc64bc5a97ec9cc8f23ce5a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdb0b56ddfde9a85a330f25efb83befc" id="r_gafdb0b56ddfde9a85a330f25efb83befc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafdb0b56ddfde9a85a330f25efb83befc">SetTimeZone</a> (int time_zone)</td></tr>
+<tr class="memdesc:gafdb0b56ddfde9a85a330f25efb83befc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set time zone.  <br /></td></tr>
+<tr class="separator:gafdb0b56ddfde9a85a330f25efb83befc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_t_date" id="struct_t_date"></a>
@@ -226,6 +246,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">struct TDateTimeSettings</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="struct_t_z" id="struct_t_z"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_t_z">&#9670;&#160;</a></span>TZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct TZ</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -278,6 +312,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00020">20</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
+
+</div>
+</div>
+<a id="gac30bc2a26b8914d1e31f4cb614f4040e" name="gac30bc2a26b8914d1e31f4cb614f4040e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac30bc2a26b8914d1e31f4cb614f4040e">&#9670;&#160;</a></span>TZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct TZ TZ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="date_8h_source.html#l00021">21</a> of file <a class="el" href="date_8h_source.html">date.h</a>.</p>
 
 </div>
 </div>
@@ -904,6 +954,123 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ws</td><td>output ws string </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">time</td><td>time </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">unk</td><td>unkwnow parameter for formatting: 0x223, 0x227, ... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2f73c896773c93dd5e8974e13cadec95" name="ga2f73c896773c93dd5e8974e13cadec95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f73c896773c93dd5e8974e13cadec95">&#9670;&#160;</a></span>RamTimeZones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#struct_t_z">TZ</a> * RamTimeZones </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get array of time zones. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the array </dd></dl>
+
+</div>
+</div>
+<a id="gaea8707d0ee6104da0aa40af09c70661f" name="gaea8707d0ee6104da0aa40af09c70661f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea8707d0ee6104da0aa40af09c70661f">&#9670;&#160;</a></span>GetCurrentTimeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetCurrentTimeZone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current time zone id. </p>
+<dl class="section return"><dt>Returns</dt><dd>time zone id </dd></dl>
+
+</div>
+</div>
+<a id="ga8ac973780271fe36fab04013f020daa5" name="ga8ac973780271fe36fab04013f020daa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ac973780271fe36fab04013f020daa5">&#9670;&#160;</a></span>GetTimeZoneByGMT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetTimeZoneByGMT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>gmt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get time zone id by time zone. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gmt</td><td>pointer to the time zone (GMT+03:00, GMT+04:00, etc...). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>time zone id </dd></dl>
+
+</div>
+</div>
+<a id="ga2cba565dc64bc5a97ec9cc8f23ce5a08" name="ga2cba565dc64bc5a97ec9cc8f23ce5a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cba565dc64bc5a97ec9cc8f23ce5a08">&#9670;&#160;</a></span>IsSummerTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IsSummerTime </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>time_zone</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check time zone for summer time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time_zone</td><td>time zone id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or 1 </dd></dl>
+
+</div>
+</div>
+<a id="gafdb0b56ddfde9a85a330f25efb83befc" name="gafdb0b56ddfde9a85a330f25efb83befc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafdb0b56ddfde9a85a330f25efb83befc">&#9670;&#160;</a></span>SetTimeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetTimeZone </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>time_zone</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set time zone. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time_zone</td><td>time zone id </td></tr>
   </table>
   </dd>
 </dl>

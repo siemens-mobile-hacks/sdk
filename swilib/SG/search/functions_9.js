@@ -176,7 +176,8 @@ var searchData=
   ['isplayeron_173',['IsPlayerOn',['../group___sound.html#ga1f0d40b59a1ad5bdcc156df5dbba1a71',1,'sound.h']]],
   ['isscreensaver_174',['IsScreenSaver',['../group___i_d_l_e.html#gaabbff80bd7f8bb60b9bf4563d8bd00e6',1,'idle.h']]],
   ['issliderclosed_175',['IsSliderClosed',['../group___info.html#gaf0e918e1b6541a9ec198c7c1653957ee',1,'info.h']]],
-  ['istimerproc_176',['IsTimerProc',['../group___g_b_s.html#gaa7715f59e0beb1f57c22ce93e8969862',1,'gbs.h']]],
-  ['istimerproc_5f2_177',['IsTimerProc_2',['../group___l_e_g_a_c_y.html#gabd82cf8bce6d5061ae4409a11d5c9583',1,'legacy.h']]],
-  ['isunlocked_178',['IsUnlocked',['../group___m_i_s_c.html#ga42c3b79b4d2efbf09eea65c9ea12948b',1,'misc.h']]]
+  ['issummertime_176',['IsSummerTime',['../group___date_time.html#ga2cba565dc64bc5a97ec9cc8f23ce5a08',1,'date.h']]],
+  ['istimerproc_177',['IsTimerProc',['../group___g_b_s.html#gaa7715f59e0beb1f57c22ce93e8969862',1,'gbs.h']]],
+  ['istimerproc_5f2_178',['IsTimerProc_2',['../group___l_e_g_a_c_y.html#gabd82cf8bce6d5061ae4409a11d5c9583',1,'legacy.h']]],
+  ['isunlocked_179',['IsUnlocked',['../group___m_i_s_c.html#ga42c3b79b4d2efbf09eea65c9ea12948b',1,'misc.h']]]
 ];

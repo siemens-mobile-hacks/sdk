@@ -3,9 +3,11 @@ var group___date_time =
     [ "TDate", "group___date_time.html#struct_t_date", null ],
     [ "TTime", "group___date_time.html#struct_t_time", null ],
     [ "TDateTimeSettings", "group___date_time.html#struct_t_date_time_settings", null ],
+    [ "TZ", "group___date_time.html#struct_t_z", null ],
     [ "TDate", "group___date_time.html#gad343e27f6a976d3791e66c92f2248f4d", null ],
     [ "TTime", "group___date_time.html#gaa9f6d8dbd7ff603146db4681866bc5a3", null ],
     [ "TDateTimeSettings", "group___date_time.html#gade8ab8f5da755820c4cc04163da4a04c", null ],
+    [ "TZ", "group___date_time.html#gac30bc2a26b8914d1e31f4cb614f4040e", null ],
     [ "InitDate", "group___date_time.html#ga92554ba6901d8a60a0b3525e0b8f6ceb", null ],
     [ "InitTime", "group___date_time.html#ga834636c64c9c4f5dd21ba3e77e731473", null ],
     [ "RamDateTimeSettings", "group___date_time.html#ga38b1d54997b61510f8f99afae5b4d3d7", null ],
@@ -24,5 +26,10 @@ var group___date_time =
     [ "CmpDates", "group___date_time.html#ga50a090750c901b3ef72488b678db5f6e", null ],
     [ "CmpTimes", "group___date_time.html#ga241444c3dbeb96b8a5f0c407c847fc65", null ],
     [ "GetDate_ws", "group___date_time.html#ga5faf0aa00d8cdd3365646e27dcd59f86", null ],
-    [ "GetTime_ws", "group___date_time.html#gad9e80cd1047b0614c74df1132eb42cff", null ]
+    [ "GetTime_ws", "group___date_time.html#gad9e80cd1047b0614c74df1132eb42cff", null ],
+    [ "RamTimeZones", "group___date_time.html#ga2f73c896773c93dd5e8974e13cadec95", null ],
+    [ "GetCurrentTimeZone", "group___date_time.html#gaea8707d0ee6104da0aa40af09c70661f", null ],
+    [ "GetTimeZoneByGMT", "group___date_time.html#ga8ac973780271fe36fab04013f020daa5", null ],
+    [ "IsSummerTime", "group___date_time.html#ga2cba565dc64bc5a97ec9cc8f23ce5a08", null ],
+    [ "SetTimeZone", "group___date_time.html#gafdb0b56ddfde9a85a330f25efb83befc", null ]
 ];
