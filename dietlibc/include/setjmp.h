@@ -13,8 +13,10 @@ typedef int jmp_buf[11];
 
 #ifndef __NO_LIBC
 
-int     setjmp(jmp_buf);
-void    longjmp(jmp_buf, int);
+int setjmp(jmp_buf);
+
+__attribute__((noreturn))
+void longjmp(jmp_buf, int);
 
 #endif
 __END_DECLS

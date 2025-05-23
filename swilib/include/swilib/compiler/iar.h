@@ -13,5 +13,9 @@
 #endif
 
 #define __swi_pragma(x) _Pragma(#x)
+
 #define __swi_begin(number) __swi_pragma(swi_number=number) __swi __arm 
 #define __swi_end(number, func, call)
+
+#define __swi_noreturn_begin(number) __swi_pragma(swi_number=number) __swi __arm
+#define __swi_noreturn_end(number, func, call)

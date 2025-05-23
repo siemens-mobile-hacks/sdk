@@ -17,6 +17,9 @@
 	#define __swi_begin(number) __swi_begin
 	#define __swi_end(number, func, ...) __swi_end(number, func)
 
+	#define __swi_noreturn_begin(number) __swi_begin
+	#define __swi_noreturn_end(number, func, call) __swi_end(number, func)
+
 	#define __swi_value_begin(number) __swi_begin
 	#define __swi_value_end(number, func) __swi_end(number, func)
 #else
@@ -25,6 +28,9 @@
 
 	#define __swi_begin(number)
 	#define __swi_end(number, func, call)
+
+	#define __swi_noreturn_begin(number)
+	#define __swi_noreturn_end(number, func, call)
 
 	#define __swi_value_begin(number)
 	#define __swi_value_end(number, func)

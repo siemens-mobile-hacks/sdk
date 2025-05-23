@@ -22,3 +22,6 @@
 
 #define __swi_begin(number)
 #define __swi_end(number, func, call)
+
+#define __swi_noreturn_begin(number)
+#define __swi_noreturn_end(number, func, call)

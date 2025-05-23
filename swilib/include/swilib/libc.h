@@ -232,9 +232,9 @@ __swi_end(0x162, setjmp, (env));
  * @param env	Object of type jmp_buf filled by a previous call to setjmp that contains information to restore the environment to that point.
  * @param val	Value to which the setjmp expression evaluates. If this is zero, the expression evaluates as 1.
  * */
-__swi_begin(0x229)
+__swi_noreturn_begin(0x229)
 void longjmp(jmp_buf env, int val)
-__swi_end(0x229, longjmp, (env, val));
+__swi_noreturn_end(0x229, longjmp, (env, val));
 
 /** @} */
 

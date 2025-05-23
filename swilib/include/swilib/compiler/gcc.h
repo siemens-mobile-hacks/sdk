@@ -40,11 +40,18 @@ extern const int __sys_switab_addres[];
     } \
 }
 
+#define __swi_noreturn_begin(number) static inline __attribute__((flatten, noreturn))
+#define __swi_noreturn_end(number, func, call) { \
+	((__typeof__(&func)) __sys_switab_addres[number])call; \
+}
+
 #define __swi_call(number, ret, signature, call) \
     (((ret (*)signature)(__sys_switab_addres[number]))call)
 
 #define __swi_format(type, ...) \
     __attribute__((format(type, ##__VA_ARGS__)))
+
+#define __swi_noreturn __attribute__((noreturn))
 
 /* Legacy */
 #define __inl static inline
