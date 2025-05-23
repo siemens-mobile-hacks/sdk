@@ -118,6 +118,10 @@ Macros</h2></td></tr>
 <tr class="separator:abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fa9d5bc04573fff4c69974f0c3cc9f" id="r_a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(number,  func,  call)</td></tr>
 <tr class="separator:a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae530c6228094b08550852bbdabeb0fa2" id="r_ae530c6228094b08550852bbdabeb0fa2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae530c6228094b08550852bbdabeb0fa2">__swi_noreturn_begin</a>(number)&#160;&#160;&#160;<a class="el" href="#a15b2a53e52398548a48df23b3bf1ae36">__swi_pragma</a>(swi_number=number) __swi __arm</td></tr>
+<tr class="separator:ae530c6228094b08550852bbdabeb0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc664d625bd392875fed67ff56b0717" id="r_a7bc664d625bd392875fed67ff56b0717"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc664d625bd392875fed67ff56b0717">__swi_noreturn_end</a>(number,  func,  call)</td></tr>
+<tr class="separator:a7bc664d625bd392875fed67ff56b0717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a29c180570710dd0fbf1cc1e90b8d511b" name="a29c180570710dd0fbf1cc1e90b8d511b"></a>
@@ -188,7 +192,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00016">16</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00017">17</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
 
 </div>
 </div>
@@ -216,7 +220,54 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00017">17</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00018">18</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+
+</div>
+</div>
+<a id="ae530c6228094b08550852bbdabeb0fa2" name="ae530c6228094b08550852bbdabeb0fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae530c6228094b08550852bbdabeb0fa2">&#9670;&#160;</a></span>__swi_noreturn_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_begin</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="#a15b2a53e52398548a48df23b3bf1ae36">__swi_pragma</a>(swi_number=number) __swi __arm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00020">20</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bc664d625bd392875fed67ff56b0717" name="a7bc664d625bd392875fed67ff56b0717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc664d625bd392875fed67ff56b0717">&#9670;&#160;</a></span>__swi_noreturn_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_end</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>call</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00021">21</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
 
 </div>
 </div>

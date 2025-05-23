@@ -116,6 +116,10 @@ Macros</h2></td></tr>
 <tr class="separator:abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fa9d5bc04573fff4c69974f0c3cc9f" id="r_a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(number,  func,  call)</td></tr>
 <tr class="separator:a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae530c6228094b08550852bbdabeb0fa2" id="r_ae530c6228094b08550852bbdabeb0fa2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae530c6228094b08550852bbdabeb0fa2">__swi_noreturn_begin</a>(number)</td></tr>
+<tr class="separator:ae530c6228094b08550852bbdabeb0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc664d625bd392875fed67ff56b0717" id="r_a7bc664d625bd392875fed67ff56b0717"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc664d625bd392875fed67ff56b0717">__swi_noreturn_end</a>(number,  func,  call)</td></tr>
+<tr class="separator:a7bc664d625bd392875fed67ff56b0717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8809fe18b8e31149759d464797635741" id="r_a8809fe18b8e31149759d464797635741"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8809fe18b8e31149759d464797635741">__longcall__</a>&#160;&#160;&#160;<a class="el" href="#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((long_call))</td></tr>
 <tr class="separator:a8809fe18b8e31149759d464797635741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -207,6 +211,53 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae530c6228094b08550852bbdabeb0fa2" name="ae530c6228094b08550852bbdabeb0fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae530c6228094b08550852bbdabeb0fa2">&#9670;&#160;</a></span>__swi_noreturn_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_begin</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gcc__patch_8h_source.html#l00028">28</a> of file <a class="el" href="gcc__patch_8h_source.html">gcc_patch.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bc664d625bd392875fed67ff56b0717" name="a7bc664d625bd392875fed67ff56b0717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc664d625bd392875fed67ff56b0717">&#9670;&#160;</a></span>__swi_noreturn_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_end</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>call</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gcc__patch_8h_source.html#l00029">29</a> of file <a class="el" href="gcc__patch_8h_source.html">gcc_patch.h</a>.</p>
+
+</div>
+</div>
 <a id="a8809fe18b8e31149759d464797635741" name="a8809fe18b8e31149759d464797635741"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8809fe18b8e31149759d464797635741">&#9670;&#160;</a></span>__longcall__</h2>
 
@@ -219,7 +270,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc__patch_8h_source.html#l00028">28</a> of file <a class="el" href="gcc__patch_8h_source.html">gcc_patch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc__patch_8h_source.html#l00031">31</a> of file <a class="el" href="gcc__patch_8h_source.html">gcc_patch.h</a>.</p>
 
 </div>
 </div>

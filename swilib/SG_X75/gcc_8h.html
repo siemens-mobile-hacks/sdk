@@ -118,10 +118,16 @@ Macros</h2></td></tr>
 <tr class="separator:abd349c4a0c9890aaba1618f5cc6eccb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fa9d5bc04573fff4c69974f0c3cc9f" id="r_a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69fa9d5bc04573fff4c69974f0c3cc9f">__swi_end</a>(number,  func,  call)</td></tr>
 <tr class="separator:a69fa9d5bc04573fff4c69974f0c3cc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae530c6228094b08550852bbdabeb0fa2" id="r_ae530c6228094b08550852bbdabeb0fa2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae530c6228094b08550852bbdabeb0fa2">__swi_noreturn_begin</a>(number)&#160;&#160;&#160;static inline <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((flatten, noreturn))</td></tr>
+<tr class="separator:ae530c6228094b08550852bbdabeb0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc664d625bd392875fed67ff56b0717" id="r_a7bc664d625bd392875fed67ff56b0717"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc664d625bd392875fed67ff56b0717">__swi_noreturn_end</a>(number,  func,  call)</td></tr>
+<tr class="separator:a7bc664d625bd392875fed67ff56b0717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1b09208176460b653d16f530ce9c31" id="r_a7f1b09208176460b653d16f530ce9c31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1b09208176460b653d16f530ce9c31">__swi_call</a>(number,  ret,  signature,  call)&#160;&#160;&#160;    (((ret (*)signature)(<a class="el" href="#a5531fab7e2e3df017333a5a9ff33d9ff">__sys_switab_addres</a>[number]))call)</td></tr>
 <tr class="separator:a7f1b09208176460b653d16f530ce9c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa115e6e289233f6fd57987c1a9a0cc70" id="r_aa115e6e289233f6fd57987c1a9a0cc70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa115e6e289233f6fd57987c1a9a0cc70">__swi_format</a>(type, ...)&#160;&#160;&#160;    <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((format(type, ##__VA_ARGS__)))</td></tr>
 <tr class="separator:aa115e6e289233f6fd57987c1a9a0cc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5384f3e71f733052bb36c879fb49566c" id="r_a5384f3e71f733052bb36c879fb49566c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5384f3e71f733052bb36c879fb49566c">__swi_noreturn</a>&#160;&#160;&#160;<a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((noreturn))</td></tr>
+<tr class="separator:a5384f3e71f733052bb36c879fb49566c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b5af00d87ed36f3938b9b4d03c7bc8" id="r_a47b5af00d87ed36f3938b9b4d03c7bc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47b5af00d87ed36f3938b9b4d03c7bc8">__inl</a>&#160;&#160;&#160;static inline</td></tr>
 <tr class="separator:a47b5af00d87ed36f3938b9b4d03c7bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbe42ebece3abe21771577fcded5de83" id="r_acbe42ebece3abe21771577fcded5de83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbe42ebece3abe21771577fcded5de83">__def</a>(id,  ret, ...)</td></tr>
@@ -251,6 +257,56 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ae530c6228094b08550852bbdabeb0fa2" name="ae530c6228094b08550852bbdabeb0fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae530c6228094b08550852bbdabeb0fa2">&#9670;&#160;</a></span>__swi_noreturn_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_begin</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;static inline <a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((flatten, noreturn))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00043">43</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bc664d625bd392875fed67ff56b0717" name="a7bc664d625bd392875fed67ff56b0717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc664d625bd392875fed67ff56b0717">&#9670;&#160;</a></span>__swi_noreturn_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn_end</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>call</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    ((__typeof__(&amp;func)) <a class="code hl_variable" href="#a5531fab7e2e3df017333a5a9ff33d9ff">__sys_switab_addres</a>[number])call; \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00044">44</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+
+</div>
+</div>
 <a id="a7f1b09208176460b653d16f530ce9c31" name="a7f1b09208176460b653d16f530ce9c31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f1b09208176460b653d16f530ce9c31">&#9670;&#160;</a></span>__swi_call</h2>
 
@@ -280,7 +336,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00043">43</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00048">48</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -303,7 +359,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00046">46</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00051">51</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+
+</div>
+</div>
+<a id="a5384f3e71f733052bb36c879fb49566c" name="a5384f3e71f733052bb36c879fb49566c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5384f3e71f733052bb36c879fb49566c">&#9670;&#160;</a></span>__swi_noreturn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_noreturn&#160;&#160;&#160;<a class="el" href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a>((noreturn))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00054">54</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -319,7 +391,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00050">50</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00057">57</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -354,7 +426,7 @@ Variables</h2></td></tr>
 <div class="line">        } \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00052">52</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00059">59</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -377,7 +449,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00061">61</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00068">68</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -405,7 +477,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00063">63</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00070">70</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +500,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00064">64</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00071">71</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -451,7 +523,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00066">66</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00073">73</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +542,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00067">67</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00074">74</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
@@ -503,7 +575,7 @@ Variables</h2></td></tr>
 <div class="line">        return ((ret (*)(...))((<a class="code hl_variable" href="#a5531fab7e2e3df017333a5a9ff33d9ff">__sys_switab_addres</a>[<span class="keywordtype">id</span>])))(__VA_ARGS__); \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00069">69</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gcc_8h_source.html#l00076">76</a> of file <a class="el" href="gcc_8h_source.html">gcc.h</a>.</p>
 
 </div>
 </div>
