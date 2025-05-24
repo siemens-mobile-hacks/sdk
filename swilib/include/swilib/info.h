@@ -84,46 +84,6 @@ char *Get_Phone_Info(int index)
 __swi_end(0x1D5, Get_Phone_Info, (index));
 
 /**
- * @name Language
- * @{
- * */
-
-/**
- * Get the phone's language.
- * @return iso code, example: ru, en
- * */
-__swi_begin(0x0AA)
-char *GetCurrentLocale()
-__swi_end(0x0AA, GetCurrentLocale, ());
-
-/**
- * Get the phone's language.
- * @return pointer to the language ID
- * 
- * ```C
- * int lang_id = *RamDisplayLanguage();
- * ```
- * @deprecated Always use #GetCurrentLocale
- * */
-__swi_begin(0x829D)
-char *RamDisplayLanguage()
-__swi_end(0x829D, RamDisplayLanguage, ());
-
-/**
- * Get the phone's input language.
- * @return pointer to the language ID
-
- * ```C
- * int lang_id = *RamInputLanguage();
- * ```
- * */
-__swi_begin(0x829C)
-char *RamInputLanguage()
-__swi_end(0x829C, RamInputLanguage, ());
-
-/** @} */
-
-/**
  * @name Charging and battery
  * @{
  * */

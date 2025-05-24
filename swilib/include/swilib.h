@@ -35,6 +35,7 @@
 #include <swilib/gbs.h>
 #include <swilib/csm.h>
 #include <swilib/idle.h>
+#include <swilib/locale.h>
 
 #ifdef SWILIB_INCLUDE_ALL
 #include <swilib/nucleus.h>
