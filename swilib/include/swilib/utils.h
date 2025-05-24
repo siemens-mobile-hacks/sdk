@@ -85,15 +85,6 @@ __swi_begin(0x005)
 void StrToHex(char *hex_out, const char *str, int len)
 __swi_end(0x005, StrToHex, (hex_out, str, len));
 
-/**
- * Convert string to int.
- * @param lgp_id		langpack ID
- * @param[out] str		output for LGP string value
- * */
-__swi_begin(0x089)
-void GetLangMesIntoWS(int lgp_id, WSHDR *str)
-__swi_end(0x089, GetLangMesIntoWS, (lgp_id, str));
-
 /** @} */
 
 /**

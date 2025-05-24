@@ -68,24 +68,6 @@ typedef struct LLQ LLQ;
 typedef struct LLIST LLIST;
 
 /**
- * Default LGP IDs.
- * */
-enum DefaultLgpID {
-#ifdef NEWSGOLD
-	LGP_NULL		= 0x7FFFFFFF,	/**< Empty LGP */
-	LGP_DOIT_PIC	= 0x7FFFC0FB,	/**< OK icon */
-	LGP_CHANGE_PIC	= 0x7FFFC10D,	/**< Change icon */
-	LGP_MENU_PIC	= 0x7FFFC10E,	/**< Menu icon */
-	LGP_EDIT_PIC	= 0x7FFFC10F,	/**< Edit icon */
-	LGP_SAVE_PIC	= 0x7FFFC113,	/**< Save icon */
-#else
-	LGP_NULL		= 0x7FFF,		/**< Empty LGP */
-	LGP_DOIT_PIC	= 0x4E48,		/**< OK icon */
-	LGP_MENU_PIC	= 0x4E4A,		/**< Menu icon */
-#endif
-};
-
-/**
  * Legacy struct fields offsets.
  * */
 enum LegacyStructOffsets {
