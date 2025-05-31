@@ -183,6 +183,15 @@ void GetTimeFromSeconds(TTime *time, int seconds)
 __swi_end(0x2CB, GetTimeFromSeconds, (time, seconds));
 
 /**
+ * Convert milliseconds to TTime.
+ * @param[out] time		output for calculated time
+ * @param milliseconds	number of seconds
+ * */
+__swi_begin(0x3E4)
+void GetTimeFromMilliseconds(TTime *time, uint32_t milliseconds)
+__swi_end(0x3E4, GetTimeFromSeconds, (time, milliseconds));
+
+/**
  * Convert seconds to date and time.
  * @param seconds		a pointer to the seconds
  * @param[out] date		output for calculated date
