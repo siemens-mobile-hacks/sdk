@@ -9,6 +9,8 @@ var base_8h =
     [ "DefaultLgpID", "group___s_w_i_l_i_b.html#ga36cbe9b0f3c43a0109bf0957c62bcb1d", [
       [ "LGP_NULL", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da58539cd2431843468ac1945206c903a7", null ],
       [ "LGP_DOIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da4e0924a38c8b6b3e31d67f5153cfa38b", null ],
+      [ "LGP_PLAY_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da964083fe90e8cabe425516808fc36e34", null ],
+      [ "LGP_STOP_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1daa18fd2054bd94d6e3c89b919ad1c91c9", null ],
       [ "LGP_CHANGE_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da5d3c7c89a5feadadebf45b5a4df04ceb", null ],
       [ "LGP_MENU_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1daaf9305e4e425eb172c46c0e14b2b6f0d", null ],
       [ "LGP_EDIT_PIC", "group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da97ca11e93c79a7923ab27734caaa0a08", null ],

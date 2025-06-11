@@ -157,6 +157,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gafbf2787f486102f8fd113190dfd6b443" id="r_gafbf2787f486102f8fd113190dfd6b443"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafbf2787f486102f8fd113190dfd6b443">GetWeek</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *date)</td></tr>
 <tr class="memdesc:gafbf2787f486102f8fd113190dfd6b443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get week number by date.  <br /></td></tr>
 <tr class="separator:gafbf2787f486102f8fd113190dfd6b443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e9a7c419305c7ecbbec55ae9e49c14b" id="r_ga7e9a7c419305c7ecbbec55ae9e49c14b"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e9a7c419305c7ecbbec55ae9e49c14b">GetDays</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *date)</td></tr>
+<tr class="memdesc:ga7e9a7c419305c7ecbbec55ae9e49c14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the days count.  <br /></td></tr>
+<tr class="separator:ga7e9a7c419305c7ecbbec55ae9e49c14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab64114babea962215504a37b44dbe8b8" id="r_gab64114babea962215504a37b44dbe8b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab64114babea962215504a37b44dbe8b8">IsLeapYear</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *date)</td></tr>
 <tr class="memdesc:gab64114babea962215504a37b44dbe8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check date for leap year.  <br /></td></tr>
 <tr class="separator:gab64114babea962215504a37b44dbe8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,6 +178,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga837b87484410dd374cabcae4125b381a" id="r_ga837b87484410dd374cabcae4125b381a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga837b87484410dd374cabcae4125b381a">GetTimeFromSeconds</a> (<a class="el" href="#struct_t_time">TTime</a> *time, int seconds)</td></tr>
 <tr class="memdesc:ga837b87484410dd374cabcae4125b381a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds to <a class="el" href="#struct_t_time" title="Time of the day.">TTime</a>.  <br /></td></tr>
 <tr class="separator:ga837b87484410dd374cabcae4125b381a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ba38af8b08e79a371fbbca618e620f3" id="r_ga2ba38af8b08e79a371fbbca618e620f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2ba38af8b08e79a371fbbca618e620f3">GetTimeFromMilliseconds</a> (<a class="el" href="#struct_t_time">TTime</a> *time, uint32_t milliseconds)</td></tr>
+<tr class="memdesc:ga2ba38af8b08e79a371fbbca618e620f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert milliseconds to <a class="el" href="#struct_t_time" title="Time of the day.">TTime</a>.  <br /></td></tr>
+<tr class="separator:ga2ba38af8b08e79a371fbbca618e620f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga75d6141307ee4ffbb8cd0d475814abbf" id="r_ga75d6141307ee4ffbb8cd0d475814abbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga75d6141307ee4ffbb8cd0d475814abbf">GetDateTimeFromSeconds</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *seconds, <a class="el" href="#struct_t_date">TDate</a> *date, <a class="el" href="#struct_t_time">TTime</a> *time, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *epoch)</td></tr>
 <tr class="memdesc:ga75d6141307ee4ffbb8cd0d475814abbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds to date and time.  <br /></td></tr>
 <tr class="separator:ga75d6141307ee4ffbb8cd0d475814abbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +199,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gad9e80cd1047b0614c74df1132eb42cff" id="r_gad9e80cd1047b0614c74df1132eb42cff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9e80cd1047b0614c74df1132eb42cff">GetTime_ws</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_time">TTime</a> *time, unsigned int unk)</td></tr>
 <tr class="memdesc:gad9e80cd1047b0614c74df1132eb42cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put time into ws string.  <br /></td></tr>
 <tr class="separator:gad9e80cd1047b0614c74df1132eb42cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga465eedadb2e971046de3146b11323793" id="r_ga465eedadb2e971046de3146b11323793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga465eedadb2e971046de3146b11323793">DateAddDays</a> (<a class="el" href="#struct_t_date">TDate</a> *date, int days)</td></tr>
+<tr class="memdesc:ga465eedadb2e971046de3146b11323793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or subtract days from a date.  <br /></td></tr>
+<tr class="separator:ga465eedadb2e971046de3146b11323793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4100aff63f929a5cb712eda4dbb0209f" id="r_ga4100aff63f929a5cb712eda4dbb0209f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4100aff63f929a5cb712eda4dbb0209f">DateAddMonths</a> (<a class="el" href="#struct_t_date">TDate</a> *date, int months)</td></tr>
+<tr class="memdesc:ga4100aff63f929a5cb712eda4dbb0209f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or subtract days from a date.  <br /></td></tr>
+<tr class="separator:ga4100aff63f929a5cb712eda4dbb0209f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cff14ce56dd3abe582a0f423476df44" id="r_ga0cff14ce56dd3abe582a0f423476df44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0cff14ce56dd3abe582a0f423476df44">DateAddYears</a> (<a class="el" href="#struct_t_date">TDate</a> *date, int years)</td></tr>
+<tr class="memdesc:ga0cff14ce56dd3abe582a0f423476df44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or subtract days from a date.  <br /></td></tr>
+<tr class="separator:ga0cff14ce56dd3abe582a0f423476df44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f73c896773c93dd5e8974e13cadec95" id="r_ga2f73c896773c93dd5e8974e13cadec95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_t_z">TZ</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f73c896773c93dd5e8974e13cadec95">RamTimeZones</a> ()</td></tr>
 <tr class="memdesc:ga2f73c896773c93dd5e8974e13cadec95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array of time zones.  <br /></td></tr>
 <tr class="separator:ga2f73c896773c93dd5e8974e13cadec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -550,6 +565,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga7e9a7c419305c7ecbbec55ae9e49c14b" name="ga7e9a7c419305c7ecbbec55ae9e49c14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e9a7c419305c7ecbbec55ae9e49c14b">&#9670;&#160;</a></span>GetDays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t GetDays </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_t_date">TDate</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the days count. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date of the day </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>total number of days </dd></dl>
+
+</div>
+</div>
 <a id="gab64114babea962215504a37b44dbe8b8" name="gab64114babea962215504a37b44dbe8b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab64114babea962215504a37b44dbe8b8">&#9670;&#160;</a></span>IsLeapYear()</h2>
 
@@ -732,6 +773,36 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">time</td><td>output for calculated time </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">seconds</td><td>number of seconds </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2ba38af8b08e79a371fbbca618e620f3" name="ga2ba38af8b08e79a371fbbca618e620f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ba38af8b08e79a371fbbca618e620f3">&#9670;&#160;</a></span>GetTimeFromMilliseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetTimeFromMilliseconds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_t_time">TTime</a> *</td>          <td class="paramname"><span class="paramname"><em>time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert milliseconds to <a class="el" href="#struct_t_time" title="Time of the day.">TTime</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">time</td><td>output for calculated time </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">milliseconds</td><td>number of seconds </td></tr>
   </table>
   </dd>
 </dl>
@@ -954,6 +1025,96 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ws</td><td>output ws string </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">time</td><td>time </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">unk</td><td>unkwnow parameter for formatting: 0x223, 0x227, ... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga465eedadb2e971046de3146b11323793" name="ga465eedadb2e971046de3146b11323793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga465eedadb2e971046de3146b11323793">&#9670;&#160;</a></span>DateAddDays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DateAddDays </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_t_date">TDate</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>days</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add or subtract days from a date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date of the day </td></tr>
+    <tr><td class="paramname">days</td><td>number of days to add (positive) or subtract (negative) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4100aff63f929a5cb712eda4dbb0209f" name="ga4100aff63f929a5cb712eda4dbb0209f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4100aff63f929a5cb712eda4dbb0209f">&#9670;&#160;</a></span>DateAddMonths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DateAddMonths </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_t_date">TDate</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>months</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add or subtract days from a date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date of the day </td></tr>
+    <tr><td class="paramname">months</td><td>number of months to add (positive) or subtract (negative) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0cff14ce56dd3abe582a0f423476df44" name="ga0cff14ce56dd3abe582a0f423476df44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cff14ce56dd3abe582a0f423476df44">&#9670;&#160;</a></span>DateAddYears()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DateAddYears </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_t_date">TDate</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>years</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add or subtract days from a date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date of the day </td></tr>
+    <tr><td class="paramname">years</td><td>number of years to add (positive) or subtract (negative) </td></tr>
   </table>
   </dd>
 </dl>
