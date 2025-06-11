@@ -74,6 +74,8 @@ enum DefaultLgpID {
 #ifdef NEWSGOLD
 	LGP_NULL		= 0x7FFFFFFF,	/**< Empty LGP */
 	LGP_DOIT_PIC	= 0x7FFFC0FB,	/**< OK icon */
+	LGP_PLAY_PIC	= 0x7FFFC0FF,	/**< Play icon */
+	LGP_STOP_PIC	= 0x7FFFC101,	/**< Stop icon */
 	LGP_CHANGE_PIC	= 0x7FFFC10D,	/**< Change icon */
 	LGP_MENU_PIC	= 0x7FFFC10E,	/**< Menu icon */
 	LGP_EDIT_PIC	= 0x7FFFC10F,	/**< Edit icon */

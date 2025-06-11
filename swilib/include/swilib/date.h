@@ -124,6 +124,15 @@ char GetWeek(const TDate *date)
 __swi_end(0x0B5, GetWeek, (date));
 
 /**
+ * Get the days count.
+ * @param date	date of the day
+ * @return total number of days
+ * */
+__swi_begin(0x3E8)
+int64_t GetDays(const TDate *date)
+__swi_end(0x3E8, GetDays, (date));
+
+/**
  * Check date for leap year.
  * @param date	date of the day
  * @return 1 is year is leap
@@ -181,6 +190,15 @@ __swi_end(0x2C8, GetSecondsFromTime, (time));
 __swi_begin(0x2CB)
 void GetTimeFromSeconds(TTime *time, int seconds)
 __swi_end(0x2CB, GetTimeFromSeconds, (time, seconds));
+
+/**
+ * Convert milliseconds to TTime.
+ * @param[out] time		output for calculated time
+ * @param milliseconds	number of seconds
+ * */
+__swi_begin(0x3E4)
+void GetTimeFromMilliseconds(TTime *time, uint32_t milliseconds)
+__swi_end(0x3E4, GetTimeFromSeconds, (time, milliseconds));
 
 /**
  * Convert seconds to date and time.
@@ -248,6 +266,33 @@ __swi_end(0x3B4, GetDate_ws, (ws, date, unk));
 __swi_begin(0x3B5)
 void GetTime_ws(WSHDR *ws, const TTime *time, unsigned int unk)
 __swi_end(0x3B5, GetTime_ws, (ws, time, unk));
+
+/**
+ * Add or subtract days from a date.
+ * @param date	date of the day
+ * @param days	number of days to add (positive) or subtract (negative)
+ * */
+__swi_begin(0x3E5)
+void DateAddDays(TDate *date, int days)
+__swi_end(0x3E5, DateAddDays, (date, days));
+
+/**
+ * Add or subtract days from a date.
+ * @param date		date of the day
+ * @param months	number of months to add (positive) or subtract (negative)
+ * */
+__swi_begin(0x3E6)
+void DateAddMonths(TDate *date, int months)
+__swi_end(0x3E6, DateAddMonths, (date, months));
+
+/**
+ * Add or subtract days from a date.
+ * @param date		date of the day
+ * @param years	number of years to add (positive) or subtract (negative)
+ * */
+__swi_begin(0x3E7)
+void DateAddYears(TDate *date, int years)
+__swi_end(0x3E7, DateAddYears, (date, years));
 
 /**
  * Get array of time zones.
