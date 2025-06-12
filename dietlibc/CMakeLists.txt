@@ -22,7 +22,7 @@ set(SOURCES
 	src/libc.c
 	src/libc_init.c
 	src/lib/closedir.c
-	src/lib/__dtostr.c
+#	src/lib/__dtostr.c
 	src/lib/__isnan.c
 	src/lib/errlistu.c
 	src/lib/errno_location.c

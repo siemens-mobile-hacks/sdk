@@ -125,6 +125,7 @@ SOURCES += src/lib/vsscanf.c
 # SOURCES += src/lib/iswspace.c
 # SOURCES += src/lib/iswupper.c
 # SOURCES += src/lib/iswxdigit.c
+SOURCES += src/lib/printf/printf.c
 
 SOURCES += src/libcompat/mempcpy.c
 SOURCES += src/libcompat/stpcpy.c
