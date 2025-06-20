@@ -420,6 +420,16 @@ struct PBAR_DESC {
 };
 
 /**
+ * Set header to the GUI.
+ * @param gui			pointer to the GUI
+ * @param header		pointer to the header definition
+ * @param malloc_fn		pointer to the malloc() function, use result of #malloc_adr
+ * */
+__swi_begin(0x2A6)
+void SetHeader(void *gui, const HEADER_DESC *header, const void *malloc_fn)
+__swi_end(0x2A6, SetHeader, (gui, header, malloc_fn));
+
+/**
  * @name Common UI functions.
  * @{
  * */
@@ -1367,10 +1377,8 @@ void SetMenuSoftKey(void *gui, const SOFTKEY_DESC *softkey, int softkey_id)
 __swi_end(0x2B0, SetMenuSoftKey, (gui, softkey, softkey_id));
 
 /**
- * Set header to the menu.
- * @param gui			pointer to the Menu GUI
- * @param header		pointer to the header definition
- * @param malloc_fn		pointer to the malloc() function, use result of #malloc_adr
+ * @copydoc SetHeader
+ * @deprecated Use #SetHeader instead.
  * */
 __swi_begin(0x2A6)
 void SetHeaderToMenu(void *gui, const HEADER_DESC *header, const void *malloc_fn)
