@@ -391,7 +391,11 @@ struct TVIEW_DESC {
 	int unk1;								/**< 0x64, 0x81 */
 	int unk2;								/**< 0x65, 0x82 */
 	int unk3;								/**< 0 */
+#ifdef SWILIB_MODERN
+	int text_attrs;							/**< Text attributes, see #TextAttributesFlags (old name unk4) */
+#else
 	int unk4;								/**< 0, 1, 2 */
+#endif
 };
 
 /**
