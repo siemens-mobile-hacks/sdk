@@ -424,6 +424,11 @@ struct PBAR_DESC {
 };
 
 /**
+ * @name Common UI functions.
+ * @{
+ * */
+
+/**
  * Set header to the GUI.
  * @param gui			pointer to the GUI
  * @param header		pointer to the header definition
@@ -432,11 +437,6 @@ struct PBAR_DESC {
 __swi_begin(0x2A6)
 void SetHeader(void *gui, const HEADER_DESC *header, const void *malloc_fn)
 __swi_end(0x2A6, SetHeader, (gui, header, malloc_fn));
-
-/**
- * @name Common UI functions.
- * @{
- * */
 
 /**
  * Get pointer to the UI header.
@@ -536,6 +536,30 @@ __swi_end(0x14E, FindItemByID, (gui, id));
 __swi_begin(0x14F)
 void *GetDataOfItemByID(GUI *gui, int id)
 __swi_end(0x14F, GetDataOfItemByID, (gui, id));
+
+/**
+ * Size of UI header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D6)
+RECT *GetHeaderRECT(void)
+__swi_end(0x83D6, GetHeaderRECT, ());
+
+/**
+ * Size of UI options header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D7)
+RECT *GetOptionsHeaderRect(void)
+__swi_end(0x83D7, GetOptionsHeaderRect, ());
+
+/**
+ * Size of UI main area.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D8)
+RECT *GetMainAreaRECT(void)
+__swi_end(0x83D8, GetMainAreaRECT, ());
 
 /** @} */
 
@@ -1660,30 +1684,6 @@ __swi_end(0x22B, CreateRadioButtonList, (desc, num, unk_zero0, unk_zero1, select
 __swi_begin(0x80D8)
 void *RamMenuAnywhere()
 __swi_end(0x80D8, RamMenuAnywhere, ());
-
-/**
- * Size of UI header.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D6)
-RECT *GetHeaderRECT(void)
-__swi_end(0x83D6, GetHeaderRECT, ());
-
-/**
- * Size of UI options header.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D7)
-RECT *GetOptionsHeaderRect(void)
-__swi_end(0x83D7, GetOptionsHeaderRect, ());
-
-/**
- * Size of UI main area.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D8)
-RECT *GetMainAreaRECT(void)
-__swi_end(0x83D8, GetMainAreaRECT, ());
 
 /** @} */
 
