@@ -69,6 +69,11 @@ struct LIGHT_PARAM {
 	char max_illum;		/**< Lightness level */
 };
 
+enum CountdownToneType {
+	COUNTDOWN_TONE_BEEP	= 0x7,
+	COUNTDOWN_TONE_ALERT	= 0xD
+};
+
 /**
  * @name Control
  * @{
@@ -408,6 +413,59 @@ __swi_end(0x8293, RamAlarmClockHours, ());
 __swi_begin(0x8294)
 char *RamAlarmClockMinutes()
 __swi_end(0x8294, RamAlarmClockMinutes, ());
+
+/** @} */
+
+/**
+ * @name Countdown
+ * @{
+ * */
+
+/**
+ * Read countdown.pd and start the countdown.
+ * */
+__swi_begin(0x3F0)
+void Countdown_Start()
+__swi_end(0x3F0, Countdown_Start, ());
+
+/**
+ * Stop the countdown.
+ * */
+__swi_begin(0x3F1)
+void Countdown_Stop()
+__swi_end(0x3F1, Countdown_Stop, ());
+
+/**
+ * Check if the countdown is enabled.
+ * @return 0 or 1
+ * */
+__swi_begin(0x3F2)
+int Countdown_IsEnabled()
+__swi_end(0x3F2, Countdown_IsEnabled, ());
+
+/**
+ * Get the remaining time of the countdown.
+ * @return milliseconds
+ * */
+__swi_begin(0x3F3)
+int Countdown_GetRemainingTime()
+__swi_end(0x3F3, Countdown_GetRemainingTime, ());
+
+/**
+ * Play sound for the countdown
+ * @param tone_type		tone id see #CountdownToneType
+ * */
+__swi_begin(0x3F4)
+void Countdown_PlaySound(long tone_type)
+__swi_end(0x3F4, Countdown_PlaySound, (tone_type));
+
+/**
+ * Check if Ring UI for the countdown is active.
+ * @return 0 or 1
+ * */
+__swi_begin(0x83F5)
+int *RamIsCountdownRingUIActive()
+__swi_end(0x83F5, RamIsCountdownRingUIActive, ());
 
 /** @} */
 
