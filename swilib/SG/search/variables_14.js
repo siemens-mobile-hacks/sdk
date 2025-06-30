@@ -3,7 +3,7 @@ var searchData=
   ['t61string_0',['t61string',['../asn1_8h.html#a110c9d443aa42c5004c3beb489af68dc',1,'asn1_type_st.value']]],
   ['tag_1',['tag',['../asn1_8h.html#a50c207efa22cdc9e926f70c3e05ebd8b',1,'asn1_ctx_st']]],
   ['text_2',['text',['../builtin_2png_8h.html#a27492227bc525bee14abcc8002084edd',1,'png_text_struct::text'],['../builtin_2png_8h.html#a2c6bf85f9fe3331de438ac534f82c8c7',1,'png_info_struct::text']]],
-  ['text_5fattrs_3',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC']]],
+  ['text_5fattrs_3',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC::text_attrs'],['../group___u_i.html#afca1233e3b42d105990ff9a5eaecaa75',1,'TVIEW_DESC::text_attrs']]],
   ['text_5flength_4',['text_length',['../builtin_2png_8h.html#a26312284ecc7a95e2168a29d0170b411',1,'png_text_struct']]],
   ['tf_5',['tf',['../group___i2_c.html#a21f37c3250e9bace188da0413243023e',1,'I2C_MSG']]],
   ['this_5fstruct_5faddr_6',['this_struct_addr',['../group___explorer.html#abd77df7b1dd422c7c93abf4a5a8276bf',1,'NativeExplorerData']]],

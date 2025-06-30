@@ -150,6 +150,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga9cda6019d659b3b66671bf05116179d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set light flags.  <a href="group___m_i_s_c.html#ga9cda6019d659b3b66671bf05116179d7">More...</a><br /></td></tr>
 <tr class="separator:ga9cda6019d659b3b66671bf05116179d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61feef040f39ed4bd493659c43e31c2a" id="r_ga61feef040f39ed4bd493659c43e31c2a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga61feef040f39ed4bd493659c43e31c2a">CountdownToneType</a> { <br />
+&#160;&#160;<a class="el" href="group___m_i_s_c.html#gga61feef040f39ed4bd493659c43e31c2aa751249a550242908f332e3f5b08a4cfa">COUNTDOWN_TONE_BEEP</a> = 0x7
+, <br />
+&#160;&#160;<a class="el" href="group___m_i_s_c.html#gga61feef040f39ed4bd493659c43e31c2aa059f52d618e8baaa1ddf88ecaf663ebd">COUNTDOWN_TONE_ALERT</a> = 0xD
+<br />
+ }</td></tr>
+<tr class="separator:ga61feef040f39ed4bd493659c43e31c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -259,6 +266,25 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1bcfe1add9622bdd4fa20ba9abf67bb4" id="r_ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga1bcfe1add9622bdd4fa20ba9abf67bb4">RamAlarmClockMinutes</a> ()</td></tr>
 <tr class="memdesc:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlarmClock scheduled time (minutes).  <br /></td></tr>
 <tr class="separator:ga1bcfe1add9622bdd4fa20ba9abf67bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Countdown</div></td></tr>
+<tr class="memitem:ga9aa5fa49d1887c2623f2b52c62b63f84" id="r_ga9aa5fa49d1887c2623f2b52c62b63f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga9aa5fa49d1887c2623f2b52c62b63f84">Countdown_Start</a> ()</td></tr>
+<tr class="memdesc:ga9aa5fa49d1887c2623f2b52c62b63f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read countdown.pd and start the countdown.  <br /></td></tr>
+<tr class="separator:ga9aa5fa49d1887c2623f2b52c62b63f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33a1b7cbba62f43791cd884efe25a5c7" id="r_ga33a1b7cbba62f43791cd884efe25a5c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga33a1b7cbba62f43791cd884efe25a5c7">Countdown_Stop</a> ()</td></tr>
+<tr class="memdesc:ga33a1b7cbba62f43791cd884efe25a5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the countdown.  <br /></td></tr>
+<tr class="separator:ga33a1b7cbba62f43791cd884efe25a5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0ede5af6623b7245bc8e1d30ee8cce2" id="r_gaf0ede5af6623b7245bc8e1d30ee8cce2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gaf0ede5af6623b7245bc8e1d30ee8cce2">Countdown_IsEnabled</a> ()</td></tr>
+<tr class="memdesc:gaf0ede5af6623b7245bc8e1d30ee8cce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the countdown is enabled.  <br /></td></tr>
+<tr class="separator:gaf0ede5af6623b7245bc8e1d30ee8cce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f5622e1e4f48251372b4297c9030e77" id="r_ga8f5622e1e4f48251372b4297c9030e77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga8f5622e1e4f48251372b4297c9030e77">Countdown_GetRemainingTime</a> ()</td></tr>
+<tr class="memdesc:ga8f5622e1e4f48251372b4297c9030e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remaining time of the countdown.  <br /></td></tr>
+<tr class="separator:ga8f5622e1e4f48251372b4297c9030e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga335da0b8d4c0c55882932d0eda3b30b8" id="r_ga335da0b8d4c0c55882932d0eda3b30b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga335da0b8d4c0c55882932d0eda3b30b8">Countdown_PlaySound</a> (long tone_type)</td></tr>
+<tr class="memdesc:ga335da0b8d4c0c55882932d0eda3b30b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play sound for the countdown.  <br /></td></tr>
+<tr class="separator:ga335da0b8d4c0c55882932d0eda3b30b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1749cbb64c6f7794eec8d32d2e95569" id="r_gac1749cbb64c6f7794eec8d32d2e95569"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#gac1749cbb64c6f7794eec8d32d2e95569">RamIsCountdownRingUIActive</a> ()</td></tr>
+<tr class="memdesc:gac1749cbb64c6f7794eec8d32d2e95569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Ring UI for the countdown is active.  <br /></td></tr>
+<tr class="separator:gac1749cbb64c6f7794eec8d32d2e95569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other functions</div></td></tr>
 <tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c.html#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
 <tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>

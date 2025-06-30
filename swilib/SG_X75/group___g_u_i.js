@@ -11,6 +11,7 @@ var group___g_u_i =
     [ "RAP_LCDLAYER_LIST", "group___g_u_i.html#struct_r_a_p___l_c_d_l_a_y_e_r___l_i_s_t", null ],
     [ "RECT", "group___g_u_i.html#ga57906bc48014004bcda1eaebfa0b171b", null ],
     [ "GUI", "group___g_u_i.html#ga8a02499105ed6732aade4cae6c4e5594", null ],
+    [ "WIDGET", "group___g_u_i.html#ga26e562d6a047dbb33f89bdf44efde5eb", null ],
     [ "GUI_RAM", "group___g_u_i.html#ga7ad8deba427c6d78ef7c8abdd5ff2ade", null ],
     [ "GUI_MSG", "group___g_u_i.html#ga36dc679830a955676302a0c1b5be00c1", null ],
     [ "GUI_METHODS", "group___g_u_i.html#ga25c71d5c524d9f4bd0be9c28d88e4a8a", null ],

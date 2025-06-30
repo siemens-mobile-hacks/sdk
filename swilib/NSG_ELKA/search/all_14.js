@@ -19,7 +19,7 @@ var searchData=
   ['text_5falignleft_16',['TEXT_ALIGNLEFT',['../group___g_u_i.html#gga7ce4f9d1c2071c4060f9e3dc8886a294adeef45f2b72d07cb13e59b162b7e5ec8',1,'gui.h']]],
   ['text_5falignmiddle_17',['TEXT_ALIGNMIDDLE',['../group___g_u_i.html#gga7ce4f9d1c2071c4060f9e3dc8886a294af6b24983811c3111315b2acd08ee7fa2',1,'gui.h']]],
   ['text_5falignright_18',['TEXT_ALIGNRIGHT',['../group___g_u_i.html#gga7ce4f9d1c2071c4060f9e3dc8886a294a62c4ef98250261745c82be09f4cc7e13',1,'gui.h']]],
-  ['text_5fattrs_19',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC']]],
+  ['text_5fattrs_19',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC::text_attrs'],['../group___u_i.html#afca1233e3b42d105990ff9a5eaecaa75',1,'TVIEW_DESC::text_attrs']]],
   ['text_5finvert_20',['TEXT_INVERT',['../group___g_u_i.html#gga7ce4f9d1c2071c4060f9e3dc8886a294aa0cf747097c35ccd3494f554d2b2d4c0',1,'gui.h']]],
   ['text_5finvert2_21',['TEXT_INVERT2',['../group___g_u_i.html#gga7ce4f9d1c2071c4060f9e3dc8886a294ad7daf6c5de12ad23343e33417a9a2e6e',1,'gui.h']]],
   ['text_5flength_22',['text_length',['../builtin_2png_8h.html#a26312284ecc7a95e2168a29d0170b411',1,'png_text_struct']]],

@@ -15,6 +15,10 @@ var group___m_i_s_c =
       [ "SET_LIGHT_DISPLAY", "group___m_i_s_c.html#gga9cda6019d659b3b66671bf05116179d7ad58eace941e28987f5b8315357b32ebe", null ],
       [ "SET_LIGHT_KEYBOARD", "group___m_i_s_c.html#gga9cda6019d659b3b66671bf05116179d7a3997293b50b91c5a7cafaab72b9c58c5", null ]
     ] ],
+    [ "CountdownToneType", "group___m_i_s_c.html#ga61feef040f39ed4bd493659c43e31c2a", [
+      [ "COUNTDOWN_TONE_BEEP", "group___m_i_s_c.html#gga61feef040f39ed4bd493659c43e31c2aa751249a550242908f332e3f5b08a4cfa", null ],
+      [ "COUNTDOWN_TONE_ALERT", "group___m_i_s_c.html#gga61feef040f39ed4bd493659c43e31c2aa059f52d618e8baaa1ddf88ecaf663ebd", null ]
+    ] ],
     [ "SwitchPhoneOff", "group___m_i_s_c.html#ga618e25b6c8787fd8b9fabcf48ff9bf3f", null ],
     [ "RebootPhone", "group___m_i_s_c.html#ga9e75e3bc7d09e0043987cf673f2fd57c", null ],
     [ "SLI_SetState", "group___m_i_s_c.html#ga89d4247039a4d2c121e9467dac27874b", null ],
@@ -48,6 +52,12 @@ var group___m_i_s_c =
     [ "RamIsAlarmClockAutorepeatOn", "group___m_i_s_c.html#ga8788c836c73d65b2e46ed04d26e025cd", null ],
     [ "RamAlarmClockHours", "group___m_i_s_c.html#gae8b5d9f4278b76675dbe246465a5e8ca", null ],
     [ "RamAlarmClockMinutes", "group___m_i_s_c.html#ga1bcfe1add9622bdd4fa20ba9abf67bb4", null ],
+    [ "Countdown_Start", "group___m_i_s_c.html#ga9aa5fa49d1887c2623f2b52c62b63f84", null ],
+    [ "Countdown_Stop", "group___m_i_s_c.html#ga33a1b7cbba62f43791cd884efe25a5c7", null ],
+    [ "Countdown_IsEnabled", "group___m_i_s_c.html#gaf0ede5af6623b7245bc8e1d30ee8cce2", null ],
+    [ "Countdown_GetRemainingTime", "group___m_i_s_c.html#ga8f5622e1e4f48251372b4297c9030e77", null ],
+    [ "Countdown_PlaySound", "group___m_i_s_c.html#ga335da0b8d4c0c55882932d0eda3b30b8", null ],
+    [ "RamIsCountdownRingUIActive", "group___m_i_s_c.html#gac1749cbb64c6f7794eec8d32d2e95569", null ],
     [ "ShowMainMenu", "group___m_i_s_c.html#ga4a20e4d245e664ef2df0ca82f864be81", null ],
     [ "ShowNativeMenu", "group___m_i_s_c.html#ga912b218cc7bbfadee40de173539e405f", null ],
     [ "Devmenu_Config_IsCheckboxOff", "group___m_i_s_c.html#gad2ec5c39551bc6e08b46875e3f0d25d4", null ],

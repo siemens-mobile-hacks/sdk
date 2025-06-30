@@ -8,7 +8,7 @@ var searchData=
   ['tag_5ftrack_5fws_5',['tag_track_ws',['../group___file.html#ad84d594a21b1c0e8eeec8532e8d591e0',1,'FILE_PROP']]],
   ['tag_5fyear_5fws_6',['tag_year_ws',['../group___file.html#a9f3b1e5ebbb0bb0960d1171ad08d50fc',1,'FILE_PROP']]],
   ['text_7',['text',['../builtin_2png_8h.html#a27492227bc525bee14abcc8002084edd',1,'png_text_struct::text'],['../builtin_2png_8h.html#a2c6bf85f9fe3331de438ac534f82c8c7',1,'png_info_struct::text']]],
-  ['text_5fattrs_8',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC']]],
+  ['text_5fattrs_8',['text_attrs',['../group___u_i.html#a68e50de1f3f42349b94ef111113aa6d8',1,'INPUTDIA_DESC::text_attrs'],['../group___u_i.html#afca1233e3b42d105990ff9a5eaecaa75',1,'TVIEW_DESC::text_attrs']]],
   ['text_5flength_9',['text_length',['../builtin_2png_8h.html#a26312284ecc7a95e2168a29d0170b411',1,'png_text_struct']]],
   ['this_5fstruct_5faddr_10',['this_struct_addr',['../group___explorer.html#abd77df7b1dd422c7c93abf4a5a8276bf',1,'NativeExplorerData']]],
   ['three_5fbyte_5fheader_11',['three_byte_header',['../ssl2_8h.html#a65dd8015e198ff0042ac720ed7aaf349',1,'ssl2_state_st']]],
