@@ -32,6 +32,7 @@ typedef struct POPUP_DESC POPUP_DESC;
 typedef struct TABGUI_DESC TABGUI_DESC;
 typedef struct TVIEW_DESC TVIEW_DESC;
 typedef struct PBAR_DESC PBAR_DESC;
+typedef struct SCROLLBAR_DESC SCROLLBAR_DESC;
 
 /**
  * Menu item draw callback.
@@ -411,7 +412,7 @@ struct TABGUI_DESC {
 };
 
 /**
- * Progressbar deinition.
+ * Progressbar definition.
  * */
 struct PBAR_DESC {
     int flag;						/**< 0, 8 */
@@ -421,6 +422,14 @@ struct PBAR_DESC {
     const int *softkeys;			/**< Softkeys mapping from softkeystab, example: {0, 1, 2} */
     const SOFTKEYSTAB *softkeystab;	/**< Pointer to the softkeys definition */
     char zero[32];					/**< Unknown data */
+};
+
+/**
+ * Scrollbar widget definition.
+ * */
+struct SCROLLBAR_DESC {
+	RECT rc;			/**< Rectangular region on the screen */
+	char dummy[16];		/**< Unknown data */
 };
 
 /**
@@ -1669,6 +1678,42 @@ __swi_end(0x2DA, TViewGetUserPointer, (gui));
 __swi_begin(0x22B)
 int CreateRadioButtonList(void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void (*handler)(int), int flags)
 __swi_end(0x22B, CreateRadioButtonList, (desc, num, unk_zero0, unk_zero1, selected_item, handler, flags));
+
+/** @} */
+
+/**
+ * @name Scrollbar
+ * @{
+ * */
+
+/**
+ * Allocate Scrollbar WIDGET.
+ * @param malloc_fn		result of #malloc_adr
+ * @return new allocated WIDGET
+ * */
+__swi_begin(0x3F6)
+WIDGET *CreateScrollbarWidget(const void *malloc_fn)
+__swi_end(0x3F6, CreateScrollbarWidget, (malloc_fn));
+
+/**
+ * Configure the scrollbar's behavior constraints.
+ * @param scrollbar		pointer to the Scrollbar WIDGET
+ * @param limit			Maximum allowed switch operations (must be > 0)
+ * @param unk1			unknown, set to 0
+ * @param unk2			unknown, set to 0
+ */
+__swi_begin(0x3F7)
+void Scrollbar_Configure(WIDGET *scrollbar, int limit, int unk1, int unk2)
+__swi_end(0x3F7, Scrollbar_Configure, (scrollbar, limit, unk1, unk2));
+
+/**
+ * Set the scrollbar's current position.
+ * @param scrollbar		pointer to the Scrollbar WIDGET
+ * @param value			scroll position in scrollbar units
+ */
+__swi_begin(0x3F8)
+void Scrollbar_SetValue(WIDGET *scrollbar, int value)
+__swi_end(0x3F8, Scrollbar_SetValue, (scrollbar, value));
 
 /** @} */
 
