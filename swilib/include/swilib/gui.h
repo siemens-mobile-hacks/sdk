@@ -20,6 +20,7 @@ __swilib_begin
 
 typedef struct RECT RECT;
 typedef struct GUI GUI;
+typedef struct GUI WIDGET;
 typedef struct GUI_RAM GUI_RAM;
 typedef struct GUI_MSG GUI_MSG;
 typedef struct GUI_METHODS GUI_METHODS;

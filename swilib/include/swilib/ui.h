@@ -391,7 +391,11 @@ struct TVIEW_DESC {
 	int unk1;								/**< 0x64, 0x81 */
 	int unk2;								/**< 0x65, 0x82 */
 	int unk3;								/**< 0 */
+#ifdef SWILIB_MODERN
+	int text_attrs;							/**< Text attributes, see #TextAttributesFlags (old name unk4) */
+#else
 	int unk4;								/**< 0, 1, 2 */
+#endif
 };
 
 /**
@@ -423,6 +427,16 @@ struct PBAR_DESC {
  * @name Common UI functions.
  * @{
  * */
+
+/**
+ * Set header to the GUI.
+ * @param gui			pointer to the GUI
+ * @param header		pointer to the header definition
+ * @param malloc_fn		pointer to the malloc() function, use result of #malloc_adr
+ * */
+__swi_begin(0x2A6)
+void SetHeader(void *gui, const HEADER_DESC *header, const void *malloc_fn)
+__swi_end(0x2A6, SetHeader, (gui, header, malloc_fn));
 
 /**
  * Get pointer to the UI header.
@@ -523,6 +537,30 @@ __swi_begin(0x14F)
 void *GetDataOfItemByID(GUI *gui, int id)
 __swi_end(0x14F, GetDataOfItemByID, (gui, id));
 
+/**
+ * Size of UI header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D6)
+RECT *GetHeaderRECT(void)
+__swi_end(0x83D6, GetHeaderRECT, ());
+
+/**
+ * Size of UI options header.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D7)
+RECT *GetOptionsHeaderRect(void)
+__swi_end(0x83D7, GetOptionsHeaderRect, ());
+
+/**
+ * Size of UI main area.
+ * @return pointer to the rect
+ * */
+__swi_begin(0x83D8)
+RECT *GetMainAreaRECT(void)
+__swi_end(0x83D8, GetMainAreaRECT, ());
+
 /** @} */
 
 /**
@@ -571,6 +609,18 @@ __swi_end(0x3D2, IsIconBarDisabled, ());
 __swi_begin(0x23B)
 void DisableIconBar(int disable)
 __swi_end(0x23B, DisableIconBar, (disable));
+
+/**
+ * Attach a widget to the GUI.
+ * @param gui		pointer to the GUI
+ * @param widget	pointer to the WIDGET
+ * @param id		an identifier for the widget
+ * @param malloc_fn	result of #malloc_adr
+ * */
+__swi_begin(0x3EE)
+void AttachWidget(void *gui, const void *widget, int id, const void *malloc_fn)
+__swi_end(0x3EE, AttachWidget, (gui, widget, id, malloc_fn));
+
 
 /** @} */
 
@@ -758,6 +808,34 @@ int CreateInputTextDialog(const INPUTDIA_DESC *input_desc, const HEADER_DESC *he
 __swi_end(0x167, CreateInputTextDialog, (input_desc, header_desc, eq, do_mfree, user_pointer));
 
 /**
+ * Allocate GUI for the Input.
+ * @param malloc_fn		result of #malloc_adr
+ * @param mfree_fn		result of #mfree_adr
+ * @return new allocated GUI
+ * */
+__swi_begin(0x3E9)
+void *EDIT_GetGUI(const void *malloc_fn, const void *mfree_fn)
+__swi_end(0x3E9, EDIT_GetGUI, (malloc_fn, mfree_fn));
+
+/**
+ * Attach the Input definition to the allocated GUI.
+ * @param gui			pointer to the Input GUI
+ * @param input_desc	pointer to the #INPUTDIA_DESC
+ * */
+__swi_begin(0x3EA)
+void EDIT_SetDefinition(void *gui, const INPUTDIA_DESC *input_desc)
+__swi_end(0x3EA, EDIT_SetDefinition, (gui, input_desc));
+
+/**
+ * Set custom user pointer to the Input.
+ * @param gui			pointer to the Input GUI
+ * @param user_pointer	custom user pointer
+ * */
+__swi_begin(0x3EC)
+void EDIT_SetUserPointer(void *gui, void *user_pointer)
+__swi_end(0x3EC, EDIT_SetUserPointer, (gui, user_pointer));
+
+/**
  * Get user pointer from the InputDialog.
  * @param gui	pointer to the InputDialog GUI
  * @return pointer
@@ -788,6 +866,17 @@ __swi_end(0x1E5, EDIT_OpenOptionMenuWithUserItems, (gui, itemhandler, user_point
 __swi_begin(0x163)
 EDITQ *AllocEQueue(const void *malloc_func, const void *mfree_func)
 __swi_end(0x163, AllocEQueue, (malloc_func, mfree_func));
+
+/**
+ * Set list of the edit controls to the allocated GUI
+ * @param gui			pointer to the Input GUI
+ * @param eq			list of the edit controls
+ * @param do_mfree		set to 1 if you want free `eq` data
+ * @param malloc_fn		result of #malloc_adr
+ * */
+__swi_begin(0x3EB)
+void *EDIT_SetEQueue(void *gui, const EDITQ *eq, int do_mfree, const void *malloc_fn)
+__swi_end(0x3EB, EDIT_SetEQueue, (gui, eq, do_mfree, malloc_fn));
 
 /**
  * Pre-initialize #EDITCONTROL structure.
@@ -1367,10 +1456,8 @@ void SetMenuSoftKey(void *gui, const SOFTKEY_DESC *softkey, int softkey_id)
 __swi_end(0x2B0, SetMenuSoftKey, (gui, softkey, softkey_id));
 
 /**
- * Set header to the menu.
- * @param gui			pointer to the Menu GUI
- * @param header		pointer to the header definition
- * @param malloc_fn		pointer to the malloc() function, use result of #malloc_adr
+ * @copydoc SetHeader
+ * @deprecated Use #SetHeader instead.
  * */
 __swi_begin(0x2A6)
 void SetHeaderToMenu(void *gui, const HEADER_DESC *header, const void *malloc_fn)
@@ -1425,6 +1512,18 @@ __swi_end(0x2A5, GetMultiLinesMenuGUI, (malloc_fn, mfree_fn));
 __swi_begin(0x2A7)
 void SetMenuToGUI(void *gui, const void *menu)
 __swi_end(0x2A7, SetMenuToGUI, (gui, menu));
+
+/**
+ * Dynamically set the bounding rectangle for the Menu GUI.
+ * @param gui		pointer to the Menu GUI
+ * @param x			top-left X coordinate of the menu rectangle
+ * @param y			top-left Y coordinate of the menu rectangle
+ * @param x2		bottom-right X coordinate of the menu rectangle
+ * @param y2		bottom-right Y coordinate of the menu rectangle
+ * */
+__swi_begin(0x3ED)
+void SetMenuRect(void *gui, int x, int y, int x2, int y2)
+__swi_end(0x3ED, SetMenuRect, (gui, x, y, x2, y2));
 
 /** @} */
 
@@ -1585,30 +1684,6 @@ __swi_end(0x22B, CreateRadioButtonList, (desc, num, unk_zero0, unk_zero1, select
 __swi_begin(0x80D8)
 void *RamMenuAnywhere()
 __swi_end(0x80D8, RamMenuAnywhere, ());
-
-/**
- * Size of UI header.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D6)
-RECT *GetHeaderRECT(void)
-__swi_end(0x83D6, GetHeaderRECT, ());
-
-/**
- * Size of UI options header.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D7)
-RECT *GetOptionsHeaderRect(void)
-__swi_end(0x83D7, GetOptionsHeaderRect, ());
-
-/**
- * Size of UI main area.
- * @return pointer to the rect
- * */
-__swi_begin(0x83D8)
-RECT *GetMainAreaRECT(void)
-__swi_end(0x83D8, GetMainAreaRECT, ());
 
 /** @} */
 
