@@ -20,6 +20,7 @@ var ui_8h =
     [ "TABGUI_DESC", "group___u_i.html#gafa1bc01e77a638ce627ac8ee29aee811", null ],
     [ "TVIEW_DESC", "group___u_i.html#gaf80958808678f651b02ec6c1f3d0caa0", null ],
     [ "PBAR_DESC", "group___u_i.html#ga90cead3d9d40164e42bbe854de2350d3", null ],
+    [ "SCROLLBAR_DESC", "group___u_i.html#gace4c383902f706936c1010c9a87b9e1f", null ],
     [ "MENUITEM_DRAW_PROC", "group___u_i.html#gacc64e1280ce26ae184a98a737bdf9acb", null ],
     [ "MENUPROCS_DESC", "group___u_i.html#gad61c94af059e18c9bd91aa43ee92db4a", null ],
     [ "GUI_ONKEY_CALLBACK", "group___u_i.html#ga61adfd2854bb30ad9d2664d42e54d1dd", null ],
@@ -211,5 +212,8 @@ var ui_8h =
     [ "TViewSetUserPointer", "group___u_i.html#ga2a2bfc59416cb3f25fc0a7af6c326bd6", null ],
     [ "TViewGetUserPointer", "group___u_i.html#ga8b75db47e227cc4a56eedab904dc915f", null ],
     [ "CreateRadioButtonList", "group___u_i.html#ga8255da09902a222ab737efaae5e272e2", null ],
+    [ "CreateScrollbarWidget", "group___u_i.html#ga8487ab411c3874090d1612d51b83b666", null ],
+    [ "Scrollbar_Configure", "group___u_i.html#gadf4036fcab5926a5534d3760c711e863", null ],
+    [ "Scrollbar_SetValue", "group___u_i.html#ga2144d00e5aa18fa3fcfc6335b6112376", null ],
     [ "RamMenuAnywhere", "group___u_i.html#gaf8201f9eea97087c165fd841ea136a49", null ]
 ];

@@ -60,7 +60,7 @@ var searchData=
   ['dsa_5fdo_5fverify_57',['dsa_do_verify',['../dsa_8h.html#a48d8dcf12cd14676633cde4b06dbe1c5',1,'dsa_method']]],
   ['dsa_5fmod_5fexp_58',['dsa_mod_exp',['../dsa_8h.html#a6295bfda1f4be2fc9e04e69c6a104f4d',1,'dsa_method']]],
   ['dsa_5fsign_5fsetup_59',['dsa_sign_setup',['../dsa_8h.html#a6c731fb594e9d87b38351caf21b52f72',1,'dsa_method']]],
-  ['dummy_60',['dummy',['../group___g_u_i.html#ad7509509e455de66e061228501910bfe',1,'DRWOBJ::dummy'],['../crypto_8h.html#a1aa7e9db2ba85dfdcde7d21eb9c6897d',1,'crypto_ex_data_st::dummy'],['../builtin_2zlib_8h.html#ab000a3e3c901dd063859521988ad7e52',1,'internal_state::dummy']]],
+  ['dummy_60',['dummy',['../group___g_u_i.html#ad7509509e455de66e061228501910bfe',1,'DRWOBJ::dummy'],['../group___u_i.html#a5eaba270a07908c68106bac288a18a6e',1,'SCROLLBAR_DESC::dummy'],['../crypto_8h.html#a1aa7e9db2ba85dfdcde7d21eb9c6897d',1,'crypto_ex_data_st::dummy'],['../builtin_2zlib_8h.html#ab000a3e3c901dd063859521988ad7e52',1,'internal_state::dummy']]],
   ['dup_5ffunc_61',['dup_func',['../crypto_8h.html#a3ba1b7f5fec2a001822f70e5862d72b5',1,'crypto_ex_data_func_st']]],
   ['duration_5fwav_62',['duration_wav',['../group___file.html#af474f6723a9ec8abb58d2c3586d72696',1,'FILE_PROP']]],
   ['duration_5fwav_5fws_63',['duration_wav_ws',['../group___file.html#adaf76f9ef88f552eee34f4ace7bcf19e',1,'FILE_PROP']]],
