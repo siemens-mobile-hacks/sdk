@@ -329,7 +329,11 @@ struct MENUITEM_DESC {
 	int zero;				/**< 0 */
 	const int *softkeys;	/**< Custom softkeys mapping or NULL */
 	int flag1;				/**< #MENU_FLAG3 */
+#ifdef SWILIB_MODERN
+	int feature_id;			/**< Feature ID */
+#else
 	int flag2;				/**< #MENU_FLAG2 */
+#endif
 };
 
 /**
