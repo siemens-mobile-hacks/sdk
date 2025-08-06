@@ -169,6 +169,17 @@ enum EditControlFlags {
 };
 
 /**
+ * Ghook commands.
+ * */
+enum UIDialogCmdID {
+	UI_CMD_CREATE		= 0x2,
+	UI_CMD_DESTROY		= 0x3,
+	UI_CMD_REDRAW		= 0x7,
+	UI_CMD_UNFOCUS		= 0x9,
+	UI_CMD_FOCUS		= 0xA,
+};
+
+/**
  * TextInputDialog ghook commands.
  * */
 enum TextInputDialogCmdID {
