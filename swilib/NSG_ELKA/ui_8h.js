@@ -76,6 +76,13 @@ var ui_8h =
       [ "ECF_MARKED", "group___u_i.html#gga92eaaac25ce7096d892cd2a5b6e331f8a4c46eb0e0d89e36058430a2fc62a1be9", null ],
       [ "ECF_GRAY", "group___u_i.html#gga92eaaac25ce7096d892cd2a5b6e331f8a5b8333281bd1837b968ee1dd7df91159", null ]
     ] ],
+    [ "UIDialogCmdID", "group___u_i.html#ga4476ae475ceea43a6d58c6865887ffdc", [
+      [ "UI_CMD_CREATE", "group___u_i.html#gga4476ae475ceea43a6d58c6865887ffdcaa5624fad948e626c39a9ef1d089b59df", null ],
+      [ "UI_CMD_DESTROY", "group___u_i.html#gga4476ae475ceea43a6d58c6865887ffdca40ddf9feb376a6213d4abda0c466234b", null ],
+      [ "UI_CMD_REDRAW", "group___u_i.html#gga4476ae475ceea43a6d58c6865887ffdca934fbd6ae4a7bce3eb72b41c54aa3ef2", null ],
+      [ "UI_CMD_UNFOCUS", "group___u_i.html#gga4476ae475ceea43a6d58c6865887ffdcafe3736598466eeeadfb072a227f704af", null ],
+      [ "UI_CMD_FOCUS", "group___u_i.html#gga4476ae475ceea43a6d58c6865887ffdca25ee440e802ef6f53d73f5d1b7c97f52", null ]
+    ] ],
     [ "TextInputDialogCmdID", "group___u_i.html#gad238e323dda00984a07a4428ab04b5fe", [
       [ "TI_CMD_CREATE", "group___u_i.html#ggad238e323dda00984a07a4428ab04b5feae1bb38cb26e768f421d329293f297280", null ],
       [ "TI_CMD_DESTROY", "group___u_i.html#ggad238e323dda00984a07a4428ab04b5fea4dd2b144fe7258bc3a92f56150132a6a", null ],
