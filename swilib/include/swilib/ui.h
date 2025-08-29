@@ -218,10 +218,14 @@ enum MenuDialogFlags {
  * UI header definition.
  * */
 struct HEADER_DESC {
-	RECT rc;		/**< Rectangular region on the screen */
-	int *icon;		/**< Pointer to the varibale with actual header icon or NULL */
-	int lgp_id;		/**< Header title, LGP ID or pointer to the C-string **/
-	int lgp_null;	/**< Set to #LGP_NULL */
+	RECT rc;			/**< Rectangular region on the screen */
+	int *icon;			/**< Pointer to the varibale with actual header icon or NULL */
+	int lgp_id;			/**< Header title, LGP ID or pointer to the C-string */
+#ifdef SWILIB_MODERN
+	int extra_lgp_id;	/**< Extra header title, LGP ID or pointer to the C-string */
+#else
+	int lgp_null;		/**< Set to #LGP_NULL */
+#endif
 };
 
 /**
