@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['e_0',['E',['../ripemd_8h.html#a8bcdf7e1b3e812bef4a8247ad6201a83',1,'RIPEMD160state_st']]],
-  ['e_1',['e',['../rsa_8h.html#a4681b4d0c295ea5a3f86e7b347d9e4f2',1,'rsa_st::e'],['../rsaref_8h.html#a01ef844afb9b0610c4ca73cfea621a42',1,'RSArefPublicKey_st::e'],['../rsaref_8h.html#af5801c377140f278ca3caedbd98ff644',1,'RSArefPrivateKey_st::e']]],
+  ['e_0',['e',['../rsa_8h.html#a4681b4d0c295ea5a3f86e7b347d9e4f2',1,'rsa_st::e'],['../rsaref_8h.html#a01ef844afb9b0610c4ca73cfea621a42',1,'RSArefPublicKey_st::e'],['../rsaref_8h.html#af5801c377140f278ca3caedbd98ff644',1,'RSArefPrivateKey_st::e']]],
+  ['e_1',['E',['../ripemd_8h.html#a8bcdf7e1b3e812bef4a8247ad6201a83',1,'RIPEMD160state_st']]],
   ['ed_5foptions_2',['ed_options',['../group___u_i.html#af274c9ffd8de364924a115f8375a43b6',1,'EDITCONTROL']]],
   ['enabled_5foptions_3',['enabled_options',['../group___explorer.html#aee69915b048275653c9fcece458f6867',1,'REGEXPLEXT::enabled_options'],['../group___explorer.html#ae05b7e82c9cbfb203afed65d0f65e337',1,'REGEXPLEXT_ARM_NEW::enabled_options']]],
   ['enc_4',['enc',['../ssl2_8h.html#a41bb118a714b344c24603304cf716c96',1,'ssl2_state_st.tmp']]],
@@ -50,5 +50,6 @@ var searchData=
   ['ext_5fnid_47',['ext_nid',['../x509v3_8h.html#ad9f39327ffdb8ffb8cfdbea5a3081600',1,'v3_ext_method']]],
   ['ext_5fval_48',['ext_val',['../x509_8h.html#af094afcd3f3c43b7af0775fddef006d6',1,'X509_extension_st']]],
   ['extensions_49',['extensions',['../x509_8h.html#a51f63ab57cbf97f841f7aabee53e32bf',1,'x509_cinf_st::extensions'],['../x509_8h.html#a0dc4e4c92f5c7c705e94d8d6151c498c',1,'X509_revoked_st::extensions'],['../x509_8h.html#a6b8beb3882befd7b63a3553028adb293',1,'X509_crl_info_st::extensions']]],
-  ['extra_5fcerts_50',['extra_certs',['../ssl_8h.html#acde21f13bdcbede7b28e13e9755057ab',1,'ssl_ctx_st']]]
+  ['extra_5fcerts_50',['extra_certs',['../ssl_8h.html#acde21f13bdcbede7b28e13e9755057ab',1,'ssl_ctx_st']]],
+  ['extra_5flgp_5fid_51',['extra_lgp_id',['../group___u_i.html#abc1ed312f3ae5f97a8dd812ad28ee0ee',1,'HEADER_DESC']]]
 ];

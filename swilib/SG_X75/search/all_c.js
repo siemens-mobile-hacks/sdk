@@ -33,7 +33,7 @@ var searchData=
   ['lgp_5fid_5flarge_30',['lgp_id_large',['../group___u_i.html#a03a56a4d45a7b80926cb5674b70ea4ce',1,'MENUITEM_DESC']]],
   ['lgp_5fid_5fsmall_31',['lgp_id_small',['../group___u_i.html#a54e7b4dd28b56fbbb9f60fed90c737b5',1,'MENUITEM_DESC']]],
   ['lgp_5fmenu_5fpic_32',['LGP_MENU_PIC',['../group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1daaf9305e4e425eb172c46c0e14b2b6f0d',1,'base.h']]],
-  ['lgp_5fnull_33',['lgp_null',['../group___u_i.html#a233722f6acc6f9407ce0e1a164d0c7a0',1,'HEADER_DESC::lgp_null'],['../group___u_i.html#ae13a935d61e9bd6171dc4fda60b042ce',1,'POPUP_DESC::lgp_null']]],
+  ['lgp_5fnull_33',['lgp_null',['../group___u_i.html#ae13a935d61e9bd6171dc4fda60b042ce',1,'POPUP_DESC']]],
   ['lgp_5fnull_34',['LGP_NULL',['../group___s_w_i_l_i_b.html#gga36cbe9b0f3c43a0109bf0957c62bcb1da58539cd2431843468ac1945206c903a7',1,'base.h']]],
   ['lh_5fdelete_35',['lh_delete',['../lhash_8h.html#a01df75bb0d2f4eaea89b0e7247f4e082',1,'lhash.h']]],
   ['lh_5fdoall_36',['lh_doall',['../lhash_8h.html#acad0d84ec1c2fae83cbfa8e066581b2f',1,'lhash.h']]],
