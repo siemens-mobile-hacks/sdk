@@ -589,6 +589,18 @@ __swi_begin(0x83D8)
 RECT *GetMainAreaRECT(void)
 __swi_end(0x83D8, GetMainAreaRECT, ());
 
+/**
+ * Dynamically set the bounding rectangle for the widget.
+ * @param widget	pointer to the widget
+ * @param x			top-left X coordinate of the widget rectangle
+ * @param y			top-left Y coordinate of the widget rectangle
+ * @param x2		bottom-right X coordinate of the widget rectangle
+ * @param y2		bottom-right Y coordinate of the widget rectangle
+ * */
+__swi_begin(0x3ED)
+void SetWidgetRect(void *widget, int x, int y, int x2, int y2)
+__swi_end(0x3ED, SetWidgetRect, (widget, x, y, x2, y2));
+
 /** @} */
 
 /**
@@ -1540,18 +1552,6 @@ __swi_end(0x2A5, GetMultiLinesMenuGUI, (malloc_fn, mfree_fn));
 __swi_begin(0x2A7)
 void SetMenuToGUI(void *gui, const void *menu)
 __swi_end(0x2A7, SetMenuToGUI, (gui, menu));
-
-/**
- * Dynamically set the bounding rectangle for the Menu GUI.
- * @param gui		pointer to the Menu GUI
- * @param x			top-left X coordinate of the menu rectangle
- * @param y			top-left Y coordinate of the menu rectangle
- * @param x2		bottom-right X coordinate of the menu rectangle
- * @param y2		bottom-right Y coordinate of the menu rectangle
- * */
-__swi_begin(0x3ED)
-void SetMenuRect(void *gui, int x, int y, int x2, int y2)
-__swi_end(0x3ED, SetMenuRect, (gui, x, y, x2, y2));
 
 /** @} */
 
