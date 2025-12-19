@@ -431,6 +431,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gac956c658df04174bbf26b00a5f0343fb" id="r_gac956c658df04174bbf26b00a5f0343fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_u_i.html#struct_r_e_c_t">RECT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac956c658df04174bbf26b00a5f0343fb">GetMainAreaRECT</a> (void)</td></tr>
 <tr class="memdesc:gac956c658df04174bbf26b00a5f0343fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of UI main area.  <br /></td></tr>
 <tr class="separator:gac956c658df04174bbf26b00a5f0343fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga409cd36ed414581f4798ad50a757be13" id="r_ga409cd36ed414581f4798ad50a757be13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga409cd36ed414581f4798ad50a757be13">SetWidgetRect</a> (void *widget, int x, int y, int x2, int y2)</td></tr>
+<tr class="memdesc:ga409cd36ed414581f4798ad50a757be13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically set the bounding rectangle for the widget.  <br /></td></tr>
+<tr class="separator:ga409cd36ed414581f4798ad50a757be13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Iconbar</h2></td></tr>
 <tr class="memitem:ga5641011ca064183ad4c39b1a5e0d2df1" id="r_ga5641011ca064183ad4c39b1a5e0d2df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5641011ca064183ad4c39b1a5e0d2df1">AddIconToIconBar</a> (int pic, short *num)</td></tr>
@@ -698,9 +701,6 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga68663830a5cd8749967d0b780957ad6d" id="r_ga68663830a5cd8749967d0b780957ad6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga68663830a5cd8749967d0b780957ad6d">SetMenuToGUI</a> (void *gui, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *menu)</td></tr>
 <tr class="memdesc:ga68663830a5cd8749967d0b780957ad6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach the menu definition to the allocated <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> (by <a class="el" href="#ga5754ab92ac6e9e4cfe47a737bad8cb8d" title="Allocate GUI for single-line menu.">GetMenuGUI</a> or <a class="el" href="#gaa6199bc317d236168ec327d64e8cc53e" title="Allocate GUI for multi-line menu.">GetMultiLinesMenuGUI</a>).  <br /></td></tr>
 <tr class="separator:ga68663830a5cd8749967d0b780957ad6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc938c0fe952578e2b5547e99cd143b9" id="r_gacc938c0fe952578e2b5547e99cd143b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc938c0fe952578e2b5547e99cd143b9">SetMenuRect</a> (void *gui, int x, int y, int x2, int y2)</td></tr>
-<tr class="memdesc:gacc938c0fe952578e2b5547e99cd143b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically set the bounding rectangle for the Menu <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>.  <br /></td></tr>
-<tr class="separator:gacc938c0fe952578e2b5547e99cd143b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Tabs</h2></td></tr>
 <tr class="memitem:ga9161aac6694b9481d2e9ebc198614091" id="r_ga9161aac6694b9481d2e9ebc198614091"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9161aac6694b9481d2e9ebc198614091">GetTabGUI</a> (void *malloc_fn, void *mfree_fn)</td></tr>
@@ -2161,6 +2161,54 @@ Enumerations</h2></td></tr>
 
 <p>Size of UI main area. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the rect </dd></dl>
+
+</div>
+</div>
+<a id="ga409cd36ed414581f4798ad50a757be13" name="ga409cd36ed414581f4798ad50a757be13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga409cd36ed414581f4798ad50a757be13">&#9670;&#160;</a></span>SetWidgetRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetWidgetRect </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dynamically set the bounding rectangle for the widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">widget</td><td>pointer to the widget </td></tr>
+    <tr><td class="paramname">x</td><td>top-left X coordinate of the widget rectangle </td></tr>
+    <tr><td class="paramname">y</td><td>top-left Y coordinate of the widget rectangle </td></tr>
+    <tr><td class="paramname">x2</td><td>bottom-right X coordinate of the widget rectangle </td></tr>
+    <tr><td class="paramname">y2</td><td>bottom-right Y coordinate of the widget rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5056,54 +5104,6 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Low-level function, use <a class="el" href="#ga31649f4e5ee3355f8fcdc76398bd9718" title="Create menu (list with items).">CreateMenu</a> instead. </dd></dl>
-
-</div>
-</div>
-<a id="gacc938c0fe952578e2b5547e99cd143b9" name="gacc938c0fe952578e2b5547e99cd143b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacc938c0fe952578e2b5547e99cd143b9">&#9670;&#160;</a></span>SetMenuRect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SetMenuRect </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dynamically set the bounding rectangle for the Menu <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gui</td><td>pointer to the Menu <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> </td></tr>
-    <tr><td class="paramname">x</td><td>top-left X coordinate of the menu rectangle </td></tr>
-    <tr><td class="paramname">y</td><td>top-left Y coordinate of the menu rectangle </td></tr>
-    <tr><td class="paramname">x2</td><td>bottom-right X coordinate of the menu rectangle </td></tr>
-    <tr><td class="paramname">y2</td><td>bottom-right Y coordinate of the menu rectangle </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
