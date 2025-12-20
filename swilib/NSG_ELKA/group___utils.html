@@ -132,6 +132,20 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaababc8e359806301a0a39ad6aa492676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to int.  <br /></td></tr>
 <tr class="separator:gaababc8e359806301a0a39ad6aa492676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Binary Configs (BCFG)</h2></td></tr>
+<tr class="memitem:gab3bf183bf9950ebbe2a704c853610c25" id="r_gab3bf183bf9950ebbe2a704c853610c25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab3bf183bf9950ebbe2a704c853610c25">BCFG_LoadConfig</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *config_file, void *config, uint32_t size)</td></tr>
+<tr class="memdesc:gab3bf183bf9950ebbe2a704c853610c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load .bcfg config from disk (structure)  <br /></td></tr>
+<tr class="separator:gab3bf183bf9950ebbe2a704c853610c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac855b7d82ff50a318372e42384a5590d" id="r_gac855b7d82ff50a318372e42384a5590d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac855b7d82ff50a318372e42384a5590d">BCFG_LoadConfigSection</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *config_file, void *config_begin, void *config_end)</td></tr>
+<tr class="memdesc:gac855b7d82ff50a318372e42384a5590d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load .bcfg config from disk (section)  <br /></td></tr>
+<tr class="separator:gac855b7d82ff50a318372e42384a5590d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e395ec45e117e20311ad5012e482b9e" id="r_ga4e395ec45e117e20311ad5012e482b9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e395ec45e117e20311ad5012e482b9e">BCFG_SaveConfig</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *config_file, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *config, uint32_t size)</td></tr>
+<tr class="memdesc:ga4e395ec45e117e20311ad5012e482b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save .bcfg config to disk (structure)  <br /></td></tr>
+<tr class="separator:ga4e395ec45e117e20311ad5012e482b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga178b3eb239f92fdf601ab3dd257d2b4d" id="r_ga178b3eb239f92fdf601ab3dd257d2b4d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga178b3eb239f92fdf601ab3dd257d2b4d">BCFG_SaveConfigSection</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *config_file, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *config_begin, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *config_end)</td></tr>
+<tr class="memdesc:ga178b3eb239f92fdf601ab3dd257d2b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save .bcfg config to disk (section)  <br /></td></tr>
+<tr class="separator:ga178b3eb239f92fdf601ab3dd257d2b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Base64 encoding/decoding</h2></td></tr>
 <tr class="memitem:gaff683743c044412606932c887d25e00f" id="r_gaff683743c044412606932c887d25e00f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff683743c044412606932c887d25e00f">Base64Encode</a> (void *inbuf, int insize, void *outbuf, int outsize)</td></tr>
 <tr class="memdesc:gaff683743c044412606932c887d25e00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode binary data to the base64 string.  <br /></td></tr>
@@ -361,6 +375,178 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gab3bf183bf9950ebbe2a704c853610c25" name="gab3bf183bf9950ebbe2a704c853610c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3bf183bf9950ebbe2a704c853610c25">&#9670;&#160;</a></span>BCFG_LoadConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BCFG_LoadConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>config_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load .bcfg config from disk (structure) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">config_file</td><td>path to .bcfg file </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config</td><td>pointer to config structure </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">size</td><td>config structure size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, -1 if error </dd></dl>
+<dl class="section user"><dt>Builtin on platforms:</dt><dd>ELKA, NSG, X75, SG </dd></dl>
+
+</div>
+</div>
+<a id="gac855b7d82ff50a318372e42384a5590d" name="gac855b7d82ff50a318372e42384a5590d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac855b7d82ff50a318372e42384a5590d">&#9670;&#160;</a></span>BCFG_LoadConfigSection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int BCFG_LoadConfigSection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>config_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>config_begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>config_end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load .bcfg config from disk (section) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">config_file</td><td>path to .bcfg file </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config_begin</td><td>pointer to config section begin </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config_end</td><td>pointer to config section end </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, -1 if error </dd></dl>
+<dl class="section user"><dt>Builtin on platforms:</dt><dd>ELKA, NSG, X75, SG </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00124">124</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4e395ec45e117e20311ad5012e482b9e" name="ga4e395ec45e117e20311ad5012e482b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e395ec45e117e20311ad5012e482b9e">&#9670;&#160;</a></span>BCFG_SaveConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BCFG_SaveConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>config_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save .bcfg config to disk (structure) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">config_file</td><td>path to .bcfg file </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config</td><td>pointer to config structure </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">size</td><td>config structure size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, -1 if error </dd></dl>
+<dl class="section user"><dt>Builtin on platforms:</dt><dd>ELKA, NSG, X75, SG </dd></dl>
+
+</div>
+</div>
+<a id="ga178b3eb239f92fdf601ab3dd257d2b4d" name="ga178b3eb239f92fdf601ab3dd257d2b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga178b3eb239f92fdf601ab3dd257d2b4d">&#9670;&#160;</a></span>BCFG_SaveConfigSection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int BCFG_SaveConfigSection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>config_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>config_begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>config_end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save .bcfg config to disk (section) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">config_file</td><td>path to .bcfg file </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config_begin</td><td>pointer to config section begin </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">config_end</td><td>pointer to config section end </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, -1 if error </dd></dl>
+<dl class="section user"><dt>Builtin on platforms:</dt><dd>ELKA, NSG, X75, SG </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00149">149</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
 
 </div>
 </div>
