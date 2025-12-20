@@ -97,6 +97,63 @@ __swi_end(0x089, GetLangMesIntoWS, (lgp_id, str));
 /** @} */
 
 /**
+ * @name Binary Configs (BCFG)
+ * @{
+ * */
+
+/**
+ * Load .bcfg config from disk (structure)
+ * @param[out] config_file	path to .bcfg file
+ * @param config			pointer to config structure
+ * @param size				config structure size
+ * @return 0 if success, -1 if error
+ * @builtin ELKA, NSG, X75, SG
+ * */
+__swi_begin(0x2FE)
+int BCFG_LoadConfig(const char *config_file, void *config, uint32_t size)
+__swi_end(0x2FE, BCFG_LoadConfig, (config_file, config, size));
+
+/**
+ * Load .bcfg config from disk (section)
+ * @param[out] config_file	path to .bcfg file
+ * @param config_begin		pointer to config section begin
+ * @param config_end		pointer to config section end
+ * @return 0 if success, -1 if error
+ * @builtin ELKA, NSG, X75, SG
+ * */
+static inline int BCFG_LoadConfigSection(const char *config_file, void *config_begin, void *config_end) {
+	uint32_t size = ((size_t) config_end - (size_t) config_begin) - 4;
+	return BCFG_LoadConfig(config_file, config_begin, size);
+}
+
+/**
+ * Save .bcfg config to disk (structure)
+ * @param[out] config_file	path to .bcfg file
+ * @param config			pointer to config structure
+ * @param size				config structure size
+ * @return 0 if success, -1 if error
+ * @builtin ELKA, NSG, X75, SG
+ * */
+__swi_begin(0x2FF)
+int BCFG_SaveConfig(const char *config_file, const void *config, uint32_t size)
+__swi_end(0x2FF, BCFG_SaveConfig, (config_file, config, size));
+
+/**
+ * Save .bcfg config to disk (section)
+ * @param[out] config_file	path to .bcfg file
+ * @param config_begin		pointer to config section begin
+ * @param config_end		pointer to config section end
+ * @return 0 if success, -1 if error
+ * @builtin ELKA, NSG, X75, SG
+ * */
+static inline int BCFG_SaveConfigSection(const char *config_file, const void *config_begin, const void *config_end) {
+	uint32_t size = ((size_t) config_end - (size_t) config_begin) - 4;
+	return BCFG_SaveConfig(config_file, config_begin, size);
+}
+
+/** @} */
+
+/**
  * @name Base64 encoding/decoding
  * @{
  * */
