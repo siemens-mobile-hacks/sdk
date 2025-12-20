@@ -1,0 +1,262 @@
+# Supported targets
+targets = [
+	# NSG ELKA
+	"E71v45",
+	"EL71v45",
+
+	# NSG
+	"C81v51",
+	"S75v52",
+	"SL75v52",
+	"S68v52",
+
+	# SG X75
+	"CX75v25",
+	"CX75v13",
+	"M75v25",
+	"CF75v23",
+	"C75v24",
+	"C72v22",
+
+	# SG
+	"CX70v56",
+	"SK65v50",
+	"SL65v53",
+	"S65v58",
+]
+
+# Phone -> Platform
+[platforms]
+SG = "SG"
+X75 = "X75"
+NSG = "NSG"
+ELKA = "ELKA"
+
+E71 = "ELKA"
+E71C = "ELKA"
+EL71 = "ELKA"
+CL61 = "ELKA"
+C1F0 = "ELKA"
+M72 = "ELKA"
+
+C81 = "NSG"
+M81 = "NSG"
+S75 = "NSG"
+SL75 = "NSG"
+S7C = "NSG"
+S68 = "NSG"
+S68C = "NSG"
+
+CX75 = "X75"
+ME75 = "X75"
+M75 = "X75"
+CF75 = "X75"
+C75 = "X75"
+C72 = "X75"
+
+C65 = "SG"
+CX65 = "SG"
+M65 = "SG"
+CX70 = "SG"
+SK65 = "SG"
+SK6R = "SG"
+SL65 = "SG"
+S65 = "SG"
+
+# swilib.vkp patches
+[patches]
+S65v58 = 7545
+SK65v50 = 7546
+SL65v53 = 10131
+CX70v56 = 10625
+C72v22 = 6954
+
+C75v22 = 10518
+C75v24 = 10516
+CF75v23 = 10542
+M75v25 = 4673
+CX75v13 = 6285
+CX75v25 = 4736
+
+S68v52 = 10839
+
+SL75v47 = 10522
+SL75v52 = 7634
+S75v47 = 5624
+S75v52 = 8285
+C81v51 = 10629
+
+EL71v45 = 10076
+E71v45 = 10075
+CL61v128 = 10395
+
+# Duplicated functions in swilib
+[functions]
+pairs = [
+	[0x000, 0x001, 0x002, 0x003, 0x004, 0x0AB], # loopback's
+	[0x129, 0x0A5], # FreeWS
+	[0x146, 0x069], # LockSched
+	[0x147, 0x06A], # UnlockSched
+	[0x150, 0x071], # DrawRoundedFrame
+	[0x1A6, 0x057], # IsTimerProc
+	[0x117, 0x031], # strrchr
+	[0x11C, 0x053], # memcmp
+	[0x11E, 0x059], # memcpy
+	[0x124, 0x0A0], # wsprintf
+	[0x125, 0x0A4], # AllocWS
+	[0x12E, 0x03F], # GetPaletteAdrByColorIndex
+	[0x13B, 0x064], # GeneralFuncF1
+	[0x364, 0x1F3], # NU_Retrieve_Clock
+	[0x365, 0x366], # NU_Release_Information
+	[0x254, 0x22E], # StartNativeExplorer
+	[0x14B, 0x077], # DrwObj_SetColor
+	[0x1B4, 0x09F], # DrawRectangle
+	[0x1AB, 0x1D6, 0x1AD], # png_set_palette_to_rgb
+]
+
+# Legacy aliases
+[functions.aliases]
+0x000 = ["SWI0", "SWI_0"] # loopback0
+0x001 = ["SWI1", "SWI_1"] # loopback1
+0x002 = ["SWI2", "SWI_2"] # loopback2
+0x003 = ["SWI3", "SWI_3"] # loopback3
+0x004 = ["SWI4", "SWI_4"] # loopback4
+0x005 = ["DecToHex"] # StrToHex
+0x01A = ["strcopy"] # strcpy
+0x024 = ["DrawImage2"] # DrawImg_2
+0x02C = ["getEEFullBlockSizeVersion"] # EEFullGetBlockInfo
+0x031 = ["StrChrRev", "strrchr"] # strrchr_2
+0x033 = ["PlaySound2"] # SoundAE_PlayFileAsEvent
+0x03F = ["GetPaletteAdrByColorIndex", "SelectColor"] # GetPaletteAdrByColorIndex_2
+0x044 = ["TempLigntOn"] # TempLightOn
+0x04D = ["CallAfterTimer"] # GBS_StartTimerProc
+0x04E = ["ShowMsgInR1_3"] # MsgBoxError
+0x04F = ["ShowMsgInR1_4"] # MsgBoxYesNo
+0x050 = ["ShowMsgInR1_7"] # MsgBoxOkCancel
+0x051 = ["GetNetMode"] # GetNetAccessMode
+0x053 = ["memcmp"] # memcmp_2
+0x057 = ["IsTimerProc", "IsCallAfterTimerStillRunning"] # IsTimerProc_2
+0x058 = ["zeromem_2"] # ClearMemory
+0x059 = ["memcpy"] # memcpy_2
+0x05F = ["GetNonPermMemAvail"] # GetFreeRamAvail
+0x063 = ["MS_Wallpaper_Flush", "Screen_Wallpaper_Flush"] # MMI_CanvasBuffer_FlushV
+0x064 = ["TriggerUpdate"] # GeneralFuncF1_2
+0x069 = ["LockSched", "LockShed"] # LockSched_2
+0x06A = ["UnlockSched", "UnLockShed"] # UnlockSched_2
+0x071 = ["DrawRoundRect", "DrawFrame"] # DrawRoundedFrame_2
+0x072 = ["SetCurrentSecondOfCall", "GetCurrentSecondOfCall"] # GetDurationFromCurrentCall
+0x075 = ["StoreXYWHtoRECT"] # IsCanvasBufferSet
+0x077 = ["set2color_byPaletteAdr", "SetColor", "SetWindowColor"] # DrwObj_SetColor_2
+0x079 = ["DrawObject", "DrawObject_2", "PushWindowBuffer"] # DrawObject2Layer
+0x07A = ["UpdateDisplayByLayerPtr", "ClearWindowBuffer"] # LCDLAYER_Flush
+0x080 = ["GetCallsList"] # ShowCallList
+0x081 = ["HexToDec"] # HexCharToInt
+0x082 = ["GetCurrentTrackFilename"] # GetLastAudioTrackFilename
+0x085 = ["StrCmpNoCase"] # strcasecmp
+0x086 = ["ReadEEPROMData"] # EEFullReadBlock
+0x087 = ["WriteEEPROMData"] # EEFullWriteBlock
+0x08D = ["GetProfileName"] # getCurrentProfileName
+0x09B = ["addr"] # RamAudioParamsAddr
+0x09F = ["DrawRect"] # DrawRectangle_2
+0x0A0 = ["Unicode_sprintf", "ws_sprintf", "wsprintf"] # wsprintf_2
+0x0A1 = ["Unicode_CopyStr2Str", "wstrcpy"] # wstrcpy_2
+0x0A2 = ["WS_GetCharByPosition", "Unicode_GetCharByPosition", "ws_GetChar"] # wsCharAt
+0x0A3 = ["ws2str"] # ws_2str
+0x0A4 = ["AllocWS", "wsAlloc"] # AllocWS_2
+0x0A5 = ["wsFree"] # FreeWS_2
+0x0AB = ["SWI_AB"] # loopback171
+0x0AF = ["Hex2Int"] # HexToInt
+0x0B8 = ["dwMODdw"] # sdiv
+0x0BC = ["divide"] # udiv
+0x0BD = ["udiv", "divide"] # DivBy10
+0x0BE = ["RunScanner"] # RunScaner
+0x0CF = ["RamAlarm"] # RamAlarmClockState
+0x0D1 = ["RamScreensaver"] # RamScreenSaverCSM
+0x0D2 = ["RamAutoTime"] # RamIsAutoTimeEnabled
+0x0D3 = ["RamStby"] # RamIsStandby
+0x0D4 = ["RamMissedMes"] # RamMissedMessage
+0x0DB = ["RamNotOnMainscreen"] # RamIsNotOnMainscreen
+0x0E6 = ["Pic_Big0", "Pic_Big"] # PIT_Pic_Big
+0x0E7 = ["Pic_Little0", "Pic_Little"] # PIT_Pic_Little
+0x0E8 = ["Pic_Extra"] # PIT_Pic_Extra
+0x0E9 = ["Pic_Profiles"] # PIT_Pic_Profiles
+0x0EA = ["Pic_Vibra"] # PIT_Pic_Vibra
+0x0EB = ["Pic_Call"] # PIT_Pic_Call
+0x0EC = ["Pic_AdvNet"] # PIT_Pic_AdvNet
+0x0EF = ["Pic_Calendar"] # PIT_Pic_Calendar
+0x0F0 = ["Pic_AccuGraph"] # PIT_Pic_AccuGraph
+0x0F4 = ["Pic_LANI"] # PIT_Pic_Lani
+0x0F5 = ["Ram_LCDLAYER_Overlay_Ptr"] # Ram_LCD_Overlay_Layer
+0x0F6 = ["RAM_LCD_Layer_Base_Ptr", "Ram_Layer_Base_Ptr", "RAM_LCDLAYER_MMI_Ptr"] # RamLcdMainLayersList
+0x0F7 = ["RAM_LCDLAYER_Bearer_Ptr"] # RamLcdRapLayersList
+0x0FB = ["Table", "FUNC_0FB"] # ShortcutsTableAddr
+0x0FC = ["PictureRelocationTable"] # PictureRelocationTableAddr
+0x0FD = ["PictureRelocationBase"] # PictureRelocationBaseAddr
+0x0FE = ["NextPictureMagic"] # NextPictureMagicValue
+0x101 = ["GBS_ReceiveMessage", "GBS_RecieveMessage"] # GBS_ReciveMessage
+0x117 = ["strrchr_2"] # strrchr
+0x11C = ["memcmp_2"] # memcmp
+0x11E = ["memcpy_2"] # memcpy
+0x11F = ["wstrcpy_2"] # wstrcpy
+0x124 = ["wsprintf_2"] # wsprintf
+0x12A = ["DrawObject_2"] # DrawObject
+0x12E = ["GetPaletteAdrByColorIndex_2"] # GetPaletteAdrByColorIndex
+0x133 = ["StoreXYWHtoRECT_2"] # StoreXYWHtoRECT
+0x146 = ["LockSched_2", "LockSchedNoTskContext"] # LockSched
+0x147 = ["UnlockSched_2", "UnlockSchedNoTskContext"] # UnlockSched
+0x149 = ["SetPropToText"] # DrwObj_InitText
+0x150 = ["DrawFrameInNativeMenu"] # DrawRoundedFrame
+0x16C = ["str2ws"] # str_2ws
+0x193 = ["MutexUnlock"] # MutexLockEx
+0x1A7 = ["Get_NC_CC"] # Get_CC_NC
+0x1CF = ["GetEXPLEXTByRegN"] # get_regextpnt_by_uid
+0x1D5 = ["Get_Phone_Ino"] # Get_Phone_Info
+0x1F0 = ["filecopy"] # ExplorerCopyFile
+0x1F1 = ["filecopy_op_announce"] # ExplorerSetTransferState
+0x1F2 = ["_config_IsCheckboxOff"] # Devmenu_Config_IsCheckboxOff
+0x1F4 = ["RAM_SPN"] # RamServiceProviderName
+0x1FA = ["RamVolumeStep"] # RamVolumeLevel
+0x1FD = ["SetProp2Square_v2"] # DrwObj_InitRect
+0x1FE = ["RamLighterPower"] # RamIsCameraLighterOn
+0x210 = ["GetGurGuiId"] # GetCurGuiID
+0x216 = ["wstrcarprintf"] # wstrcatprintf
+0x231 = ["RamAppointment"] # RamActiveAppointment
+0x247 = ["NetOff"] # GSM_L1_Disable
+0x248 = ["RamFormatTrack"] # RamMediaPlayerCurrentTrackFormat
+0x249 = ["RamFreq"] # RamMediaPlayerCurrentTrackFreq
+0x24A = ["RamChannel"] # RamMediaPlayerCurrentTrackChannels
+0x24C = ["GetDevState"] # GetPeripheryState
+0x24E = ["Obs_GetById"] # GetPlayObjById
+0x24F = ["Obs_GetPosition"] # GetPlayObjPosition
+0x250 = ["Obs_GetDuration"] # GetPlayObjDuration
+0x252 = ["RamSizeOfRecievedSendFile"] # RamSizeOfReceivedOrSentFile
+0x256 = ["RamNameOfRecievedSendFile"] # RamNameOfReceivedOrSentFile
+0x257 = ["RamIsSendReceiveBT", "isSendReceiveFile", "RamIsSendReceiveFile"] # RamIsSendingOrReceivingFileByBT
+0x263 = ["intObs_SetScaling"] # Obs_SetScaling
+0x26C = ["Obs_Sound_SetVolume", "Obs_SetVolumeEx"] # Obs_Sound_SetVolumeEx
+0x26D = ["Obs_GetVolume"] # Obs_Sound_GetVolume
+0x26E = ["Obs_SetPurpose"] # Obs_Sound_SetPurpose
+0x27A = ["Obs_SetInputMemory"] # Obs_SetInput_Memory
+0x284 = ["IsGPRS"] # IsGPRSAvailable
+0x285 = ["IsEDGE", "RamIsEDGE"] # IsEDGEAvailable
+0x288 = ["GetCurrAudioPath"] # Audio_GetCurrAudioPath
+0x28D = ["RamBTNameDevice", "GetBTNameDevice"] # RamBluetoothDeviceName
+0x292 = ["RamIsAlarmAutorepeatOn"] # RamIsAlarmClockAutorepeatOn
+0x293 = ["RamAlarmclockHour"] # RamAlarmClockHours
+0x294 = ["RamAlarmclockMinute"] # RamAlarmClockMinutes
+0x296 = ["getProfileNamervn"] # getProfileNameByN
+0x297 = ["RamIsSoundRecord"] # RamIsSoundRecordingActive
+0x298 = ["RamIsSoundRecordQuality"] # RamSoundRecordingQuality
+0x29A = ["SwitchAudioToBTHeadset"] # AACC_AudioTransferReq
+0x29B = ["GetTypeOfBTHeadset", "GetTypeOfHeadset"] # Audio_GetObjectHandle
+0x2C4 = ["GetPrfileVolumeSetting"] # GetProfileVolumeSetting
+0x2D2 = ["StartBrowser"] # StartNativeBrowserCore
+0x2DB = ["SendMedia"] # MediaSendCSM_Open
+0x350 = ["NU_Restore_Interrupts"] # NU_Restore_Interrupts_2
+0x381 = ["CopyWsToClipboard"] # CopyTextToClipboard
+0x388 = ["SetDepthBuffer"] # LCDLAYER_Current_SetBufferDepth
+0x38A = ["RamAudioHookProc", "RamPCMWAVStruct"] # RamAudioHook
+0x38D = ["stat"] # sys_fstat
+0x38F = ["CreatePGroupRes"] # GBS_CreateProcessGroupResource
+0x390 = ["PGroupCurrentTaskPointer"] # GBS_GetCurrentTask
+0x393 = ["MopiResourcePool"] # RamMopiResourcePool
