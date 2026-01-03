@@ -65,7 +65,7 @@ S65 = "SG"
 
 # swilib.vkp patches
 [patches]
-S65v58 = 7545
+S65v58 = 10897
 SK65v50 = 7546
 SL65v53 = 10131
 CX70v56 = 10625
