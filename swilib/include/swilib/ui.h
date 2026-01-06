@@ -622,6 +622,24 @@ void AddIconToIconBar(int pic, short* num)
 __swi_end(0x027, AddIconToIconBar, (pic, num));
 
 /**
+ * Get custom user pointer from standard GUI, like Menu.
+ * @param gui			pointer to the standard GUI
+ * @return pointer
+ * */
+__swi_begin(0x1E0)
+void *GUI_GetUserPointer(void *gui)
+__swi_end(0x1E0, GUI_GetUserPointer, (gui));
+
+/**
+ * Set custom user pointer to the GUI, like Menu.
+ * @param gui			pointer to the standard GUI
+ * @param user_pointer	custom user pointer
+ * */
+__swi_begin(0x255)
+void GUI_SetUserPointer(void *gui, void *user_pointer)
+__swi_end(0x255, GUI_SetUserPointer, (gui, user_pointer));
+
+/**
  * Pointer to the status of iconbar (EL/E71).
  * @return 1: enabled, 0: disabled
  * @platforms ELKA
