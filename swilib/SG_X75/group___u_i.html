@@ -439,6 +439,12 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga5641011ca064183ad4c39b1a5e0d2df1" id="r_ga5641011ca064183ad4c39b1a5e0d2df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5641011ca064183ad4c39b1a5e0d2df1">AddIconToIconBar</a> (int pic, short *num)</td></tr>
 <tr class="memdesc:ga5641011ca064183ad4c39b1a5e0d2df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push icon to the iconbar (E/EL71).  <br /></td></tr>
 <tr class="separator:ga5641011ca064183ad4c39b1a5e0d2df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad37e0531ce41f0f1e2a9d233701aecc0" id="r_gad37e0531ce41f0f1e2a9d233701aecc0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad37e0531ce41f0f1e2a9d233701aecc0">GUI_GetUserPointer</a> (void *gui)</td></tr>
+<tr class="memdesc:gad37e0531ce41f0f1e2a9d233701aecc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get custom user pointer from standard <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>, like Menu.  <br /></td></tr>
+<tr class="separator:gad37e0531ce41f0f1e2a9d233701aecc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ad715133066c15984d097cbaee12e52" id="r_ga7ad715133066c15984d097cbaee12e52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7ad715133066c15984d097cbaee12e52">GUI_SetUserPointer</a> (void *gui, void *user_pointer)</td></tr>
+<tr class="memdesc:ga7ad715133066c15984d097cbaee12e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set custom user pointer to the <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>, like Menu.  <br /></td></tr>
+<tr class="separator:ga7ad715133066c15984d097cbaee12e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf02eef6eeb7edee2e3eaf4be83188bb1" id="r_gaf02eef6eeb7edee2e3eaf4be83188bb1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf02eef6eeb7edee2e3eaf4be83188bb1">RamIconBar</a> ()</td></tr>
 <tr class="memdesc:gaf02eef6eeb7edee2e3eaf4be83188bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the status of iconbar (EL/E71).  <br /></td></tr>
 <tr class="separator:gaf02eef6eeb7edee2e3eaf4be83188bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2241,6 +2247,62 @@ Enumerations</h2></td></tr>
 </dl>
 <p>Call this function the iconbar hook.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Depend of the patch: <a href="https://patches.kibab.com/patches/search.php5?action=search&kw=Elfs+can+add+icons+to+iconbar">https://patches.kibab.com/patches/search.php5?action=search&amp;kw=Elfs+can+add+icons+to+iconbar</a> </dd></dl>
+
+</div>
+</div>
+<a id="gad37e0531ce41f0f1e2a9d233701aecc0" name="gad37e0531ce41f0f1e2a9d233701aecc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad37e0531ce41f0f1e2a9d233701aecc0">&#9670;&#160;</a></span>GUI_GetUserPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * GUI_GetUserPointer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get custom user pointer from standard <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>, like Menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gui</td><td>pointer to the standard <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer </dd></dl>
+
+</div>
+</div>
+<a id="ga7ad715133066c15984d097cbaee12e52" name="ga7ad715133066c15984d097cbaee12e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ad715133066c15984d097cbaee12e52">&#9670;&#160;</a></span>GUI_SetUserPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI_SetUserPointer </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>gui</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user_pointer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set custom user pointer to the <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>, like Menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gui</td><td>pointer to the standard <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> </td></tr>
+    <tr><td class="paramname">user_pointer</td><td>custom user pointer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

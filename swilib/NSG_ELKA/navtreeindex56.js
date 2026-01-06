@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"x509v3_8h.html#structstack__st___x509___p_u_r_p_o_s_e":[1,0,0,0,0,50,24],
+"x509v3_8h.html#structv3__ext__ctx":[1,0,0,0,0,50,2],
 "x509v3_8h.html#structv3__ext__method":[1,0,0,0,0,50,0],
 "x509v3_8h.html#structx509__purpose__st":[1,0,0,0,0,50,23],
 "x509v3_8h.html#union_g_e_n_e_r_a_l___n_a_m_e__st_8d":[1,0,0,0,0,50,25],

@@ -138,6 +138,8 @@ var group___u_i =
     [ "GetMainAreaRECT", "group___u_i.html#gac956c658df04174bbf26b00a5f0343fb", null ],
     [ "SetWidgetRect", "group___u_i.html#ga409cd36ed414581f4798ad50a757be13", null ],
     [ "AddIconToIconBar", "group___u_i.html#ga5641011ca064183ad4c39b1a5e0d2df1", null ],
+    [ "GUI_GetUserPointer", "group___u_i.html#gad37e0531ce41f0f1e2a9d233701aecc0", null ],
+    [ "GUI_SetUserPointer", "group___u_i.html#ga7ad715133066c15984d097cbaee12e52", null ],
     [ "RamIconBar", "group___u_i.html#gaf02eef6eeb7edee2e3eaf4be83188bb1", null ],
     [ "IsIconBarDisabled", "group___u_i.html#gad6caaef9e9006a50055ec7f907b44673", null ],
     [ "DisableIconBar", "group___u_i.html#ga5aa5d69658d5437e2fb0b54b830e9a80", null ],
