@@ -325,6 +325,15 @@ __swi_begin(0x3D9)
 int GetPITSize()
 __swi_end(0x3D9, GetPITSize, ());
 
+/**
+ * Get image by LGP_ID.
+ * @param lgp_id	id from the langpack
+ * @return number in PIT table or -1 if error
+ * */
+__swi_begin(0x3EF)
+int16_t GetLgpIcon(int lgp_id)
+__swi_end(0x3EF, GetLgpIcon, (lgp_id));
+
 /** @} */
 
 __swilib_end
