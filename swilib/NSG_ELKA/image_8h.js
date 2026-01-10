@@ -53,5 +53,6 @@ var image_8h =
     [ "IsDynIconBusy", "group___image.html#ga43aa9660cb412d1f165c91d0c46acae9", null ],
     [ "SetDynIcon", "group___image.html#ga094452df89678b60b22f64941383aae5", null ],
     [ "FreeDynIcon", "group___image.html#gaf1da59c4853712ee7c456ccfa95dc8f6", null ],
-    [ "GetPITSize", "group___image.html#gadea61750bc34695a31ca74a291346688", null ]
+    [ "GetPITSize", "group___image.html#gadea61750bc34695a31ca74a291346688", null ],
+    [ "GetLgpIcon", "group___image.html#ga525119e5e9ba64ef106f26f8bcba94fd", null ]
 ];

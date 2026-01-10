@@ -276,6 +276,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gadea61750bc34695a31ca74a291346688" id="r_gadea61750bc34695a31ca74a291346688"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadea61750bc34695a31ca74a291346688">GetPITSize</a> ()</td></tr>
 <tr class="memdesc:gadea61750bc34695a31ca74a291346688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum count of PIT icons.  <br /></td></tr>
 <tr class="separator:gadea61750bc34695a31ca74a291346688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga525119e5e9ba64ef106f26f8bcba94fd" id="r_ga525119e5e9ba64ef106f26f8bcba94fd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga525119e5e9ba64ef106f26f8bcba94fd">GetLgpIcon</a> (int lgp_id)</td></tr>
+<tr class="memdesc:ga525119e5e9ba64ef106f26f8bcba94fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get image by LGP_ID.  <br /></td></tr>
+<tr class="separator:ga525119e5e9ba64ef106f26f8bcba94fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_p_n_g_l_i_s_t" id="struct_p_n_g_l_i_s_t"></a>
@@ -1056,6 +1059,32 @@ Functions</h2></td></tr>
 
 <p>Get the maximum count of PIT icons. </p>
 <dl class="section return"><dt>Returns</dt><dd>count </dd></dl>
+
+</div>
+</div>
+<a id="ga525119e5e9ba64ef106f26f8bcba94fd" name="ga525119e5e9ba64ef106f26f8bcba94fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga525119e5e9ba64ef106f26f8bcba94fd">&#9670;&#160;</a></span>GetLgpIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t GetLgpIcon </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lgp_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get image by LGP_ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lgp_id</td><td>id from the langpack </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number in PIT table or -1 if error </dd></dl>
 
 </div>
 </div>

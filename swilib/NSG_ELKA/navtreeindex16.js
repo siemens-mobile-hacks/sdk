@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaeae9b05c6402c3352c72beee6d3c90e27c":[0,11,3,15],
 "group___o_b_s.html#struct_o_b_sevent":[0,11,0],
 "group___open_s_s_l.html":[0,15],
 "group___open_s_s_l.html#ga006d30ea62bf6f28c602a38e57964901":[0,15,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "group___socket.html#structin__addr":[0,14,0],
 "group___socket.html#structsockaddr":[0,14,1],
 "group___socket.html#structsockaddr__in":[0,14,2],
-"group___sound.html":[0,12],
-"group___sound.html#ga03767c5a7e78df80ea93ce372221275c":[0,12,3]
+"group___sound.html":[0,12]
 };
