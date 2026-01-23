@@ -183,14 +183,6 @@ __swi_end(0x80C9, RamLS, ());
  * */
 
 /**
- * Get a pointer to the current accessory connected to the phone.
- * @return pointer to the unknown structure
- * */
-__swi_begin(0x80D0)
-void *RamAccPoint(void)
-__swi_end(0x80D0, RamAccPoint, ());
-
-/**
  * Get the state of the various peripheries.
  * @param device	ID of the periphery: 4-gprs, 0-BT, 1-irda, 2-COM ?
  * @param check		which state to check: 4-IsActive, (1|2)-IsOn  
