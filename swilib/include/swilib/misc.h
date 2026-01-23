@@ -75,6 +75,45 @@ enum CountdownToneType {
 };
 
 /**
+ * Accessories.
+ * */
+enum Accessory {
+	ACC_CARKIT_COMFORT		= 0x1,
+	ACC_CK_COMFORT_MK2		= 0x2,
+	ACC_CARKIT_PORTABLE		= 0x3,
+	ACC_CARKIT_EASY			= 0x4,
+	ACC_CK_LINEFIT_ATC		= 0x5,
+	ACC_CARKIT_LINEFIT		= 0x6,
+	ACC_CK_LINEFIT_MK2		= 0x7,
+	ACC_CARKIT_PROFESSIONAL	= 0x8,
+	ACC_CARKIT_VOICE		= 0x9,
+	ACC_CK_VOICE_MK2		= 0xA,
+	ACC_CAR_DATA_ADAPTOR	= 0xB,
+	ACC_DESKTOP_CHARGER		= 0xC,
+	ACC_STANDARD_CHARGER	= 0xD,
+	ACC_DATA_CABLE			= 0xE,
+	ACC_USB_RS232_CABLE		= 0xF,
+	ACC_USB_CABLE			= 0x10,
+	ACC_USB_CABLE_DOWN		= 0x11,
+	ACC_USB_CABLE_NC		= 0x12,
+	ACC_HEADSET_MONO		= 0x14,
+	ACC_HEADSET_STEREO		= 0x15,
+	ACC_CLIP_ON_FLASH		= 0x16,
+	ACC_TTY_X55				= 0x17,
+	ACC_TTY					= 0x18,
+	ACC_JAVA_DEVICE			= 0x19,
+	ACC_EMO_DEVICE			= 0x1A,
+	ACC_CLIP_IT_LED			= 0x1B,
+	ACC_FM_RADIO			= 0x1C,
+	ACC_MP3_PLAYER			= 0x1D,
+	ACC_MOBILE_MUSIC_SET	= 0x1F,
+	ACC_MUSIC_CABLE			= 0x20,
+	ACC_BOOT_BOX			= 0x22,
+	ACC_UNSUPPORTED_DEVICE	= 0x2F,
+	ACC_UNKNOWN_DEVICE		= 0x30
+};
+
+/**
  * @name Control
  * @{
  * */
@@ -466,6 +505,24 @@ __swi_end(0x3F4, Countdown_PlaySound, (tone_type));
 __swi_begin(0x83F5)
 int *RamIsCountdownRingUIActive()
 __swi_end(0x83F5, RamIsCountdownRingUIActive, ());
+
+/** @} */
+
+/**
+ * @name Accesories
+ * @{
+ * */
+
+/**
+ * @brief Checks if any accessory from the list is connected.
+ * @param accessory_ids Array of accessory IDs (see #Accessory).
+ * @param count Number of elements in accessory_ids array.
+ * @return 1 if any accessory is connected, 0 otherwise.
+ */
+
+__swi_begin(0x3F9)
+int IsAnyOfAccessoriesConnected(const enum Accessory *accessory_ids, uint8_t count)
+__swi_end(0x3F9, IsAnyOfAccessoriesConnected, (accessory_ids, count));
 
 /** @} */
 
