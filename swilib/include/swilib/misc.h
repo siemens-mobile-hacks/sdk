@@ -514,6 +514,14 @@ __swi_end(0x83F5, RamIsCountdownRingUIActive, ());
  * */
 
 /**
+ * Get a pointer to the current accessory connected to the phone.
+ * @return pointer to the unknown structure
+ * */
+__swi_begin(0x80D0)
+void *RamAccPoint(void)
+__swi_end(0x80D0, RamAccPoint, ());
+
+/**
  * @brief Checks if any accessory from the list is connected.
  * @param accessory_ids Array of accessory IDs (see #Accessory).
  * @param count Number of elements in accessory_ids array.
