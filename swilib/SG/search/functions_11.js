@@ -7,7 +7,7 @@ var searchData=
   ['ram_5fems_5fadmin_4',['RAM_EMS_Admin',['../group___telephony.html#ga08773e5feba6ba9ad9a49b71e385fa43',1,'telephony.h']]],
   ['ram_5fimsi_5',['RAM_IMSI',['../group___telephony.html#ga41a92f0fbee2caa663778638f66645e1',1,'telephony.h']]],
   ['ram_5flcd_5foverlay_5flayer_6',['Ram_LCD_Overlay_Layer',['../group___g_u_i.html#gabd88cdf023a49f2aaead6dda4becbbed',1,'gui.h']]],
-  ['ramaccpoint_7',['RamAccPoint',['../group___info.html#ga951ea31ae5b5f733f4fb5a4d417c3278',1,'info.h']]],
+  ['ramaccpoint_7',['RamAccPoint',['../group___m_i_s_c.html#ga951ea31ae5b5f733f4fb5a4d417c3278',1,'misc.h']]],
   ['ramactiveappointment_8',['RamActiveAppointment',['../group___info.html#gafc1e6ae06b9a3c3a631af4d189909a59',1,'info.h']]],
   ['ramactivegprsprofilename_9',['RamActiveGPRSProfileName',['../group___g_p_r_s.html#ga7fcef0d5cf9f21a3ab59f057de08f2d3',1,'gprs.h']]],
   ['ramalarmclockhours_10',['RamAlarmClockHours',['../group___m_i_s_c.html#gae8b5d9f4278b76675dbe246465a5e8ca',1,'misc.h']]],

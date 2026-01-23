@@ -32,7 +32,6 @@ var group___info =
     [ "GetAkkuCapacity", "group___info.html#gaf575dea2b27b525b433bef2acb9ab2da", null ],
     [ "RamCap", "group___info.html#ga09945d720beb754bb6879b63f28ab62c", null ],
     [ "RamLS", "group___info.html#ga9aff59685b166118538199b31bf1ab99", null ],
-    [ "RamAccPoint", "group___info.html#ga951ea31ae5b5f733f4fb5a4d417c3278", null ],
     [ "GetPeripheryState", "group___info.html#gac10f74829a3815d9374460b155c02747", null ],
     [ "BT_GetLocVisibility", "group___info.html#ga3ffe888e2510354804fdaec7d09eaed6", null ],
     [ "RamBluetoothDeviceName", "group___info.html#ga8ad8ffa9c92e50b3fb5be7b19958774a", null ],
