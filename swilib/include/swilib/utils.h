@@ -102,6 +102,15 @@ __swi_end(0x089, GetLangMesIntoWS, (lgp_id, str));
  * */
 
 /**
+ * Get default disk for BCFG configs
+ * @return disk number
+ * @builtin ELKA, NSG, X75, SG
+ */
+__swi_begin(0x400)
+int BCFG_GetDefaultDisk(void)
+__swi_end(0x400, BCFG_GetDefaultDisk, ());
+
+/**
  * Load .bcfg config from disk (structure)
  * @param[out] config_file	path to .bcfg file
  * @param config			pointer to config structure
