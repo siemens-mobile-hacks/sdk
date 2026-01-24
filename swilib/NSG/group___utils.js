@@ -7,6 +7,7 @@ var group___utils =
     [ "HexCharToInt", "group___utils.html#gad37c7ad276b582086fb804706d0df716", null ],
     [ "StrToHex", "group___utils.html#ga1716ed98b8668b299bf9e3b1e812c274", null ],
     [ "GetLangMesIntoWS", "group___utils.html#gaababc8e359806301a0a39ad6aa492676", null ],
+    [ "BCFG_GetDefaultDisk", "group___utils.html#ga966cc16adbfc191da786899031f2c3a4", null ],
     [ "BCFG_LoadConfig", "group___utils.html#gab3bf183bf9950ebbe2a704c853610c25", null ],
     [ "BCFG_LoadConfigSection", "group___utils.html#gac855b7d82ff50a318372e42384a5590d", null ],
     [ "BCFG_SaveConfig", "group___utils.html#ga4e395ec45e117e20311ad5012e482b9e", null ],
