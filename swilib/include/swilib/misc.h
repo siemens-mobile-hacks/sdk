@@ -307,6 +307,15 @@ void IllumTimeRelease(int time_mode, int counter)
 __swi_end(0x2DF, IllumTimeRelease, (time_mode, counter));
 
 /**
+ * Sets the maximum backlight brightness.
+ * @param unk3		must be set to 3
+ * @param level		brightness level, from 0 (minimum) to 100 (maximum)
+* */
+__swi_begin(0x3FA)
+void SetMaxIllumIntensity(int unk3, uint32_t level)
+__swi_end(0x3FA, SetMaxIllumIntensity, (unk3, level));
+
+/**
  * Trigger backlight (temporary set ON).
  * @param flags		bitmask, see #SetLightFlags
  * @param unk		unknown, set to 0x7FFF
