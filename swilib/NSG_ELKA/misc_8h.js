@@ -70,6 +70,7 @@ var misc_8h =
     [ "SetIllumination", "group___m_i_s_c.html#ga821714070a71235a7366cc14a8718f73", null ],
     [ "IllumTimeRequest", "group___m_i_s_c.html#ga7aa51c18a3ef18a55dc4f16df3a365ad", null ],
     [ "IllumTimeRelease", "group___m_i_s_c.html#gafa4669a0a6ddb614cb2aef09b34302db", null ],
+    [ "SetMaxIllumIntensity", "group___m_i_s_c.html#gad2c06395e387bbee1ff87235fd8587db", null ],
     [ "TempLightOn", "group___m_i_s_c.html#ga6c5c99cbac0ad507e56080474ace2c8f", null ],
     [ "IllumFilterSet", "group___m_i_s_c.html#ga1aa2ebbdc13104d9c9a3f2cee444507f", null ],
     [ "GetVibraStatus", "group___m_i_s_c.html#gad68eab1388351b1ec514ca164ab43f31", null ],

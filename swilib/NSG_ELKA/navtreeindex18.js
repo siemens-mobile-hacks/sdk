@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"group___telephony.html#gafbfea38ad725c35a82fac5af5986b9f3":[0,20,68],
 "group___telephony.html#struct_e_a_m___d_a_t_a":[0,20,10],
 "group___telephony.html#struct_g_b_s___u_s_s_d___m_s_g":[0,20,0],
 "group___telephony.html#struct_i_n_d_e_x___i_d___d_a_t_a":[0,20,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "group___utils.html":[0,26],
 "group___utils.html#ga1716ed98b8668b299bf9e3b1e812c274":[0,26,5],
 "group___utils.html#ga178b3eb239f92fdf601ab3dd257d2b4d":[0,26,11],
-"group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d":[0,26,3],
-"group___utils.html#ga264df0163b0340795379f1eecb4d1c65":[0,26,14]
+"group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d":[0,26,3]
 };
