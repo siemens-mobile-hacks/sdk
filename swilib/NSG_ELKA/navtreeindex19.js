@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d":[0,26,3],
 "group___utils.html#ga264df0163b0340795379f1eecb4d1c65":[0,26,14],
 "group___utils.html#ga322be01692eff035835dda8abcd06032":[0,26,1],
 "group___utils.html#ga4e395ec45e117e20311ad5012e482b9e":[0,26,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "nu__swilib_8h.html":[1,0,0,9],
 "nu__swilib_8h_source.html":[1,0,0,9],
 "nucleus_8h.html":[1,0,0,2,20],
-"nucleus_8h_source.html":[1,0,0,2,20],
-"objects_8h.html":[1,0,0,0,0,24]
+"nucleus_8h_source.html":[1,0,0,2,20]
 };

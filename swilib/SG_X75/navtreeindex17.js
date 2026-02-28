@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"group___socket.html#structhostent":[0,14,3],
 "group___socket.html#structin__addr":[0,14,0],
 "group___socket.html#structsockaddr":[0,14,1],
 "group___socket.html#structsockaddr__in":[0,14,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "group___u_i.html#ga45a264214eb8357c9bb949c3aa4783f7":[0,7,77],
 "group___u_i.html#ga46b5f5853ab06754964dc5f18940a7e5":[0,7,42],
 "group___u_i.html#ga472dafb4a369eba36225dbe47d623b8c":[0,7,93],
-"group___u_i.html#ga4a062d6925ba873ebd19a07499464f9f":[0,7,80],
-"group___u_i.html#ga4be0fd83c84ef86445681df9347111e7":[0,7,109]
+"group___u_i.html#ga4a062d6925ba873ebd19a07499464f9f":[0,7,80]
 };

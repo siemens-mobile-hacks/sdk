@@ -275,6 +275,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gadebd304e3940d2ae6e7b069355060002" id="r_gadebd304e3940d2ae6e7b069355060002"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadebd304e3940d2ae6e7b069355060002">Obs_SetCSM</a> (<a class="el" href="#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, <a class="el" href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a> *csm)</td></tr>
 <tr class="memdesc:gadebd304e3940d2ae6e7b069355060002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link CSM to the OBS object.  <br /></td></tr>
 <tr class="separator:gadebd304e3940d2ae6e7b069355060002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03498bc1745d124db262cf9defd20b4f" id="r_ga03498bc1745d124db262cf9defd20b4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga03498bc1745d124db262cf9defd20b4f">Obs_SetUserPointer</a> (<a class="el" href="#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, void *user_pointer)</td></tr>
+<tr class="memdesc:ga03498bc1745d124db262cf9defd20b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set custom user pointer to the OBS object.  <br /></td></tr>
+<tr class="separator:ga03498bc1745d124db262cf9defd20b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_o_b_sevent" id="struct_o_b_sevent"></a>
@@ -1548,6 +1551,38 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">obs</td><td>OBS object </td></tr>
     <tr><td class="paramname">csm</td><td>pointer to the csm </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>Function with wrong name, use instead <a class="el" href="#ga03498bc1745d124db262cf9defd20b4f" title="Set custom user pointer to the OBS object.">Obs_SetUserPointer</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga03498bc1745d124db262cf9defd20b4f" name="ga03498bc1745d124db262cf9defd20b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03498bc1745d124db262cf9defd20b4f">&#9670;&#160;</a></span>Obs_SetUserPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Obs_SetUserPointer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a></td>          <td class="paramname"><span class="paramname"><em>obs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user_pointer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set custom user pointer to the OBS object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obs</td><td>OBS object </td></tr>
+    <tr><td class="paramname">user_pointer</td><td>custom user pointer </td></tr>
   </table>
   </dd>
 </dl>

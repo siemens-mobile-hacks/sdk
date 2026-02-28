@@ -1,5 +1,6 @@
 var NAVTREEINDEX51 =
 {
+"swilib_2socket_8h.html":[1,0,0,2,27],
 "swilib_2socket_8h_source.html":[1,0,0,2,27],
 "swilib_2zlib_8h.html":[1,0,0,2,34],
 "swilib_2zlib_8h_source.html":[1,0,0,2,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX51 =
 "x509_8h.html#a41eb520f82251064dff950229171cf97":[1,0,0,0,0,48,57],
 "x509_8h.html#a42496d742863570b98f6816159f84fe9":[1,0,0,0,0,48,484],
 "x509_8h.html#a42705b12b0d7e2d28c819ccf4ed8b96b":[1,0,0,0,0,48,268],
-"x509_8h.html#a4343567845e83ace67395636e0e640b1":[1,0,0,0,0,48,117],
-"x509_8h.html#a4353c553bbb3bde7e2ec5d5c924ab58a":[1,0,0,0,0,48,429]
+"x509_8h.html#a4343567845e83ace67395636e0e640b1":[1,0,0,0,0,48,117]
 };
