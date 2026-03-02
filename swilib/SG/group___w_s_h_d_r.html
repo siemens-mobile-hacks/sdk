@@ -192,9 +192,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1b86757d9a93e442083d6501a262b405" id="r_ga1b86757d9a93e442083d6501a262b405"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1b86757d9a93e442083d6501a262b405">wstrncmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws2, size_t n)</td></tr>
 <tr class="memdesc:ga1b86757d9a93e442083d6501a262b405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings, up to a specific length.  <br /></td></tr>
 <tr class="separator:ga1b86757d9a93e442083d6501a262b405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb4097d7177b1afe42e6358a5063adc2" id="r_gadb4097d7177b1afe42e6358a5063adc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb4097d7177b1afe42e6358a5063adc2">wstricmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws2)</td></tr>
+<tr class="memdesc:gadb4097d7177b1afe42e6358a5063adc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings without case sensitivity.  <br /></td></tr>
+<tr class="separator:gadb4097d7177b1afe42e6358a5063adc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0225229341a1d6157313d9a9441c47d" id="r_gaa0225229341a1d6157313d9a9441c47d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0225229341a1d6157313d9a9441c47d">wstrnicmp</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws2, size_t n)</td></tr>
+<tr class="memdesc:gaa0225229341a1d6157313d9a9441c47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings without case sensitivity, up to a specific length.  <br /></td></tr>
+<tr class="separator:gaa0225229341a1d6157313d9a9441c47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4014531ec86a71b5202f55ba30d17448" id="r_ga4014531ec86a71b5202f55ba30d17448"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4014531ec86a71b5202f55ba30d17448">wstrlen</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *str)</td></tr>
 <tr class="memdesc:ga4014531ec86a71b5202f55ba30d17448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> length.  <br /></td></tr>
 <tr class="separator:ga4014531ec86a71b5202f55ba30d17448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga966cbc7512b3d8b11ee063a615609ccd" id="r_ga966cbc7512b3d8b11ee063a615609ccd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga966cbc7512b3d8b11ee063a615609ccd">wstriwstr</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *search, uint32_t start_pos)</td></tr>
+<tr class="memdesc:ga966cbc7512b3d8b11ee063a615609ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the first occurrence of a substring in a <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string, ignoring case, starting from given position.  <br /></td></tr>
+<tr class="separator:ga966cbc7512b3d8b11ee063a615609ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3915cce5778119309d0360602abc0c36" id="r_ga3915cce5778119309d0360602abc0c36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3915cce5778119309d0360602abc0c36">wstrreplace</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *dest, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *src, uint32_t pos)</td></tr>
+<tr class="memdesc:ga3915cce5778119309d0360602abc0c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace substring in dest with src starting from position pos.  <br /></td></tr>
+<tr class="separator:ga3915cce5778119309d0360602abc0c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Formatting</h2></td></tr>
 <tr class="memitem:ga98c564bf5795bcdd4712e08a7363045c" id="r_ga98c564bf5795bcdd4712e08a7363045c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga98c564bf5795bcdd4712e08a7363045c">wsprintf</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
@@ -217,6 +229,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa2702f522f00dbea5c2151aac9c4d638" id="r_gaa2702f522f00dbea5c2151aac9c4d638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2702f522f00dbea5c2151aac9c4d638">ws_2str</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *source, char *destination, uint32_t size)</td></tr>
 <tr class="memdesc:gaa2702f522f00dbea5c2151aac9c4d638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to the UTF-8 C-string with special mark.  <br /></td></tr>
 <tr class="separator:gaa2702f522f00dbea5c2151aac9c4d638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9246382ce5e21397eabf3f6c9ca8f34" id="r_gad9246382ce5e21397eabf3f6c9ca8f34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9246382ce5e21397eabf3f6c9ca8f34">wstrtoupper</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws)</td></tr>
+<tr class="memdesc:gad9246382ce5e21397eabf3f6c9ca8f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to uppercase in-place.  <br /></td></tr>
+<tr class="separator:gad9246382ce5e21397eabf3f6c9ca8f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77ad675be34de6c0ff6365180f7c52de" id="r_ga77ad675be34de6c0ff6365180f7c52de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77ad675be34de6c0ff6365180f7c52de">wstrtolower</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws)</td></tr>
+<tr class="memdesc:ga77ad675be34de6c0ff6365180f7c52de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to lowercase in-place.  <br /></td></tr>
+<tr class="separator:ga77ad675be34de6c0ff6365180f7c52de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84a570150ac1af117d8eb3e6abb265c6" id="r_ga84a570150ac1af117d8eb3e6abb265c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84a570150ac1af117d8eb3e6abb265c6">wstrcapitalize</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *ws)</td></tr>
+<tr class="memdesc:ga84a570150ac1af117d8eb3e6abb265c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to capitalized form in-place (first character uppercase, rest lowercase)  <br /></td></tr>
+<tr class="separator:ga84a570150ac1af117d8eb3e6abb265c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_w_s_b_o_d_y" id="struct_w_s_b_o_d_y"></a>
@@ -974,6 +995,82 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gadb4097d7177b1afe42e6358a5063adc2" name="gadb4097d7177b1afe42e6358a5063adc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb4097d7177b1afe42e6358a5063adc2">&#9670;&#160;</a></span>wstricmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wstricmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings without case sensitivity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws1</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+    <tr><td class="paramname">ws2</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&lt;0 - ws1 is less than ws2 (case-insensitive) </dd>
+<dd>
+0 - ws1 is equal to ws2 (case-insensitive) </dd>
+<dd>
+&gt;0 - ws1 is greater than ws2 (case-insensitive) </dd></dl>
+
+</div>
+</div>
+<a id="gaa0225229341a1d6157313d9a9441c47d" name="gaa0225229341a1d6157313d9a9441c47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0225229341a1d6157313d9a9441c47d">&#9670;&#160;</a></span>wstrnicmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wstrnicmp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings without case sensitivity, up to a specific length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws1</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+    <tr><td class="paramname">ws2</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be compared </td></tr>
+    <tr><td class="paramname">n</td><td>maximum number of characters to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&lt;0 - ws1 is less than ws2 (case-insensitive) </dd>
+<dd>
+0 - ws1 is equal to ws2 (case-insensitive) </dd>
+<dd>
+0 - ws1 is equal to ws2 (case-insensitive) </dd></dl>
+
+</div>
+</div>
 <a id="ga4014531ec86a71b5202f55ba30d17448" name="ga4014531ec86a71b5202f55ba30d17448"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4014531ec86a71b5202f55ba30d17448">&#9670;&#160;</a></span>wstrlen()</h2>
 
@@ -997,6 +1094,79 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The length of <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string </dd></dl>
+
+</div>
+</div>
+<a id="ga966cbc7512b3d8b11ee063a615609ccd" name="ga966cbc7512b3d8b11ee063a615609ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga966cbc7512b3d8b11ee063a615609ccd">&#9670;&#160;</a></span>wstriwstr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t wstriwstr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>search</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>start_pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the first occurrence of a substring in a <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string, ignoring case, starting from given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to search in </td></tr>
+    <tr><td class="paramname">search</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> substring to search for (case-insensitive) </td></tr>
+    <tr><td class="paramname">start_pos</td><td>starting position in ws </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>position of first occurrence of search at or after start_pos, or 0xFFFF if not found </dd></dl>
+
+</div>
+</div>
+<a id="ga3915cce5778119309d0360602abc0c36" name="ga3915cce5778119309d0360602abc0c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3915cce5778119309d0360602abc0c36">&#9670;&#160;</a></span>wstrreplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wstrreplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace substring in dest with src starting from position pos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to modify (destination) </td></tr>
+    <tr><td class="paramname">src</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to replace with (source) </td></tr>
+    <tr><td class="paramname">pos</td><td>starting position in dest </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1236,6 +1406,81 @@ Notice that only when this returned value is non-negative and less than n, the s
   </dd>
 </dl>
 <p>Also, 0x1F (mark of UTF-8 string) will be added at the beginning of the string. This is useful for filesystem functions. </p>
+
+</div>
+</div>
+<a id="gad9246382ce5e21397eabf3f6c9ca8f34" name="gad9246382ce5e21397eabf3f6c9ca8f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9246382ce5e21397eabf3f6c9ca8f34">&#9670;&#160;</a></span>wstrtoupper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wstrtoupper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to uppercase in-place. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga77ad675be34de6c0ff6365180f7c52de" name="ga77ad675be34de6c0ff6365180f7c52de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77ad675be34de6c0ff6365180f7c52de">&#9670;&#160;</a></span>wstrtolower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wstrtolower </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to lowercase in-place. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga84a570150ac1af117d8eb3e6abb265c6" name="ga84a570150ac1af117d8eb3e6abb265c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84a570150ac1af117d8eb3e6abb265c6">&#9670;&#160;</a></span>wstrcapitalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wstrcapitalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string to capitalized form in-place (first character uppercase, rest lowercase) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws</td><td><a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

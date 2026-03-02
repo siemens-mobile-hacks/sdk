@@ -25,11 +25,18 @@ var group___w_s_h_d_r =
     [ "wstrrchr", "group___w_s_h_d_r.html#gae34bc636e2c83fd8d66be1b0c2dacc01", null ],
     [ "wstrcmp", "group___w_s_h_d_r.html#ga3a75567b7245f823d5cf1f75796b2017", null ],
     [ "wstrncmp", "group___w_s_h_d_r.html#ga1b86757d9a93e442083d6501a262b405", null ],
+    [ "wstricmp", "group___w_s_h_d_r.html#gadb4097d7177b1afe42e6358a5063adc2", null ],
+    [ "wstrnicmp", "group___w_s_h_d_r.html#gaa0225229341a1d6157313d9a9441c47d", null ],
     [ "wstrlen", "group___w_s_h_d_r.html#ga4014531ec86a71b5202f55ba30d17448", null ],
+    [ "wstriwstr", "group___w_s_h_d_r.html#ga966cbc7512b3d8b11ee063a615609ccd", null ],
+    [ "wstrreplace", "group___w_s_h_d_r.html#ga3915cce5778119309d0360602abc0c36", null ],
     [ "wsprintf", "group___w_s_h_d_r.html#ga98c564bf5795bcdd4712e08a7363045c", null ],
     [ "wstrcatprintf", "group___w_s_h_d_r.html#ga2737ce1afc859ac3e01e6a6a33b8b139", null ],
     [ "ws_2utf8", "group___w_s_h_d_r.html#gabe1cc6090a6f2a144a09e59976efb8e9", null ],
     [ "utf8_2ws", "group___w_s_h_d_r.html#ga1223a9f3844cf4497f16ee9a2f594b31", null ],
     [ "str_2ws", "group___w_s_h_d_r.html#ga4f7c0551d27f70c967f5f6fc177debaf", null ],
-    [ "ws_2str", "group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638", null ]
+    [ "ws_2str", "group___w_s_h_d_r.html#gaa2702f522f00dbea5c2151aac9c4d638", null ],
+    [ "wstrtoupper", "group___w_s_h_d_r.html#gad9246382ce5e21397eabf3f6c9ca8f34", null ],
+    [ "wstrtolower", "group___w_s_h_d_r.html#ga77ad675be34de6c0ff6365180f7c52de", null ],
+    [ "wstrcapitalize", "group___w_s_h_d_r.html#ga84a570150ac1af117d8eb3e6abb265c6", null ]
 ];

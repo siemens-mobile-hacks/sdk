@@ -149,6 +149,7 @@ var group___u_i =
     [ "MsgBoxYesNo", "group___u_i.html#ga2db5f3afeb7ce1f15eebf9a42de8a15b", null ],
     [ "MsgBoxOkCancel", "group___u_i.html#ga45a264214eb8357c9bb949c3aa4783f7", null ],
     [ "ShowWaitBox", "group___u_i.html#ga4e16951186e374de26ab5b67852cebfb", null ],
+    [ "ShowPleaseWaitBox", "group___u_i.html#ga17d71696ceb63ceae8a41f8dcf26470d", null ],
     [ "GetPBarProc3", "group___u_i.html#ga2a37b885cf574fdf9e7854e95bdf78e5", null ],
     [ "ShowPBarBox", "group___u_i.html#ga4a062d6925ba873ebd19a07499464f9f", null ],
     [ "SetPBarValue", "group___u_i.html#ga5c37895a3660c013784f03cf2d937e9f", null ],

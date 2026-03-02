@@ -474,6 +474,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga4e16951186e374de26ab5b67852cebfb" id="r_ga4e16951186e374de26ab5b67852cebfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4e16951186e374de26ab5b67852cebfb">ShowWaitBox</a> (int flags, int message)</td></tr>
 <tr class="memdesc:ga4e16951186e374de26ab5b67852cebfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait popup.  <br /></td></tr>
 <tr class="separator:ga4e16951186e374de26ab5b67852cebfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17d71696ceb63ceae8a41f8dcf26470d" id="r_ga17d71696ceb63ceae8a41f8dcf26470d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga17d71696ceb63ceae8a41f8dcf26470d">ShowPleaseWaitBox</a> (int flags)</td></tr>
+<tr class="memdesc:ga17d71696ceb63ceae8a41f8dcf26470d"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Please wait' popup.  <br /></td></tr>
+<tr class="separator:ga17d71696ceb63ceae8a41f8dcf26470d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2a37b885cf574fdf9e7854e95bdf78e5" id="r_ga2a37b885cf574fdf9e7854e95bdf78e5"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2a37b885cf574fdf9e7854e95bdf78e5">GetPBarProc3</a> ()</td></tr>
 <tr class="memdesc:ga2a37b885cf574fdf9e7854e95bdf78e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pointer for proc3 method of <a class="el" href="#struct_p_b_a_r___d_e_s_c" title="Progressbar definition.">PBAR_DESC</a> struct.  <br /></td></tr>
 <tr class="separator:ga2a37b885cf574fdf9e7854e95bdf78e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2598,8 +2601,34 @@ Enumerations</h2></td></tr>
 <p>Wait popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td></td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>GUI_ID </dd></dl>
+
+</div>
+</div>
+<a id="ga17d71696ceb63ceae8a41f8dcf26470d" name="ga17d71696ceb63ceae8a41f8dcf26470d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17d71696ceb63ceae8a41f8dcf26470d">&#9670;&#160;</a></span>ShowPleaseWaitBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowPleaseWaitBox </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>'Please wait' popup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flags</td><td><a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
   </table>
   </dd>
 </dl>
