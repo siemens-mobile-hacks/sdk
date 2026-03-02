@@ -277,6 +277,13 @@ int sys_rmdir(const char *dirname, uint32_t *err)
 __swi_end(0x08F, sys_rmdir, (dirname, err));
 
 /**
+ * @copydoc sys_rmdir
+ * */
+__swi_begin(0x3B8)
+int sys_rmdir_ws(const WSHDR *path, unsigned int *err)
+__swi_end(0x3B8, sys_rmdir_ws, (path, err));
+
+/**
  * Rename file or directory.
  * @param old_name		old file/dir name (full path)
  * @param new_name		new file/dir name (full path)
@@ -303,6 +310,13 @@ __swi_end(0x3B9, sys_rename_ws, (old_name, new_name, err));
 __swi_begin(0x16B)
 int sys_unlink(const char *path, uint32_t *err)
 __swi_end(0x16B, sys_unlink, (path, err));
+
+/**
+ * @copydoc sys_unlink
+ * */
+__swi_begin(0x3BA)
+int sys_unlink_ws(const WSHDR *path, unsigned int *err)
+__swi_end(0x3BA, sys_unlink_ws, (path, err));
 
 /**
  * Truncate the file to the given size.
@@ -482,6 +496,13 @@ __swi_end(0x045, GetWavLen, (wav_info));
 __swi_begin(0x06B)
 int FindFirstFile(DIR_ENTRY *dir_entry, const char *mask, uint32_t *err)
 __swi_end(0x06B, FindFirstFile, (dir_entry, mask, err));
+
+/**
+ * @copydoc FindFirstFile
+ * */
+__swi_begin(0x3BF)
+int FindFirstFile_ws(DIR_ENTRY *dir_entry, const WSHDR *mask, uint32_t *err)
+__swi_end(0x3BF, FindFirstFile_ws, (dir_entry, mask, err));
 
 /**
  * Continue searching for files and get next result.

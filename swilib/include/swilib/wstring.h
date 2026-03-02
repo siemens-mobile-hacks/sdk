@@ -248,6 +248,32 @@ int wstrncmp(const WSHDR *ws1, const WSHDR *ws2, size_t n)
 __swi_end(0x3C9, wstrncmp, (ws1, ws2, n));
 
 /**
+ *
+ * Compare two WSHDR strings without case sensitivity
+ * @param ws1 WSHDR to be compared
+ * @param ws2 WSHDR to be compared
+ * @return <0 - ws1 is less than ws2 (case-insensitive)
+ * @return 0 - ws1 is equal to ws2 (case-insensitive)
+ * @return >0 - ws1 is greater than ws2 (case-insensitive)
+ * */
+__swi_begin(0x3CA)
+int wstricmp(const WSHDR *ws1, const WSHDR *ws2)
+__swi_end(0x3CA, wstricmp, (ws1, ws2));
+
+/**
+ * Compare two WSHDR strings without case sensitivity, up to a specific length
+ * @param ws1 WSHDR to be compared
+ * @param ws2 WSHDR to be compared
+ * @param n maximum number of characters to compare
+ * @return <0 - ws1 is less than ws2 (case-insensitive)
+ * @return 0 - ws1 is equal to ws2 (case-insensitive)
+ * @return 0 - ws1 is equal to ws2 (case-insensitive)
+ * */
+__swi_begin(0x3CB)
+int wstrnicmp(const WSHDR *ws1, const WSHDR *ws2, size_t n)
+__swi_end(0x3CB, wstrnicmp, (ws1, ws2, n));
+
+/**
  * Get WSHDR length.
  * @param str	pointer to the WSHDR
  * @return The length of WSHDR string
@@ -255,6 +281,27 @@ __swi_end(0x3C9, wstrncmp, (ws1, ws2, n));
 __swi_begin(0x123)
 uint16_t wstrlen(const WSHDR *str)
 __swi_end(0x123, wstrlen, (str));
+
+/**
+ * Find the first occurrence of a substring in a WSHDR string, ignoring case, starting from given position
+ * @param ws WSHDR string to search in
+ * @param search WSHDR substring to search for (case-insensitive)
+ * @param start_pos starting position in ws
+ * @return position of first occurrence of search at or after start_pos, or 0xFFFF if not found
+ * */
+__swi_begin(0x3DA)
+uint16_t wstriwstr(const WSHDR *ws, const WSHDR *search, uint32_t start_pos)
+__swi_end(0x3DA, wstriwstr, (ws, search, start_pos));
+
+/**
+ * Replace substring in dest with src starting from position pos
+ * @param dest WSHDR string to modify (destination)
+ * @param src WSHDR string to replace with (source)
+ * @param pos starting position in dest
+ * */
+__swi_begin(0x3DB)
+void wstrreplace(WSHDR *dest, const WSHDR *src, uint32_t pos)
+__swi_end(0x3DB, wstrreplace, (dest, src, pos));
 
 /**
  * @name Formatting
@@ -358,6 +405,30 @@ __swi_end(0x16C, str_2ws, (destination, source, size));
 __swi_begin(0x0A3)
 void ws_2str(const WSHDR *source, char *destination, uint32_t size)
 __swi_end(0x0A3, ws_2str, (source, destination, size));
+
+/**
+ * Convert WSHDR string to uppercase in-place
+ * @param ws WSHDR to be converted
+ * */
+__swi_begin(0x3CD)
+void wstrtoupper(WSHDR *ws)
+__swi_end(0x3CD, wstrtoupper, (ws));
+
+/**
+ * Convert WSHDR string to lowercase in-place
+ * @param ws WSHDR to be converted
+ * */
+__swi_begin(0x3CE)
+void wstrtolower(WSHDR *ws)
+__swi_end(0x3CE, wstrtolower, (ws));
+
+/**
+ * Convert WSHDR string to capitalized form in-place (first character uppercase, rest lowercase)
+ * @param ws WSHDR to be converted
+ * */
+__swi_begin(0x3CF)
+void wstrcapitalize(WSHDR *ws)
+__swi_end(0x3CF, wstrcapitalize, (ws));
 
 /** @} */
 
