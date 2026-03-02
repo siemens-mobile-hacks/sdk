@@ -763,13 +763,22 @@ __swi_end(0x050, MsgBoxOkCancel, (flags, message, callback));
 
 /**
  * Wait popup.
- * @param flags
+ * @param flags			see #PopupDialogFlags
  * @param message		id from the langpack or pointer to the C-string
  * @return GUI_ID
  * */
 __swi_begin(0x3C0)
 int ShowWaitBox(int flags, int message)
 __swi_end(0x3C0, ShowWaitBox, (flags, message));
+
+/**
+ * 'Please wait' popup.
+ * @param flags		#PopupDialogFlags
+ * @return GUI_ID
+ * */
+__swi_begin(0x3C1)
+int ShowPleaseWaitBox(int flags)
+__swi_end(0x3C1, ShowPleaseWaitBox, (flags));
 
 /**
  * Get pointer for proc3 method of #PBAR_DESC struct.
