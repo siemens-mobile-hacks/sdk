@@ -87,7 +87,9 @@ struct FSTATS {
 	char unk3;
 	char unk4;
 	uint32_t size;	/*!< Size in bytes */
-	char unk5[16];
+	char unk5[12];
+	uint16_t mtime_date; /*!< Date of last modification in DOS (FAT) format */
+	uint16_t mtime_time; /*!< Time of last modification in DOS (FAT) format */
 	int file_attr;	/*!< File attribute: #FileAttributes */
 };
 
