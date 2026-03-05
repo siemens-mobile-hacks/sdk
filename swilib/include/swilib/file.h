@@ -87,7 +87,9 @@ struct FSTATS {
 	char unk3;
 	char unk4;
 	uint32_t size;	/*!< Size in bytes */
-	char unk5[16];
+	char unk5[12];
+	uint16_t mtime_date; /*!< Date of last modification in DOS (FAT) format */
+	uint16_t mtime_time; /*!< Time of last modification in DOS (FAT) format */
 	int file_attr;	/*!< File attribute: #FileAttributes */
 };
 
@@ -369,6 +371,26 @@ int sys_format(uint16_t drive, uint32_t *err)
 __swi_end(0x38C, sys_format, (drive, err));
 
 /**
+ * Mount drive by index.
+ * @param drive			drive number (only drive 4 is supported)
+ * @param[out] err		error code
+ * @return 0 or error
+ * */
+__swi_begin(0x3FB)
+int sys_mount(uint16_t drive, uint32_t *err)
+__swi_end(0x3FB, sys_mount, (drive, err));
+
+/**
+ * Unmount drive by index.
+ * @param drive			drive number (only drive 4 is supported)
+ * @param[out] err		error code
+ * @return 0 or error
+ * */
+__swi_begin(0x3FC)
+int sys_unmount(uint16_t drive, uint32_t *err)
+__swi_end(0x3FC, sys_unmount, (drive, err));
+
+/**
  * Truncate or grow the file to the given size.
  * @param fd			file descriptor
  * @param length		new size of the file
@@ -378,6 +400,18 @@ __swi_end(0x38C, sys_format, (drive, err));
 __swi_begin(0x03C)
 int setfilesize(int fd, uint32_t length, uint32_t *err)
 __swi_end(0x03C, setfilesize, (fd, length, err));
+
+/**
+ * Set file date and time.
+ * @param fd			file descriptor
+ * @param date			date in DOS (FAT) format
+ * @param time			time in DOS (FAT) format
+ * @param[out] err		error code
+ * @return 0 or error
+ * */
+__swi_begin(0x3FD)
+int setfiletime(int fd, uint16_t date, uint16_t time, uint32_t *err)
+__swi_end(0x3FD, setfiletime, (fd, date, time, err));
 
 /**
  * @copydoc sys_rename
