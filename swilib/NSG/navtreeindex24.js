@@ -1,5 +1,8 @@
 var NAVTREEINDEX24 =
 {
+"pkcs12_8h.html#struct_p_k_c_s12___s_a_f_e_b_a_g":[1,0,0,0,0,29,2],
+"pkcs12_8h.html#structpkcs12__bag__st":[1,0,0,0,0,29,3],
+"pkcs12_8h.html#union_p_k_c_s12___s_a_f_e_b_a_g_8value":[1,0,0,0,0,29,4],
 "pkcs12_8h.html#unionpkcs12__bag__st_8value":[1,0,0,0,0,29,5],
 "pkcs12_8h_source.html":[1,0,0,0,0,29],
 "pkcs7_8h.html":[1,0,0,0,0,30],
@@ -246,8 +249,5 @@ var NAVTREEINDEX24 =
 "pkcs7_8h.html#structpkcs7__digest__st":[1,0,0,0,0,30,9],
 "pkcs7_8h.html#structpkcs7__enc__content__st":[1,0,0,0,0,30,6],
 "pkcs7_8h.html#structpkcs7__encrypted__st":[1,0,0,0,0,30,10],
-"pkcs7_8h.html#structpkcs7__enveloped__st":[1,0,0,0,0,30,7],
-"pkcs7_8h.html#structpkcs7__issuer__and__serial__st":[1,0,0,0,0,30,0],
-"pkcs7_8h.html#structpkcs7__recip__info__st":[1,0,0,0,0,30,3],
-"pkcs7_8h.html#structpkcs7__signed__st":[1,0,0,0,0,30,5]
+"pkcs7_8h.html#structpkcs7__enveloped__st":[1,0,0,0,0,30,7]
 };

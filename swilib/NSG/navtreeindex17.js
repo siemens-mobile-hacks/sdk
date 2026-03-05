@@ -1,5 +1,8 @@
 var NAVTREEINDEX17 =
 {
+"group___socket.html#ga4bdb578c974eb8749d7be61651f245fc":[0,14,24],
+"group___socket.html#ga55b3c1572b4e86ca0702ecdeb7e43997":[0,14,29],
+"group___socket.html#ga5d1940045dc2e7de552f3d4ff13a74ab":[0,14,4],
 "group___socket.html#ga65b931c174ab681a18d0352ab48c5ce7":[0,14,14],
 "group___socket.html#ga6a825247fae0cb792769e588f152f1ab":[0,14,20],
 "group___socket.html#ga6bd484d9bdee112a6f2c449490bebd89":[0,14,31],
@@ -246,8 +249,5 @@ var NAVTREEINDEX17 =
 "group___telephony.html#gaee6ce026b2a80a51d2125778bc3b0c7c":[0,20,38],
 "group___telephony.html#gaf5810164708d5c500450a6ffa7ebf31e":[0,20,32],
 "group___telephony.html#gaf621bbc603d3d748433e5b58d6c1e872":[0,20,40],
-"group___telephony.html#gaf824862880f097386bb517b32ae27e16":[0,20,48],
-"group___telephony.html#gafa05c7fb80a59da78e4c124fa4af3dd0":[0,20,29],
-"group___telephony.html#gafbfea38ad725c35a82fac5af5986b9f3":[0,20,68],
-"group___telephony.html#struct_e_a_m___d_a_t_a":[0,20,10]
+"group___telephony.html#gaf824862880f097386bb517b32ae27e16":[0,20,48]
 };

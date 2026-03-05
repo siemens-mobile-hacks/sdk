@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"group___utils.html#ga178b3eb239f92fdf601ab3dd257d2b4d":[0,26,11],
+"group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d":[0,26,3],
+"group___utils.html#ga264df0163b0340795379f1eecb4d1c65":[0,26,14],
 "group___utils.html#ga322be01692eff035835dda8abcd06032":[0,26,1],
 "group___utils.html#ga4e395ec45e117e20311ad5012e482b9e":[0,26,10],
 "group___utils.html#ga5053c2c90347015ee1ffc2ce2803619f":[0,26,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "naticq__ipc_8h.html":[1,0,0,7],
 "naticq__ipc_8h.html#a8027151bd479cfd1a33f2dbcdc1dc5de":[1,0,0,7,3],
 "naticq__ipc_8h.html#acad49ea530fb5853530a5aa549fe6a9c":[1,0,0,7,2],
-"naticq__ipc_8h.html#struct_i_p_c_msg":[1,0,0,7,0],
-"naticq__ipc_8h.html#struct_i_p_c_msg___r_e_c_v_m_s_g":[1,0,0,7,1],
-"naticq__ipc_8h_source.html":[1,0,0,7],
-"netdb_8h.html":[1,0,0,8]
+"naticq__ipc_8h.html#struct_i_p_c_msg":[1,0,0,7,0]
 };

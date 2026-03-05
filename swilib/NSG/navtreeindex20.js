@@ -1,5 +1,8 @@
 var NAVTREEINDEX20 =
 {
+"naticq__ipc_8h.html#struct_i_p_c_msg___r_e_c_v_m_s_g":[1,0,0,7,1],
+"naticq__ipc_8h_source.html":[1,0,0,7],
+"netdb_8h.html":[1,0,0,8],
 "netdb_8h_source.html":[1,0,0,8],
 "nu__swilib_8h.html":[1,0,0,9],
 "nu__swilib_8h_source.html":[1,0,0,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX20 =
 "objects_8h.html#a4df5a5fd48f82b526dbb7347abda6b8d":[1,0,0,0,0,24,110],
 "objects_8h.html#a4e4fab46076585a86633e81d04e099a7":[1,0,0,0,0,24,52],
 "objects_8h.html#a4eeded65c355a4f51764518b0f113172":[1,0,0,0,0,24,39],
-"objects_8h.html#a4f159264a544c70c8a146a7f00fd7922":[1,0,0,0,0,24,64],
-"objects_8h.html#a4f294f430c3da7edc82a750ea2efe6f0":[1,0,0,0,0,24,313],
-"objects_8h.html#a4f39d4d296bb383eb0b6ea9d736a00ca":[1,0,0,0,0,24,322],
-"objects_8h.html#a4f59296b86719e8596932e51b38881d0":[1,0,0,0,0,24,89]
+"objects_8h.html#a4f159264a544c70c8a146a7f00fd7922":[1,0,0,0,0,24,64]
 };

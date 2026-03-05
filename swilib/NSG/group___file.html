@@ -272,9 +272,18 @@ Functions</h2></td></tr>
 <tr class="memitem:gab746480168bad1f06dcc65b3578323c9" id="r_gab746480168bad1f06dcc65b3578323c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab746480168bad1f06dcc65b3578323c9">sys_format</a> (uint16_t drive, uint32_t *err)</td></tr>
 <tr class="memdesc:gab746480168bad1f06dcc65b3578323c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format drive by index.  <br /></td></tr>
 <tr class="separator:gab746480168bad1f06dcc65b3578323c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55f083cc6874474e6aef9ada1d05661b" id="r_ga55f083cc6874474e6aef9ada1d05661b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga55f083cc6874474e6aef9ada1d05661b">sys_mount</a> (uint16_t drive, uint32_t *err)</td></tr>
+<tr class="memdesc:ga55f083cc6874474e6aef9ada1d05661b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mount drive by index.  <br /></td></tr>
+<tr class="separator:ga55f083cc6874474e6aef9ada1d05661b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bc8ac73b0599439715809be50113192" id="r_ga7bc8ac73b0599439715809be50113192"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7bc8ac73b0599439715809be50113192">sys_unmount</a> (uint16_t drive, uint32_t *err)</td></tr>
+<tr class="memdesc:ga7bc8ac73b0599439715809be50113192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmount drive by index.  <br /></td></tr>
+<tr class="separator:ga7bc8ac73b0599439715809be50113192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeb80310d75b8b8edc0ce3d2fa2a9dea4" id="r_gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeb80310d75b8b8edc0ce3d2fa2a9dea4">setfilesize</a> (int fd, uint32_t length, uint32_t *err)</td></tr>
 <tr class="memdesc:gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate or grow the file to the given size.  <br /></td></tr>
 <tr class="separator:gaeb80310d75b8b8edc0ce3d2fa2a9dea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga189dccd1768ea8e42c1852d587150af0" id="r_ga189dccd1768ea8e42c1852d587150af0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga189dccd1768ea8e42c1852d587150af0">setfiletime</a> (int fd, uint16_t date, uint16_t time, uint32_t *err)</td></tr>
+<tr class="memdesc:ga189dccd1768ea8e42c1852d587150af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set file date and time.  <br /></td></tr>
+<tr class="separator:ga189dccd1768ea8e42c1852d587150af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaeb33d7e7e61dfae08465ff3630abf5d" id="r_gaaeb33d7e7e61dfae08465ff3630abf5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaeb33d7e7e61dfae08465ff3630abf5d">fmove</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *old_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *new_name, uint32_t *err)</td></tr>
 <tr class="memdesc:gaaeb33d7e7e61dfae08465ff3630abf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename file or directory.     <br /></td></tr>
 <tr class="separator:gaaeb33d7e7e61dfae08465ff3630abf5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -623,7 +632,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00094">94</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00096">96</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -669,7 +678,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00150">150</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00152">152</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -1355,6 +1364,68 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga55f083cc6874474e6aef9ada1d05661b" name="ga55f083cc6874474e6aef9ada1d05661b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55f083cc6874474e6aef9ada1d05661b">&#9670;&#160;</a></span>sys_mount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_mount </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>drive</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mount drive by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">drive</td><td>drive number (only drive 4 is supported) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga7bc8ac73b0599439715809be50113192" name="ga7bc8ac73b0599439715809be50113192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7bc8ac73b0599439715809be50113192">&#9670;&#160;</a></span>sys_unmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sys_unmount </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>drive</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unmount drive by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">drive</td><td>drive number (only drive 4 is supported) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
 <a id="gaeb80310d75b8b8edc0ce3d2fa2a9dea4" name="gaeb80310d75b8b8edc0ce3d2fa2a9dea4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeb80310d75b8b8edc0ce3d2fa2a9dea4">&#9670;&#160;</a></span>setfilesize()</h2>
 
@@ -1384,6 +1455,49 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">fd</td><td>file descriptor </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">length</td><td>new size of the file </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga189dccd1768ea8e42c1852d587150af0" name="ga189dccd1768ea8e42c1852d587150af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga189dccd1768ea8e42c1852d587150af0">&#9670;&#160;</a></span>setfiletime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setfiletime </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>time</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set file date and time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">fd</td><td>file descriptor </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">date</td><td>date in DOS (FAT) format </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">time</td><td>time in DOS (FAT) format </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">err</td><td>error code </td></tr>
   </table>
   </dd>
