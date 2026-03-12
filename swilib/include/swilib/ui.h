@@ -36,11 +36,11 @@ typedef struct SCROLLBAR_DESC SCROLLBAR_DESC;
 
 /**
  * Menu item draw callback.
- * @param gui		pointer to the Menu GUI
- * @param item_n	index of the item
- * @param item		pointer to the item
+ * @param gui			pointer to the Menu GUI
+ * @param item_n		index of the item
+ * @param user_pointer	pointer to the item
  * */
-typedef void (*MENUITEM_DRAW_PROC)(void *gui, int item_n, void *item);
+typedef void (*MENUITEM_DRAW_PROC)(void *gui, int item_n, void *user_pointer);
 
 /**
  * Menu item select callback.
