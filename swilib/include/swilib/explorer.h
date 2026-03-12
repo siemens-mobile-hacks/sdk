@@ -66,12 +66,12 @@ struct NativeExplorerData {
 	int unk7;
 	int unk8;
 	int unk9;
-	int unk10;
+	int (*show_item_handler)(NATIVE_EXPLORER_ITEM *);	/**< Callback for showing items */
 	int unk11;
 	WSHDR *full_filename;	/**< Full path to the dir or file */
 	int unk13;
-	int (*user_handler)(void *);			/**< Callback for mode=NATIVE_EXPLORER_MODE_SELECT */
-	NativeExplorerData *this_struct_addr;	/**< Self-reference to this structure */
+	int (*user_handler)(NATIVE_EXPLORER_ITEM *);	/**< Callback for mode=#NATIVE_EXPLORER_MODE_SELECT */
+	NativeExplorerData *this_struct_addr;			/**< Self-reference to this structure */
 	int unk16;
 	int unk17_26[10];
 };
