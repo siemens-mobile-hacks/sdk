@@ -578,8 +578,8 @@ __swi_end(0x83D6, GetHeaderRECT, ());
  * @return pointer to the rect
  * */
 __swi_begin(0x83D7)
-RECT *GetOptionsHeaderRect(void)
-__swi_end(0x83D7, GetOptionsHeaderRect, ());
+RECT *GetOptionsHeaderRECT(void)
+__swi_end(0x83D7, GetOptionsHeaderRECT, ());
 
 /**
  * Size of UI main area.
