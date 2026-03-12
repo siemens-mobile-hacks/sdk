@@ -173,7 +173,7 @@ var searchData=
   ['getnativeabdatatype_170',['GetNativeAbDataType',['../group___addressbook.html#ga62acfb7b7bce23fd5adc6c5ac684bb94',1,'addressbook.h']]],
   ['getnetaccessmode_171',['GetNetAccessMode',['../group___telephony.html#ga2e23d6dbc4b435e381b34841005a2031',1,'telephony.h']]],
   ['getnumfromnativeabdata_172',['GetNumFromNativeAbData',['../group___addressbook.html#ga87c4b4838866e988c3098f9d90e575ba',1,'addressbook.h']]],
-  ['getoptionsheaderrect_173',['GetOptionsHeaderRect',['../group___u_i.html#ga0fe661225be3dcf55742a3d8e8979f45',1,'ui.h']]],
+  ['getoptionsheaderrect_173',['GetOptionsHeaderRECT',['../group___u_i.html#ga3be270f5328a30c714d19c316f22c3f5',1,'ui.h']]],
   ['getpaletteadrbycolorindex_174',['GetPaletteAdrByColorIndex',['../group___g_u_i.html#gab70dd74429b34c5d19a05a43b7b89225',1,'gui.h']]],
   ['getpaletteadrbycolorindex_5f2_175',['GetPaletteAdrByColorIndex_2',['../group___l_e_g_a_c_y.html#ga0739ea3a9a0233409d45f362cab585dd',1,'legacy.h']]],
   ['getpathoffoundfile_176',['GetPathOfFoundFile',['../group___l_e_g_a_c_y.html#ga04694b3eda6f5798cac19c081d464859',1,'legacy.h']]],
