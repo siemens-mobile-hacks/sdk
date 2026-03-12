@@ -22,6 +22,7 @@ enum ExplorerTransferStates {
 
 typedef enum ExplorerTransferStates ExplorerTransferStates;
 
+typedef struct NATIVE_EXPLORER_ITEM NATIVE_EXPLORER_ITEM;
 typedef struct NativeExplorerData NativeExplorerData;
 typedef struct REGEXPLEXT REGEXPLEXT;
 typedef struct REGEXPLEXT_ARM_NEW REGEXPLEXT_ARM_NEW;
@@ -40,6 +41,16 @@ enum NativeExplorerMode {
 	NATIVE_EXPLORER_MODE_SELECT		= 0x01,	/**< Select file */
 	NATIVE_EXPLORER_MODE_COPY		= 0x09,	/**< Copy file mode */
 	NATIVE_EXPLORER_MODE_MOVE		= 0x0B, /**< Move file mode */
+};
+
+/**
+ * Item structure of the NativeExplorer.
+ * */
+struct NATIVE_EXPLORER_ITEM {
+	int unk1;			/**< Unknown */
+	WSHDR *file_name;	/**< File name */
+	short unk2;			/**< Unknown */
+	uint16_t attr;		/**< File attributes, see #FileAttributes */
 };
 
 /**
