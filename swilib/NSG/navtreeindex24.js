@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"pkcs12_8h.html#struct_p_k_c_s12":[1,0,0,0,0,29,1],
+"pkcs12_8h.html#struct_p_k_c_s12___m_a_c___d_a_t_a":[1,0,0,0,0,29,0],
 "pkcs12_8h.html#struct_p_k_c_s12___s_a_f_e_b_a_g":[1,0,0,0,0,29,2],
 "pkcs12_8h.html#structpkcs12__bag__st":[1,0,0,0,0,29,3],
 "pkcs12_8h.html#union_p_k_c_s12___s_a_f_e_b_a_g_8value":[1,0,0,0,0,29,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "pkcs7_8h.html#affdd2e00ea2e4671b7cec95e3e1e0f2a":[1,0,0,0,0,30,54],
 "pkcs7_8h.html#affef98a01f03108ecc557311b7dba1b6":[1,0,0,0,0,30,28],
 "pkcs7_8h.html#structpkcs7__digest__st":[1,0,0,0,0,30,9],
-"pkcs7_8h.html#structpkcs7__enc__content__st":[1,0,0,0,0,30,6],
-"pkcs7_8h.html#structpkcs7__encrypted__st":[1,0,0,0,0,30,10],
-"pkcs7_8h.html#structpkcs7__enveloped__st":[1,0,0,0,0,30,7]
+"pkcs7_8h.html#structpkcs7__enc__content__st":[1,0,0,0,0,30,6]
 };

@@ -13,7 +13,7 @@ var searchData=
   ['field_5f8_10',['field_8',['../group___addressbook.html#adb5ab11bd7e753292167508323f2c2bf',1,'AB_UNPRES']]],
   ['field_5fa_11',['field_A',['../group___addressbook.html#a0f8a4bee99ddbb3a9189798e408d04b2',1,'AB_UNPRES']]],
   ['file_5fattr_12',['file_attr',['../group___file.html#aa2c74f7ec9ceb7c2d3d463a90cfd4c29',1,'DIR_ENTRY::file_attr'],['../group___file.html#ad3b909a8aed9874f117ff604ddc0b91e',1,'FSTATS::file_attr']]],
-  ['file_5fname_13',['file_name',['../group___file.html#ac0f3aa0715c4ef2d8454dd7958e49907',1,'DIR_ENTRY::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
+  ['file_5fname_13',['file_name',['../group___file.html#ac0f3aa0715c4ef2d8454dd7958e49907',1,'DIR_ENTRY::file_name'],['../group___explorer.html#a020340c27bfd899043ad8ae94236c6aa',1,'NATIVE_EXPLORER_ITEM::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
   ['file_5fsize_14',['file_size',['../group___file.html#ae1272ac0c91e58b0f21a0b786876618f',1,'DIR_ENTRY']]],
   ['filename_15',['filename',['../group___file.html#ad09d3e291a8f08fe1036c9612250e44a',1,'FILE_PROP']]],
   ['filler_16',['filler',['../builtin_2png_8h.html#a89c290f398edd77800b7ca4b3331f727',1,'png_struct_def']]],

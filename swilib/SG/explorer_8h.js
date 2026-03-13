@@ -1,6 +1,7 @@
 var explorer_8h =
 [
     [ "ExplorerTransferStates", "group___explorer.html#ga440a6eac77137de971ffbaf574bbbf33", null ],
+    [ "NATIVE_EXPLORER_ITEM", "group___explorer.html#gacac8337a8ccb3e0759ccb71db1a6c033", null ],
     [ "NativeExplorerData", "group___explorer.html#ga87ff9ed698f34aa227d9d7e057e3bd42", null ],
     [ "REGEXPLEXT", "group___explorer.html#ga088c9e5ecfe10087accd8f14c144ed57", null ],
     [ "REGEXPLEXT_ARM_NEW", "group___explorer.html#gaac7cd16c3497c8cb3e497ef1139e3ae0", null ],

@@ -11,7 +11,7 @@ var searchData=
   ['field_5fa_8',['field_A',['../group___addressbook.html#a6634c4eaea53083d2e83dabff1dad670',1,'AB_UNPRES']]],
   ['field_5fb_9',['field_B',['../group___addressbook.html#a48cfc105ff68754e0f17254e5596cffa',1,'AB_UNPRES']]],
   ['file_5fattr_10',['file_attr',['../group___file.html#aa2c74f7ec9ceb7c2d3d463a90cfd4c29',1,'DIR_ENTRY::file_attr'],['../group___file.html#ad3b909a8aed9874f117ff604ddc0b91e',1,'FSTATS::file_attr']]],
-  ['file_5fname_11',['file_name',['../group___file.html#a30e2eed5ee2d007876d5c70c95b150f3',1,'DIR_ENTRY::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
+  ['file_5fname_11',['file_name',['../group___file.html#a30e2eed5ee2d007876d5c70c95b150f3',1,'DIR_ENTRY::file_name'],['../group___explorer.html#a020340c27bfd899043ad8ae94236c6aa',1,'NATIVE_EXPLORER_ITEM::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
   ['file_5fsize_12',['file_size',['../group___file.html#ae1272ac0c91e58b0f21a0b786876618f',1,'DIR_ENTRY']]],
   ['filename_13',['filename',['../group___file.html#ad09d3e291a8f08fe1036c9612250e44a',1,'FILE_PROP']]],
   ['filler_14',['filler',['../builtin_2png_8h.html#a89c290f398edd77800b7ca4b3331f727',1,'png_struct_def']]],

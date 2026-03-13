@@ -25,7 +25,7 @@ var searchData=
   ['file_22',['File',['../group___file.html',1,'']]],
   ['file_2eh_23',['file.h',['../file_8h.html',1,'']]],
   ['file_5fattr_24',['file_attr',['../group___file.html#aa2c74f7ec9ceb7c2d3d463a90cfd4c29',1,'DIR_ENTRY::file_attr'],['../group___file.html#ad3b909a8aed9874f117ff604ddc0b91e',1,'FSTATS::file_attr']]],
-  ['file_5fname_25',['file_name',['../group___file.html#ac0f3aa0715c4ef2d8454dd7958e49907',1,'DIR_ENTRY::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
+  ['file_5fname_25',['file_name',['../group___file.html#ac0f3aa0715c4ef2d8454dd7958e49907',1,'DIR_ENTRY::file_name'],['../group___explorer.html#a020340c27bfd899043ad8ae94236c6aa',1,'NATIVE_EXPLORER_ITEM::file_name'],['../group___explorer.html#ab197ccee8ab52a5e5147f4488bc2b6ad',1,'NativeExplorerData::file_name']]],
   ['file_5fprop_26',['FILE_PROP',['../group___file.html#struct_f_i_l_e___p_r_o_p',1,'FILE_PROP'],['../group___file.html#ga6dab63016fbcca3529dfb00e5cf9f566',1,'FILE_PROP:&#160;file.h']]],
   ['file_5fprop_5ftype_5faudio_27',['FILE_PROP_TYPE_AUDIO',['../group___file.html#ggae112b7742329b57bbe89b4727a597259a39102d5516e440a2e805dd1b194f246a',1,'file.h']]],
   ['file_5fprop_5ftype_5fpicture_28',['FILE_PROP_TYPE_PICTURE',['../group___file.html#ggae112b7742329b57bbe89b4727a597259a334fb5932e91c2d79c3467515f1a2541',1,'file.h']]],
