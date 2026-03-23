@@ -53,11 +53,11 @@ var group___image =
     [ "PIT_ClearCache", "group___image.html#ga98eb5c334f54380fa8c35a74380ed48a", null ],
     [ "PIT_SetImage", "group___image.html#ga747d895896a583117a19cfc56d0bb6ea", null ],
     [ "PIT_ResetImage", "group___image.html#ga22cafbdd8feb154c517f12bf10a94e22", null ],
+    [ "GetPITSize", "group___image.html#gadea61750bc34695a31ca74a291346688", null ],
+    [ "GetLgpIcon", "group___image.html#ga525119e5e9ba64ef106f26f8bcba94fd", null ],
     [ "GetPitAdrBy0xE200Symbol", "group___image.html#ga8ca78f289f9ae58e0d3e4dd2402cfbe2", null ],
     [ "GetMaxDynIcon", "group___image.html#ga8621344ba47dc5cd537c63b0bec8abf5", null ],
     [ "IsDynIconBusy", "group___image.html#ga43aa9660cb412d1f165c91d0c46acae9", null ],
     [ "SetDynIcon", "group___image.html#ga094452df89678b60b22f64941383aae5", null ],
-    [ "FreeDynIcon", "group___image.html#gaf1da59c4853712ee7c456ccfa95dc8f6", null ],
-    [ "GetPITSize", "group___image.html#gadea61750bc34695a31ca74a291346688", null ],
-    [ "GetLgpIcon", "group___image.html#ga525119e5e9ba64ef106f26f8bcba94fd", null ]
+    [ "FreeDynIcon", "group___image.html#gaf1da59c4853712ee7c456ccfa95dc8f6", null ]
 ];
