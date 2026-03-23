@@ -124,10 +124,10 @@ var group___g_u_i =
     ] ],
     [ "LcdLayerDepth", "group___g_u_i.html#ga85ec72ee384f87ed3eb2449566381985", [
       [ "LCDLAYER_DEPTH_WB", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a1ff9ed1322b8c33487f4878992b8998c", null ],
-      [ "LCDLAYER_DEPTH_BGR233", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a2db0bdc47e3ef49adcb0a85e8760d198", null ],
+      [ "LCDLAYER_DEPTH_RGB332", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a4f59b4a74e1511d94a4d728dd5604f2c", null ],
       [ "LCDLAYER_DEPTH_BGRA4444", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a40dad6d5231bfdb9fc6488bf89e77c87", null ],
-      [ "LCDLAYER_DEPTH_BGR565", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a1f8e184dfeee18ba6503068418d74962", null ],
-      [ "LCDLAYER_DEPTH_BGRA8888", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a1bfb4825178819db0ed31465c9f912a9", null ]
+      [ "LCDLAYER_DEPTH_RGB565", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a12ea047735e4d9c658f5cf07787a3f49", null ],
+      [ "LCDLAYER_DEPTH_ARGB8888", "group___g_u_i.html#gga85ec72ee384f87ed3eb2449566381985a84087ce9071b51ae074b1de9b2b6b6a9", null ]
     ] ],
     [ "GbsKeyEventID", "group___g_u_i.html#ga402810502e7d988e51b4bbdf80f70c85", [
       [ "KEY_DOWN", "group___g_u_i.html#gga402810502e7d988e51b4bbdf80f70c85aa9cdac7967bf7d88fdb761138a2a3416", null ],
