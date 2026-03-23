@@ -46,9 +46,9 @@ struct PNGTOP_DESC {
  * */
 enum ImghdrBitmapType {
 	IMGHDR_TYPE_WB			= 1,	/**< 1-bit **/
-	IMGHDR_TYPE_BGR233		= 5,	/**< 8-bit [B2, G3, R3] **/
-	IMGHDR_TYPE_BGR565		= 8,	/**< 16-bit [B5, G6, R5] **/
-	IMGHDR_TYPE_BGRA8888	= 10,	/**< 32-bit [B8, G8, R8, A8] **/
+	IMGHDR_TYPE_RGB332		= 5,	/**< 8-bit [r3g3b2] **/
+	IMGHDR_TYPE_RGB565		= 8,	/**< 16-bit [r5g6b5] **/
+	IMGHDR_TYPE_ARGB8888	= 10,	/**< 32-bit [a8r8g8b8] **/
 };
 
 /**
