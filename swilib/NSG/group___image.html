@@ -150,9 +150,19 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa2dd6f01ed4a7926c92c6445e9a7c1b21">IMGHDR_TYPE_RGB332</a> = 5
 , <br />
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa4266a164d63362650f949af7048bc7e7">IMGHDR_TYPE_ARGB4444</a> = 7
+, <br />
 &#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa79ceb0e6db8521febf2e7421c4c4b59a">IMGHDR_TYPE_RGB565</a> = 8
 , <br />
-&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31">IMGHDR_TYPE_ARGB8888</a> = 10
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31">IMGHDR_TYPE_ARGB8888</a> = 0xA
+, <br />
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6faae399dc8dcad49674cfd8c29ae60ee37">IMGHDR_TYPE_RLE_RGB332</a> = 0x85
+, <br />
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa35ad3de5da5e82ac9f5b98276e4cb6a0">IMGHDR_TYPE_RLE_ARGB4444</a> = 0x87
+, <br />
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa00c5344e2f722481e8d63f69498f9f12">IMGHDR_TYPE_RLE_RGB565</a> = 0x88
+, <br />
+&#160;&#160;<a class="el" href="#ggab7b159e75233e88b5dfac2ffb70abc6fa5529ee56e0bf2f49a51d5244ef26225b">IMGHDR_TYPE_RLE_ARGB8888</a> = 0x8A
 <br />
  }</td></tr>
 <tr class="memdesc:gab7b159e75233e88b5dfac2ffb70abc6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of <a class="el" href="#struct_i_m_g_h_d_r" title="Image header.">IMGHDR</a> bitmap.  <a href="#gab7b159e75233e88b5dfac2ffb70abc6f">More...</a><br /></td></tr>
@@ -364,7 +374,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="image_8h_source.html#l00108">108</a> of file <a class="el" href="image_8h_source.html">image.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="image_8h_source.html#l00113">113</a> of file <a class="el" href="image_8h_source.html">image.h</a>.</p>
 
 </div>
 </div>
@@ -468,9 +478,19 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa2dd6f01ed4a7926c92c6445e9a7c1b21" name="ggab7b159e75233e88b5dfac2ffb70abc6fa2dd6f01ed4a7926c92c6445e9a7c1b21"></a>IMGHDR_TYPE_RGB332&#160;</td><td class="fielddoc"><p>8-bit [r3g3b2] </p>
 </td></tr>
+<tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa4266a164d63362650f949af7048bc7e7" name="ggab7b159e75233e88b5dfac2ffb70abc6fa4266a164d63362650f949af7048bc7e7"></a>IMGHDR_TYPE_ARGB4444&#160;</td><td class="fielddoc"><p>16-bit [?4r4g4b4] </p>
+</td></tr>
 <tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa79ceb0e6db8521febf2e7421c4c4b59a" name="ggab7b159e75233e88b5dfac2ffb70abc6fa79ceb0e6db8521febf2e7421c4c4b59a"></a>IMGHDR_TYPE_RGB565&#160;</td><td class="fielddoc"><p>16-bit [r5g6b5] </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31" name="ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31"></a>IMGHDR_TYPE_ARGB8888&#160;</td><td class="fielddoc"><p>32-bit [a8r8g8b8] </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6faae399dc8dcad49674cfd8c29ae60ee37" name="ggab7b159e75233e88b5dfac2ffb70abc6faae399dc8dcad49674cfd8c29ae60ee37"></a>IMGHDR_TYPE_RLE_RGB332&#160;</td><td class="fielddoc"><p>RLE 8-bit. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa35ad3de5da5e82ac9f5b98276e4cb6a0" name="ggab7b159e75233e88b5dfac2ffb70abc6fa35ad3de5da5e82ac9f5b98276e4cb6a0"></a>IMGHDR_TYPE_RLE_ARGB4444&#160;</td><td class="fielddoc"><p>RLE 16-bit. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa00c5344e2f722481e8d63f69498f9f12" name="ggab7b159e75233e88b5dfac2ffb70abc6fa00c5344e2f722481e8d63f69498f9f12"></a>IMGHDR_TYPE_RLE_RGB565&#160;</td><td class="fielddoc"><p>RLE 16-bit. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab7b159e75233e88b5dfac2ffb70abc6fa5529ee56e0bf2f49a51d5244ef26225b" name="ggab7b159e75233e88b5dfac2ffb70abc6fa5529ee56e0bf2f49a51d5244ef26225b"></a>IMGHDR_TYPE_RLE_ARGB8888&#160;</td><td class="fielddoc"><p>RLE 32-bit. </p>
 </td></tr>
 </table>
 
@@ -513,7 +533,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga9a5bdfef0e3fca789fb7aa126ef14316a15d3e6d911e3aa3993c47fb7de9bba68" name="gga9a5bdfef0e3fca789fb7aa126ef14316a15d3e6d911e3aa3993c47fb7de9bba68"></a>STATUSBAR_FULLSCREEN&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="image_8h_source.html#l00085">85</a> of file <a class="el" href="image_8h_source.html">image.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="image_8h_source.html#l00090">90</a> of file <a class="el" href="image_8h_source.html">image.h</a>.</p>
 
 </div>
 </div>

@@ -14,8 +14,13 @@ var group___image =
     [ "ImghdrBitmapType", "group___image.html#gab7b159e75233e88b5dfac2ffb70abc6f", [
       [ "IMGHDR_TYPE_WB", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa96d0930612358fcdc9fe32840bca1540", null ],
       [ "IMGHDR_TYPE_RGB332", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa2dd6f01ed4a7926c92c6445e9a7c1b21", null ],
+      [ "IMGHDR_TYPE_ARGB4444", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa4266a164d63362650f949af7048bc7e7", null ],
       [ "IMGHDR_TYPE_RGB565", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa79ceb0e6db8521febf2e7421c4c4b59a", null ],
-      [ "IMGHDR_TYPE_ARGB8888", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31", null ]
+      [ "IMGHDR_TYPE_ARGB8888", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6faf5fdc8141dc3b4893f1a631c1e643b31", null ],
+      [ "IMGHDR_TYPE_RLE_RGB332", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6faae399dc8dcad49674cfd8c29ae60ee37", null ],
+      [ "IMGHDR_TYPE_RLE_ARGB4444", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa35ad3de5da5e82ac9f5b98276e4cb6a0", null ],
+      [ "IMGHDR_TYPE_RLE_RGB565", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa00c5344e2f722481e8d63f69498f9f12", null ],
+      [ "IMGHDR_TYPE_RLE_ARGB8888", "group___image.html#ggab7b159e75233e88b5dfac2ffb70abc6fa5529ee56e0bf2f49a51d5244ef26225b", null ]
     ] ],
     [ "ThemeCacheImageID", "group___image.html#ga9a5bdfef0e3fca789fb7aa126ef14316", [
       [ "HEADLINE_STANDART", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316adb7306cd290e163195375fa84461f5a7", null ],
