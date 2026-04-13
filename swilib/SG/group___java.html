@@ -109,7 +109,7 @@ $(function(){initNavTree('group___java.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga7d94126f2fe985ee45bd9364cbc8484a" id="r_ga7d94126f2fe985ee45bd9364cbc8484a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7d94126f2fe985ee45bd9364cbc8484a">GetLastJavaApplication</a> ()</td></tr>
-<tr class="memdesc:ga7d94126f2fe985ee45bd9364cbc8484a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the path to the running Java application.  <br /></td></tr>
+<tr class="memdesc:ga7d94126f2fe985ee45bd9364cbc8484a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the running Java application.  <br /></td></tr>
 <tr class="separator:ga7d94126f2fe985ee45bd9364cbc8484a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga32cfd168e4eaf0a2b79146afbae98689" id="r_ga32cfd168e4eaf0a2b79146afbae98689"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga32cfd168e4eaf0a2b79146afbae98689">IsNoJava</a> ()</td></tr>
 <tr class="memdesc:ga32cfd168e4eaf0a2b79146afbae98689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Java is NOT running.  <br /></td></tr>
@@ -140,8 +140,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the path to the running Java application. </p>
-<dl class="section return"><dt>Returns</dt><dd>C-string </dd></dl>
+<p>Get the name of the running Java application. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is natively available only on X75 firmware. For other platforms, it is not present in the original firmware and must be implemented via the "GetLastJavaApplication addon" patch.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot_id</td><td>[NSG/ELKA] Java slot index (0 = first slot, 1 = second slot). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a string with the application name, or NULL if no app running in that slot. </dd></dl>
 
 </div>
 </div>

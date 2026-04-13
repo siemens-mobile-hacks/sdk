@@ -229,9 +229,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gae9eb1939f65fb85903a55bf67d02f37b" id="r_gae9eb1939f65fb85903a55bf67d02f37b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae9eb1939f65fb85903a55bf67d02f37b">GBS_DestroyMessage</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
 <tr class="memdesc:gae9eb1939f65fb85903a55bf67d02f37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy GSB_MSG object.  <br /></td></tr>
 <tr class="separator:gae9eb1939f65fb85903a55bf67d02f37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad13affaaf335b2fcddf15b8b68d06c32" id="r_gad13affaaf335b2fcddf15b8b68d06c32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad13affaaf335b2fcddf15b8b68d06c32">GBS_WaitForMsg</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *msg_list, int msgs_num, <a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msgs, int timeout_ticks)</td></tr>
-<tr class="memdesc:gad13affaaf335b2fcddf15b8b68d06c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the GBS messages.  <br /></td></tr>
-<tr class="separator:gad13affaaf335b2fcddf15b8b68d06c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga833597f1331b93358d95bce318105bb4" id="r_ga833597f1331b93358d95bce318105bb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga833597f1331b93358d95bce318105bb4">GBS_WaitForMsg</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *msg_list, int msgs_num, <a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msgs, int timeout_ms)</td></tr>
+<tr class="memdesc:ga833597f1331b93358d95bce318105bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the GBS messages.  <br /></td></tr>
+<tr class="separator:ga833597f1331b93358d95bce318105bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Event processors</h2></td></tr>
 <tr class="memitem:gae8b02e0f3fafdaf2b41542ddc43967da" id="r_gae8b02e0f3fafdaf2b41542ddc43967da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8b02e0f3fafdaf2b41542ddc43967da">CreateGBSproc</a> (int cepid, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *name, <a class="el" href="#ga2fba151004d59e4060ac09b6544a9152">GBS_PROC_CALLBACK</a> callback, int prio, int unk)</td></tr>
@@ -851,8 +851,8 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="gad13affaaf335b2fcddf15b8b68d06c32" name="gad13affaaf335b2fcddf15b8b68d06c32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad13affaaf335b2fcddf15b8b68d06c32">&#9670;&#160;</a></span>GBS_WaitForMsg()</h2>
+<a id="ga833597f1331b93358d95bce318105bb4" name="ga833597f1331b93358d95bce318105bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga833597f1331b93358d95bce318105bb4">&#9670;&#160;</a></span>GBS_WaitForMsg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -875,7 +875,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout_ticks</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout_ms</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -886,7 +886,7 @@ Enumerations</h2></td></tr>
     <tr><td class="paramname">msg_list</td><td>list of message IDs to wait for </td></tr>
     <tr><td class="paramname">msgs_num</td><td>count message IDs in <code>msg_list</code> </td></tr>
     <tr><td class="paramname">msgs</td><td>pointer where the received messages will be stored (array of <code>msgs_num</code> items) </td></tr>
-    <tr><td class="paramname">timeout_ticks</td><td>timeout for receiving (1 tick - 4.615 ms) </td></tr>
+    <tr><td class="paramname">timeout_ms</td><td>timeout in milliseconds </td></tr>
   </table>
   </dd>
 </dl>

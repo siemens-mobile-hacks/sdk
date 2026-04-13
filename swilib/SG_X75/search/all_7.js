@@ -31,7 +31,7 @@ var searchData=
   ['gbs_5fstarttimerproc_28',['GBS_StartTimerProc',['../group___g_b_s.html#ga1f515dadca5cf7fdb81db8607a9b664e',1,'gbs.h']]],
   ['gbs_5fstoptimer_29',['GBS_StopTimer',['../group___g_b_s.html#ga1ab33460c5ab3179cbb27332840b5f4b',1,'gbs.h']]],
   ['gbs_5fussd_5fmsg_30',['GBS_USSD_MSG',['../group___telephony.html#struct_g_b_s___u_s_s_d___m_s_g',1,'GBS_USSD_MSG'],['../group___telephony.html#gae4875b06f0b504ae56926afbaf455adc',1,'GBS_USSD_MSG:&#160;telephony.h']]],
-  ['gbs_5fwaitformsg_31',['GBS_WaitForMsg',['../group___g_b_s.html#gad13affaaf335b2fcddf15b8b68d06c32',1,'gbs.h']]],
+  ['gbs_5fwaitformsg_31',['GBS_WaitForMsg',['../group___g_b_s.html#ga833597f1331b93358d95bce318105bb4',1,'gbs.h']]],
   ['gbscepid_32',['GbsCepID',['../group___g_b_s.html#gabbdb9bf397209c72aa7866c3515dc7a5',1,'gbs.h']]],
   ['gbskeycodeid_33',['GbsKeyCodeID',['../group___g_u_i.html#ga8071c23e5ca850e22bbe6454bde07718',1,'gui.h']]],
   ['gbskeyeventid_34',['GbsKeyEventID',['../group___g_u_i.html#ga402810502e7d988e51b4bbdf80f70c85',1,'gui.h']]],
