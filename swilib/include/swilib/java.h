@@ -16,12 +16,23 @@
 __swilib_begin
 
 /**
- * Get the path to the running Java application.
- * @return C-string
+ * Get the name of the running Java application.
+ *
+ * @note This function is natively available only on X75 firmware.
+ *       For other platforms, it is not present in the original firmware
+ *       and must be implemented via the "GetLastJavaApplication addon" patch.
+ *
+ * @param slot_id	[NSG/ELKA] Java slot index (0 = first slot, 1 = second slot).
+ * @return Pointer to a string with the application name, or NULL if no app running in that slot.
  * */
 __swi_begin(0x1E7)
+#ifndef NEWSGOLD
 char *GetLastJavaApplication()
 __swi_end(0x1E7, GetLastJavaApplication, ());
+#else
+char *GetLastJavaApplication(int slot_id)
+__swi_end(0x1E7, GetLastJavaApplication, (slot_id));
+#endif
 
 /**
  * Check if Java is NOT running.

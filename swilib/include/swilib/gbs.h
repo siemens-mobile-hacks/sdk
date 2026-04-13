@@ -296,12 +296,12 @@ __swi_end(0x232, GBS_DestroyMessage, (msg));
  * @param msg_list			list of message IDs to wait for
  * @param msgs_num			count message IDs in `msg_list`
  * @param msgs				pointer where the received messages will be stored (array of `msgs_num` items)
- * @param timeout_ticks		timeout for receiving (1 tick - 4.615 ms)
+ * @param timeout_ms		timeout in milliseconds
  * @return number of received messages
  * */
 __swi_begin(0x185)
-int GBS_WaitForMsg(const int *msg_list, int msgs_num, GBS_MSG *msgs, int timeout_ticks)
-__swi_end(0x185, GBS_WaitForMsg, (msg_list, msgs_num, msgs, timeout_ticks));
+int GBS_WaitForMsg(const int *msg_list, int msgs_num, GBS_MSG *msgs, int timeout_ms)
+__swi_end(0x185, GBS_WaitForMsg, (msg_list, msgs_num, msgs, timeout_ms));
 
 /** @} */
 
