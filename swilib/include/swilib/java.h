@@ -10,6 +10,7 @@
 
 #ifndef __IN_SWILIB__
 #include "base.h"
+#include "csm.h"
 #include "wstring.h"
 #endif
 
@@ -22,7 +23,7 @@ __swilib_begin
  *       For other platforms, it is not present in the original firmware
  *       and must be implemented via the "GetLastJavaApplication addon" patch.
  *
- * @param slot_id	[NSG/ELKA] Java slot index (0 = first slot, 1 = second slot).
+ * @param csm	[NSG/ELKA] Pointer to the CSM object representing the Java slot.
  * @return Pointer to a string with the application name, or NULL if no app running in that slot.
  * */
 __swi_begin(0x1E7)
@@ -30,8 +31,8 @@ __swi_begin(0x1E7)
 char *GetLastJavaApplication()
 __swi_end(0x1E7, GetLastJavaApplication, ());
 #else
-char *GetLastJavaApplication(int slot_id)
-__swi_end(0x1E7, GetLastJavaApplication, (slot_id));
+char *GetLastJavaApplication(const CSM_RAM *csm)
+__swi_end(0x1E7, GetLastJavaApplication, (csm));
 #endif
 
 /**
