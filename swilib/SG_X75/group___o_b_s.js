@@ -56,6 +56,7 @@ var group___o_b_s =
     [ "Obs_SetOutput_File", "group___o_b_s.html#ga0c1a78d39f0308672423ad63f228ebec", null ],
     [ "Obs_SetOutput_Uid", "group___o_b_s.html#gad79a9162a9b0eb195f501ff1cc9ac2c4", null ],
     [ "Obs_Sound_SetBitrate", "group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5", null ],
+    [ "Obs_SetUserPointer", "group___o_b_s.html#ga03498bc1745d124db262cf9defd20b4f", null ],
     [ "Obs_SetCSM", "group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002", null ],
-    [ "Obs_SetUserPointer", "group___o_b_s.html#ga03498bc1745d124db262cf9defd20b4f", null ]
+    [ "Obs_GetUserPointer", "group___o_b_s.html#ga157c1afbede86aa4050d1e0c09d45c14", null ]
 ];

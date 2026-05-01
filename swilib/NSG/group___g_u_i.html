@@ -573,6 +573,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga5cb3d8818e46b16b7932b86b1b03e311" id="r_ga5cb3d8818e46b16b7932b86b1b03e311"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5cb3d8818e46b16b7932b86b1b03e311">Get_WS_width</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *text, int font_id)</td></tr>
 <tr class="memdesc:ga5cb3d8818e46b16b7932b86b1b03e311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure string width with the specified font.  <br /></td></tr>
 <tr class="separator:ga5cb3d8818e46b16b7932b86b1b03e311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffb137506e3a081d565324e5c044293e" id="r_gaffb137506e3a081d565324e5c044293e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaffb137506e3a081d565324e5c044293e">Get_WS_extent</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *ws, int text_flags, int flags, int font_id, int *w, int *h)</td></tr>
+<tr class="memdesc:gaffb137506e3a081d565324e5c044293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of a rendered string.  <br /></td></tr>
+<tr class="separator:gaffb137506e3a081d565324e5c044293e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Painting</h2></td></tr>
 <tr class="memitem:ga8de1888c5273bd6fd3d8c3854e3b5afd" id="r_ga8de1888c5273bd6fd3d8c3854e3b5afd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8de1888c5273bd6fd3d8c3854e3b5afd">DrawIMGHDR</a> (int x, int y, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___image.html#struct_i_m_g_h_d_r">IMGHDR</a> *img)</td></tr>
@@ -2515,6 +2518,61 @@ Call only from MMI! (not SUBPROC) </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>width in px </dd></dl>
+
+</div>
+</div>
+<a id="gaffb137506e3a081d565324e5c044293e" name="gaffb137506e3a081d565324e5c044293e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffb137506e3a081d565324e5c044293e">&#9670;&#160;</a></span>Get_WS_extent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Get_WS_extent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>ws</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>text_flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>font_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the size of a rendered string. </p>
+<p>The input values of <code>w</code> and <code>h</code> specify the maximum available width/height. On return, they are replaced with the actual width/height needed to render the string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ws</td><td>text to be measured </td></tr>
+    <tr><td class="paramname">text_flags</td><td>text attributes bitmask, see <a class="el" href="#ga7ce4f9d1c2071c4060f9e3dc8886a294" title="Flags for the DrawString and DrawScrollString.">TextAttributesFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>drawing flags </td></tr>
+    <tr><td class="paramname">font_id</td><td>see <a class="el" href="#ga000409a90f3a2fc2ef4b1e3336e934bd" title="Font IDs.">SystemFontID</a> </td></tr>
+    <tr><td class="paramname">w</td><td>pointer to int: input = max width, output = actual width </td></tr>
+    <tr><td class="paramname">h</td><td>pointer to int: input = max height, output = actual height </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

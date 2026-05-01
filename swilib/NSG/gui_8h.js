@@ -190,6 +190,7 @@ var gui_8h =
     [ "GetFontYSIZE", "group___g_u_i.html#ga02f2ee469ddaf7aa363f479b9f45513c", null ],
     [ "GetSymbolWidth", "group___g_u_i.html#ga39dcbb9331c4c62a305eb05697c01da4", null ],
     [ "Get_WS_width", "group___g_u_i.html#ga5cb3d8818e46b16b7932b86b1b03e311", null ],
+    [ "Get_WS_extent", "group___g_u_i.html#gaffb137506e3a081d565324e5c044293e", null ],
     [ "DrawIMGHDR", "group___g_u_i.html#ga8de1888c5273bd6fd3d8c3854e3b5afd", null ],
     [ "DrawCroppedIMGHDR", "group___g_u_i.html#ga966a0402be378601fd72f55e58881471", null ],
     [ "DrawImg", "group___g_u_i.html#ga730c786623977e9041768f0736831784", null ],
