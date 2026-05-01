@@ -861,6 +861,22 @@ __swi_begin(0x208)
 int Get_WS_width(const WSHDR *text, int font_id)
 __swi_end(0x208, Get_WS_width, (text, font_id));
 
+/**
+ * Get the size of a rendered string.
+ * The input values of @p w and @p h specify the maximum available width/height.
+ * On return, they are replaced with the actual width/height needed to render the string.
+ *
+ * @param ws			text to be measured
+ * @param text_flags	text attributes bitmask, see #TextAttributesFlags
+ * @param flags			drawing flags
+ * @param font_id		see #SystemFontID
+ * @param w				pointer to int: input = max width, output = actual width
+ * @param h				pointer to int: input = max height, output = actual height
+ * */
+__swi_begin(0x295)
+void Get_WS_extent(WSHDR *ws, int text_flags, int flags, int font_id, int *w, int *h)
+__swi_end(0x295, Get_WS_extent, (ws, text_flags, flags, font_id, w, h));
+
 /** @} */
 
 /**

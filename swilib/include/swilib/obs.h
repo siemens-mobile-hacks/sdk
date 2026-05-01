@@ -422,6 +422,16 @@ int Obs_Sound_SetBitrate(HObj obs, int bitrate)
 __swi_end(0x278, Obs_Sound_SetBitrate, (obs, bitrate));
 
 /**
+ * Set custom user pointer to the OBS object.
+ * @param obs			OBS object
+ * @param user_pointer	custom user pointer
+ * @return 0 or error
+ * */
+__swi_begin(0x27B)
+int Obs_SetUserPointer(HObj obs, void *user_pointer)
+__swi_end(0x27B, Obs_SetUserPointer, (obs, user_pointer));
+
+/**
  * Link CSM to the OBS object.
  * @param obs		OBS object
  * @param csm		pointer to the csm
@@ -433,14 +443,14 @@ int Obs_SetCSM(HObj obs, CSM_RAM *csm)
 __swi_end(0x27B, Obs_SetCSM, (obs, csm));
 
 /**
- * Set custom user pointer to the OBS object.
- * @param obs		OBS object
- * @param user_pointer		custom user pointer
- * @return 0 or error
+ * Get custom user pointer from the OBS object.
+ * @param obs				OBS object
+ * @param p_user_pointer	pointer to variable that receives the stored pointer
+ * @return @return 0 or error
  * */
-__swi_begin(0x27B)
-int Obs_SetUserPointer(HObj obs, void *user_pointer)
-__swi_end(0x27B, Obs_SetUserPointer, (obs, user_pointer));
+__swi_begin(0x27C)
+int Obs_GetUserPointer(HObj obs, void **p_user_pointer)
+__swi_end(0x27C, Obs_GetUserPointer, (obs, p_user_pointer));
 
 /*
 //  other events for elka (//NSG)
