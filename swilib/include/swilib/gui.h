@@ -604,6 +604,25 @@ __swi_begin(0x131)
 void setColor(int a, int r, int g, int b, void *dst)
 __swi_end(0x131, setColor, (a, r, g, b, dst));
 
+/**
+ * Set a color for a theme color scheme element.
+ * @param id		color element ID, calculated as (#ThemePeletteColorID - 100)
+ * @param color		pointer to a 4‑byte RGBA array (RR, GG, BB, AA)
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x2A1)
+int RscMgr_CsSetColor(int id, const uint8_t *color)
+__swi_end(0x2A1, RscMgr_CsSetColor, (id, color));
+
+/**
+ * Update all theme colors.
+ * After one or more calls to #RscMgr_CsSetColor, call this function
+ * to make the new colors take effect immediately.
+ * */
+__swi_begin(0x2A2)
+void RscMgr_CsUpdate()
+__swi_end(0x2A2, RscMgr_CsUpdate, ());
+
 /** @} */
 
 /**
