@@ -316,6 +316,13 @@ __swi_begin(0x0F3)
 void Registry_UnregClient(int client_id)
 __swi_end(0x0F3, Registry_UnregClient, (client_id));
 
+/** @} */
+
+/**
+ * @name PD
+ * @{
+ * */
+
 /**
  * Get the setting value from PD file.
  * @param file_id		unique file id
