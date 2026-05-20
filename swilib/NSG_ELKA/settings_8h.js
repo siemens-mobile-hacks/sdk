@@ -1,6 +1,7 @@
 var settings_8h =
 [
     [ "SettingsAE_ListenerProc", "group___settings.html#ga548845c2415c8fb84cb3b68605ff9c43", null ],
+    [ "REG_CLIENT", "group___settings.html#gab28b809ce47907560622822b7459ba85", null ],
     [ "SettingsID", "group___settings.html#gaa43dfe75c76b723f8ac7092f8e9a57f2", [
       [ "SETTINGS_ID_FAK", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0", null ],
       [ "SETTINGS_ID_MYMENU", "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a9a6e92d5fc381fab3f5c7a1620e01b2d", null ],
@@ -38,6 +39,8 @@ var settings_8h =
     [ "Registry_GetResourcePathFromLevel", "group___settings.html#ga0a422f5e79a22b80a420b22de8960b94", null ],
     [ "Registry_SetResourcePath", "group___settings.html#gab28b7bc49dbe550f6894d0c319c73881", null ],
     [ "Registry_DeleteResourcePath", "group___settings.html#ga8fdf6d05e1fb97d9069516904bf693e9", null ],
+    [ "Registry_RegClient", "group___settings.html#gad19afd57722e35f6bf51c66ac9fca7cd", null ],
+    [ "Registry_UnregClient", "group___settings.html#gaa2d37e8590cd743266a1315ae130d26b", null ],
     [ "ReadValueFromPDFile", "group___settings.html#ga50720efb839c2f6687920928de6c7921", null ],
     [ "WriteValueToPDFile", "group___settings.html#ga058a3e8f95f981ebf54d3a28c1f86782", null ],
     [ "GetProfile", "group___settings.html#ga6c4352c3ee1df4631e1a89a133cd5cbd", null ],

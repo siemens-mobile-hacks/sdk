@@ -98,6 +98,7 @@ $(function(){initNavTree('settings_8h.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">settings.h File Reference</div></div>
@@ -109,10 +110,18 @@ $(function(){initNavTree('settings_8h.html',''); initResizable(true); });
 </div>
 <p><a href="settings_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:struct_r_e_g___c_l_i_e_n_t" id="r_struct_r_e_g___c_l_i_e_n_t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#struct_r_e_g___c_l_i_e_n_t">REG_CLIENT</a></td></tr>
+<tr class="memdesc:struct_r_e_g___c_l_i_e_n_t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure describing a registry client.  <a href="group___settings.html#struct_r_e_g___c_l_i_e_n_t">More...</a><br /></td></tr>
+<tr class="separator:struct_r_e_g___c_l_i_e_n_t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga548845c2415c8fb84cb3b68605ff9c43" id="r_ga548845c2415c8fb84cb3b68605ff9c43"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#ga548845c2415c8fb84cb3b68605ff9c43">SettingsAE_ListenerProc</a>) (int set, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *entry, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *keyword)</td></tr>
 <tr class="separator:ga548845c2415c8fb84cb3b68605ff9c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab28b809ce47907560622822b7459ba85" id="r_gab28b809ce47907560622822b7459ba85"><td class="memItemLeft" align="right" valign="top">typedef struct REG_CLIENT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#gab28b809ce47907560622822b7459ba85">REG_CLIENT</a></td></tr>
+<tr class="separator:gab28b809ce47907560622822b7459ba85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -186,7 +195,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p>These values can be accessed like this: </p><div class="fragment"><div class="line"><a class="code hl_function" href="group___settings.html#ga9ef2c6e7ff6cecf31e908319652c3f9c">SettingsAE_Read_ws</a>(ws, <a class="code hl_enumvalue" href="group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0">SETTINGS_ID_FAK</a>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;keyword&quot;</span>); <span class="comment">// value1</span></div>
 <div class="line"><a class="code hl_function" href="group___settings.html#ga9ef2c6e7ff6cecf31e908319652c3f9c">SettingsAE_Read_ws</a>(ws, <a class="code hl_enumvalue" href="group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0">SETTINGS_ID_FAK</a>, <span class="stringliteral">&quot;entry&quot;</span>, <span class="stringliteral">&quot;keyword&quot;</span>); <span class="comment">// value2</span></div>
 <div class="ttc" id="agroup___settings_html_ga9ef2c6e7ff6cecf31e908319652c3f9c"><div class="ttname"><a href="group___settings.html#ga9ef2c6e7ff6cecf31e908319652c3f9c">SettingsAE_Read_ws</a></div><div class="ttdeci">int SettingsAE_Read_ws(WSHDR *value, int set_id, char *entry, char *keyword)</div><div class="ttdoc">Get the setting value (WSHDR).</div></div>
-<div class="ttc" id="agroup___settings_html_ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0"><div class="ttname"><a href="group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0">SETTINGS_ID_FAK</a></div><div class="ttdeci">@ SETTINGS_ID_FAK</div><div class="ttdoc">fak.pd</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00025">settings.h:25</a></div></div>
+<div class="ttc" id="agroup___settings_html_ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0"><div class="ttname"><a href="group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2a76b19f75e32ec34fc0a8e75c17748ad0">SETTINGS_ID_FAK</a></div><div class="ttdeci">@ SETTINGS_ID_FAK</div><div class="ttdoc">fak.pd</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00027">settings.h:27</a></div></div>
 </div><!-- fragment --> </div></td></tr>
 <tr class="memitem:ga104cea4a9a2d09d180806740757f344a" id="r_ga104cea4a9a2d09d180806740757f344a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#ga104cea4a9a2d09d180806740757f344a">SettingsAE_GetFlag</a> (int *value, int set_id, char *entry, char *keyword)</td></tr>
 <tr class="memdesc:ga104cea4a9a2d09d180806740757f344a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the setting value (flag 1 or 0).  <br /></td></tr>
@@ -231,6 +240,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8fdf6d05e1fb97d9069516904bf693e9" id="r_ga8fdf6d05e1fb97d9069516904bf693e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#ga8fdf6d05e1fb97d9069516904bf693e9">Registry_DeleteResourcePath</a> (int hmi_key_id, int prio)</td></tr>
 <tr class="memdesc:ga8fdf6d05e1fb97d9069516904bf693e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the path with given priority from the registry.  <br /></td></tr>
 <tr class="separator:ga8fdf6d05e1fb97d9069516904bf693e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad19afd57722e35f6bf51c66ac9fca7cd" id="r_gad19afd57722e35f6bf51c66ac9fca7cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#gad19afd57722e35f6bf51c66ac9fca7cd">Registry_RegClient</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___settings.html#struct_r_e_g___c_l_i_e_n_t">REG_CLIENT</a> *client)</td></tr>
+<tr class="memdesc:gad19afd57722e35f6bf51c66ac9fca7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a client in the Registry system.  <br /></td></tr>
+<tr class="separator:gad19afd57722e35f6bf51c66ac9fca7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2d37e8590cd743266a1315ae130d26b" id="r_gaa2d37e8590cd743266a1315ae130d26b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#gaa2d37e8590cd743266a1315ae130d26b">Registry_UnregClient</a> (int client_id)</td></tr>
+<tr class="memdesc:gaa2d37e8590cd743266a1315ae130d26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister client in the Registry system.  <br /></td></tr>
+<tr class="separator:gaa2d37e8590cd743266a1315ae130d26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">PD</div></td></tr>
 <tr class="memitem:ga50720efb839c2f6687920928de6c7921" id="r_ga50720efb839c2f6687920928de6c7921"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___settings.html#ga50720efb839c2f6687920928de6c7921">ReadValueFromPDFile</a> (uint32_t file_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key, char *value, uint32_t *size)</td></tr>
 <tr class="memdesc:ga50720efb839c2f6687920928de6c7921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the setting value from PD file.  <br /></td></tr>
 <tr class="separator:ga50720efb839c2f6687920928de6c7921"><td class="memSeparator" colspan="2">&#160;</td></tr>

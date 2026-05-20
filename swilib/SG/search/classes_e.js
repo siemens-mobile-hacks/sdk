@@ -8,13 +8,14 @@ var searchData=
   ['rc4_5fkey_5fst_5',['rc4_key_st',['../rc4_8h.html#structrc4__key__st',1,'']]],
   ['rc5_5fkey_5fst_6',['rc5_key_st',['../rc5_8h.html#structrc5__key__st',1,'']]],
   ['rect_7',['RECT',['../group___g_u_i.html#struct_r_e_c_t',1,'']]],
-  ['regexplext_8',['REGEXPLEXT',['../group___explorer.html#struct_r_e_g_e_x_p_l_e_x_t',1,'']]],
-  ['regexplext_5farm_5fnew_9',['REGEXPLEXT_ARM_NEW',['../group___explorer.html#struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w',1,'']]],
-  ['regsockcepid_5fdata_10',['REGSOCKCEPID_DATA',['../group___g_p_r_s.html#struct_r_e_g_s_o_c_k_c_e_p_i_d___d_a_t_a',1,'']]],
-  ['ripemd160state_5fst_11',['RIPEMD160state_st',['../ripemd_8h.html#struct_r_i_p_e_m_d160state__st',1,'']]],
-  ['rsa_5fmeth_5fst_12',['rsa_meth_st',['../rsa_8h.html#structrsa__meth__st',1,'']]],
-  ['rsa_5fst_13',['rsa_st',['../rsa_8h.html#structrsa__st',1,'']]],
-  ['rsarandomstate_5fst_14',['RSARandomState_st',['../rsaref_8h.html#struct_r_s_a_random_state__st',1,'']]],
-  ['rsarefprivatekey_5fst_15',['RSArefPrivateKey_st',['../rsaref_8h.html#struct_r_s_aref_private_key__st',1,'']]],
-  ['rsarefpublickey_5fst_16',['RSArefPublicKey_st',['../rsaref_8h.html#struct_r_s_aref_public_key__st',1,'']]]
+  ['reg_5fclient_8',['REG_CLIENT',['../group___settings.html#struct_r_e_g___c_l_i_e_n_t',1,'']]],
+  ['regexplext_9',['REGEXPLEXT',['../group___explorer.html#struct_r_e_g_e_x_p_l_e_x_t',1,'']]],
+  ['regexplext_5farm_5fnew_10',['REGEXPLEXT_ARM_NEW',['../group___explorer.html#struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w',1,'']]],
+  ['regsockcepid_5fdata_11',['REGSOCKCEPID_DATA',['../group___g_p_r_s.html#struct_r_e_g_s_o_c_k_c_e_p_i_d___d_a_t_a',1,'']]],
+  ['ripemd160state_5fst_12',['RIPEMD160state_st',['../ripemd_8h.html#struct_r_i_p_e_m_d160state__st',1,'']]],
+  ['rsa_5fmeth_5fst_13',['rsa_meth_st',['../rsa_8h.html#structrsa__meth__st',1,'']]],
+  ['rsa_5fst_14',['rsa_st',['../rsa_8h.html#structrsa__st',1,'']]],
+  ['rsarandomstate_5fst_15',['RSARandomState_st',['../rsaref_8h.html#struct_r_s_a_random_state__st',1,'']]],
+  ['rsarefprivatekey_5fst_16',['RSArefPrivateKey_st',['../rsaref_8h.html#struct_r_s_aref_private_key__st',1,'']]],
+  ['rsarefpublickey_5fst_17',['RSArefPublicKey_st',['../rsaref_8h.html#struct_r_s_aref_public_key__st',1,'']]]
 ];

@@ -8,13 +8,14 @@ var searchData=
   ['rc4_5fkey_5',['RC4_KEY',['../rc4_8h.html#ade4844e6cce056b23650783980e4de65',1,'rc4.h']]],
   ['rc5_5f32_5fkey_6',['RC5_32_KEY',['../rc5_8h.html#a53ee30b9bca021e3d7aa2f603cf3d0d3',1,'rc5.h']]],
   ['rect_7',['RECT',['../group___g_u_i.html#ga57906bc48014004bcda1eaebfa0b171b',1,'gui.h']]],
-  ['regexplext_8',['REGEXPLEXT',['../group___explorer.html#ga088c9e5ecfe10087accd8f14c144ed57',1,'explorer.h']]],
-  ['regexplext_5farm_5fnew_9',['REGEXPLEXT_ARM_NEW',['../group___explorer.html#gaac7cd16c3497c8cb3e497ef1139e3ae0',1,'explorer.h']]],
-  ['regsockcepid_5fdata_10',['REGSOCKCEPID_DATA',['../group___g_p_r_s.html#ga35adefa72a4a8316a983002e031d77ef',1,'gprs.h']]],
-  ['ripemd160_5fctx_11',['RIPEMD160_CTX',['../ripemd_8h.html#a739eb8877d60d30a383a25b7fc5ac66c',1,'ripemd.h']]],
-  ['rsa_12',['RSA',['../rsa_8h.html#a9ad4496a11f0a9f686bea793cb97f8b5',1,'rsa.h']]],
-  ['rsa_5fmethod_13',['RSA_METHOD',['../rsa_8h.html#a559f3eec8932822f887b632e86991995',1,'rsa.h']]],
-  ['rsarandomstate_14',['RSARandomState',['../rsaref_8h.html#a83f8ace05c7d7cd3d8b3f9317ba74cda',1,'rsaref.h']]],
-  ['rsarefprivatekey_15',['RSArefPrivateKey',['../rsaref_8h.html#a1a142eeaa2e8db4c34d797bf8b718ba3',1,'rsaref.h']]],
-  ['rsarefpublickey_16',['RSArefPublicKey',['../rsaref_8h.html#a88538dbb36b5a3f544b3737eb46b6791',1,'rsaref.h']]]
+  ['reg_5fclient_8',['REG_CLIENT',['../group___settings.html#gab28b809ce47907560622822b7459ba85',1,'settings.h']]],
+  ['regexplext_9',['REGEXPLEXT',['../group___explorer.html#ga088c9e5ecfe10087accd8f14c144ed57',1,'explorer.h']]],
+  ['regexplext_5farm_5fnew_10',['REGEXPLEXT_ARM_NEW',['../group___explorer.html#gaac7cd16c3497c8cb3e497ef1139e3ae0',1,'explorer.h']]],
+  ['regsockcepid_5fdata_11',['REGSOCKCEPID_DATA',['../group___g_p_r_s.html#ga35adefa72a4a8316a983002e031d77ef',1,'gprs.h']]],
+  ['ripemd160_5fctx_12',['RIPEMD160_CTX',['../ripemd_8h.html#a739eb8877d60d30a383a25b7fc5ac66c',1,'ripemd.h']]],
+  ['rsa_13',['RSA',['../rsa_8h.html#a9ad4496a11f0a9f686bea793cb97f8b5',1,'rsa.h']]],
+  ['rsa_5fmethod_14',['RSA_METHOD',['../rsa_8h.html#a559f3eec8932822f887b632e86991995',1,'rsa.h']]],
+  ['rsarandomstate_15',['RSARandomState',['../rsaref_8h.html#a83f8ace05c7d7cd3d8b3f9317ba74cda',1,'rsaref.h']]],
+  ['rsarefprivatekey_16',['RSArefPrivateKey',['../rsaref_8h.html#a1a142eeaa2e8db4c34d797bf8b718ba3',1,'rsaref.h']]],
+  ['rsarefpublickey_17',['RSArefPublicKey',['../rsaref_8h.html#a88538dbb36b5a3f544b3737eb46b6791',1,'rsaref.h']]]
 ];
