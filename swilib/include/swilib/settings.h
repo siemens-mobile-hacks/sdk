@@ -18,6 +18,8 @@ __swilib_begin
  
 typedef void (*SettingsAE_ListenerProc)(int set, const char *entry, const char *keyword);
 
+typedef struct REG_CLIENT REG_CLIENT;
+
 /**
  * IDs of the settings files.
  * */
@@ -44,6 +46,19 @@ enum ProfileVolumeTypeID {
 	PROFILE_VOLUME_TYPE_MAIN		= 0x12,	/**< Main phone volume */
 	PROFILE_VOLUME_TYPE_ALARMCLOCK	= 0xD,	/**< AlarmClock volume */
 	PROFILE_VOLUME_TYPE_INCALL		= 2,	/**< Incall volume */
+};
+
+/**
+ * Structure describing a registry client.
+ * This structure is used to subscribe to registry events.
+ */
+struct REG_CLIENT {
+	uint16_t cepid;			/**< CEPID */
+	uint16_t msg_id;		/**< ID of the message */
+	void *unk1;				/**< unknown, set to NULL */
+	void *unk2;				/**< unknown, set to NULL */
+	short *hmi_keys;		/**< array of HMI key IDs */
+	size_t hmi_keys_count;	/**< number of keys in the hmi_keys array */
 };
 
 /**
@@ -282,6 +297,31 @@ __swi_end(0x039, Registry_SetResourcePath, (hmi_key_id, prio, path));
 __swi_begin(0x03A)
 int Registry_DeleteResourcePath(int hmi_key_id, int prio)
 __swi_end(0x03A, Registry_DeleteResourcePath, (hmi_key_id, prio));
+
+/**
+ * Register a client in the Registry system.
+ * After successful registration, the client will receive Registry events.
+ * @param client	pointer to a #REG_CLIENT structure with registration data
+ * @return			client ID (non‑negative) on success, or error code (<0) on failure
+ * */
+__swi_begin(0x0F2)
+int Registry_RegClient(const REG_CLIENT *client)
+__swi_end(0x0F2, Registry_RegClient, (client));
+
+/**
+ * Unregister client in the Registry system.
+ * @param client_id		client ID returned by #Registry_RegClient
+ * */
+__swi_begin(0x0F3)
+void Registry_UnregClient(int client_id)
+__swi_end(0x0F3, Registry_UnregClient, (client_id));
+
+/** @} */
+
+/**
+ * @name PD
+ * @{
+ * */
 
 /**
  * Get the setting value from PD file.

@@ -36,6 +36,41 @@ typedef void (*GUI_TimerProc)(void *gui);
  * Colors indexes in the .col
  * */
 enum ThemePeletteColorID {
+#ifdef SWILIB_MODERN
+	TPC_FOREGROUND					= 100,
+	TPC_BACKGROUND					= 101,
+	TPC_HEADER_FOREGROUND			= 102,
+	TPC_HEADER_BACKGROUND			= 103,
+	TPC_EXTRA_HEADER_FOREGROUND		= 104,
+	TPC_BOTTOM_FOREGROUND			= 105,
+	TPC_DISABLED_TEXT_FOREGROUND	= 107,
+	TPC_SELECT_FOREGROUND			= 115,
+	TPC_SELECT_BACKGROUND			= 116,
+	TPC_SELECT_BORDER				= 117,
+	TPC_SELECT_SHADOW				= 118,
+	TPC_UNSELECT_FOREGOUND			= 119,
+	TPC_LIGHT_TEXT_FOREGROUND		= 122,
+	TPC_LIGHT_TEXT_BACKGROUND		= 123,
+	TPC_SEPARATOR					= 125,
+	TPC_SCROLL_BAR_SLIDER			= 127,
+	TPC_SCROLL_BAR					= 128,
+	TPC_WINDOW_FOREGROUND			= 129,
+	TPC_WINDOW_BACKGROUND			= 130,
+	TPC_POPUP_HEADER_FOREGROUND		= 131,
+	TPC_BORDER						= 133,
+	TPC_BORDER_SHADOW				= 134,
+	TPC_POPUP_SELECT_FOREGROUD		= 135,
+	TPC_POPUP_SELECT_BACKGROUD		= 136,
+	TPC_PROGRESS_BAR_BACKGROUND		= 138,
+	TPC_PROGRESS_BAR_FOREGROUND		= 139,
+	TPC_PROGRESS_BAR_BORDER			= 140,
+	TPC_CALENDAR_DAYBACKGROUND		= 145,
+	TPC_CALENDAR_WEEKENDBACKGROUND	= 146,
+	TPC_CALENDAR_EVENTBACKGROUND	= 147,
+	TPC_CALENDAR_FOREGROUND			= 151,
+	TPC_EDIT_HEADER_FOREGROUND		= 155,
+	TPC_EDIT_FOREGROUND				= 156,
+#else
 	PC_FOREGROUND				= 100,
 	PC_BACKGROUND				= 101,
 	PC_HEADERFOREGROUND			= 102,
@@ -57,6 +92,7 @@ enum ThemePeletteColorID {
 	PC_PROGRESSBACKGROUND		= 138,
 	PC_PROGRESSFOREGROUND		= 139,
 	PC_PROGRESSBORDER			= 140,
+#endif
 };
 
 /**
@@ -567,6 +603,25 @@ __swi_end(0x130, getRGBbyPaletteAdr, (src_color, dst_color));
 __swi_begin(0x131)
 void setColor(int a, int r, int g, int b, void *dst)
 __swi_end(0x131, setColor, (a, r, g, b, dst));
+
+/**
+ * Set a color for a theme color scheme element.
+ * @param id		color element ID, calculated as (#ThemePeletteColorID - 100)
+ * @param color		pointer to a 4‑byte RGBA array (RR, GG, BB, AA)
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0x2A1)
+int RscMgr_CsSetColor(int id, const uint8_t *color)
+__swi_end(0x2A1, RscMgr_CsSetColor, (id, color));
+
+/**
+ * Update all theme colors.
+ * After one or more calls to #RscMgr_CsSetColor, call this function
+ * to make the new colors take effect immediately.
+ * */
+__swi_begin(0x2A2)
+void RscMgr_CsUpdate()
+__swi_end(0x2A2, RscMgr_CsUpdate, ());
 
 /** @} */
 
