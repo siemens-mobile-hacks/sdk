@@ -36,7 +36,8 @@ var image_8h =
       [ "TCI_TAB_SELECTED", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316ad470ccb7634b1ea58f463a43273e0c36", null ],
       [ "TCI_TAB_UNSELECTED", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316a5096d5bfbe43cfc1925c7506fb345a98", null ],
       [ "TCI_STATUS_BAR_STANDARD", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316aadf4e66e1d1cbb22ca8762fd6a3c24a5", null ],
-      [ "TCI_STATUS_BAR_FULLSCREEN", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316a351f94c65aed38456e8e5055e14856f9", null ]
+      [ "TCI_STATUS_BAR_FULLSCREEN", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316a351f94c65aed38456e8e5055e14856f9", null ],
+      [ "TCI_TOTAL", "group___image.html#gga9a5bdfef0e3fca789fb7aa126ef14316a9e115dddefd29927c32f2e4d76a22fbb", null ]
     ] ],
     [ "PNG_TOP", "group___image.html#ga38ed6ba1dcde57e26688a21fe41c6779", null ],
     [ "GetPITaddr", "group___image.html#gabbefaff6c05cfbad983aa4c92a9ba965", null ],
