@@ -77,18 +77,21 @@ typedef void (*GUI_LOCRET_CALLBACK)(void);
 typedef int (*MenuSearchCallBack)(void *gui, WSHDR *search);
 
 /**
- * Flags for #ShowMSG.
- * */
-enum MsgBoxFlags {
-	MSG_BOX_CANCELANLE		= 1 << 0,	/**< Allow cancel MsgBox withou waiting */
-	MSG_BOX_TRANSPARENT_BG	= 1 << 1,	/**< MsgBox on the transparent background */
+ * Popup dialog flags
+ */
+enum PopupDialogFlags {
+	POPUP_FULLSCREEN	= 0x00,	/**< Full-screen window */
+	POPUP_NORMAL		= 0x01,	/**< Normal (small) window */
+	POPUP_DUMMY_CSM		= 0x10	/**< Create a dummy CSM */
 };
 
 /**
- * Flags for #MsgBoxYesNo or MsgBoxOkCancel.
+ * Flags for #ShowMSG.
  * */
-enum PopupDialogFlags {
-	CONFITM_BOX_TRANSPARENT_BG	= 1 << 0,	/**< MsgBox on the transparent background */
+enum MsgBoxFlags {
+	MSG_BOX_FULLSCREEN	= POPUP_FULLSCREEN,	/**< Same as #PopupDialogFlags::POPUP_FULLSCREEN (cannot be cancelled) */
+	MSG_BOX_NORMAL		= POPUP_NORMAL,		/**< Same as #PopupDialogFlags::POPUP_NORMAL */
+	MSG_BOX_DUMMY_CSM	= POPUP_DUMMY_CSM,	/**< Same as #PopupDialogFlags::POPUP_DUMMY_CSM */
 };
 
 /**
