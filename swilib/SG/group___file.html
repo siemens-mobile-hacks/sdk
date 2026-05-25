@@ -284,10 +284,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaaeb33d7e7e61dfae08465ff3630abf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename file or directory.     <br /></td></tr>
 <tr class="separator:gaaeb33d7e7e61dfae08465ff3630abf5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1ee5746dce48dab8003e68e9605186c" id="r_gaa1ee5746dce48dab8003e68e9605186c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa1ee5746dce48dab8003e68e9605186c">isdir</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, uint32_t *err)</td></tr>
-<tr class="memdesc:gaa1ee5746dce48dab8003e68e9605186c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checking that a path is a folder.  <br /></td></tr>
+<tr class="memdesc:gaa1ee5746dce48dab8003e68e9605186c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a directory exists at the given path.  <br /></td></tr>
 <tr class="separator:gaa1ee5746dce48dab8003e68e9605186c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9a3cbe7a290a67acd77ffcdd94d8cd1a" id="r_ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a3cbe7a290a67acd77ffcdd94d8cd1a">isdir_ws</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path, uint32_t *err)</td></tr>
-<tr class="memdesc:ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checking that a path is a folder.     <br /></td></tr>
+<tr class="memdesc:ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a directory exists at the given path.     <br /></td></tr>
 <tr class="separator:ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaff0a8193bb75bfdda106fc323f1185e2" id="r_gaff0a8193bb75bfdda106fc323f1185e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff0a8193bb75bfdda106fc323f1185e2">fexists</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path)</td></tr>
 <tr class="memdesc:gaff0a8193bb75bfdda106fc323f1185e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a file or directory exists.  <br /></td></tr>
@@ -1555,7 +1555,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checking that a path is a folder. </p>
+<p>Check whether a directory exists at the given path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">path</td><td>the path we are checking </td></tr>
@@ -1563,7 +1563,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 is that folder, 0 is that file, and &lt; 0 indicates an error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the path exists and is a directory, 0 if the directory does not exist (or path is not a directory) </dd></dl>
 
 </div>
 </div>
@@ -1586,7 +1586,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checking that a path is a folder.    </p>
+<p>Check whether a directory exists at the given path.    </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">path</td><td>the path we are checking </td></tr>
@@ -1594,7 +1594,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 is that folder, 0 is that file, and &lt; 0 indicates an error.    </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the path exists and is a directory, 0 if the directory does not exist (or path is not a directory)    </dd></dl>
 
 </div>
 </div>

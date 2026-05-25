@@ -228,21 +228,28 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga46b5f5853ab06754964dc5f18940a7e5" id="r_ga46b5f5853ab06754964dc5f18940a7e5"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46b5f5853ab06754964dc5f18940a7e5">MenuSearchCallBack</a>) (void *gui, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *search)</td></tr>
 <tr class="memdesc:ga46b5f5853ab06754964dc5f18940a7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu search callback.  <br /></td></tr>
 <tr class="separator:ga46b5f5853ab06754964dc5f18940a7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2be210b052231403d60a570d306678fa" id="r_ga2be210b052231403d60a570d306678fa"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2be210b052231403d60a570d306678fa">DialogFlags</a></td></tr>
+<tr class="memdesc:ga2be210b052231403d60a570d306678fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialog windows style flags.  <br /></td></tr>
+<tr class="separator:ga2be210b052231403d60a570d306678fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebcc02a662b79e0d850481916e725b56" id="r_gaebcc02a662b79e0d850481916e725b56"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebcc02a662b79e0d850481916e725b56">PopupDialogFlags</a></td></tr>
+<tr class="memdesc:gaebcc02a662b79e0d850481916e725b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popup dialog flags.  <br /></td></tr>
+<tr class="separator:gaebcc02a662b79e0d850481916e725b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3125897938e2d99957441588e777440" id="r_gaf3125897938e2d99957441588e777440"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf3125897938e2d99957441588e777440">MsgBoxFlags</a></td></tr>
+<tr class="memdesc:gaf3125897938e2d99957441588e777440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for <a class="el" href="#gae2b652167c996bd235043ce17e12e19e" title="Show info popup.">ShowMSG</a>.  <br /></td></tr>
+<tr class="separator:gaf3125897938e2d99957441588e777440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga0726c0db7c874c6a1d55aa2371172f68" id="r_ga0726c0db7c874c6a1d55aa2371172f68"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0726c0db7c874c6a1d55aa2371172f68">MsgBoxFlags</a> { <br />
-&#160;&#160;<a class="el" href="#gga0726c0db7c874c6a1d55aa2371172f68a7d338a85f0005889b0128b4e7b16962e">MSG_BOX_CANCELANLE</a> = 1 &lt;&lt; 0
+<tr class="memitem:gadc89cbf8ced1681ad91f55803b3ee2de" id="r_gadc89cbf8ced1681ad91f55803b3ee2de"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a> { <br />
+&#160;&#160;<a class="el" href="#ggadc89cbf8ced1681ad91f55803b3ee2deac5f5c94f45edcba63b99d414c889a88c">DIALOG_FULLSCREEN</a> = 0x00
 , <br />
-&#160;&#160;<a class="el" href="#gga0726c0db7c874c6a1d55aa2371172f68ad69d8beb077d3452edb4b8cf126ef336">MSG_BOX_TRANSPARENT_BG</a> = 1 &lt;&lt; 1
+&#160;&#160;<a class="el" href="#ggadc89cbf8ced1681ad91f55803b3ee2dea2ef60b4729859ab2f9c1bd4cbb420f25">DIALOG_NORMAL</a> = 0x01
+, <br />
+&#160;&#160;<a class="el" href="#ggadc89cbf8ced1681ad91f55803b3ee2deae3f02ddb6aa4dab83b987186c6ddb3d0">DIALOG_DUMMY_CSM</a> = 0x10
 <br />
  }</td></tr>
-<tr class="memdesc:ga0726c0db7c874c6a1d55aa2371172f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for <a class="el" href="#gae2b652167c996bd235043ce17e12e19e" title="Show info popup.">ShowMSG</a>.  <a href="#ga0726c0db7c874c6a1d55aa2371172f68">More...</a><br /></td></tr>
-<tr class="separator:ga0726c0db7c874c6a1d55aa2371172f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0599f065f2e0ef416c1dab4c1e2c7750" id="r_ga0599f065f2e0ef416c1dab4c1e2c7750"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750">PopupDialogFlags</a> { <a class="el" href="#gga0599f065f2e0ef416c1dab4c1e2c7750afe080264a8865df1c80ff35573606ddf">CONFITM_BOX_TRANSPARENT_BG</a> = 1 &lt;&lt; 0
- }</td></tr>
-<tr class="memdesc:ga0599f065f2e0ef416c1dab4c1e2c7750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for <a class="el" href="#ga2db5f3afeb7ce1f15eebf9a42de8a15b" title="Confirmation popup with Yes/No.">MsgBoxYesNo</a> or MsgBoxOkCancel.  <a href="#ga0599f065f2e0ef416c1dab4c1e2c7750">More...</a><br /></td></tr>
-<tr class="separator:ga0599f065f2e0ef416c1dab4c1e2c7750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:gadc89cbf8ced1681ad91f55803b3ee2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialog windows style flags.  <a href="#gadc89cbf8ced1681ad91f55803b3ee2de">More...</a><br /></td></tr>
+<tr class="separator:gadc89cbf8ced1681ad91f55803b3ee2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga954bc7c4b183afe98ab11ce9e3b8c8a6" id="r_ga954bc7c4b183afe98ab11ce9e3b8c8a6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga954bc7c4b183afe98ab11ce9e3b8c8a6">SetSoftKeyID</a> { <br />
 &#160;&#160;<a class="el" href="#gga954bc7c4b183afe98ab11ce9e3b8c8a6a500231a3e3ae981c6c84e9e06a9d13f1">SET_LEFT_SOFTKEY</a> = 0
 , <br />
@@ -1007,7 +1014,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00109">109</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00113">113</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1023,7 +1030,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00110">110</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00114">114</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1041,7 +1048,7 @@ Enumerations</h2></td></tr>
 
 <p>Magic value. </p>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00117">117</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00121">121</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1066,7 @@ Enumerations</h2></td></tr>
 
 <p>Magic value. </p>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00118">118</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00122">122</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1077,7 +1084,7 @@ Enumerations</h2></td></tr>
 
 <p>Iconbar height. </p>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00119">119</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00123">123</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1483,50 +1490,82 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga0726c0db7c874c6a1d55aa2371172f68" name="ga0726c0db7c874c6a1d55aa2371172f68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0726c0db7c874c6a1d55aa2371172f68">&#9670;&#160;</a></span>MsgBoxFlags</h2>
+<a id="ga2be210b052231403d60a570d306678fa" name="ga2be210b052231403d60a570d306678fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2be210b052231403d60a570d306678fa">&#9670;&#160;</a></span>DialogFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#ga0726c0db7c874c6a1d55aa2371172f68">MsgBoxFlags</a></td>
+          <td class="memname">typedef enum <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a> <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dialog windows style flags. </p>
+
+</div>
+</div>
+<a id="gaebcc02a662b79e0d850481916e725b56" name="gaebcc02a662b79e0d850481916e725b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebcc02a662b79e0d850481916e725b56">&#9670;&#160;</a></span>PopupDialogFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a> <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">PopupDialogFlags</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Popup dialog flags. </p>
+
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00091">91</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf3125897938e2d99957441588e777440" name="gaf3125897938e2d99957441588e777440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf3125897938e2d99957441588e777440">&#9670;&#160;</a></span>MsgBoxFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a> <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">MsgBoxFlags</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Flags for <a class="el" href="#gae2b652167c996bd235043ce17e12e19e" title="Show info popup.">ShowMSG</a>. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0726c0db7c874c6a1d55aa2371172f68a7d338a85f0005889b0128b4e7b16962e" name="gga0726c0db7c874c6a1d55aa2371172f68a7d338a85f0005889b0128b4e7b16962e"></a>MSG_BOX_CANCELANLE&#160;</td><td class="fielddoc"><p>Allow cancel MsgBox withou waiting. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga0726c0db7c874c6a1d55aa2371172f68ad69d8beb077d3452edb4b8cf126ef336" name="gga0726c0db7c874c6a1d55aa2371172f68ad69d8beb077d3452edb4b8cf126ef336"></a>MSG_BOX_TRANSPARENT_BG&#160;</td><td class="fielddoc"><p>MsgBox on the transparent background. </p>
-</td></tr>
-</table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00082">82</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00096">96</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
-<a id="ga0599f065f2e0ef416c1dab4c1e2c7750" name="ga0599f065f2e0ef416c1dab4c1e2c7750"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0599f065f2e0ef416c1dab4c1e2c7750">&#9670;&#160;</a></span>PopupDialogFlags</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gadc89cbf8ced1681ad91f55803b3ee2de" name="gadc89cbf8ced1681ad91f55803b3ee2de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc89cbf8ced1681ad91f55803b3ee2de">&#9670;&#160;</a></span>DialogFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750">PopupDialogFlags</a></td>
+          <td class="memname">enum <a class="el" href="#gadc89cbf8ced1681ad91f55803b3ee2de">DialogFlags</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Flags for <a class="el" href="#ga2db5f3afeb7ce1f15eebf9a42de8a15b" title="Confirmation popup with Yes/No.">MsgBoxYesNo</a> or MsgBoxOkCancel. </p>
+<p>Dialog windows style flags. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0599f065f2e0ef416c1dab4c1e2c7750afe080264a8865df1c80ff35573606ddf" name="gga0599f065f2e0ef416c1dab4c1e2c7750afe080264a8865df1c80ff35573606ddf"></a>CONFITM_BOX_TRANSPARENT_BG&#160;</td><td class="fielddoc"><p>MsgBox on the transparent background. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggadc89cbf8ced1681ad91f55803b3ee2deac5f5c94f45edcba63b99d414c889a88c" name="ggadc89cbf8ced1681ad91f55803b3ee2deac5f5c94f45edcba63b99d414c889a88c"></a>DIALOG_FULLSCREEN&#160;</td><td class="fielddoc"><p>Full-screen window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggadc89cbf8ced1681ad91f55803b3ee2dea2ef60b4729859ab2f9c1bd4cbb420f25" name="ggadc89cbf8ced1681ad91f55803b3ee2dea2ef60b4729859ab2f9c1bd4cbb420f25"></a>DIALOG_NORMAL&#160;</td><td class="fielddoc"><p>Normal (small) window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggadc89cbf8ced1681ad91f55803b3ee2deae3f02ddb6aa4dab83b987186c6ddb3d0" name="ggadc89cbf8ced1681ad91f55803b3ee2deae3f02ddb6aa4dab83b987186c6ddb3d0"></a>DIALOG_DUMMY_CSM&#160;</td><td class="fielddoc"><p>Create a dummy CSM. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00090">90</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00082">82</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1552,7 +1591,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00097">97</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00101">101</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1584,7 +1623,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggafd61f7de6da76c9f9d7ff28bca19dfd8a21eac04cdd6365658d423ba7365bdb5e" name="ggafd61f7de6da76c9f9d7ff28bca19dfd8a21eac04cdd6365658d423ba7365bdb5e"></a>ECT_TIME&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00129">129</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00133">133</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1629,7 +1668,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga92eaaac25ce7096d892cd2a5b6e331f8a5b8333281bd1837b968ee1dd7df91159" name="gga92eaaac25ce7096d892cd2a5b6e331f8a5b8333281bd1837b968ee1dd7df91159"></a>ECF_GRAY&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00147">147</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00151">151</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1654,7 +1693,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga4476ae475ceea43a6d58c6865887ffdca25ee440e802ef6f53d73f5d1b7c97f52" name="gga4476ae475ceea43a6d58c6865887ffdca25ee440e802ef6f53d73f5d1b7c97f52"></a>UI_CMD_FOCUS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00174">174</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00178">178</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1681,7 +1720,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggad238e323dda00984a07a4428ab04b5fea062d6b0f3031a6007c429c7ffdce1dfb" name="ggad238e323dda00984a07a4428ab04b5fea062d6b0f3031a6007c429c7ffdce1dfb"></a>TI_CMD_COMBOBOX_FOCUS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00185">185</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00189">189</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1704,7 +1743,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggaa3677a28c9db50a6baf352dc1c4eb89fa49eef5f3bfcbf74486e9a03c426adc5d" name="ggaa3677a28c9db50a6baf352dc1c4eb89fa49eef5f3bfcbf74486e9a03c426adc5d"></a>INPUTDIA_FLAGS_SWAP_SOFTKEYS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00198">198</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00202">202</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -1731,7 +1770,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga217b12911ddc38f6cd257ddfa1e6a8f7a9944a1c6f07402bb5b9e926bcf02dde4" name="gga217b12911ddc38f6cd257ddfa1e6a8f7a9944a1c6f07402bb5b9e926bcf02dde4"></a>MENU_FLAGS_ENABLE_SEARCH&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00207">207</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ui_8h_source.html#l00211">211</a> of file <a class="el" href="ui_8h_source.html">ui.h</a>.</p>
 
 </div>
 </div>
@@ -2441,7 +2480,7 @@ Enumerations</h2></td></tr>
 <p>Show info popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0726c0db7c874c6a1d55aa2371172f68" title="Flags for ShowMSG.">MsgBoxFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaf3125897938e2d99957441588e777440" title="Flags for ShowMSG.">MsgBoxFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
   </table>
   </dd>
@@ -2474,7 +2513,7 @@ Enumerations</h2></td></tr>
 <p>Show error popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0726c0db7c874c6a1d55aa2371172f68" title="Flags for ShowMSG.">MsgBoxFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaf3125897938e2d99957441588e777440" title="Flags for ShowMSG.">MsgBoxFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
   </table>
   </dd>
@@ -2512,7 +2551,7 @@ Enumerations</h2></td></tr>
 <p>Confirmation popup with Yes/No. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
     <tr><td class="paramname">callback</td><td>callback for handling popup answer </td></tr>
   </table>
@@ -2559,7 +2598,7 @@ Enumerations</h2></td></tr>
 <p>Confirmation popup with Ok/Cancel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
     <tr><td class="paramname">callback</td><td>callback for handling popup answer </td></tr>
   </table>
@@ -2601,7 +2640,7 @@ Enumerations</h2></td></tr>
 <p>Wait popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
   </table>
   </dd>
@@ -2628,7 +2667,7 @@ Enumerations</h2></td></tr>
 <p>'Please wait' popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td><a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td><a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -2694,11 +2733,11 @@ Enumerations</h2></td></tr>
 <p>Progressbar popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td></td></tr>
+    <tr><td class="paramname">flags</td><td><a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">message</td><td>id from the langpack or pointer to the C-string </td></tr>
     <tr><td class="paramname">pbar_desc</td><td>pointer to the <a class="el" href="#struct_p_b_a_r___d_e_s_c" title="Progressbar definition.">PBAR_DESC</a> or NULL </td></tr>
     <tr><td class="paramname">initial_value</td><td>initial value 0-100 </td></tr>
-    <tr><td class="paramname">initial_ws</td><td>pointer to initial <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string or NULL, don't need to free memory </td></tr>
+    <tr><td class="paramname">initial_ws</td><td>pointer to initial <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string or NULL. The passed <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> will be destroyed by the function; caller must not free it. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2800,7 +2839,7 @@ Enumerations</h2></td></tr>
 <p>Create custom Popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">user_pointer</td><td>custom user pointer </td></tr>
     <tr><td class="paramname">popup</td><td>pointer to the Popup definition </td></tr>
     <tr><td class="paramname">lgp_id</td><td>Popup message, LGP ID or pointer to the C-string </td></tr>
@@ -2843,7 +2882,7 @@ Enumerations</h2></td></tr>
 <p>Create custom Popup. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flags</td><td>see <a class="el" href="#ga0599f065f2e0ef416c1dab4c1e2c7750" title="Flags for MsgBoxYesNo or MsgBoxOkCancel.">PopupDialogFlags</a> </td></tr>
+    <tr><td class="paramname">flags</td><td>see <a class="el" href="#gaebcc02a662b79e0d850481916e725b56" title="Popup dialog flags.">PopupDialogFlags</a> </td></tr>
     <tr><td class="paramname">user_pointer</td><td>custom user pointer </td></tr>
     <tr><td class="paramname">popup</td><td>pointer to the Popup definition </td></tr>
     <tr><td class="paramname">message</td><td>UTF-16 pascal-style string </td></tr>
@@ -3215,11 +3254,11 @@ Enumerations</h2></td></tr>
 <div class="ttc" id="agroup___u_i_html_ga59a9ef5758539517b0a6157656dd2d90"><div class="ttname"><a href="#ga59a9ef5758539517b0a6157656dd2d90">AddEditControlToEditQend</a></div><div class="ttdeci">int AddEditControlToEditQend(EDITQ *eq, const EDITCONTROL *ec, const void *malloc_func)</div><div class="ttdoc">Add edit control to the end of the list.</div></div>
 <div class="ttc" id="agroup___u_i_html_gaa806382b3accdfd18fd79c7a1937f567"><div class="ttname"><a href="#gaa806382b3accdfd18fd79c7a1937f567">ConstructEditControl</a></div><div class="ttdeci">void ConstructEditControl(EDITCONTROL *ec, int type, int flags, const WSHDR *title, int maxlen)</div><div class="ttdoc">Create new edit control.</div></div>
 <div class="ttc" id="agroup___u_i_html_gaca40f51a85c6cc34aacbd79116b78913"><div class="ttname"><a href="#gaca40f51a85c6cc34aacbd79116b78913">PrepareEditControl</a></div><div class="ttdeci">EDITCONTROL * PrepareEditControl(EDITCONTROL *ec)</div><div class="ttdoc">Pre-initialize EDITCONTROL structure.</div></div>
-<div class="ttc" id="agroup___u_i_html_gga92eaaac25ce7096d892cd2a5b6e331f8a3cbc7ee7b12f7198a4600af12496936f"><div class="ttname"><a href="#gga92eaaac25ce7096d892cd2a5b6e331f8a3cbc7ee7b12f7198a4600af12496936f">ECF_NORMAL_STR</a></div><div class="ttdeci">@ ECF_NORMAL_STR</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00148">ui.h:148</a></div></div>
-<div class="ttc" id="agroup___u_i_html_gga92eaaac25ce7096d892cd2a5b6e331f8a9aa1879d5a2b85d4946d7c63d4eb4aef"><div class="ttname"><a href="#gga92eaaac25ce7096d892cd2a5b6e331f8a9aa1879d5a2b85d4946d7c63d4eb4aef">ECF_APPEND_EOL</a></div><div class="ttdeci">@ ECF_APPEND_EOL</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00153">ui.h:153</a></div></div>
-<div class="ttc" id="agroup___u_i_html_ggafd61f7de6da76c9f9d7ff28bca19dfd8a23d9fabeff27c2455cda6c2d75ca1876"><div class="ttname"><a href="#ggafd61f7de6da76c9f9d7ff28bca19dfd8a23d9fabeff27c2455cda6c2d75ca1876">ECT_NORMAL_TEXT</a></div><div class="ttdeci">@ ECT_NORMAL_TEXT</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00133">ui.h:133</a></div></div>
-<div class="ttc" id="agroup___u_i_html_struct_e_d_i_t_c_o_n_t_r_o_l"><div class="ttname"><a href="#struct_e_d_i_t_c_o_n_t_r_o_l">EDITCONTROL</a></div><div class="ttdoc">EditControl definition.</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00273">ui.h:273</a></div></div>
-<div class="ttc" id="agroup___u_i_html_struct_e_d_i_t_q"><div class="ttname"><a href="#struct_e_d_i_t_q">EDITQ</a></div><div class="ttdoc">Linked-list of the EditControl's.</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00251">ui.h:251</a></div></div>
+<div class="ttc" id="agroup___u_i_html_gga92eaaac25ce7096d892cd2a5b6e331f8a3cbc7ee7b12f7198a4600af12496936f"><div class="ttname"><a href="#gga92eaaac25ce7096d892cd2a5b6e331f8a3cbc7ee7b12f7198a4600af12496936f">ECF_NORMAL_STR</a></div><div class="ttdeci">@ ECF_NORMAL_STR</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00152">ui.h:152</a></div></div>
+<div class="ttc" id="agroup___u_i_html_gga92eaaac25ce7096d892cd2a5b6e331f8a9aa1879d5a2b85d4946d7c63d4eb4aef"><div class="ttname"><a href="#gga92eaaac25ce7096d892cd2a5b6e331f8a9aa1879d5a2b85d4946d7c63d4eb4aef">ECF_APPEND_EOL</a></div><div class="ttdeci">@ ECF_APPEND_EOL</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00157">ui.h:157</a></div></div>
+<div class="ttc" id="agroup___u_i_html_ggafd61f7de6da76c9f9d7ff28bca19dfd8a23d9fabeff27c2455cda6c2d75ca1876"><div class="ttname"><a href="#ggafd61f7de6da76c9f9d7ff28bca19dfd8a23d9fabeff27c2455cda6c2d75ca1876">ECT_NORMAL_TEXT</a></div><div class="ttdeci">@ ECT_NORMAL_TEXT</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00137">ui.h:137</a></div></div>
+<div class="ttc" id="agroup___u_i_html_struct_e_d_i_t_c_o_n_t_r_o_l"><div class="ttname"><a href="#struct_e_d_i_t_c_o_n_t_r_o_l">EDITCONTROL</a></div><div class="ttdoc">EditControl definition.</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00277">ui.h:277</a></div></div>
+<div class="ttc" id="agroup___u_i_html_struct_e_d_i_t_q"><div class="ttname"><a href="#struct_e_d_i_t_q">EDITQ</a></div><div class="ttdoc">Linked-list of the EditControl's.</div><div class="ttdef"><b>Definition</b> <a href="ui_8h_source.html#l00255">ui.h:255</a></div></div>
 <div class="ttc" id="agroup__libc_html_ga98091deb3eb207bb841a6af63f05d7b7"><div class="ttname"><a href="group__libc.html#ga98091deb3eb207bb841a6af63f05d7b7">malloc_adr</a></div><div class="ttdeci">void * malloc_adr(void)</div><div class="ttdoc">Pointer to the function malloc().</div></div>
 <div class="ttc" id="agroup__libc_html_ga9fb4ecd699fadc5108297f332e7fc521"><div class="ttname"><a href="group__libc.html#ga9fb4ecd699fadc5108297f332e7fc521">mfree_adr</a></div><div class="ttdeci">void * mfree_adr(void)</div><div class="ttdoc">Pointer to the function free().</div></div>
 </div><!-- fragment --> 

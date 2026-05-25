@@ -12,5 +12,6 @@ var searchData=
   ['mfree_5ffunc_5ft_9',['mfree_func_t',['../group___s_w_i_l_i_b.html#gad933b4910fa156b13de77fa0d097ab71',1,'base.h']]],
   ['ml_5fmenu_5fdesc_10',['ML_MENU_DESC',['../group___u_i.html#ga4d1fd9d82b84a96fa515f4a8b8ee9d44',1,'ui.h']]],
   ['mmicmd_11',['MMICMD',['../group___c_s_m.html#ga5252c6b53478357f2f8a7996bf5926e6',1,'csm.h']]],
-  ['mutex_12',['MUTEX',['../group___system.html#ga699769fac077c464e4da2fa6a4a50116',1,'system.h']]]
+  ['msgboxflags_12',['MsgBoxFlags',['../group___u_i.html#gaf3125897938e2d99957441588e777440',1,'ui.h']]],
+  ['mutex_13',['MUTEX',['../group___system.html#ga699769fac077c464e4da2fa6a4a50116',1,'system.h']]]
 ];

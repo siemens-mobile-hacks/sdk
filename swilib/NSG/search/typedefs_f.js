@@ -105,5 +105,6 @@ var searchData=
   ['pngtop_5fdesc_102',['PNGTOP_DESC',['../group___image.html#ga9088742b710d656bd0403cb36c2fb922',1,'image.h']]],
   ['policyinfo_103',['POLICYINFO',['../x509v3_8h.html#a0ac27f8179a0886e46569b557a8a5f04',1,'x509v3.h']]],
   ['policyqualinfo_104',['POLICYQUALINFO',['../x509v3_8h.html#a8dcc886c17ef0f0d29a0b896f9d826b6',1,'x509v3.h']]],
-  ['popup_5fdesc_105',['POPUP_DESC',['../group___u_i.html#ga383ea5c9ed6a68459b59ad6ccafb46fb',1,'ui.h']]]
+  ['popup_5fdesc_105',['POPUP_DESC',['../group___u_i.html#ga383ea5c9ed6a68459b59ad6ccafb46fb',1,'ui.h']]],
+  ['popupdialogflags_106',['PopupDialogFlags',['../group___u_i.html#gaebcc02a662b79e0d850481916e725b56',1,'ui.h']]]
 ];
