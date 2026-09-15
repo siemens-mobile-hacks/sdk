@@ -6,6 +6,8 @@ var gcc__patch_8h =
     [ "__swi_end", "gcc__patch_8h.html#a69fa9d5bc04573fff4c69974f0c3cc9f", null ],
     [ "__swi_noreturn_begin", "gcc__patch_8h.html#ae530c6228094b08550852bbdabeb0fa2", null ],
     [ "__swi_noreturn_end", "gcc__patch_8h.html#a7bc664d625bd392875fed67ff56b0717", null ],
-    [ "__longcall__", "gcc__patch_8h.html#a8809fe18b8e31149759d464797635741", null ],
+    [ "__swi_variadic_begin", "gcc__patch_8h.html#a1cdfea9db7fe0faf530c353f812040f5", null ],
+    [ "__swi_variadic_end", "gcc__patch_8h.html#a75b179313662b4aad0e85dd05dc3ec43", null ],
+    [ "__swi_format", "gcc__patch_8h.html#aa115e6e289233f6fd57987c1a9a0cc70", null ],
     [ "__attribute__", "gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a", null ]
 ];

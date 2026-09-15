@@ -122,6 +122,12 @@ Macros</h2></td></tr>
 <tr class="separator:ae530c6228094b08550852bbdabeb0fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc664d625bd392875fed67ff56b0717" id="r_a7bc664d625bd392875fed67ff56b0717"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc664d625bd392875fed67ff56b0717">__swi_noreturn_end</a>(number,  func,  call)</td></tr>
 <tr class="separator:a7bc664d625bd392875fed67ff56b0717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdfea9db7fe0faf530c353f812040f5" id="r_a1cdfea9db7fe0faf530c353f812040f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cdfea9db7fe0faf530c353f812040f5">__swi_variadic_begin</a>(number)&#160;&#160;&#160;<a class="el" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(number)</td></tr>
+<tr class="separator:a1cdfea9db7fe0faf530c353f812040f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b179313662b4aad0e85dd05dc3ec43" id="r_a75b179313662b4aad0e85dd05dc3ec43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75b179313662b4aad0e85dd05dc3ec43">__swi_variadic_end</a>(number,  func, ...)</td></tr>
+<tr class="separator:a75b179313662b4aad0e85dd05dc3ec43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa115e6e289233f6fd57987c1a9a0cc70" id="r_aa115e6e289233f6fd57987c1a9a0cc70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa115e6e289233f6fd57987c1a9a0cc70">__swi_format</a>(type, ...)</td></tr>
+<tr class="separator:aa115e6e289233f6fd57987c1a9a0cc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a29c180570710dd0fbf1cc1e90b8d511b" name="a29c180570710dd0fbf1cc1e90b8d511b"></a>
@@ -268,6 +274,76 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00021">21</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+
+</div>
+</div>
+<a id="a1cdfea9db7fe0faf530c353f812040f5" name="a1cdfea9db7fe0faf530c353f812040f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cdfea9db7fe0faf530c353f812040f5">&#9670;&#160;</a></span>__swi_variadic_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_variadic_begin</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="doxygen_8h.html#abd349c4a0c9890aaba1618f5cc6eccb4">__swi_begin</a>(number)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00023">23</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+
+</div>
+</div>
+<a id="a75b179313662b4aad0e85dd05dc3ec43" name="a75b179313662b4aad0e85dd05dc3ec43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b179313662b4aad0e85dd05dc3ec43">&#9670;&#160;</a></span>__swi_variadic_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_variadic_end</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00024">24</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa115e6e289233f6fd57987c1a9a0cc70" name="aa115e6e289233f6fd57987c1a9a0cc70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa115e6e289233f6fd57987c1a9a0cc70">&#9670;&#160;</a></span>__swi_format</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __swi_format</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="iar_8h_source.html#l00026">26</a> of file <a class="el" href="iar_8h_source.html">iar.h</a>.</p>
 
 </div>
 </div>

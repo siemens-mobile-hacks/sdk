@@ -130,7 +130,10 @@ $(function(){initNavTree('gcc__patch_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#ae530c6228094b08550852bbdabeb0fa2">   28</a></span><span class="preprocessor">#define __swi_noreturn_begin(number)</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#a7bc664d625bd392875fed67ff56b0717">   29</a></span><span class="preprocessor">#define __swi_noreturn_end(number, func, call)</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#a8809fe18b8e31149759d464797635741">   31</a></span><span class="preprocessor">#define __longcall__ __attribute__((long_call))</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#a1cdfea9db7fe0faf530c353f812040f5">   31</a></span><span class="preprocessor">#define __swi_variadic_begin(number)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#a75b179313662b4aad0e85dd05dc3ec43">   32</a></span><span class="preprocessor">#define __swi_variadic_end(number, func, ...)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="gcc__patch_8h.html#aa115e6e289233f6fd57987c1a9a0cc70">   34</a></span><span class="preprocessor">#define __swi_format(type, ...) __attribute__((format(type, ##__VA_ARGS__)))</span></div>
 <div class="ttc" id="agcc__patch_8h_html_ad9dc921ca5d96c30a714484d992e0e1a"><div class="ttname"><a href="gcc__patch_8h.html#ad9dc921ca5d96c30a714484d992e0e1a">__attribute__</a></div><div class="ttdeci">unsigned int __attribute__((warning(&quot;Function not found in swilib.&quot;))) ___bad_swi_addr___(unsigned int addr)</div><div class="ttdoc">GCC compiler support (Patches).</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
