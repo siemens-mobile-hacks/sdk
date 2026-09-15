@@ -5,5 +5,5 @@
 
 void free(void * data)
 {
-    __def_noinline(21, void, data);
+    __swi_invoke(21, free, data);
 }

@@ -8,7 +8,7 @@
 
 
 
-__inl
+static inline
 void plPutPixel(image_t *img, int x, int y, color32_t c)
 {
     if( x < 0 || y < 0 || x >= img->w || y >= img->h ) return;
@@ -25,7 +25,7 @@ void plPutPixel(image_t *img, int x, int y, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixelf(image_t *img, int x, int y, color32_t c)
 {
     switch(img->bpnum)
@@ -41,7 +41,7 @@ void plPutPixelf(image_t *img, int x, int y, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixelBlend(image_t *img, int x, int y, color32_t c)
 {
     if( x < 0 || y < 0 || x >= img->w || y >= img->h ) return;
@@ -58,7 +58,7 @@ void plPutPixelBlend(image_t *img, int x, int y, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixeli(image_t *img, int i, color32_t c)
 {
     if(i < 0) return;
@@ -78,7 +78,7 @@ void plPutPixeli(image_t *img, int i, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixelif(image_t *img, int i, color32_t c)
 {
     switch(img->bpnum)
@@ -94,7 +94,7 @@ void plPutPixelif(image_t *img, int i, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixelBlendi(image_t *img, int i, color32_t c)
 {
     if(i < 0) return;
@@ -112,7 +112,7 @@ void plPutPixelBlendi(image_t *img, int i, color32_t c)
     }
 }
 
-__inl
+static inline
 void plPutPixelBlendif(image_t *img, int i, color32_t c)
 {
     switch(img->bpnum)
@@ -128,7 +128,7 @@ void plPutPixelBlendif(image_t *img, int i, color32_t c)
 }
 
 
-__inl
+static inline
 void plPutPixela(image_t *img, int x, int y, color32_t c)
 {
     if(img->blend && plAlpha(c))

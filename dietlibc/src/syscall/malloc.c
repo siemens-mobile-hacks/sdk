@@ -5,5 +5,5 @@
 
 void *malloc(size_t size)
 {
-    __def_noinline(20, void*, size);
+    return __swi_invoke(20, malloc, size);
 }

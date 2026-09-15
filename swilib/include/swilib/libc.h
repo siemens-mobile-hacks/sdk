@@ -276,14 +276,10 @@ __swi_end(0x07E, rand, ());
  * @return Notice that only when this returned value is non-negative and less than n, the string has been completely written.
  * */
 
-#ifdef SWILIB_MODE_DIRECT
-#define snprintf(_s, _n, _format, ...) \
-	__swi_call(0x11B, __swi_format(printf, 3, 4) int, (char *s, size_t n, const char *format, ...), (_s, _n, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x11B)
+__swi_variadic_begin(0x11B)
+__swi_format(printf, 3, 4)
 int snprintf(char *s, size_t n, const char *format, ...)
-__swi_end(0x11B, snprintf, (s, n, format));
-#endif
+__swi_variadic_end(0x11B, snprintf, s, n, format);
 
 /**
  * Write formatted output to buffer.
@@ -293,14 +289,10 @@ __swi_end(0x11B, snprintf, (s, n, format));
  * @return If an encoding error occurs, a negative number is returned.
  * @return Notice that only when this returned value is non-negative and less than n, the string has been completely written.
  * */
-#ifdef SWILIB_MODE_DIRECT
-#define sprintf(_s, _format, ...) \
-	__swi_call(0x016, __swi_format(printf, 2, 3) int, (char *s, const char *format, ...), (_s, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x016)
+__swi_variadic_begin(0x016)
+__swi_format(printf, 2, 3)
 int sprintf(char *s, const char *format, ...)
-__swi_end(0x016, sprintf, (s, format));
-#endif
+__swi_variadic_end(0x016, sprintf, s, format);
 
 /**
  * Read formatted data from string.
@@ -310,14 +302,10 @@ __swi_end(0x016, sprintf, (s, format));
  * @return This count can match the expected number of items or be less (even zero) in the case of a matching failure.
  * @return In the case of an input failure before any data could be successfully interpreted, EOF is returned.
  * */
-#ifdef SWILIB_MODE_DIRECT
-#define sscanf(_s, _format, ...) \
-	__swi_call(0x1F5, __swi_format(printf, 2, 3) int, (const char *s, const char *format, ...), (_s, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x1F5)
+__swi_variadic_begin(0x1F5)
+__swi_format(scanf, 2, 3)
 int sscanf(const char *s, const char *format, ...)
-__swi_end(0x1F5, sscanf, (s, format));
-#endif
+__swi_variadic_end(0x1F5, sscanf, s, format);
 
 /** @} */
 

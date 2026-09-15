@@ -12,7 +12,7 @@ color16_t plAlphaBlend16(color16_t _color, color16_t _background, uint8_t alpha)
 
 
 /* put color */
-__inl
+static inline
 void plPutPixel16(image_t *img, int x, int y, color16_t c)
 {
     if(x < 0 || y < 0 || x >= img->w || y >= img->h || img->bpnum != 16) return;
@@ -21,7 +21,7 @@ void plPutPixel16(image_t *img, int x, int y, color16_t c)
 }
 
 
-__inl
+static inline
 void plPutPixel16i(image_t *img, int i, color16_t c)
 {
     if(i < 0 || i > plCalcSeek(img->w, img->h, img)*2) return;
@@ -31,7 +31,7 @@ void plPutPixel16i(image_t *img, int i, color16_t c)
 
 
 /* put color with blend */
-__inl
+static inline
 void plPutPixelBlend16(image_t *img, int x, int y, color16_t c, uint8_t alpha)
 {
     if(x < 0 || y < 0 || x >= img->w || y >= img->h || img->bpnum != 16) return;
@@ -42,7 +42,7 @@ void plPutPixelBlend16(image_t *img, int x, int y, color16_t c, uint8_t alpha)
 }
 
 
-__inl
+static inline
 void plPutPixelBlend16i(image_t *img, int i, color16_t c, uint8_t alpha)
 {
     if(i < 0 || i > plCalcSeek(img->w, img->h, img)*2) return;
@@ -51,7 +51,7 @@ void plPutPixelBlend16i(image_t *img, int i, color16_t c, uint8_t alpha)
 }
 
 
-__inl
+static inline
 color16_t plGetPixel16(image_t *img, int x, int y)
 {
     if(x < 0 || y < 0 || x >= img->w || y >= img->h || img->bpnum != 16) return 0;
@@ -60,7 +60,7 @@ color16_t plGetPixel16(image_t *img, int x, int y)
 }
 
 
-__inl
+static inline
 color16_t plGetPixel16i(image_t *img, int i)
 {
     if(i < 0 || i > plCalcSeek(img->w, img->h, img)*2) return 0;
@@ -70,21 +70,21 @@ color16_t plGetPixel16i(image_t *img, int i)
 
 
 /* терь тоже самое но без проверок */
-__inl
+static inline
 void plPutPixel16f(image_t *img, int x, int y, color16_t c)
 {
     color16_t *map = (color16_t *)img->bitmap;
     map[ plCalcSeek(x, y, img) ] = c;
 }
 
-__inl
+static inline
 void plPutPixel16if(image_t *img, int i, color16_t c)
 {
     color16_t *map = (color16_t *)img->bitmap;
     map[i] = c;
 }
 
-__inl
+static inline
 void plPutPixelBlend16f(image_t *img, int x, int y, color16_t c, uint8_t alpha)
 {
     color16_t *map = (color16_t *)img->bitmap;
@@ -92,21 +92,21 @@ void plPutPixelBlend16f(image_t *img, int x, int y, color16_t c, uint8_t alpha)
     map[s] = plAlphaBlend16(c, map[s], alpha);
 }
 
-__inl
+static inline
 void plPutPixelBlend16if(image_t *img, int i, color16_t c, uint8_t alpha)
 {
     color16_t *map = (color16_t *)img->bitmap;
     map[i] = plAlphaBlend16(c, map[i], alpha);
 }
 
-__inl
+static inline
 color16_t plGetPixel16f(image_t *img, int x, int y)
 {
     color16_t *map = (color16_t *)img->bitmap;
     return map[plCalcSeek(x, y, img)];
 }
 
-__inl
+static inline
 color16_t plGetPixel16if(image_t *img, int i)
 {
     color16_t *map = (color16_t *)img->bitmap;

@@ -21,7 +21,7 @@ char *strchr(register const char *t, int c) {
 #else
 char *strchr(register const char *t, int c)
 {
-    __def_noinline(24, char*, t, c)
+    return __swi_invoke(24, strchr, t, c);
 }
 #endif
 

@@ -22,7 +22,7 @@ char* strcat(register char* s,register const char* t)
 char* strcat(register char* s,register const char* t)
 {
     // syscall strcat
-    __def_noinline( 23, char*, s, t);
+    return __swi_invoke(23, strcat, s, t);
 }
 
 #endif

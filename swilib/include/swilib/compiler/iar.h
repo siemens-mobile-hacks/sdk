@@ -19,3 +19,8 @@
 
 #define __swi_noreturn_begin(number) __swi_pragma(swi_number=number) __swi __arm
 #define __swi_noreturn_end(number, func, call)
+
+#define __swi_variadic_begin(number) __swi_begin(number)
+#define __swi_variadic_end(number, func, ...)
+
+#define __swi_format(type, ...)

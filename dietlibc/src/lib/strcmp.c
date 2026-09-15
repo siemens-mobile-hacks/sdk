@@ -54,7 +54,7 @@ strcmp (const char *s1, const char *s2)
 int
 strcmp (const char *s1, const char *s2)
 {
-    __def_noinline(25, int, s1, s2)
+    return __swi_invoke(25, strcmp, s1, s2);
 }
 
 #endif

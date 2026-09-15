@@ -43,8 +43,7 @@ strcpy (char *s1, const char *s2)
 char *
 strcpy (char *s1, const char *s2)
 {
-    __def_noinline(26, char *, s1, s2)
+    return __swi_invoke(26, strcpy, s1, s2);
 }
 
 #endif
-

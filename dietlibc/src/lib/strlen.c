@@ -103,7 +103,7 @@ size_t strlen(const char *s)
 #else
 size_t strlen(const char *s)
 {
-    __def_noinline(27, size_t, s)
+    return __swi_invoke(27, strlen, s);
 }
 
 #endif

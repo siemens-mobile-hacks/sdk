@@ -22,7 +22,7 @@ int memcmp(const void *dst, const void *src, size_t count) {
 #else
 int memcmp(const void *dst, const void *src, size_t count)
 {
-    __def_noinline(0x011C, int, dst, src, count)
+    return __swi_invoke(0x011C, memcmp, dst, src, count);
 }
 
 #endif

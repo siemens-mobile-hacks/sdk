@@ -20,8 +20,9 @@
 	#define __swi_noreturn_begin(number) __swi_begin
 	#define __swi_noreturn_end(number, func, call) __swi_end(number, func)
 
-	#define __swi_value_begin(number) __swi_begin
-	#define __swi_value_end(number, func) __swi_end(number, func)
+	#define __swi_variadic_begin(number) __swi_begin
+	#define __swi_variadic_end(number, func, ...) __swi_end(number, func)
+
 #else
 	#define __swilib_begin
 	#define __swilib_end
@@ -32,6 +33,9 @@
 	#define __swi_noreturn_begin(number)
 	#define __swi_noreturn_end(number, func, call)
 
-	#define __swi_value_begin(number)
-	#define __swi_value_end(number, func)
+	#define __swi_variadic_begin(number)
+	#define __swi_variadic_end(number, func, ...)
+
 #endif
+
+#define __swi_format(type, ...)

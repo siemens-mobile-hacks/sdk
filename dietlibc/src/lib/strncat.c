@@ -26,7 +26,7 @@ fini:
 }
 #else
 char *strncat(char *s, const char *t, size_t n) {
-    __def_noinline(0x0114, char *, s, t, n)
+    return __swi_invoke(0x0114, strncat, s, t, n);
 }
 
 #endif

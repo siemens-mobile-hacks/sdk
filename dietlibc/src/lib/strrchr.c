@@ -23,7 +23,7 @@ char *strrchr(const char *t, int c) {
 #else
 char *strrchr(const char *t, int c)
 {
-    __def_noinline(0x0117, char *, t, c)
+    return __swi_invoke(0x0117, strrchr, t, c);
 }
 
 #endif

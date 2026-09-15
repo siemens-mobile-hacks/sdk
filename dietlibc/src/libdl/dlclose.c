@@ -3,9 +3,11 @@
 #include <stdlib.h>
 
 
-__inl
+static inline
 int __dlclose(int handle)
-__def( 0x2F1, int, handle)
+{
+    return __swi_invoke(0x2F1, __dlclose, handle);
+}
 
 int dlclose(void * handle)
 {

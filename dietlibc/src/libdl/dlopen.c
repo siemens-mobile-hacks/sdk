@@ -4,9 +4,11 @@
 #include <swilib.h>
 #include <stdlib.h>
 
-__inl
+static inline
 int __dlopen(const char *name)
-__def( 0x2EF, int, name)
+{
+    return __swi_invoke(0x2EF, __dlopen, name);
+}
 
 void *dlopen(const char *filename, int flags)
 {

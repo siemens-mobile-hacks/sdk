@@ -28,7 +28,7 @@ void *memmove(void *dst, const void *src, size_t count)
 
 void *memmove(void *dst, const void *src, size_t count)
 {
-    __def_noinline(0x0132, void *, dst, src, count)
+    return __swi_invoke(0x0132, memmove, dst, src, count);
 }
 
 #endif

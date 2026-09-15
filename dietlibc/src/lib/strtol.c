@@ -37,7 +37,7 @@ long int strtol(const char *nptr, char **endptr, int base)
 #else
 long int strtol(const char *nptr, char **endptr, int base)
 {
-    __def_noinline(0x0119, long int, nptr, endptr, base)
+    return __swi_invoke(0x0119, strtol, nptr, endptr, base);
 }
 
 #endif

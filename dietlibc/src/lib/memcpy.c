@@ -56,7 +56,7 @@ memcpy (void *dst, const void *src, size_t n)
 void *
 memcpy (void *dst, const void *src, size_t n)
 {
-    __def_noinline(0x011E, void*, dst, src, n)
+    return __swi_invoke(0x011E, memcpy, dst, src, n);
 }
 
 #endif

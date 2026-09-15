@@ -35,18 +35,9 @@ Format of the variadic function definition:
  * @param cepid		destination CEPID.
  * @param msg		ID of the message
  */ // <--- Short documentation in Doxygen format
-#ifdef SWILIB_MODE_DIRECT // <-- for GCC
-
-#define GBS_SendMessage(_cepid, _msg, ...) \
-	__swi_call(0x100, void, (int cepid, int msg, ...), (_cepid, _msg, ## __VA_ARGS__)); // <-- function definition
-
-#else // <-- for IAR
-
-__swi_begin(0x100) // <-- swi number for IAR
+__swi_variadic_begin(0x100) // <-- swi number for IAR
 void GBS_SendMessage(int cepid, int msg, ...) // <-- function definition
-__swi_end(0x100, GBS_SendMessage, (cepid, msg)); // <-- swi number for others (actually stub)
-
-#endif
+__swi_variadic_end(0x100, GBS_SendMessage, cepid, msg); // <-- swi number and fixed arguments for GCC
 
 ```
 
@@ -57,9 +48,10 @@ Macroses:
   - swi_num - SWI number
   - function_name - name of the function
   - function_arguments - list of the function arguments in braces `()`
-- `__swi_call(swi_num, return_type, function_signature, function_arguments)` - variadic support for GCC
+- `__swi_variadic_begin(swi_num)` - variadic function declaration start
   - swi_num - SWI number
-  - return_type - return type of the function
-  - function_signature - function arguments definition in braces `()`
-  - function_arguments - list of the function arguments in braces `()`
+- `__swi_variadic_end(swi_num, function_name, fixed_arguments...)` - variadic function declaration end
+  - swi_num - SWI number
+  - function_name - name of the function
+  - fixed_arguments - named arguments before `...`
   

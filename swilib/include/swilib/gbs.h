@@ -234,14 +234,9 @@ __swi_end(0x18C, GBS_DelTimer, (timer));
  * @param cepid		destination CEPID.
  * @param msg		ID of the message
  */
-#ifdef SWILIB_MODE_DIRECT
-#define GBS_SendMessage(_cepid, _msg, ...) \
-	__swi_call(0x100, void, (int cepid, int msg, ...), (_cepid, _msg, ## __VA_ARGS__));
-#else
-__swi_begin(0x100)
+__swi_variadic_begin(0x100)
 void GBS_SendMessage(int cepid, int msg, ...)
-__swi_end(0x100, GBS_SendMessage, (cepid, msg)); // (int cepid, int msg, int submess, void *data0, void *data1)
-#endif
+__swi_variadic_end(0x100, GBS_SendMessage, cepid, msg); // (int cepid, int msg, int submess, void *data0, void *data1)
 
 /**
  * Receive GBS message inside GBS processor.

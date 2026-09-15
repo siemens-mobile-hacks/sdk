@@ -48,14 +48,9 @@ __swi_end(0x031, strrchr_2, (str, character));
  * @copydoc wsprintf
  * @deprecated use #wsprintf
  * */
-#ifdef SWILIB_MODE_DIRECT
-#define wsprintf_2(_s, _format, ...) \
-	__swi_call(0x0A0, int, (WSHDR *s, const char *format, ...), (_s, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x0A0)
+__swi_variadic_begin(0x0A0)
 int wsprintf_2(WSHDR *s, const char *format, ...)
-__swi_end(0x0A0, wsprintf_2, (s, format));
-#endif
+__swi_variadic_end(0x0A0, wsprintf_2, s, format);
 
 /**
  * @copydoc AllocWS

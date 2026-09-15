@@ -1,9 +1,11 @@
 
 #include <swilib.h>
 
-__inl
+static inline
 void* __dlsym(int handle, const char *name)
-__def( 0x2F0, void *, handle, name)
+{
+    return __swi_invoke(0x2F0, __dlsym, handle, name);
+}
 
 
 void *dlsym(void *handle, const char *sym)

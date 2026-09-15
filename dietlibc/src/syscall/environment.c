@@ -12,24 +12,24 @@
 
 int setenv(const char *name, const char *value, int replace)
 {
-    __def_noinline( 0x2F2, int, name, value, replace)
+    return __swi_invoke(0x2F2, setenv, name, value, replace);
 }
 
 
 int unsetenv(const char *name)
 {
-    __def_noinline( 0x2F3, int, name)
+    return __swi_invoke(0x2F3, unsetenv, name);
 }
 
 
 char * getenv(const char *var)
 {
-    __def_noinline( 0x2F4, char *, var)
+    return __swi_invoke(0x2F4, getenv, var);
 }
 
 
 int clearenv(void)
 {
-    __def_noinline( 0x2F5, int)
+    return __swi_invoke(0x2F5, clearenv);
 }
 

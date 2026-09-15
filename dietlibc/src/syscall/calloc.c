@@ -5,6 +5,6 @@
 
 void *calloc(size_t nelem, size_t elsize)
 {
-    __def_noinline(146, void*, nelem, elsize);
+    return __swi_invoke(146, calloc, nelem, elsize);
 }
 

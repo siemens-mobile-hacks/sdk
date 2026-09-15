@@ -22,7 +22,7 @@ int strncmp(const char *s1, const char *s2, size_t n) {
 #else
 int strncmp(const char *s1, const char *s2, size_t n)
 {
-    __def_noinline(0x0115, int, s1, s2, n)
+    return __swi_invoke(0x0115, strncmp, s1, s2, n);
 }
 
 

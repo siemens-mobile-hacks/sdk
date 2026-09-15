@@ -23,7 +23,7 @@ found:
 
 char *strstr(const char *haystack, const char *needle)
 {
-    __def_noinline(0x0118, char *, haystack, needle)
+    return __swi_invoke(0x0118, strstr, haystack, needle);
 }
 
 

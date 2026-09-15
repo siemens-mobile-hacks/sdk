@@ -28,4 +28,7 @@ unsigned int __attribute__((warning("Function not found in swilib."))) ___bad_sw
 #define __swi_noreturn_begin(number)
 #define __swi_noreturn_end(number, func, call)
 
-#define __longcall__ __attribute__((long_call))
+#define __swi_variadic_begin(number)
+#define __swi_variadic_end(number, func, ...)
+
+#define __swi_format(type, ...) __attribute__((format(type, ##__VA_ARGS__)))

@@ -23,7 +23,7 @@ char *strncpy(char *dest, const char *src, size_t n) {
 #else
 char *strncpy(char *dest, const char *src, size_t n)
 {
-    __def_noinline(0x0116, char *, dest, src, n)
+    return __swi_invoke(0x0116, strncpy, dest, src, n);
 }
 
 #endif

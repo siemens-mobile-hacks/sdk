@@ -323,14 +323,9 @@ __swi_end(0x3DB, wstrreplace, (dest, src, pos));
  * @return If an encoding error occurs, a negative number is returned.
  * @return Notice that only when this returned value is non-negative and less than n, the string has been completely written.
  * */
-#ifdef SWILIB_MODE_DIRECT
-#define wsprintf(_s, _format, ...) \
-	__swi_call(0x124, int, (WSHDR *s, const char *format, ...), (_s, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x124)
+__swi_variadic_begin(0x124)
 int wsprintf(WSHDR *s, const char *format, ...)
-__swi_end(0x124, wsprintf, (s, format));
-#endif
+__swi_variadic_end(0x124, wsprintf, s, format);
 
 /**
  * Append formatted output to the end of WSHDR.
@@ -343,14 +338,9 @@ __swi_end(0x124, wsprintf, (s, format));
  * @param[out] s	pointer to a WSHDR where the resulting string is stored, the buffer should be large enough to contain the resulting string
  * @param format	C-string that contains a format string that follows the same specifications as standart format in any sprintf/printf (CP1252, latin)
  * */
-#ifdef SWILIB_MODE_DIRECT
-#define wstrcatprintf(_s, _format, ...) \
-	__swi_call(0x216, int, (WSHDR *s, const char *format, ...), (_s, _format, ## __VA_ARGS__));
-#else
-__swi_begin(0x216)
+__swi_variadic_begin(0x216)
 void wstrcatprintf(WSHDR *s, const char *format, ...)
-__swi_end(0x216, wstrcatprintf, (s, format));
-#endif
+__swi_variadic_end(0x216, wstrcatprintf, s, format);
 
 /** @} */
 
