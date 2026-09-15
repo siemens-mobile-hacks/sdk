@@ -32,7 +32,7 @@ extern const int __sys_switab_addres[];
 #ifdef SWILIB_NAMED_IMPORTS
 	#define __swi_stringify_(value) #value
 	#define __swi_stringify(value) __swi_stringify_(value)
-	#define __swi_import_name(number) "\"#" __swi_stringify(number) "\""
+	#define __swi_import_name(number) "\"" __swi_stringify(number) "\""
 
 	#define __swi_begin(number)
 	#define __swi_end(number, func, call) __asm__(__swi_import_name(number)) __attribute__((weak))
