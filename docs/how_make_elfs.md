@@ -3,8 +3,7 @@ SDK provides easy tools for creating ELF's without special skills.
 
 All you need to do is just write code :)
 
-We have two independent build frameworks: Cmake or Makefile.
-You can choose what is more convenient for you.
+The SDK uses CMake as its build system.
 
 # Prerequisites
 1. Recommended OS: OSX, BSD or Linux.
@@ -14,12 +13,12 @@ You can choose what is more convenient for you.
     
     **Ubuntu/Debian/WSL**
     ```bash
-    sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi make cmake
+    sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi cmake
     ```
     
     **OSX**
     ```bash
-    brew install arm-none-eabi-binutils make cmake
+    brew install arm-none-eabi-binutils cmake
     ```
     
     Also, you can use the official ARM toolchains: [Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
@@ -68,60 +67,10 @@ int main(char *exe, char *fname, void *p1) {
 }
 ```
 
-# Build with Makefile
-Minimal Makefile for building ELF.
-
-```Makefile
-# Required: the name of the ELF. Output file will be "hello-world_PLATFORM.elf"
-PROJECT = hello-world
-
-# Required: target platforms
-TARGETS := SG NSG ELKA
-
-# Required: your sources
-SOURCES += main.c
-
-# =====================================================
-
-# Optional: Optimization level. For example, optimize for size.
-OPT := -Os
-
-# Optional: set custom C standart.
-# CSTD := -std=c11
-
-# Required: Specify the required libs for the ELF.
-# Minimum required libs for any ELF: -lcrt -lcrt_helper -lgcc
-LDLIBS += -lcrt -lcrt_helper -lgcc
-
-# Optional: Custom preprocessor defines. For example, enable built-in libc functions from swilib.
-# Remove this definition and add -lc to LDLIBS, if you want to use the external "libc.so"
-DEFINES += -D__NO_LIBC
-
-# Optional: Custom C/C++/ASM flags
-CPPFLAGS += -Wno-unused-variable
-
-# =====================================================
-
-# Required: Include SDK build framework
-# SDK location is relative to the parent dir of this project
-SDK_PATH ?= ../sdk
-include $(SDK_PATH)/multi-target.mk
-```
-
-You can build your first ELF by this command:
-```bash
-make
-```
-
-After that you will get three files:
-  - hello-world_SG.elf
-  - hello-world_NSG.elf
-  - hello-world_ELKA.elf
-
-# Or build with Cmake
+# Build with CMake
 Minimal CMakeLists.txt for building ELF:
 ```cmake
-cmake_minimum_required(VERSION 3.28.2)
+cmake_minimum_required(VERSION 3.31)
 
 # Required: Include SDK config
 include(../sdk/config.cmake)
@@ -160,10 +109,8 @@ target_sdk_setup(hello_world_SG SG)
 
 You can build your first ELF by this command:
 ```bash
-mkdir build
-cd build
-cmake ..
-make
+cmake -B build
+cmake --build build
 ```
 
 After that you will get three files:
