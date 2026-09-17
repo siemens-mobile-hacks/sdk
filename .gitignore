@@ -12,3 +12,6 @@ libgcc/build
 
 tests/*/bin
 tests/*/*.elf
+build/
+*/build/
+/lib_originals/

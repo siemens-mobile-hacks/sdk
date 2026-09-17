@@ -1,149 +1,180 @@
-set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_SYSTEM_PROCESSOR ARM)
+include_guard(GLOBAL)
 
-get_filename_component(SDK_PATH ${CMAKE_CURRENT_LIST_DIR} ABSOLUTE)
-set_property(GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS TRUE)
-set_property(GLOBAL PROPERTY NO_SONAME TRUE)
+get_filename_component(SDK_PATH "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
 
-# -----------------------------------------------
-# Settings
-# -----------------------------------------------
+set(CMAKE_BUILD_TYPE MinSizeRel CACHE STRING "Build type")
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "Generate compile_commands.json")
 
-# Custom toolchain
-if (NOT DEFINED TOOLCHAIN)
-	set(TOOLCHAIN "arm-none-eabi")
+if(NOT CMAKE_TOOLCHAIN_FILE)
+	set(CMAKE_TOOLCHAIN_FILE "${SDK_PATH}/cmake/toolchain.cmake" CACHE FILEPATH "Siemens SDK toolchain")
 endif()
 
-# Source files encoding
-if (NOT DEFINED SOURCE_ENCODING)
-	set(SOURCE_ENCODING "utf-8")
+if(NOT DEFINED SOURCE_ENCODING)
+	set(SOURCE_ENCODING utf-8 CACHE STRING "Source file encoding")
 endif()
 
-# C++ variant: libcxx or uclibc++
-if (NOT DEFINED CXX_TYPE)
-	set(CXX_TYPE "libcxx")
+if(NOT DEFINED OUTPUT_ENCODING)
+	set(OUTPUT_ENCODING cp1251 CACHE STRING "Target string literal encoding")
 endif()
 
-# -----------------------------------------------
-# Toolchain
-# -----------------------------------------------
-if (CMAKE_SYSTEM MATCHES Windows)
-    set(TOOLCHAIN_EXT ".exe")
-else()
-    set(TOOLCHAIN_EXT "")
+if(NOT DEFINED CXX_TYPE)
+	set(CXX_TYPE libcxx CACHE STRING "C++ library: libcxx, uclibc++, or none")
 endif()
 
-set(CMAKE_EXECUTABLE_SUFFIX ".elf")
-set(ENV{SOURCE_DATE_EPOCH} 1172750400)
+set(_SDK_INCLUDE_DIRS
+	"${SDK_PATH}/libsupc++/include"
+	"${SDK_PATH}/include"
+	"${SDK_PATH}/swilib/include"
+	"${SDK_PATH}/libgcc/include"
+	"${SDK_PATH}/dietlibc/include"
+	"${SDK_PATH}/libjpeg/include"
+	"${SDK_PATH}/libpng/include"
+	"${SDK_PATH}/libsigc++/include"
+	"${SDK_PATH}/libft/include"
+	"${SDK_PATH}/libft_server/include"
+	"${SDK_PATH}/libz/include"
+)
 
-set(CMAKE_C_COMPILER ${TOOLCHAIN}-gcc${TOOLCHAIN_EXT})
-set(CMAKE_CXX_COMPILER ${TOOLCHAIN}-g++${TOOLCHAIN_EXT})
-set(CMAKE_ASM_COMPILER ${TOOLCHAIN}-gcc${TOOLCHAIN_EXT})
+# Debug information is always split from .so/.elf files into separate .dbg files.
+add_compile_options(-g)
+
+if(NOT SOURCE_ENCODING STREQUAL "cp1251" AND NOT SOURCE_ENCODING STREQUAL "native")
+	add_compile_options(
+		"-finput-charset=${SOURCE_ENCODING}"
+		"-fexec-charset=${OUTPUT_ENCODING}"
+	)
+endif()
+
+include_directories(${_SDK_INCLUDE_DIRS})
+link_directories(
+	"${SDK_PATH}/lib/stubs"
+	"${SDK_PATH}/lib"
+)
 
 function(target_sdk_setup target platform)
-	set_property(TARGET ${target} PROPERTY POSITION_INDEPENDENT_CODE OFF)
-	get_target_property(target_type ${target} TYPE)
-	
-	if (target_type STREQUAL "EXECUTABLE")
-		set_property(TARGET ${target} PROPERTY SUFFIX ".elf")
+	if(CXX_TYPE STREQUAL "libcxx")
+		target_include_directories("${target}" BEFORE PRIVATE "${SDK_PATH}/libc++/include")
+	elseif(CXX_TYPE STREQUAL "uclibc++")
+		target_include_directories("${target}" BEFORE PRIVATE "${SDK_PATH}/libuc++/include")
+	elseif(NOT CXX_TYPE STREQUAL "none")
+		message(FATAL_ERROR "Invalid CXX_TYPE: ${CXX_TYPE}")
 	endif()
-	
-	file(MAKE_DIRECTORY "${PROJECT_BINARY_DIR}/lib/ELKA" "${PROJECT_BINARY_DIR}/lib/NSG" "${PROJECT_BINARY_DIR}/lib/SG")
-	
-	if (platform STREQUAL "SG" OR platform STREQUAL "SGOLD")
-		message("Compiling for target SGOLD")
-		target_compile_definitions(${target} PUBLIC SGOLD)
-		target_link_directories(${target} PUBLIC ${SDK_PATH}/lib/stubs ${SDK_PATH}/lib/SG ${SDK_PATH}/lib)
-		set(LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/SG")
-		set_target_properties(${target} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/SG")
-	elseif (platform STREQUAL "NSG" OR platform STREQUAL "NEWSGOLD")
-		message("Compiling for target NEWSGOLD")
-		target_compile_definitions(${target} PUBLIC NEWSGOLD)
-		target_link_directories(${target} PUBLIC ${SDK_PATH}/lib/stubs ${SDK_PATH}/lib/NSG ${SDK_PATH}/lib)
-		set(LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/NSG")
-		set_target_properties(${target} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/NSG")
-	elseif (platform STREQUAL "EL" OR platform STREQUAL "ELKA")
-		message("Compiling for target ELKA")
-		target_compile_definitions(${target} PUBLIC NEWSGOLD ELKA)
-		target_link_directories(${target} PUBLIC ${SDK_PATH}/lib/stubs ${SDK_PATH}/lib/ELKA ${SDK_PATH}/lib/NSG ${SDK_PATH}/lib)
-		set(LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/ELKA")
-		set_target_properties(${target} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/ELKA")
+
+	if(platform STREQUAL "SG" OR platform STREQUAL "SGOLD")
+		set(_SDK_PLATFORM "SG")
+		target_compile_definitions("${target}" PRIVATE SGOLD)
+	elseif(platform STREQUAL "SG_X75" OR platform STREQUAL "X75")
+		set(_SDK_PLATFORM "X75")
+		target_compile_definitions("${target}" PRIVATE X75)
+	elseif(platform STREQUAL "NSG" OR platform STREQUAL "NEWSGOLD")
+		set(_SDK_PLATFORM "NSG")
+		target_compile_definitions("${target}" PRIVATE NEWSGOLD)
+	elseif(platform STREQUAL "NSG_ELKA" OR platform STREQUAL "ELKA")
+		set(_SDK_PLATFORM "ELKA")
+		target_compile_definitions("${target}" PRIVATE NEWSGOLD ELKA)
 	else()
-		message(FATAL "Invalid platform: ${platform}")
+		message(FATAL_ERROR "Invalid platform: ${platform}")
+	endif()
+
+	set(_SDK_PLATFORM_LINK_DIRS "${SDK_PATH}/lib/${_SDK_PLATFORM}")
+	if(_SDK_PLATFORM STREQUAL "ELKA")
+		list(APPEND _SDK_PLATFORM_LINK_DIRS "${SDK_PATH}/lib/NSG")
+	elseif(_SDK_PLATFORM STREQUAL "X75")
+		list(APPEND _SDK_PLATFORM_LINK_DIRS "${SDK_PATH}/lib/SG")
+	endif()
+
+	target_link_directories("${target}" BEFORE PRIVATE ${_SDK_PLATFORM_LINK_DIRS})
+	set_target_properties("${target}" PROPERTIES
+		ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/${_SDK_PLATFORM}"
+		LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib/${_SDK_PLATFORM}"
+	)
+	target_sdk_postprocess("${target}")
+endfunction()
+
+function(target_sdk_postprocess target)
+	get_target_property(_SDK_TARGET_TYPE "${target}" TYPE)
+
+	if(_SDK_TARGET_TYPE STREQUAL "STATIC_LIBRARY")
+		return()
+	endif()
+
+	if(_SDK_TARGET_TYPE STREQUAL "EXECUTABLE")
+		target_compile_options("${target}" PRIVATE -fvisibility=hidden -Wno-main)
+	endif()
+
+	set(_SDK_DEBUG_FILE
+		"$<TARGET_FILE_DIR:${target}>/$<TARGET_FILE_PREFIX:${target}>$<TARGET_FILE_BASE_NAME:${target}>.dbg")
+
+	add_custom_command(TARGET "${target}" POST_BUILD
+		COMMAND "${CMAKE_OBJCOPY}" --only-keep-debug
+			"$<TARGET_FILE:${target}>" "${_SDK_DEBUG_FILE}"
+		VERBATIM
+	)
+
+	if(_SDK_TARGET_TYPE STREQUAL "EXECUTABLE")
+		add_custom_command(TARGET "${target}" POST_BUILD
+			COMMAND "${CMAKE_STRIP}" -R .ARM.attributes --strip-all
+				"$<TARGET_FILE:${target}>"
+			VERBATIM
+		)
+	else()
+		add_custom_command(TARGET "${target}" POST_BUILD
+			COMMAND "${CMAKE_STRIP}" --strip-all "$<TARGET_FILE:${target}>"
+			VERBATIM
+		)
+	endif()
+
+	add_custom_command(TARGET "${target}" POST_BUILD
+		COMMAND "${CMAKE_OBJCOPY}" "--add-gnu-debuglink=${_SDK_DEBUG_FILE}"
+			"$<TARGET_FILE:${target}>"
+		VERBATIM
+	)
+endfunction()
+
+function(target_sdk_set_lib_name target name)
+	set(_SDK_OUTPUT_NAME "${name}")
+	if(ARGC GREATER 2)
+		set(_SDK_OUTPUT_NAME "${name}-${ARGV2}")
+	endif()
+
+	set_target_properties("${target}" PROPERTIES
+		NO_SONAME TRUE
+		OUTPUT_NAME "${_SDK_OUTPUT_NAME}"
+	)
+	target_link_options("${target}" PRIVATE "-Wl,-soname,lib${_SDK_OUTPUT_NAME}.so")
+
+	if(ARGC GREATER 2)
+		if(ARGC GREATER 3)
+			set(_SDK_SYMLINK_NAME "${ARGV3}")
+		else()
+			set(_SDK_SYMLINK_NAME "${name}")
+		endif()
+		add_custom_command(TARGET "${target}" POST_BUILD
+			COMMAND "${CMAKE_COMMAND}" -E create_symlink
+				"$<TARGET_FILE_NAME:${target}>" "$<TARGET_FILE_DIR:${target}>/lib${_SDK_SYMLINK_NAME}.so"
+			VERBATIM
+		)
+		set_property(TARGET "${target}" PROPERTY SDK_SYMLINK_NAME "lib${_SDK_SYMLINK_NAME}.so")
 	endif()
 endfunction()
 
-function(target_sdk_set_lib_name target name version)
-	set_target_properties(${target} PROPERTIES NO_SONAME TRUE)
-	set_target_properties(${target} PROPERTIES LIBRARY_OUTPUT_NAME ${name})
-	target_link_options(${target} PUBLIC "-Wl,--soname,lib${name}.so")
+function(install_sdk_target target destination)
+	get_target_property(_SDK_TARGET_TYPE "${target}" TYPE)
+	if(_SDK_TARGET_TYPE STREQUAL "STATIC_LIBRARY")
+		install(TARGETS "${target}" ARCHIVE DESTINATION "${destination}")
+		return()
+	endif()
+
+	install(TARGETS "${target}" LIBRARY DESTINATION "${destination}")
+	install(FILES
+		"$<TARGET_FILE_DIR:${target}>/$<TARGET_FILE_PREFIX:${target}>$<TARGET_FILE_BASE_NAME:${target}>.dbg"
+		DESTINATION "${destination}"
+	)
+
+	get_target_property(_SDK_SYMLINK_NAME "${target}" SDK_SYMLINK_NAME)
+	if(_SDK_SYMLINK_NAME)
+		install(FILES "$<TARGET_FILE_DIR:${target}>/${_SDK_SYMLINK_NAME}"
+			DESTINATION "${destination}"
+		)
+	endif()
 endfunction()
-
-# -----------------------------------------------
-# Include dirs
-# -----------------------------------------------
-if (CXX_TYPE STREQUAL "uclibc++")
-	include_directories(${SDK_PATH}/libuc++/include)
-elseif (CXX_TYPE STREQUAL "libcxx")
-	include_directories(${SDK_PATH}/libc++abi/include)
-	include_directories(${SDK_PATH}/libc++/include)
-else()
-	message(FATAL "Invalid CXX_TYPE: ${CXX_TYPE}")
-endif()
-
-include_directories(${SDK_PATH}/include)
-include_directories(${SDK_PATH}/swilib/include)
-include_directories(${SDK_PATH}/libgcc/include)
-include_directories(${SDK_PATH}/dietlibc/include)
-include_directories(${SDK_PATH}/libjpeg/include)
-include_directories(${SDK_PATH}/libpng/include)
-include_directories(${SDK_PATH}/libsigc++/include)
-include_directories(${SDK_PATH}/libft/include)
-include_directories(${SDK_PATH}/libft_server/include)
-include_directories(${SDK_PATH}/libz/include)
-
-# -----------------------------------------------
-# Common
-# -----------------------------------------------
-set(SDK_COMMON_LDFLAGS "-Wl,-zmax-page-size=1 -Wl,--defsym=__dso_handle=0")
-
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-	set(SDK_COMMON_LDFLAGS "${SDK_COMMON_LDFLAGS} -g")
-else()
-	set(SDK_COMMON_LDFLAGS "${SDK_COMMON_LDFLAGS} -s")
-endif()
-
-set(SDK_COMMON_CFLAGS "-msoft-float -fshort-wchar -mlittle-endian -mcpu=arm926ej-s -mthumb-interwork")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-builtin -nodefaultlibs -nostdlib -nostdinc")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -fno-common -ffunction-sections -fdata-sections")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -frandom-seed=0")
-set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -g")
-
-if (NOT SOURCE_ENCODING STREQUAL "cp1251" AND NOT SOURCE_ENCODING STREQUAL "native")
-	set(SDK_COMMON_CFLAGS "${SDK_COMMON_CFLAGS} -finput-charset=${SOURCE_ENCODING} -fexec-charset=cp1251")
-endif()
-
-set(CMAKE_C_FLAGS "${SDK_COMMON_CFLAGS}")
-set(CMAKE_CXX_FLAGS "${SDK_COMMON_CFLAGS} -nostdinc++ -fno-enforce-eh-specs -fno-use-cxa-get-exception-ptr -fno-non-call-exceptions -fno-exceptions -fpermissive")
-set(CMAKE_ASM_FLAGS "${SDK_COMMON_CFLAGS}")
-set(CMAKE_C_LINK_FLAGS "")
-set(CMAKE_CXX_LINK_FLAGS "")
-set(CMAKE_ASM_LINK_FLAGS "")
-
-add_compile_definitions(__arm__ __ARM_EABI__)
-
-# -----------------------------------------------
-# Shared library
-# -----------------------------------------------
-set(CMAKE_SHARED_LINKER_FLAGS "${SDK_COMMON_LDFLAGS} -Wl,-shared -Wl,-Bsymbolic -Wl,-Bsymbolic-function")
-set(CMAKE_MODULE_LINKER_FLAGS "${SDK_COMMON_LDFLAGS} -Wl,-shared -Wl,-Bsymbolic -Wl,-Bsymbolic-function")
-
-# -----------------------------------------------
-# Static library
-# -----------------------------------------------
-set(CMAKE_STATIC_LINKER_FLAGS "${SDK_COMMON_LDFLAGS} -ar rcsD")
-
-# -----------------------------------------------
-# Executable
-# -----------------------------------------------
-set(CMAKE_EXE_LINKER_FLAGS "${SDK_COMMON_LDFLAGS} -pie")

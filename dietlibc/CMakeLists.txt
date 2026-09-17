@@ -1,10 +1,8 @@
-# Just for example
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.31)
 
-set(CMAKE_C_STANDARD 99)
-
+include(../config.cmake)
 project(dietlibc C ASM)
-include(../cmake/config.cmake)
+set(CMAKE_C_STANDARD 99)
 
 set(SOURCES
 	# ASM sources
@@ -22,7 +20,7 @@ set(SOURCES
 	src/libc.c
 	src/libc_init.c
 	src/lib/closedir.c
-#	src/lib/__dtostr.c
+	src/lib/__dtostr.c
 	src/lib/__isnan.c
 	src/lib/errlistu.c
 	src/lib/errno_location.c
@@ -102,6 +100,7 @@ set(SOURCES
 	src/lib/vsnprintf.c
 	src/lib/vsprintf.c
 	src/lib/vsscanf.c
+	src/lib/printf/printf.c
 #	src/lib/iswalnum.c
 #	src/lib/iswalpha.c
 #	src/lib/iswblank.c
@@ -285,20 +284,34 @@ set(SOURCES
 	src/wchar/wcsstr.c
 )
 
-add_compile_options(-Wall -Os -mthumb -fomit-frame-pointer)
-include_directories(PUBLIC src)
-link_libraries(crt_helper gcc)
+add_compile_options(
+	-Wall
+	-Werror
+	-Wno-implicit-fallthrough
+	-Wno-missing-prototypes
+	-Wno-missing-attributes
+	-Wno-misleading-indentation
+	-Wno-unused-variable
+	-Wno-shift-count-overflow
+	-Wno-nonnull-compare
+	-Wno-unused-but-set-variable
+	-Wno-incompatible-pointer-types
+	-fomit-frame-pointer
+)
+include_directories(src)
 
 # NSG
-add_library(libc_nsg SHARED ${SOURCES})
-target_sdk_setup(libc_nsg NSG)
-set_target_properties(libc_nsg PROPERTIES LIBRARY_OUTPUT_NAME c-1.0)
-target_link_options(libc_nsg PUBLIC "-Wl,-init,_init -Wl,-fini,_fini")
-install(TARGETS libc_nsg LIBRARY DESTINATION "${SDK_PATH}/lib/NSG")
+add_library(c SHARED ${SOURCES})
+target_sdk_setup(c NSG)
+target_sdk_set_lib_name(c c 1.0)
+target_link_options(c PRIVATE -Wl,--init=_init -Wl,--fini=_fini)
+target_link_libraries(c PRIVATE gcc crt_helper)
+install_sdk_target(c lib/NSG)
 
 # SG
 add_library(libc_sg SHARED ${SOURCES})
 target_sdk_setup(libc_sg SG)
-set_target_properties(libc_sg PROPERTIES LIBRARY_OUTPUT_NAME c-1.0)
-target_link_options(libc_sg PUBLIC "-Wl,-init,_init -Wl,-fini,_fini")
-install(TARGETS libc_nsg LIBRARY DESTINATION "${SDK_PATH}/lib/SG")
+target_sdk_set_lib_name(libc_sg c 1.0)
+target_link_options(libc_sg PRIVATE -Wl,--init=_init -Wl,--fini=_fini)
+target_link_libraries(libc_sg PRIVATE gcc crt_helper)
+install_sdk_target(libc_sg lib/SG)
