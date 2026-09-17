@@ -81,20 +81,37 @@ sdk/
 # Advanced options for CMake
 
 **Properties:**
+
 | Option | Description | Default |
 | --- | --- | --- |
-| TOOLCHAIN | Toolchain prefix | arm-none-eabi |
-| SOURCE_ENCODING | Encoding of your sources. Used as argument for `-finput-charset`. | utf-8 |
-| OUTPUT_ENCODING | Target encoding of your sources. Used as argument for `-fexec-charset`. | cp1251 |
-| CXX_TYPE | Type of C++ library: uclibc++ or libcxx | libcxx |
+| `TOOLCHAIN` | GNU Arm Embedded toolchain prefix. | `arm-none-eabi` |
+| `SOURCE_ENCODING` | Source encoding. Use `native` to disable conversion. | `utf-8` |
+| `OUTPUT_ENCODING` | Target string literal encoding. | `cp1251` |
+| `CXX_TYPE` | C++ library: `libcxx`, `uclibc++`, or `none`. | `libcxx` |
 
 **Important:** set these properties before `config.cmake` inclusion.
 
+Set them on the CMake command line when configuring the project:
+
+```bash
+cmake -B build -DCXX_TYPE=uclibc++ -DSOURCE_ENCODING=native
+```
+
 **Functions:**
+
 | Function | Description |
 | --- | --- |
-| `target_sdk_setup(target, platform)` | Set platform type (SG/SGOLD, SG_X75/X75, NSG/NEWSGOLD, NSG_ELKA/ELKA) and prepare the final ELF or library.<br>Example: `target_sdk_setup(hello_world, NSG)`|
-| `target_sdk_postprocess(target)` | Prepare a target without platform setup and create its debug companion. |
+| `target_sdk_setup(target, platform)` | Configure a target for Siemens ELF. Supported platforms: `ELKA`, `NSG`, `X75`, and `SG`. |
+| `target_sdk_set_lib_name(target, name [version [symlink_name]])` | Set the output name and SONAME of a shared library. With a version, also create an unversioned or explicitly named symlink. |
+
+```cmake
+add_executable(example main.c)
+target_sdk_setup(example NSG)
+
+add_library(example_lib SHARED lib.c)
+target_sdk_setup(example_lib NSG)
+target_sdk_set_lib_name(example_lib example 1.0)
+```
 
 # AI-assisted contributions
 
