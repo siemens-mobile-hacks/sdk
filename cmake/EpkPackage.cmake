@@ -177,8 +177,8 @@ endfunction()
 function(epk_package)
 	cmake_parse_arguments(PARSE_ARGV 0 EPK
 		""
-		"TARGET;NAME;RELEASE;ARCH;AUTHOR;DESCRIPTION"
-		"PLATFORMS;GROUPS;DEPENDS;CONFLICTS;BACKUPS;OWNED_DIRECTORIES;HOOKS"
+		"TARGET;NAME;RELEASE;AUTHOR;DESCRIPTION"
+		"PLATFORMS;GROUPS;DEPENDS;CONFLICTS;BACKUPS;OWNED_DIRECTORIES"
 	)
 
 	if(EPK_UNPARSED_ARGUMENTS)
@@ -227,11 +227,7 @@ function(epk_package)
 		message(FATAL_ERROR "epk_package requires a valid target or project version")
 	endif()
 
-	get_property(_EPK_TARGET_ARCH TARGET "${EPK_TARGET}" PROPERTY SDK_ARCH)
-	i
-	f(NOT DEFINED EPK_ARCH)
-		set(EPK_ARCH "${_EPK_TARGET_ARCH}")
-	endif()
+	get_property(EPK_ARCH TARGET "${EPK_TARGET}" PROPERTY SDK_ARCH)
 
 	string(LENGTH "${EPK_ARCH}" _EPK_ARCH_LENGTH)
 
@@ -326,7 +322,7 @@ function(epk_package)
 	endforeach()
 
 	get_property(_EPK_TARGET_HOOKS TARGET "${EPK_TARGET}" PROPERTY EPK_HOOKS)
-	foreach(_EPK_VALUE IN LISTS _EPK_TARGET_HOOKS EPK_HOOKS)
+	foreach(_EPK_VALUE IN LISTS _EPK_TARGET_HOOKS)
 		string(APPEND _EPK_PKGINFO_CONTENT "hook = ${_EPK_VALUE}\n")
 	endforeach()
 

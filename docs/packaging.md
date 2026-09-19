@@ -132,7 +132,6 @@ Call it after all other `epk_*()` functions.
 | `TARGET` | CMake target. |
 | `NAME` | Required package name. |
 | `RELEASE` | Positive package revision, appended to the version as `-N` (for example, `1.0-2`). |
-| `ARCH` | Architecture. Defaults to the target's `SDK_ARCH`. |
 | `PLATFORMS` | Compatible platforms. Defaults to the target platform. Use `SG`, `X75`, `NSG`, `ELKA`, or `all`. |
 | `AUTHOR` | Package author. |
 | `DESCRIPTION` | Short description. |
@@ -141,7 +140,6 @@ Call it after all other `epk_*()` functions.
 | `CONFLICTS` | Conflicting packages. Uses the same syntax as `DEPENDS`. |
 | `BACKUPS` | Packaged configuration files whose local changes are preserved. |
 | `OWNED_DIRECTORIES` | Directories owned recursively by the package. |
-| `HOOKS` | Raw hook specifications. Prefer `epk_hook()`. |
 
 ## Hooks
 
@@ -170,7 +168,7 @@ epk_hook(
 | `SMALL` | Optional small icon path. |
 
 Paths are relative to the installation volume.
-Do not include `0:`.
+Do not include volume (for e.g. `0:`).
 
 The package manager removes its registration when the package is removed.
 
