@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 
 include(../config.cmake)
-project(libm C)
+project(libm VERSION 1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
 
 add_library(m SHARED
@@ -173,7 +173,7 @@ add_library(m SHARED
 	src/w_dremf.c
 )
 target_sdk_setup(m NSG)
-target_sdk_set_lib_name(m m 1.0)
+target_sdk_set_lib_name(m m "${PROJECT_VERSION}")
 target_compile_definitions(m PRIVATE __dietlibc__)
 target_include_directories(m BEFORE PRIVATE src)
 target_compile_options(m PRIVATE
@@ -192,3 +192,9 @@ target_link_libraries(m PRIVATE crt_helper gcc c)
 set_target_properties(m PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
 install_sdk_target(m lib)
+
+epk_install(TARGET m DESTINATION ZBin/lib)
+epk_package(TARGET m NAME libm
+	PLATFORMS all
+	DEPENDS libcrt_helper libc=1.0
+)

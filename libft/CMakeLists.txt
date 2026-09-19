@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 
 include(../config.cmake)
-project(libft C)
+project(libft VERSION 2.4.6 LANGUAGES C)
 set(CMAKE_C_STANDARD 11)
 
 add_library(ft SHARED
@@ -35,3 +35,10 @@ target_link_libraries(ft PRIVATE crt_helper gcc c)
 set_target_properties(ft PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
 install_sdk_target(ft lib)
+
+epk_install(TARGET ft DESTINATION ZBin/lib)
+epk_package(TARGET ft NAME libft
+	RELEASE 1
+	PLATFORMS all
+	DEPENDS libcrt_helper libc=1.0
+)

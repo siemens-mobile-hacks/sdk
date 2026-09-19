@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 
 include(../config.cmake)
-project(dietlibc C ASM)
+project(dietlibc VERSION 1.0 LANGUAGES C ASM)
 set(CMAKE_C_STANDARD 99)
 
 set(SOURCES
@@ -303,15 +303,29 @@ include_directories(src)
 # NSG
 add_library(c SHARED ${SOURCES})
 target_sdk_setup(c NSG)
-target_sdk_set_lib_name(c c 1.0)
+target_sdk_set_lib_name(c c "${PROJECT_VERSION}")
 target_link_options(c PRIVATE -Wl,--init=_init -Wl,--fini=_fini)
 target_link_libraries(c PRIVATE gcc crt_helper)
 install_sdk_target(c lib/NSG)
 
+epk_install(TARGET c DESTINATION ZBin/lib)
+epk_package(TARGET c
+	NAME libc
+	PLATFORMS NSG ELKA
+	DEPENDS libcrt_helper
+)
+
 # SG
 add_library(libc_sg SHARED ${SOURCES})
 target_sdk_setup(libc_sg SG)
-target_sdk_set_lib_name(libc_sg c 1.0)
+target_sdk_set_lib_name(libc_sg c "${PROJECT_VERSION}")
 target_link_options(libc_sg PRIVATE -Wl,--init=_init -Wl,--fini=_fini)
 target_link_libraries(libc_sg PRIVATE gcc crt_helper)
 install_sdk_target(libc_sg lib/SG)
+
+epk_install(TARGET libc_sg DESTINATION ZBin/lib)
+epk_package(TARGET libc_sg
+	NAME libc
+	PLATFORMS SG X75
+	DEPENDS libcrt_helper
+)

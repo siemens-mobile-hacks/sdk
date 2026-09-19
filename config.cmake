@@ -2,6 +2,8 @@ include_guard(GLOBAL)
 
 get_filename_component(SDK_PATH "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
 
+include("${SDK_PATH}/cmake/EpkPackage.cmake")
+
 set(CMAKE_BUILD_TYPE MinSizeRel CACHE STRING "Build type")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "Generate compile_commands.json")
 
@@ -75,6 +77,10 @@ function(target_sdk_setup target platform)
 	else()
 		message(FATAL_ERROR "Invalid platform: ${platform}")
 	endif()
+	set_target_properties("${target}" PROPERTIES
+		SDK_ARCH "siemens-sgold"
+		SDK_PLATFORM "${_SDK_PLATFORM}"
+	)
 
 	set(_SDK_PLATFORM_LINK_DIRS "${SDK_PATH}/lib/${_SDK_PLATFORM}")
 	if(_SDK_PLATFORM STREQUAL "ELKA")

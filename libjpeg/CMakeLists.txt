@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 
 include(../config.cmake)
-project(libjpeg C)
+project(libjpeg VERSION 62 LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
 
 add_library(jpeg SHARED
@@ -54,7 +54,7 @@ add_library(jpeg SHARED
 	src/transupp.c
 )
 target_sdk_setup(jpeg NSG)
-target_sdk_set_lib_name(jpeg jpeg 62)
+target_sdk_set_lib_name(jpeg jpeg "${PROJECT_VERSION}")
 target_include_directories(jpeg BEFORE PRIVATE src)
 target_include_directories(jpeg SYSTEM BEFORE PRIVATE include/jpeglib)
 target_compile_options(jpeg PRIVATE -mthumb -Werror -Wno-implicit-fallthrough)
@@ -62,3 +62,9 @@ target_link_libraries(jpeg PRIVATE crt_helper gcc c)
 set_target_properties(jpeg PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
 install_sdk_target(jpeg lib)
+
+epk_install(TARGET jpeg DESTINATION ZBin/lib)
+epk_package(TARGET jpeg NAME libjpeg
+	PLATFORMS all
+	DEPENDS libcrt_helper libc=1.0
+)

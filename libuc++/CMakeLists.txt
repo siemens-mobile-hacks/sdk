@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.31)
 
 set(CXX_TYPE uclibc++)
 include(../config.cmake)
-project(libucxx C CXX)
+project(libucxx VERSION 1.2.2 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 98)
 
@@ -53,7 +53,7 @@ add_library(ucxx SHARED
 	src/vector.cpp
 )
 target_sdk_setup(ucxx NSG)
-target_sdk_set_lib_name(ucxx "stdc++" 1.2.2 "uc++")
+target_sdk_set_lib_name(ucxx "stdc++" "${PROJECT_VERSION}" "uc++")
 target_compile_definitions(ucxx PRIVATE __ARM_EABI_UNWINDER__)
 target_include_directories(ucxx BEFORE PRIVATE include src src/include)
 target_compile_options(ucxx PRIVATE
@@ -65,3 +65,9 @@ target_link_libraries(ucxx PRIVATE crt_helper gcc c supc++)
 set_target_properties(ucxx PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 
 install_sdk_target(ucxx lib)
+
+epk_install(TARGET ucxx DESTINATION ZBin/lib)
+epk_package(TARGET ucxx NAME libuc++
+	PLATFORMS all
+	DEPENDS libcrt_helper libc=1.0
+)

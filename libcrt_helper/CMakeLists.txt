@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 
 include(../config.cmake)
-project(libcrt_helper C CXX)
+project(libcrt_helper VERSION 1.0 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
@@ -33,3 +33,6 @@ add_crt_helper(crt_helper lib/stubs LIBCRT_STUBS)
 
 install_sdk_target(crt_helper_runtime lib)
 install_sdk_target(crt_helper lib/stubs)
+
+epk_install(TARGET crt_helper_runtime DESTINATION ZBin/lib)
+epk_package(TARGET crt_helper_runtime NAME libcrt_helper PLATFORMS all)

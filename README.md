@@ -18,6 +18,7 @@ Main features:
 
 - Building
     - [Advanced options for CMake](https://github.com/siemens-mobile-hacks/sdk#advanced-options-for-cmake)
+    - [Building EPK packages](docs/packaging.md)
 - General examples
     - [Hello World in C](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/without-shared-libs), without **ANY** shared libs
     - [Hello World in C](https://github.com/siemens-mobile-hacks/elfs-examples/tree/master/hello-world-c), without libc, with libcrt_helper.so
@@ -112,6 +113,8 @@ add_library(example_lib SHARED lib.c)
 target_sdk_setup(example_lib NSG)
 target_sdk_set_lib_name(example_lib example 1.0)
 ```
+
+See [Building EPK packages](docs/packaging.md) for package metadata, payload, version, and platform handling.
 
 # AI-assisted contributions
 
