@@ -141,6 +141,33 @@ Call it after all other `epk_*()` functions.
 | `BACKUPS` | Packaged configuration files whose local changes are preserved. |
 | `OWNED_DIRECTORIES` | Directories owned recursively by the package. |
 
+## Package groups
+
+`GROUPS` accepts one or more group IDs:
+
+| ID | English | Russian |
+| --- | --- | --- |
+| `games` | Games | Игры |
+| `emulators` | Emulators | Эмуляторы |
+| `internet` | Internet | Интернет |
+| `multimedia` | Multimedia | Мультимедиа |
+| `documents` | Documents | Документы |
+| `files` | File Management | Работа с файлами |
+| `personalization` | Personalization | Персонализация |
+| `utilities` | Utilities | Утилиты |
+| `system` | System | Система |
+| `development` | Developer Tools | Для разработчиков |
+| `libraries` | Libraries | Библиотеки |
+| `no-ai` | Made Without AI | Создано без ИИ |
+
+```cmake
+epk_package(
+	TARGET example
+	NAME example
+	GROUPS internet utilities no-ai
+)
+```
+
 ## Hooks
 
 ### regext
