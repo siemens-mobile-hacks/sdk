@@ -2788,8 +2788,6 @@ NSG = "0023??E7??49B0B54018??28??D8 +5"
 
 [1EE]
 decl = "int ProgressCalculate(int current, int total)"
-NSG = ""
-ELKA = "<A1400000>"
 
 [1EF]
 decl = "void SetDynIcon(int picture, IMGHDR *img, char *bitmap)"
@@ -4592,7 +4590,7 @@ ELKA = "10,B5,02,1C,??,??,??,??,00,21,00,28,??,??,??,??,??,??,A3,42 + 1"
 
 [386]
 decl = "void DrwObj_InitTiledImageEx(DRWOBJ *drwobj, const RECT *rect, int flags, const EIMGHDR *img, int offset_x, int offset_y)"
-NSG = "FF,B5,81,B0,1F,1C,04,1C,00,28,0A,9D,0B,9E+1"
+NSG = "FF B5 81 B0 1F 1C 04 1C 00 28 ?? 9D ?? 9E ?? D0 17 20 20 70 00 20 60 70 A0 70 20 1C 0C 30 08 22 + 1"
 
 [387]
 decl = "LCDLAYER *LCD_GetCurrentLayer()"
@@ -5000,7 +4998,7 @@ NSG = "04 30 A0 E1 06 10 A0 E1 60 C0 95 E5 - 0x24"
 
 [3FD]
 decl = "int setfiletime(int fd, uint16_t date, uint16_t time, uint32_t *err)"
-NSG = "00 30 E0 E3 00 30 8D E5 48 C0 90 E5 - 0x14"
+NSG = "FE402DE90270A0E10160A0E10350A0E10040A0E1????????0030E0E304308DE500508DE54CC090E50000A0E30730A0E10620A0E10410A0E1"
 
 [3FE]
 decl = "int vsprintf(char *s, const char *format, va_list args)"
