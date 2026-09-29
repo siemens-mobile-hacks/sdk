@@ -1141,7 +1141,7 @@ NSG = "*(??560000E8030000000000000000000001000000140500000600000000000000-10)"
 
 [0D2]
 decl = "char *RamIsAutoTimeEnabled(void)"
-NSG = "&(??,??,??,E3,??,??,??,2A,??,??,??,E3,??,??,??,E1,??,??,??,E5,??,??,??,E1,??,??,??,E1)+0x10"
+NSG = "*(50BF0000????????01000080 + 4)+4"
 
 [0D3]
 decl = "char *RamIsStandby()"
@@ -2755,8 +2755,7 @@ NSG = """
 """
 
 [1E7]
-decl = "char *GetLastJavaApplication(const CSM_RAM *csm)"
-decl_SG = "char *GetLastJavaApplication()"
+decl = "char *GetLastJavaApplication(void)"
 NSG = "48001FE5000090E5000050E300009015"
 
 [1E8]
@@ -3623,7 +3622,7 @@ NSG = "&(??,48,40,79,C0,07,C0,0F,70,47) + 5"
 
 [29D]
 decl = "char *RamDisplayLanguage()"
-NSG = "&(??,??,9F,E5,??,??,70,E3,??,??,81,E5)"
+NSG = "&(??,8?,1F,E5,00,70,98,E5,00,00,57,E3,??,??,??,0A,00,00,A0,E3,00,00,88,E5,04,00,A0,E1,??,??,??,EB,00,60,B0,E1,00,70,88,E5)"
 
 [29E]
 decl = "char *RamIsBTConnected()"

@@ -19,21 +19,11 @@ __swilib_begin
 /**
  * Get the name of the running Java application.
  *
- * @note This function is natively available only on X75 firmware.
- *       For other platforms, it is not present in the original firmware
- *       and must be implemented via the "GetLastJavaApplication addon" patch.
- *
- * @param csm	[NSG/ELKA] Pointer to the CSM object representing the Java slot.
- * @return Pointer to a string with the application name, or NULL if no app running in that slot.
+ * @return Pointer to the current Java application name, or NULL if no application is available.
  * */
 __swi_begin(0x1E7)
-#ifndef NEWSGOLD
-char *GetLastJavaApplication()
+char *GetLastJavaApplication(void)
 __swi_end(0x1E7, GetLastJavaApplication, ());
-#else
-char *GetLastJavaApplication(const CSM_RAM *csm)
-__swi_end(0x1E7, GetLastJavaApplication, (csm));
-#endif
 
 /**
  * Check if Java is NOT running.
