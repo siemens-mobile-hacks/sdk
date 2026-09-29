@@ -4,6 +4,8 @@
 #include "base.h"
 #endif
 
+#include <stdarg.h>
+
 __swilib_begin
 
 /**
@@ -293,6 +295,32 @@ __swi_variadic_begin(0x016)
 __swi_format(printf, 2, 3)
 int sprintf(char *s, const char *format, ...)
 __swi_variadic_end(0x016, sprintf, s, format);
+
+/**
+ * Write formatted output to buffer using a variable argument list.
+ * @param s			Pointer to the destination buffer.
+ * @param format	C format string.
+ * @param args		Variable argument list initialized by va_start.
+ * @return Number of characters written, excluding the terminating null character, or a negative value on error.
+ * */
+__swi_begin(0x3FE)
+__swi_format(printf, 2, 0)
+int vsprintf(char *s, const char *format, va_list args)
+__swi_end(0x3FE, vsprintf, (s, format, args));
+
+/**
+ * Write formatted output to a sized buffer using a variable argument list.
+ * @param s			Pointer to the destination buffer.
+ * @param n			Size of the destination buffer.
+ * @param format	C format string.
+ * @param args		Variable argument list initialized by va_start.
+ * @return Number of characters that would have been written, excluding the terminating null character, or a negative
+ * value on error.
+ * */
+__swi_begin(0x3FF)
+__swi_format(printf, 3, 0)
+int vsnprintf(char *s, size_t n, const char *format, va_list args)
+__swi_end(0x3FF, vsnprintf, (s, n, format, args));
 
 /**
  * Read formatted data from string.
