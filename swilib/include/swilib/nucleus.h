@@ -855,7 +855,7 @@ __swi_end(0x34F, NU_Local_Control_Interrupts, (new_level));
 
 __swi_begin(0x350)
 void NU_Restore_Interrupts(void)
-__swi_end(0x305, NU_Restore_Interrupts, ());
+__swi_end(0x350, NU_Restore_Interrupts, ());
 
 
 __swi_begin(0x351)
@@ -1081,4 +1081,3 @@ __swi_end(0x8375, NU_SUPERV_USER_VARIABLES, ());
 __swilib_end
 
 /** @} */
-

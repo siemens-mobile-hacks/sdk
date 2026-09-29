@@ -129,13 +129,14 @@ int wsInsertChar(WSHDR *destination, int character, int position)
 __swi_end(0x01D, wsInsertChar, (destination, character, position));
 
 /**
- * Remove the substring range from the WSHDR.
+ * Remove characters from the WSHDR.
  * @param destination	pointer to the destination WSHDR
- * @param from, to		substring range to be removed from the string
+ * @param position		one-based position of the first character to remove
+ * @param length		number of characters to remove
  * */
 __swi_begin(0x215)
-void wsRemoveChars(WSHDR *destination, int from, int to)
-__swi_end(0x215, wsRemoveChars, (destination, from, to));
+void wsRemoveChars(WSHDR *destination, int position, int length)
+__swi_end(0x215, wsRemoveChars, (destination, position, length));
 
 /**
  * Copy WSHDR.

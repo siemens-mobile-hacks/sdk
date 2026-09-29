@@ -440,8 +440,8 @@ int isdir_ws(const WSHDR *path, uint32_t *err)
 __swi_end(0x3BC, isdir_ws, (path, err));
 
 /**
- * Check if a file or directory exists.
- * @param path			path to the file or directory
+ * Check if a regular file exists. Directories return 0.
+ * @param path			path to the file
  * @return 1 or 0
  * */
 __swi_begin(0x2E3)

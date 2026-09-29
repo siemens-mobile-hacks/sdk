@@ -30,8 +30,8 @@ typedef struct hostent			HOSTENT;		/**< Windows-style */
  * On subnets, the decomposition of addresses to host and net parts
  * is done according to subnet mask, not the masks here.
  */
-#define	INADDR_ANY			(u_int32_t) 0x00000000
-#define	INADDR_BROADCAST	(u_int32_t) 0xffffffff
+#define	INADDR_ANY			(uint32_t) 0x00000000
+#define	INADDR_BROADCAST	(uint32_t) 0xffffffff
 
 #define INET_ADDRSTRLEN			16	/**< Maximum length of the IPv4 address */
 #define MAX_IPv4_STR_LEN		16	/**< Maximum length of the IPv4 address */

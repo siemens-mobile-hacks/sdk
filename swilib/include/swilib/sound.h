@@ -390,7 +390,7 @@ static inline int PlayMelody_GetPosition(int handle, int *position) {
  * @return 1 if success, 0 if error
  * */
 static inline int PlayMelody_GetDuration(int handle, int *duration) {
-	return GetPlayObjPosition(GetPlayObjById(handle), duration);
+	return GetPlayObjDuration(GetPlayObjById(handle), duration);
 }
 
 #ifdef X75
