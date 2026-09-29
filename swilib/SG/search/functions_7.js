@@ -96,7 +96,7 @@ var searchData=
   ['getlangmesintows_93',['GetLangMesIntoWS',['../group___utils.html#gaababc8e359806301a0a39ad6aa492676',1,'utils.h']]],
   ['getlastaudiotrackdir_94',['GetLastAudioTrackDir',['../group___player.html#ga5f85db4a59af8c9ccce18148563206a8',1,'player.h']]],
   ['getlastaudiotrackfilename_95',['GetLastAudioTrackFilename',['../group___player.html#gafcf6bb8f0aeb125aaf10ea02e321ebfe',1,'player.h']]],
-  ['getlastjavaapplication_96',['GetLastJavaApplication',['../group___java.html#ga7d94126f2fe985ee45bd9364cbc8484a',1,'java.h']]],
+  ['getlastjavaapplication_96',['GetLastJavaApplication',['../group___java.html#ga1cd28820caeec4d8e2ab1fc2c01659c8',1,'java.h']]],
   ['getlcdlayerbycurcepid_97',['GetLCDLAYERByCurCepID',['../group___g_u_i.html#ga0aa179d07c5d0a48e6fbb1b356ff5d29',1,'gui.h']]],
   ['getlgpicon_98',['GetLgpIcon',['../group___image.html#ga525119e5e9ba64ef106f26f8bcba94fd',1,'image.h']]],
   ['getloaderversion_99',['GetLoaderVersion',['../group___system.html#gad7091bdf5aecd50e8c1bf29bbb8be314',1,'system.h']]],
