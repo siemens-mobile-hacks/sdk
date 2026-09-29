@@ -1,5 +1,21 @@
-# Platform inheritance for patterns and decl_* overrides. A platform-specific value
-# overrides its group, and a group value overrides ALL/default. false disables a pattern.
+# SWILIB patterns
+#
+# Function example
+# ----------------
+# [123]                                      # SWI function 0x123
+# decl = "int ReadCounter(void)"             # declaration for all platforms
+# decl_X75 = "int ReadCounter(int index)"    # X75 declaration override
+# ALL = "common pattern"                     # pattern for all platforms
+#
+# Platform inheritance example
+# ----------------------------
+# [124]
+# decl = "void Example(void)"
+# NSG = ["preferred", "fallback"]            # patterns for NSG and ELKA
+# ELKA = false                               # no function on ELKA
+# SG = "SG pattern"                          # pattern for SG and X75
+# X75 = "X75 pattern"                        # X75 pattern override
+
 [platforms]
 ALL = ["NSG", "ELKA", "SG", "X75"]
 NSG = ["NSG", "ELKA"]
