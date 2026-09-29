@@ -3276,7 +3276,10 @@ NSG = ""
 
 [253]
 decl = "char *RamLastCallNum()"
-NSG = "&(04,49,48,68,63)+0x42A"
+NSG = [
+	"&(D8 04 1F E5 0D 10 A0 E1 0C 00 90 E5 ?? [11......] 01 EB 00 00 50 E3 04 00 94 05) + 22",
+	"&(04 49 48 68 63) + 42A",
+]
 
 [254]
 decl = "int StartNativeExplorer(NativeExplorerData *data)"
