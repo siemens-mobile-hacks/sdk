@@ -290,7 +290,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a directory exists at the given path.     <br /></td></tr>
 <tr class="separator:ga9a3cbe7a290a67acd77ffcdd94d8cd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaff0a8193bb75bfdda106fc323f1185e2" id="r_gaff0a8193bb75bfdda106fc323f1185e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff0a8193bb75bfdda106fc323f1185e2">fexists</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path)</td></tr>
-<tr class="memdesc:gaff0a8193bb75bfdda106fc323f1185e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a file or directory exists.  <br /></td></tr>
+<tr class="memdesc:gaff0a8193bb75bfdda106fc323f1185e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a regular file exists.  <br /></td></tr>
 <tr class="separator:gaff0a8193bb75bfdda106fc323f1185e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd896025930b3d4f5d8b350bb2d78445" id="r_gacd896025930b3d4f5d8b350bb2d78445"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd896025930b3d4f5d8b350bb2d78445">GetFileAttrib</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *path, uint8_t *attr, uint32_t *err)</td></tr>
 <tr class="memdesc:gacd896025930b3d4f5d8b350bb2d78445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get attributes of the file or directory.  <br /></td></tr>
@@ -1613,10 +1613,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check if a file or directory exists. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Check if a regular file exists. </p>
+<p>Directories return 0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>path to the file or directory </td></tr>
+    <tr><td class="paramname">path</td><td>path to the file </td></tr>
   </table>
   </dd>
 </dl>

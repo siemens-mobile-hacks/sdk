@@ -23,6 +23,8 @@ var libc_8h =
     [ "rand", "group__libc.html#gae23144bcbb8e3742b00eb687c36654d1", null ],
     [ "snprintf", "group__libc.html#ga182c201d4c3497842e80696fcb506dd9", null ],
     [ "sprintf", "group__libc.html#ga9cafd44c2e1bfa384f71d56949e3b3fc", null ],
+    [ "vsprintf", "group__libc.html#gafc78452394aefd38147bdb31a1c163db", null ],
+    [ "vsnprintf", "group__libc.html#ga2538a4ae3b2be54c6309b62f52d8b488", null ],
     [ "sscanf", "group__libc.html#gacd369d6926dd1e1fb503821a8b167414", null ],
     [ "strchr", "group__libc.html#ga91e2f8a8fbf980ecdbdf79d3a0930ea1", null ],
     [ "strcmp", "group__libc.html#ga6f3dcb20ff11ff9db5904c3cfb61a38c", null ],

@@ -159,9 +159,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad918ce22fae114b4c626b5d983943749" id="r_gad918ce22fae114b4c626b5d983943749"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad918ce22fae114b4c626b5d983943749">wsInsertChar</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, int character, int position)</td></tr>
 <tr class="memdesc:gad918ce22fae114b4c626b5d983943749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a character at the given position of the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
 <tr class="separator:gad918ce22fae114b4c626b5d983943749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf48f14f06cb9082566f704044ce5928f" id="r_gaf48f14f06cb9082566f704044ce5928f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf48f14f06cb9082566f704044ce5928f">wsRemoveChars</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, int from, int to)</td></tr>
-<tr class="memdesc:gaf48f14f06cb9082566f704044ce5928f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the substring range from the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
-<tr class="separator:gaf48f14f06cb9082566f704044ce5928f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabbc5478afea5f48b9b730dc085b49056" id="r_gabbc5478afea5f48b9b730dc085b49056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabbc5478afea5f48b9b730dc085b49056">wsRemoveChars</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, int position, int length)</td></tr>
+<tr class="memdesc:gabbc5478afea5f48b9b730dc085b49056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove characters from the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
+<tr class="separator:gabbc5478afea5f48b9b730dc085b49056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7d2bd2d1ce1b3de91e5e513059a13ac" id="r_gac7d2bd2d1ce1b3de91e5e513059a13ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7d2bd2d1ce1b3de91e5e513059a13ac">wstrcpy</a> (<a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *destination, <a class="el" href="#struct_w_s_h_d_r">WSHDR</a> *source)</td></tr>
 <tr class="memdesc:gac7d2bd2d1ce1b3de91e5e513059a13ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>.  <br /></td></tr>
 <tr class="separator:gac7d2bd2d1ce1b3de91e5e513059a13ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -601,8 +601,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf48f14f06cb9082566f704044ce5928f" name="gaf48f14f06cb9082566f704044ce5928f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf48f14f06cb9082566f704044ce5928f">&#9670;&#160;</a></span>wsRemoveChars()</h2>
+<a id="gabbc5478afea5f48b9b730dc085b49056" name="gabbc5478afea5f48b9b730dc085b49056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbc5478afea5f48b9b730dc085b49056">&#9670;&#160;</a></span>wsRemoveChars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -615,21 +615,22 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>to</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove the substring range from the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>. </p>
+<p>Remove characters from the <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">destination</td><td>pointer to the destination <a class="el" href="#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> </td></tr>
-    <tr><td class="paramname">from,to</td><td>substring range to be removed from the string </td></tr>
+    <tr><td class="paramname">position</td><td>one-based position of the first character to remove </td></tr>
+    <tr><td class="paramname">length</td><td>number of characters to remove </td></tr>
   </table>
   </dd>
 </dl>

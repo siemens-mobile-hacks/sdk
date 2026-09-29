@@ -104,6 +104,7 @@ $(function(){initNavTree('libc_8h.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="base_8h_source.html">base.h</a>&quot;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
 </div>
 <p><a href="libc_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -187,6 +188,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9cafd44c2e1bfa384f71d56949e3b3fc" id="r_ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__libc.html#ga9cafd44c2e1bfa384f71d56949e3b3fc">sprintf</a> (char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
 <tr class="memdesc:ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to buffer.  <br /></td></tr>
 <tr class="separator:ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc78452394aefd38147bdb31a1c163db" id="r_gafc78452394aefd38147bdb31a1c163db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__libc.html#gafc78452394aefd38147bdb31a1c163db">vsprintf</a> (char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format, va_list args)</td></tr>
+<tr class="memdesc:gafc78452394aefd38147bdb31a1c163db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to buffer using a variable argument list.  <br /></td></tr>
+<tr class="separator:gafc78452394aefd38147bdb31a1c163db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2538a4ae3b2be54c6309b62f52d8b488" id="r_ga2538a4ae3b2be54c6309b62f52d8b488"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__libc.html#ga2538a4ae3b2be54c6309b62f52d8b488">vsnprintf</a> (char *s, size_t n, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format, va_list args)</td></tr>
+<tr class="memdesc:ga2538a4ae3b2be54c6309b62f52d8b488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to a sized buffer using a variable argument list.  <br /></td></tr>
+<tr class="separator:ga2538a4ae3b2be54c6309b62f52d8b488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd369d6926dd1e1fb503821a8b167414" id="r_gacd369d6926dd1e1fb503821a8b167414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__libc.html#gacd369d6926dd1e1fb503821a8b167414">sscanf</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
 <tr class="memdesc:gacd369d6926dd1e1fb503821a8b167414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read formatted data from string.  <br /></td></tr>
 <tr class="separator:gacd369d6926dd1e1fb503821a8b167414"><td class="memSeparator" colspan="2">&#160;</td></tr>

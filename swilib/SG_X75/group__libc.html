@@ -204,6 +204,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga9cafd44c2e1bfa384f71d56949e3b3fc" id="r_ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9cafd44c2e1bfa384f71d56949e3b3fc">sprintf</a> (char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
 <tr class="memdesc:ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to buffer.  <br /></td></tr>
 <tr class="separator:ga9cafd44c2e1bfa384f71d56949e3b3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc78452394aefd38147bdb31a1c163db" id="r_gafc78452394aefd38147bdb31a1c163db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc78452394aefd38147bdb31a1c163db">vsprintf</a> (char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format, va_list args)</td></tr>
+<tr class="memdesc:gafc78452394aefd38147bdb31a1c163db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to buffer using a variable argument list.  <br /></td></tr>
+<tr class="separator:gafc78452394aefd38147bdb31a1c163db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2538a4ae3b2be54c6309b62f52d8b488" id="r_ga2538a4ae3b2be54c6309b62f52d8b488"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2538a4ae3b2be54c6309b62f52d8b488">vsnprintf</a> (char *s, size_t n, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format, va_list args)</td></tr>
+<tr class="memdesc:ga2538a4ae3b2be54c6309b62f52d8b488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write formatted output to a sized buffer using a variable argument list.  <br /></td></tr>
+<tr class="separator:ga2538a4ae3b2be54c6309b62f52d8b488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd369d6926dd1e1fb503821a8b167414" id="r_gacd369d6926dd1e1fb503821a8b167414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd369d6926dd1e1fb503821a8b167414">sscanf</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *format,...)</td></tr>
 <tr class="memdesc:gacd369d6926dd1e1fb503821a8b167414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read formatted data from string.  <br /></td></tr>
 <tr class="separator:gacd369d6926dd1e1fb503821a8b167414"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -307,7 +313,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="libc_8h_source.html#l00033">33</a> of file <a class="el" href="libc_8h_source.html">libc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libc_8h_source.html#l00035">35</a> of file <a class="el" href="libc_8h_source.html">libc.h</a>.</p>
 
 </div>
 </div>
@@ -324,7 +330,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="libc_8h_source.html#l00034">34</a> of file <a class="el" href="libc_8h_source.html">libc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libc_8h_source.html#l00036">36</a> of file <a class="el" href="libc_8h_source.html">libc.h</a>.</p>
 
 </div>
 </div>
@@ -969,6 +975,86 @@ Notice that only when this returned value is non-negative and less than n, the s
 If an encoding error occurs, a negative number is returned. </dd>
 <dd>
 Notice that only when this returned value is non-negative and less than n, the string has been completely written. </dd></dl>
+
+</div>
+</div>
+<a id="gafc78452394aefd38147bdb31a1c163db" name="gafc78452394aefd38147bdb31a1c163db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc78452394aefd38147bdb31a1c163db">&#9670;&#160;</a></span>vsprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vsprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write formatted output to buffer using a variable argument list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Pointer to the destination buffer. </td></tr>
+    <tr><td class="paramname">format</td><td>C format string. </td></tr>
+    <tr><td class="paramname">args</td><td>Variable argument list initialized by va_start. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of characters written, excluding the terminating null character, or a negative value on error. </dd></dl>
+
+</div>
+</div>
+<a id="ga2538a4ae3b2be54c6309b62f52d8b488" name="ga2538a4ae3b2be54c6309b62f52d8b488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2538a4ae3b2be54c6309b62f52d8b488">&#9670;&#160;</a></span>vsnprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vsnprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write formatted output to a sized buffer using a variable argument list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Pointer to the destination buffer. </td></tr>
+    <tr><td class="paramname">n</td><td>Size of the destination buffer. </td></tr>
+    <tr><td class="paramname">format</td><td>C format string. </td></tr>
+    <tr><td class="paramname">args</td><td>Variable argument list initialized by va_start. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of characters that would have been written, excluding the terminating null character, or a negative value on error. </dd></dl>
 
 </div>
 </div>

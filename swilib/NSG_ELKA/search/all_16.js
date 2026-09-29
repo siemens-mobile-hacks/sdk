@@ -73,5 +73,7 @@ var searchData=
   ['volume_5fmessages_70',['VOLUME_MESSAGES',['../group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182a64a70ff87b7fce8df3ada5c501257b4d',1,'sound.h']]],
   ['volume_5forganiser_71',['VOLUME_ORGANISER',['../group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182aefabddf2642ff13b2c21088a9d8cfc3a',1,'sound.h']]],
   ['volume_5fsystem_72',['VOLUME_SYSTEM',['../group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182a12fded37efbcf0c8b91f11bfc597b485',1,'sound.h']]],
-  ['volume_5fwalky_5ftalky_73',['VOLUME_WALKY_TALKY',['../group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182a9a616934d71102fe20703d53c1bafa97',1,'sound.h']]]
+  ['volume_5fwalky_5ftalky_73',['VOLUME_WALKY_TALKY',['../group___sound.html#gga2f70bfcbeb2032121ed3cb355bc8a182a9a616934d71102fe20703d53c1bafa97',1,'sound.h']]],
+  ['vsnprintf_74',['vsnprintf',['../group__libc.html#ga2538a4ae3b2be54c6309b62f52d8b488',1,'libc.h']]],
+  ['vsprintf_75',['vsprintf',['../group__libc.html#gafc78452394aefd38147bdb31a1c163db',1,'libc.h']]]
 ];
