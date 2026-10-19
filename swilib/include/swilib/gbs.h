@@ -256,6 +256,19 @@ __swi_begin(0x153)
 int GBS_RecActDstMessage(GBS_MSG *msg)
 __swi_end(0x153, GBS_RecActDstMessage, (msg));
 
+#ifdef ELKA
+
+/**
+ * Get the native payload view of a received GBS message.
+ * @param msg		received GBS message
+ * @return firmware-owned payload view. Do not free or retain it after consuming the message
+ * */
+__swi_begin(0xB03)
+void **GBS_GetMsgPayload(GBS_MSG *msg)
+__swi_end(0xB03, GBS_GetMsgPayload, (msg));
+
+#endif
+
 /**
  * ACK message received with #GBS_RecActDstMessage
  * */

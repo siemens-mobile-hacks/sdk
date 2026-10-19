@@ -233,6 +233,137 @@ __swi_begin(0x187)
 int RequestLMANConnect(LMAN_DATA *data)
 __swi_end(0x187, RequestLMANConnect, (data));
 
+#ifdef ELKA
+
+/**
+ * Request disconnection of a native LMAN context.
+ * @param req		two request bytes: context ID, then disconnect cause
+ * @return 1 if handled, 0 if rejected. Call from a process registered for socket work
+ * */
+__swi_begin(0xB1B)
+int RequestLMANDisconnect(const uint8_t *req)
+__swi_end(0xB1B, RequestLMANDisconnect, (req));
+
+/**
+ * Find the socket-registration slot for a CEPID.
+ * @param cepid		GBS process identifier
+ * @return registration index 0..13, or 0xFFFF if not registered
+ * */
+__swi_begin(0xB1C)
+unsigned GetSocketRegIndex(unsigned cepid)
+__swi_end(0xB1C, GetSocketRegIndex, (cepid));
+
+/**
+ * Get the process identifier assigned to a native service.
+ * @param service		firmware service index; 3 selects the Java service
+ * @return service CEPID, or 0 if unavailable
+ * */
+__swi_begin(0xB1D)
+unsigned GetServiceCepid(unsigned service)
+__swi_end(0xB1D, GetServiceCepid, (service));
+
+/**
+ * Allocate a native LMAN context.
+ * @param bearer		native bearer kind; 1 selects GPRS
+ * @param type		context subtype
+ * @return context index 0..7. Check for a free context before calling; a full table asserts
+ * */
+__swi_begin(0xB1E)
+unsigned LMAN_AllocContext(unsigned bearer, uint8_t type)
+__swi_end(0xB1E, LMAN_AllocContext, (bearer, type));
+
+/**
+ * Copy a NAP profile into an allocated LMAN context.
+ * @param cid		context index 0..7
+ * @param profile		profile with a terminated name and native bearer settings
+ * */
+__swi_begin(0xB1F)
+void LMAN_SetProfile(unsigned cid, const CTX_NAPDEF *profile)
+__swi_end(0xB1F, LMAN_SetProfile, (cid, profile));
+
+/**
+ * Attach or detach a registered process from an LMAN context.
+ * @param reg_index	socket-registration index 0..13
+ * @param cid		context index 0..7
+ * @param on		1 to attach, 0 to detach
+ * */
+__swi_begin(0xB20)
+void LMAN_SetRef(unsigned reg_index, unsigned cid, int on)
+__swi_end(0xB20, LMAN_SetRef, (reg_index, cid, on));
+
+/**
+ * Change a native LMAN context state and notify its registered owners.
+ * @param cid		context index 0..7
+ * @param state		native state value; 4 means connected
+ * */
+__swi_begin(0xB21)
+void LMAN_SetState(unsigned cid, int state)
+__swi_end(0xB21, LMAN_SetState, (cid, state));
+
+/**
+ * Reset and release a native LMAN context without disconnecting a physical bearer.
+ * @param cid		context index 0..7
+ * */
+__swi_begin(0xB22)
+void LMAN_FreeContext(unsigned cid)
+__swi_end(0xB22, LMAN_FreeContext, (cid));
+
+/**
+ * Get the native LMAN context table.
+ * @return pointer to 8 context entries, 0x70 bytes each
+ * */
+__swi_begin(0x8B24)
+uint8_t *RamLmanContexts(void)
+__swi_end(0x8B24, RamLmanContexts, ());
+
+/**
+ * Get the LMAN process-to-context reference table.
+ * @return 14 rows of 8 reference words, indexed by registration slot and context ID
+ * */
+__swi_begin(0x8B25)
+uint32_t *RamLmanRefs(void)
+__swi_end(0x8B25, RamLmanRefs, ());
+
+/**
+ * Get the native socket-registration table.
+ * @return pointer to 14 registration entries, 0x14 bytes each
+ * */
+__swi_begin(0x8B26)
+void *RamSocketRegs(void)
+__swi_end(0x8B26, RamSocketRegs, ());
+
+/**
+ * Get a WSP object.
+ * @param id		object ID, 0x17: preferences, 0x18: network policy
+ * @return pointer to the object or NULL
+ * */
+__swi_begin(0xB2E)
+void *WSP_GetObject(unsigned id)
+__swi_end(0xB2E, WSP_GetObject, (id));
+
+/**
+ * Read a WSP property.
+ * @param key		property name
+ * @param value		output buffer
+ * @param length	buffer size, receives the value length
+ * @return 1: success, 0: error
+ * */
+__swi_begin(0xB2F)
+int WSP_ReadProperty(const char *key, void *value, unsigned *length)
+__swi_end(0xB2F, WSP_ReadProperty, (key, value, length));
+
+/**
+ * Get the WSP connection state.
+ * @param bearer	bearer ID
+ * @param nap		NAP profile ID
+ * @return connection state, 2: connected
+ * */
+__swi_begin(0xB30)
+uint8_t WSP_GetConnectionState(int bearer, int nap)
+__swi_end(0xB30, WSP_GetConnectionState, (bearer, nap));
+
+#endif
+
 /** @} */
 
 /**
