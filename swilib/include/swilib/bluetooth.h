@@ -240,6 +240,23 @@ int BTA_Conn_New_L2CAP(int oh, const uint8_t addr[6], int sapi_type, int psm, in
 __swi_end(0xB13, BTA_Conn_New_L2CAP, (oh, addr, sapi_type, psm, master, encrypt, authenticate, rx_mtu, tx_mtu, tid));
 
 /**
+ * Open an outgoing RFCOMM (SPP) connection to a remote device, client role.
+ * @param oh		accessor handle
+ * @param addr		eight-byte remote address buffer, least significant byte first
+ * @param sapi_type		SAPI application type (0x16 for btspp)
+ * @param channel		RFCOMM server channel (1..30)
+ * @param master		request the master role
+ * @param encrypt		require encryption
+ * @param authenticate		require authentication
+ * @param tid		transaction id (see NextTid)
+ * @return connection handle, or an invalid handle on failure
+ * @platforms ELKA
+ * */
+__swi_begin(0xB31)
+int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)
+__swi_end(0xB31, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, encrypt, authenticate, tid));
+
+/**
  * Open a view of the stored Bluetooth device list.
  * @param oh		accessor handle
  * @param type		list type, 0: stored devices

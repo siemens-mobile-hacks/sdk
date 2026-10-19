@@ -5255,3 +5255,7 @@ ELKA = "F0 B5 0F 1C 06 1C 15 1C 00 21 85 B0 ?? ?? ?? ?? 04 1C 13 D0 39 1C 68 46 
 [B30]
 decl = "uint8_t WSP_GetConnectionState(int bearer, int nap)"
 ELKA = "?? 4A 08 B5 00 92 6A 46 ?? ?? ?? ?? 00 28 06 D0 00 98 ?? ?? ?? ?? 00 28 01 D0 00 7C 08 BD 00 20 FC E7 + 1"
+
+[B31]
+decl = "int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)"
+ELKA = "FF B5 8B B0 17 9E 16 9F 04 1C ?? ?? ?? ?? 0A 90 20 1C ?? 4D ?? ?? ?? ?? A8 42 ?? D0 31 1C 0A 98 ?? ?? ?? ?? 00 28 ?? D0 0C 98"
