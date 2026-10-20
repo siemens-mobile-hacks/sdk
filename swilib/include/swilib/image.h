@@ -362,9 +362,9 @@ __swi_end(0x1EF, SetDynIcon, (picture, img, bitmap));
  * @param bitmap		bitmap data, or NULL to use img->bitmap without copying
  * @param copy		nonzero: copy bitmap data, 0: use the supplied pointer
  * */
-__swi_begin(0xB2D)
+__swi_begin(0x42E)
 void SetDynIconEx(int picture, const IMGHDR *img, const char *bitmap, int copy)
-__swi_end(0xB2D, SetDynIconEx, (picture, img, bitmap, copy));
+__swi_end(0x42E, SetDynIconEx, (picture, img, bitmap, copy));
 
 #endif
 

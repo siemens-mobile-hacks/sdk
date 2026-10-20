@@ -263,9 +263,9 @@ __swi_end(0x153, GBS_RecActDstMessage, (msg));
  * @param msg		received GBS message
  * @return firmware-owned payload view. Do not free or retain it after consuming the message
  * */
-__swi_begin(0xB03)
+__swi_begin(0x404)
 void **GBS_GetMsgPayload(GBS_MSG *msg)
-__swi_end(0xB03, GBS_GetMsgPayload, (msg));
+__swi_end(0x404, GBS_GetMsgPayload, (msg));
 
 #endif
 
