@@ -5259,3 +5259,15 @@ ELKA = "?? 4A 08 B5 00 92 6A 46 ?? ?? ?? ?? 00 28 06 D0 00 98 ?? ?? ?? ?? 00 28 
 [B31]
 decl = "int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)"
 ELKA = "FF B5 8B B0 17 9E 16 9F 04 1C ?? ?? ?? ?? 0A 90 20 1C ?? 4D ?? ?? ?? ?? A8 42 ?? D0 31 1C 0A 98 ?? ?? ?? ?? 00 28 ?? D0 0C 98"
+
+[B32]
+decl = "int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)"
+ELKA = "FF B5 85 B0 0F 9F 06 1C ?? F5 ?? ?? 04 1C C5 48 CC 4D 00 78 06 28 13 D1 33 1C FF 21 01 31 00 97 C9 A2 C1 48 ?? F0 ?? ?? 01 04 C0 48"
+
+[B33]
+decl = "void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)"
+ELKA = "F0 B5 0F 1C 05 1C 14 1C 85 B0 ?? F5 ?? ?? 06 1C 33 48 00 78 06 28 14 D1 2B 1C FF 21 01 31 00 94 01 97 52 A2 2F 48 ?? F0 ?? ?? 01 04"
+
+[B34]
+decl = "unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)"
+ELKA = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F1 ?? ?? 00 28 6B D1 00 AB 18 8C 18 23 58 43 ?? ?? ?? ?? 01 1C 01 20 ?? F6 ?? FC 06 90"

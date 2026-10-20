@@ -257,6 +257,46 @@ int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channe
 __swi_end(0xB31, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, encrypt, authenticate, tid));
 
 /**
+ * Search the SDP records of a remote device (what JSR-82 searchServices uses).
+ * The accessor then gets message 0x0F per matching record (+18 u16 exception, +20 record)
+ * and 0x10 when the search is over.
+ * @param oh		accessor handle
+ * @param addr		remote address, same layout as for BTA_Conn_New_RFCOMM
+ * @param uuids		UUID list: { u8 count; u8 allocated; u32 element size = 20; void *elements },
+ *			element { u8 type (2 = 128-bit); u8 pad[3]; u8 uuid[16] big endian }; copied
+ * @param attrs		attribute ids to fetch (copied)
+ * @param nattrs	number of attribute ids
+ * @param tid		transaction id
+ * @return remote device handle, or an invalid handle on failure
+ * @platforms ELKA
+ * */
+__swi_begin(0xB32)
+int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)
+__swi_end(0xB32, BTA_ServiceSearch_StartReq, (oh, addr, uuids, attrs, nattrs, tid));
+
+/**
+ * Cancel a running service search.
+ * @param oh		accessor handle
+ * @param remdev	remote device handle from BTA_ServiceSearch_StartReq
+ * @param tid		transaction id
+ * @platforms ELKA
+ * */
+__swi_begin(0xB33)
+void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)
+__swi_end(0xB33, BTA_ServiceSearch_StopReq, (oh, remdev, tid));
+
+/**
+ * Server channel from an SDP record's ProtocolDescriptorList.
+ * @param record	record from message 0x0F (+20)
+ * @param rfcomm	1: RFCOMM channel, 0: L2CAP PSM
+ * @return channel / PSM, 0 if the record has none
+ * @platforms ELKA
+ * */
+__swi_begin(0xB34)
+unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)
+__swi_end(0xB34, BTA_SdpRec_GetChannel, (record, rfcomm));
+
+/**
  * Open a view of the stored Bluetooth device list.
  * @param oh		accessor handle
  * @param type		list type, 0: stored devices
