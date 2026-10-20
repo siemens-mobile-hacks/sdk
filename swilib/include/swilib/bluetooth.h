@@ -49,26 +49,26 @@ struct SDEV_APP {
  * @param zero		reserved; pass 0
  * @return accessor handle; handles in the 0xFFxx range indicate failure
  * */
-__swi_begin(0x401)
+__swi_begin(0x420)
 int BtAccessor_New(int cepid, int msg, int no_servers, int zero)
-__swi_end(0x401, BtAccessor_New, (cepid, msg, no_servers, zero));
+__swi_end(0x420, BtAccessor_New, (cepid, msg, no_servers, zero));
 
 /**
  * Delete a Bluetooth accessor after closing its connections and servers.
  * @param oh		accessor handle
  * */
-__swi_begin(0x402)
+__swi_begin(0x421)
 void BtAccessor_Delete(int oh)
-__swi_end(0x402, BtAccessor_Delete, (oh));
+__swi_end(0x421, BtAccessor_Delete, (oh));
 
 /**
  * Read the Bluetooth event identifier from an accessor event object.
  * @param ev		event object from the accessor message
  * @return event identifier; its low byte selects the event
  * */
-__swi_begin(0x403)
+__swi_begin(0x422)
 uint32_t BTA_ObjMsg(void *ev)
-__swi_end(0x403, BTA_ObjMsg, (ev));
+__swi_end(0x422, BTA_ObjMsg, (ev));
 
 /**
  * Create an RFCOMM or L2CAP server under an accessor.
@@ -83,9 +83,9 @@ __swi_end(0x403, BTA_ObjMsg, (ev));
  * @param tid		transaction identifier returned in the completion event
  * @return server handle. Creation completes asynchronously
  * */
-__swi_begin(0x405)
+__swi_begin(0x424)
 int BTA_Server_New(int oh, int proto, int master, int encrypt, int authenticate, int authorize, int rx_mtu, int tx_mtu, int tid)
-__swi_end(0x405, BTA_Server_New, (oh, proto, master, encrypt, authenticate, authorize, rx_mtu, tx_mtu, tid));
+__swi_end(0x424, BTA_Server_New, (oh, proto, master, encrypt, authenticate, authorize, rx_mtu, tx_mtu, tid));
 
 /**
  * Start a Bluetooth server and publish its SDP record.
@@ -95,9 +95,9 @@ __swi_end(0x405, BTA_Server_New, (oh, proto, master, encrypt, authenticate, auth
  * @param unk		set to 0
  * @param tid		transaction identifier
  * */
-__swi_begin(0x406)
+__swi_begin(0x425)
 void BTA_Server_StartReq(int oh, int server, int sdp_record, int unk, int tid)
-__swi_end(0x406, BTA_Server_StartReq, (oh, server, sdp_record, unk, tid));
+__swi_end(0x425, BTA_Server_StartReq, (oh, server, sdp_record, unk, tid));
 
 /**
  * Enable or disable incoming connections on a Bluetooth server.
@@ -106,9 +106,9 @@ __swi_end(0x406, BTA_Server_StartReq, (oh, server, sdp_record, unk, tid));
  * @param enable		1 to accept incoming connections, 0 to stop accepting
  * @param tid		transaction identifier
  * */
-__swi_begin(0x407)
+__swi_begin(0x426)
 void BTA_Server_AcceptReq(int oh, int server, int enable, int tid)
-__swi_end(0x407, BTA_Server_AcceptReq, (oh, server, enable, tid));
+__swi_end(0x426, BTA_Server_AcceptReq, (oh, server, enable, tid));
 
 /**
  * Request asynchronous stop of a Bluetooth server.
@@ -116,18 +116,18 @@ __swi_end(0x407, BTA_Server_AcceptReq, (oh, server, enable, tid));
  * @param server		server handle
  * @param tid		transaction identifier
  * */
-__swi_begin(0x408)
+__swi_begin(0x427)
 void BTA_Server_StopReq(int oh, int server, int tid)
-__swi_end(0x408, BTA_Server_StopReq, (oh, server, tid));
+__swi_end(0x427, BTA_Server_StopReq, (oh, server, tid));
 
 /**
  * Delete a stopped Bluetooth server.
  * @param oh		accessor handle
  * @param server		server handle
  * */
-__swi_begin(0x409)
+__swi_begin(0x428)
 void BTA_Server_Delete(int oh, int server)
-__swi_end(0x409, BTA_Server_Delete, (oh, server));
+__swi_end(0x428, BTA_Server_Delete, (oh, server));
 
 /**
  * Set allocator callbacks for accessor SDP records.
@@ -135,9 +135,9 @@ __swi_end(0x409, BTA_Server_Delete, (oh, server));
  * @param alloc		allocator used for SDP data
  * @param free		matching deallocator
  * */
-__swi_begin(0x40A)
+__swi_begin(0x429)
 void BTA_Sdp_Converter_New(int oh, void *(*alloc)(unsigned int), void (*free)(void *))
-__swi_end(0x40A, BTA_Sdp_Converter_New, (oh, alloc, free));
+__swi_end(0x429, BTA_Sdp_Converter_New, (oh, alloc, free));
 
 /**
  * Create a Bluetooth SDP service record.
@@ -147,18 +147,18 @@ __swi_end(0x40A, BTA_Sdp_Converter_New, (oh, alloc, free));
  * @param channel		RFCOMM channel or L2CAP PSM
  * @return SDP record handle
  * */
-__swi_begin(0x40B)
+__swi_begin(0x42A)
 int BTA_SdpRec_New(int oh, const uint8_t uuid[16], int proto, int channel)
-__swi_end(0x40B, BTA_SdpRec_New, (oh, uuid, proto, channel));
+__swi_end(0x42A, BTA_SdpRec_New, (oh, uuid, proto, channel));
 
 /**
  * Delete an accessor SDP record.
  * @param oh		accessor handle
  * @param record		SDP record handle
  * */
-__swi_begin(0x40C)
+__swi_begin(0x42B)
 void BTA_SdpRec_Delete(int oh, int record)
-__swi_end(0x40C, BTA_SdpRec_Delete, (oh, record));
+__swi_end(0x42B, BTA_SdpRec_Delete, (oh, record));
 
 /**
  * Request asynchronous closure of a Bluetooth connection.
@@ -166,33 +166,33 @@ __swi_end(0x40C, BTA_SdpRec_Delete, (oh, record));
  * @param conn		connection handle
  * @param tid		transaction identifier
  * */
-__swi_begin(0x40D)
+__swi_begin(0x42C)
 void BTA_Conn_CloseReq(int oh, int conn, int tid)
-__swi_end(0x40D, BTA_Conn_CloseReq, (oh, conn, tid));
+__swi_end(0x42C, BTA_Conn_CloseReq, (oh, conn, tid));
 
 /**
  * Get the local Bluetooth address.
  * @return pointer to six bytes, least significant byte first, or NULL if unavailable
  * */
-__swi_begin(0x40E)
+__swi_begin(0x42D)
 const uint8_t *BT_GetLocAddr(void)
-__swi_end(0x40E, BT_GetLocAddr, ());
+__swi_end(0x42D, BT_GetLocAddr, ());
 
 /**
  * Initialize an SDev endpoint with the firmware default callbacks.
  * @param ep		endpoint storage owned by the caller
  * */
-__swi_begin(0x40F)
+__swi_begin(0x42E)
 void SDev_InitEndpoint(SDEV *ep)
-__swi_end(0x40F, SDev_InitEndpoint, (ep));
+__swi_end(0x42E, SDev_InitEndpoint, (ep));
 
 /**
  * Get the native local Bluetooth device object.
  * @return firmware-owned device object. Its layout is firmware-specific
  * */
-__swi_begin(0x410)
+__swi_begin(0x42F)
 uint8_t *BT_GetLocalDevice(void)
-__swi_end(0x410, BT_GetLocalDevice, ());
+__swi_end(0x42F, BT_GetLocalDevice, ());
 
 /**
  * Set the local Bluetooth connection security level.
@@ -201,25 +201,25 @@ __swi_end(0x410, BT_GetLocalDevice, ());
  * @param unk2		reserved; pass 0
  * @param unk3		reserved; pass 0
  * */
-__swi_begin(0x411)
+__swi_begin(0x430)
 void BT_SetSecurityCheck(int lo, int unk1, int unk2, int unk3)
-__swi_end(0x411, BT_SetSecurityCheck, (lo, unk1, unk2, unk3));
+__swi_end(0x430, BT_SetSecurityCheck, (lo, unk1, unk2, unk3));
 
 /**
  * Get the SDev application callback table.
  * @return firmware-owned table of 32 application pointers
  * */
-__swi_begin(0x8412)
+__swi_begin(0x8431)
 void **RamSDevApps(void)
-__swi_end(0x8412, RamSDevApps, ());
+__swi_end(0x8431, RamSDevApps, ());
 
 /**
  * Get the native Bluetooth buffer-pool status.
  * @return status words; words 0 and 1 count free receive and transmit buffers
  * */
-__swi_begin(0x8413)
+__swi_begin(0x8432)
 uint16_t *RamBtBufferPool(void)
-__swi_end(0x8413, RamBtBufferPool, ());
+__swi_end(0x8432, RamBtBufferPool, ());
 
 /**
  * Open an outgoing L2CAP connection. Completion arrives as an accessor event.
@@ -235,9 +235,9 @@ __swi_end(0x8413, RamBtBufferPool, ());
  * @param tid		transaction identifier
  * @return connection handle; handles in the 0xFFxx range indicate failure
  * */
-__swi_begin(0x414)
+__swi_begin(0x433)
 int BTA_Conn_New_L2CAP(int oh, const uint8_t addr[6], int sapi_type, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu, int tid)
-__swi_end(0x414, BTA_Conn_New_L2CAP, (oh, addr, sapi_type, psm, master, encrypt, authenticate, rx_mtu, tx_mtu, tid));
+__swi_end(0x433, BTA_Conn_New_L2CAP, (oh, addr, sapi_type, psm, master, encrypt, authenticate, rx_mtu, tx_mtu, tid));
 
 /**
  * Open an outgoing RFCOMM (SPP) connection to a remote device, client role.
@@ -252,9 +252,9 @@ __swi_end(0x414, BTA_Conn_New_L2CAP, (oh, addr, sapi_type, psm, master, encrypt,
  * @return connection handle, or an invalid handle on failure
  * @platforms ELKA
  * */
-__swi_begin(0x432)
+__swi_begin(0x450)
 int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)
-__swi_end(0x432, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, encrypt, authenticate, tid));
+__swi_end(0x450, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, encrypt, authenticate, tid));
 
 /**
  * Search the SDP records of a remote device (what JSR-82 searchServices uses).
@@ -270,9 +270,9 @@ __swi_end(0x432, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, enc
  * @return remote device handle, or an invalid handle on failure
  * @platforms ELKA
  * */
-__swi_begin(0x433)
+__swi_begin(0x451)
 int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)
-__swi_end(0x433, BTA_ServiceSearch_StartReq, (oh, addr, uuids, attrs, nattrs, tid));
+__swi_end(0x451, BTA_ServiceSearch_StartReq, (oh, addr, uuids, attrs, nattrs, tid));
 
 /**
  * Cancel a running service search.
@@ -281,9 +281,9 @@ __swi_end(0x433, BTA_ServiceSearch_StartReq, (oh, addr, uuids, attrs, nattrs, ti
  * @param tid		transaction id
  * @platforms ELKA
  * */
-__swi_begin(0x434)
+__swi_begin(0x452)
 void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)
-__swi_end(0x434, BTA_ServiceSearch_StopReq, (oh, remdev, tid));
+__swi_end(0x452, BTA_ServiceSearch_StopReq, (oh, remdev, tid));
 
 /**
  * Server channel from an SDP record's ProtocolDescriptorList.
@@ -292,9 +292,9 @@ __swi_end(0x434, BTA_ServiceSearch_StopReq, (oh, remdev, tid));
  * @return channel / PSM, 0 if the record has none
  * @platforms ELKA
  * */
-__swi_begin(0x435)
+__swi_begin(0x453)
 unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)
-__swi_end(0x435, BTA_SdpRec_GetChannel, (record, rfcomm));
+__swi_end(0x453, BTA_SdpRec_GetChannel, (record, rfcomm));
 
 /**
  * Open a view of the stored Bluetooth device list.
@@ -302,9 +302,9 @@ __swi_end(0x435, BTA_SdpRec_GetChannel, (record, rfcomm));
  * @param type		list type, 0: stored devices
  * @return device-list handle
  * */
-__swi_begin(0x428)
+__swi_begin(0x447)
 int BTA_DeviceListView_GetList(int oh, int type)
-__swi_end(0x428, BTA_DeviceListView_GetList, (oh, type));
+__swi_end(0x447, BTA_DeviceListView_GetList, (oh, type));
 
 /**
  * Count entries in a Bluetooth device-list view.
@@ -312,9 +312,9 @@ __swi_end(0x428, BTA_DeviceListView_GetList, (oh, type));
  * @param list		device-list handle
  * @return number of entries
  * */
-__swi_begin(0x429)
+__swi_begin(0x448)
 int BTA_DeviceListView_GetNumberOfEntries(int oh, int list)
-__swi_end(0x429, BTA_DeviceListView_GetNumberOfEntries, (oh, list));
+__swi_end(0x448, BTA_DeviceListView_GetNumberOfEntries, (oh, list));
 
 /**
  * Request a stored Bluetooth device entry asynchronously.
@@ -323,18 +323,18 @@ __swi_end(0x429, BTA_DeviceListView_GetNumberOfEntries, (oh, list));
  * @param index		zero-based entry index
  * @param tid		transaction identifier returned with the entry
  * */
-__swi_begin(0x42A)
+__swi_begin(0x449)
 void BTA_DeviceListView_GetEntryReq(int oh, int list, int index, int tid)
-__swi_end(0x42A, BTA_DeviceListView_GetEntryReq, (oh, list, index, tid));
+__swi_end(0x449, BTA_DeviceListView_GetEntryReq, (oh, list, index, tid));
 
 /**
  * Close a Bluetooth device-list view.
  * @param oh		accessor handle
  * @param list		device-list handle
  * */
-__swi_begin(0x42B)
+__swi_begin(0x44A)
 void BTA_DeviceListView_StopList(int oh, int list)
-__swi_end(0x42B, BTA_DeviceListView_StopList, (oh, list));
+__swi_end(0x44A, BTA_DeviceListView_StopList, (oh, list));
 
 /**
  * Read the Bluetooth address from a returned remote-device object.
@@ -342,9 +342,9 @@ __swi_end(0x42B, BTA_DeviceListView_StopList, (oh, list));
  * @param device		remote-device object from the list-entry event
  * @return six-byte address, least significant byte first. Copy before consuming the event
  * */
-__swi_begin(0x42C)
+__swi_begin(0x44B)
 const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const void *device)
-__swi_end(0x42C, BTA_RemBtDeviceInfo_GetAddress, (oh, device));
+__swi_end(0x44B, BTA_RemBtDeviceInfo_GetAddress, (oh, device));
 
 /**
  * Read the name from a returned remote-device object.
@@ -352,9 +352,9 @@ __swi_end(0x42C, BTA_RemBtDeviceInfo_GetAddress, (oh, device));
  * @param device		remote-device object from the list-entry event
  * @return UTF-8 device name. Copy before consuming the event
  * */
-__swi_begin(0x42D)
+__swi_begin(0x44C)
 const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)
-__swi_end(0x42D, BTA_RemBtDeviceInfo_GetName, (oh, device));
+__swi_end(0x44C, BTA_RemBtDeviceInfo_GetName, (oh, device));
 
 #endif
 

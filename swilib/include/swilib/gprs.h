@@ -240,27 +240,27 @@ __swi_end(0x187, RequestLMANConnect, (data));
  * @param req		two request bytes: context ID, then disconnect cause
  * @return 1 if handled, 0 if rejected. Call from a process registered for socket work
  * */
-__swi_begin(0x41C)
+__swi_begin(0x43B)
 int RequestLMANDisconnect(const uint8_t *req)
-__swi_end(0x41C, RequestLMANDisconnect, (req));
+__swi_end(0x43B, RequestLMANDisconnect, (req));
 
 /**
  * Find the socket-registration slot for a CEPID.
  * @param cepid		GBS process identifier
  * @return registration index 0..13, or 0xFFFF if not registered
  * */
-__swi_begin(0x41D)
+__swi_begin(0x43C)
 unsigned GetSocketRegIndex(unsigned cepid)
-__swi_end(0x41D, GetSocketRegIndex, (cepid));
+__swi_end(0x43C, GetSocketRegIndex, (cepid));
 
 /**
  * Get the process identifier assigned to a native service.
  * @param service		firmware service index; 3 selects the Java service
  * @return service CEPID, or 0 if unavailable
  * */
-__swi_begin(0x41E)
+__swi_begin(0x43D)
 unsigned GetServiceCepid(unsigned service)
-__swi_end(0x41E, GetServiceCepid, (service));
+__swi_end(0x43D, GetServiceCepid, (service));
 
 /**
  * Allocate a native LMAN context.
@@ -268,18 +268,18 @@ __swi_end(0x41E, GetServiceCepid, (service));
  * @param type		context subtype
  * @return context index 0..7. Check for a free context before calling; a full table asserts
  * */
-__swi_begin(0x41F)
+__swi_begin(0x43E)
 unsigned LMAN_AllocContext(unsigned bearer, uint8_t type)
-__swi_end(0x41F, LMAN_AllocContext, (bearer, type));
+__swi_end(0x43E, LMAN_AllocContext, (bearer, type));
 
 /**
  * Copy a NAP profile into an allocated LMAN context.
  * @param cid		context index 0..7
  * @param profile		profile with a terminated name and native bearer settings
  * */
-__swi_begin(0x420)
+__swi_begin(0x43F)
 void LMAN_SetProfile(unsigned cid, const CTX_NAPDEF *profile)
-__swi_end(0x420, LMAN_SetProfile, (cid, profile));
+__swi_end(0x43F, LMAN_SetProfile, (cid, profile));
 
 /**
  * Attach or detach a registered process from an LMAN context.
@@ -287,59 +287,59 @@ __swi_end(0x420, LMAN_SetProfile, (cid, profile));
  * @param cid		context index 0..7
  * @param on		1 to attach, 0 to detach
  * */
-__swi_begin(0x421)
+__swi_begin(0x440)
 void LMAN_SetRef(unsigned reg_index, unsigned cid, int on)
-__swi_end(0x421, LMAN_SetRef, (reg_index, cid, on));
+__swi_end(0x440, LMAN_SetRef, (reg_index, cid, on));
 
 /**
  * Change a native LMAN context state and notify its registered owners.
  * @param cid		context index 0..7
  * @param state		native state value; 4 means connected
  * */
-__swi_begin(0x422)
+__swi_begin(0x441)
 void LMAN_SetState(unsigned cid, int state)
-__swi_end(0x422, LMAN_SetState, (cid, state));
+__swi_end(0x441, LMAN_SetState, (cid, state));
 
 /**
  * Reset and release a native LMAN context without disconnecting a physical bearer.
  * @param cid		context index 0..7
  * */
-__swi_begin(0x423)
+__swi_begin(0x442)
 void LMAN_FreeContext(unsigned cid)
-__swi_end(0x423, LMAN_FreeContext, (cid));
+__swi_end(0x442, LMAN_FreeContext, (cid));
 
 /**
  * Get the native LMAN context table.
  * @return pointer to 8 context entries, 0x70 bytes each
  * */
-__swi_begin(0x8425)
+__swi_begin(0x8444)
 uint8_t *RamLmanContexts(void)
-__swi_end(0x8425, RamLmanContexts, ());
+__swi_end(0x8444, RamLmanContexts, ());
 
 /**
  * Get the LMAN process-to-context reference table.
  * @return 14 rows of 8 reference words, indexed by registration slot and context ID
  * */
-__swi_begin(0x8426)
+__swi_begin(0x8445)
 uint32_t *RamLmanRefs(void)
-__swi_end(0x8426, RamLmanRefs, ());
+__swi_end(0x8445, RamLmanRefs, ());
 
 /**
  * Get the native socket-registration table.
  * @return pointer to 14 registration entries, 0x14 bytes each
  * */
-__swi_begin(0x8427)
+__swi_begin(0x8446)
 void *RamSocketRegs(void)
-__swi_end(0x8427, RamSocketRegs, ());
+__swi_end(0x8446, RamSocketRegs, ());
 
 /**
  * Get a WSP object.
  * @param id		object ID, 0x17: preferences, 0x18: network policy
  * @return pointer to the object or NULL
  * */
-__swi_begin(0x42F)
+__swi_begin(0x44D)
 void *WSP_GetObject(unsigned id)
-__swi_end(0x42F, WSP_GetObject, (id));
+__swi_end(0x44D, WSP_GetObject, (id));
 
 /**
  * Read a WSP property.
@@ -348,9 +348,9 @@ __swi_end(0x42F, WSP_GetObject, (id));
  * @param length	buffer size, receives the value length
  * @return 1: success, 0: error
  * */
-__swi_begin(0x430)
+__swi_begin(0x44E)
 int WSP_ReadProperty(const char *key, void *value, unsigned *length)
-__swi_end(0x430, WSP_ReadProperty, (key, value, length));
+__swi_end(0x44E, WSP_ReadProperty, (key, value, length));
 
 /**
  * Get the WSP connection state.
@@ -358,9 +358,9 @@ __swi_end(0x430, WSP_ReadProperty, (key, value, length));
  * @param nap		NAP profile ID
  * @return connection state, 2: connected
  * */
-__swi_begin(0x431)
+__swi_begin(0x44F)
 uint8_t WSP_GetConnectionState(int bearer, int nap)
-__swi_end(0x431, WSP_GetConnectionState, (bearer, nap));
+__swi_end(0x44F, WSP_GetConnectionState, (bearer, nap));
 
 #endif
 

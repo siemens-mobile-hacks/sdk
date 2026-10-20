@@ -287,9 +287,9 @@ __swi_end(0x176, closesocket, (socket));
  * @param name		domain name
  * @return firmware host entry, or NULL on error. Use async_gethostbyname for asynchronous lookup
  * */
-__swi_begin(0x415)
+__swi_begin(0x434)
 struct hostent *gethostbyname(const char *name)
-__swi_end(0x415, gethostbyname, (name));
+__swi_end(0x434, gethostbyname, (name));
 
 /**
  * Read the local address of a socket.
@@ -298,9 +298,9 @@ __swi_end(0x415, gethostbyname, (name));
  * @param len		address-buffer size on entry, returned length on exit
  * @return 0 on success, -1 on error
  * */
-__swi_begin(0x416)
+__swi_begin(0x435)
 int getsockname(int sock, SOCK_ADDR *addr, int *len)
-__swi_end(0x416, getsockname, (sock, addr, len));
+__swi_end(0x435, getsockname, (sock, addr, len));
 
 /**
  * Read the remote address of a connected socket.
@@ -309,9 +309,9 @@ __swi_end(0x416, getsockname, (sock, addr, len));
  * @param len		address-buffer size on entry, returned length on exit
  * @return 0 on success, -1 on error
  * */
-__swi_begin(0x417)
+__swi_begin(0x436)
 int getpeername(int sock, SOCK_ADDR *addr, int *len)
-__swi_end(0x417, getpeername, (sock, addr, len));
+__swi_end(0x436, getpeername, (sock, addr, len));
 
 /**
  * Set a socket option.
@@ -322,9 +322,9 @@ __swi_end(0x417, getpeername, (sock, addr, len));
  * @param len		size of option data in bytes
  * @return 0 on success, -1 on error
  * */
-__swi_begin(0x418)
+__swi_begin(0x437)
 int setsockopt(int sock, int level, int option, const void *value, int len)
-__swi_end(0x418, setsockopt, (sock, level, option, value, len));
+__swi_end(0x437, setsockopt, (sock, level, option, value, len));
 
 /**
  * Read a socket option.
@@ -335,9 +335,9 @@ __swi_end(0x418, setsockopt, (sock, level, option, value, len));
  * @param len		buffer size on entry, returned length on exit
  * @return 0 on success, -1 on error
  * */
-__swi_begin(0x419)
+__swi_begin(0x438)
 int getsockopt(int sock, int level, int option, void *value, int *len)
-__swi_end(0x419, getsockopt, (sock, level, option, value, len));
+__swi_end(0x438, getsockopt, (sock, level, option, value, len));
 
 /**
  * Apply a socket control command; read socklasterr for errors.
@@ -345,9 +345,9 @@ __swi_end(0x419, getsockopt, (sock, level, option, value, len));
  * @param cmd		control command
  * @param arg		command argument storage
  * */
-__swi_begin(0x41A)
+__swi_begin(0x439)
 void ioctlsocket(int sock, int cmd, void *arg)
-__swi_end(0x41A, ioctlsocket, (sock, cmd, arg));
+__swi_end(0x439, ioctlsocket, (sock, cmd, arg));
 
 /**
  * Start listening for incoming TCP connections.
@@ -355,9 +355,9 @@ __swi_end(0x41A, ioctlsocket, (sock, cmd, arg));
  * @param backlog		pending-connection queue length
  * @return 0 on success, -1 on error
  * */
-__swi_begin(0x41B)
+__swi_begin(0x43A)
 int listen(int sock, int backlog)
-__swi_end(0x41B, listen, (sock, backlog));
+__swi_end(0x43A, listen, (sock, backlog));
 
 /**
  * Look up the native ENIP object for a socket descriptor.
@@ -365,9 +365,9 @@ __swi_end(0x41B, listen, (sock, backlog));
  * @param native		receives the firmware-owned socket object on success
  * @return 0 on success, native ENIP error code otherwise
  * */
-__swi_begin(0x424)
+__swi_begin(0x443)
 int ENIP_GetNativeSocket(int sock, void **native)
-__swi_end(0x424, ENIP_GetNativeSocket, (sock, native));
+__swi_end(0x443, ENIP_GetNativeSocket, (sock, native));
 
 #endif
 

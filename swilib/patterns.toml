@@ -5060,210 +5060,210 @@ ALL = """
 decl = "int BCFG_GetDefaultDisk(void)"
 
 
-[401]
+[420]
 decl = "int BtAccessor_New(int cepid, int msg, int no_servers, int zero)"
 ELKA = "FE B5 07 1C 0E 1C 15 1C ?? 4C ?? ?? ?? ?? 00 22 01 92 33 1C 3A 1C 00 95"
 
-[402]
+[421]
 decl = "void BtAccessor_Delete(int oh)"
 ELKA = "3E B5 04 1C ?? ?? ?? ?? 05 1C 20 1C ?? ?? ?? ?? 29 1C ?? ?? ?? ?? 00 28 ?? D0 20 1C ?? ?? ?? ?? 3E BD ?? 48 00 24 00 78"
 
-[403]
+[422]
 decl = "uint32_t BTA_ObjMsg(void *ev)"
 ELKA = "F0 B5 87 B0 04 1C 28 25 00 AB ?? 4E 1D 76 5E 83 ?? ?? ?? ?? 07 1C ?? ??"
 
-[404]
+[423]
 decl = "void **GBS_GetMsgPayload(GBS_MSG *msg)"
 ELKA = "10 B5 04 1C ?? D1 20 21 92 A0 ?? ?? ?? ?? 02 DF 02 22 02 20 ?? 49 ?? 4B"
 
-[405]
+[424]
 decl = "int BTA_Server_New(int oh, int proto, int master, int encrypt, int authenticate, int authorize, int rx_mtu, int tx_mtu, int tid)"
 ELKA = "FF B5 8D B0 1A 9E 17 9F 04 1C ?? ?? ?? ?? 0C 90 40 30 00 79 ?? 4D 00 28"
 
-[406]
+[425]
 decl = "void BTA_Server_StartReq(int oh, int server, int sdp_record, int unk, int tid)"
 ELKA = "FF B5 85 B0 04 1C 0F 1C 0E 9D ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1 23 1C FF 21 01 31 00 95 01 97 AB A2 ?? 48 ?? ??"
 
-[407]
+[426]
 decl = "void BTA_Server_AcceptReq(int oh, int server, int enable, int tid)"
 ELKA = "FF B5 0F 1C 04 1C 1D 1C 85 B0 ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1"
 
-[408]
+[427]
 decl = "void BTA_Server_StopReq(int oh, int server, int tid)"
 ELKA = "F0 B5 0F 1C 04 1C 15 1C 85 B0 ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1"
 
-[409]
+[428]
 decl = "void BTA_Server_Delete(int oh, int server)"
 ELKA = "FE B5 05 1C 0E 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 FF 21 ?? 4F"
 
-[40A]
+[429]
 decl = "void BTA_Sdp_Converter_New(int oh, void *(*alloc)(unsigned int), void (*free)(void *))"
 ELKA = "FE B5 0E 1C 04 1C 17 1C ?? ?? ?? ?? 05 1C ?? 48 00 78 06 28 ?? D1 23 1C"
 
-[40B]
+[42A]
 decl = "int BTA_SdpRec_New(int oh, const uint8_t uuid[16], int proto, int channel)"
 ELKA = "F8 B5 17 1C 0E 1C 1D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 2B 1C 3A 1C 31 1C 20 1C B0 30 ?? ?? ?? ?? F8 BD 00 20 ?? ?? B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ??"
 
-[40C]
+[42B]
 decl = "void BTA_SdpRec_Delete(int oh, int record)"
 ELKA = "B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 29 1C 20 1C B0 30 ?? ?? ?? ?? B0 BD F8 B5 17 1C 0E 1C"
 
-[40D]
+[42C]
 decl = "void BTA_Conn_CloseReq(int oh, int conn, int tid)"
 ELKA = "F0 B5 04 1C ?? 48 16 1C 00 78 0D 1C 85 B0 06 28 ?? D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 96 01 95 3D A2 ?? ?? ?? ?? 01 04"
 
-[40E]
+[42D]
 decl = "const uint8_t *BT_GetLocAddr(void)"
 ELKA = "FE B5 ?? ?? ?? ?? 00 21 ?? ?? ?? ?? ?? 49 FF 27 01 37 01 26 88 42 ?? 4D ?? D0 ?? ?? ?? ?? 04 1C ?? ?? ?? 48 00 78 06 28 ?? D1 39 1C 28 1C 3C A2"
 
-[40F]
+[42E]
 decl = "void SDev_InitEndpoint(SDEV *ep)"
 ELKA = "?? 1? 9F E5 FF 20 A0 E3 00 10 80 E5 ?? 1? 9F E5 04 10 80 E5 ?? 1? 9F E5"
 
-[410]
+[42F]
 decl = "uint8_t *BT_GetLocalDevice(void)"
 ELKA = "B0 B5 86 B0 ?? ?? ?? ?? 00 28 ?? D0 01 68 00 29 ?? D0 ?? ?? ?? ?? ?? 4C 20 68 05 1C ?? D1 AD A1"
 
-[411]
+[430]
 decl = "void BT_SetSecurityCheck(int lo, int unk1, int unk2, int unk3)"
 ELKA = "1C B5 04 1C ?? ?? ?? ?? C4 62 ?? 48 00 78 06 28 ?? D1 ?? ?? ?? ?? C0 6A"
 
-[412]
+[431]
 decl = "void **RamSDevApps(void)"
 ELKA = "&(?? 1? 9F E5 00 00 A0 E3 00 31 81 E7 01 00 80 E2 20 00 50 E3)"
 
-[413]
+[432]
 decl = "uint16_t *RamBtBufferPool(void)"
 ELKA = "&(?? 48 1A 21 01 80 00 21 01 61 24 22 42 80 41 61 81 80 C1 80)"
 
-[414]
+[433]
 decl = "int BTA_Conn_New_L2CAP(int oh, const uint8_t addr[6], int sapi_type, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu, int tid)"
 ELKA = "FF B5 8D B0 1B 9E 1A 9F 04 1C ?? ?? ?? ?? 0C 90 20 1C ?? 4D ?? ?? ?? ??"
 
-[415]
+[434]
 decl = "struct hostent *gethostbyname(const char *name)"
 ELKA = "F0 B5 04 1C 93 B0 0C A8 1C 21 ?? ?? ?? ?? 00 21 00 22 09 A8 06 C0 04 C0"
 
-[416]
+[435]
 decl = "int getsockname(int sock, SOCK_ADDR *addr, int *len)"
 ELKA = "F0 B5 0C 1C 00 21 06 1C 15 1C 00 2C 87 B0 ?? D0 A1 1C 00 20 00 2C ?? D0"
 
-[417]
+[436]
 decl = "int getpeername(int sock, SOCK_ADDR *addr, int *len)"
 ELKA = "F7 B5 0C 1C 00 21 86 B0 00 25 00 2C 08 9A ?? D0 A1 1C 00 20 00 2C ?? D0"
 
-[418]
+[437]
 decl = "int setsockopt(int sock, int level, int option, const void *value, int len)"
 ELKA = "FF B5 8D B0 15 1C 1E 1C 1C 21 06 A8 16 9C ?? ?? ?? ?? 0D 99 0E 9A ?? 4F"
 
-[419]
+[438]
 decl = "int getsockopt(int sock, int level, int option, void *value, int *len)"
 ELKA = "FF B5 8D B0 0D 98 16 9C 15 1C 0F 1C 1E 1C 06 90 08 92 01 20 07 91 09 93"
 
-[41A]
+[439]
 decl = "void ioctlsocket(int sock, int cmd, void *arg)"
 ELKA = "F0 B5 04 1C 0D 1C 16 1C 89 B0 04 A8 14 21 ?? ?? ?? ?? ?? 4F 00 94 01 95"
 
-[41B]
+[43A]
 decl = "int listen(int sock, int backlog)"
 ELKA = "F0 B5 06 1C 0C 1C 85 B0 02 A8 00 21 00 22 06 C0 04 C0 ?? 4D 00 96 01 94"
 
-[41C]
+[43B]
 decl = "int RequestLMANDisconnect(const uint8_t *req)"
 ELKA = "F8 B5 04 1C ?? ?? ?? ?? ?? 4E 05 1C 19 23 36 68 00 21 ?? 48 81 A2 B0 47"
 
-[41D]
+[43C]
 decl = "unsigned GetSocketRegIndex(unsigned cepid)"
 ELKA = "01 1C ?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C 0E 28 + 1"
 
-[41E]
+[43D]
 decl = "unsigned GetServiceCepid(unsigned service)"
 ELKA = "00 B5 ?? ?? ?? ?? 43 1C ?? D0 ?? 49 40 01 40 18 40 30 00 8A 00 BD 00 20"
 
-[41F]
+[43E]
 decl = "unsigned LMAN_AllocContext(unsigned bearer, uint8_t type)"
 ELKA = "F8 B5 0F 1C 05 1C 05 28 ?? D2 ?? 4E 00 2D ?? D1 70 21 41 43 89 19 49 78"
 
-[420]
+[43F]
 decl = "void LMAN_SetProfile(unsigned cid, const CTX_NAPDEF *profile)"
 ELKA = "F8 B5 0D 1C 08 28 ?? D2 70 23 58 43 ?? 49 44 18 20 1C 08 30 29 1C ?? ??"
 
-[421]
+[440]
 decl = "void LMAN_SetRef(unsigned reg_index, unsigned cid, int on)"
 ELKA = "?? 4B 40 01 C0 18 89 00 42 50 70 47 38 B5 05 9D 04 9C 49 19 80 39 09 04 + 1"
 
-[422]
+[441]
 decl = "void LMAN_SetState(unsigned cid, int state)"
 ELKA = "F0 B5 0F 1C 05 1C 08 28 87 B0 ?? D2 70 20 68 43 ?? 49 06 90 08 5C B8 42"
 
-[423]
+[442]
 decl = "void LMAN_FreeContext(unsigned cid)"
 ELKA = "B0 B5 08 28 ?? D2 70 21 41 43 ?? 4A 00 25 55 54 FF 20 8C 18 60 70 A0 80"
 
-[424]
+[443]
 decl = "int ENIP_GetNativeSocket(int sock, void **native)"
 ELKA = "B0 B5 0D 1C 04 1C 01 1C 0C 20 ?? ?? ?? ?? 88 00 ?? 49 40 18 09 21 89 01"
 
-[425]
+[444]
 decl = "uint8_t *RamLmanContexts(void)"
 ELKA = "&(?? 49 40 18 80 88 B0 BD ?? 4C 21 1C 07 20 ?? ?? ?? ?? ?? 4D)"
 
-[426]
+[445]
 decl = "uint32_t *RamLmanRefs(void)"
 ELKA = "&(?? 4A 40 01 00 21 80 18 8A 00 82 58 01 2A ?? D1 59 80 70 BD)"
 
-[427]
+[446]
 decl = "void *RamSocketRegs(void)"
 ELKA = "&(?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C)"
 
-[428]
+[447]
 decl = "int BTA_DeviceListView_GetList(int oh, int type)"
 ELKA = "F0 B5 06 1C 0F 1C 85 B0 ?? ?? ?? ?? 04 1C 30 1C ?? 4D ?? ?? ?? ?? A8 42"
 
-[429]
+[448]
 decl = "int BTA_DeviceListView_GetNumberOfEntries(int oh, int list)"
 ELKA = "F0 B5 04 1C 0E 1C 85 B0 ?? ?? ?? ?? 07 1C 00 25 20 1C ?? ?? ?? ?? ?? 49"
 
-[42A]
+[449]
 decl = "void BTA_DeviceListView_GetEntryReq(int oh, int list, int index, int tid)"
 ELKA = "F0 B5 17 1C 0E 1C 04 1C 1D 1C 87 B0 ?? ?? ?? ?? 06 90 ?? 48 00 78 06 28 ?? D1 23 1C FF 21 01 31 00 95 01 96 02 97 4F A2"
 
-[42B]
+[44A]
 decl = "void BTA_DeviceListView_StopList(int oh, int list)"
 ELKA = "FE B5 04 1C 0D 1C ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 95 9A A2 ?? ?? ?? ?? 01 04"
 
-[42C]
+[44B]
 decl = "const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const void *device)"
 ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 00 96"
 
-[42D]
+[44C]
 decl = "const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)"
 ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 22 1C ?? D1 44 A2 00 96 ?? 4E"
 
-[42F]
+[44D]
 decl = "void *WSP_GetObject(unsigned id)"
 ELKA = "?? 49 04 39 09 68 00 29 03 D0 84 22 52 58 00 2A 01 D1 00 20 70 47 80 00 08 58 70 47 + 1"
 
-[430]
+[44E]
 decl = "int WSP_ReadProperty(const char *key, void *value, unsigned *length)"
 ELKA = "F0 B5 0F 1C 06 1C 15 1C 00 21 85 B0 ?? ?? ?? ?? 04 1C 13 D0 39 1C 68 46 2A 68 ?? ?? ?? ?? 21 68 20 1C 0A 6B 6B 46 57 18 32 1C 00 21 B8 47 00 28 04 D0 04 98 28 60 01 20"
 
-[431]
+[44F]
 decl = "uint8_t WSP_GetConnectionState(int bearer, int nap)"
 ELKA = "?? 4A 08 B5 00 92 6A 46 ?? ?? ?? ?? 00 28 06 D0 00 98 ?? ?? ?? ?? 00 28 01 D0 00 7C 08 BD 00 20 FC E7 + 1"
 
-[432]
+[450]
 decl = "int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)"
 ELKA = "FF B5 8B B0 17 9E 16 9F 04 1C ?? ?? ?? ?? 0A 90 20 1C ?? 4D ?? ?? ?? ?? A8 42 ?? D0 31 1C 0A 98 ?? ?? ?? ?? 00 28 ?? D0 0C 98"
 
-[433]
+[451]
 decl = "int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)"
 ELKA = "FF B5 85 B0 0F 9F 06 1C ?? F5 ?? ?? 04 1C C5 48 CC 4D 00 78 06 28 13 D1 33 1C FF 21 01 31 00 97 C9 A2 C1 48 ?? F0 ?? ?? 01 04 C0 48"
 
-[434]
+[452]
 decl = "void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)"
 ELKA = "F0 B5 0F 1C 05 1C 14 1C 85 B0 ?? F5 ?? ?? 06 1C 33 48 00 78 06 28 14 D1 2B 1C FF 21 01 31 00 94 01 97 52 A2 2F 48 ?? F0 ?? ?? 01 04"
 
-[435]
+[453]
 decl = "unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)"
 ELKA = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F1 ?? ?? 00 28 6B D1 00 AB 18 8C 18 23 58 43 ?? ?? ?? ?? 01 1C 01 20 ?? F6 ?? FC 06 90"
