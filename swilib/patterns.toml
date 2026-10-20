@@ -5240,10 +5240,6 @@ ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C 
 decl = "const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)"
 ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 22 1C ?? D1 44 A2 00 96 ?? 4E"
 
-[42E]
-decl = "void SetDynIconEx(int picture, const IMGHDR *img, const char *bitmap, int copy)"
-ELKA = "FF B5 0D 1C ?? 49 16 1C 41 18 96 29 81 B0 ?? 4F ?? D8 ?? 49 14 23 41 18"
-
 [42F]
 decl = "void *WSP_GetObject(unsigned id)"
 ELKA = "?? 49 04 39 09 68 00 29 03 D0 84 22 52 58 00 2A 01 D1 00 20 70 47 80 00 08 58 70 47 + 1"

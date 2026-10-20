@@ -353,21 +353,6 @@ __swi_begin(0x1EF)
 void SetDynIcon(int picture, IMGHDR *img, char *bitmap)
 __swi_end(0x1EF, SetDynIcon, (picture, img, bitmap));
 
-#ifdef ELKA
-
-/**
- * Set the image to a dynamic icon slot.
- * @param picture		dynamic-picture slot, starting at 20000
- * @param img		image header
- * @param bitmap		bitmap data, or NULL to use img->bitmap without copying
- * @param copy		nonzero: copy bitmap data, 0: use the supplied pointer
- * */
-__swi_begin(0x42E)
-void SetDynIconEx(int picture, const IMGHDR *img, const char *bitmap, int copy)
-__swi_end(0x42E, SetDynIconEx, (picture, img, bitmap, copy));
-
-#endif
-
 /**
  * Release the slot of the dynamic icons.
  * @param picture	number in the slot
