@@ -256,6 +256,28 @@ __swi_begin(0x153)
 int GBS_RecActDstMessage(GBS_MSG *msg)
 __swi_end(0x153, GBS_RecActDstMessage, (msg));
 
+#ifdef ELKA
+
+/**
+ * Get the native payload view of a received GBS message.
+ * @param msg		received GBS message
+ * @return firmware-owned payload view. Do not free or retain it after consuming the message
+ * */
+__swi_begin(0x423)
+void **GBS_GetMsgPayload(GBS_MSG *msg)
+__swi_end(0x423, GBS_GetMsgPayload, (msg));
+
+/**
+ * Find a GBS process group.
+ * @param cepid		CEPID whose group (cepid & 0xFF00) is looked up
+ * @return process group, or NULL if the group does not exist
+ * */
+__swi_begin(0x463)
+PGROUP *GBS_GetProcGroup(int cepid)
+__swi_end(0x463, GBS_GetProcGroup, (cepid));
+
+#endif
+
 /**
  * ACK message received with #GBS_RecActDstMessage
  * */
