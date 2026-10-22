@@ -5267,3 +5267,39 @@ ELKA = "F0 B5 0F 1C 05 1C 14 1C 85 B0 ?? F5 ?? ?? 06 1C 33 48 00 78 06 28 14 D1 
 [453]
 decl = "unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)"
 ELKA = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F1 ?? ?? 00 28 6B D1 00 AB 18 8C 18 23 58 43 ?? ?? ?? ?? 01 1C 01 20 ?? F6 ?? FC 06 90"
+
+[454]
+decl = "int *RamJavaVMStarted(void)"
+ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 4) + 8"
+
+[455]
+decl = "int *RamJavaExitPopup(void)"
+ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 14)"
+
+[456]
+decl = "JAVA_HEAP_SLOTS *RamJavaHeapSlots(void)"
+ELKA = "&(?? 70 9F E5 00 80 A0 E1 00 00 97 E5 01 60 A0 E1 00 40 B0 E1 02 50 A0 E1 05 00 86 E0 01 40 A0 13)"
+
+[457]
+decl = "void **RamJavaVMHeaps(void)"
+ELKA = "&(F8 45 2D E9 ?? ?? 9F E5 00 60 A0 E3 00 00 95 E5 00 00 50 E3 00 60 85 B5 02 00 00 BA 63 00 50 E3 + 38)"
+
+[458]
+decl = "int JAM_StartApplicationClass(WSHDR *class_name, int unk1, int unk2, int unk3, int unk4)"
+ELKA = "FF B5 C3 B0 ?? A1 00 91 ?? 49 1F 1C 16 1C 04 1C 59 22 01 23 01 90 ?? 48 59 39 + 1"
+
+[45B]
+decl = "SEXIT_HOOKS *RamSExitHooks(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + 5C)"
+
+[45C]
+decl = "SEXIT_STATE *RamSExitState(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + DC)"
+
+[45D]
+decl = "SEXIT_RECORDS *RamSExitRecords(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + 4)"
+
+[45E]
+decl = "void SExit(int code, const void *module, int type, int param)"
+ELKA = "38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5"
