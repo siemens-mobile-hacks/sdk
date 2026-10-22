@@ -4668,7 +4668,7 @@ NSG = "7C,40,2D,E9,01,60,A0,E1,02,50,A0,E1,00,40,A0,E1,??,??,??,??,00,30,E0,E3,0
 [38E]
 decl = "void CreateICL(PGROUP *pgroup)"
 NSG = "00,00,EF,06,30,A0,E1,02,20,A0,E3,05,10,A0,E1,05,00,A0,E3,??,??,??,EB,0C,00,D4,E5,00,00,50,E3,-21"
-ELKA = ""
+ELKA = "70 B5 04 1C 00 28 ?? 4E ?? 4D 0A D1 20 21 ?? A0 ?? F? ?? ?? 02 DF 33 1C 29 1C 02 22 05 20 ?? F? ?? ??"
 
 [38F]
 decl = "void *GBS_CreateProcessGroupResource(int mask, int unk_zero, PGROUP *pgroup, int size)"
@@ -5303,3 +5303,443 @@ ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E
 [45E]
 decl = "void SExit(int code, const void *module, int type, int param)"
 ELKA = "38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5"
+
+[45F]
+decl = "void BTA_Conn_GetL2CAPParamReq(int oh, int conn, int tid)"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 C1 31 01 94"
+
+[460]
+decl = "void *BTA_Conn_GetRemDevInfo(int oh, int conn)"
+ELKA = "F0 B5 06 1C 0D 1C 85 B0 ?? F? ?? ?? 07 1C 00 24"
+
+[461]
+decl = "uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const void *device, int what)"
+ELKA = "F0 B5 0E 1C 05 1C 17 1C 85 B0 ?? F? ?? ?? 00 24"
+
+[462]
+decl = "void BTA_AclDisconnectReq(int tid, const uint8_t addr[6])"
+ELKA = "80 B5 9A B0 00 AB 84 22 1A 80 10 22"
+
+[463]
+decl = "PGROUP *GBS_GetProcGroup(int cepid)"
+ELKA = "?? 49 DF 31 88 42 05 D0 00 0A ?? 49 + 1"
+
+[464]
+decl = "void ENIP_ModuleInit(void *module, const char *name, void *up, void *down, void *run, void *notify, void *post_run, void *packet_available)"
+ELKA = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF"
+
+[465]
+decl = "uint8_t ENIP_ModuleRun(void *module, uint32_t *result)"
+ELKA = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0"
+
+[466]
+decl = "int ENIP_ModuleUp(void *module)"
+ELKA = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1"
+
+[467]
+decl = "void ENIP_ModuleDown(void *module, uint32_t reason)"
+ELKA = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
+
+[468]
+decl = "void ENIP_PortInit(void *port, void *module)"
+ELKA = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C"
+
+[469]
+decl = "void ENIP_PortSend(void *port, void *packet)"
+ELKA = "80 B5 00 28 09 D0 82 68 00 2A 03 D0"
+
+[46A]
+decl = "void *ENIP_PacketAlloc(void *module, int size, uint32_t pool, int offset, int quota)"
+ELKA = "FF B5 0C 1C ?? 49 16 1C BC 31 95 00"
+
+[46B]
+decl = "void ENIP_PacketFree(void *packet)"
+ELKA = "FE B5 00 26 05 1C 00 28 ?? 4F ?? 4A"
+
+[46C]
+decl = "int ENIP_RegisterDriver(void *driver, int flags)"
+ELKA = "F3 B5 ?? 4F 04 1C 08 21 00 20 81 B0"
+
+[46D]
+decl = "void ENIP_UnregisterDriver(void *module)"
+ELKA = "F8 B5 ?? 4E 00 24 08 22 00 21 44 23"
+
+[46E]
+decl = "void *ENIP_FindInterface(uint32_t bearer, uint16_t iface)"
+ELKA = "30 B5 ?? 4C 00 22 44 23 53 43 1D 19"
+
+[46F]
+decl = "void LMAN_AttachInterface(unsigned cid, unsigned iface, unsigned unk)"
+ELKA = "B0 B5 08 28 06 D2 70 23 58 43 ?? 4B"
+
+[470]
+decl = "void *ENIP_ListRemoveHead(void *list)"
+ELKA = "01 1C 00 68 00 28 00 D1 70 47 02 68 + 1"
+
+[471]
+decl = "void *RamPdpDrivers(void)"
+ELKA = "&(?? 49 58 43 40 18 00 E0 ?? 48 81 68)"
+
+[472]
+decl = "void enip_module_post_run(void *module)"
+ELKA = "80 B5 01 22 42 61 81 69 00 29 0B D0"
+
+[473]
+decl = "void enip_module_nsapi_post_init(void *module)"
+ELKA = "00 22 D1 43 C1 66 C2 65 82 66 70 47 + 1"
+
+[474]
+decl = "void enip_port_handle_pkt(void *port, void *packet)"
+ELKA = "B0 B5 04 1C 00 69 01 25 00 28 00 D0"
+
+[475]
+decl = "void *enip_memory_allocate(uint32_t unused, int size)"
+ELKA = "FE B5 ?? 48 0D 1C 00 68 ?? F? ?? ??"
+
+[476]
+decl = "void enip_memory_release(void *block)"
+ELKA = "B0 B5 04 1C 17 D1 ?? 4C 21 1C 03 20"
+
+[477]
+decl = "int enip_packet_max_size(void)"
+ELKA = "?? 48 77 38 70 47 F8 B5 88 68 0C 1C + 1"
+
+[478]
+decl = "int enip_ip_init(void *post_run)"
+ELKA = "F0 B5 ?? 4D 61 21 C9 00 04 1C 28 1C"
+
+[479]
+decl = "void *enip_find_iface_by_driver(void *driver)"
+ELKA = "?? 4A C0 69 00 21 44 23 4B 43 9B 18 + 1"
+
+[47A]
+decl = "void enip_iph_calc_chk_and_port_send(void **port, void *packet, uint32_t size)"
+ELKA = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72"
+
+[47B]
+decl = "uint16_t enip_iph_compute_checksum(uint16_t seed, const void *data, uint16_t size)"
+ELKA = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 + 1"
+
+[47C]
+decl = "void *enip_iph_find_IF_for_socket(void *socket)"
+ELKA = "30 B5 00 21 FF 30 ?? 4A 61 30 44 23"
+
+[47D]
+decl = "void enip_iph_frame_read(void *packet)"
+ELKA = "F0 B5 87 B0 85 68 00 AB 00 26 04 1C"
+
+[47E]
+decl = "int enip_iph_manage_reassembly(void *iface, void *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)"
+ELKA = "FF B5 95 B0 16 1C 00 22 84 46 1F 98"
+
+[47F]
+decl = "void enip_iph_packet_avail(void)"
+ELKA = "80 B5 0A 20 ?? F? ?? ?? ?? F? ?? ??"
+
+[480]
+decl = "void enip_iph_rheader_init(void *slot)"
+ELKA = "00 21 C9 43 80 B5 01 60 00 21 C1 60 + 1"
+
+[481]
+decl = "void enip_iph_run(void *module)"
+ELKA = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28"
+
+[482]
+decl = "int enip_iph_write(void *port, void *packet, uint32_t size)"
+ELKA = "F7 B5 17 1C 00 25 0C 1C 00 29 82 B0"
+
+[483]
+decl = "int enip_siph_crypt_frame_read(void *module, void *packet)"
+ELKA = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C"
+
+[484]
+decl = "void *enip_siph_find_IF(int address)"
+ELKA = "10 B5 ?? 4C 00 21 44 22 4A 43 12 19"
+
+[485]
+decl = "void enip_icmp_frame_read(void *module, void *packet)"
+ELKA = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C"
+
+[486]
+decl = "void enip_udph_frame_read(void *module, void *packet)"
+ELKA = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68"
+
+[487]
+decl = "int enip_init_csd_iface(void *module, void *driver)"
+ELKA = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F"
+
+[488]
+decl = "int enip_nsapi_init_iface(void *module)"
+ELKA = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C"
+
+[489]
+decl = "int enip_nsapi_init_module(void *module)"
+ELKA = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C"
+
+[48A]
+decl = "void ENIP_PDP_NET_UP_CNF(uint16_t context, int result)"
+ELKA = "F0 B5 06 1C 01 29 8B B0 ?? 4D 6C D1"
+
+[48B]
+decl = "void ENIP_PDP_NET_UP_REJ_IND(uint16_t context, int result)"
+ELKA = "F8 B5 05 1C 01 29 ?? 4E 58 D1 28 1C"
+
+[48C]
+decl = "void ENIP_PDP_NET_DOWN_IND(uint16_t context, int mode)"
+ELKA = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1A D0"
+
+[48D]
+decl = "void ENIP_PDP_START_REQ(int context, int mode)"
+ELKA = "F0 B5 04 1C 0D 1C 85 B0 ?? F? ?? ?? 03 06 70 22"
+
+[48E]
+decl = "void ENIP_PDP_STOP_REQ(uint16_t context, int mode)"
+ELKA = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1E D0"
+
+[48F]
+decl = "void ENIP_PDP_START_CSD_INT_REQ(int bearer)"
+ELKA = "F0 B5 9D B0 05 1C 03 24 32 23 32 21"
+
+[490]
+decl = "int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, uint16_t *destination)"
+ELKA = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
+
+[491]
+decl = "int enip_socket_connect(int socket, int address, int unknown, uint16_t port, uint32_t timeout)"
+ELKA = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F"
+
+[492]
+decl = "void enip_sockh_IF_init(void *iface)"
+ELKA = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
+
+[493]
+decl = "void *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)"
+ELKA = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
+
+[494]
+decl = "int enip_sockh_autobind_IF(void *socket, int address)"
+ELKA = "F8 B5 04 1C C0 69 00 28 01 D0 00 20"
+
+[495]
+decl = "int enip_sockh_packet_allocate(void *socket, uint32_t size, uint32_t flags, void **packet, int timeout)"
+ELKA = "F8 B5 16 1C 04 1C 08 1C 1D 1C 06 9A"
+
+[496]
+decl = "int enip_sockh_dgram_connect(void *socket, int address, uint32_t unused, uint16_t port)"
+ELKA = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1"
+
+[497]
+decl = "void *enip_sockh_from_ipheader(void *module, const uint8_t *header)"
+ELKA = "FF B5 00 22 03 92 02 92 0E 7C 4A 7A"
+
+[498]
+decl = "int enip_sockh_prepare_send(int index, void *socket, uint32_t address)"
+ELKA = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20"
+
+[499]
+decl = "int enip_sockh_tcp_packet_allocate(void *socket)"
+ELKA = "1C B5 04 1C 80 30 C0 6B 00 21 ?? F? ?? ??"
+
+[49A]
+decl = "int enip_tcph_sock_init(void *socket)"
+ELKA = "F8 B5 04 1C ?? F? ?? ?? E2 69 25 1C"
+
+[49B]
+decl = "int enip_tcph_sock_connect(void *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)"
+ELKA = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24"
+
+[49C]
+decl = "int enip_tcph_send_segment(void *socket, uint32_t flags, const void *data, uint32_t size, void *packet, int unknown)"
+ELKA = "FF B5 04 1C 00 20 91 B0 1A 9D 02 90"
+
+[49D]
+decl = "void enip_tcph_write_segment(void *socket, void *packet, int use_sequence)"
+ELKA = "F7 B5 0E 1C 05 1C 00 28 89 68 88 B0"
+
+[49E]
+decl = "void enip_tcph_change_sock_state(void *socket, uint32_t state)"
+ELKA = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0"
+
+[49F]
+decl = "void enip_tcph_frame_read(void *module, void *packet)"
+ELKA = "F3 B5 A1 B0 00 24 00 AB 0D 1C 00 20"
+
+[4A0]
+decl = "void enip_tcph_run(void)"
+ELKA = "FE B5 00 27 ?? 49 B8 00 40 18 09 21"
+
+[4A1]
+decl = "uint32_t enip_tcph_get_SACK_option_from_list(void *socket, uint32_t count, uint8_t *option)"
+ELKA = "F7 B5 01 20 10 70 50 70 05 20 90 70"
+
+[4A2]
+decl = "void enip_tcph_update_SACK_block_list(void *socket)"
+ELKA = "F0 B5 06 1C FF 36 01 21 49 02 01 36"
+
+[4A3]
+decl = "void enip_timer_init(void *timer, void *module)"
+ELKA = "81 60 00 21 41 61 01 60 41 60 70 47 + 1"
+
+[4A4]
+decl = "void enip_timer_cancel(void *timer)"
+ELKA = "80 B5 01 1C 40 69 00 28 05 D0 00 20"
+
+[4A5]
+decl = "void enip_timer_start(void *timer, uint32_t timeout)"
+ELKA = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0"
+
+[4A6]
+decl = "void LMAN_LINK_UP_CNF(void)"
+ELKA = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 32 D2"
+
+[4A7]
+decl = "int16_t lman_app_register(uint16_t app)"
+ELKA = "70 B5 ?? F? ?? ?? ?? 4E B0 42 17 D1"
+
+[4A8]
+decl = "void lman_app_free(uint16_t slot)"
+ELKA = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 + 1"
+
+[4A9]
+decl = "int lman_app_set_bearer(uint16_t slot, const uint16_t *settings, int callback)"
+ELKA = "B0 B5 0E 28 12 D2 0C 88 19 23 5B 01"
+
+[4AA]
+decl = "int16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)"
+ELKA = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
+
+[4AB]
+decl = "uint8_t lman_GetBearerIdForCi(uint16_t connection)"
+ELKA = "B0 B5 08 28 05 D2 70 23 58 43 ?? 49 40 18 40 78"
+
+[4AC]
+decl = "int lman_get_socket_destination(uint16_t cepid, void *destination)"
+ELKA = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ??"
+
+[4AD]
+decl = "void zDLL_Init(void *list)"
+ELKA = "00 21 41 60 01 60 70 47 42 68 00 23 + 1"
+
+[4AE]
+decl = "void BTA_DeviceDiscovery_StartSearchReq(int oh, uint32_t service, int tid)"
+ELKA = "F0 B5 04 1C ?? 48 16 1C 00 78 0D 1C 85 B0 06 28 16 D1 ?? 4A"
+
+[4AF]
+decl = "void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t param3, int param4)"
+ELKA = "FF B5 0E 1C 05 1C 1F 1C 85 B0 ?? F? ?? ?? 04 1C ?? 48 00 78"
+
+[4B0]
+decl = "void BTA_DeviceDiscovery_StopSearchReq(int oh, int tid)"
+ELKA = "FE B5 04 1C ?? 48 0D 1C 00 78 06 28 14 D1 FF 21 ?? 4E 01 31 23 1C 30 1C 00 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 0A E0 ?? A0 ?? 49 00 90 01 23 03 22 47 31"
+
+[4B1]
+decl = "int BTA_RemBtDeviceInfo_SetName(int oh, void *device, const char *name)"
+ELKA = "F0 B5 0F 1C 06 1C 14 1C 85 B0 ?? F? ?? ?? 00 25"
+
+[4B2]
+decl = "void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, void *device)"
+ELKA = "7F B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 19 D1 00 22"
+
+[4B3]
+decl = "void BTA_LocBtDevice_SetVisibilityReq(int oh, uint32_t visibility, int tid)"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 46 31 01 94"
+
+[4B4]
+decl = "void BTA_LocBtDevice_SetDIACReq(int oh, uint32_t diac, int tid)"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 6A 31 01 94"
+
+[4B5]
+decl = "void BTA_LocBtDevice_SetNameReq(int oh, const char *name, int tid)"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 89 31 01 94"
+
+[4B6]
+decl = "uint32_t BTA_Conn_GetSapiApp(int oh, int conn)"
+ELKA = "F0 B5 06 1C 0D 1C 85 B0 ?? F? ?? ?? 07 1C FF 24"
+
+[4B7]
+decl = "int BTA_ServiceSearch_RetrieveServiceReq(int oh, uint32_t device, uint32_t record, void *param4, int param5, int tid)"
+ELKA = "FF B5 85 B0 0F 9F 06 1C ?? F? ?? ?? 04 1C ?? 48 ?? 4D 00 78 06 28 15 D1"
+
+[4B8]
+decl = "uint32_t JSApi_CurrentHandleID(int conn)"
+ELKA = "00 30 A0 E1 ?? 1? 9F E5 00 00 A0 E3 80 22 80 E0"
+
+[4B9]
+decl = "void JSApi_InitHandles(void)"
+ELKA = "F0 4D 2D E9 ?? 4? 9F E5 F4 20 8F E2"
+
+[4BA]
+decl = "int JSApi_RegisterConHandle(int conn, uint32_t packet, uint32_t param3)"
+ELKA = "F8 40 2D E9 01 70 A0 E1 00 50 A0 E1 02 40 A0 E1 ?? ?? ?? EB 00 60 A0 E1 61 00 A0 E3"
+
+[4BB]
+decl = "uint8_t JSApi_GetConnectionState(int conn)"
+ELKA = "1C 40 2D E9 00 40 A0 E1 ?? ?? ?? EB 05 00 50 E3"
+
+[4BC]
+decl = "int JSApi_ReadBytes(int conn, void *buffer, uint32_t size)"
+ELKA = "FC 41 2D E9 00 70 A0 E1 01 60 A0 E1"
+
+[4BD]
+decl = "int JSApi_BytesAvailable(int conn)"
+ELKA = "7C 40 2D E9 00 60 A0 E1 ?? ?? ?? EB"
+
+[4BE]
+decl = "int JSApi_WriteBytes(int conn, const void *data, uint32_t size)"
+ELKA = "FC 41 2D E9 01 80 A0 E1 00 70 A0 E1 02 60 A0 E1"
+
+[4BF]
+decl = "int JSApi_ClearConnectionHandle(int conn)"
+ELKA = "10 40 2D E9 00 40 A0 E1 00 30 A0 E1 61 00 A0 E3 14 20 8F E2"
+
+[4C0]
+decl = "void BTLP_InitL2CAP_IO(void)"
+ELKA = "F8 B5 ?? F? ?? ?? ?? 4F 00 25 ?? 4E"
+
+[4C1]
+decl = "int BTLP_uiSendDataOverBT(const void *data, uint32_t size, int sapi)"
+ELKA = "F7 B5 F3 32 10 06 00 0E 0C 1C 09 28"
+
+[4C2]
+decl = "void BTLP_vDataToAppCallback(int sapi)"
+ELKA = "F3 30 00 06 F8 B5 00 21 00 0E 09 28 + 1"
+
+[4C3]
+decl = "void BTLP_vFlushBuffer(int mode, int sapi)"
+ELKA = "F3 31 09 06 09 0E 09 29 B0 B5 1A D3 + 1"
+
+[4C4]
+decl = "void L2CA_ReadDataReq(const void *message)"
+ELKA = "F8 B5 80 88 ?? 4E 40 38 05 04 2D 0C"
+
+[4C5]
+decl = "void SApp_Register(int handler_id, void *methods)"
+ELKA = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 20 00 50 E3"
+
+[4C6]
+decl = "int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, void *connection_info)"
+ELKA = "FC 4D 2D E9 00 40 A0 E1 13 00 54 E3"
+
+[4C7]
+decl = "int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)"
+ELKA = "FC 4D 2D E9 00 40 A0 E1 20 00 54 E3"
+
+[4C8]
+decl = "int Serial_CanOpenSApp(uint32_t handler_id, uint32_t instance)"
+ELKA = "F0 41 2D E9 00 50 A0 E1 FF 00 A0 E3"
+
+[4C9]
+decl = "void Ca_SasSApp_Init(void)"
+ELKA = "F8 B5 ?? 48 01 26 00 78 06 28 11 D1"
+
+[4CA]
+decl = "void *RamJSApiConnections(void)"
+ELKA = "&(?? 1? 9F E5 00 00 A0 E3 80 22 80 E0)"
+
+[4CB]
+decl = "void *RamBtlpConnections(void)"
+ELKA = "&(?? 49 C0 00 43 18 0D 50 DE 71 04 99)"
+
+[4CC]
+decl = "void *RamL2capChannelState(void)"
+ELKA = "&(?? 4E 0E E0 18 23 53 43 9B 19 9F 88)"

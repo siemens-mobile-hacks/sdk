@@ -356,6 +356,356 @@ __swi_begin(0x44C)
 const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)
 __swi_end(0x44C, BTA_RemBtDeviceInfo_GetName, (oh, device));
 
+/**
+ * Request the L2CAP parameters of an open connection.
+ * Answered with the accessor event BT_EVENT_CONNECTION_L2CAP_PARAMETERS_CFM (13).
+ * @param oh		accessor handle
+ * @param conn		connection handle
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x45F)
+void BTA_Conn_GetL2CAPParamReq(int oh, int conn, int tid)
+__swi_end(0x45F, BTA_Conn_GetL2CAPParamReq, (oh, conn, tid));
+
+/**
+ * Get the remote-device object of an open connection.
+ * @param oh		accessor handle
+ * @param conn		connection handle
+ * @return remote-device object, for BTA_RemBtDeviceInfo_* calls
+ * */
+__swi_begin(0x460)
+void *BTA_Conn_GetRemDevInfo(int oh, int conn)
+__swi_end(0x460, BTA_Conn_GetRemDevInfo, (oh, conn));
+
+/**
+ * Read the link status of a remote device.
+ * @param oh		accessor handle
+ * @param device	remote-device object
+ * @param what		0: ACL status
+ * @return status, 2: ACL connected
+ * */
+__swi_begin(0x461)
+uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const void *device, int what)
+__swi_end(0x461, BTA_RemBtDeviceInfo_GetStatus, (oh, device, what));
+
+/**
+ * Drop the ACL link to a remote device (asynchronous). Affects every profile on that link.
+ * @param tid		transaction ID
+ * @param addr		six-byte Bluetooth address, least significant byte first
+ * */
+__swi_begin(0x462)
+void BTA_AclDisconnectReq(int tid, const uint8_t addr[6])
+__swi_end(0x462, BTA_AclDisconnectReq, (tid, addr));
+
+/**
+ * Start a Bluetooth device search (asynchronous).
+ * @param oh		accessor handle
+ * @param service	SAPI service to search for
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4AE)
+void BTA_DeviceDiscovery_StartSearchReq(int oh, uint32_t service, int tid)
+__swi_end(0x4AE, BTA_DeviceDiscovery_StartSearchReq, (oh, service, tid));
+
+/**
+ * Start a Bluetooth device search filtered by device class (asynchronous). Only partly reversed.
+ * @param oh		accessor handle
+ * @param cod_class	class byte, matched at bits 16..23 of the class of device; 0: no filter
+ * @param param3	transaction ID or IAC, meaning not known
+ * @param param4	transaction ID or IAC, meaning not known
+ * */
+__swi_begin(0x4AF)
+void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t param3, int param4)
+__swi_end(0x4AF, BTA_DeviceDiscovery_StartSearchCodReq, (oh, cod_class, param3, param4));
+
+/**
+ * Stop a running Bluetooth device search (asynchronous).
+ * @param oh		accessor handle
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4B0)
+void BTA_DeviceDiscovery_StopSearchReq(int oh, int tid)
+__swi_end(0x4B0, BTA_DeviceDiscovery_StopSearchReq, (oh, tid));
+
+/**
+ * Set the name stored in a remote-device object.
+ * @param oh		accessor handle
+ * @param device	remote-device object
+ * @param name		UTF-8 name
+ * @return result of the store, 0 on failure
+ * */
+__swi_begin(0x4B1)
+int BTA_RemBtDeviceInfo_SetName(int oh, void *device, const char *name)
+__swi_end(0x4B1, BTA_RemBtDeviceInfo_SetName, (oh, device, name));
+
+/**
+ * Get the class-of-device record of a remote-device object.
+ * @param oh		accessor handle
+ * @param device	remote-device object
+ * @return class record (byte +2 is the major class), NULL when unknown
+ * */
+__swi_begin(0x4B2)
+void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, void *device)
+__swi_end(0x4B2, BTA_RemBtDeviceInfo_GetDeviceClass, (oh, device));
+
+/**
+ * Set the visibility of the phone's Bluetooth (asynchronous).
+ * @param oh		accessor handle
+ * @param visibility	visibility mode
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4B3)
+void BTA_LocBtDevice_SetVisibilityReq(int oh, uint32_t visibility, int tid)
+__swi_end(0x4B3, BTA_LocBtDevice_SetVisibilityReq, (oh, visibility, tid));
+
+/**
+ * Set the inquiry access code (DIAC) the phone answers to (asynchronous).
+ * @param oh		accessor handle
+ * @param diac		inquiry access code
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4B4)
+void BTA_LocBtDevice_SetDIACReq(int oh, uint32_t diac, int tid)
+__swi_end(0x4B4, BTA_LocBtDevice_SetDIACReq, (oh, diac, tid));
+
+/**
+ * Set the phone's Bluetooth name (asynchronous).
+ * @param oh		accessor handle
+ * @param name		UTF-8 name
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4B5)
+void BTA_LocBtDevice_SetNameReq(int oh, const char *name, int tid)
+__swi_end(0x4B5, BTA_LocBtDevice_SetNameReq, (oh, name, tid));
+
+/**
+ * Get the SAPI application of an open connection.
+ * @param oh		accessor handle
+ * @param conn		connection handle
+ * @return SAPI application, 0xFF when the connection is not found
+ * */
+__swi_begin(0x4B6)
+uint32_t BTA_Conn_GetSapiApp(int oh, int conn)
+__swi_end(0x4B6, BTA_Conn_GetSapiApp, (oh, conn));
+
+/**
+ * Request an SDP service record of a remote device (asynchronous). Only partly reversed.
+ * @param oh		accessor handle
+ * @param device	remote device
+ * @param record	service record handle
+ * @param param4	meaning not known
+ * @param param5	meaning not known
+ * @param tid		transaction ID
+ * @return meaning not known
+ * */
+__swi_begin(0x4B7)
+int BTA_ServiceSearch_RetrieveServiceReq(int oh, uint32_t device, uint32_t record, void *param4, int param5, int tid)
+__swi_end(0x4B7, BTA_ServiceSearch_RetrieveServiceReq, (oh, device, record, param4, param5, tid));
+
+/**
+ * Find the JSApi (Java Bluetooth) slot of a connection handle.
+ * @param conn		connection handle
+ * @return slot 0..4, 5 when not registered
+ * ARM code.
+ * */
+__swi_begin(0x4B8)
+uint32_t JSApi_CurrentHandleID(int conn)
+__swi_end(0x4B8, JSApi_CurrentHandleID, (conn));
+
+/**
+ * Initialise the JSApi slots once and register JSApi as SDev application 0x0F.
+ * ARM code.
+ * */
+__swi_begin(0x4B9)
+void JSApi_InitHandles(void)
+__swi_end(0x4B9, JSApi_InitHandles, ());
+
+/**
+ * Register a connection handle in a free JSApi slot.
+ * @param conn		connection handle
+ * @param packet	0: RFCOMM stream, 1: L2CAP packets
+ * @param param3	stored in the slot; meaning not known, 0 works
+ * @return 1 OK, 0 when the slots are full or the handle is invalid
+ * ARM code.
+ * */
+__swi_begin(0x4BA)
+int JSApi_RegisterConHandle(int conn, uint32_t packet, uint32_t param3)
+__swi_end(0x4BA, JSApi_RegisterConHandle, (conn, packet, param3));
+
+/**
+ * Get the state of a JSApi connection.
+ * @param conn		connection handle
+ * @return state, 0: not registered (0 and 2: no connection)
+ * ARM code.
+ * */
+__swi_begin(0x4BB)
+uint8_t JSApi_GetConnectionState(int conn)
+__swi_end(0x4BB, JSApi_GetConnectionState, (conn));
+
+/**
+ * Read received data of a JSApi connection. In packet mode reads one L2CAP packet.
+ * @param conn		connection handle
+ * @param buffer	output buffer
+ * @param size		buffer size; the rest of a longer packet is dropped
+ * @return bytes read
+ * ARM code.
+ * */
+__swi_begin(0x4BC)
+int JSApi_ReadBytes(int conn, void *buffer, uint32_t size)
+__swi_end(0x4BC, JSApi_ReadBytes, (conn, buffer, size));
+
+/**
+ * Get the number of received bytes waiting in a JSApi connection.
+ * @param conn		connection handle
+ * @return bytes available
+ * ARM code.
+ * */
+__swi_begin(0x4BD)
+int JSApi_BytesAvailable(int conn)
+__swi_end(0x4BD, JSApi_BytesAvailable, (conn));
+
+/**
+ * Send data over a JSApi connection.
+ * @param conn		connection handle
+ * @param data		data
+ * @param size		size in bytes
+ * @return bytes written, less than size when the stack is busy
+ * ARM code.
+ * */
+__swi_begin(0x4BE)
+int JSApi_WriteBytes(int conn, const void *data, uint32_t size)
+__swi_end(0x4BE, JSApi_WriteBytes, (conn, data, size));
+
+/**
+ * Free the JSApi slot of a connection handle and its receive buffer.
+ * @param conn		connection handle
+ * @return meaning not known
+ * ARM code.
+ * */
+__swi_begin(0x4BF)
+int JSApi_ClearConnectionHandle(int conn)
+__swi_end(0x4BF, JSApi_ClearConnectionHandle, (conn));
+
+/**
+ * Initialise the 9 L2CAP port devices (SAPI 0x0D..0x15).
+ * */
+__swi_begin(0x4C0)
+void BTLP_InitL2CAP_IO(void)
+__swi_end(0x4C0, BTLP_InitL2CAP_IO, ());
+
+/**
+ * Send data over an L2CAP port: one buffer per packet from the shared stack pool.
+ * @param data		data
+ * @param size		size in bytes; more than the channel maximum is a fatal error
+ * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * @return bytes queued, less than size when the pool is empty
+ * */
+__swi_begin(0x4C1)
+int BTLP_uiSendDataOverBT(const void *data, uint32_t size, int sapi)
+__swi_end(0x4C1, BTLP_uiSendDataOverBT, (data, size, sapi));
+
+/**
+ * Deliver received packets queued on an L2CAP port to its application until it stops taking them.
+ * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * */
+__swi_begin(0x4C2)
+void BTLP_vDataToAppCallback(int sapi)
+__swi_end(0x4C2, BTLP_vDataToAppCallback, (sapi));
+
+/**
+ * Drop the received packets queued on an L2CAP port.
+ * @param mode		1 or 3 flushes, other values do nothing
+ * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * */
+__swi_begin(0x4C3)
+void BTLP_vFlushBuffer(int mode, int sapi)
+__swi_end(0x4C3, BTLP_vFlushBuffer, (mode, sapi));
+
+/**
+ * L2CAP handler of the L2CA_ReadDataReq signal. Not reversed.
+ * @param message	signal, meaning not known
+ * */
+__swi_begin(0x4C4)
+void L2CA_ReadDataReq(const void *message)
+__swi_end(0x4C4, L2CA_ReadDataReq, (message));
+
+/**
+ * Register an SDev application (serial data endpoint) in the application table.
+ * @param handler_id	application number (0..31)
+ * @param methods	method table of the application
+ * ARM code.
+ * */
+__swi_begin(0x4C5)
+void SApp_Register(int handler_id, void *methods)
+__swi_end(0x4C5, SApp_Register, (handler_id, methods));
+
+/**
+ * Connect a serial device to an SDev application.
+ * @param sdevice	device type (0..18)
+ * @param handler_id	application number (0..31)
+ * @param connection_info	connection information passed to both sides
+ * @return 1 OK, 0 when either side refuses
+ * ARM code.
+ * */
+__swi_begin(0x4C6)
+int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, void *connection_info)
+__swi_end(0x4C6, ConnSDevSApp, (sdevice, handler_id, connection_info));
+
+/**
+ * Move an open device connection from one SDev application to another.
+ * @param handler_id	current application number (0..31)
+ * @param instance	connection instance of the current application
+ * @param new_handler_id	new application number (0..31), not the current one
+ * @param connection_info	connection information for the new application
+ * @return 1 OK, 0 error
+ * ARM code.
+ * */
+__swi_begin(0x4C7)
+int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)
+__swi_end(0x4C7, CHConnSApp, (handler_id, instance, new_handler_id, connection_info));
+
+/**
+ * Check whether an SDev application would accept a connection (opens and closes it again).
+ * @param handler_id	application number (0..31)
+ * @param instance	passed to the application's open method
+ * @return 1 yes, 0 no
+ * ARM code.
+ * */
+__swi_begin(0x4C8)
+int Serial_CanOpenSApp(uint32_t handler_id, uint32_t instance)
+__swi_end(0x4C8, Serial_CanOpenSApp, (handler_id, instance));
+
+/**
+ * Initialise the SIM Access Profile server and register it as SDev application 0x13.
+ * */
+__swi_begin(0x4C9)
+void Ca_SasSApp_Init(void)
+__swi_end(0x4C9, Ca_SasSApp_Init, ());
+
+/**
+ * Get the JSApi (Java Bluetooth) connection list.
+ * @return list head of the JSApi connection handles
+ * */
+__swi_begin(0x84CA)
+void *RamJSApiConnections(void)
+__swi_end(0x84CA, RamJSApiConnections, ());
+
+/**
+ * Get the BTLP (Bluetooth L2CAP port) connection table.
+ * @return connection table
+ * */
+__swi_begin(0x84CB)
+void *RamBtlpConnections(void)
+__swi_end(0x84CB, RamBtlpConnections, ());
+
+/**
+ * Get the L2CAP channel state table.
+ * @return channel state table
+ * */
+__swi_begin(0x84CC)
+void *RamL2capChannelState(void)
+__swi_end(0x84CC, RamL2capChannelState, ());
+
 #endif
 
 __swilib_end

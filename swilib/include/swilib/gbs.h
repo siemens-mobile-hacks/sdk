@@ -267,6 +267,15 @@ __swi_begin(0x423)
 void **GBS_GetMsgPayload(GBS_MSG *msg)
 __swi_end(0x423, GBS_GetMsgPayload, (msg));
 
+/**
+ * Find a GBS process group.
+ * @param cepid		CEPID whose group (cepid & 0xFF00) is looked up
+ * @return process group, or NULL if the group does not exist
+ * */
+__swi_begin(0x463)
+PGROUP *GBS_GetProcGroup(int cepid)
+__swi_end(0x463, GBS_GetProcGroup, (cepid));
+
 #endif
 
 /**
