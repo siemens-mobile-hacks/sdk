@@ -1,0 +1,40 @@
+name: Release packages
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build and upload .epk packages for
+        required: true
+
+jobs:
+  epk:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.release.tag_name || inputs.tag }}
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.TAG }}
+
+      - name: Install toolchain
+        uses: carlosperate/arm-none-eabi-gcc-action@v1
+        with:
+          release: 14.2.Rel1
+
+      - name: Build
+        run: |
+          cmake -B build
+          cmake --build build -j"$(nproc)"
+
+      - name: Upload packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" build/*.epk --clobber
