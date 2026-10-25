@@ -66,6 +66,14 @@ const WSHDR *MediaProc_GetLastAudioTrackDir()
 __swi_end(0x3B2, MediaProc_GetLastAudioTrackDir, ());
 
 /**
+ * Get the last activated music filter ID in the media player.
+ * @return unique filter ID
+ * */
+__swi_begin(0x3B6)
+int MediaProc_GetLastActivatedMusicFilter()
+__swi_end(0x3B6, MediaProc_GetLastActivatedMusicFilter, ());
+
+/**
  * Close MediaPlayer.
  * */
 __swi_begin(0x224)

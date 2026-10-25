@@ -4820,6 +4820,11 @@ decl = "void GetDate_ws(WSHDR *ws, const TDate *date, unsigned int unk)"
 [3B5]
 decl = "void GetTime_ws(WSHDR *ws, const TTime *time, unsigned int unk)"
 
+[3B6]
+decl = "int MediaProc_GetLastActivatedMusicFilter()"
+NSG = "98 B5 ?? 4C 20 69 40 6C"
+ELKA = "1C 40 2D E9 ?? 4? 1F E5 10 00 94 E5 44 00 90 E5"
+
 [3B7]
 decl = "int sys_mkdir_ws(const WSHDR *dirname, uint32_t *err)"
 
