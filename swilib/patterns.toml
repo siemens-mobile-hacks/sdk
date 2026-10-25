@@ -4808,6 +4808,8 @@ decl = "void SettingsAE_DeregisterListener(SettingsAE_ListenerProc proc, int set
 
 [3B2]
 decl = "const WSHDR *MediaProc_GetLastAudioTrackDir()"
+NSG = "B0 B5 C6 B0 05 A9 68 46 81 22 ?? [111100..] ?? [11.0....] ?? 4D 04 1C 28 69 80 30 C0 69"
+ELKA = "30 40 2D E9 47 DF 4D E2 18 10 8D E2 04 00 8D E2 81 20 A0 E3 ?? ?? ?? [1111101.] ?? 5? 1F E5 00 40 A0 E1 10 00 95 E5 9C 00 90 E5"
 
 [3B3]
 decl = "IMGHDR *GetIMGHDRFromCanvasCache(char canvas_id)"
