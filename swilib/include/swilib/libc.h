@@ -225,9 +225,9 @@ __swi_end(0x132, memmove, (destination, source, num));
  * @return When longjmp is called with the information set to env, the macro returns again;
  * 		this time it returns the value passed to longjmp as second argument if this is different from zero, or 1 if it is zero.
  * */
-__swi_begin(0x162)
+__swi_returns_twice_begin(0x162)
 int setjmp(jmp_buf env)
-__swi_end(0x162, setjmp, (env));
+__swi_returns_twice_end(0x162, setjmp, (env));
 
 /**
  * Long jump.
@@ -404,18 +404,6 @@ __swi_end(0x085, strcmpi, (str1, str2));
 __swi_begin(0x01B)
 size_t strlen(const char *str)
 __swi_end(0x01B, strlen, (str));
-
-/**
- * Locate characters in string.
- * @param str1	C string to be scanned.
- * @param str2	C string containing the characters to match.
- * @return A pointer to the first occurrence in str1 of any of the characters that are part of str2,
- * 		or a null pointer if none of the characters of str2 is found in str1 before the terminating null-character.
- * @return If none of the characters of str2 is present in str1, a null pointer is returned.
-*/
-__swi_begin(0x113)
-char *strpbrk(const char *str1, const char *str2)
-__swi_end(0x113, strpbrk, (str1, str2));
 
 /**
  * Get span until character in string.
@@ -651,7 +639,7 @@ __swi_end(0x2F1, dlclose, (handle));
  * @builtin ELKA, NSG, X75, SG
  * */
 __swi_begin(0x2F7)
-const char *dlerror()
+const char *dlerror(void)
 __swi_end(0x2F7, dlerror, ());
 
 /** @} */

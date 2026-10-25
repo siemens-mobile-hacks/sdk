@@ -201,15 +201,17 @@ __swi_end(0x170, MakeVoiceCall, (number, unk1, unk2));
 /**
  * Get SMS status.
  * @return 1 - send, 2 - recv, 3 - both
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x286)
-int GetSMSState()
+int GetSMSState(void)
 __swi_end(0x286, GetSMSState, ());
 
 /**
  * Check for new SMS.
  * @return 1: when there has new SMS
  * @return 0: no new SMS
+ * @platforms X75, SG
  * */
 __swi_begin(0x046)
 int HasNewSMS(void)
@@ -562,9 +564,10 @@ __swi_end(0x22A, FreeGSMTXTpkt, (pkt));
 
 /**
  * Open new received SMS in SMS UI.
+ * @platforms X75, SG
  * */
 __swi_begin(0x048)
-void ReadNewSMS()
+void ReadNewSMS(void)
 __swi_end(0x048, ReadNewSMS, ());
 
 /**

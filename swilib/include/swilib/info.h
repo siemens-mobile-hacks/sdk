@@ -55,7 +55,7 @@ __swi_end(0x05F, GetFreeRamAvail, ());
  * @return size
  * */
 __swi_begin(0x828B)
-int *RamTotalHeapSize()
+int *RamTotalHeapSize(void)
 __swi_end(0x828B, RamTotalHeapSize, ());
 
 /**
@@ -63,7 +63,7 @@ __swi_end(0x828B, RamTotalHeapSize, ());
  * @return size
  * */
 __swi_begin(0x828C)
-int *RamTemporaryHeapSize()
+int *RamTemporaryHeapSize(void)
 __swi_end(0x828C, RamTemporaryHeapSize, ());
 
 /**
@@ -93,7 +93,7 @@ __swi_end(0x1D5, Get_Phone_Info, (index));
  * @return iso code, example: ru, en
  * */
 __swi_begin(0x0AA)
-char *GetCurrentLocale()
+char *GetCurrentLocale(void)
 __swi_end(0x0AA, GetCurrentLocale, ());
 
 /**
@@ -201,17 +201,19 @@ __swi_end(0x24C, GetPeripheryState, (device, check));
 /**
  * Get bluetooth visibility.
  * @return visibility
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x287)
-int BT_GetLocVisibility()
+int BT_GetLocVisibility(void)
 __swi_end(0x287, BT_GetLocVisibility, ());
 
 /**
  * Own bluetooth name.
  * @return C-string
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x828D)
-const char *RamBluetoothDeviceName()
+const char *RamBluetoothDeviceName(void)
 __swi_end(0x828D, RamBluetoothDeviceName, ());
 
 /**
@@ -244,7 +246,7 @@ __swi_end(0x829F, RamIsBTHeadsetConnected, ());
  * @return unknown
  * */
 __swi_begin(0x009D)
-void *GetMissedEventsPtr()
+void *GetMissedEventsPtr(void)
 __swi_end(0x009D, GetMissedEventsPtr, ());
 
 /** @} */
@@ -340,7 +342,7 @@ __swi_end(0x80CB, RamRingtoneStatus, ());
  * @return unknown
  * */
 __swi_begin(0x828A)
-void *RamIsFileCache()
+void *RamIsFileCache(void)
 __swi_end(0x828A, RamIsFileCache, ());
 
 /** @} */

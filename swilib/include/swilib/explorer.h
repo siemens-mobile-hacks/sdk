@@ -107,8 +107,7 @@ struct REGEXPLEXT {
 };
 
 /**
- * Structure of the registered extension in RAM (on SGOLD).
- * Returend by #get_regextpnt_by_uid
+ * Native Explorer extension entry returned by #get_regextpnt_by_uid on SG and X75.
  * */
 struct REGEXPLEXT_ARM_NEW {
 	int zero;
@@ -149,7 +148,7 @@ __swi_end(0x095, UnRegExplorerExt, (ext));
  * @builtin ELKA, NSG, X75, SG
  * */
 __swi_begin(0x81B8)
-TREGEXPLEXT *EXT_TOP(void)
+void *EXT_TOP(void)
 __swi_end(0x81B8, EXT_TOP, ());
 
 /**
@@ -195,6 +194,7 @@ __swi_end(0x2DB, MediaSendCSM_Open, (file, path));
  * @param flag		0 or 2
  * @param open_mode	unknown param, set 0
  * @return CSM ID
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x3CC)
 int PersMenuCSM_Open(const WSHDR *file_name, const WSHDR *dir, int flag, int open_mode)
@@ -256,6 +256,7 @@ __swi_end(0x094, ExecuteFile, (filepath, mime, param));
  * @param transfer_id	transfer ID (0 ... 31)
  * @param[out] errp		variable for error
  * @return 0 or error
+ * @note Paths are WSHDR strings on NSG and ELKA, and C strings on SG and X75.
  * 
  * ```
  * int transfer_id = 0; // warning: needed function for safe transfer_id allocation
@@ -264,36 +265,42 @@ __swi_end(0x094, ExecuteFile, (filepath, mime, param));
  * ```
  * */
 __swi_begin(0x1F0)
+#ifdef NEWSGOLD
 int ExplorerCopyFile(const WSHDR *from, const WSHDR *to, int overwrite, char transfer_id, uint32_t *errp)
+#else
+int ExplorerCopyFile(const char *from, const char *to, int overwrite, char transfer_id, uint32_t *errp)
+#endif
 __swi_end(0x1F0, ExplorerCopyFile, (from, to, overwrite, transfer_id, errp));
 
 /**
  * Set transfer state.
  * @param transfer_id	transfer ID (0 ... 31)
  * @param state			see #ExplorerTransferStates
- * @return 0 or error
+ * @platforms NSG, ELKA, X75, SG
  * */
 __swi_begin(0x1F1)
-int ExplorerSetTransferState(char transfer_id, int state)
+void ExplorerSetTransferState(char transfer_id, int state)
 __swi_end(0x1F1, ExplorerSetTransferState, (transfer_id, state));
 
 /**
  * Get MIME type.
  * @param uid				file uid, see #GetExtUid_ws, #GetExtUidByFileName_ws
- * @param[out] mime_type	pointer to WSHDR string
- * @param unk_0				unknown param, set to 0
- * @return 1: success, 0: error
+ * @param[out] mime_type	output string, or NULL to only test whether the requested mapping exists
+ * @param occurrence		zero-based index among entries matching @p uid; 0 selects the first match
+ * @return 1 if the requested mapping exists, 0 otherwise; when @p mime_type is non-NULL, the mapping is also copied
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x3C8)
-int GetMimeType(int uid, WSHDR *mime_type, int unk_0)
-__swi_end(0x3C8, GetMimeType, (uid, mime_type, unk_0));
+int GetMimeType(int uid, WSHDR *mime_type, int occurrence)
+__swi_end(0x3C8, GetMimeType, (uid, mime_type, occurrence));
 
 /**
  * Build a full path by a file name and a directory name.
  * @param[out] path	pointer to WSHDR string
  * @param file_name	pointer to WSHDR string, that contains a file name
  * @param dir		pointer to WSHDR string, that contains a directory name
- * @return 1: success, 0: error
+ * @return 1 on success, 0 for NULL arguments; NSG and ELKA also return 0 for insufficient capacity in @p path
+ * @warning On SG and X75, @p path must have enough capacity for the complete result; firmware does not check it.
  * */
 __swi_begin(0x3D5)
 int BuildPath(WSHDR *path, const WSHDR *file_name, const WSHDR *dir)

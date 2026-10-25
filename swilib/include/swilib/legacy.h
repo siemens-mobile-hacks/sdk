@@ -187,9 +187,10 @@ __swi_end(0x80DD, RamCurrentTrack, ());
 /**
  * Pointer to the audio params (unknown).
  * @return unknown
+ * @platforms X75, SG
  * */
 __swi_begin(0x809B)
-void *RamAudioParamsAddr()
+void *RamAudioParamsAddr(void)
 __swi_end(0x809B, RamAudioParamsAddr, ());
 
 /**
@@ -211,10 +212,11 @@ __swi_end(0x80E2, RamKeyBuffer, ());
 
 /**
  * Check if user typing phone number.
- * @return 1 of 0
+ * @return pointer to a byte that is 1 while a phone number is being entered and 0 otherwise
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x828F)
-char *RamIsNumberTyping()
+char *RamIsNumberTyping(void)
 __swi_end(0x828F, RamIsNumberTyping, ());
 
 /**
@@ -232,14 +234,6 @@ __swi_end(0x80D9, RamShutdownMode, ());
 __swi_begin(0x8251)
 void *RamSizeOfPart()
 __swi_end(0x8251, RamSizeOfPart, ());
-
-/**
- * Unknown
- * @return unknown
- * */
-__swi_begin(0x083)
-void *GetPathOfFoundFile()
-__swi_end(0x083, GetPathOfFoundFile, ());
 
 /**
  * Get size of the recevied or sent file.
@@ -282,19 +276,22 @@ void editOrNewTXTModule(const char *file)
 __swi_end(0x03D, editOrNewTXTModule, (file));
 
 /**
- * Unknown.
+ * Toggle vibration for the current profile.
+ * @platforms X75, SG
  * */
 __swi_begin(0x055)
-void SwitchVibraOnOff()
+void SwitchVibraOnOff(void)
 __swi_end(0x055, SwitchVibraOnOff, ());
 
 /**
  * Unknown.
+ * @param profile_id profile ID
  * @return unknown
+ * @platforms X75, SG
  * */
 __swi_begin(0x07B)
-int GetProfileFilter()
-__swi_end(0x07B, GetProfileFilter, ());
+int GetProfileFilter(int profile_id)
+__swi_end(0x07B, GetProfileFilter, (profile_id));
 
 /**
  * @name Nucleus

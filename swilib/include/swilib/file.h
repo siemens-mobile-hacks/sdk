@@ -37,7 +37,7 @@ enum FileAttributes {
 enum FileSeekOrigin {
 	S_SET	= 0, /*!< cur_offset = offset */
 	S_CUR	= 1, /*!< cur_offset = cur_offset + offset */
-	S_END	= 2, /*!< cur_offset = file_size - 1 */
+	S_END	= 2, /*!< cur_offset = file_size + offset */
 };
 
 /**
@@ -241,14 +241,14 @@ __swi_end(0x00E, sys_fflush, (fd, err));
 /**
  * Move to the desired position within the file.
  * @param fd			file descriptor
- * @param offset		desired position
+ * @param offset		signed offset
  * @param origin		see #FileSeekOrigin
  * @param[out] err		error code
  * @param[out] err2		error code
- * @return 0 or error
+ * @return resulting file position, or -1 on error
  * */
 __swi_begin(0x00F)
-long sys_lseek(int fd, uint32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2)
+long sys_lseek(int fd, int32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2)
 __swi_end(0x00F, sys_lseek, (fd, offset, origin, err, err2));
 
 /**
@@ -282,7 +282,7 @@ __swi_end(0x08F, sys_rmdir, (dirname, err));
  * @copydoc sys_rmdir
  * */
 __swi_begin(0x3B8)
-int sys_rmdir_ws(const WSHDR *path, unsigned int *err)
+int sys_rmdir_ws(const WSHDR *path, uint32_t *err)
 __swi_end(0x3B8, sys_rmdir_ws, (path, err));
 
 /**
@@ -317,7 +317,7 @@ __swi_end(0x16B, sys_unlink, (path, err));
  * @copydoc sys_unlink
  * */
 __swi_begin(0x3BA)
-int sys_unlink_ws(const WSHDR *path, unsigned int *err)
+int sys_unlink_ws(const WSHDR *path, uint32_t *err)
 __swi_end(0x3BA, sys_unlink_ws, (path, err));
 
 /**
@@ -551,8 +551,19 @@ int FindNextFile(DIR_ENTRY *dir_entry, uint32_t *err)
 __swi_end(0x06C, FindNextFile, (dir_entry, err));
 
 /**
+ * Convert a directory-search result to the SG/X75 file-list record.
+ * @param dir_entry		directory-search result
+ * @param[out] file_info	output buffer of at least 0x110 bytes
+ * @return 1 on success, 0 if the entry cannot be converted
+ * @platforms X75, SG
+ * */
+__swi_begin(0x083)
+int GetPathOfFoundFile(DIR_ENTRY *dir_entry, void *file_info)
+__swi_end(0x083, GetPathOfFoundFile, (dir_entry, file_info));
+
+/**
  * Close search session
- * @param dir_entry		first found file
+ * @param dir_entry		pointer to the search session
  * @param[out] err		error code
  * @return 0 or error
  * */
@@ -573,7 +584,7 @@ __swi_end(0x08A, GetFreeFlexSpace, (drive, err));
 /**
  * Get total space on a specified disk.
  * @param drive		number of the drive: 0-4
- * @param[out] err	error code
+ * @param err			unused
  * @return bytes count
  * */
 __swi_begin(0x08B)

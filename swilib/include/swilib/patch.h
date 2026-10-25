@@ -176,11 +176,17 @@ __swi_end(0x0B0, DrawPicWithCanvas, (x, y, picture));
  * @param x, y		image coordinates
  * @param picture	image number
  * @param pen		replace black color or NULL
+ * @param brush		replace background color or NULL (SG and X75 only)
  * @warning Function from the patch "API", see: https://patches.kibab.com/patches/search.php5?action=search&kw=API
  * */
 __swi_begin(0x0B1)
+#ifdef NEWSGOLD
 void DrawColorPicWithCanvas(int x, int y, int picture, const char *pen)
 __swi_end(0x0B1, DrawColorPicWithCanvas, (x, y, picture, pen));
+#else
+void DrawColorPicWithCanvas(int x, int y, int picture, const char *pen, const char *brush)
+__swi_end(0x0B1, DrawColorPicWithCanvas, (x, y, picture, pen, brush));
+#endif
 
 /**
  * Draw a multi-line string.
@@ -274,13 +280,13 @@ __swi_end(0x088, GetAccessoryType, ());
 
 /**
  * Get missed events count.
- * @param Event		see #MissedEvent
+ * @param event		see #MissedEvent
  * @return count
  * @warning Function from the patch "API", see: https://patches.kibab.com/patches/search.php5?action=search&kw=API
  * */
 __swi_begin(0x009E)
-int GetMissedEventCount(uint32_t Event)
-__swi_end(0x009E, GetMissedEventCount, (Event));
+int GetMissedEventCount(uint32_t event)
+__swi_end(0x009E, GetMissedEventCount, (event));
 
 /**
  * Convert Chinese one-byte C-string to WHSDR.
@@ -505,7 +511,7 @@ __swi_end(0x1EE, ProgressCalculate, (current, total));
  * @warning Function from the patch "GraphPatchManager", see: https://patches.kibab.com/patches/search.php5?action=search&kw=GraphPatchManager
  * */
 __swi_begin(0x0B2)
-void *GetBuildCanvas()
+void *GetBuildCanvas(void)
 __swi_end(0x0B2, GetBuildCanvas, ());
 
 /** @} */

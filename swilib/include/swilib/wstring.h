@@ -217,10 +217,10 @@ __swi_end(0x1DC, wstrchr, (str, start, character));
  * @param str			WSHDR string
  * @param rstart		position from which to start searching (from the end)
  * @param character		character to be located
- * @return position of the found character or 0xFFFF
+ * @return position of the found character or -1
  * */
 __swi_begin(0x1DD)
-uint16_t wstrrchr(WSHDR *str, uint32_t rstart, uint32_t character)
+short wstrrchr(WSHDR *str, uint32_t rstart, uint32_t character)
 __swi_end(0x1DD, wstrrchr, (str, rstart, character));
 
 /**

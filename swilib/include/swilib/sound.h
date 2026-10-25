@@ -433,9 +433,10 @@ __swi_end(0x04A, PlayFile, (flags, folder, file, cepid, msgid, sfo));
 /**
  * Get current audio path.
  * @return id
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x288)
-int Audio_GetCurrAudioPath()
+int Audio_GetCurrAudioPath(void)
 __swi_end(0x288, Audio_GetCurrAudioPath, ());
 
 /**
@@ -468,10 +469,10 @@ void PlaySoundLoop(int unk1, int unk2, int duration)
 __swi_end(0x034, PlaySoundLoop, (unk1, unk2, duration));
 
 /**
- * Change volume (unknown function).
+ * Change the current audio volume.
  * @param volume		volume level
- * @return unknown
- * @warning Untested function that is not found in any ELF's.
+ * @return undocumented
+ * @platforms X75, SG
  * */
 __swi_begin(0x09A)
 int ChangeVolume(uint8_t volume)

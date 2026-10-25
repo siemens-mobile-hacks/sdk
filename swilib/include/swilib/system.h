@@ -434,42 +434,42 @@ __swi_end(0x247, GSM_L1_Disable, ());
  * Syscall, which is used by the phone OS, swi 0.
  * */
 __swi_begin(0x000)
-void loopback0()
+void loopback0(void)
 __swi_end(0x000, loopback0, ());
 
 /**
  * Syscall, which is used by the phone OS, swi 1.
  * */
 __swi_begin(0x001)
-void loopback1()
+void loopback1(void)
 __swi_end(0x001, loopback1, ());
 
 /**
  * Syscall, which is used by the phone OS, swi 2.
  * */
 __swi_begin(0x002)
-void loopback2()
+void loopback2(void)
 __swi_end(0x002, loopback2, ());
 
 /**
  * Syscall, which is used by the phone OS, swi 3.
  * */
 __swi_begin(0x003)
-void loopback3()
+void loopback3(void)
 __swi_end(0x003, loopback3, ());
 
 /**
  * Syscall, which is used by the phone OS, swi 4.
  * */
 __swi_begin(0x004)
-void loopback4()
+void loopback4(void)
 __swi_end(0x004, loopback4, ());
 
 /**
  * Syscall, which is used by the phone OS, swi 171.
  * */
 __swi_begin(0x0AB)
-void loopback171()
+void loopback171(void)
 __swi_end(0x0AB, loopback171, ());
 
 /** @} */
