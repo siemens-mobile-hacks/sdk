@@ -746,7 +746,7 @@ decl = "int HexCharToInt(char c)"
 NSG = "0A1040E2200140E0200280E0200480E0200880E0A001A0E1002180E0821051E0010080520A1081421EFF2FE1"
 
 [082]
-decl = "const WSHDR *GetLastAudioTrackFilename()"
+decl = "const WSHDR *MediaProc_GetLastAudioTrackFilename()"
 NSG = """
 ?? B5 ?? B0 ?? A9 ?? 46 ?? 22 ?? ?? ?? ?? ?? 4D ?? 1C ?? 69 ?? 30 ?? 69 ?? 28 ?? D1 ?? 22 ?? 21 ?? 1C
 LDR[46 49 4C 45 4E 41 4D 45 00] + 1
@@ -4807,7 +4807,7 @@ decl = "void SettingsAE_RegisterListener(SettingsAE_ListenerProc proc, int set_i
 decl = "void SettingsAE_DeregisterListener(SettingsAE_ListenerProc proc, int set_id, const char *entry, const char *keyword)"
 
 [3B2]
-decl = "const WSHDR *GetLastAudioTrackDir()"
+decl = "const WSHDR *MediaProc_GetLastAudioTrackDir()"
 
 [3B3]
 decl = "IMGHDR *GetIMGHDRFromCanvasCache(char canvas_id)"

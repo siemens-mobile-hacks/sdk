@@ -54,16 +54,16 @@ __swi_end(0x223, IsMediaPlayerInBackground, ());
  * @return pointer to the WSHDR
  * */
 __swi_begin(0x082)
-const WSHDR *GetLastAudioTrackFilename()
-__swi_end(0x082, GetLastAudioTrackFilename, ());
+const WSHDR *MediaProc_GetLastAudioTrackFilename()
+__swi_end(0x082, MediaProc_GetLastAudioTrackFilename, ());
 
 /**
  * Get the directory of the last audio track in media player.
  * @return pointer to the WSHDR
  * */
 __swi_begin(0x3B2)
-const WSHDR *GetLastAudioTrackDir()
-__swi_end(0x3B2, GetLastAudioTrackDir, ());
+const WSHDR *MediaProc_GetLastAudioTrackDir()
+__swi_end(0x3B2, MediaProc_GetLastAudioTrackDir, ());
 
 /**
  * Close MediaPlayer.
