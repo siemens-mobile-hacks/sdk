@@ -4800,6 +4800,21 @@ NSG = "F0,B5,0F,B4,0F,1C,14,1C,81,B0,00,2C,??,??,00,20,05,B0,F0,BC +1"
 [3AC]
 decl = "int EVP_add_cipher(EVP_CIPHER *c)"
 
+[3AD]
+decl = "int MediaProc_GetLastActivatedMusicFilter()"
+NSG = "98 B5 ?? 4C 20 69 40 6C"
+ELKA = "1C 40 2D E9 ?? 4? 1F E5 10 00 94 E5 44 00 90 E5"
+
+[3AE]
+decl = "int MediaProc_GetLastActivatedMusicGenreLUID()"
+NSG = "98 B5 ?? 4C 20 69 40 6D"
+ELKA = "1C 40 2D E9 ?? 4? 1F E5 10 00 94 E5 54 00 90 E5"
+
+[3AF]
+decl = "int MediaProc_GetLastActivatedMusicArtistLUID()"
+NSG = "98 B5 ?? 4C 20 69 C0 6D"
+ELKA = "1C 40 2D E9 ?? 4? 9F E5 10 00 94 E5 5C 00 90 E5"
+
 [3B0]
 decl = "void SettingsAE_RegisterListener(SettingsAE_ListenerProc proc, int set_id, const char *entry, const char *keyword)"
 
@@ -4819,6 +4834,11 @@ decl = "void GetDate_ws(WSHDR *ws, const TDate *date, unsigned int unk)"
 
 [3B5]
 decl = "void GetTime_ws(WSHDR *ws, const TTime *time, unsigned int unk)"
+
+[3B6]
+decl = "int MediaProc_GetLastActivatedMusicAlbumLUID()"
+NSG = "98 B5 ?? 4C 20 69 40 6E"
+ELKA = "1C 40 2D E9 ?? 4? 1F E5 10 00 94 E5 64 00 90 E5"
 
 [3B7]
 decl = "int sys_mkdir_ws(const WSHDR *dirname, uint32_t *err)"
