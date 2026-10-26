@@ -210,7 +210,7 @@ __swi_end(0x287, BT_GetLocVisibility, ());
 /**
  * Own bluetooth name.
  * @return C-string
- * @platforms NSG, ELKA
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x828D)
 const char *RamBluetoothDeviceName(void)

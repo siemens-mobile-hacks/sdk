@@ -3846,7 +3846,7 @@ SG = """
 [28D]
 decl = "const char *RamBluetoothDeviceName(void)"
 NSG = "&(??,48,??,49,??,88,??,42,??,D0,??,??,??,??,00,20)+8"
-SG = false # Some firmwares have an internal BT-name buffer, but the public object is not platform-wide.
+SG = "&(10 B5 ?? 4C A0 34 00 28 04 D0 14 22 01 1C 20 1C ?? ?? ?? ?? 14 21 20 1C ?? ?? ?? ?? 10 BD + 2) + A0" # Bluetooth models only
 
 [28E]
 decl = "const char *RamActiveGPRSProfileName(void)"
@@ -4614,8 +4614,7 @@ ALL = "000050E30300000A0C1090E57C209FE5"
 
 [32F]
 decl = "int NU_Reset_Semaphore(NU_SEMAPHORE *semaphore, unsigned long initial_count)"
-NSG = false
-ELKA = "000050E30300000A0C2090E50C309FE5030052E10200000A1400E0E31EFF2FE1414D4553"
+NSG = "000050E30300000A0C2090E50C309FE5030052E10200000A1400E0E31EFF2FE1414D4553"
 SG = false
 
 [330]
@@ -4628,8 +4627,7 @@ ALL = "000050E30300000A0C1090E50C209FE5"
 
 [332]
 decl = "unsigned long NU_Established_Semaphores(void)"
-NSG = false
-ELKA = """
+NSG = """
 00 80 A0 E3 00 00 A0 E3 00 10 84 E0 10 10 D1 E5 01 00 80 E2 08 00 50 E3 01 10 C6 E4 F9 FF FF BA
 1C 00 D4 E5 00 00 50 E3 0B 00 A0 03 06 00 A0 13 00 00 CA E5 18 00 94 E5 - 0x138
 """
@@ -4637,8 +4635,7 @@ SG = false
 
 [333]
 decl = "int NU_Semaphore_Information(NU_SEMAPHORE *semaphore, CHAR *name, unsigned long *current_count, OPTION *suspend_type, unsigned long *tasks_waiting, NU_TASK **first_task)"
-NSG = false
-ELKA = """
+NSG = """
 00 80 A0 E3 00 00 A0 E3 00 10 84 E0 10 10 D1 E5 01 00 80 E2 08 00 50 E3 01 10 C6 E4 F9 FF FF BA
 1C 00 D4 E5 00 00 50 E3 0B 00 A0 03 06 00 A0 13 00 00 CA E5 18 00 94 E5 - 0x80
 """
@@ -4646,8 +4643,7 @@ SG = false
 
 [334]
 decl = "unsigned long NU_Semaphore_Pointers(NU_SEMAPHORE **pointer_list, unsigned long maximum_pointers)"
-NSG = false
-ELKA = """
+NSG = """
 00 80 A0 E3 00 00 A0 E3 00 10 84 E0 10 10 D1 E5 01 00 80 E2 08 00 50 E3 01 10 C6 E4 F9 FF FF BA
 1C 00 D4 E5 00 00 50 E3 0B 00 A0 03 06 00 A0 13 00 00 CA E5 18 00 94 E5 - 0x124
 """
