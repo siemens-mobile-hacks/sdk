@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2af9e2c038eb5e647b41860a74b4352e51":[0,19,3,11],
+"group___settings.html#struct_r_e_g___c_l_i_e_n_t":[0,19,0],
+"group___socket.html":[0,14],
+"group___socket.html#ga00efd0fdd0cb87ebd4106b85293990ed":[0,14,17],
 "group___socket.html#ga03016e1f876d02247e91a9aca1ff4f01":[0,14,30],
 "group___socket.html#ga04e7c1a8d2c7787e27ce895e5ff5e4b7":[0,14,34],
 "group___socket.html#ga0dca0e9faae3dbaac80f299428d5d306":[0,14,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "group___telephony.html#struct_r_a_m_n_e_t":[0,20,1],
 "group___telephony.html#struct_s_m_s___d_a_t_a___l_i_s_t":[0,20,7],
 "group___telephony.html#struct_s_m_s___d_a_t_a___l_l_i_s_t":[0,20,8],
-"group___telephony.html#struct_s_m_s___d_a_t_a___r_o_o_t":[0,20,9],
-"group___telephony.html#struct_s_m_s___p_o_s___i_n_d_e_x___d_a_t_a":[0,20,5],
-"group___telephony.html#struct_struct_u_s_s_d":[0,20,4],
-"group___telephony.html#struct_struct_u_s_s_d_str":[0,20,3],
-"group___u_i.html":[0,7]
+"group___telephony.html#struct_s_m_s___d_a_t_a___r_o_o_t":[0,20,9]
 };

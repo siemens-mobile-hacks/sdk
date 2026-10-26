@@ -1,5 +1,9 @@
 var NAVTREEINDEX19 =
 {
+"group___utils.html#gaababc8e359806301a0a39ad6aa492676":[0,26,6],
+"group___utils.html#gab3bf183bf9950ebbe2a704c853610c25":[0,26,8],
+"group___utils.html#gabdc440d4fa6e76035819a900ef899e38":[0,26,0],
+"group___utils.html#gac855b7d82ff50a318372e42384a5590d":[0,26,9],
 "group___utils.html#gace5e52ef6ca261bef522b0fe34efe608":[0,26,3],
 "group___utils.html#gad37c7ad276b582086fb804706d0df716":[0,26,4],
 "group___utils.html#gaff683743c044412606932c887d25e00f":[0,26,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX19 =
 "naticq__ipc_8h.html#struct_i_p_c_msg":[1,0,0,7,0],
 "naticq__ipc_8h.html#struct_i_p_c_msg___r_e_c_v_m_s_g":[1,0,0,7,1],
 "naticq__ipc_8h_source.html":[1,0,0,7],
-"netdb_8h.html":[1,0,0,8],
-"netdb_8h_source.html":[1,0,0,8],
-"nu__swilib_8h.html":[1,0,0,9],
-"nu__swilib_8h_source.html":[1,0,0,9],
-"nucleus_8h.html":[1,0,0,2,20]
+"netdb_8h.html":[1,0,0,8]
 };
