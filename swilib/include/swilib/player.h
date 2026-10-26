@@ -54,16 +54,48 @@ __swi_end(0x223, IsMediaPlayerInBackground, ());
  * @return pointer to the WSHDR
  * */
 __swi_begin(0x082)
-const WSHDR *GetLastAudioTrackFilename()
-__swi_end(0x082, GetLastAudioTrackFilename, ());
+const WSHDR *MediaProc_GetLastAudioTrackFilename()
+__swi_end(0x082, MediaProc_GetLastAudioTrackFilename, ());
 
 /**
- * Get the directory of the last audio track in media player.
+ * Get the directory of the last audio track in the media player.
  * @return pointer to the WSHDR
  * */
 __swi_begin(0x3B2)
-const WSHDR *GetLastAudioTrackDir()
-__swi_end(0x3B2, GetLastAudioTrackDir, ());
+const WSHDR *MediaProc_GetLastAudioTrackDir()
+__swi_end(0x3B2, MediaProc_GetLastAudioTrackDir, ());
+
+/**
+ * Get the last activated music filter ID in the media player.
+ * @return unique filter ID
+ * */
+__swi_begin(0x3AD)
+int MediaProc_GetLastActivatedMusicFilter()
+__swi_end(0x3AD, MediaProc_GetLastActivatedMusicFilter, ());
+
+/**
+ * Get the LUID of the last activated music genre in the media player.
+ * @return unique genre LUID
+ * */
+__swi_begin(0x3AE)
+int MediaProc_GetLastActivatedMusicGenreLUID()
+__swi_end(0x3AE, MediaProc_GetLastActivatedMusicGenreLUID, ());
+
+/**
+ * Get the LUID of the last activated music artist in the media player.
+ * @return unique artist LUID
+ * */
+__swi_begin(0x3AF)
+int MediaProc_GetLastActivatedMusicArtistLUID()
+__swi_end(0x3AF, MediaProc_GetLastActivatedMusicArtistLUID, ());
+
+/**
+ * Get the LUID of the last activated music album in the media player.
+ * @return unique album LUID
+ * */
+__swi_begin(0x3B6)
+int MediaProc_GetLastActivatedMusicAlbumLUID()
+__swi_end(0x3B6, MediaProc_GetLastActivatedMusicAlbumLUID, ());
 
 /**
  * Close MediaPlayer.
