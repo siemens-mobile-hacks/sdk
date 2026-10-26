@@ -76,7 +76,7 @@ var group___sound =
     [ "PlayMelody_GetPosition", "group___sound.html#gad3bd5ebede0583620de217ff6220a330", null ],
     [ "PlayMelody_GetDuration", "group___sound.html#ga2989aa7c6fb9bc15c228032c0c60078e", null ],
     [ "PlayFile", "group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776", null ],
-    [ "Audio_GetCurrAudioPath", "group___sound.html#gacaeae14a320eb3ad6d22095b563c91ba", null ],
+    [ "Audio_GetCurrAudioPath", "group___sound.html#ga855fc9a59be784c10e46d02664081d27", null ],
     [ "Audio_GetObjectHandle", "group___sound.html#ga85c85e25b9ff0084453517f541b7ba3f", null ],
     [ "AACC_AudioTransferReq", "group___sound.html#ga4ff2744cc9df632d76f6ec05b18e9341", null ],
     [ "PlaySoundLoop", "group___sound.html#gac10d3fb6d442bed3c3c17f6a72ffce76", null ],

@@ -13,7 +13,7 @@ var telephony_8h =
     [ "EAM_DATA", "group___telephony.html#gac5e6bd3705f802a5dadd556b3bb5dda7", null ],
     [ "RAM_EMS_ADMIN", "group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6", null ],
     [ "MakeVoiceCall", "group___telephony.html#gad7271aec919ffd55e80f309b9163b22d", null ],
-    [ "GetSMSState", "group___telephony.html#gac2ac973944ce151ea56189324e740870", null ],
+    [ "GetSMSState", "group___telephony.html#gacf3409e7b3f7e7870c0e73d556f759ac", null ],
     [ "HasNewSMS", "group___telephony.html#gae4f9c79fe5975a25412c4605a5cc9b95", null ],
     [ "HasFlashSMS", "group___telephony.html#gae2c1338d462e848232cfa206d3b0484f", null ],
     [ "RamMissedSMS", "group___telephony.html#ga9550211571415f3f76479383ab0b1803", null ],
@@ -54,7 +54,7 @@ var telephony_8h =
     [ "RAM_EMS_Admin", "group___telephony.html#ga08773e5feba6ba9ad9a49b71e385fa43", null ],
     [ "GSMTXT_Decode", "group___telephony.html#ga6ab68a08e69d1db60c72db76688e58b7", null ],
     [ "FreeGSMTXTpkt", "group___telephony.html#ga62f6033c9d8fecff18fb7ae01d97be3a", null ],
-    [ "ReadNewSMS", "group___telephony.html#ga5ceba4b7dcca87ea6aac517074ab8eee", null ],
+    [ "ReadNewSMS", "group___telephony.html#gac65346c4759f60e23f6c623910e00e81", null ],
     [ "ReadFlashSMS", "group___telephony.html#ga44b912e949418db2ca1e72b5e435676d", null ],
     [ "GetAllEmail", "group___telephony.html#gafbfea38ad725c35a82fac5af5986b9f3", null ]
 ];

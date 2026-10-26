@@ -166,7 +166,7 @@ var group___u_i =
     [ "EDIT_IsBusy", "group___u_i.html#ga2d839e6d76f4d99ab781c5b12d65728b", null ],
     [ "EDIT_OpenOptionMenuWithUserItems", "group___u_i.html#ga05048d24d1463ade021db6d6d9ed8886", null ],
     [ "AllocEQueue", "group___u_i.html#ga472dafb4a369eba36225dbe47d623b8c", null ],
-    [ "EDIT_SetEQueue", "group___u_i.html#ga2415e45b905536c8d8a951d860f658a3", null ],
+    [ "EDIT_SetEQueue", "group___u_i.html#ga43bd9d0bb5234daee6ec86f4b79ab36d", null ],
     [ "PrepareEditControl", "group___u_i.html#gaca40f51a85c6cc34aacbd79116b78913", null ],
     [ "ConstructEditControl", "group___u_i.html#gaa806382b3accdfd18fd79c7a1937f567", null ],
     [ "ConstructComboBox", "group___u_i.html#ga0abcc3bd69199f77a9e60ec45e0ab58c", null ],

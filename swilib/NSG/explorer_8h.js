@@ -18,7 +18,7 @@ var explorer_8h =
     ] ],
     [ "RegExplorerExt", "group___explorer.html#gadc932a402cec6b4ddf1c9f16f7400689", null ],
     [ "UnRegExplorerExt", "group___explorer.html#ga50ba95ccc45f700e68483aa82b56c15c", null ],
-    [ "EXT_TOP", "group___explorer.html#ga1bd88acbaa78bab901ac7dae4109d7dd", null ],
+    [ "EXT_TOP", "group___explorer.html#ga29e1e98a9d6128bec41b53c616920bbd", null ],
     [ "get_regextpnt_by_uid", "group___explorer.html#ga1ea3f84f8c32706d202246c8ccad8024", null ],
     [ "GetExtUid_ws", "group___explorer.html#ga031efc82e27b00dd3c14d8d9fb0ffc7c", null ],
     [ "GetExtUidByFileName_ws", "group___explorer.html#gab52df224d39da12eb8cc411e449896d2", null ],
@@ -30,7 +30,7 @@ var explorer_8h =
     [ "CardExplGetFName", "group___explorer.html#ga9f422ce2d40e95a05012b96aa5c15829", null ],
     [ "ExecuteFile", "group___explorer.html#gac8eb4a154a2b8a782ab52dfe2aa794b4", null ],
     [ "ExplorerCopyFile", "group___explorer.html#ga4ab4e930eb3a58fed514ca93e972058f", null ],
-    [ "ExplorerSetTransferState", "group___explorer.html#ga684b13c109c05553083a6dc922b45387", null ],
-    [ "GetMimeType", "group___explorer.html#gaa38d21ed3c3af0f66614dec0f037acc3", null ],
+    [ "ExplorerSetTransferState", "group___explorer.html#ga0021d79fdd4463b8eafae574a190a715", null ],
+    [ "GetMimeType", "group___explorer.html#ga87cf57887b8e209eff266c668f2648a9", null ],
     [ "BuildPath", "group___explorer.html#gae79533b0b95f6badc5d4d34551483ac4", null ]
 ];

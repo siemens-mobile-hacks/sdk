@@ -20,7 +20,7 @@ var searchData=
   ['clearmemory_17',['ClearMemory',['../group___l_e_g_a_c_y.html#gadf3c576bf333b29bf2218c8b75e9ede6',1,'legacy.h']]],
   ['closecsm_18',['CloseCSM',['../group___c_s_m.html#ga9e1dc13d66c045e49e87d7cf810b13a1',1,'csm.h']]],
   ['closemediaplayer_19',['CloseMediaPlayer',['../group___player.html#gae5d0e5b87cff58f8fd8bbe804010464a',1,'player.h']]],
-  ['closescreensaver_20',['CloseScreensaver',['../group___i_d_l_e.html#ga1b8e20b5a681908cab98d034d133da60',1,'idle.h']]],
+  ['closescreensaver_20',['CloseScreensaver',['../group___i_d_l_e.html#gae8b6588a7aa6a42364f0f1bbe0c10ba4',1,'idle.h']]],
   ['closesocket_21',['closesocket',['../group___socket.html#gad4725afcb96cfe437fd7a748129b1f33',1,'socket.h']]],
   ['cmpdates_22',['CmpDates',['../group___date_time.html#ga50a090750c901b3ef72488b678db5f6e',1,'date.h']]],
   ['cmptimes_23',['CmpTimes',['../group___date_time.html#ga241444c3dbeb96b8a5f0c407c847fc65',1,'date.h']]],

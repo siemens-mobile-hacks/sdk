@@ -121,7 +121,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:struct_r_e_g_e_x_p_l_e_x_t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension registration structure.  <a href="#struct_r_e_g_e_x_p_l_e_x_t">More...</a><br /></td></tr>
 <tr class="separator:struct_r_e_g_e_x_p_l_e_x_t"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w" id="r_struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w">REGEXPLEXT_ARM_NEW</a></td></tr>
-<tr class="memdesc:struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of the registered extension in RAM (on SGOLD).  <a href="#struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w">More...</a><br /></td></tr>
+<tr class="memdesc:struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w"><td class="mdescLeft">&#160;</td><td class="mdescRight">Native Explorer extension entry returned by <a class="el" href="#ga1ea3f84f8c32706d202246c8ccad8024" title="Get explorer extension definition by ID.">get_regextpnt_by_uid</a> on SG and X75.  <a href="#struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w">More...</a><br /></td></tr>
 <tr class="separator:struct_r_e_g_e_x_p_l_e_x_t___a_r_m___n_e_w"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -169,9 +169,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga50ba95ccc45f700e68483aa82b56c15c" id="r_ga50ba95ccc45f700e68483aa82b56c15c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50ba95ccc45f700e68483aa82b56c15c">UnRegExplorerExt</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_r_e_g_e_x_p_l_e_x_t">REGEXPLEXT</a> *ext)</td></tr>
 <tr class="memdesc:ga50ba95ccc45f700e68483aa82b56c15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister extension from the NativeExplorer.  <br /></td></tr>
 <tr class="separator:ga50ba95ccc45f700e68483aa82b56c15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1bd88acbaa78bab901ac7dae4109d7dd" id="r_ga1bd88acbaa78bab901ac7dae4109d7dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaead803caeafde5c0d959264cde76f1b4">TREGEXPLEXT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1bd88acbaa78bab901ac7dae4109d7dd">EXT_TOP</a> (void)</td></tr>
-<tr class="memdesc:ga1bd88acbaa78bab901ac7dae4109d7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the explorer extensions.  <br /></td></tr>
-<tr class="separator:ga1bd88acbaa78bab901ac7dae4109d7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29e1e98a9d6128bec41b53c616920bbd" id="r_ga29e1e98a9d6128bec41b53c616920bbd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga29e1e98a9d6128bec41b53c616920bbd">EXT_TOP</a> (void)</td></tr>
+<tr class="memdesc:ga29e1e98a9d6128bec41b53c616920bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the explorer extensions.  <br /></td></tr>
+<tr class="separator:ga29e1e98a9d6128bec41b53c616920bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1ea3f84f8c32706d202246c8ccad8024" id="r_ga1ea3f84f8c32706d202246c8ccad8024"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaead803caeafde5c0d959264cde76f1b4">TREGEXPLEXT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1ea3f84f8c32706d202246c8ccad8024">get_regextpnt_by_uid</a> (int uid)</td></tr>
 <tr class="memdesc:ga1ea3f84f8c32706d202246c8ccad8024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get explorer extension definition by ID.  <br /></td></tr>
 <tr class="separator:ga1ea3f84f8c32706d202246c8ccad8024"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,12 +205,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga4ab4e930eb3a58fed514ca93e972058f" id="r_ga4ab4e930eb3a58fed514ca93e972058f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *from, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *to, int overwrite, char transfer_id, uint32_t *errp)</td></tr>
 <tr class="memdesc:ga4ab4e930eb3a58fed514ca93e972058f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy file.  <br /></td></tr>
 <tr class="separator:ga4ab4e930eb3a58fed514ca93e972058f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga684b13c109c05553083a6dc922b45387" id="r_ga684b13c109c05553083a6dc922b45387"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a> (char transfer_id, int state)</td></tr>
-<tr class="memdesc:ga684b13c109c05553083a6dc922b45387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transfer state.  <br /></td></tr>
-<tr class="separator:ga684b13c109c05553083a6dc922b45387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa38d21ed3c3af0f66614dec0f037acc3" id="r_gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa38d21ed3c3af0f66614dec0f037acc3">GetMimeType</a> (int uid, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime_type, int unk_0)</td></tr>
-<tr class="memdesc:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get MIME type.  <br /></td></tr>
-<tr class="separator:gaa38d21ed3c3af0f66614dec0f037acc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0021d79fdd4463b8eafae574a190a715" id="r_ga0021d79fdd4463b8eafae574a190a715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0021d79fdd4463b8eafae574a190a715">ExplorerSetTransferState</a> (char transfer_id, int state)</td></tr>
+<tr class="memdesc:ga0021d79fdd4463b8eafae574a190a715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transfer state.  <br /></td></tr>
+<tr class="separator:ga0021d79fdd4463b8eafae574a190a715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87cf57887b8e209eff266c668f2648a9" id="r_ga87cf57887b8e209eff266c668f2648a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87cf57887b8e209eff266c668f2648a9">GetMimeType</a> (int uid, <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *mime_type, int occurrence)</td></tr>
+<tr class="memdesc:ga87cf57887b8e209eff266c668f2648a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get MIME type.  <br /></td></tr>
+<tr class="separator:ga87cf57887b8e209eff266c668f2648a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae79533b0b95f6badc5d4d34551483ac4" id="r_gae79533b0b95f6badc5d4d34551483ac4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae79533b0b95f6badc5d4d34551483ac4">BuildPath</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *path, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *file_name, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *dir)</td></tr>
 <tr class="memdesc:gae79533b0b95f6badc5d4d34551483ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a full path by a file name and a directory name.  <br /></td></tr>
 <tr class="separator:gae79533b0b95f6badc5d4d34551483ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -471,14 +471,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga1bd88acbaa78bab901ac7dae4109d7dd" name="ga1bd88acbaa78bab901ac7dae4109d7dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1bd88acbaa78bab901ac7dae4109d7dd">&#9670;&#160;</a></span>EXT_TOP()</h2>
+<a id="ga29e1e98a9d6128bec41b53c616920bbd" name="ga29e1e98a9d6128bec41b53c616920bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29e1e98a9d6128bec41b53c616920bbd">&#9670;&#160;</a></span>EXT_TOP()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#gaead803caeafde5c0d959264cde76f1b4">TREGEXPLEXT</a> * EXT_TOP </td>
+          <td class="memname">void * EXT_TOP </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -640,6 +640,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>CSM ID </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>
@@ -839,24 +840,25 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Paths are <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> strings on NSG and ELKA, and C strings on SG and X75.</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> transfer_id = 0; <span class="comment">// warning: needed function for safe transfer_id allocation</span></div>
-<div class="line"><a class="code hl_function" href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a>(transfer_id, <a class="code hl_enumvalue" href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a>);</div>
+<div class="line"><a class="code hl_function" href="#ga0021d79fdd4463b8eafae574a190a715">ExplorerSetTransferState</a>(transfer_id, <a class="code hl_enumvalue" href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a>);</div>
 <div class="line"><a class="code hl_function" href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a>(from, to, 1, transfer_id, &amp;err);</div>
+<div class="ttc" id="agroup___explorer_html_ga0021d79fdd4463b8eafae574a190a715"><div class="ttname"><a href="#ga0021d79fdd4463b8eafae574a190a715">ExplorerSetTransferState</a></div><div class="ttdeci">void ExplorerSetTransferState(char transfer_id, int state)</div><div class="ttdoc">Set transfer state.</div></div>
 <div class="ttc" id="agroup___explorer_html_ga4ab4e930eb3a58fed514ca93e972058f"><div class="ttname"><a href="#ga4ab4e930eb3a58fed514ca93e972058f">ExplorerCopyFile</a></div><div class="ttdeci">int ExplorerCopyFile(const WSHDR *from, const WSHDR *to, int overwrite, char transfer_id, uint32_t *errp)</div><div class="ttdoc">Copy file.</div></div>
-<div class="ttc" id="agroup___explorer_html_ga684b13c109c05553083a6dc922b45387"><div class="ttname"><a href="#ga684b13c109c05553083a6dc922b45387">ExplorerSetTransferState</a></div><div class="ttdeci">int ExplorerSetTransferState(char transfer_id, int state)</div><div class="ttdoc">Set transfer state.</div></div>
 <div class="ttc" id="agroup___explorer_html_ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75"><div class="ttname"><a href="#ggaab69e3ef9996de6fe27edbd6f55d6dbda936871b5480371822ee9746fb6a3bf75">EXPLORER_TRANSFER_STATE_RUNNING</a></div><div class="ttdeci">@ EXPLORER_TRANSFER_STATE_RUNNING</div><div class="ttdef"><b>Definition</b> <a href="explorer_8h_source.html#l00020">explorer.h:20</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="ga684b13c109c05553083a6dc922b45387" name="ga684b13c109c05553083a6dc922b45387"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga684b13c109c05553083a6dc922b45387">&#9670;&#160;</a></span>ExplorerSetTransferState()</h2>
+<a id="ga0021d79fdd4463b8eafae574a190a715" name="ga0021d79fdd4463b8eafae574a190a715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0021d79fdd4463b8eafae574a190a715">&#9670;&#160;</a></span>ExplorerSetTransferState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ExplorerSetTransferState </td>
+          <td class="memname">void ExplorerSetTransferState </td>
           <td>(</td>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>transfer_id</em></span>, </td>
         </tr>
@@ -876,12 +878,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA, X75, SG </dd></dl>
 
 </div>
 </div>
-<a id="gaa38d21ed3c3af0f66614dec0f037acc3" name="gaa38d21ed3c3af0f66614dec0f037acc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa38d21ed3c3af0f66614dec0f037acc3">&#9670;&#160;</a></span>GetMimeType()</h2>
+<a id="ga87cf57887b8e209eff266c668f2648a9" name="ga87cf57887b8e209eff266c668f2648a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87cf57887b8e209eff266c668f2648a9">&#9670;&#160;</a></span>GetMimeType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -899,7 +901,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_0</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>occurrence</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -908,12 +910,13 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">uid</td><td>file uid, see <a class="el" href="#ga031efc82e27b00dd3c14d8d9fb0ffc7c" title="Get the ID of the registered extension by its name.">GetExtUid_ws</a>, <a class="el" href="#gab52df224d39da12eb8cc411e449896d2" title="Get the ID of the registered extension by path to the file.">GetExtUidByFileName_ws</a> </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">mime_type</td><td>pointer to <a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r" title="Wide-string header.">WSHDR</a> string </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">unk_0</td><td>unknown param, set to 0 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">mime_type</td><td>output string, or NULL to only test whether the requested mapping exists </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">occurrence</td><td>zero-based index among entries matching <code>uid</code>; 0 selects the first match </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if the requested mapping exists, 0 otherwise; when <code>mime_type</code> is non-NULL, the mapping is also copied </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>
@@ -950,7 +953,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on success, 0 for NULL arguments; NSG and ELKA also return 0 for insufficient capacity in <code>path</code> </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>On SG and X75, <code>path</code> must have enough capacity for the complete result; firmware does not check it. </dd></dl>
 
 </div>
 </div>

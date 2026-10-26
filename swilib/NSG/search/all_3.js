@@ -348,7 +348,7 @@ var searchData=
   ['client_5fversion_345',['client_version',['../ssl_8h.html#af898db9604614a95a6830fbb5ce31850',1,'ssl_st']]],
   ['closecsm_346',['CloseCSM',['../group___c_s_m.html#ga9e1dc13d66c045e49e87d7cf810b13a1',1,'csm.h']]],
   ['closemediaplayer_347',['CloseMediaPlayer',['../group___player.html#gae5d0e5b87cff58f8fd8bbe804010464a',1,'player.h']]],
-  ['closescreensaver_348',['CloseScreensaver',['../group___i_d_l_e.html#ga1b8e20b5a681908cab98d034d133da60',1,'idle.h']]],
+  ['closescreensaver_348',['CloseScreensaver',['../group___i_d_l_e.html#gae8b6588a7aa6a42364f0f1bbe0c10ba4',1,'idle.h']]],
   ['closesocket_349',['closesocket',['../e__os_8h.html#a5a3eb971b466278ada4f7f87399a537c',1,'closesocket:&#160;e_os.h'],['../group___socket.html#gad4725afcb96cfe437fd7a748129b1f33',1,'closesocket(int socket):&#160;socket.h']]],
   ['cmd_350',['cmd',['../group___c_s_m.html#a8f39080b7a3f438e85645fe83300edbe',1,'CSMQ::cmd'],['../group___sound.html#a1a6603710fbe81867db296d3cbb2fd19',1,'GBS_PSOUND_MSG::cmd']]],
   ['cmpdates_351',['CmpDates',['../group___date_time.html#ga50a090750c901b3ef72488b678db5f6e',1,'date.h']]],

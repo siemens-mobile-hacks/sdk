@@ -32,7 +32,7 @@ var searchData=
   ['nu_5fcreate_5fpipe_29',['NU_Create_Pipe',['../group___n_u_c_l_e_u_s.html#gae1fd324d631a510f1fa2613ac92ebb21',1,'nucleus.h']]],
   ['nu_5fcreate_5fqueue_30',['NU_Create_Queue',['../group___n_u_c_l_e_u_s.html#gaee43ddff1422a16498bb3a4351e87aea',1,'nucleus.h']]],
   ['nu_5fcreate_5fsemaphore_31',['NU_Create_Semaphore',['../group___n_u_c_l_e_u_s.html#ga8945f42b65455d86f8bd5b9b8d3d5f93',1,'nucleus.h']]],
-  ['nu_5fcreate_5ftask_32',['NU_Create_Task',['../group___n_u_c_l_e_u_s.html#ga7180b1ff961409a0a2d51c2564182c6f',1,'nucleus.h']]],
+  ['nu_5fcreate_5ftask_32',['NU_Create_Task',['../group___n_u_c_l_e_u_s.html#ga6ff98dc91f96040267a58902885e4c27',1,'nucleus.h']]],
   ['nu_5fcreate_5ftimer_33',['NU_Create_Timer',['../group___n_u_c_l_e_u_s.html#ga3336b4ec215b4046b8a0c23f196f34b0',1,'nucleus.h']]],
   ['nu_5fcurrent_5fhisr_5fpointer_34',['NU_Current_HISR_Pointer',['../group___n_u_c_l_e_u_s.html#gab778f00fb5d29a979d96b4a481b19d20',1,'nucleus.h']]],
   ['nu_5fcurrent_5ftask_5fpointer_35',['NU_Current_Task_Pointer',['../group___n_u_c_l_e_u_s.html#gab3b8bee5935be63c966a0a994ea93f56',1,'nucleus.h']]],
@@ -69,7 +69,7 @@ var searchData=
   ['nu_5fevent_5fgroup_5fpointers_66',['NU_Event_Group_Pointers',['../group___n_u_c_l_e_u_s.html#ga5cf551d65091a9f6950ec2f12cc3119e',1,'nucleus.h']]],
   ['nu_5fhisr_5finformation_67',['NU_HISR_Information',['../group___n_u_c_l_e_u_s.html#gad16a313a66a6fa7ddafefebae85468db',1,'nucleus.h']]],
   ['nu_5fhisr_5fpointers_68',['NU_HISR_Pointers',['../group___n_u_c_l_e_u_s.html#ga83ad56e8a8fa884c94be6b76a7e4e98c',1,'nucleus.h']]],
-  ['nu_5fis_5fsupervisor_5fmode_69',['NU_IS_SUPERVISOR_MODE',['../group___n_u_c_l_e_u_s.html#ga43afb977364175631c9ae55e8fabef20',1,'nucleus.h']]],
+  ['nu_5fis_5fsupervisor_5fmode_69',['NU_IS_SUPERVISOR_MODE',['../group___n_u_c_l_e_u_s.html#ga4a2234c5d7e821cc2eb2f5aba957e41f',1,'nucleus.h']]],
   ['nu_5flicense_5finformation_70',['NU_License_Information',['../group___n_u_c_l_e_u_s.html#ga37d1b5257bf248c5ab76f4921f734acd',1,'nucleus.h']]],
   ['nu_5flocal_5fcontrol_5finterrupts_71',['NU_Local_Control_Interrupts',['../group___n_u_c_l_e_u_s.html#gac62bac26d855a7f4aa3405a399e9fe39',1,'nucleus.h']]],
   ['nu_5fmailbox_5finformation_72',['NU_Mailbox_Information',['../group___n_u_c_l_e_u_s.html#ga9c1fe7e937670547f57bab140b5cb399',1,'nucleus.h']]],
@@ -121,7 +121,7 @@ var searchData=
   ['nu_5fsetup_5fvector_118',['NU_Setup_Vector',['../group___n_u_c_l_e_u_s.html#ga56ee92ae1508eaa4bd0056e5b923e4ae',1,'nucleus.h']]],
   ['nu_5fsleep_119',['NU_Sleep',['../group___n_u_c_l_e_u_s.html#gaf569b1250b176e37160a8a543f3241f7',1,'nucleus.h']]],
   ['nu_5fsuperv_5fuser_5fvariables_120',['NU_SUPERV_USER_VARIABLES',['../group___n_u_c_l_e_u_s.html#gacf9f2b963875c9c57dbdbf89652792a1',1,'nucleus.h']]],
-  ['nu_5fsupervisor_5fmode_121',['NU_SUPERVISOR_MODE',['../group___n_u_c_l_e_u_s.html#ga869e9b304ed5a24a576299d8081e1450',1,'nucleus.h']]],
+  ['nu_5fsupervisor_5fmode_5fp_121',['NU_SUPERVISOR_MODE_P',['../group___n_u_c_l_e_u_s.html#gae2e2c71333343b1af821869bc1c7b78f',1,'nucleus.h']]],
   ['nu_5fsuspend_5fdriver_122',['NU_Suspend_Driver',['../group___n_u_c_l_e_u_s.html#ga500eb33f3b5626f837e75aa91dc2dca5',1,'nucleus.h']]],
   ['nu_5fsuspend_5ftask_123',['NU_Suspend_Task',['../group___n_u_c_l_e_u_s.html#ga7fdbf4850021a635774c56e0eeb07478',1,'nucleus.h']]],
   ['nu_5ftask_5finformation_124',['NU_Task_Information',['../group___n_u_c_l_e_u_s.html#gaa2174fe76df422d912f3bc387e8744c9',1,'nucleus.h']]],
@@ -131,5 +131,5 @@ var searchData=
   ['nu_5ftimer_5fpointers_128',['NU_Timer_Pointers',['../group___n_u_c_l_e_u_s.html#gadd8ad813afb5be1e949fb73bd4cc3db9',1,'nucleus.h']]],
   ['nu_5funprotect_129',['NU_Unprotect',['../group___n_u_c_l_e_u_s.html#ga955c345917167d602dead373831d658c',1,'nucleus.h']]],
   ['nu_5funprotect_5f2_130',['NU_Unprotect_2',['../group___l_e_g_a_c_y.html#ga77b0ca1ccf63b2be8e215a8e4b2f0b59',1,'legacy.h']]],
-  ['nu_5fuser_5fmode_131',['NU_USER_MODE',['../group___n_u_c_l_e_u_s.html#ga521586f85ece3e63b8a2ca3f63b8c13f',1,'nucleus.h']]]
+  ['nu_5fuser_5fmode_5fp_131',['NU_USER_MODE_P',['../group___n_u_c_l_e_u_s.html#ga31f8118e73e3d40c1a68937c501c8828',1,'nucleus.h']]]
 ];

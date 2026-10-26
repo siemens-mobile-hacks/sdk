@@ -26,7 +26,7 @@ var searchData=
   ['heuristic_5fmethod_23',['heuristic_method',['../builtin_2png_8h.html#a38fc594405a60dcc69eb73f53bfe8f86',1,'png_struct_def']]],
   ['hex_5fto_5fstring_24',['hex_to_string',['../x509v3_8h.html#a140a250c9cc505050d635fb34124ec19',1,'x509v3.h']]],
   ['hexchartoint_25',['HexCharToInt',['../group___utils.html#gad37c7ad276b582086fb804706d0df716',1,'utils.h']]],
-  ['hextoint_26',['HexToInt',['../group___utils.html#ga1a1b94ffa6d085f370aed09aeb3d6a3d',1,'utils.h']]],
+  ['hextoint_26',['HexToInt',['../group___utils.html#gace5e52ef6ca261bef522b0fe34efe608',1,'utils.h']]],
   ['hh_27',['hh',['../mdc2_8h.html#ac8d0d51c5116641384c15104f868f5d8',1,'mdc2_ctx_st']]],
   ['hist_28',['hist',['../builtin_2png_8h.html#a709ce088b8b66e6c0dfe7eef4caac686',1,'png_info_struct::hist'],['../builtin_2png_8h.html#a9e077b10ba0be3451c6cb712ecc9a432',1,'png_struct_def::hist']]],
   ['hit_29',['hit',['../ssl_8h.html#a20d2f2c7a00b1fd70c28c81c2d6f34c2',1,'ssl_st']]],

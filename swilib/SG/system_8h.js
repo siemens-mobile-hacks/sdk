@@ -41,10 +41,10 @@ var system_8h =
     [ "RamRandSeed", "group___system.html#ga18d57cd1471978edc7d09430a9530ddb", null ],
     [ "RamLastStoreString", "group___system.html#ga74839418e5906214a0d4b6036422131e", null ],
     [ "GSM_L1_Disable", "group___system.html#gac3f3f6bb3fdc947a2744ce5efe3f8c82", null ],
-    [ "loopback0", "group___system.html#ga0554ccb97a74a009af3ed551e3d38423", null ],
-    [ "loopback1", "group___system.html#gacd82c0a63eac220f33fd3ca8e6ecf128", null ],
-    [ "loopback2", "group___system.html#gab13abbec8d73087f7006073788de6b4b", null ],
-    [ "loopback3", "group___system.html#ga3405c1bac43909cafaf4a1da9ebde360", null ],
-    [ "loopback4", "group___system.html#ga49c2c25dbedd63be5260f8567166594d", null ],
-    [ "loopback171", "group___system.html#gaa68d11739593c5716c04992cd6a9bbd5", null ]
+    [ "loopback0", "group___system.html#ga82d36bc2fb7700dc4be3eff487721c94", null ],
+    [ "loopback1", "group___system.html#gafb10acad1fbb5a35e4eef559749d36b8", null ],
+    [ "loopback2", "group___system.html#ga88cefe7ce20271b563ac0d5af62277de", null ],
+    [ "loopback3", "group___system.html#ga00cd5f7e5d6f9f29ed8ec30c0f542ea6", null ],
+    [ "loopback4", "group___system.html#ga3f71a916578f317cb262ab2ec3246956", null ],
+    [ "loopback171", "group___system.html#ga6fcc69e886e061d5cda70d9fe5ce8200", null ]
 ];

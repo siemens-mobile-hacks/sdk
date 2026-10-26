@@ -31,7 +31,6 @@ var libc_8h =
     [ "strcasecmp", "group__libc.html#ga913241bc7c194805c42e9237976da53c", null ],
     [ "strcmpi", "group__libc.html#ga39697c2a2fccb8d3eb0aa6a2c1c7e19b", null ],
     [ "strlen", "group__libc.html#ga008e171a518fe0e0352f31b245e03875", null ],
-    [ "strpbrk", "group__libc.html#ga10250acff6d5282321e8e0a24028330b", null ],
     [ "strcspn", "group__libc.html#ga27fea0fac317f96759f9776e35ad58aa", null ],
     [ "strcat", "group__libc.html#ga899321e1ebe1b4da1eb66dbbd60cfd82", null ],
     [ "strncat", "group__libc.html#ga1f44782ab184b2324d1169c0ec9539b3", null ],
@@ -51,5 +50,5 @@ var libc_8h =
     [ "dlopen", "group__libc.html#gad2e3d2717bf78240846ca6a4d80bb92f", null ],
     [ "dlsym", "group__libc.html#ga215e2af088c2ab2b289ffffc1dbdde74", null ],
     [ "dlclose", "group__libc.html#ga3ebc15a2ce671334b0a9386fe3276c43", null ],
-    [ "dlerror", "group__libc.html#gad442bcfd80a6c2fba09594c8cacc188d", null ]
+    [ "dlerror", "group__libc.html#gafd1c3c97e1f2dd775d1ca6055d27346c", null ]
 ];

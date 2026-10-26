@@ -584,8 +584,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gaf4e370f368eb72ac5b4e5df62ac90dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Task control functions</h2></td></tr>
-<tr class="memitem:ga7180b1ff961409a0a2d51c2564182c6f" id="r_ga7180b1ff961409a0a2d51c2564182c6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7180b1ff961409a0a2d51c2564182c6f">NU_Create_Task</a> (<a class="el" href="#ga198a6e6ed9672b2602556cc37e98a56c">NU_TASK</a> *task, <a class="el" href="#gaebb9e13210d88d43e32e735ada43a425">CHAR</a> *name, void(*task_entry)(int, void *), unsigned long argc, void *argv, void *stack_address, unsigned long stack_size, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> priority, unsigned long time_slice, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> preempt, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> auto_start)</td></tr>
-<tr class="separator:ga7180b1ff961409a0a2d51c2564182c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ff98dc91f96040267a58902885e4c27" id="r_ga6ff98dc91f96040267a58902885e4c27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ff98dc91f96040267a58902885e4c27">NU_Create_Task</a> (<a class="el" href="#ga198a6e6ed9672b2602556cc37e98a56c">NU_TASK</a> *task, <a class="el" href="#gaebb9e13210d88d43e32e735ada43a425">CHAR</a> *name, void(*task_entry)(unsigned long, void *), unsigned long argc, void *argv, void *stack_address, unsigned long stack_size, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> priority, unsigned long time_slice, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> preempt, <a class="el" href="#ga22a9624a89b17b9d45730418ba1d98bd">OPTION</a> auto_start)</td></tr>
+<tr class="separator:ga6ff98dc91f96040267a58902885e4c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga438e7de9c362ffc6e75bbc4abe50df22" id="r_ga438e7de9c362ffc6e75bbc4abe50df22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga438e7de9c362ffc6e75bbc4abe50df22">NU_Delete_Task</a> (<a class="el" href="#ga198a6e6ed9672b2602556cc37e98a56c">NU_TASK</a> *task)</td></tr>
 <tr class="separator:ga438e7de9c362ffc6e75bbc4abe50df22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7483b222bcc8053e595254f26e7e3d03" id="r_ga7483b222bcc8053e595254f26e7e3d03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7483b222bcc8053e595254f26e7e3d03">NU_Reset_Task</a> (<a class="el" href="#ga198a6e6ed9672b2602556cc37e98a56c">NU_TASK</a> *task, unsigned long argc, void *argv)</td></tr>
@@ -812,6 +812,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga1e5ab2466aa25f3b11a79db0d0362f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga37d1b5257bf248c5ab76f4921f734acd" id="r_ga37d1b5257bf248c5ab76f4921f734acd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga37d1b5257bf248c5ab76f4921f734acd">NU_License_Information</a> (void)</td></tr>
 <tr class="separator:ga37d1b5257bf248c5ab76f4921f734acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">History functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section warning"><dt>Warning</dt><dd>These functions are not present in ELKA, NSG, X75, or SG firmware. </dd></dl>
+</td></tr>
 <tr class="memitem:gacdec9ae9bf1e67c0f3521dbe7fa7037e" id="r_gacdec9ae9bf1e67c0f3521dbe7fa7037e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacdec9ae9bf1e67c0f3521dbe7fa7037e">NU_Disable_History_Saving</a> (void)</td></tr>
 <tr class="separator:gacdec9ae9bf1e67c0f3521dbe7fa7037e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga15aeb70b961ce64313381a267afa16df" id="r_ga15aeb70b961ce64313381a267afa16df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga15aeb70b961ce64313381a267afa16df">NU_Enable_History_Saving</a> (void)</td></tr>
@@ -822,6 +826,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga396ee6f56a2e2046fd78d0641bd4eede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Input/Output Driver functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section warning"><dt>Warning</dt><dd>These functions are not present in ELKA, NSG, X75, or SG firmware. </dd></dl>
+</td></tr>
 <tr class="memitem:ga5f8b0347827afc75dfc2b385285f13cf" id="r_ga5f8b0347827afc75dfc2b385285f13cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5f8b0347827afc75dfc2b385285f13cf">NU_Create_Driver</a> (<a class="el" href="#gaf4e370f368eb72ac5b4e5df62ac90dd3">NU_DRIVER</a> *driver, <a class="el" href="#gaebb9e13210d88d43e32e735ada43a425">CHAR</a> *name, void(*driver_entry)(<a class="el" href="#gaf4e370f368eb72ac5b4e5df62ac90dd3">NU_DRIVER</a> *, <a class="el" href="#gaa0c3be2b6b04fa64d7b6659d214a07e7">NU_DRIVER_REQUEST</a> *))</td></tr>
 <tr class="separator:ga5f8b0347827afc75dfc2b385285f13cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3a4360807ccb52b69ed8337133902525" id="r_ga3a4360807ccb52b69ed8337133902525"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3a4360807ccb52b69ed8337133902525">NU_Delete_Driver</a> (<a class="el" href="#gaf4e370f368eb72ac5b4e5df62ac90dd3">NU_DRIVER</a> *driver)</td></tr>
@@ -838,14 +844,18 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9c1c703768b4b55eaa276526921499fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Supervisor and User mode functions</h2></td></tr>
-<tr class="memitem:ga43afb977364175631c9ae55e8fabef20" id="r_ga43afb977364175631c9ae55e8fabef20"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43afb977364175631c9ae55e8fabef20">NU_IS_SUPERVISOR_MODE</a> ()</td></tr>
-<tr class="separator:ga43afb977364175631c9ae55e8fabef20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga869e9b304ed5a24a576299d8081e1450" id="r_ga869e9b304ed5a24a576299d8081e1450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga869e9b304ed5a24a576299d8081e1450">NU_SUPERVISOR_MODE</a> (unsigned long nu_svc_usr_var)</td></tr>
-<tr class="separator:ga869e9b304ed5a24a576299d8081e1450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga521586f85ece3e63b8a2ca3f63b8c13f" id="r_ga521586f85ece3e63b8a2ca3f63b8c13f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga521586f85ece3e63b8a2ca3f63b8c13f">NU_USER_MODE</a> (unsigned long nu_svc_usr_var)</td></tr>
-<tr class="separator:ga521586f85ece3e63b8a2ca3f63b8c13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a2234c5d7e821cc2eb2f5aba957e41f" id="r_ga4a2234c5d7e821cc2eb2f5aba957e41f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a2234c5d7e821cc2eb2f5aba957e41f">NU_IS_SUPERVISOR_MODE</a> (void)</td></tr>
+<tr class="separator:ga4a2234c5d7e821cc2eb2f5aba957e41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2e2c71333343b1af821869bc1c7b78f" id="r_gae2e2c71333343b1af821869bc1c7b78f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2e2c71333343b1af821869bc1c7b78f">NU_SUPERVISOR_MODE_P</a> (void *nu_svc_usr_var)</td></tr>
+<tr class="separator:gae2e2c71333343b1af821869bc1c7b78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31f8118e73e3d40c1a68937c501c8828" id="r_ga31f8118e73e3d40c1a68937c501c8828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31f8118e73e3d40c1a68937c501c8828">NU_USER_MODE_P</a> (void *nu_svc_usr_var)</td></tr>
+<tr class="separator:ga31f8118e73e3d40c1a68937c501c8828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacf9f2b963875c9c57dbdbf89652792a1" id="r_gacf9f2b963875c9c57dbdbf89652792a1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf9f2b963875c9c57dbdbf89652792a1">NU_SUPERV_USER_VARIABLES</a> (void)</td></tr>
 <tr class="separator:gacf9f2b963875c9c57dbdbf89652792a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69e56b63ceabdb633a8343c9156f33f7" id="r_ga69e56b63ceabdb633a8343c9156f33f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga69e56b63ceabdb633a8343c9156f33f7">NU_SUPERVISOR_MODE</a>()&#160;&#160;&#160;<a class="el" href="#gae2e2c71333343b1af821869bc1c7b78f">NU_SUPERVISOR_MODE_P</a>(*(void **)<a class="el" href="#gacf9f2b963875c9c57dbdbf89652792a1">NU_SUPERV_USER_VARIABLES</a>())</td></tr>
+<tr class="separator:ga69e56b63ceabdb633a8343c9156f33f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad79c84fb12dd181bcbd0e0a7b32e1b61" id="r_gad79c84fb12dd181bcbd0e0a7b32e1b61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad79c84fb12dd181bcbd0e0a7b32e1b61">NU_USER_MODE</a>()&#160;&#160;&#160;<a class="el" href="#ga31f8118e73e3d40c1a68937c501c8828">NU_USER_MODE_P</a>(*(void **)<a class="el" href="#gacf9f2b963875c9c57dbdbf89652792a1">NU_SUPERV_USER_VARIABLES</a>())</td></tr>
+<tr class="separator:gad79c84fb12dd181bcbd0e0a7b32e1b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_n_u___t_a_s_k___s_t_r_u_c_t" id="struct_n_u___t_a_s_k___s_t_r_u_c_t"></a>
@@ -4119,6 +4129,44 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a id="ga69e56b63ceabdb633a8343c9156f33f7" name="ga69e56b63ceabdb633a8343c9156f33f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69e56b63ceabdb633a8343c9156f33f7">&#9670;&#160;</a></span>NU_SUPERVISOR_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NU_SUPERVISOR_MODE</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="#gae2e2c71333343b1af821869bc1c7b78f">NU_SUPERVISOR_MODE_P</a>(*(void **)<a class="el" href="#gacf9f2b963875c9c57dbdbf89652792a1">NU_SUPERV_USER_VARIABLES</a>())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="nucleus_8h_source.html#l01090">1090</a> of file <a class="el" href="nucleus_8h_source.html">nucleus.h</a>.</p>
+
+</div>
+</div>
+<a id="gad79c84fb12dd181bcbd0e0a7b32e1b61" name="gad79c84fb12dd181bcbd0e0a7b32e1b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad79c84fb12dd181bcbd0e0a7b32e1b61">&#9670;&#160;</a></span>NU_USER_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NU_USER_MODE</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="#ga31f8118e73e3d40c1a68937c501c8828">NU_USER_MODE_P</a>(*(void **)<a class="el" href="#gacf9f2b963875c9c57dbdbf89652792a1">NU_SUPERV_USER_VARIABLES</a>())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="nucleus_8h_source.html#l01091">1091</a> of file <a class="el" href="nucleus_8h_source.html">nucleus.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga2e529e357dec9710f567792a7c72932e" name="ga2e529e357dec9710f567792a7c72932e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2e529e357dec9710f567792a7c72932e">&#9670;&#160;</a></span>UNSIGNED</h2>
@@ -4509,8 +4557,8 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga7180b1ff961409a0a2d51c2564182c6f" name="ga7180b1ff961409a0a2d51c2564182c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7180b1ff961409a0a2d51c2564182c6f">&#9670;&#160;</a></span>NU_Create_Task()</h2>
+<a id="ga6ff98dc91f96040267a58902885e4c27" name="ga6ff98dc91f96040267a58902885e4c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ff98dc91f96040267a58902885e4c27">&#9670;&#160;</a></span>NU_Create_Task()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4528,7 +4576,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>task_entry&#160;</em></span>)(int, void *), </td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>task_entry&#160;</em></span>)(unsigned long, void *), </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -7147,6 +7195,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Aliases NU_Release_Information in ELKA and NSG firmware. </dd></dl>
 
 </div>
 </div>
@@ -7401,8 +7450,8 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="ga43afb977364175631c9ae55e8fabef20" name="ga43afb977364175631c9ae55e8fabef20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga43afb977364175631c9ae55e8fabef20">&#9670;&#160;</a></span>NU_IS_SUPERVISOR_MODE()</h2>
+<a id="ga4a2234c5d7e821cc2eb2f5aba957e41f" name="ga4a2234c5d7e821cc2eb2f5aba957e41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a2234c5d7e821cc2eb2f5aba957e41f">&#9670;&#160;</a></span>NU_IS_SUPERVISOR_MODE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7410,41 +7459,43 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">unsigned long NU_IS_SUPERVISOR_MODE </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section warning"><dt>Warning</dt><dd>This function is not present in ELKA, NSG, X75, or SG firmware. </dd></dl>
 
 </div>
 </div>
-<a id="ga869e9b304ed5a24a576299d8081e1450" name="ga869e9b304ed5a24a576299d8081e1450"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga869e9b304ed5a24a576299d8081e1450">&#9670;&#160;</a></span>NU_SUPERVISOR_MODE()</h2>
+<a id="gae2e2c71333343b1af821869bc1c7b78f" name="gae2e2c71333343b1af821869bc1c7b78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2e2c71333343b1af821869bc1c7b78f">&#9670;&#160;</a></span>NU_SUPERVISOR_MODE_P()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void NU_SUPERVISOR_MODE </td>
+          <td class="memname">void NU_SUPERVISOR_MODE_P </td>
           <td>(</td>
-          <td class="paramtype">unsigned long</td>          <td class="paramname"><span class="paramname"><em>nu_svc_usr_var</em></span></td><td>)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>nu_svc_usr_var</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section warning"><dt>Warning</dt><dd>This function is not present in ELKA or NSG firmware. </dd></dl>
 
 </div>
 </div>
-<a id="ga521586f85ece3e63b8a2ca3f63b8c13f" name="ga521586f85ece3e63b8a2ca3f63b8c13f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga521586f85ece3e63b8a2ca3f63b8c13f">&#9670;&#160;</a></span>NU_USER_MODE()</h2>
+<a id="ga31f8118e73e3d40c1a68937c501c8828" name="ga31f8118e73e3d40c1a68937c501c8828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31f8118e73e3d40c1a68937c501c8828">&#9670;&#160;</a></span>NU_USER_MODE_P()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void NU_USER_MODE </td>
+          <td class="memname">void NU_USER_MODE_P </td>
           <td>(</td>
-          <td class="paramtype">unsigned long</td>          <td class="paramname"><span class="paramname"><em>nu_svc_usr_var</em></span></td><td>)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>nu_svc_usr_var</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -7466,6 +7517,7 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Address of the Nucleus <code>TCD_Current_Thread</code> global. </dd></dl>
 
 </div>
 </div>
