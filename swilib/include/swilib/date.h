@@ -159,7 +159,7 @@ __swi_end(0x2D0, GetDaysFromMonth, (date));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C6)
-int GetSecondsFromDateTime(int *seconds, const TDate *date, const TTime *time, const TDate *epoch)
+int GetSecondsFromDateTime(uint32_t *seconds, const TDate *date, const TTime *time, const TDate *epoch)
 __swi_end(0x2C6, GetSecondsFromDateTime, (seconds, date, time, epoch));
 
 /**
@@ -170,7 +170,7 @@ __swi_end(0x2C6, GetSecondsFromDateTime, (seconds, date, time, epoch));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C7)
-int GetSecondsFromDateTimeSince1997(int *seconds, const TDate *date, const TTime *time)
+int GetSecondsFromDateTimeSince1997(uint32_t *seconds, const TDate *date, const TTime *time)
 __swi_end(0x2C7, GetSecondsFromDateTimeSince1997, (seconds, date, time));
 
 /**
@@ -188,7 +188,7 @@ __swi_end(0x2C8, GetSecondsFromTime, (time));
  * @param seconds		number of seconds
  * */
 __swi_begin(0x2CB)
-void GetTimeFromSeconds(TTime *time, int seconds)
+void GetTimeFromSeconds(TTime *time, uint32_t seconds)
 __swi_end(0x2CB, GetTimeFromSeconds, (time, seconds));
 
 /**
@@ -209,7 +209,7 @@ __swi_end(0x3E4, GetTimeFromMilliseconds, (time, milliseconds));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C9)
-int GetDateTimeFromSeconds(const int *seconds, TDate *date, TTime *time, const TDate *epoch)
+int GetDateTimeFromSeconds(const uint32_t *seconds, TDate *date, TTime *time, const TDate *epoch)
 __swi_end(0x2C9, GetDateTimeFromSeconds, (seconds, date, time, epoch));
 
 /**
@@ -220,7 +220,7 @@ __swi_end(0x2C9, GetDateTimeFromSeconds, (seconds, date, time, epoch));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2CA)
-int GetDateTimeFromSecondsSince1997(const int *seconds, TDate *date, TTime *time)
+int GetDateTimeFromSecondsSince1997(const uint32_t *seconds, TDate *date, TTime *time)
 __swi_end(0x2CA, GetDateTimeFromSecondsSince1997, (seconds, date, time));
 
 /**

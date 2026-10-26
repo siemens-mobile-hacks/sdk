@@ -338,8 +338,8 @@ char *RamRingtoneStatus()
 __swi_end(0x80CB, RamRingtoneStatus, ());
 
 /**
- * Pointer to the information about current file operations.
- * @return unknown
+ * Get the state of the file-operation indicator.
+ * @return pointer to firmware-owned indicator state
  * */
 __swi_begin(0x828A)
 void *RamIsFileCache(void)

@@ -204,7 +204,7 @@ __swi_end(0x122, wstrncat, (destination, source, num));
 /**
  * Locate first occurrence of character in WSHDR.
  * @param str			WSHDR string
- * @param start			position from which to start searching
+ * @param start			one-based position from which to start searching
  * @param character		character to be located
  * @return position of the found character or -1
  * */
@@ -215,7 +215,7 @@ __swi_end(0x1DC, wstrchr, (str, start, character));
 /**
  * Locate last occurrence of character in WSHDR.
  * @param str			WSHDR string
- * @param rstart		position from which to start searching (from the end)
+ * @param rstart		one-based position from which to search backwards
  * @param character		character to be located
  * @return position of the found character or -1
  * */
@@ -232,7 +232,7 @@ __swi_end(0x1DD, wstrrchr, (str, rstart, character));
  * @return >0	- the first character that does not match has a greater value in ptr1 than in ptr2
  * */
 __swi_begin(0x2E2)
-int wstrcmp(WSHDR *str1, WSHDR *str2)
+int wstrcmp(const WSHDR *str1, const WSHDR *str2)
 __swi_end(0x2E2, wstrcmp, (str1, str2));
 
 /**
@@ -355,26 +355,26 @@ __swi_variadic_end(0x216, wstrcatprintf, s, format);
  * @param source		input WSHDR to be converted to C-string
  * @param destination	pointer to the destination C-string, which should be large enough to contain the source WSHDR
  * @param new_length	pointer to which to write the length of the destination string
- * @param size			maximum number of characters to be converted
- * @return destination string length
+ * @param size			size of the destination buffer, including space for the terminating null
+ * @return 1 on success, 0 if the destination buffer is too small
  * */
 __swi_begin(0x1E2)
 int ws_2utf8(const WSHDR *source, char *destination, int *new_length, uint32_t size)
 __swi_end(0x1E2, ws_2utf8, (source, destination, new_length, size));
 
 /**
- * Convert UTF-8 C-string to WHSDR.
+ * Convert UTF-8 C-string to WSHDR.
  * @param destination	pointer to the destination WSHDR, which should be large enough to contain the source string
  * @param source		input C-string to be converted to WSHDR
- * @param size			maximum number of characters to be converted
- * @return destination string length
+ * @param size			maximum number of source bytes to read
+ * @return 1 on success, 0 on invalid or incomplete UTF-8 or insufficient destination capacity
  * */
 __swi_begin(0x1E3)
 int utf8_2ws(WSHDR *destination, const char *source, uint32_t size)
 __swi_end(0x1E3, utf8_2ws, (destination, source, size));
 
 /**
- * Convert CP1252 (Latin) C-string to WHSDR.
+ * Convert CP1252 (Latin) C-string to WSHDR.
  * @param destination	pointer to the destination WSHDR, which should be large enough to contain the source string
  * @param source		input C-string to be converted to WSHDR
  * @param size			maximum number of characters to be converted

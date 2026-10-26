@@ -947,7 +947,7 @@ __swi_end(0x163, AllocEQueue, (malloc_func, mfree_func));
  * @param malloc_fn		result of #malloc_adr
  * */
 __swi_begin(0x3EB)
-void *EDIT_SetEQueue(void *gui, const EDITQ *eq, int do_mfree, const void *malloc_fn)
+void EDIT_SetEQueue(void *gui, const EDITQ *eq, int do_mfree, const void *malloc_fn)
 __swi_end(0x3EB, EDIT_SetEQueue, (gui, eq, do_mfree, malloc_fn));
 
 /**

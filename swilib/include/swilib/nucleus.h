@@ -989,6 +989,13 @@ __swi_begin(0x366)
 char *NU_License_Information(void)
 __swi_end(0x366, NU_License_Information, ());
 
+/** @} */
+
+/**
+ * @name History functions
+ * @warning These functions are not present in ELKA, NSG, X75, or SG firmware.
+ * @{
+ * */
 
 __swi_begin(0x367)
 void NU_Disable_History_Saving(void)
@@ -1015,6 +1022,7 @@ __swi_end(0x36A, NU_Retrieve_History_Entry, (id, param1, param2, param3, time, t
 
 /**
  * @name Input/Output Driver functions
+ * @warning These functions are not present in ELKA, NSG, X75, or SG firmware.
  * @{
  * */
 __swi_begin(0x36B)

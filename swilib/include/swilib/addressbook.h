@@ -192,13 +192,13 @@ __swi_end(0x2B6, GetNumFromNativeAbData, (data, type, index));
 /**
  * Set number to the #NativeAbData
  * @param data		pointer to the native addressbook data
- * @param unk		set to 0x1D
+ * @param type		item type
  * @param num		phone number
  * @return 1: success, 0: error
  * */
 __swi_begin(0x2B8)
-int SetNumToNativeAbData(NativeAbData *data, int unk, const WSHDR *num)
-__swi_end(0x2B8, SetNumToNativeAbData, (data, unk, num));
+int SetNumToNativeAbData(NativeAbData *data, int type, const WSHDR *num)
+__swi_end(0x2B8, SetNumToNativeAbData, (data, type, num));
 
 /**
  * Decode #PKT_NUM for the phone number.

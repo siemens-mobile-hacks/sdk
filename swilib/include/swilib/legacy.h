@@ -207,7 +207,7 @@ __swi_end(0x80CE, RamDateTime, ());
  * @deprecated use #RamPressedKey
  * */
 __swi_begin(0x80E2)
-char *RamKeyBuffer()
+char *RamKeyBuffer(void)
 __swi_end(0x80E2, RamKeyBuffer, ());
 
 /**
