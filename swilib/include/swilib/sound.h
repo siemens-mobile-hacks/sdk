@@ -463,6 +463,7 @@ __swi_end(0x29A, AACC_AudioTransferReq, (oh, type_and_conn));
  * @param unk2			unknown, set to 1
  * @param duration		duration in ms
  * @warning Untested function that is not found in any ELF's.
+ * @platforms X75, SG
  * */
 __swi_begin(0x034)
 void PlaySoundLoop(int unk1, int unk2, int duration)

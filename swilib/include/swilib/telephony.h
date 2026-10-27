@@ -351,11 +351,12 @@ void EndCallBusy(int param1, int param2)
 __swi_end(0x066, EndCallBusy, (param1, param2));
 
 /**
- * Pointer to the number from the last call.
- * @return unknown
+ * Number of the last call in call slot 1, as UTF-16 characters.
+ * @return pointer to the first character; the length is at index -1
+ * @note Kept until the next call that gets slot 1.
  * */
 __swi_begin(0x8253)
-char *RamLastCallNum()
+uint16_t *RamLastCallNum()
 __swi_end(0x8253, RamLastCallNum, ());
 
 /**
