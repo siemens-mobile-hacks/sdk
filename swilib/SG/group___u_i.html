@@ -773,7 +773,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Hacks</h2></td></tr>
 <tr class="memitem:gaf8201f9eea97087c165fd841ea136a49" id="r_gaf8201f9eea97087c165fd841ea136a49"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8201f9eea97087c165fd841ea136a49">RamMenuAnywhere</a> ()</td></tr>
-<tr class="memdesc:gaf8201f9eea97087c165fd841ea136a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the currently opened menu.  <br /></td></tr>
+<tr class="memdesc:gaf8201f9eea97087c165fd841ea136a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key sequence buffer of the "menu anywhere" shortcut (<code>char[4]</code>).  <br /></td></tr>
 <tr class="separator:gaf8201f9eea97087c165fd841ea136a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -2388,6 +2388,7 @@ Enumerations</h2></td></tr>
 
 <p>Check state of iconbar (EL71/E71). </p>
 <p>It can be disabled by <a class="el" href="#ga5aa5d69658d5437e2fb0b54b830e9a80" title="Enable or disable global iconbar on EL/E71.">DisableIconBar</a> function. </p><dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>ELKA </dd></dl>
 
 </div>
 </div>
@@ -5763,8 +5764,9 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to the currently opened menu. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer </dd></dl>
+<p>Key sequence buffer of the "menu anywhere" shortcut (<code>char[4]</code>). </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the buffer </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Not available on NSG. </dd></dl>
 
 </div>
 </div>
