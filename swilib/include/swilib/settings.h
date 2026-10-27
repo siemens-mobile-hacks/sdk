@@ -58,7 +58,7 @@ struct REG_CLIENT {
 	void *unk1;				/**< unknown, set to NULL */
 	void *unk2;				/**< unknown, set to NULL */
 	short *hmi_keys;		/**< array of HMI key IDs */
-	size_t hmi_keys_count;	/**< number of keys in the hmi_keys array */
+	uint8_t hmi_keys_count;	/**< number of keys in the hmi_keys array (max 255) */
 };
 
 /**
