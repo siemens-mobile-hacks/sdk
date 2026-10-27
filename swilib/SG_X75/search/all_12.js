@@ -48,7 +48,7 @@ var searchData=
   ['ramissoundrecordingactive_45',['RamIsSoundRecordingActive',['../group___sound.html#ga6c3fed1da880a2015c219cebd29dc3ea',1,'sound.h']]],
   ['ramisstandby_46',['RamIsStandby',['../group___info.html#ga88c078a65c3779f3b88c1489ad40d51e',1,'info.h']]],
   ['ramkeybuffer_47',['RamKeyBuffer',['../group___l_e_g_a_c_y.html#ga828e6091a49a00a84705ccb1c1a8efb5',1,'legacy.h']]],
-  ['ramlastcallnum_48',['RamLastCallNum',['../group___telephony.html#ga058f036111eb6e6242cf57db299b2106',1,'telephony.h']]],
+  ['ramlastcallnum_48',['RamLastCallNum',['../group___telephony.html#gab156d5d3e58beefb851ab2e45384f807',1,'telephony.h']]],
   ['ramlaststorestring_49',['RamLastStoreString',['../group___system.html#ga74839418e5906214a0d4b6036422131e',1,'system.h']]],
   ['ramlcdmainlayerslist_50',['RamLcdMainLayersList',['../group___g_u_i.html#gac68e33c83571f8e1618cea4886a05254',1,'gui.h']]],
   ['ramlcdraplayerslist_51',['RamLcdRapLayersList',['../group___g_u_i.html#ga39250708c8bd1893ca27af311ad80216',1,'gui.h']]],

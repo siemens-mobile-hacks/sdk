@@ -42,7 +42,7 @@ var group___telephony =
     [ "ShowCallList", "group___telephony.html#ga11e03b8146d4605320a19794058c8a34", null ],
     [ "EndCall", "group___telephony.html#gaf621bbc603d3d748433e5b58d6c1e872", null ],
     [ "EndCallBusy", "group___telephony.html#ga38ad06e0abc02bce8b2358224022cf3d", null ],
-    [ "RamLastCallNum", "group___telephony.html#ga058f036111eb6e6242cf57db299b2106", null ],
+    [ "RamLastCallNum", "group___telephony.html#gab156d5d3e58beefb851ab2e45384f807", null ],
     [ "RAM_IMSI", "group___telephony.html#ga41a92f0fbee2caa663778638f66645e1", null ],
     [ "RamServiceProviderName", "group___telephony.html#gaacd2125276c03f65da5043e241d77daa", null ],
     [ "RamNet", "group___telephony.html#gad82a9cbbd4fb607f9093acae375f2fe3", null ],

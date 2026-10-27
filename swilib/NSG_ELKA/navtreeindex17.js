@@ -243,11 +243,11 @@ var NAVTREEINDEX17 =
 "group___system.html#struct_m_u_t_e_x":[0,17,0],
 "group___telephony.html":[0,20],
 "group___telephony.html#ga004ecc99914a6272d1ca1b918febe98a":[0,20,55],
-"group___telephony.html#ga058f036111eb6e6242cf57db299b2106":[0,20,42],
 "group___telephony.html#ga0755e82dc7e93d1a9d2ff9f9604f8e4c":[0,20,15],
 "group___telephony.html#ga08773e5feba6ba9ad9a49b71e385fa43":[0,20,63],
 "group___telephony.html#ga11e03b8146d4605320a19794058c8a34":[0,20,39],
 "group___telephony.html#ga2466057ab170f0183c264083b0706cc1":[0,20,13],
 "group___telephony.html#ga2e23d6dbc4b435e381b34841005a2031":[0,20,47],
-"group___telephony.html#ga2e3a1f6df09e3003a0cd7781355b6224":[0,20,35]
+"group___telephony.html#ga2e3a1f6df09e3003a0cd7781355b6224":[0,20,35],
+"group___telephony.html#ga31d5beb8fbc0a2b29f0c028a6158a7d6":[0,20,21]
 };

@@ -237,7 +237,6 @@ var NAVTREEINDEX17 =
 "group___system.html#struct_m_u_t_e_x":[0,17,0],
 "group___telephony.html":[0,20],
 "group___telephony.html#ga004ecc99914a6272d1ca1b918febe98a":[0,20,55],
-"group___telephony.html#ga058f036111eb6e6242cf57db299b2106":[0,20,42],
 "group___telephony.html#ga0755e82dc7e93d1a9d2ff9f9604f8e4c":[0,20,15],
 "group___telephony.html#ga08773e5feba6ba9ad9a49b71e385fa43":[0,20,63],
 "group___telephony.html#ga11e03b8146d4605320a19794058c8a34":[0,20,39],
@@ -249,5 +248,6 @@ var NAVTREEINDEX17 =
 "group___telephony.html#ga38042303c43470f5cb605515335498f2":[0,20,52],
 "group___telephony.html#ga38ad06e0abc02bce8b2358224022cf3d":[0,20,41],
 "group___telephony.html#ga3bca31e037c3b7bb77b1f7e2bf9a1c43":[0,20,33],
-"group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6":[0,20,23]
+"group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6":[0,20,23],
+"group___telephony.html#ga41a92f0fbee2caa663778638f66645e1":[0,20,43]
 };
