@@ -5629,11 +5629,11 @@ ELKA = "89 00 89 18 49 78 ?? [01110...] ?? [01111...] A1 42 ?? D9 ?? [01110...] 
 
 [3FB]
 decl = "int sys_mount(uint16_t drive, uint32_t *err)"
-NSG = "04 30 A0 E1 06 10 A0 E1 5C C0 95 E5 - 0x24"
+NSG = "38 40 2D E9 00 08 A0 E1 40 08 A0 E1 00 40 A0 E1 01 50 A0 E1 ?? ?? ?? EB 5C C0 90 E5 04 D0 8D E2 05 20 A0 E1 04 10 A0 E1 30 40 BD E8 00 00 A0 E3"
 
 [3FC]
 decl = "int sys_unmount(uint16_t drive, uint32_t *err)"
-NSG = "04 30 A0 E1 06 10 A0 E1 60 C0 95 E5 - 0x24"
+NSG = "38 40 2D E9 00 08 A0 E1 40 08 A0 E1 00 40 A0 E1 01 50 A0 E1 ?? ?? ?? EB 60 C0 90 E5 04 D0 8D E2 05 20 A0 E1 04 10 A0 E1 30 40 BD E8 00 00 A0 E3"
 
 [3FD]
 decl = "int setfiletime(int fd, uint16_t date, uint16_t time, uint32_t *err)"
