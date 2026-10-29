@@ -66,9 +66,10 @@ __swi_end(0x020, DrawScreenSaver, ());
 
 /**
  * Close screensaver screen.
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x09C)
-void CloseScreensaver()
+void CloseScreensaver(void)
 __swi_end(0x09C, CloseScreensaver, ());
 
 /**

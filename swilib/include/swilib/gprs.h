@@ -108,7 +108,7 @@ struct LMAN_DATA {
  * @return 1 or 0
  * */
 __swi_begin(0x0A7)
-char IsGPRSEnabled()
+char IsGPRSEnabled(void)
 __swi_end(0x0A7, IsGPRSEnabled, ());
 
 /**
@@ -116,15 +116,16 @@ __swi_end(0x0A7, IsGPRSEnabled, ());
  * @return 1 or 0
  * */
 __swi_begin(0x284)
-char IsGPRSAvailable()
+char IsGPRSAvailable(void)
 __swi_end(0x284, IsGPRSAvailable, ());
 
 /**
- * Check if EDGE available in the current network.
+ * Check if EDGE is available in the current network.
  * @return 1 or 0
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x285)
-char IsEDGEAvailable()
+char IsEDGEAvailable(void)
 __swi_end(0x285, IsEDGEAvailable, ());
 
 /**
@@ -132,7 +133,7 @@ __swi_end(0x285, IsEDGEAvailable, ());
  * @return 1 or 0
  * */
 __swi_begin(0x0A8)
-char IsGPRSConnected()
+char IsGPRSConnected(void)
 __swi_end(0x0A8, IsGPRSConnected, ());
 
 /**
@@ -1093,9 +1094,10 @@ __swi_end(0x4AD, zDLL_Init, (list));
 /**
  * Get name of the current internet profile.
  * @return C-string
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x828E)
-const char *RamActiveGPRSProfileName()
+const char *RamActiveGPRSProfileName(void)
 __swi_end(0x828E, RamActiveGPRSProfileName, ());
 
 /** @} */
@@ -1116,7 +1118,7 @@ __swi_end(0x06F, RefreshGPRSTraffic, ());
  * Reset the GPRS traffic counter.
  * */
 __swi_begin(0x0A6)
-void ResetGPRSTraffic()
+void ResetGPRSTraffic(void)
 __swi_end(0x0A6, ResetGPRSTraffic, ());
 
 /**

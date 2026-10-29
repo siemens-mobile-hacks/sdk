@@ -59,12 +59,14 @@ __swi_end(0x054, StrToInt, (s, endp));
 
 /**
  * Convert HEX-string to int.
- * @param s		string with HEX
- * @return int
+ * The input may contain up to eight hexadecimal digits. Lowercase digits are converted to uppercase in place.
+ * @param s		mutable string with HEX
+ * @param fallback	value returned for an invalid digit or a string longer than eight characters
+ * @return parsed value, or `fallback` on error
  * */
 __swi_begin(0x0AF)
-uint32_t HexToInt(const char *s)
-__swi_end(0x0AF, HexToInt, (s));
+uint32_t HexToInt(char *s, uint32_t fallback)
+__swi_end(0x0AF, HexToInt, (s, fallback));
 
 /**
  * Convert HEX char to int.
@@ -218,8 +220,8 @@ __swi_end(0x245, Base64Decode, (inbuf, insize, outbuf, outsize, _null, unk5));
  * @return divident / divisor
  * */
 __swi_begin(0x0B8)
-int sdiv(int divisor, int divident)
-__swi_end(0x0B8, sdiv, (divisor, divident));
+int sdiv(int divisor, int dividend)
+__swi_end(0x0B8, sdiv, (divisor, dividend));
 
 /**
  * Unsigned int div.
@@ -228,8 +230,8 @@ __swi_end(0x0B8, sdiv, (divisor, divident));
  * @return divident / divisor
  * */
 __swi_begin(0x0BC)
-uint32_t udiv(uint32_t divisor, uint32_t divident)
-__swi_end(0x0BC, udiv, (divisor, divident));
+uint32_t udiv(uint32_t divisor, uint32_t dividend)
+__swi_end(0x0BC, udiv, (divisor, dividend));
 
 /**
  * Signed int div by 10.
@@ -237,8 +239,8 @@ __swi_end(0x0BC, udiv, (divisor, divident));
  * @return divident / 10
  * */
 __swi_begin(0x0BD)
-int DivBy10(int divident)
-__swi_end(0x0BD, DivBy10, (divident));
+int DivBy10(int dividend)
+__swi_end(0x0BD, DivBy10, (dividend));
 
 /** @} */
 

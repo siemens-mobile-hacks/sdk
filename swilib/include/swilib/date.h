@@ -87,8 +87,8 @@ TDateTimeSettings *RamDateTimeSettings(void)
 __swi_end(0x822F, RamDateTimeSettings, ());
 
 /**
- * Check if "Auto Time" setting enabled.
- * @return 1 or 0
+ * Get the address of the "Auto Time" enabled flag.
+ * @return pointer to a byte containing 0 or 1
  * */
 __swi_begin(0x80D2)
 char *RamIsAutoTimeEnabled(void)
@@ -115,9 +115,9 @@ int GetTimeZoneShift(const TDate *date, const TTime *time, int timezone_id)
 __swi_end(0x230, GetTimeZoneShift, (date, time, timezone_id));
 
 /**
- * Get week number by date.
+ * Get day of week for a date.
  * @param date	date of the day
- * @return week number in the year
+ * @return day of week
  * */
 __swi_begin(0x0B5)
 char GetWeek(const TDate *date)
@@ -129,7 +129,7 @@ __swi_end(0x0B5, GetWeek, (date));
  * @return total number of days
  * */
 __swi_begin(0x3E8)
-int64_t GetDays(const TDate *date)
+int GetDays(const TDate *date)
 __swi_end(0x3E8, GetDays, (date));
 
 /**
@@ -159,7 +159,7 @@ __swi_end(0x2D0, GetDaysFromMonth, (date));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C6)
-int GetSecondsFromDateTime(int *seconds, const TDate *date, const TTime *time, const TDate *epoch)
+int GetSecondsFromDateTime(uint32_t *seconds, const TDate *date, const TTime *time, const TDate *epoch)
 __swi_end(0x2C6, GetSecondsFromDateTime, (seconds, date, time, epoch));
 
 /**
@@ -170,7 +170,7 @@ __swi_end(0x2C6, GetSecondsFromDateTime, (seconds, date, time, epoch));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C7)
-int GetSecondsFromDateTimeSince1997(int *seconds, const TDate *date, const TTime *time)
+int GetSecondsFromDateTimeSince1997(uint32_t *seconds, const TDate *date, const TTime *time)
 __swi_end(0x2C7, GetSecondsFromDateTimeSince1997, (seconds, date, time));
 
 /**
@@ -188,13 +188,13 @@ __swi_end(0x2C8, GetSecondsFromTime, (time));
  * @param seconds		number of seconds
  * */
 __swi_begin(0x2CB)
-void GetTimeFromSeconds(TTime *time, int seconds)
+void GetTimeFromSeconds(TTime *time, uint32_t seconds)
 __swi_end(0x2CB, GetTimeFromSeconds, (time, seconds));
 
 /**
  * Convert milliseconds to TTime.
  * @param[out] time		output for calculated time
- * @param milliseconds	number of seconds
+ * @param milliseconds	number of milliseconds
  * */
 __swi_begin(0x3E4)
 void GetTimeFromMilliseconds(TTime *time, uint32_t milliseconds)
@@ -209,7 +209,7 @@ __swi_end(0x3E4, GetTimeFromMilliseconds, (time, milliseconds));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2C9)
-int GetDateTimeFromSeconds(const int *seconds, TDate *date, TTime *time, const TDate *epoch)
+int GetDateTimeFromSeconds(const uint32_t *seconds, TDate *date, TTime *time, const TDate *epoch)
 __swi_end(0x2C9, GetDateTimeFromSeconds, (seconds, date, time, epoch));
 
 /**
@@ -220,7 +220,7 @@ __swi_end(0x2C9, GetDateTimeFromSeconds, (seconds, date, time, epoch));
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x2CA)
-int GetDateTimeFromSecondsSince1997(const int *seconds, TDate *date, TTime *time)
+int GetDateTimeFromSecondsSince1997(const uint32_t *seconds, TDate *date, TTime *time)
 __swi_end(0x2CA, GetDateTimeFromSecondsSince1997, (seconds, date, time));
 
 /**
@@ -277,7 +277,7 @@ void DateAddDays(TDate *date, int days)
 __swi_end(0x3E5, DateAddDays, (date, days));
 
 /**
- * Add or subtract days from a date.
+ * Add or subtract months from a date.
  * @param date		date of the day
  * @param months	number of months to add (positive) or subtract (negative)
  * */
@@ -286,7 +286,7 @@ void DateAddMonths(TDate *date, int months)
 __swi_end(0x3E6, DateAddMonths, (date, months));
 
 /**
- * Add or subtract days from a date.
+ * Add or subtract years from a date.
  * @param date		date of the day
  * @param years	number of years to add (positive) or subtract (negative)
  * */
@@ -297,9 +297,10 @@ __swi_end(0x3E7, DateAddYears, (date, years));
 /**
  * Get array of time zones.
  * @return pointer to the array
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x83DF)
-TZ *RamTimeZones()
+TZ *RamTimeZones(void)
 __swi_end(0x83DF, RamTimeZones, ());
 
 /**
@@ -307,7 +308,7 @@ __swi_end(0x83DF, RamTimeZones, ());
  * @return time zone id
  * */
 __swi_begin(0x3E0)
-int GetCurrentTimeZone()
+int GetCurrentTimeZone(void)
 __swi_end(0x3E0, GetCurrentTimeZone, ());
 
 /**

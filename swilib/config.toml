@@ -111,8 +111,6 @@ pairs = [
 	[0x12E, 0x03F], # GetPaletteAdrByColorIndex
 	[0x13B, 0x064], # GeneralFuncF1
 	[0x364, 0x1F3], # NU_Retrieve_Clock
-	[0x365, 0x366], # NU_Release_Information
-	[0x254, 0x22E], # StartNativeExplorer
 	[0x14B, 0x077], # DrwObj_SetColor
 	[0x1B4, 0x09F], # DrawRectangle
 	[0x1AB, 0x1D6, 0x1AD], # png_set_palette_to_rgb

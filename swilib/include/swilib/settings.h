@@ -58,7 +58,7 @@ struct REG_CLIENT {
 	void *unk1;				/**< unknown, set to NULL */
 	void *unk2;				/**< unknown, set to NULL */
 	short *hmi_keys;		/**< array of HMI key IDs */
-	size_t hmi_keys_count;	/**< number of keys in the hmi_keys array */
+	uint8_t hmi_keys_count;	/**< number of keys in the hmi_keys array (max 255) */
 };
 
 /**
@@ -358,16 +358,17 @@ __swi_end(0x3DE, WriteValueToPDFile, (file_id, key, value, size));
  * @return ID
  * */
 __swi_begin(0x0B6)
-char GetProfile()
+char GetProfile(void)
 __swi_end(0x0B6, GetProfile, ());
 
 /**
  * Get ID of the active profile.
  * @return pointer to the ID
  * @deprecated use #GetProfile
+ * @platforms X75, SG
  * */
 __swi_begin(0x80E3)
-char *RamProfileNum()
+char *RamProfileNum(void)
 __swi_end(0x80E3, RamProfileNum, ());
 
 /**

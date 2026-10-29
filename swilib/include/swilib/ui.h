@@ -659,6 +659,7 @@ __swi_end(0x8237, RamIconBar, ());
 /**
  * Check state of iconbar (EL71/E71). It can be disabled by #DisableIconBar function.
  * @return 1 or 0
+ * @platforms ELKA
  * */
 __swi_begin(0x3D2)
 int IsIconBarDisabled()
@@ -947,7 +948,7 @@ __swi_end(0x163, AllocEQueue, (malloc_func, mfree_func));
  * @param malloc_fn		result of #malloc_adr
  * */
 __swi_begin(0x3EB)
-void *EDIT_SetEQueue(void *gui, const EDITQ *eq, int do_mfree, const void *malloc_fn)
+void EDIT_SetEQueue(void *gui, const EDITQ *eq, int do_mfree, const void *malloc_fn)
 __swi_end(0x3EB, EDIT_SetEQueue, (gui, eq, do_mfree, malloc_fn));
 
 /**
@@ -1774,8 +1775,9 @@ __swi_end(0x3F8, Scrollbar_SetValue, (scrollbar, value));
  * */
 
 /**
- * Pointer to the currently opened menu.
- * @return pointer
+ * Key sequence buffer of the "menu anywhere" shortcut (`char[4]`).
+ * @return pointer to the buffer
+ * @note Not available on NSG.
  * */
 __swi_begin(0x80D8)
 void *RamMenuAnywhere()

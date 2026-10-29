@@ -354,7 +354,7 @@ typedef struct NU_DRIVER_STRUCT {
  * */
 __swi_begin(0x300)
 int NU_Create_Task(NU_TASK *task, CHAR *name,
-					void (*task_entry)(int, void *), unsigned long argc,
+					void (*task_entry)(unsigned long, void *), unsigned long argc,
 					void *argv, void *stack_address, unsigned long stack_size,
 					OPTION priority, unsigned long time_slice,
 					OPTION preempt, OPTION auto_start)
@@ -984,10 +984,18 @@ char *NU_Release_Information(void)
 __swi_end(0x365, NU_Release_Information, ());
 
 
+/** @note Aliases NU_Release_Information in ELKA and NSG firmware. */
 __swi_begin(0x366)
 char *NU_License_Information(void)
 __swi_end(0x366, NU_License_Information, ());
 
+/** @} */
+
+/**
+ * @name History functions
+ * @warning These functions are not present in ELKA, NSG, X75, or SG firmware.
+ * @{
+ * */
 
 __swi_begin(0x367)
 void NU_Disable_History_Saving(void)
@@ -1014,6 +1022,7 @@ __swi_end(0x36A, NU_Retrieve_History_Entry, (id, param1, param2, param3, time, t
 
 /**
  * @name Input/Output Driver functions
+ * @warning These functions are not present in ELKA, NSG, X75, or SG firmware.
  * @{
  * */
 __swi_begin(0x36B)
@@ -1057,24 +1066,29 @@ __swi_end(0x371, NU_Driver_Pointers, (pointer_list, maximum_pointers));
  * @name Supervisor and User mode functions
  * @{
  * */
+/** @warning This function is not present in ELKA, NSG, X75, or SG firmware. */
 __swi_begin(0x372)
-unsigned long NU_IS_SUPERVISOR_MODE()
+unsigned long NU_IS_SUPERVISOR_MODE(void)
 __swi_end(0x372, NU_IS_SUPERVISOR_MODE, ());
 
 
+/** @warning This function is not present in ELKA or NSG firmware. */
 __swi_begin(0x373)
-void NU_SUPERVISOR_MODE(unsigned long nu_svc_usr_var)
-__swi_end(0x373, NU_SUPERVISOR_MODE, (nu_svc_usr_var));
+void NU_SUPERVISOR_MODE_P(void *nu_svc_usr_var)
+__swi_end(0x373, NU_SUPERVISOR_MODE_P, (nu_svc_usr_var));
 
 
 __swi_begin(0x374)
-void NU_USER_MODE(unsigned long nu_svc_usr_var)
-__swi_end(0x374, NU_USER_MODE, (nu_svc_usr_var));
+void NU_USER_MODE_P(void *nu_svc_usr_var)
+__swi_end(0x374, NU_USER_MODE_P, (nu_svc_usr_var));
 
-// FIXME: NU_SUPERV_USER_VARIABLES is macro...
+/** @return Address of the Nucleus `TCD_Current_Thread` global. */
 __swi_begin(0x8375)
 void *NU_SUPERV_USER_VARIABLES(void)
 __swi_end(0x8375, NU_SUPERV_USER_VARIABLES, ());
+
+#define NU_SUPERVISOR_MODE() NU_SUPERVISOR_MODE_P(*(void **)NU_SUPERV_USER_VARIABLES())
+#define NU_USER_MODE() NU_USER_MODE_P(*(void **)NU_SUPERV_USER_VARIABLES())
 
 /** @} */
 

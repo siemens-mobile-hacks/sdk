@@ -357,7 +357,7 @@ function(epk_package)
 		COMMAND "${CMAKE_COMMAND}" -E copy_if_different "${_EPK_PKGINFO}" "${_EPK_STAGE_DIR}/.PKGINFO"
 		${_EPK_COMMANDS}
 		COMMAND "${CMAKE_COMMAND}" -E chdir "${_EPK_STAGE_DIR}"
-			"${CMAKE_COMMAND}" -E tar cf "${_EPK_OUTPUT}" --format=zip --mtime=@1172750400 .
+			"${CMAKE_COMMAND}" -E tar cf "${_EPK_OUTPUT}" --format=zip "--mtime=2007-03-01 12:00:00 UTC" .
 		DEPENDS
 			"${CMAKE_CURRENT_FUNCTION_LIST_FILE}"
 			"${_EPK_PKGINFO}"

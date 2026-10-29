@@ -111,8 +111,8 @@ struct NativeAbData {
 };
 
 /**
- * Open native adressbook.
- * @param type		type of AdressBook UI
+ * Open native address book.
+ * @param type		type of address-book UI
  * @param unk1		unknown
  * @param unk2		unknown
  * @param data		pointer to the #NativeAbData or NULL
@@ -181,24 +181,24 @@ __swi_end(0x2B5, GetNativeAbDataType, (data, index));
 /**
  * Get number from the #NativeAbData
  * @param data		pointer to the native addressbook data
- * @param type		usually result of the `GetNativeAbDataType(data, 0)`
- * @param unk0		set to 0
- * @return 1: success, 0: error
+ * @param type		item type
+ * @param index		zero-based item index
+ * @return newly allocated string, or NULL if the item was not found; free with #FreeWS
  * */
 __swi_begin(0x2B6)
-WSHDR *GetNumFromNativeAbData(NativeAbData *data, int type, int unk0)
-__swi_end(0x2B6, GetNumFromNativeAbData, (data, type, unk0));
+WSHDR *GetNumFromNativeAbData(NativeAbData *data, int type, int index)
+__swi_end(0x2B6, GetNumFromNativeAbData, (data, type, index));
 
 /**
  * Set number to the #NativeAbData
  * @param data		pointer to the native addressbook data
- * @param unk		set to 0x1D
+ * @param type		item type
  * @param num		phone number
  * @return 1: success, 0: error
  * */
 __swi_begin(0x2B8)
-int SetNumToNativeAbData(NativeAbData *data, int unk, const WSHDR *num)
-__swi_end(0x2B8, SetNumToNativeAbData, (data, unk, num));
+int SetNumToNativeAbData(NativeAbData *data, int type, const WSHDR *num)
+__swi_end(0x2B8, SetNumToNativeAbData, (data, type, num));
 
 /**
  * Decode #PKT_NUM for the phone number.
@@ -238,7 +238,7 @@ int FreeUnpackABentry(AB_UNPRES *entry, void *mfree_fn)
 __swi_end(0x16E, FreeUnpackABentry, (entry, mfree_fn));
 
 /**
- * Convert AB_UNPRESS.item_type to the NativeAbData item type.
+ * Convert AB_UNPRES.item_type to the NativeAbData item type.
  * @param item_type		input type
  * @return converted type
  * */

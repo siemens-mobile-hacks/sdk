@@ -157,7 +157,7 @@ __swi_end(0x093, RebootPhone, ());
 /**
  * Set state for SLI indicator.
  * @param state		state value 0...4
- * @platforms ELKA
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x036)
 void SLI_SetState(uint8_t state)
@@ -239,14 +239,14 @@ __swi_end(0x80D5, RamIsLocked, ());
  * Lock keyboard.
  * */
 __swi_begin(0x0A9)
-void KbdLock()
+void KbdLock(void)
 __swi_end(0x0A9, KbdLock, ());
 
 /**
  * Unlock keyboard.
  * */
 __swi_begin(0x0B9)
-void KbdUnlock()
+void KbdUnlock(void)
 __swi_end(0x0B9, KbdUnlock, ());
 
 /**
@@ -429,9 +429,10 @@ __swi_end(0x382, ClearClipboard, (unk));
 
 /**
  * Run AlarmClock ringing.
+ * @platforms X75, SG
  * */
 __swi_begin(0x035)
-void AlarmClockRing()
+void AlarmClockRing(void)
 __swi_end(0x035, AlarmClockRing, ());
 
 /**
