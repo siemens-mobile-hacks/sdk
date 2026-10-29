@@ -3120,6 +3120,7 @@ NSG = "??B5??B0??9C??9D??9F??1C??D0??68??28??D1??A0"
 [208]
 decl = "int Get_WS_width(const WSHDR *text, int font_id)"
 NSG = "F3,B5,??,B0,??,1C,00,20,??,??,??,??,??,90,??,AB,18,??"
+SG = "F3 B5 D3 B0 00 20 00 26 52 96 4E 90 40 AB 18 86"
 
 [209]
 decl = "void *FindGUIbyId(int id, CSM_RAM **csm)"
@@ -3302,6 +3303,7 @@ NSG = """
 ??,22,??,1C,??,48,??,B5,??,68,_blf(??,B5,??,1C,??,1C,??,1C,??,46,??,6F,??,??,??,??,??,28,??,D0,??,6E,??,68,
 ??,20,??,47,??,1C),??,BD + 1
 """
+SG = "01 1C ?? 48 80 B5 00 68 16 F0 7C FE 80 BD ?? 48 + 1"
 
 [21F]
 decl = "void UnfocusGUI(void)"
@@ -3309,6 +3311,7 @@ NSG = """
 ??,48,??,B5,??,68,_blf(??,B5,??,1C,??,68,??,68,??,28,??,D0,??,68,??,29,??,D0,??,68,??,2A,??,D0,??,21,??,47),
 ??,BD + 1
 """
+SG = "?? 48 80 B5 00 68 16 F0 94 FE 80 BD ?? 48 80 B5 + 1"
 
 [220]
 decl = "char IsSliderClosed()"
@@ -5039,6 +5042,7 @@ NSG = "98 B5 04 1C ?? 6? 00 28 0A D1 ?? 49 00 22 23 1C 0? 39 21 20 40 02 00 92 +
 decl = "void* GetGBSProcAddress(short cepid)"
 NSG = "04,E0,2D,E5,00,20,A0,E1,??,??,??,??,00,10,A0,E3,00,00,50,E3"
 ELKA = "10,B5,02,1C,??,??,??,??,00,21,00,28,??,??,??,??,??,??,A3,42 + 1"
+SG = "04 E0 2D E5 00 20 A0 E1 ?? ?? ?? EB 00 10 A0 E3"
 
 [386]
 decl = "void DrwObj_InitTiledImageEx(DRWOBJ *drwobj, const RECT *rect, int flags, const EIMGHDR *img, int offset_x, int offset_y)"
@@ -5075,6 +5079,7 @@ NSG = "7C,40,2D,E9,01,60,A0,E1,02,50,A0,E1,00,40,A0,E1,??,??,??,??,00,30,E0,E3,0
 
 [38E]
 decl = "void CreateICL(PGROUP *pgroup)"
+SG = "70 40 2D E9 ?? 6? 1F E5 ?? 5? 1F E5 00 40 B0 E1 ?? ?? ?? 1A 20 10 A0 E3 ?? 0? 8F E2 ?? ?? ?? EB 02 00 00 EF 06 20 A0 E1 05 10 A0 E1 05 00 A0 E3"
 NSG = "00,00,EF,06,30,A0,E1,02,20,A0,E3,05,10,A0,E1,05,00,A0,E3,??,??,??,EB,0C,00,D4,E5,00,00,50,E3,-21"
 ELKA = "70 B5 04 1C 00 28 ?? 4E ?? 4D 0A D1 20 21 ?? A0 ?? F? ?? E? 02 DF 33 1C 29 1C 02 22 05 20 ?? F? ?? E? 20 7B 00 28 + 1"
 
@@ -5687,3 +5692,1078 @@ ALL = """
 
 [400]
 decl = "int BCFG_GetDefaultDisk(void)"
+
+
+[420]
+decl = "int BtAccessor_New(int cepid, int msg, int no_servers, int zero)"
+NSG = "FE B5 07 1C 0E 1C 15 1C ?? 4C ?? ?? ?? ?? 00 22 01 92 33 1C 3A 1C 00 95"
+ELKA = "FE B5 07 1C 0E 1C 15 1C ?? 4C ?? ?? ?? ?? 00 22 01 92 33 1C 3A 1C 00 95"
+
+[421]
+decl = "void BtAccessor_Delete(int oh)"
+NSG = "38 B5 04 1C ?? F? ?? ?? 05 1C 20 1C ?? F? ?? ?? 29 1C ?? F? ?? ?? 00 28 03 D0 20 1C ?? F? ?? ?? 38 BD ?? 48 00 24 00 78"
+ELKA = "3E B5 04 1C ?? ?? ?? ?? 05 1C 20 1C ?? ?? ?? ?? 29 1C ?? ?? ?? ?? 00 28 ?? D0 20 1C ?? ?? ?? ?? 3E BD ?? 48 00 24 00 78"
+
+[422]
+decl = "uint32_t BTA_ObjMsg(void *ev)"
+NSG = "F0 B5 85 B0 04 1C 28 25 00 AB ?? 4E"
+ELKA = "F0 B5 87 B0 04 1C 28 25 00 AB ?? 4E 1D 76 5E 83 ?? ?? ?? ?? 07 1C ?? ??"
+
+[423]
+decl = "void **GBS_GetMsgPayload(GBS_MSG *msg)"
+NSG = "10 40 2D E9 00 40 B0 E1 ?? ?? ?? 1A 20 10 A0 E3 34 00 8F E2 ?? ?? ?? EB 02 00 00 EF FC 3F 1F E5"
+ELKA = "10 B5 04 1C ?? D1 20 21 92 A0 ?? ?? ?? ?? 02 DF 02 22 02 20 ?? 49 ?? 4B"
+SG = "10 40 2D E9 00 40 B0 E1 ?? ?? ?? 1A 20 10 A0 E3 ?? 0? 8F E2 ?? ?? ?? EB 02 00 00 EF 02 00 A0 E3 ?? 1? 1F E5 ?? 2? 1F E5 ?? ?? ?? EB 04 00 A0 E1 ?? ?? ?? EB 01 00 50 E3 0C 00 94 05 04 00 84 12"
+
+[424]
+decl = "int BTA_Server_New(int oh, int proto, int master, int encrypt, int authenticate, int authorize, int rx_mtu, int tx_mtu, int tid)"
+NSG = "FF B5 8B B0 18 9E 15 9F 04 1C ?? F? ?? ??"
+ELKA = "FF B5 8D B0 1A 9E 17 9F 04 1C ?? ?? ?? ?? 0C 90 40 30 00 79 ?? 4D 00 28"
+
+[425]
+decl = "void BTA_Server_StartReq(int oh, int server, int sdp_record, int unk, int tid)"
+NSG = "FF B5 83 B0 04 1C 0F 1C 0C 9E ?? F? ?? ?? 05 1C ?? 48 00 78 06 28 13 D1 23 1C FF 21 01 31 00 96 01 97 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 44 20 40 5D 00 28 0A D1"
+ELKA = "FF B5 85 B0 04 1C 0F 1C 0E 9D ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1 23 1C FF 21 01 31 00 95 01 97 AB A2 ?? 48 ?? ??"
+
+[426]
+decl = "void BTA_Server_AcceptReq(int oh, int server, int enable, int tid)"
+NSG = "FF B5 0F 1C 04 1C 1E 1C 83 B0 ?? F? ?? ??"
+ELKA = "FF B5 0F 1C 04 1C 1D 1C 85 B0 ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1"
+
+[427]
+decl = "void BTA_Server_StopReq(int oh, int server, int tid)"
+NSG = "FE B5 0F 1C 04 1C 16 1C ?? F? ?? ?? 05 1C ?? 48"
+ELKA = "F0 B5 0F 1C 04 1C 15 1C 85 B0 ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1"
+
+[428]
+decl = "void BTA_Server_Delete(int oh, int server)"
+NSG = "F8 B5 05 1C 0E 1C ?? F? ?? ?? 04 1C ?? 48 00 78"
+ELKA = "FE B5 05 1C 0E 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 FF 21 ?? 4F"
+
+[429]
+decl = "void BTA_Sdp_Converter_New(int oh, void *(*alloc)(unsigned int), void (*free)(void *))"
+NSG = "F8 B5 0E 1C 05 1C 17 1C ?? F? ?? ?? 04 1C ?? 48"
+ELKA = "FE B5 0E 1C 04 1C 17 1C ?? ?? ?? ?? 05 1C ?? 48 00 78 06 28 ?? D1 23 1C"
+
+[42A]
+decl = "int BTA_SdpRec_New(int oh, const uint8_t uuid[16], int proto, int channel)"
+NSG = "F8 B5 17 1C 0E 1C 1D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 2B 1C 3A 1C 31 1C 20 1C B0 30 ?? ?? ?? ?? F8 BD 00 20 ?? ?? B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ??"
+ELKA = "F8 B5 17 1C 0E 1C 1D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 2B 1C 3A 1C 31 1C 20 1C B0 30 ?? ?? ?? ?? F8 BD 00 20 ?? ?? B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ??"
+
+[42B]
+decl = "void BTA_SdpRec_Delete(int oh, int record)"
+NSG = "B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 29 1C 20 1C B0 30 ?? ?? ?? ?? B0 BD F8 B5 17 1C 0E 1C"
+ELKA = "B0 B5 0D 1C ?? ?? ?? ?? 04 1C 00 21 C9 43 ?? ?? ?? ?? 00 28 ?? D0 29 1C 20 1C B0 30 ?? ?? ?? ?? B0 BD F8 B5 17 1C 0E 1C"
+
+[42C]
+decl = "void BTA_Conn_CloseReq(int oh, int conn, int tid)"
+NSG = "FE B5 04 1C ?? 48 16 1C 00 78 0D 1C 06 28 14 D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 96 01 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 38 1C ?? F? ?? ?? 32 1C 29 1C 20 1C ?? F? ?? ?? FE BD ?? 4A"
+ELKA = "F0 B5 04 1C ?? 48 16 1C 00 78 0D 1C 85 B0 06 28 ?? D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 96 01 95 3D A2 ?? ?? ?? ?? 01 04"
+
+[42D]
+decl = "const uint8_t *BT_GetLocAddr(void)"
+NSG = "F8 B5 4E 4C ?? F? ?? F? 00 21 ?? F? ?? F? FF 27 + 1"
+ELKA = "FE B5 ?? ?? ?? ?? 00 21 ?? ?? ?? ?? ?? 49 FF 27 01 37 01 26 88 42 ?? 4D ?? D0 ?? ?? ?? ?? 04 1C ?? ?? ?? 48 00 78 06 28 ?? D1 39 1C 28 1C 3C A2"
+
+[42E]
+decl = "void SDev_InitEndpoint(SDEV *ep)"
+NSG = "?? 1? 9F E5 FF 20 A0 E3 00 10 80 E5 ?? 1? 9F E5 04 10 80 E5 ?? 1? 9F E5"
+ELKA = "?? 1? 9F E5 FF 20 A0 E3 00 10 80 E5 ?? 1? 9F E5 04 10 80 E5 ?? 1? 9F E5"
+SG = "?? 1? 9F E5 FF 20 A0 E3 00 10 80 E5 ?? 1? 9F E5"
+
+[42F]
+decl = "uint8_t *BT_GetLocalDevice(void)"
+NSG = "B0 B5 86 B0 ?? F? ?? ?? ?? 4C 20 68 05 1C 11 D1 03 22 ?? A1"
+ELKA = "B0 B5 86 B0 ?? ?? ?? ?? 00 28 ?? D0 01 68 00 29 ?? D0 ?? ?? ?? ?? ?? 4C 20 68 05 1C ?? D1 AD A1"
+SG = "B0 B5 86 B0 ?? F? ?? ?? ?? 4C 20 68 05 1C 11 D1 03 22 ?? A1"
+
+[430]
+decl = "void BT_SetSecurityCheck(int lo, int unk1, int unk2, int unk3)"
+NSG = "98 B5 04 1C ?? F? ?? ?? C4 62 ?? 48"
+ELKA = "1C B5 04 1C ?? ?? ?? ?? C4 62 ?? 48 00 78 06 28 ?? D1 ?? ?? ?? ?? C0 6A"
+
+[431]
+decl = "void **RamSDevApps(void)"
+NSG = "&(?? 1? 9F E5 00 00 A0 E3 00 31 81 E7 01 00 80 E2 20 00 50 E3)"
+ELKA = "&(?? 1? 9F E5 00 00 A0 E3 00 31 81 E7 01 00 80 E2 20 00 50 E3)"
+SG = "&(FC 4D 2D E9 ?? E? 9F E5 ?? 8? 9F E5 02 70 A0 E1 01 60 A0 E1 00 50 A0 E3 00 40 A0 E1 11 00 50 E3 03 00 00 2F 0E 20 A0 21 08 10 A0 21 00 00 A0 23 ?? ?? ?? 2A 1B 00 56 E3 ?? ?? ?? 3A 03 00 00 EF 0E 20 A0 E1 08 10 A0 E1 01 00 A0 E3 ?? ?? ?? EB ?? ?? ?? EA ?? A? 1F E5 00 10 E0 E3 0A 00 A0 E1 ?? ?? ?? EB ?? 8? 1F E5 07 20 A0 E1 04 01 98 E7 06 10 A0 E1 00 30 90 E5 04 00 8D E2 33 FF 2F E1 00 00 50 E3 ?? ?? ?? 0A ?? B? 1F E5 07 20 A0 E1 + 88)"
+
+[432]
+decl = "uint16_t *RamBtBufferPool(void)"
+NSG = "&(?? 48 1A 21 01 80 00 21 01 61 24 22 42 80 41 61 81 80 C1 80)"
+ELKA = "&(?? 48 1A 21 01 80 00 21 01 61 24 22 42 80 41 61 81 80 C1 80)"
+SG = "&(?? 48 1A 21 01 80 00 22 82 60 24 21 41 80 C2 60 + 0)"
+
+[433]
+decl = "int BTA_Conn_New_L2CAP(int oh, const uint8_t addr[6], int sapi_type, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu, int tid)"
+NSG = "FF B5 89 B0 17 9E 04 1C ?? F? ?? ??"
+ELKA = "FF B5 8D B0 1B 9E 1A 9F 04 1C ?? ?? ?? ?? 0C 90 20 1C ?? 4D ?? ?? ?? ??"
+
+[434]
+decl = "struct hostent *gethostbyname(const char *name)"
+NSG = "F0 B5 04 1C 93 B0 0C A8 1C 21 ?? ?? ?? ?? 00 21 00 22 09 A8 06 C0 04 C0"
+ELKA = "F0 B5 04 1C 93 B0 0C A8 1C 21 ?? ?? ?? ?? 00 21 00 22 09 A8 06 C0 04 C0"
+SG = "F0 B5 04 1C 93 B0 0C A8 1C 21 ?? F? ?? ?? 00 21"
+
+[435]
+decl = "int getsockname(int sock, SOCK_ADDR *addr, int *len)"
+NSG = "F0 B5 0C 1C 00 21 06 1C 15 1C 00 2C 87 B0 ?? D0 A1 1C 00 20 00 2C ?? D0"
+ELKA = "F0 B5 0C 1C 00 21 06 1C 15 1C 00 2C 87 B0 ?? D0 A1 1C 00 20 00 2C ?? D0"
+SG = "FE B5 0C 1C 07 1C 16 1C 02 A9 ?? F? ?? ?? ?? 4D"
+
+[436]
+decl = "int getpeername(int sock, SOCK_ADDR *addr, int *len)"
+NSG = "F7 B5 0C 1C 00 21 86 B0 00 25 00 2C 08 9A ?? D0 A1 1C 00 20 00 2C ?? D0"
+ELKA = "F7 B5 0C 1C 00 21 86 B0 00 25 00 2C 08 9A ?? D0 A1 1C 00 20 00 2C ?? D0"
+SG = "F7 B5 82 B0 0C 1C 01 A9 17 1C 02 98 ?? F? ?? ??"
+
+[437]
+decl = "int setsockopt(int sock, int level, int option, const void *value, int len)"
+NSG = "FF B5 8D B0 15 1C 1E 1C 1C 21 06 A8 16 9C ?? ?? ?? ?? 0D 99 0E 9A ?? 4F"
+ELKA = "FF B5 8D B0 15 1C 1E 1C 1C 21 06 A8 16 9C ?? ?? ?? ?? 0D 99 0E 9A ?? 4F"
+SG = "FF B5 89 B0 16 1C 0D 1C 1F 1C 1C 21 02 A8 12 9C"
+
+[438]
+decl = "int getsockopt(int sock, int level, int option, void *value, int *len)"
+NSG = "FF B5 8D B0 0D 98 16 9C 15 1C 0F 1C 1E 1C 06 90 08 92 01 20 07 91 09 93"
+ELKA = "FF B5 8D B0 0D 98 16 9C 15 1C 0F 1C 1E 1C 06 90 08 92 01 20 07 91 09 93"
+SG = "10 B5 88 B0 0A 9C 01 90 03 92 01 20 02 91 04 93"
+
+[439]
+decl = "void ioctlsocket(int sock, int cmd, void *arg)"
+NSG = "F0 B5 04 1C 0D 1C 16 1C 89 B0 04 A8 14 21 ?? ?? ?? ?? ?? 4F 00 94 01 95"
+ELKA = "F0 B5 04 1C 0D 1C 16 1C 89 B0 04 A8 14 21 ?? ?? ?? ?? ?? 4F 00 94 01 95"
+SG = "70 B5 04 1C 0D 1C 16 1C 86 B0 01 A8 14 21 ?? F? ?? ??"
+
+[43A]
+decl = "int listen(int sock, int backlog)"
+NSG = "F0 B5 06 1C 0C 1C 85 B0 02 A8 00 21 00 22 06 C0 04 C0 ?? 4D 00 96 01 94"
+ELKA = "F0 B5 06 1C 0C 1C 85 B0 02 A8 00 21 00 22 06 C0 04 C0 ?? 4D 00 96 01 94"
+SG = "BF B5 0C 1C 00 21 01 AD 00 22 06 C5 21 1C 04 C5"
+
+[43B]
+decl = "int RequestLMANDisconnect(const uint8_t *req)"
+NSG = "F8 B5 04 1C ?? ?? ?? ?? ?? 4E 05 1C 19 23 36 68 00 21 ?? 48 81 A2 B0 47"
+ELKA = "F8 B5 04 1C ?? ?? ?? ?? ?? 4E 05 1C 19 23 36 68 00 21 ?? 48 81 A2 B0 47"
+SG = "F8 B5 04 1C ?? F? ?? ?? 05 1C ?? F? ?? ?? ?? 4F"
+
+[43C]
+decl = "unsigned GetSocketRegIndex(unsigned cepid)"
+NSG = "01 1C ?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C 0E 28 + 1"
+ELKA = "01 1C ?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C 0E 28 + 1"
+SG = "01 1C ?? 4A 00 20 14 23 43 43 D3 5A 8B 42 05 D0 + 1"
+
+[43D]
+decl = "unsigned GetServiceCepid(unsigned service)"
+NSG = "00 B5 ?? F? ?? ?? 43 1C 05 D0 ?? 49"
+ELKA = "00 B5 ?? ?? ?? ?? 43 1C ?? D0 ?? 49 40 01 40 18 40 30 00 8A 00 BD 00 20"
+SG = "00 B5 ?? F? ?? ?? 43 1C 05 D0 ?? 49 40 01 40 18"
+
+[43E]
+decl = "unsigned LMAN_AllocContext(unsigned bearer, uint8_t type)"
+NSG = "F8 B5 0F 1C 05 1C 05 28 ?? D2 ?? 4E 00 2D ?? D1 70 21 41 43 89 19 49 78"
+ELKA = "F8 B5 0F 1C 05 1C 05 28 ?? D2 ?? 4E 00 2D ?? D1 70 21 41 43 89 19 49 78"
+SG = "F8 B5 0F 1C 05 1C 04 28 20 D2 ?? 4E 00 2D 09 D1"
+
+[43F]
+decl = "void LMAN_SetProfile(unsigned cid, const CTX_NAPDEF *profile)"
+NSG = "F8 B5 0D 1C 08 28 ?? D2 70 23 58 43 ?? 49 44 18 20 1C 08 30 29 1C ?? ??"
+ELKA = "F8 B5 0D 1C 08 28 ?? D2 70 23 58 43 ?? 49 44 18 20 1C 08 30 29 1C ?? ??"
+
+[440]
+decl = "void LMAN_SetRef(unsigned reg_index, unsigned cid, int on)"
+NSG = "?? 4B 40 01 C0 18 89 00 42 50 70 47 38 B5 05 9D 04 9C 49 19 80 39 09 04 + 1"
+ELKA = "?? 4B 40 01 C0 18 89 00 42 50 70 47 38 B5 05 9D 04 9C 49 19 80 39 09 04 + 1"
+SG = "?? 4B 40 01 40 33 C0 18 89 00 42 50 70 47 38 B5 + 1"
+
+[441]
+decl = "void LMAN_SetState(unsigned cid, int state)"
+NSG = "F0 B5 0F 1C 05 1C 08 28 87 B0 ?? D2 70 20 68 43 ?? 49 06 90 08 5C B8 42"
+ELKA = "F0 B5 0F 1C 05 1C 08 28 87 B0 ?? D2 70 20 68 43 ?? 49 06 90 08 5C B8 42"
+SG = "F0 B5 0F 1C 05 1C 08 28 87 B0 6C D2 E8 00 ?? 49"
+
+[442]
+decl = "void LMAN_FreeContext(unsigned cid)"
+NSG = "B0 B5 08 28 ?? D2 70 21 41 43 ?? 4A 00 25 55 54 FF 20 8C 18 60 70 A0 80"
+ELKA = "B0 B5 08 28 ?? D2 70 21 41 43 ?? 4A 00 25 55 54 FF 20 8C 18 60 70 A0 80"
+SG = "80 B5 08 28 09 D2 C1 00 ?? 4A 00 23 53 54 FF 20"
+
+[443]
+decl = "int ENIP_GetNativeSocket(int sock, void **native)"
+NSG = "B0 B5 0D 1C 04 1C 01 1C 14 20 ?? F? ?? ??"
+ELKA = "B0 B5 0D 1C 04 1C 01 1C 0C 20 ?? ?? ?? ?? 88 00 ?? 49 40 18 09 21 89 01"
+SG = "B0 B5 0D 1C 04 1C 01 1C 14 20 ?? F? ?? ?? 88 00"
+
+[444]
+decl = "uint8_t *RamLmanContexts(void)"
+NSG = "&(?? 49 40 18 80 88 B0 BD ?? 4C 21 1C 07 20 ?? ?? ?? ?? ?? 4D)"
+ELKA = "&(?? 49 40 18 80 88 B0 BD ?? 4C 21 1C 07 20 ?? ?? ?? ?? ?? 4D)"
+SG = "&(80 B5 08 28 09 D2 C1 00 ?? 4A 00 23 53 54 FF 20 + 8)"
+
+[445]
+decl = "uint32_t *RamLmanRefs(void)"
+NSG = "&(?? 4A 40 01 00 21 80 18 8A 00 82 58 01 2A ?? D1 59 80 70 BD)"
+ELKA = "&(?? 4A 40 01 00 21 80 18 8A 00 82 58 01 2A ?? D1 59 80 70 BD)"
+SG = "&(30 B5 ?? 4D 00 22 40 3D D3 00 5B 19 9C 88 8C 42 + 2)"
+
+[446]
+decl = "void *RamSocketRegs(void)"
+NSG = "&(?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C)"
+ELKA = "&(?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C)"
+SG = "&(10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3 00 20 10 BD 14 23 58 43 ?? 4B C0 18 44 80 4B 88 + 18)"
+
+[447]
+decl = "int BTA_DeviceListView_GetList(int oh, int type)"
+NSG = "FE B5 06 1C 0F 1C ?? F? ?? ?? 04 1C 30 1C ?? 4D"
+ELKA = "F0 B5 06 1C 0F 1C 85 B0 ?? ?? ?? ?? 04 1C 30 1C ?? 4D ?? ?? ?? ?? A8 42"
+
+[448]
+decl = "int BTA_DeviceListView_GetNumberOfEntries(int oh, int list)"
+NSG = "FE B5 04 1C 0D 1C ?? F? ?? ?? 07 1C 00 26 20 1C"
+ELKA = "F0 B5 04 1C 0E 1C 85 B0 ?? ?? ?? ?? 07 1C 00 25 20 1C ?? ?? ?? ?? ?? 49"
+
+[449]
+decl = "void BTA_DeviceListView_GetEntryReq(int oh, int list, int index, int tid)"
+NSG = "FE BD FF B5 0D 1C 04 1C 1E 1C 83 B0 + 3"
+ELKA = "F0 B5 17 1C 0E 1C 04 1C 1D 1C 87 B0 ?? ?? ?? ?? 06 90 ?? 48 00 78 06 28 ?? D1 23 1C FF 21 01 31 00 95 01 96 02 97 4F A2"
+
+[44A]
+decl = "void BTA_DeviceListView_StopList(int oh, int list)"
+NSG = "F8 B5 04 1C 0D 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 38 1C ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 49 88 42 1B D0"
+ELKA = "FE B5 04 1C 0D 1C ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 95 9A A2 ?? ?? ?? ?? 01 04"
+
+[44B]
+decl = "const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const void *device)"
+NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 14 D1 00 96"
+ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 00 96"
+
+[44C]
+decl = "const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)"
+NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 17 D1 22 1C 00 D1 ?? A2 00 96 ?? 4E FF 21 01 31 01 92 2B 1C 30 1C ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 20 1C 7C BD 7C B5"
+ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 22 1C ?? D1 44 A2 00 96 ?? 4E"
+
+[44D]
+decl = "void *WSP_GetObject(unsigned id)"
+NSG = "?? 49 04 39 09 68 00 29 03 D0 84 22 52 58 00 2A 01 D1 00 20 70 47 80 00 08 58 70 47 + 1"
+ELKA = "?? 49 04 39 09 68 00 29 03 D0 84 22 52 58 00 2A 01 D1 00 20 70 47 80 00 08 58 70 47 + 1"
+SG = "?? 49 04 39 09 68 00 29 03 D0 80 22 52 58 00 2A + 1"
+
+[44E]
+decl = "int WSP_ReadProperty(const char *key, void *value, unsigned *length)"
+NSG = "F0 B5 0F 1C 06 1C 15 1C 00 21 85 B0 ?? ?? ?? ?? 04 1C 13 D0 39 1C 68 46 2A 68 ?? ?? ?? ?? 21 68 20 1C 0A 6B 6B 46 57 18 32 1C 00 21 B8 47 00 28 04 D0 04 98 28 60 01 20"
+ELKA = "F0 B5 0F 1C 06 1C 15 1C 00 21 85 B0 ?? ?? ?? ?? 04 1C 13 D0 39 1C 68 46 2A 68 ?? ?? ?? ?? 21 68 20 1C 0A 6B 6B 46 57 18 32 1C 00 21 B8 47 00 28 04 D0 04 98 28 60 01 20"
+SG = "F0 B5 0F 1C 06 1C 15 1C 00 21 85 B0 ?? F? ?? ?? 04 1C 13 D0 39 1C 68 46 2A 68 ?? F? ?? ?? 21 68 20 1C 0A 6B"
+
+[44F]
+decl = "uint8_t WSP_GetConnectionState(int bearer, int nap)"
+NSG = "?? 4A 08 B5 00 92 6A 46 ?? ?? ?? ?? 00 28 06 D0 00 98 ?? ?? ?? ?? 00 28 01 D0 00 7C 08 BD 00 20 FC E7 + 1"
+ELKA = "?? 4A 08 B5 00 92 6A 46 ?? ?? ?? ?? 00 28 06 D0 00 98 ?? ?? ?? ?? 00 28 01 D0 00 7C 08 BD 00 20 FC E7 + 1"
+
+[450]
+decl = "int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)"
+NSG = "FF B5 87 B0 13 9E 04 1C ?? F? ?? ??"
+ELKA = "FF B5 8B B0 17 9E 16 9F 04 1C ?? ?? ?? ?? 0A 90 20 1C ?? 4D ?? ?? ?? ?? A8 42 ?? D0 31 1C 0A 98 ?? ?? ?? ?? 00 28 ?? D0 0C 98"
+
+[451]
+decl = "int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)"
+NSG = "FF B5 83 B0 07 1C ?? F? ?? ?? 05 1C ?? 48 ?? 4E 00 78 06 28 14 D1 0D 9A"
+ELKA = "FF B5 85 B0 0F 9F 06 1C ?? F5 ?? ?? 04 1C C5 48 CC 4D 00 78 06 28 13 D1 33 1C FF 21 01 31 00 97 C9 A2 C1 48 ?? F0 ?? ?? 01 04 C0 48"
+
+[452]
+decl = "void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)"
+NSG = "F7 B5 07 1C 15 1C 84 B0 ?? F? ?? ??"
+ELKA = "F0 B5 0F 1C 05 1C 14 1C 85 B0 ?? F5 ?? ?? 06 1C 33 48 00 78 06 28 14 D1 2B 1C FF 21 01 31 00 94 01 97 52 A2 2F 48 ?? F0 ?? ?? 01 04"
+
+[453]
+decl = "unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)"
+NSG = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB"
+ELKA = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F1 ?? ?? 00 28 6B D1 00 AB 18 8C 18 23 58 43 ?? ?? ?? ?? 01 1C 01 20 ?? F6 ?? FC 06 90"
+SG = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F? ?? ??"
+
+[454]
+decl = "int *RamJavaVMStarted(void)"
+NSG = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 4) + 8"
+ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 4) + 8"
+
+[455]
+decl = "int *RamJavaExitPopup(void)"
+NSG = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 14)"
+ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 14)"
+
+[456]
+decl = "JAVA_HEAP_SLOTS *RamJavaHeapSlots(void)"
+NSG = "&(?? 70 9F E5 00 80 A0 E1 00 00 97 E5 01 60 A0 E1 00 40 B0 E1 02 50 A0 E1 05 00 86 E0 01 40 A0 13)"
+ELKA = "&(?? 70 9F E5 00 80 A0 E1 00 00 97 E5 01 60 A0 E1 00 40 B0 E1 02 50 A0 E1 05 00 86 E0 01 40 A0 13)"
+SG = "&(F0 41 2D E9 ?? 7? 9F E5 00 80 A0 E1 00 00 97 E5 + 4)"
+
+[457]
+decl = "void **RamJavaVMHeaps(void)"
+NSG = "&(F8 45 2D E9 ?? ?? 9F E5 00 60 A0 E3 00 00 95 E5 00 00 50 E3 00 60 85 B5 02 00 00 BA 63 00 50 E3 + 38)"
+ELKA = "&(F8 45 2D E9 ?? ?? 9F E5 00 60 A0 E3 00 00 95 E5 00 00 50 E3 00 60 85 B5 02 00 00 BA 63 00 50 E3 + 38)"
+
+[458]
+decl = "int JAM_StartApplicationClass(WSHDR *class_name, int unk1, int unk2, int unk3, int unk4)"
+NSG = "F0 40 2D E9 43 DF 4D E2 02 60 A0 E1"
+ELKA = "FF B5 C3 B0 ?? A1 00 91 ?? 49 1F 1C 16 1C 04 1C 59 22 01 23 01 90 ?? 48 59 39 + 1"
+SG = "08 40 2D E9 03 C0 A0 E1 08 30 9D E5 00 30 8D E5 0C 30 A0 E1 ?? ?? ?? EB 00 00 50 E3"
+
+[45B]
+decl = "SEXIT_HOOKS *RamSExitHooks(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + 5C)"
+
+[45C]
+decl = "SEXIT_STATE *RamSExitState(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + DC)"
+
+[45D]
+decl = "SEXIT_RECORDS *RamSExitRecords(void)"
+ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + 4)"
+
+[45E]
+decl = "void SExit(int code, const void *module, int type, int param)"
+NSG = "04 F0 9D E4 ?? 40 2D E9 ?? 4? 9F E5 00 C0 94 E5 + 4"
+ELKA = "38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5"
+
+[45F]
+decl = "void BTA_Conn_GetL2CAPParamReq(int oh, int conn, int tid)"
+NSG = "FE B5 0F 1C 04 1C 15 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 23 1C FF 21 01 31 00 95 01 97 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 49 88 42 11 D0 29 1C"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 C1 31 01 94"
+
+[460]
+decl = "void *BTA_Conn_GetRemDevInfo(int oh, int conn)"
+NSG = "FE B5 07 1C 0D 1C ?? F? ?? ?? 06 1C 00 24 E1 43"
+ELKA = "F0 B5 06 1C 0D 1C 85 B0 ?? F? ?? ?? 07 1C 00 24"
+
+[461]
+decl = "uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const void *device, int what)"
+NSG = "FE B5 0E 1C 05 1C 17 1C ?? F? ?? ?? 00 24 E1 43"
+ELKA = "F0 B5 0E 1C 05 1C 17 1C 85 B0 ?? F? ?? ?? 00 24"
+
+[462]
+decl = "void BTA_AclDisconnectReq(int tid, const uint8_t addr[6])"
+NSG = "80 B5 9A B0 00 AB 84 22 1A 80 10 22"
+ELKA = "80 B5 9A B0 00 AB 84 22 1A 80 10 22"
+
+[463]
+decl = "PGROUP *GBS_GetProcGroup(int cepid)"
+NSG = "FF CC 40 E2 FF C0 5C E2 04 13 1F 15"
+ELKA = "?? 49 DF 31 88 42 05 D0 00 0A ?? 49 + 1"
+SG = "FF CC 40 E2 FF C0 5C E2 ?? 1? 1F 15 20 04 A0 11"
+
+[464]
+decl = "void ENIP_ModuleInit(void *module, const char *name, void *up, void *down, void *run, void *notify, void *post_run, void *packet_available)"
+NSG = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF"
+ELKA = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF"
+SG = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF 23 70 62 60"
+
+[465]
+decl = "uint8_t ENIP_ModuleRun(void *module, uint32_t *result)"
+NSG = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0"
+ELKA = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0"
+SG = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0 40 69 00 28"
+
+[466]
+decl = "int ENIP_ModuleUp(void *module)"
+NSG = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1"
+ELKA = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1"
+SG = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1 60 69 00 28"
+
+[467]
+decl = "void ENIP_ModuleDown(void *module, uint32_t reason)"
+NSG = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
+ELKA = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
+SG = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
+
+[468]
+decl = "void ENIP_PortInit(void *port, void *module)"
+NSG = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C"
+ELKA = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C"
+SG = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C 10 30 A1 60"
+
+[469]
+decl = "void ENIP_PortSend(void *port, void *packet)"
+NSG = "80 B5 00 28 09 D0 82 68 00 2A 03 D0"
+ELKA = "80 B5 00 28 09 D0 82 68 00 2A 03 D0"
+SG = "80 B5 00 28 09 D0 82 68 00 2A 03 D0 12 78 12 06"
+
+[46A]
+decl = "void *ENIP_PacketAlloc(void *module, int size, uint32_t pool, int offset, int quota)"
+NSG = "FF B5 0C 1C ?? 49 95 00 49 59 85 B0"
+ELKA = "FF B5 0C 1C ?? 49 16 1C BC 31 95 00"
+SG = "FE B5 1F 1C ?? 4B 15 1C 0C 1C 0A 1C 1B 68 ?? 49"
+
+[46B]
+decl = "void ENIP_PacketFree(void *packet)"
+NSG = "FE B5 00 26 05 1C 00 28 ?? 4F ?? 4A"
+ELKA = "FE B5 00 26 05 1C 00 28 ?? 4F ?? 4A"
+SG = "F8 B5 ?? 4B 82 69 1B 68 00 27 06 1C 65 20 ?? 49"
+
+[46C]
+decl = "int ENIP_RegisterDriver(void *driver, int flags)"
+NSG = "F3 B5 ?? 4F 04 1C 08 21 00 20 81 B0"
+ELKA = "F3 B5 ?? 4F 04 1C 08 21 00 20 81 B0"
+SG = "F8 B5 ?? 4F 04 1C 10 21 00 20 82 01 D2 19 92 6F"
+
+[46D]
+decl = "void ENIP_UnregisterDriver(void *module)"
+NSG = "F8 B5 ?? 4E 00 24 08 22 00 21 44 23"
+ELKA = "F8 B5 ?? 4E 00 24 08 22 00 21 44 23"
+SG = "F8 B5 ?? 4E 00 24 10 23 00 21 8A 01 92 19 92 6F"
+
+[46E]
+decl = "void *ENIP_FindInterface(uint32_t bearer, uint16_t iface)"
+NSG = "30 B5 ?? 4C 00 22 44 23 53 43 1D 19"
+ELKA = "30 B5 ?? 4C 00 22 44 23 53 43 1D 19"
+SG = "30 B5 ?? 4D 00 22 93 01 5C 19 80 34 23 78 FF 2B"
+
+[46F]
+decl = "void LMAN_AttachInterface(unsigned cid, unsigned iface, unsigned unk)"
+NSG = "B0 B5 08 28 06 D2 70 23 58 43 ?? 4B"
+ELKA = "B0 B5 08 28 06 D2 70 23 58 43 ?? 4B"
+SG = "80 B5 08 28 05 D2 ?? 4B C0 00 C0 18 81 80 C2 80"
+
+[470]
+decl = "void *ENIP_ListRemoveHead(void *list)"
+NSG = "01 1C 00 68 00 28 00 D1 70 47 02 68 + 1"
+ELKA = "01 1C 00 68 00 28 00 D1 70 47 02 68 + 1"
+SG = "01 1C 00 68 00 28 00 D1 70 47 02 68 00 23 00 2A + 1"
+
+[471]
+decl = "void *RamPdpDrivers(void)"
+NSG = "&(?? 49 58 43 40 18 00 E0 ?? 48 81 68)"
+ELKA = "&(?? 49 58 43 40 18 00 E0 ?? 48 81 68)"
+SG = "&(FF B5 15 1C ?? 4A 07 1C 10 68 00 26 1C 1C 00 28 8D B0 74 D0 00 2C 0B D0 0E 9B 00 2B 08 D0 0E 98 ?? F? ?? ?? 00 28 03 D0 01 2D 05 D0 0C 2D 03 D0 ?? 48 05 38 11 B0 F0 BD ?? 48 20 60 ?? 4C 6C 34 01 2D 20 D1 0E 98 ?? F? ?? ?? 09 28 19 D1 05 A8 0E 99 ?? F? ?? ?? 05 A8 06 E0 0A 1C 61 3A 19 2A 01 D8 E0 31 01 70 01 30 01 78 00 29 F5 D1 ?? A1 05 A8 ?? F? ?? ?? 00 28 03 D1 01 2D 0B D0 00 20 D8 E7 0E 9E 17 E0 0C 2D 15 D1 0E 9B 18 68 01 06 09 0E 7F 29 04 D1 21 1C ?? 48 ?? F? ?? ?? EE E7 ?? F? ?? ?? 1D 22 05 A9 ?? F? ?? ?? ?? A1 05 A8 ?? F? ?? ?? 05 AE 17 9A 90 79 00 28 08 D0 01 28 1D D1 17 9A 28 23 10 89 ?? 49 58 43 40 18 00 E0 + C8)"
+
+[472]
+decl = "void enip_module_post_run(void *module)"
+NSG = "80 B5 01 22 42 61 81 69 00 29 0B D0"
+ELKA = "80 B5 01 22 42 61 81 69 00 29 0B D0"
+SG = "80 B5 01 22 42 61 81 69 00 29 0B D0 03 6A 00 2B"
+
+[473]
+decl = "void enip_module_nsapi_post_init(void *module)"
+NSG = "00 22 D1 43 C1 66 C2 65 82 66 70 47 + 1"
+ELKA = "00 22 D1 43 C1 66 C2 65 82 66 70 47 + 1"
+SG = "00 22 D1 43 C1 66 C2 65 82 66 70 47 ?? 49 08 B5 + 1"
+
+[474]
+decl = "void enip_port_handle_pkt(void *port, void *packet)"
+NSG = "B0 B5 04 1C 00 69 01 25 00 28 00 D0"
+ELKA = "B0 B5 04 1C 00 69 01 25 00 28 00 D0"
+SG = "B0 B5 04 1C 00 69 01 25 00 28 00 D0 00 25 20 1C"
+
+[475]
+decl = "void *enip_memory_allocate(uint32_t unused, int size)"
+NSG = "FE B5 ?? 48 0D 1C 00 68 ?? F? ?? ??"
+ELKA = "FE B5 ?? 48 0D 1C 00 68 ?? F? ?? ??"
+SG = "10 B5 ?? 48 0C 1C 00 68 ?? F? ?? ?? 00 28 06 D1"
+
+[476]
+decl = "void enip_memory_release(void *block)"
+NSG = "B0 B5 04 1C 17 D1 ?? 4C 21 1C 03 20"
+ELKA = "B0 B5 04 1C 17 D1 ?? 4C 21 1C 03 20"
+SG = "10 B5 04 1C 06 D1 03 DF 03 20 ?? 49 ?? 4A ?? F? ?? ??"
+
+[477]
+decl = "int enip_packet_max_size(void)"
+NSG = "?? 48 77 38 70 47 F8 B5 88 68 0C 1C + 1"
+ELKA = "?? 48 77 38 70 47 F8 B5 88 68 0C 1C + 1"
+SG = "?? 48 70 47 F8 B5 88 68 0C 1C 09 69 40 1A 08 D5 + 1"
+
+[478]
+decl = "int enip_ip_init(void *post_run)"
+NSG = "F0 B5 ?? 4D 65 21 C9 00 04 1C 28 1C"
+ELKA = "F0 B5 ?? 4D 61 21 C9 00 04 1C 28 1C"
+SG = "F0 B5 ?? 4D A1 21 C9 00 04 1C 28 1C 85 B0 ?? F? ?? ??"
+
+[479]
+decl = "void *enip_find_iface_by_driver(void *driver)"
+NSG = "?? 4A C0 69 00 21 44 23 4B 43 9B 18 + 1"
+ELKA = "?? 4A C0 69 00 21 44 23 4B 43 9B 18 + 1"
+SG = "?? 4B C2 69 00 21 88 01 C0 18 80 6F 90 42 03 D1 + 1"
+
+[47A]
+decl = "void enip_iph_calc_chk_and_port_send(void **port, void *packet, uint32_t size)"
+NSG = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72"
+ELKA = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72"
+SG = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72 17 1C 0D 1C"
+
+[47B]
+decl = "uint16_t enip_iph_compute_checksum(uint16_t seed, const void *data, uint16_t size)"
+NSG = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 + 1"
+ELKA = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 + 1"
+SG = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 4C 78 02 31 + 1"
+
+[47C]
+decl = "void *enip_iph_find_IF_for_socket(void *socket)"
+NSG = "30 B5 00 21 FF 30 ?? 4A 61 30 44 23"
+ELKA = "30 B5 00 21 FF 30 ?? 4A 61 30 44 23"
+SG = "70 B5 03 1C FF 33 51 33 1C 1C ?? 4D 00 21 10 3C"
+
+[47D]
+decl = "void enip_iph_frame_read(void *packet)"
+NSG = "F0 B5 87 B0 85 68 00 AB 00 26 04 1C"
+ELKA = "F0 B5 87 B0 85 68 00 AB 00 26 04 1C"
+SG = "F0 B5 87 B0 85 68 00 AB 04 1C 00 22 9A 82 00 20"
+
+[47E]
+decl = "int enip_iph_manage_reassembly(void *iface, void *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)"
+NSG = "FF B5 95 B0 16 1C 00 22 84 46 1F 98"
+ELKA = "FF B5 95 B0 16 1C 00 22 84 46 1F 98"
+SG = "FF B5 95 B0 16 1C 00 22 84 46 1F 98 06 92 19 1C"
+
+[47F]
+decl = "void enip_iph_packet_avail(void)"
+NSG = "80 B5 0A 20 ?? F? ?? ?? ?? F? ?? ??"
+ELKA = "80 B5 0A 20 ?? F? ?? ?? ?? F? ?? ??"
+SG = "80 B5 0A 20 ?? F? ?? ?? ?? F? ?? ?? 80 BD 70 B5"
+
+[480]
+decl = "void enip_iph_rheader_init(void *slot)"
+NSG = "00 21 C9 43 80 B5 01 60 00 21 C1 60 + 1"
+ELKA = "00 21 C9 43 80 B5 01 60 00 21 C1 60 + 1"
+SG = "00 21 C9 43 80 B5 01 60 00 21 C1 60 ?? 49 10 30 + 1"
+
+[481]
+decl = "void enip_iph_run(void *module)"
+NSG = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28"
+ELKA = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28"
+SG = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28 01 D1 ?? F? ?? ??"
+
+[482]
+decl = "int enip_iph_write(void *port, void *packet, uint32_t size)"
+NSG = "F7 B5 17 1C 00 25 0C 1C 00 29 82 B0"
+ELKA = "F7 B5 17 1C 00 25 0C 1C 00 29 82 B0"
+SG = "F7 B5 17 1C 00 25 0C 1C 00 29 18 D0 ?? 49 A0 68"
+
+[483]
+decl = "int enip_siph_crypt_frame_read(void *module, void *packet)"
+NSG = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C"
+ELKA = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C"
+SG = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C 12 02 D2 18"
+
+[484]
+decl = "void *enip_siph_find_IF(int address)"
+NSG = "10 B5 ?? 4C 00 21 44 22 4A 43 12 19"
+ELKA = "10 B5 ?? 4C 00 21 44 22 4A 43 12 19"
+SG = "10 B5 ?? 4C 00 21 8A 01 12 19 12 6E 53 1C 05 D0"
+
+[485]
+decl = "void enip_icmp_frame_read(void *module, void *packet)"
+NSG = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C"
+ELKA = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C"
+SG = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C 28 1A 07 04"
+
+[486]
+decl = "void enip_udph_frame_read(void *module, void *packet)"
+NSG = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68"
+ELKA = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68"
+SG = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68 ?? 4F 06 91"
+
+[487]
+decl = "int enip_init_csd_iface(void *module, void *driver)"
+NSG = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F"
+ELKA = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F"
+SG = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F 02 28 31 D1"
+
+[488]
+decl = "int enip_nsapi_init_iface(void *module)"
+NSG = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C"
+ELKA = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C"
+SG = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C 38 78 00 06"
+
+[489]
+decl = "int enip_nsapi_init_module(void *module)"
+NSG = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C"
+ELKA = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C"
+SG = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C 00 20 00 92"
+
+[48A]
+decl = "void ENIP_PDP_NET_UP_CNF(uint16_t context, int result)"
+NSG = "F0 B5 06 1C 01 29 8B B0 ?? 4D 6C D1"
+ELKA = "F0 B5 06 1C 01 29 8B B0 ?? 4D 6C D1"
+SG = "F0 B5 05 1C 01 29 8B B0 ?? 4F 68 D1 28 1C ?? F? ?? ??"
+
+[48B]
+decl = "void ENIP_PDP_NET_UP_REJ_IND(uint16_t context, int result)"
+NSG = "F8 B5 05 1C 01 29 ?? 4E 58 D1 28 1C"
+ELKA = "F8 B5 05 1C 01 29 ?? 4E 58 D1 28 1C"
+SG = "F8 B5 05 1C 01 29 34 D1 28 1C ?? F? ?? ?? 00 28"
+
+[48C]
+decl = "void ENIP_PDP_NET_DOWN_IND(uint16_t context, int mode)"
+NSG = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1A D0"
+ELKA = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1A D0"
+SG = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1A D0"
+
+[48D]
+decl = "void ENIP_PDP_START_REQ(int context, int mode)"
+NSG = "F0 B5 04 1C 0D 1C 85 B0 ?? F? ?? ?? 03 06 70 22"
+ELKA = "F0 B5 04 1C 0D 1C 85 B0 ?? F? ?? ?? 03 06 70 22"
+SG = "F0 B5 04 1C 0D 1C 85 B0 ?? F? ?? ?? 03 06 70 21"
+
+[48E]
+decl = "void ENIP_PDP_STOP_REQ(uint16_t context, int mode)"
+NSG = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1E D0"
+ELKA = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1E D0"
+SG = "FE B5 04 1C 70 23 58 43 ?? 4E 85 19 00 29 1E D0"
+
+[48F]
+decl = "void ENIP_PDP_START_CSD_INT_REQ(int bearer)"
+NSG = "F0 B5 9D B0 05 1C 03 24 32 23 32 21"
+ELKA = "F0 B5 9D B0 05 1C 03 24 32 23 32 21"
+SG = "F0 B5 9D B0 05 1C 03 24 32 23 32 21 10 A8 03 AA"
+
+[490]
+decl = "int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, uint16_t *destination)"
+NSG = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
+ELKA = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
+SG = "7C B5 0E 1C 05 1C 00 2B 06 99 07 9C 02 D1 ?? 48"
+
+[491]
+decl = "int enip_socket_connect(int socket, int address, int unknown, uint16_t port, uint32_t timeout)"
+NSG = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F"
+ELKA = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F"
+SG = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F ?? F? ?? ??"
+
+[492]
+decl = "void enip_sockh_IF_init(void *iface)"
+NSG = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
+ELKA = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
+SG = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
+
+[493]
+decl = "void *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)"
+NSG = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
+ELKA = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
+SG = "FF B5 ?? 49 83 B0 08 78 00 25 0D 9F 00 06 80 0F"
+
+[494]
+decl = "int enip_sockh_autobind_IF(void *socket, int address)"
+NSG = "F8 B5 04 1C C0 69 00 28 01 D0 00 20"
+ELKA = "F8 B5 04 1C C0 69 00 28 01 D0 00 20"
+SG = "F8 B5 04 1C C0 69 00 28 01 D0 00 20 F8 BD 26 1C"
+
+[495]
+decl = "int enip_sockh_packet_allocate(void *socket, uint32_t size, uint32_t flags, void **packet, int timeout)"
+NSG = "F8 B5 16 1C 04 1C 08 1C 1D 1C 06 9A"
+ELKA = "F8 B5 16 1C 04 1C 08 1C 1D 1C 06 9A"
+SG = "B0 B5 04 1C 08 1C 1D 1C ?? F? ?? ?? ?? 4B 0B 3B"
+
+[496]
+decl = "int enip_sockh_dgram_connect(void *socket, int address, uint32_t unused, uint16_t port)"
+NSG = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1"
+ELKA = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1"
+SG = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1 26 1C E0 6C"
+
+[497]
+decl = "void *enip_sockh_from_ipheader(void *module, const uint8_t *header)"
+NSG = "FF B5 00 22 03 92 02 92 0E 7C 4A 7A"
+ELKA = "FF B5 00 22 03 92 02 92 0E 7C 4A 7A"
+
+[498]
+decl = "int enip_sockh_prepare_send(int index, void *socket, uint32_t address)"
+NSG = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20"
+ELKA = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20"
+SG = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20 40 5B 16 1C"
+
+[499]
+decl = "int enip_sockh_tcp_packet_allocate(void *socket)"
+NSG = "1C B5 04 1C 80 30 C0 6B 00 21 ?? F? ?? ??"
+ELKA = "1C B5 04 1C 80 30 C0 6B 00 21 ?? F? ?? ??"
+
+[49A]
+decl = "int enip_tcph_sock_init(void *socket)"
+NSG = "F8 B5 04 1C ?? F? ?? ?? E2 69 25 1C"
+ELKA = "F8 B5 04 1C ?? F? ?? ?? E2 69 25 1C"
+SG = "F8 B5 04 1C ?? F? ?? ?? E2 69 01 26 11 1C 93 6B"
+
+[49B]
+decl = "int enip_tcph_sock_connect(void *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)"
+NSG = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24"
+ELKA = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24"
+SG = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24 07 29 0C 9E"
+
+[49C]
+decl = "int enip_tcph_send_segment(void *socket, uint32_t flags, const void *data, uint32_t size, void *packet, int unknown)"
+NSG = "FF B5 04 1C 00 20 91 B0 1A 9D 02 90"
+ELKA = "FF B5 04 1C 00 20 91 B0 1A 9D 02 90"
+SG = "FF B5 04 1C 00 20 8F B0 18 9D 00 90 0B 90 01 A8"
+
+[49D]
+decl = "void enip_tcph_write_segment(void *socket, void *packet, int use_sequence)"
+NSG = "F7 B5 0E 1C 05 1C 00 28 89 68 88 B0"
+ELKA = "F7 B5 0E 1C 05 1C 00 28 89 68 88 B0"
+SG = "F0 B5 0E 1C 17 1C 05 1C 00 28 89 68 89 B0 71 D0"
+
+[49E]
+decl = "void enip_tcph_change_sock_state(void *socket, uint32_t state)"
+NSG = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0"
+ELKA = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0"
+SG = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0 20 7C A8 42"
+
+[49F]
+decl = "void enip_tcph_frame_read(void *module, void *packet)"
+NSG = "F3 B5 A1 B0 00 24 00 AB 0D 1C 00 20"
+ELKA = "F3 B5 A1 B0 00 24 00 AB 0D 1C 00 20"
+SG = "F3 B5 9F B0 00 24 00 AB 0D 1C 00 20 1C 85 09 90"
+
+[4A0]
+decl = "void enip_tcph_run(void)"
+NSG = "FE B5 00 27 ?? 49 B8 00 40 18 09 21"
+ELKA = "FE B5 00 27 ?? 49 B8 00 40 18 09 21"
+SG = "FE B5 00 26 00 27 ?? 49 B0 00 40 18 11 21 89 01"
+
+[4A1]
+decl = "uint32_t enip_tcph_get_SACK_option_from_list(void *socket, uint32_t count, uint8_t *option)"
+NSG = "F7 B5 01 20 10 70 50 70 05 20 90 70"
+ELKA = "F7 B5 01 20 10 70 50 70 05 20 90 70"
+SG = "F7 B5 01 20 10 70 50 70 05 20 90 70 14 1D 00 20"
+
+[4A2]
+decl = "void enip_tcph_update_SACK_block_list(void *socket)"
+NSG = "F0 B5 06 1C FF 36 01 21 49 02 01 36"
+ELKA = "F0 B5 06 1C FF 36 01 21 49 02 01 36"
+SG = "F0 B5 06 1C FF 36 01 36 35 1C 00 27 00 23 C0 35"
+
+[4A3]
+decl = "void enip_timer_init(void *timer, void *module)"
+NSG = "81 60 00 21 41 61 01 60 41 60 70 47 + 1"
+ELKA = "81 60 00 21 41 61 01 60 41 60 70 47 + 1"
+SG = "81 60 00 21 41 61 01 60 41 60 70 47 80 B5 01 1C + 1"
+
+[4A4]
+decl = "void enip_timer_cancel(void *timer)"
+NSG = "80 B5 01 1C 40 69 00 28 05 D0 00 20"
+ELKA = "80 B5 01 1C 40 69 00 28 05 D0 00 20"
+SG = "80 B5 01 1C 40 69 00 28 05 D0 00 20 48 61 88 68"
+
+[4A5]
+decl = "void enip_timer_start(void *timer, uint32_t timeout)"
+NSG = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0"
+ELKA = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0"
+SG = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0 28 1C ?? F? ?? ??"
+
+[4A6]
+decl = "void LMAN_LINK_UP_CNF(void)"
+NSG = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 32 D2"
+ELKA = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 32 D2"
+SG = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 33 D2"
+
+[4A7]
+decl = "int16_t lman_app_register(uint16_t app)"
+NSG = "70 B5 ?? F? ?? ?? ?? 4E B0 42 17 D1"
+ELKA = "70 B5 ?? F? ?? ?? ?? 4E B0 42 17 D1"
+SG = "10 B5 ?? F? ?? ?? ?? 4C A0 42 06 D1 03 DF 00 20"
+
+[4A8]
+decl = "void lman_app_free(uint16_t slot)"
+NSG = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 + 1"
+ELKA = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 + 1"
+SG = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 80 18 43 80 + 1"
+
+[4A9]
+decl = "int lman_app_set_bearer(uint16_t slot, const uint16_t *settings, int callback)"
+NSG = "B0 B5 0E 28 12 D2 0C 88 19 23 5B 01"
+ELKA = "B0 B5 0E 28 12 D2 0C 88 19 23 5B 01"
+SG = "10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3"
+
+[4AA]
+decl = "int16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)"
+NSG = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
+ELKA = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
+SG = "30 B5 ?? 4D 00 22 40 3D D3 00 5B 19 9C 88 8C 42"
+
+[4AB]
+decl = "uint8_t lman_GetBearerIdForCi(uint16_t connection)"
+NSG = "B0 B5 08 28 05 D2 70 23 58 43 ?? 49 40 18 40 78"
+ELKA = "B0 B5 08 28 05 D2 70 23 58 43 ?? 49 40 18 40 78"
+SG = "80 B5 08 28 04 D2 ?? 49 C0 00 40 18 40 78 80 BD"
+
+[4AC]
+decl = "int lman_get_socket_destination(uint16_t cepid, void *destination)"
+NSG = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ??"
+ELKA = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ??"
+SG = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ?? 06 1C"
+
+[4AD]
+decl = "void zDLL_Init(void *list)"
+NSG = "00 21 41 60 01 60 70 47 42 68 00 23 + 1"
+ELKA = "00 21 41 60 01 60 70 47 42 68 00 23 + 1"
+SG = "00 21 41 60 01 60 70 47 42 68 00 23 00 2A 04 D1 + 1"
+
+[4AE]
+decl = "void BTA_DeviceDiscovery_StartSearchReq(int oh, uint32_t service, int tid)"
+NSG = "FE B5 04 1C ?? 48 16 1C 00 78 0D 1C 06 28 15 D1"
+ELKA = "F0 B5 04 1C ?? 48 16 1C 00 78 0D 1C 85 B0 06 28 16 D1 ?? 4A"
+
+[4AF]
+decl = "void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t param3, int param4)"
+NSG = "FF B5 85 B0 05 1C 1F 1C 0E 9E ?? F? ?? ?? 04 1C ?? 48 00 78"
+ELKA = "FF B5 0E 1C 05 1C 1F 1C 85 B0 ?? F? ?? ?? 04 1C ?? 48 00 78"
+
+[4B0]
+decl = "void BTA_DeviceDiscovery_StopSearchReq(int oh, int tid)"
+NSG = "F8 B5 04 1C ?? 48 0D 1C 00 78 06 28 13 D1 FF 21 ?? 4E 01 31 23 1C 30 1C 00 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 29 1C 20 1C ?? F? ?? ?? F8 BD F8 B5 04 1C"
+ELKA = "FE B5 04 1C ?? 48 0D 1C 00 78 06 28 14 D1 FF 21 ?? 4E 01 31 23 1C 30 1C 00 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 0A E0 ?? A0 ?? 49 00 90 01 23 03 22 47 31"
+
+[4B1]
+decl = "int BTA_RemBtDeviceInfo_SetName(int oh, void *device, const char *name)"
+NSG = "FE B5 0F 1C 06 1C 15 1C ?? F? ?? ?? 00 24 E1 43"
+ELKA = "F0 B5 0F 1C 06 1C 14 1C 85 B0 ?? F? ?? ?? 00 25"
+
+[4B2]
+decl = "void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, void *device)"
+NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 18 D1 00 22"
+ELKA = "7F B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 19 D1 00 22"
+
+[4B3]
+decl = "void BTA_LocBtDevice_SetVisibilityReq(int oh, uint32_t visibility, int tid)"
+NSG = "FE B5 0F 1C 04 1C 15 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 23 1C FF 21 01 31 00 95 01 97 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 49 88 42 0D D0 29 1C 30 1C ?? F? ?? ?? 00 28 07 D0 30 1C ?? F? ?? ?? 3B 1C 2A 1C 21 1C ?? F? ?? ?? 20 1C ?? F? ?? ?? FE BD 00 00"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 46 31 01 94"
+
+[4B4]
+decl = "void BTA_LocBtDevice_SetDIACReq(int oh, uint32_t diac, int tid)"
+NSG = "FE B5 0F 1C 04 1C 15 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 23 1C FF 21 01 31 00 95 01 97 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 49 88 42 0D D0 29 1C 30 1C ?? F? ?? ?? 00 28 07 D0 30 1C ?? F? ?? ?? 3B 1C 2A 1C 21 1C ?? F? ?? ?? 20 1C ?? F? ?? ?? FE BD FE B5"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 6A 31 01 94"
+
+[4B5]
+decl = "void BTA_LocBtDevice_SetNameReq(int oh, const char *name, int tid)"
+NSG = "FE B5 0F 1C 04 1C 15 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 23 1C FF 21 01 31 00 95 01 97 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 49 88 42 0D D0 29 1C 30 1C ?? F? ?? ?? 00 28 07 D0 30 1C ?? F? ?? ?? 3B 1C 2A 1C 21 1C ?? F? ?? ?? 20 1C ?? F? ?? ?? FE BD F8 B5"
+ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 89 31 01 94"
+
+[4B6]
+decl = "uint32_t BTA_Conn_GetSapiApp(int oh, int conn)"
+NSG = "FE B5 07 1C 0D 1C ?? F? ?? ?? 06 1C FF 24 00 21"
+ELKA = "F0 B5 06 1C 0D 1C 85 B0 ?? F? ?? ?? 07 1C FF 24"
+
+[4B7]
+decl = "int BTA_ServiceSearch_RetrieveServiceReq(int oh, uint32_t device, uint32_t record, void *param4, int param5, int tid)"
+NSG = "FF B5 83 B0 07 1C ?? F? ?? ?? 05 1C ?? 48 ?? 4E 00 78 06 28 16 D1 0D 99"
+ELKA = "FF B5 85 B0 0F 9F 06 1C ?? F? ?? ?? 04 1C ?? 48 ?? 4D 00 78 06 28 15 D1"
+
+[4B8]
+decl = "uint32_t JSApi_CurrentHandleID(int conn)"
+NSG = "00 30 A0 E1 ?? 1? 9F E5 00 00 A0 E3 80 22 80 E0"
+ELKA = "00 30 A0 E1 ?? 1? 9F E5 00 00 A0 E3 80 22 80 E0"
+SG = "04 E0 2D E5 00 30 A0 E1 ?? C? ?? E5 00 00 A0 E3 0B E0 A0 E3 9E 00 01 E0 01 11 8C E0 08 20 91 E5 01 00 52 E3 B0 10 D1 01"
+
+[4B9]
+decl = "void JSApi_InitHandles(void)"
+NSG = "F0 4D 2D E9 ?? 4? 9F E5 F4 20 8F E2"
+ELKA = "F0 4D 2D E9 ?? 4? 9F E5 F4 20 8F E2"
+SG = "?? 0? 1F E5 04 00 90 E5 00 00 50 E3 ?? ?? ?? 0A 1E FF 2F E1"
+
+[4BA]
+decl = "int JSApi_RegisterConHandle(int conn, uint32_t packet, uint32_t param3)"
+NSG = "F8 40 2D E9 01 70 A0 E1 00 50 A0 E1 02 40 A0 E1 ?? ?? ?? EB 00 60 A0 E1 61 00 A0 E3"
+ELKA = "F8 40 2D E9 01 70 A0 E1 00 50 A0 E1 02 40 A0 E1 ?? ?? ?? EB 00 60 A0 E1 61 00 A0 E3"
+
+[4BB]
+decl = "uint8_t JSApi_GetConnectionState(int conn)"
+NSG = "38 40 2D E9 00 50 A0 E1 ?? ?? ?? EB 00 40 A0 E1 61 00 A0 E3"
+ELKA = "1C 40 2D E9 00 40 A0 E1 ?? ?? ?? EB 05 00 50 E3"
+
+[4BC]
+decl = "int JSApi_ReadBytes(int conn, void *buffer, uint32_t size)"
+NSG = "FC 41 2D E9 00 70 A0 E1 01 60 A0 E1"
+ELKA = "FC 41 2D E9 00 70 A0 E1 01 60 A0 E1"
+SG = "FF 4D 2D E9 00 70 A0 E1 01 60 A0 E1"
+
+[4BD]
+decl = "int JSApi_BytesAvailable(int conn)"
+NSG = "7C 40 2D E9 00 60 A0 E1 ?? ?? ?? EB 00 40 A0 E1"
+ELKA = "7C 40 2D E9 00 60 A0 E1 ?? ?? ?? EB"
+SG = "7C 40 2D E9 00 60 A0 E1 ?? ?? ?? EB 00 40 A0 E1 99 00 A0 E3"
+
+[4BE]
+decl = "int JSApi_WriteBytes(int conn, const void *data, uint32_t size)"
+NSG = "FC 41 2D E9 01 80 A0 E1 00 70 A0 E1 02 60 A0 E1"
+ELKA = "FC 41 2D E9 01 80 A0 E1 00 70 A0 E1 02 60 A0 E1"
+SG = "F? 4? 2D E9 0? ?? A0 E1 0? ?? A0 E1 00 ?? A0 E? ?? ?? ?? E? ?? ?? ?? E? ?? ?? ?? E? ?? 1? ?? E? ?? ?? ?? E0"
+
+[4BF]
+decl = "int JSApi_ClearConnectionHandle(int conn)"
+NSG = "10 40 2D E9 00 40 A0 E1 00 30 A0 E1 61 00 A0 E3 14 20 8F E2"
+ELKA = "10 40 2D E9 00 40 A0 E1 00 30 A0 E1 61 00 A0 E3 14 20 8F E2"
+SG = "10 40 2D E9 00 40 A0 E1 00 30 A0 E1 01 00 A0 E3 ?? 2? 8F E2 ?? 1? 1F E5 ?? ?? ?? EB 04 00 A0 E1"
+
+[4C0]
+decl = "void BTLP_InitL2CAP_IO(void)"
+NSG = "F8 B5 ?? F? ?? ?? ?? 4F 00 25 ?? 4E"
+ELKA = "F8 B5 ?? F? ?? ?? ?? 4F 00 25 ?? 4E"
+SG = "F8 B5 ?? F? ?? ?? ?? 4F 00 25 ?? 4E 20 37 4C 20"
+
+[4C1]
+decl = "int BTLP_uiSendDataOverBT(const void *data, uint32_t size, int sapi)"
+NSG = "F7 B5 F3 32 10 06 00 0E 0C 1C 09 28"
+ELKA = "F7 B5 F3 32 10 06 00 0E 0C 1C 09 28"
+SG = "F7 B5 10 1C 08 38 0D 1C 04 28 82 B0 0B D3 ?? A0"
+
+[4C2]
+decl = "void BTLP_vDataToAppCallback(int sapi)"
+NSG = "F3 30 00 06 F8 B5 00 21 00 0E 09 28 + 1"
+ELKA = "F3 30 00 06 F8 B5 00 21 00 0E 09 28 + 1"
+SG = "F8 B5 00 21 08 38 04 28 00 91 09 D3 ?? A0 ?? F? ?? ??"
+
+[4C3]
+decl = "void BTLP_vFlushBuffer(int mode, int sapi)"
+NSG = "F3 31 09 06 09 0E 09 29 B0 B5 1A D3 + 1"
+ELKA = "F3 31 09 06 09 0E 09 29 B0 B5 1A D3 + 1"
+SG = "80 B5 09 D3 ?? A0 ?? F? ?? ?? 03 DF 00 20 ?? 49"
+
+[4C4]
+decl = "void L2CA_ReadDataReq(const void *message)"
+NSG = "F8 B5 80 88 ?? 4E 40 38 05 04 2D 0C"
+ELKA = "F8 B5 80 88 ?? 4E 40 38 05 04 2D 0C"
+SG = "F8 B5 80 88 ?? 4E 40 38 04 04 24 0C A5 00 34 3E"
+
+[4C5]
+decl = "void SApp_Register(int handler_id, void *methods)"
+NSG = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 20 00 50 E3"
+ELKA = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 20 00 50 E3"
+SG = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 1B 00 50 E3"
+
+[4C6]
+decl = "int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, void *connection_info)"
+NSG = "FC 4D 2D E9 00 40 A0 E1 13 00 54 E3"
+ELKA = "FC 4D 2D E9 00 40 A0 E1 13 00 54 E3"
+SG = "FC 4D 2D E9 ?? E? 9F E5 ?? 8? 9F E5 02 70 A0 E1"
+
+[4C7]
+decl = "int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)"
+NSG = "FC 4D 2D E9 00 40 A0 E1 20 00 54 E3"
+ELKA = "FC 4D 2D E9 00 40 A0 E1 20 00 54 E3"
+SG = "FC 4D 2D E9 02 70 A0 E1 1B 00 50 E3 1B 00 57 33"
+
+[4C8]
+decl = "int Serial_CanOpenSApp(uint32_t handler_id, uint32_t instance)"
+NSG = "F0 41 2D E9 00 50 A0 E1 FF 00 A0 E3"
+ELKA = "F0 41 2D E9 00 50 A0 E1 FF 00 A0 E3"
+SG = "F0 41 2D E9 00 50 A0 E1 FF 00 A0 E3 20 D0 4D E2"
+
+[4C9]
+decl = "void Ca_SasSApp_Init(void)"
+NSG = "?? 48 38 B5 00 78 06 28 11 D1 FF 21 + 1"
+ELKA = "F8 B5 ?? 48 01 26 00 78 06 28 11 D1"
+SG = "B0 B5 ?? 4C FF 21 01 31 20 1C ?? A2 ?? F? ?? ??"
+
+[4CA]
+decl = "void *RamJSApiConnections(void)"
+NSG = "&(?? 1? 9F E5 00 00 A0 E3 80 22 80 E0)"
+ELKA = "&(?? 1? 9F E5 00 00 A0 E3 80 22 80 E0)"
+
+[4CB]
+decl = "void *RamBtlpConnections(void)"
+NSG = "&(?? 49 C0 00 43 18 0D 50 DE 71 04 99)"
+ELKA = "&(?? 49 C0 00 43 18 0D 50 DE 71 04 99)"
+
+[4CC]
+decl = "void *RamL2capChannelState(void)"
+NSG = "&(?? 4E 0E E0 18 23 53 43 9B 19 9F 88)"
+ELKA = "&(?? 4E 0E E0 18 23 53 43 9B 19 9F 88)"
+SG = "&(F8 B5 80 88 ?? 4E 40 38 04 04 24 0C A5 00 34 3E 70 59 ?? F? ?? ?? ?? 49 00 28 1A D0 18 26 + 16)"
+
+[4CD]
+decl = "uint16_t CA_MR_New(int cepid, int msg, const char *file, int line)"
+SG = "FF B5 16 1C 0D 1C 1F 1C 83 B0 ?? 4C ?? F? ?? ??"
+
+[4CE]
+decl = "void CA_MR_Subscribe(uint16_t mr, int code, int class_id)"
+SG = "F8 B5 0D 1C 04 1C 16 1C ?? F? ?? ?? 14 22 00 92 00 22 01 1C"
+
+[4CF]
+decl = "void CA_MR_Stop(uint16_t mr)"
+SG = "98 B5 04 1C ?? F? ?? ?? 10 22 00 92 04 22 01 1C"
+
+[4D0]
+decl = "void CA_MR_Done(uint16_t mr, void *object_message)"
+SG = "02 1C 08 1C 80 B5 11 1C ?? F? ?? ?? 80 BD B0 B5 + 1"
+
+[4D1]
+decl = "uint8_t CA_MR_Class(void)"
+NSG = "80 B5 ?? F? ?? F? 00 7D 80 BD BC B5 04 1C ?? 48 + 1"
+ELKA = "80 B5 ?? F? ?? F? 00 7D 80 BD BC B5 04 1C ?? 48 + 1"
+SG = "80 B5 ?? F? ?? ?? 00 7D 80 BD F8 B5 0D 1C 04 1C"
+
+[4D2]
+decl = "void CA_Release(uint16_t handle)"
+NSG = "BC B5 05 1C ?? F? ?? F? 04 1C ?? D0 A0 68 + 1"
+ELKA = "BC B5 05 1C ?? F? ?? F? 04 1C ?? F? ?? F? 00 28 + 1"
+SG = "38 B5 05 1C ?? F? ?? ?? 04 1C 19 D0 A0 68 00 28"
+
+[4D3]
+decl = "uint8_t CA_SapiConnClass(void)"
+NSG = "80 B5 ?? F? ?? F? 00 7D 80 BD FF B5 85 B0 + 1"
+ELKA = "80 B5 ?? F? ?? F? 00 7D 80 BD FF B5 85 B0 + 1"
+SG = "80 B5 ?? F? ?? ?? 00 7D 80 BD FF B5 85 B0 0F 9C"
+
+[4D4]
+decl = "void *CA_RemDev_New(const void *bd_addr)"
+NSG = "B0 B5 05 1C 40 20 ?? F? ?? E? 01 1C + 1"
+ELKA = "B0 B5 05 1C 40 20 ?? F? ?? E? 01 1C + 1"
+SG = "B0 B5 05 1C 48 20 ?? F? ?? ?? 01 1C 01 20 ?? F? ?? ??"
+
+[4D5]
+decl = "void CA_RemDev_Free(void *remdev)"
+NSG = "80 B5 00 28 ?? D0 01 1C 01 20 ?? F? ?? F? ?? F? ?? E? 80 BD 00 00 + 1"
+ELKA = "80 B5 00 28 ?? D0 01 1C 01 20 ?? F? ?? F? ?? F? ?? E? 80 BD 00 00 + 1"
+SG = "80 B5 00 28 05 D0 01 1C 01 20 ?? F? ?? ?? ?? F? ?? ?? 80 BD 00 28 01 D0"
+
+[4D6]
+decl = "uint16_t CA_L2CAP_New(uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)"
+SG = "FF B5 85 B0 05 1C 14 1C 10 1C 12 9F ?? F? ?? ??"
+
+[4D7]
+decl = "int CA_Conn_Close(uint16_t conn, uint16_t owner)"
+SG = "38 B5 05 1C 0C 1C ?? F? ?? ?? 10 22 00 92 01 22 01 1C 00 23 20 1C ?? F? ?? ?? 29 1C ?? F? ?? ?? 38 BD 10 B5"
+
+[4D8]
+decl = "uint16_t CA_DevList(uint16_t local_dev)"
+NSG = "80 B5 ?? F? ?? F? 00 28 ?? D0 C0 8F 80 BD + 1"
+ELKA = "80 B5 ?? F? ?? F? 00 28 ?? D0 C0 8F 80 BD + 1"
+SG = "80 B5 ?? F? ?? ?? 00 28 01 D0 C0 8E 80 BD ?? 48"
+
+[4D9]
+decl = "uint8_t CA_DevListClass(void)"
+NSG = "80 B5 ?? F? ?? F? 00 7D 80 BD FE B5 06 1C + 1"
+ELKA = "80 B5 ?? F? ?? F? 00 7D 80 BD FE B5 06 1C + 1"
+SG = "80 B5 ?? F? ?? ?? 00 7D 80 BD FE B5 04 1C 00 7C"
+
+[4DA]
+decl = "void CA_DevList_CountReq(uint16_t list, uint16_t mr, int type)"
+SG = "F8 B5 06 1C 0C 1C 15 1C ?? F? ?? ?? 14 22 00 92 00 22 01 1C 00 23 20 1C ?? F? ?? ?? 00 28 03 D0 05 74 31 1C ?? F? ?? ?? F8 BD F8 B5 07 1C 15 1C"
+
+[4DB]
+decl = "void CA_DevList_EntryReq(uint16_t list, uint16_t mr, int type, int index)"
+SG = "F8 B5 07 1C 15 1C 0C 1C 1E 1C ?? F? ?? ?? 14 22 00 92 01 22"
+
+[4DC]
+decl = "uint16_t CA_LocalRoot(void)"
+NSG = "10 B5 ?? 4C 01 3C ?? F? ?? E? ?? 48 00 68 + 1"
+ELKA = "80 BD ?? 49 ?? 48 09 68 01 38 00 29 + 3"
+SG = "10 B5 ?? 4C 01 3C ?? F? ?? ?? ?? 48 00 68 00 28"
+
+[4DD]
+decl = "uint16_t CA_LocalDev(uint16_t root, int zero)"
+NSG = "10 B5 0C 1C ?? F? ?? F? ?? 49 00 28 ?? D0 + 1"
+ELKA = "10 B5 0C 1C ?? F? ?? F? ?? 49 00 28 ?? D0 + 1"
+SG = "10 B5 0C 1C ?? F? ?? ?? ?? 49 00 28 0F D0 00 2C"
+
+[4DE]
+decl = "const uint8_t *CA_LocalAddr(uint16_t local_dev)"
+NSG = "80 B5 ?? F? ?? F? 00 28 ?? D0 00 6B 80 BD 00 20 80 BD 80 B5 + 1"
+ELKA = "80 B5 ?? F? ?? F? 00 28 ?? D0 00 6B 80 BD 00 20 80 BD FE B5 + 1"
+SG = "80 B5 ?? F? ?? ?? 00 28 01 D0 80 6A 80 BD 00 20"
+
+[4DF]
+decl = "unsigned LMAN_GetRegSlot(unsigned cepid)"
+NSG = "F8 B5 ?? 4E 05 1C 00 20 14 21 41 43 + 1"
+ELKA = "F8 B5 ?? 4E 05 1C 00 20 14 21 41 43 + 1"
+SG = "F8 B5 ?? 4F 05 1C 00 20 14 21 41 43 79 5A A9 42"
+
+[4E0]
+decl = "int LMAN_FillReg(unsigned reg_index, const REGSOCKCEPID_DATA *reg, int on)"
+NSG = "B0 B5 0E 28 ?? D2 0C 88 19 23 5B 01 + 1"
+ELKA = "B0 B5 0E 28 ?? D2 0C 88 19 23 5B 01 + 1"
+SG = "10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3"

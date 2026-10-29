@@ -53,6 +53,7 @@
 #include <swilib/openssl.h>
 #endif
 
+#include <swilib/bluetooth.h>
 #include <swilib/gprs.h>
 #include <swilib/socket.h>
 #include <swilib/info.h>
