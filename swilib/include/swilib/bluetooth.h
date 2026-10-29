@@ -708,6 +708,142 @@ __swi_end(0x84CC, RamL2capChannelState, ());
 
 #endif
 
+/* Bluetooth CA layer: objects, message replicators (MR),
+ * L2CAP connections, the device list. */
+#ifdef SGOLD
+
+/**
+ * Create a CA message replicator: every event of the objects it is subscribed to comes to
+ * `cepid` as GBS message `msg` (submess = replicator, data0 = object message).
+ * @param file, line	caller's source position (debug only)
+ * @return replicator handle (0xFFxx = error)
+ * */
+__swi_begin(0x4CD)
+uint16_t CA_MR_New(int cepid, int msg, const char *file, int line)
+__swi_end(0x4CD, CA_MR_New, (cepid, msg, file, line));
+
+/**
+ * Subscribe a replicator to the events of an object class.
+ * */
+__swi_begin(0x4CE)
+void CA_MR_Subscribe(uint16_t mr, int code, int class_id)
+__swi_end(0x4CE, CA_MR_Subscribe, (mr, code, class_id));
+
+/**
+ * Stop a replicator; it then reports CA_MR_Class() event 6 and can be released.
+ * */
+__swi_begin(0x4CF)
+void CA_MR_Stop(uint16_t mr)
+__swi_end(0x4CF, CA_MR_Stop, (mr));
+
+/**
+ * Hand an event (data0 of the replicator's GBS message) back to the replicator.
+ * */
+__swi_begin(0x4D0)
+void CA_MR_Done(uint16_t mr, void *object_message)
+__swi_end(0x4D0, CA_MR_Done, (mr, object_message));
+
+/**
+ * Object class of the replicator's own events.
+ * */
+__swi_begin(0x4D1)
+uint8_t CA_MR_Class(void)
+__swi_end(0x4D1, CA_MR_Class, ());
+
+/**
+ * Release a CA object handle (replicator, connection).
+ * */
+__swi_begin(0x4D2)
+void CA_Release(uint16_t handle)
+__swi_end(0x4D2, CA_Release, (handle));
+
+/**
+ * Object class of SAPI connection events (opened, closed, failed, parameters).
+ * */
+__swi_begin(0x4D3)
+uint8_t CA_SapiConnClass(void)
+__swi_end(0x4D3, CA_SapiConnClass, ());
+
+/**
+ * Create a remote device object for a 6-byte BT address.
+ * */
+__swi_begin(0x4D4)
+void *CA_RemDev_New(const void *bd_addr)
+__swi_end(0x4D4, CA_RemDev_New, (bd_addr));
+
+/**
+ * Free a remote device object.
+ * */
+__swi_begin(0x4D5)
+void CA_RemDev_Free(void *remdev)
+__swi_end(0x4D5, CA_RemDev_Free, (remdev));
+
+/**
+ * Open an outgoing L2CAP connection; events go to the replicator `mr`.
+ * @return connection handle (0xFFxx = error)
+ * */
+__swi_begin(0x4D6)
+uint16_t CA_L2CAP_New(uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)
+__swi_end(0x4D6, CA_L2CAP_New, (mr, remdev, sapi, psm, master, encrypt, authenticate, rx_mtu, tx_mtu));
+
+/**
+ * Close a CA connection; `owner` = the replicator that gets the events.
+ * */
+__swi_begin(0x4D7)
+int CA_Conn_Close(uint16_t conn, uint16_t owner)
+__swi_end(0x4D7, CA_Conn_Close, (conn, owner));
+
+/**
+ * Device list object of the local BT device.
+ * */
+__swi_begin(0x4D8)
+uint16_t CA_DevList(uint16_t local_dev)
+__swi_end(0x4D8, CA_DevList, (local_dev));
+
+/**
+ * Object class of device list answers.
+ * */
+__swi_begin(0x4D9)
+uint8_t CA_DevListClass(void)
+__swi_end(0x4D9, CA_DevListClass, ());
+
+/**
+ * Ask for the number of entries of a device list (type 0 = paired); the answer comes to `mr`.
+ * */
+__swi_begin(0x4DA)
+void CA_DevList_CountReq(uint16_t list, uint16_t mr, int type)
+__swi_end(0x4DA, CA_DevList_CountReq, (list, mr, type));
+
+/**
+ * Ask for one device list entry; the answer (a RemDev copy) comes to `mr`.
+ * */
+__swi_begin(0x4DB)
+void CA_DevList_EntryReq(uint16_t list, uint16_t mr, int type, int index)
+__swi_end(0x4DB, CA_DevList_EntryReq, (list, mr, type, index));
+
+/**
+ * Root object of the local BT stack.
+ * */
+__swi_begin(0x4DC)
+uint16_t CA_LocalRoot(void)
+__swi_end(0x4DC, CA_LocalRoot, ());
+
+/**
+ * Local BT device object.
+ * */
+__swi_begin(0x4DD)
+uint16_t CA_LocalDev(uint16_t root, int zero)
+__swi_end(0x4DD, CA_LocalDev, (root, zero));
+
+/**
+ * BT address of the local device object.
+ * */
+__swi_begin(0x4DE)
+const uint8_t *CA_LocalAddr(uint16_t local_dev)
+__swi_end(0x4DE, CA_LocalAddr, (local_dev));
+
+#endif
+
 __swilib_end
 
 /** @} */

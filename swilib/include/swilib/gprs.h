@@ -1131,6 +1131,25 @@ __swi_begin(0x070)
 int *GetGPRSTrafficPointer()
 __swi_end(0x070, GetGPRSTrafficPointer, ());
 
+#ifdef SGOLD
+
+/**
+ * Find the LMAN socket registration of a process or take a free one (asserts when all 14 are used).
+ * @return registration index 0..13
+ * */
+__swi_begin(0x4DF)
+unsigned LMAN_GetRegSlot(unsigned cepid)
+__swi_end(0x4DF, LMAN_GetRegSlot, (cepid));
+
+/**
+ * Fill a socket registration, as RegisterCepidForSocketWork does for the current process.
+ * */
+__swi_begin(0x4E0)
+int LMAN_FillReg(unsigned reg_index, const REGSOCKCEPID_DATA *reg, int on)
+__swi_end(0x4E0, LMAN_FillReg, (reg_index, reg, on));
+
+#endif
+
 /** @} */
 
 __swilib_end
