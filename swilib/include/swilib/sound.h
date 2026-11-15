@@ -22,11 +22,11 @@ typedef struct PLAYFILE_OPT PLAYFILE_OPT;
 typedef struct PLAY_VOLUME PLAY_VOLUME;
 
 /**
- * Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_ChangeVolume.
+ * Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_SetVolume.
  * Read it with #PlayMelody_GetVolume, change `level`, write it back (as the firmware's volume keys do).
  * */
 struct PLAY_VOLUME {
-	uint8_t level;		/**< volume level 0..5, 6 = the level from the profile */
+	uint8_t level;		/**< volume level 0..5 (Obs 0, 1, 4, 8, 12, 15), 6 = the level from the profile */
 	uint8_t unk1[3];
 	uint32_t unk2;
 };
@@ -308,18 +308,30 @@ __swi_begin(0x099)
 int PlayMelodyInMem(char unk1, const void *buffer, int size, int cepid, int msg, int unk2)
 __swi_end(0x099, PlayMelodyInMem, (unk1, buffer, size, cepid, msg, unk2));
 
-#ifdef NEWSGOLD
 /**
  * Change the volume of the playing melody.
- * The volume is an 8-byte #PLAY_VOLUME passed in r1:r2; a 2-argument call leaves the second word as garbage
- * (EL71v45: the stream went silent). Read the current value with #PlayMelody_GetVolume and change `level`.
  * @param handle	play object handle
- * @param volume	new volume, see #PLAY_VOLUME
+ * @param volume	volume level (nsg: 1-15, sg: 1-5)
  * @return 1 if success, 0 if error
  * */
 __swi_begin(0x225)
-int PlayMelody_ChangeVolume(int handle, PLAY_VOLUME volume)
+int PlayMelody_ChangeVolume(int handle, int volume)
 __swi_end(0x225, PlayMelody_ChangeVolume, (handle, volume));
+
+#ifdef NEWSGOLD
+/**
+ * Change the volume of the playing melody (#PlayMelody_ChangeVolume with the real NSG argument).
+ * On NSG the volume is an 8-byte #PLAY_VOLUME passed in r1:r2; with an int the second word is garbage
+ * (EL71v45: the stream went silent). Read the current value with #PlayMelody_GetVolume and change `level`.
+ * `level` 0..5 maps to the Obs volume 0, 1, 4, 8, 12, 15; for all 16 Obs steps use #Obs_Sound_SetVolumeEx.
+ * @param handle	play object handle
+ * @param volume	new volume, see #PLAY_VOLUME
+ * @return 1 if success, 0 if error
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x225)
+int PlayMelody_SetVolume(int handle, PLAY_VOLUME volume)
+__swi_end(0x225, PlayMelody_SetVolume, (handle, volume));
 
 /**
  * Get the volume of the playing melody.
@@ -331,16 +343,6 @@ __swi_end(0x225, PlayMelody_ChangeVolume, (handle, volume));
 __swi_begin(0x4E4)
 int PlayMelody_GetVolume(int handle, PLAY_VOLUME *volume)
 __swi_end(0x4E4, PlayMelody_GetVolume, (handle, volume));
-#else
-/**
- * Change the volume of the playing melody.
- * @param handle	play object handle
- * @param volume	volume level 1-5
- * @return 1 if success, 0 if error
- * */
-__swi_begin(0x225)
-int PlayMelody_ChangeVolume(int handle, int volume)
-__swi_end(0x225, PlayMelody_ChangeVolume, (handle, volume));
 #endif
 
 /**
