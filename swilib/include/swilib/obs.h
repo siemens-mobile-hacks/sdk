@@ -452,6 +452,35 @@ __swi_begin(0x27C)
 int Obs_GetUserPointer(HObj obs, void **p_user_pointer)
 __swi_end(0x27C, Obs_GetUserPointer, (obs, p_user_pointer));
 
+/**
+ * Allocate memory from the Obs heap (the pool of the Obs file stream chunks).
+ * The file stream's `get` method returns its chunks from here; the reader frees them with #Obs_MemFree.
+ * @param size		size in bytes
+ * @return pointer to the memory, or NULL
+ * */
+__swi_begin(0x4E5)
+void *Obs_MemAlloc(int size)
+__swi_end(0x4E5, Obs_MemAlloc, (size));
+
+/**
+ * Free memory allocated with #Obs_MemAlloc.
+ * @param ptr		pointer to the memory
+ * */
+__swi_begin(0x4E6)
+void Obs_MemFree(void *ptr)
+__swi_end(0x4E6, Obs_MemFree, (ptr));
+
+/**
+ * Get the global method table of the Obs file streams (copied from flash at boot; every file stream object
+ * points to it, SG at +E8, ELKA at +FC).
+ * Slots: 0 destroy, 1 read, 2 write, 3 tell, 4 seek, 5 getc, 6 release, 7 push, 8 get, 9 size, 10 notify,
+ * 11 remain, 12 one (ELKA: 13 reopen). Swapping slots serves virtual files to the player (s65-mp3, radio).
+ * @return method table
+ * */
+__swi_begin(0x84E7)
+void **RamObsFileStreamMethods(void)
+__swi_end(0x84E7, RamObsFileStreamMethods, ());
+
 /*
 //  other events for elka (//NSG)
 00 ObsCallback_NoMessage // e_obs_ev_no_message

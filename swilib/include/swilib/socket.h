@@ -185,6 +185,13 @@ uint32_t htonl(uint32_t p)
 __swi_end(0x17B, htonl, (p));
 
 /**
+ * Convert network to host order. On this little-endian core the swap is
+ * symmetric, so these reuse the host-to-network SWIs above.
+ * */
+static inline uint16_t ntohs(uint16_t p) { return htons(p); }
+static inline uint32_t ntohl(uint32_t p) { return htonl(p); }
+
+/**
  * @param domain	socket domain, set to #AF_INET
  * @param type		socket type, set to #SOCK_STREAM
  * @param protocol	set to 0 (default protocol)

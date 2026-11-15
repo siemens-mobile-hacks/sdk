@@ -54,4 +54,18 @@ Macroses:
   - swi_num - SWI number
   - function_name - name of the function
   - fixed_arguments - named arguments before `...`
-  
+
+# Generate functions library
+
+Requires Python 3.11+ and `ptr89` (`ptr89/build/ptr89` next to `sdk/` by default, else `--ptr89 PATH`).
+Run from the directory containing `sdk/`:
+
+```sh
+python3 sdk/swilib/tools/gen-library.py flashes/EL71v45.bin \
+  --platform ELKA \
+  --base-library library-el71-sw45.vkp \
+  --slots 420-4CC,4E1-4E9 \
+  --output library-el71-sw45-extended.vkp
+```
+
+Existing base entries are preserved. Selected slots are checked for unique addresses.
