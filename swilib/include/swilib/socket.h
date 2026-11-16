@@ -287,7 +287,7 @@ __swi_begin(0x176)
 int closesocket(int socket)
 __swi_end(0x176, closesocket, (socket));
 
-#ifdef ELKA
+#ifdef NEWSGOLD
 
 /**
  * Resolve a host name synchronously.

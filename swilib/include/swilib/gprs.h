@@ -234,7 +234,7 @@ __swi_begin(0x187)
 int RequestLMANConnect(LMAN_DATA *data)
 __swi_end(0x187, RequestLMANConnect, (data));
 
-#ifdef ELKA
+#ifdef NEWSGOLD
 
 /**
  * Request disconnection of a native LMAN context.

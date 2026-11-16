@@ -11,10 +11,10 @@ __swilib_begin
  * @brief Bluetooth functions.
  *
  * Usage: `#include <swilib.h>` or `#include <swilib/bluetooth.h>`
- * @platforms ELKA
+ * @platforms NSG, ELKA
  * @{
  */
-#ifdef ELKA
+#ifdef NEWSGOLD /* NSG and ELKA: S75v52 library has 420-462 too */
 
 typedef struct SDEV SDEV;
 typedef struct SDEV_APP SDEV_APP;

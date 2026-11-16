@@ -256,7 +256,7 @@ __swi_begin(0x153)
 int GBS_RecActDstMessage(GBS_MSG *msg)
 __swi_end(0x153, GBS_RecActDstMessage, (msg));
 
-#ifdef ELKA
+#ifdef NEWSGOLD
 
 /**
  * Get the native payload view of a received GBS message.
