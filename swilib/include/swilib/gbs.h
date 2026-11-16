@@ -256,6 +256,57 @@ __swi_begin(0x153)
 int GBS_RecActDstMessage(GBS_MSG *msg)
 __swi_end(0x153, GBS_RecActDstMessage, (msg));
 
+#ifdef NEWSGOLD
+
+/**
+ * Get the native payload view of a received GBS message.
+ * @param msg		received GBS message
+ * @return firmware-owned payload view. Do not free or retain it after consuming the message
+ * */
+__swi_begin(0x423)
+void **GBS_GetMsgPayload(GBS_MSG *msg)
+__swi_end(0x423, GBS_GetMsgPayload, (msg));
+
+/**
+ * Find a GBS process group.
+ * @param cepid		CEPID whose group (cepid & 0xFF00) is looked up
+ * @return process group, or NULL if the group does not exist
+ * */
+__swi_begin(0x463)
+PGROUP *GBS_GetProcGroup(int cepid)
+__swi_end(0x463, GBS_GetProcGroup, (cepid));
+
+#endif
+
+#ifdef NEWSGOLD
+
+/**
+ * Create a GBS message (the kernel's own format, as the firmware's drivers post their replies).
+ * Header: +00 next, +08 flags (1), +0C u16 destination cepid, +0E u16 sender cepid (= current, may be
+ * changed before #GBS_PostMsg, e.g. to answer as a file system driver), +10 u16 message id, +14 u16 size,
+ * +18 payload.
+ * @param[out] msg		message handle, pass it to #GBS_PostMsg
+ * @param cepid_to		destination CEPID
+ * @param msg_id		message id
+ * @param size			payload size in bytes
+ * @return payload (header + 0x18), NULL when size is 0
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x4E1)
+void *GBS_CreateMsg(void **msg, int cepid_to, int msg_id, int size)
+__swi_end(0x4E1, GBS_CreateMsg, (msg, cepid_to, msg_id, size));
+
+/**
+ * Post a message created with #GBS_CreateMsg to its destination (sets the handle to NULL).
+ * @param msg		message handle
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x4E2)
+void GBS_PostMsg(void **msg)
+__swi_end(0x4E2, GBS_PostMsg, (msg));
+
+#endif
+
 /**
  * ACK message received with #GBS_RecActDstMessage
  * */

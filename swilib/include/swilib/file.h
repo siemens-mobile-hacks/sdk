@@ -91,6 +91,7 @@ struct FSTATS {
 	uint16_t mtime_date; /*!< Date of last modification in DOS (FAT) format */
 	uint16_t mtime_time; /*!< Time of last modification in DOS (FAT) format */
 	int file_attr;	/*!< File attribute: #FileAttributes */
+	char unk6[12];	/*!< SGOLD firmware writes 40 bytes (the IAR swilib size); a 28-byte buffer overflows */
 };
 
 enum FilePropTypeID {
@@ -688,6 +689,47 @@ __swi_end(0x090, _truncate, (fd, length, err));
 
 /** @} */
 // ------------------------------------------------------
+
+#ifdef NEWSGOLD
+/**
+ * @name File system drivers (NSG/ELKA)
+ * @{
+ * */
+
+/**
+ * Allocate memory from the file system heap. Asynchronous file system calls answer with message 0x1A2
+ * whose payload +4 points to such a block {callback, u16 error, result}; the receiver frees it.
+ * @param size		size in bytes
+ * @return pointer to the memory (the firmware asserts when the heap is exhausted)
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x4E3)
+void *FS_MemAlloc(int size)
+__swi_end(0x4E3, FS_MemAlloc, (size));
+
+/**
+ * Get the file system driver table.
+ * @return 3 entries, 0x10 bytes each: +00 used, +04 id, +08 s16 first handle, +0A s16 last handle,
+ * +0C ops (the same table as the drive's +14). EL71v45: 0 default, 1 FFS (handles 100..123), 2 MMC (0..24)
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x84E8)
+void *RamFsDrivers(void)
+__swi_end(0x84E8, RamFsDrivers, ());
+
+/**
+ * Get the file system drive table.
+ * @return 5 entries, 0x18 bytes each: +00 used, +04 u16 letter, +06 s16 drive number, +08 driver id,
+ * +14 ops (+00 fclose, +04 fstat, +2C fopen, +34 fread, +40 lseek, +50 GetFileStats; the first argument
+ * of every method selects a synchronous or asynchronous call)
+ * @platforms NSG, ELKA
+ * */
+__swi_begin(0x84E9)
+void *RamFsDrives(void)
+__swi_end(0x84E9, RamFsDrives, ());
+
+/** @} */
+#endif
 
 // ------------------------------------------------------
 #ifdef SWILIB_LEGACY_COMPAT
