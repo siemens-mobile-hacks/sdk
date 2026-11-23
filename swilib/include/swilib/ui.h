@@ -1379,10 +1379,11 @@ int GetCurMenuItem(void *gui)
 __swi_end(0x18F, GetCurMenuItem, (gui));
 
 /**
- * Add icon to the list item.
+ * Set icon for a menu item.
+ * @note #SetMenuItemIconArray() must be called before this function.
  * @param gui		pointer to the Menu GUI
- * @param item_n	index of the item (from 0)
- * @param icon		ID from PIT or string with path
+ * @param item_n	index of the menu item (0-based)
+ * @param icon		index into the icon array (not a PIT ID)
  * */
 __swi_begin(0x195)
 void SetMenuItemIcon(void *gui, int item_n, int icon)
@@ -1429,10 +1430,11 @@ WSHDR *AllocMenuWS(void *gui, int len)
 __swi_end(0x198, AllocMenuWS, (gui, len));
 
 /**
- * Set icon to menu item.
+ * Set the icon array used by the menu.
+ * Each menu item's icon is selected by index via #SetMenuItemIcon().
  * @param gui		pointer to the Menu GUI
  * @param item		pointer to the menu item
- * @param icons		C-array of the icons (ID from PIT or pointer to IMGHDR), last item is always 0
+ * @param icons		array of icon IDs (PIT), terminated by 0
  * */
 __swi_begin(0x199)
 void SetMenuItemIconArray(void *gui, void *item, const int *icons)
