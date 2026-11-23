@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"group___settings.html#gaa0ebe630830e99660516417ac6c23eb2":[0,19,10],
 "group___settings.html#gaa163b453a5ac30510c60e84ab9e6a357":[0,19,33],
 "group___settings.html#gaa2d37e8590cd743266a1315ae130d26b":[0,19,23],
 "group___settings.html#gaa43dfe75c76b723f8ac7092f8e9a57f2":[0,19,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "group___telephony.html#ga38042303c43470f5cb605515335498f2":[0,20,52],
 "group___telephony.html#ga38ad06e0abc02bce8b2358224022cf3d":[0,20,41],
 "group___telephony.html#ga3bca31e037c3b7bb77b1f7e2bf9a1c43":[0,20,33],
-"group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6":[0,20,23],
-"group___telephony.html#ga41a92f0fbee2caa663778638f66645e1":[0,20,43]
+"group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6":[0,20,23]
 };
