@@ -5821,7 +5821,7 @@ ELKA = "FF B5 8D B0 0D 98 16 9C 15 1C 0F 1C 1E 1C 06 90 08 92 01 20 07 91 09 93"
 SG = "10 B5 88 B0 0A 9C 01 90 03 92 01 20 02 91 04 93"
 
 [439]
-decl = "void ioctlsocket(int sock, int cmd, void *arg)"
+decl = "int ioctlsocket(int sock, int cmd, void *arg)"
 NSG = "F0 B5 04 1C 0D 1C 16 1C 89 B0 04 A8 14 21 ?? ?? ?? ?? ?? 4F 00 94 01 95"
 ELKA = "F0 B5 04 1C 0D 1C 16 1C 89 B0 04 A8 14 21 ?? ?? ?? ?? ?? 4F 00 94 01 95"
 SG = "70 B5 04 1C 0D 1C 16 1C 86 B0 01 A8 14 21 ?? F? ?? ??"
@@ -6442,7 +6442,7 @@ ELKA = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 32 D2"
 SG = "F8 B5 FF 21 00 20 ?? F? ?? ?? 04 1C 08 28 33 D2"
 
 [4A7]
-decl = "int16_t lman_app_register(uint16_t app)"
+decl = "uint16_t lman_app_register(uint16_t cepid)"
 NSG = "70 B5 ?? F? ?? ?? ?? 4E B0 42 17 D1"
 ELKA = "70 B5 ?? F? ?? ?? ?? 4E B0 42 17 D1"
 SG = "10 B5 ?? F? ?? ?? ?? 4C A0 42 06 D1 03 DF 00 20"
@@ -6460,7 +6460,7 @@ ELKA = "B0 B5 0E 28 12 D2 0C 88 19 23 5B 01"
 SG = "10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3"
 
 [4AA]
-decl = "int16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)"
+decl = "uint16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)"
 NSG = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
 ELKA = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
 SG = "30 B5 ?? 4D 00 22 40 3D D3 00 5B 19 9C 88 8C 42"
@@ -6489,7 +6489,8 @@ NSG = "FE B5 04 1C ?? 48 16 1C 00 78 0D 1C 06 28 15 D1"
 ELKA = "F0 B5 04 1C ?? 48 16 1C 00 78 0D 1C 85 B0 06 28 16 D1 ?? 4A"
 
 [4AF]
-decl = "void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t param3, int param4)"
+decl = "void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod, uint32_t cod_mask, uint32_t iac, int tid)"
+decl_ELKA = "void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t iac, int tid)"
 NSG = "FF B5 85 B0 05 1C 1F 1C 0E 9E ?? F? ?? ?? 04 1C ?? 48 00 78"
 ELKA = "FF B5 0E 1C 05 1C 1F 1C 85 B0 ?? F? ?? ?? 04 1C ?? 48 00 78"
 

@@ -351,9 +351,10 @@ __swi_end(0x438, getsockopt, (sock, level, option, value, len));
  * @param sock		socket descriptor
  * @param cmd		control command
  * @param arg		command argument storage
+ * @return 0 on success, -1 on error (see #socklasterr)
  * */
 __swi_begin(0x439)
-void ioctlsocket(int sock, int cmd, void *arg)
+int ioctlsocket(int sock, int cmd, void *arg)
 __swi_end(0x439, ioctlsocket, (sock, cmd, arg));
 
 /**

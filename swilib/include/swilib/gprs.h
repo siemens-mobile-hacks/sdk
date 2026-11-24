@@ -1017,13 +1017,14 @@ void LMAN_LINK_UP_CNF(void)
 __swi_end(0x4A6, LMAN_LINK_UP_CNF, ());
 
 /**
- * Register an application in the LMAN application table. Only partly reversed.
- * @param app	meaning not known
- * @return application slot, error value when the table is full
+ * Register an application in the LMAN application table.
+ * @param cepid	CEPID of the application process
+ * @return application slot 0..13 (the existing one if already registered), 0xFFFF when the table is full
+ * @note A full table also raises a firmware assertion.
  * */
 __swi_begin(0x4A7)
-int16_t lman_app_register(uint16_t app)
-__swi_end(0x4A7, lman_app_register, (app));
+uint16_t lman_app_register(uint16_t cepid)
+__swi_end(0x4A7, lman_app_register, (cepid));
 
 /**
  * Free an LMAN application slot.
@@ -1048,10 +1049,10 @@ __swi_end(0x4A9, lman_app_set_bearer, (slot, settings, callback));
  * Find the LMAN connection with the given bearer ID and key.
  * @param bearer	bearer ID
  * @param key	value at connection +4; meaning not known
- * @return connection ID (0..7), error value when not found
+ * @return connection ID (0..7), 0xFFFF when not found
  * */
 __swi_begin(0x4AA)
-int16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)
+uint16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)
 __swi_end(0x4AA, lman_get_active_connection_id, (bearer, key));
 
 /**

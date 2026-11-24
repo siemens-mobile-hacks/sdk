@@ -407,16 +407,30 @@ __swi_begin(0x4AE)
 void BTA_DeviceDiscovery_StartSearchReq(int oh, uint32_t service, int tid)
 __swi_end(0x4AE, BTA_DeviceDiscovery_StartSearchReq, (oh, service, tid));
 
+#ifdef ELKA
 /**
- * Start a Bluetooth device search filtered by device class (asynchronous). Only partly reversed.
+ * Start a Bluetooth device search filtered by class of device (asynchronous).
  * @param oh		accessor handle
  * @param cod_class	class byte, matched at bits 16..23 of the class of device; 0: no filter
- * @param param3	transaction ID or IAC, meaning not known
- * @param param4	transaction ID or IAC, meaning not known
+ * @param iac		inquiry access code
+ * @param tid		transaction ID
  * */
 __swi_begin(0x4AF)
-void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t param3, int param4)
-__swi_end(0x4AF, BTA_DeviceDiscovery_StartSearchCodReq, (oh, cod_class, param3, param4));
+void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod_class, uint32_t iac, int tid)
+__swi_end(0x4AF, BTA_DeviceDiscovery_StartSearchCodReq, (oh, cod_class, iac, tid));
+#else
+/**
+ * Start a Bluetooth device search filtered by class of device (asynchronous).
+ * @param oh		accessor handle
+ * @param cod		class of device to match
+ * @param cod_mask	mask applied to the class of device
+ * @param iac		inquiry access code
+ * @param tid		transaction ID
+ * */
+__swi_begin(0x4AF)
+void BTA_DeviceDiscovery_StartSearchCodReq(int oh, uint32_t cod, uint32_t cod_mask, uint32_t iac, int tid)
+__swi_end(0x4AF, BTA_DeviceDiscovery_StartSearchCodReq, (oh, cod, cod_mask, iac, tid));
+#endif
 
 /**
  * Stop a running Bluetooth device search (asynchronous).
