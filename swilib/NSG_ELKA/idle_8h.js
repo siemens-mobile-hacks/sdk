@@ -8,6 +8,6 @@ var idle_8h =
     [ "DrawScreenSaver", "group___i_d_l_e.html#ga532dc5c28d2f2a7408abab626c0351e9", null ],
     [ "CloseScreensaver", "group___i_d_l_e.html#gae8b6588a7aa6a42364f0f1bbe0c10ba4", null ],
     [ "GetScreenSaverRAM", "group___i_d_l_e.html#ga16d40b171eca372cc1df31974454a524", null ],
-    [ "RamScreenSaverCSM", "group___i_d_l_e.html#gaa6a395945418616ef4a55536b2d72d38", null ],
+    [ "RamScreenSaverCSM", "group___i_d_l_e.html#gad0d7b2fddc0e9523cd6721a14e42bf1f", null ],
     [ "GBS_Cmd_4209_RefreshScreensaver", "group___i_d_l_e.html#ga4148b6bd3b30f7c4b3f1a18caab8c48e", null ]
 ];

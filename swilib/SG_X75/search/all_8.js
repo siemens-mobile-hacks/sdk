@@ -45,7 +45,7 @@ var searchData=
   ['hobj_42',['HObj',['../group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef',1,'obs.h']]],
   ['hostent_43',['hostent',['../group___socket.html#structhostent',1,'']]],
   ['hostent_44',['HOSTENT',['../group___socket.html#ga00efd0fdd0cb87ebd4106b85293990ed',1,'socket.h']]],
-  ['hour_45',['hour',['../group___date_time.html#ae7afd210e593b007611ac237bd32d30d',1,'TTime::hour'],['../builtin_2png_8h.html#a79ac8b217254fd87cdc7299e6612a6f4',1,'png_time_struct::hour']]],
+  ['hour_45',['hour',['../group___date_time.html#ae7afd210e593b007611ac237bd32d30d',1,'TTime::hour'],['../builtin_2png_8h.html#a79ac8b217254fd87cdc7299e6612a6f4',1,'png_time_struct::hour'],['../group___l_e_g_a_c_y.html#a38b3a7ab25191e678ddbde32ac50da7e',1,'RAM_DATETIME::hour']]],
   ['htonl_46',['htonl',['../group___socket.html#ga944b87d181da40172ce7a3ad07eb4586',1,'socket.h']]],
   ['htons_47',['htons',['../group___socket.html#ga2571f145e334dc9f51b0d578698cfd77',1,'socket.h']]]
 ];

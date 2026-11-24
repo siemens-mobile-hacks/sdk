@@ -195,7 +195,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga1f515dadca5cf7fdb81db8607a9b664e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start GBS timer with callback.  <br /></td></tr>
 <tr class="separator:ga1f515dadca5cf7fdb81db8607a9b664e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae262fb662420fe405b112fdcd4000c0d" id="r_gae262fb662420fe405b112fdcd4000c0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae262fb662420fe405b112fdcd4000c0d">GBS_StartTimer</a> (<a class="el" href="#struct_g_b_s_t_m_r">GBSTMR</a> *timer, int ticks, int msg_id, int unk, int cepid)</td></tr>
-<tr class="memdesc:gae262fb662420fe405b112fdcd4000c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start GBS timer with callback.  <br /></td></tr>
+<tr class="memdesc:gae262fb662420fe405b112fdcd4000c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start GBS timer that sends a message to <code>cepid</code> when it expires.  <br /></td></tr>
 <tr class="separator:gae262fb662420fe405b112fdcd4000c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa7715f59e0beb1f57c22ce93e8969862" id="r_gaa7715f59e0beb1f57c22ce93e8969862"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa7715f59e0beb1f57c22ce93e8969862">IsTimerProc</a> (<a class="el" href="#struct_g_b_s_t_m_r">GBSTMR</a> *timer)</td></tr>
 <tr class="memdesc:gaa7715f59e0beb1f57c22ce93e8969862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if timer is not yet expired.  <br /></td></tr>
@@ -221,7 +221,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga751070ca379cfe601fe8ad6694624927"><td class="mdescLeft">&#160;</td><td class="mdescRight">ACK message received with <a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88" title="Receive a message from the queue without auto-ACK.">GBS_RecActDstMessage</a>.  <br /></td></tr>
 <tr class="separator:ga751070ca379cfe601fe8ad6694624927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafe9775d061dfb7887bb0470ba3dc73d0" id="r_gafe9775d061dfb7887bb0470ba3dc73d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafe9775d061dfb7887bb0470ba3dc73d0">GBS_ClearMessage</a> (void)</td></tr>
-<tr class="memdesc:gafe9775d061dfb7887bb0470ba3dc73d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">NACK message received with <a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88" title="Receive a message from the queue without auto-ACK.">GBS_RecActDstMessage</a>.  <br /></td></tr>
+<tr class="memdesc:gafe9775d061dfb7887bb0470ba3dc73d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the message queue of the current GBS process.  <br /></td></tr>
 <tr class="separator:gafe9775d061dfb7887bb0470ba3dc73d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaebf7f154a4c3f04142e6e7ada1a718bf" id="r_gaebf7f154a4c3f04142e6e7ada1a718bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebf7f154a4c3f04142e6e7ada1a718bf">GBS_PendMessage</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
 <tr class="memdesc:gaebf7f154a4c3f04142e6e7ada1a718bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pend the message for future processing.  <br /></td></tr>
@@ -586,7 +586,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Start GBS timer with callback. </p>
+<p>Start GBS timer that sends a message to <code>cepid</code> when it expires. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>pointer to the GBS timer </td></tr>
@@ -797,7 +797,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>NACK message received with <a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88" title="Receive a message from the queue without auto-ACK.">GBS_RecActDstMessage</a>. </p>
+<p>Clear the message queue of the current GBS process. </p>
 
 </div>
 </div>

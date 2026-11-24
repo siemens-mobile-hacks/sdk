@@ -23,7 +23,7 @@ var searchData=
   ['scal_5funit_20',['scal_unit',['../builtin_2png_8h.html#a05d48b7629ee75b0d6df1311cb11e82e',1,'png_info_struct']]],
   ['screen_5fgamma_21',['screen_gamma',['../builtin_2png_8h.html#a9a984aa9faec4a492c0d8d5ce227a4e5',1,'png_struct_def']]],
   ['sdsicert_22',['sdsicert',['../pkcs12_8h.html#ab47268d26361a92488ab00e5866652e9',1,'pkcs12_bag_st.value']]],
-  ['sec_23',['sec',['../group___date_time.html#aa6288943af354a6cb143f2ad677cfece',1,'TTime']]],
+  ['sec_23',['sec',['../group___date_time.html#aa6288943af354a6cb143f2ad677cfece',1,'TTime::sec'],['../group___l_e_g_a_c_y.html#a366c0d23ec1a0f9618629761d03a20bd',1,'RAM_DATETIME::sec']]],
   ['second_24',['second',['../builtin_2png_8h.html#a84e528e4c4c7d76cd2252e0d0d2ed0c9',1,'png_time_struct']]],
   ['section_25',['section',['../conf_8h.html#a103e4a73b3523e1a3e4d4fd8f32a7fe0',1,'CONF_VALUE']]],
   ['seed_26',['seed',['../dh_8h.html#ae0d5af379d1113d5d2c402f9d2d85d49',1,'dh_st::seed'],['../rand_8h.html#ac5982cb0ac2304a601df7fb009624ec9',1,'rand_meth_st::seed']]],

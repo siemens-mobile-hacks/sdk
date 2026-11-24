@@ -109,7 +109,7 @@ $(function(){initNavTree('group___player.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga3e44895cc1a130fa1dc8a513ba891211" id="r_ga3e44895cc1a130fa1dc8a513ba891211"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3e44895cc1a130fa1dc8a513ba891211">RamMPlayer_CtrlCode</a> ()</td></tr>
-<tr class="memdesc:ga3e44895cc1a130fa1dc8a513ba891211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the magic value for controlling media player.  <br /></td></tr>
+<tr class="memdesc:ga3e44895cc1a130fa1dc8a513ba891211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the CSM ID of the media player, used to send commands to it.  <br /></td></tr>
 <tr class="separator:ga3e44895cc1a130fa1dc8a513ba891211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7cdf3aebc7324c1292197eca0f37602e" id="r_ga7cdf3aebc7324c1292197eca0f37602e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7cdf3aebc7324c1292197eca0f37602e">MEDIA_PLAYLAST</a> ()</td></tr>
 <tr class="memdesc:ga7cdf3aebc7324c1292197eca0f37602e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play previous song in standart media player.  <br /></td></tr>
@@ -167,10 +167,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to the magic value for controlling media player. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer</dd></dl>
-<div class="fragment"><div class="line">uint32_t ctrl_code = *<a class="code hl_function" href="#ga3e44895cc1a130fa1dc8a513ba891211">RamMPlayer_CtrlCode</a>();</div>
-<div class="ttc" id="agroup___player_html_ga3e44895cc1a130fa1dc8a513ba891211"><div class="ttname"><a href="#ga3e44895cc1a130fa1dc8a513ba891211">RamMPlayer_CtrlCode</a></div><div class="ttdeci">uint32_t * RamMPlayer_CtrlCode()</div><div class="ttdoc">Pointer to the magic value for controlling media player.</div></div>
+<p>Pointer to the CSM ID of the media player, used to send commands to it. </p>
+<dl class="section return"><dt>Returns</dt><dd>NSG: CSM ID of the player controlled by Bluetooth (AVRCP) keys, 0 when it closes; always 0 on S68 </dd>
+<dd>
+ELKA: CSM ID of the player that last started playback, 0xFFFE before the first playback </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On ELKA the value is not cleared when the player closes, check <a class="el" href="group___sound.html#ga1f0d40b59a1ad5bdcc156df5dbba1a71" title="Check if the radio or player is active.">IsPlayerOn</a> before sending commands. </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_function" href="group___g_b_s.html#ga82f00b61e57a70765cdbbc8d2efb189f">GBS_SendMessage</a>(<a class="code hl_enumvalue" href="group___g_b_s.html#ggabbdb9bf397209c72aa7866c3515dc7a5aa3d6e77b1ffe315770bdebd74fbf74f7">MMI_CEPID</a>, 0x8053, 0, *<a class="code hl_function" href="#ga3e44895cc1a130fa1dc8a513ba891211">RamMPlayer_CtrlCode</a>(), cmd);</div>
+<div class="ttc" id="agroup___g_b_s_html_ga82f00b61e57a70765cdbbc8d2efb189f"><div class="ttname"><a href="group___g_b_s.html#ga82f00b61e57a70765cdbbc8d2efb189f">GBS_SendMessage</a></div><div class="ttdeci">void GBS_SendMessage(int cepid, int msg,...)</div><div class="ttdoc">Send message to the GBS event processor.</div></div>
+<div class="ttc" id="agroup___g_b_s_html_ggabbdb9bf397209c72aa7866c3515dc7a5aa3d6e77b1ffe315770bdebd74fbf74f7"><div class="ttname"><a href="group___g_b_s.html#ggabbdb9bf397209c72aa7866c3515dc7a5aa3d6e77b1ffe315770bdebd74fbf74f7">MMI_CEPID</a></div><div class="ttdeci">@ MMI_CEPID</div><div class="ttdoc">MMI.</div><div class="ttdef"><b>Definition</b> <a href="gbs_8h_source.html#l00029">gbs.h:29</a></div></div>
+<div class="ttc" id="agroup___player_html_ga3e44895cc1a130fa1dc8a513ba891211"><div class="ttname"><a href="#ga3e44895cc1a130fa1dc8a513ba891211">RamMPlayer_CtrlCode</a></div><div class="ttdeci">uint32_t * RamMPlayer_CtrlCode()</div><div class="ttdoc">Pointer to the CSM ID of the media player, used to send commands to it.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

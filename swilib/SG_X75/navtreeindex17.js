@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2ab7195dd50eb75dec6148d9d8dcabb2b0":[0,19,3,3],
+"group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2aebcde1484e2d0c03aa3ecaa9594c822f":[0,19,3,7],
 "group___settings.html#ggaa43dfe75c76b723f8ac7092f8e9a57f2af9e2c038eb5e647b41860a74b4352e51":[0,19,3,11],
 "group___settings.html#struct_r_e_g___c_l_i_e_n_t":[0,19,0],
 "group___socket.html":[0,14],
@@ -190,7 +192,6 @@ var NAVTREEINDEX17 =
 "group___telephony.html#ga11e03b8146d4605320a19794058c8a34":[0,20,39],
 "group___telephony.html#ga2466057ab170f0183c264083b0706cc1":[0,20,13],
 "group___telephony.html#ga2e23d6dbc4b435e381b34841005a2031":[0,20,47],
-"group___telephony.html#ga2e3a1f6df09e3003a0cd7781355b6224":[0,20,35],
 "group___telephony.html#ga31d5beb8fbc0a2b29f0c028a6158a7d6":[0,20,21],
 "group___telephony.html#ga35f18eae36ecec4370487646739773ea":[0,20,58],
 "group___telephony.html#ga38042303c43470f5cb605515335498f2":[0,20,52],
@@ -198,7 +199,6 @@ var NAVTREEINDEX17 =
 "group___telephony.html#ga3bca31e037c3b7bb77b1f7e2bf9a1c43":[0,20,33],
 "group___telephony.html#ga3f5a08eb7fcabc8543cbc84cf58e3ef6":[0,20,23],
 "group___telephony.html#ga41a92f0fbee2caa663778638f66645e1":[0,20,43],
-"group___telephony.html#ga44b912e949418db2ca1e72b5e435676d":[0,20,67],
 "group___telephony.html#ga4fec2c72fffe0e3e8edfabb75225cc77":[0,20,14],
 "group___telephony.html#ga5024085a978abf3330f0e2fcefca1284":[0,20,57],
 "group___telephony.html#ga574bbc9c437a2fdf588cc9bc127e9af4":[0,20,53],
@@ -211,6 +211,7 @@ var NAVTREEINDEX17 =
 "group___telephony.html#ga919129c6a58e3bdc682e258ff763edef":[0,20,12],
 "group___telephony.html#ga9550211571415f3f76479383ab0b1803":[0,20,28],
 "group___telephony.html#ga9d28b758f7acf0111ff4eedbeeba308d":[0,20,20],
+"group___telephony.html#gaa35c6de08998f5df64845a30281c1c3b":[0,20,46],
 "group___telephony.html#gaa6979cef5fa44d35e429696209b7fd44":[0,20,54],
 "group___telephony.html#gaabae29cc7d2d7a288cbe46e6fbdd1e69":[0,20,17],
 "group___telephony.html#gaac42aeb386e270d67b03bcf59139a84b":[0,20,50],
@@ -218,12 +219,13 @@ var NAVTREEINDEX17 =
 "group___telephony.html#gab156d5d3e58beefb851ab2e45384f807":[0,20,42],
 "group___telephony.html#gab3a493329f9b450fe98b38fd06bd228b":[0,20,60],
 "group___telephony.html#gabb9b8aa14de260c1c8b5e0377e3b5010":[0,20,19],
+"group___telephony.html#gabba4bbbc2e010e77a48be440aaeaa6c3":[0,20,35],
 "group___telephony.html#gac1c4e0027adcc021a834d1b2662120a0":[0,20,36],
-"group___telephony.html#gac3f1d9899d7519fa39e6adf983431393":[0,20,46],
 "group___telephony.html#gac56cc133240d272cc165e6a7a30f4a2f":[0,20,56],
 "group___telephony.html#gac5e6bd3705f802a5dadd556b3bb5dda7":[0,20,22],
 "group___telephony.html#gac65346c4759f60e23f6c623910e00e81":[0,20,66],
 "group___telephony.html#gacba93b602a9a68a22cd5cee65a5afd12":[0,20,49],
+"group___telephony.html#gaced960441c7b15bf915d528d638244be":[0,20,67],
 "group___telephony.html#gacf3409e7b3f7e7870c0e73d556f759ac":[0,20,25],
 "group___telephony.html#gad0b8de9d37be774382b7272be8482661":[0,20,51],
 "group___telephony.html#gad1e37b67c7ced4fe6d1973835680cced":[0,20,18],
@@ -247,7 +249,5 @@ var NAVTREEINDEX17 =
 "group___telephony.html#struct_p_d_u":[0,20,2],
 "group___telephony.html#struct_r_a_m___e_m_s___a_d_m_i_n":[0,20,11],
 "group___telephony.html#struct_r_a_m_n_e_t":[0,20,1],
-"group___telephony.html#struct_s_m_s___d_a_t_a___l_i_s_t":[0,20,7],
-"group___telephony.html#struct_s_m_s___d_a_t_a___l_l_i_s_t":[0,20,8],
-"group___telephony.html#struct_s_m_s___d_a_t_a___r_o_o_t":[0,20,9]
+"group___telephony.html#struct_s_m_s___d_a_t_a___l_i_s_t":[0,20,7]
 };

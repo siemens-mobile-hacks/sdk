@@ -23,7 +23,7 @@ var telephony_8h =
     [ "IsCalling", "group___telephony.html#gaf5810164708d5c500450a6ffa7ebf31e", null ],
     [ "GetDurationFromCurrentCall", "group___telephony.html#ga3bca31e037c3b7bb77b1f7e2bf9a1c43", null ],
     [ "isDecryption", "group___telephony.html#ga7a920afef2dba2e25fb5da70c959f596", null ],
-    [ "IsIncognitoCall", "group___telephony.html#ga2e3a1f6df09e3003a0cd7781355b6224", null ],
+    [ "IsIncognitoCall", "group___telephony.html#gabba4bbbc2e010e77a48be440aaeaa6c3", null ],
     [ "IsDirectCallActive", "group___telephony.html#gac1c4e0027adcc021a834d1b2662120a0", null ],
     [ "RamCallState", "group___telephony.html#ga7be313ee593e46e6d80a3b9375922385", null ],
     [ "GetTypeOfCall", "group___telephony.html#gaee6ce026b2a80a51d2125778bc3b0c7c", null ],
@@ -34,7 +34,7 @@ var telephony_8h =
     [ "RAM_IMSI", "group___telephony.html#ga41a92f0fbee2caa663778638f66645e1", null ],
     [ "RamServiceProviderName", "group___telephony.html#gaacd2125276c03f65da5043e241d77daa", null ],
     [ "RamNet", "group___telephony.html#gad82a9cbbd4fb607f9093acae375f2fe3", null ],
-    [ "RamNetOnline", "group___telephony.html#gac3f1d9899d7519fa39e6adf983431393", null ],
+    [ "RamNetOnline", "group___telephony.html#gaa35c6de08998f5df64845a30281c1c3b", null ],
     [ "GetNetAccessMode", "group___telephony.html#ga2e23d6dbc4b435e381b34841005a2031", null ],
     [ "GetRoamingState", "group___telephony.html#gaf824862880f097386bb517b32ae27e16", null ],
     [ "GetCI", "group___telephony.html#gacba93b602a9a68a22cd5cee65a5afd12", null ],
@@ -55,6 +55,6 @@ var telephony_8h =
     [ "GSMTXT_Decode", "group___telephony.html#ga6ab68a08e69d1db60c72db76688e58b7", null ],
     [ "FreeGSMTXTpkt", "group___telephony.html#ga62f6033c9d8fecff18fb7ae01d97be3a", null ],
     [ "ReadNewSMS", "group___telephony.html#gac65346c4759f60e23f6c623910e00e81", null ],
-    [ "ReadFlashSMS", "group___telephony.html#ga44b912e949418db2ca1e72b5e435676d", null ],
+    [ "ReadFlashSMS", "group___telephony.html#gaced960441c7b15bf915d528d638244be", null ],
     [ "GetAllEmail", "group___telephony.html#gafbfea38ad725c35a82fac5af5986b9f3", null ]
 ];

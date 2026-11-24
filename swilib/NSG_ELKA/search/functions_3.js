@@ -68,7 +68,7 @@ var searchData=
   ['createpath_65',['CreatePath',['../group___p_a_t_c_h.html#ga67941cbf2633a91978a1c9aaf3f611eb',1,'patch.h']]],
   ['createpopupgui_66',['CreatePopupGUI',['../group___u_i.html#ga1f5b79dd7f303962aec7e19c99b0ae64',1,'ui.h']]],
   ['createpopupgui_5fws_67',['CreatePopupGUI_ws',['../group___u_i.html#gae4a80681afffce07c23d9cac24f58f16',1,'ui.h']]],
-  ['createradiobuttonlist_68',['CreateRadioButtonList',['../group___u_i.html#ga8255da09902a222ab737efaae5e272e2',1,'ui.h']]],
+  ['createradiobuttonlist_68',['CreateRadioButtonList',['../group___u_i.html#ga2b841de5079c8fc56637ac3a9b1bc1c8',1,'ui.h']]],
   ['createscrollbarwidget_69',['CreateScrollbarWidget',['../group___u_i.html#ga8487ab411c3874090d1612d51b83b666',1,'ui.h']]],
   ['createws_70',['CreateWS',['../group___w_s_h_d_r.html#gae77291576e892e8d4c72c4cdf538624e',1,'wstring.h']]],
   ['crl_5fdist_5fpoints_5ffree_71',['CRL_DIST_POINTS_free',['../x509v3_8h.html#a8011d9518b424f9a80842c17b5de3020',1,'x509v3.h']]],

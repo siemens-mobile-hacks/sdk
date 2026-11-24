@@ -9,6 +9,6 @@ var searchData=
   ['y_5fred_6',['y_red',['../builtin_2png_8h.html#a788f869127c0fc7f60c0a2fc32f3f492',1,'png_info_struct']]],
   ['y_5fwhite_7',['y_white',['../builtin_2png_8h.html#a6a79d17fa0b75737d29ac69fc84c5977',1,'png_info_struct']]],
   ['ydisp_8',['YDISP',['../group___u_i.html#ga828252e6aa41409745c8393176760712',1,'ui.h']]],
-  ['year_9',['year',['../group___date_time.html#a01b35805f5cd56c30e9f8bcb7996df15',1,'TDate::year'],['../builtin_2png_8h.html#a5cceb6213fc7b4462435ea1d8fc1c798',1,'png_time_struct::year']]],
+  ['year_9',['year',['../group___date_time.html#a01b35805f5cd56c30e9f8bcb7996df15',1,'TDate::year'],['../builtin_2png_8h.html#a5cceb6213fc7b4462435ea1d8fc1c798',1,'png_time_struct::year'],['../group___l_e_g_a_c_y.html#a01e31f506084b95086c12facf14437b8',1,'RAM_DATETIME::year']]],
   ['yearnormbudd_10',['yearNormBudd',['../group___date_time.html#a271de30661a944a79c50c855503fe287',1,'TDateTimeSettings']]]
 ];

@@ -128,7 +128,7 @@ Alternatively, you can include these functions directly by <code>#include &lt;<a
 <tr class="memdesc:ga8c1f925265d2678c1238fa2ef16daeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize the MD5 calculation and get hash.  <br /></td></tr>
 <tr class="separator:ga8c1f925265d2678c1238fa2ef16daeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">SHA256 hashing</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">SHA1 hashing</h2></td></tr>
 <tr class="memitem:ga3bdee87cb5829155c4a11078816144e4" id="r_ga3bdee87cb5829155c4a11078816144e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bdee87cb5829155c4a11078816144e4">SHA1_Init</a> (<a class="el" href="sha_8h.html#a39b5afe5b941ddf37564ee51aed3ac39">SHA_CTX</a> *c)</td></tr>
 <tr class="memdesc:ga3bdee87cb5829155c4a11078816144e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a SHA_CTX structure.  <br /></td></tr>
 <tr class="separator:ga3bdee87cb5829155c4a11078816144e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +157,7 @@ Alternatively, you can include these functions directly by <code>#include &lt;<a
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">SSL</h2></td></tr>
 <tr class="memitem:ga4411c4d1a8bbdf3dbdb86dd469f1eb17" id="r_ga4411c4d1a8bbdf3dbdb86dd469f1eb17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ssl_8h.html#a74d54b9a714accac31c73bfb55973e81">SSL_METHOD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4411c4d1a8bbdf3dbdb86dd469f1eb17">TLSv1_client_method</a> ()</td></tr>
-<tr class="memdesc:ga4411c4d1a8bbdf3dbdb86dd469f1eb17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get selected SSL method.  <br /></td></tr>
+<tr class="memdesc:ga4411c4d1a8bbdf3dbdb86dd469f1eb17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the TLSv1 client method.  <br /></td></tr>
 <tr class="separator:ga4411c4d1a8bbdf3dbdb86dd469f1eb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46892194bce0889104d9aa7c4851b7e7" id="r_ga46892194bce0889104d9aa7c4851b7e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ssl_8h.html#a1a21892c1193ee6eb572c2c72d3924ca">SSL_CTX</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46892194bce0889104d9aa7c4851b7e7">SSL_CTX_new</a> (<a class="el" href="ssl_8h.html#a74d54b9a714accac31c73bfb55973e81">SSL_METHOD</a> *meth)</td></tr>
 <tr class="memdesc:ga46892194bce0889104d9aa7c4851b7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initialize an SSL_CTX structure so that method will be used for the SSL operations.  <br /></td></tr>
@@ -457,7 +457,7 @@ When <code>hash</code> is specified, then it returns <code>hash</code>. </dd></d
 <p>Finalize the SHA1 calculation and get hash. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">hash</td><td>pointer to the uint8_t[16] for md5 hash result </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">hash</td><td>pointer to the uint8_t[20] for the SHA1 hash result </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">c</td><td>pointer to the SHA_CTX </td></tr>
   </table>
   </dd>
@@ -607,8 +607,8 @@ When <code>hash</code> is specified, then it returns <code>hash</code>. </dd></d
       </table>
 </div><div class="memdoc">
 
-<p>Get selected SSL method. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to SSL method </dd></dl>
+<p>Get the TLSv1 client method. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the static TLSv1 client SSL method </dd></dl>
 
 </div>
 </div>
@@ -784,7 +784,7 @@ When <code>hash</code> is specified, then it returns <code>hash</code>. </dd></d
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on success, 0 or negative value on error </dd></dl>
 
 </div>
 </div>
@@ -810,7 +810,7 @@ When <code>hash</code> is specified, then it returns <code>hash</code>. </dd></d
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 when finished, 0 when not yet finished, negative value on error </dd></dl>
 
 </div>
 </div>
@@ -1029,7 +1029,7 @@ When <code>hash</code> is specified, then it returns <code>hash</code>. </dd></d
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>nonzero on success, 0 on error </dd></dl>
 
 </div>
 </div>

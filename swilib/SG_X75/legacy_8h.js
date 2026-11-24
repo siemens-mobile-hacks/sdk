@@ -1,5 +1,6 @@
 var legacy_8h =
 [
+    [ "RAM_DATETIME", "group___l_e_g_a_c_y.html#ga5912f56c547020ec99ef70dffb643299", null ],
     [ "memcmp_2", "group___l_e_g_a_c_y.html#ga26e6bb5e3aa793c3e07bd7d7d3e10fdc", null ],
     [ "memcpy_2", "group___l_e_g_a_c_y.html#ga03688147f8801a5df79a0d1f95a6daf1", null ],
     [ "strrchr_2", "group___l_e_g_a_c_y.html#ga0624441f37a731a8fab3b2d3c41e424f", null ],
@@ -18,10 +19,10 @@ var legacy_8h =
     [ "DrwObj_SetColor_2", "group___l_e_g_a_c_y.html#ga16b9885ad7923cf0a4bffca7d97f7b97", null ],
     [ "GeneralFuncF1_2", "group___l_e_g_a_c_y.html#ga55e842ebc3925f75b1eaa1c656f50396", null ],
     [ "GetTimeFormat", "group___l_e_g_a_c_y.html#ga247156dca69c63bbca907336fb438bd5", null ],
-    [ "GetWavLenByContent", "group___l_e_g_a_c_y.html#ga0dcc715dd0a04b12ac7ff265f4106a08", null ],
+    [ "GetWavLenByContent", "group___l_e_g_a_c_y.html#ga36c68ba325af3dda57d0f8f947db8aa6", null ],
     [ "RamCurrentTrack", "group___l_e_g_a_c_y.html#ga13cb6cb88a112eed2d8e215314e5a317", null ],
     [ "RamAudioParamsAddr", "group___l_e_g_a_c_y.html#ga453e8cc48b9a3bd09407c5b05494c2c8", null ],
-    [ "RamDateTime", "group___l_e_g_a_c_y.html#ga517017c8a5b576551448024744eb9dc2", null ],
+    [ "RamDateTime", "group___l_e_g_a_c_y.html#gab50f61b580e3a1a6a10cbc11277d1d9d", null ],
     [ "RamKeyBuffer", "group___l_e_g_a_c_y.html#ga828e6091a49a00a84705ccb1c1a8efb5", null ],
     [ "RamIsNumberTyping", "group___l_e_g_a_c_y.html#ga961aac2f7d4a3cc11315f2236832612c", null ],
     [ "RamShutdownMode", "group___l_e_g_a_c_y.html#gad0c812a7ef7654999ad6d03d204e349a", null ],
@@ -36,5 +37,6 @@ var legacy_8h =
     [ "NU_Restore_Interrupts_2", "group___l_e_g_a_c_y.html#ga9240ab5a6b2e7d1ba0f6b7c202f8a78f", null ],
     [ "NU_Unprotect_2", "group___l_e_g_a_c_y.html#ga77b0ca1ccf63b2be8e215a8e4b2f0b59", null ],
     [ "NU_Disable_History_Saving_2", "group___l_e_g_a_c_y.html#ga945d422d63a0ec2cfb2d0e84d0592e4f", null ],
-    [ "NU_Enable_History_Saving_2", "group___l_e_g_a_c_y.html#gae14a93ce7acd7dafd4ce6f1a4670ffe0", null ]
+    [ "NU_Enable_History_Saving_2", "group___l_e_g_a_c_y.html#gae14a93ce7acd7dafd4ce6f1a4670ffe0", null ],
+    [ "RamInputLanguage", "group___l_e_g_a_c_y.html#ga826aac442cd4451fe0982a31cc2dab91", null ]
 ];

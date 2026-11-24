@@ -169,7 +169,7 @@ var searchData=
   ['isguiontop_166',['IsGuiOnTop',['../group___g_u_i.html#ga3d9b4a64aed308da4fdd211da72f4b1d',1,'gui.h']]],
   ['isiconbardisabled_167',['IsIconBarDisabled',['../group___u_i.html#gad6caaef9e9006a50055ec7f907b44673',1,'ui.h']]],
   ['isidleuiontop_168',['IsIdleUiOnTop',['../group___i_d_l_e.html#gac7a4c918386482153b7d5eb1dfa0af79',1,'idle.h']]],
-  ['isincognitocall_169',['IsIncognitoCall',['../group___telephony.html#ga2e3a1f6df09e3003a0cd7781355b6224',1,'telephony.h']]],
+  ['isincognitocall_169',['IsIncognitoCall',['../group___telephony.html#gabba4bbbc2e010e77a48be440aaeaa6c3',1,'telephony.h']]],
   ['isleapyear_170',['IsLeapYear',['../group___date_time.html#gab64114babea962215504a37b44dbe8b8',1,'date.h']]],
   ['ismediaplayerinbackground_171',['IsMediaPlayerInBackground',['../group___player.html#ga157d0c70e864193599dc1ae2c3bdb3cf',1,'player.h']]],
   ['isnewsgold_172',['isnewSGold',['../group___system.html#gab3f1b4cbe5ec1839400b166225858ef8',1,'system.h']]],

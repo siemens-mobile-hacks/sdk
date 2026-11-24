@@ -175,9 +175,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga839a07ed0dfc5f7c990cfdde01c52b38" id="r_ga839a07ed0dfc5f7c990cfdde01c52b38"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga839a07ed0dfc5f7c990cfdde01c52b38">RamDisplayLanguage</a> ()</td></tr>
 <tr class="memdesc:ga839a07ed0dfc5f7c990cfdde01c52b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the phone's language.  <br /></td></tr>
 <tr class="separator:ga839a07ed0dfc5f7c990cfdde01c52b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga826aac442cd4451fe0982a31cc2dab91" id="r_ga826aac442cd4451fe0982a31cc2dab91"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga826aac442cd4451fe0982a31cc2dab91">RamInputLanguage</a> ()</td></tr>
-<tr class="memdesc:ga826aac442cd4451fe0982a31cc2dab91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the phone's input language.  <br /></td></tr>
-<tr class="separator:ga826aac442cd4451fe0982a31cc2dab91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Charging and battery</h2></td></tr>
 <tr class="memitem:ga16997585e6f2d3f622de43023007f4d7" id="r_ga16997585e6f2d3f622de43023007f4d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16997585e6f2d3f622de43023007f4d7">GetAkku</a> (int param1, int param2)</td></tr>
@@ -219,7 +216,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Other functions</h2></td></tr>
 <tr class="memitem:gaf0e918e1b6541a9ec198c7c1653957ee" id="r_gaf0e918e1b6541a9ec198c7c1653957ee"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf0e918e1b6541a9ec198c7c1653957ee">IsSliderClosed</a> ()</td></tr>
-<tr class="memdesc:gaf0e918e1b6541a9ec198c7c1653957ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if slider closed.  <br /></td></tr>
+<tr class="memdesc:gaf0e918e1b6541a9ec198c7c1653957ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get slider position.  <br /></td></tr>
 <tr class="separator:gaf0e918e1b6541a9ec198c7c1653957ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1491b71024e049c9dee128996a2806f7" id="r_ga1491b71024e049c9dee128996a2806f7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1491b71024e049c9dee128996a2806f7">RamIsSimPresent</a> ()</td></tr>
 <tr class="memdesc:ga1491b71024e049c9dee128996a2806f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if SIM-card is present.  <br /></td></tr>
@@ -464,30 +461,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the language ID</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> lang_id = *<a class="code hl_function" href="#ga839a07ed0dfc5f7c990cfdde01c52b38">RamDisplayLanguage</a>();</div>
 <div class="ttc" id="agroup___info_html_ga839a07ed0dfc5f7c990cfdde01c52b38"><div class="ttname"><a href="#ga839a07ed0dfc5f7c990cfdde01c52b38">RamDisplayLanguage</a></div><div class="ttdeci">char * RamDisplayLanguage()</div><div class="ttdoc">Get the phone's language.</div></div>
-</div><!-- fragment --> <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated</a></b></dt><dd>Always use <a class="el" href="#gad30ccd654823fdbd65de7dc01c16f4b7" title="Get the phone&#39;s language.">GetCurrentLocale</a> </dd></dl>
+</div><!-- fragment --> <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>Always use <a class="el" href="#gad30ccd654823fdbd65de7dc01c16f4b7" title="Get the phone&#39;s language.">GetCurrentLocale</a> </dd></dl>
 
-</div>
-</div>
-<a id="ga826aac442cd4451fe0982a31cc2dab91" name="ga826aac442cd4451fe0982a31cc2dab91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga826aac442cd4451fe0982a31cc2dab91">&#9670;&#160;</a></span>RamInputLanguage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * RamInputLanguage </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the phone's input language. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the language ID</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> lang_id = *<a class="code hl_function" href="#ga826aac442cd4451fe0982a31cc2dab91">RamInputLanguage</a>();</div>
-<div class="ttc" id="agroup___info_html_ga826aac442cd4451fe0982a31cc2dab91"><div class="ttname"><a href="#ga826aac442cd4451fe0982a31cc2dab91">RamInputLanguage</a></div><div class="ttdeci">char * RamInputLanguage()</div><div class="ttdoc">Get the phone's input language.</div></div>
-</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga16997585e6f2d3f622de43023007f4d7" name="ga16997585e6f2d3f622de43023007f4d7"></a>
@@ -563,7 +538,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> capacity = *<a class="code hl_function" href="#ga09945d720beb754bb6879b63f28ab62c">RamCap</a>(); <span class="comment">// 0-100</span></div>
 <div class="ttc" id="agroup___info_html_ga09945d720beb754bb6879b63f28ab62c"><div class="ttname"><a href="#ga09945d720beb754bb6879b63f28ab62c">RamCap</a></div><div class="ttdeci">uint16_t * RamCap()</div><div class="ttdoc">Get pointer to the current battery level.</div></div>
 </div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>pointer </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated</a></b></dt><dd>Always use <a class="el" href="#gaf575dea2b27b525b433bef2acb9ab2da" title="Get the current battery level.">GetAkkuCapacity</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated</a></b></dt><dd>Always use <a class="el" href="#gaf575dea2b27b525b433bef2acb9ab2da" title="Get the current battery level.">GetAkkuCapacity</a> </dd></dl>
 
 </div>
 </div>
@@ -698,7 +673,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if bluetooth connected to the headset. </p>
-<dl class="section return"><dt>Returns</dt><dd>C-string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the low byte of the connection handle in BT link slot 0: 0xFF if no device is connected </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Any BT device in link slot 0 is reported, usually the headset. </dd></dl>
 
 </div>
 </div>
@@ -737,8 +713,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check if slider closed. </p>
-<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+<p>Get slider position. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 if the slider is closed, 0 if it is open, 2 if the position is unknown </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Always returns 2 on models without a slider. </dd></dl>
 
 </div>
 </div>
@@ -758,7 +735,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if SIM-card is present. </p>
-<dl class="section return"><dt>Returns</dt><dd>SIM status </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the flag: nonzero while a SIM card is active, 0 if no card answered or the SIM is deactivated </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The flag is nonzero during the first activation attempts at startup, until card detection finishes. </dd></dl>
 
 </div>
 </div>
@@ -798,7 +776,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if phone in shutdown process. </p>
-<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the flag: 1 after the power-off started by holding the end key, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -818,7 +796,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if phone in standby mode. </p>
-<dl class="section return"><dt>Returns</dt><dd>1 or 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the flag (1 or 0) </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>X75, SG </dd></dl>
 
 </div>
 </div>

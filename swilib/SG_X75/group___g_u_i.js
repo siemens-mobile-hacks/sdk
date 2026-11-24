@@ -249,7 +249,7 @@ var group___g_u_i =
     [ "PushDRWOBJOnLAYER", "group___g_u_i.html#gacde0da20e90187982e343cba83c10af7", null ],
     [ "RamLcdMainLayersList", "group___g_u_i.html#gac68e33c83571f8e1618cea4886a05254", null ],
     [ "RamLcdRapLayersList", "group___g_u_i.html#ga39250708c8bd1893ca27af311ad80216", null ],
-    [ "Ram_LCD_Overlay_Layer", "group___g_u_i.html#gabd88cdf023a49f2aaead6dda4becbbed", null ],
+    [ "Ram_LCD_Overlay_Layer", "group___g_u_i.html#ga238aa2067d6cef0af0df186aca8f6197", null ],
     [ "SetPixel", "group___g_u_i.html#ga83025ab9854751c8df647944893970e8", null ],
     [ "fillTriangle", "group___g_u_i.html#gabf73c107fb04737ca93fac06b0172170", null ],
     [ "drawArc", "group___g_u_i.html#gaafda819c9408a57282667e35fd70542d", null ],

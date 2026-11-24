@@ -412,7 +412,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:gafcc87f436ad27add8894f44d22adcae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set extra text to the UI header.  <br /></td></tr>
 <tr class="separator:gafcc87f436ad27add8894f44d22adcae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafc7451d541e3726c8c679d8d1d520029" id="r_gafc7451d541e3726c8c679d8d1d520029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc7451d541e3726c8c679d8d1d520029">SetHeaderIcon</a> (void *header, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *icons, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *malloc_fn, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *mfree_fn)</td></tr>
-<tr class="memdesc:gafc7451d541e3726c8c679d8d1d520029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pointer to the UI header.  <br /></td></tr>
+<tr class="memdesc:gafc7451d541e3726c8c679d8d1d520029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set icons of the UI header.  <br /></td></tr>
 <tr class="separator:gafc7451d541e3726c8c679d8d1d520029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a4e25abe9240a5d76ad3f5faa81df42" id="r_ga0a4e25abe9240a5d76ad3f5faa81df42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a4e25abe9240a5d76ad3f5faa81df42">SetSoftKey</a> (void *gui, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_s_o_f_t_k_e_y___d_e_s_c">SOFTKEY_DESC</a> *softkey, int softkey_id)</td></tr>
 <tr class="memdesc:ga0a4e25abe9240a5d76ad3f5faa81df42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add softkey to the <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a>.  <br /></td></tr>
@@ -691,7 +691,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga5cf6c0a5a3d4aace3410ac7b46bb8b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll to the given menu item.  <br /></td></tr>
 <tr class="separator:ga5cf6c0a5a3d4aace3410ac7b46bb8b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace84710aa23565ff48866d304bc76093" id="r_gace84710aa23565ff48866d304bc76093"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace84710aa23565ff48866d304bc76093">UpdateMenuCursorItem</a> (void *gui, int item_n)</td></tr>
-<tr class="memdesc:gace84710aa23565ff48866d304bc76093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll to the given menu item.     <br /></td></tr>
+<tr class="memdesc:gace84710aa23565ff48866d304bc76093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll to the given menu item and refresh the menu.  <br /></td></tr>
 <tr class="separator:gace84710aa23565ff48866d304bc76093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67ddef3a72e24e281dad531f9fde4e39" id="r_ga67ddef3a72e24e281dad531f9fde4e39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67ddef3a72e24e281dad531f9fde4e39">SetMenuSearchCallBack</a> (void *gui, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#ga46b5f5853ab06754964dc5f18940a7e5">MenuSearchCallBack</a> callback)</td></tr>
 <tr class="memdesc:ga67ddef3a72e24e281dad531f9fde4e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback for the searching in the menu.  <br /></td></tr>
@@ -756,9 +756,9 @@ Enumerations</h2></td></tr>
 <tr class="separator:ga8b75db47e227cc4a56eedab904dc915f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">RadioButtonList</h2></td></tr>
-<tr class="memitem:ga8255da09902a222ab737efaae5e272e2" id="r_ga8255da09902a222ab737efaae5e272e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8255da09902a222ab737efaae5e272e2">CreateRadioButtonList</a> (void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void(*handler)(int), int flags)</td></tr>
-<tr class="memdesc:ga8255da09902a222ab737efaae5e272e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create radios button list.  <br /></td></tr>
-<tr class="separator:ga8255da09902a222ab737efaae5e272e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b841de5079c8fc56637ac3a9b1bc1c8" id="r_ga2b841de5079c8fc56637ac3a9b1bc1c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2b841de5079c8fc56637ac3a9b1bc1c8">CreateRadioButtonList</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *items, int num, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *exclude_ids, int exclude_count, int selected_id, int(*handler)(int item_id, int key, int user1, int user2), int flags, int header_lgp, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *header_icon, int user1, int user2)</td></tr>
+<tr class="memdesc:ga2b841de5079c8fc56637ac3a9b1bc1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create radio button list.  <br /></td></tr>
+<tr class="separator:ga2b841de5079c8fc56637ac3a9b1bc1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Scrollbar</h2></td></tr>
 <tr class="memitem:ga8487ab411c3874090d1612d51b83b666" id="r_ga8487ab411c3874090d1612d51b83b666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_u_i.html#ga26e562d6a047dbb33f89bdf44efde5eb">WIDGET</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8487ab411c3874090d1612d51b83b666">CreateScrollbarWidget</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *malloc_fn)</td></tr>
@@ -1992,11 +1992,17 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get pointer to the UI header. </p>
+<p>Set icons of the UI header. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">header</td><td>pointer to the header (<a class="el" href="#ga612dacbbe9c358d16a244b8e1bfb70a9" title="Get pointer to the UI header.">GetHeaderPointer</a>) </td></tr>
     <tr><td class="paramname">icons</td><td>C-array of the icons (ID from PIT or pointer to <a class="el" href="group___image.html#struct_i_m_g_h_d_r" title="Image header.">IMGHDR</a>), last item is always 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The icons array is not copied and must stay valid while the <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> exists. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">malloc_fn</td><td>result of <a class="el" href="group__libc.html#ga98091deb3eb207bb841a6af63f05d7b7" title="Pointer to the function malloc().">malloc_adr()</a> </td></tr>
     <tr><td class="paramname">mfree_fn</td><td>result of <a class="el" href="group__libc.html#ga9fb4ecd699fadc5108297f332e7fc521" title="Pointer to the function free().">mfree_adr()</a> </td></tr>
   </table>
@@ -4972,15 +4978,17 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Scroll to the given menu item.    </p>
+<p>Scroll to the given menu item and refresh the menu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gui</td><td>pointer to the Menu <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> </td></tr>
-    <tr><td class="paramname">item_n</td><td>index of the item (from 0)    </td></tr>
+    <tr><td class="paramname">item_n</td><td>index of the item (from 0) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga5cf6c0a5a3d4aace3410ac7b46bb8b78" title="Scroll to the given menu item.">SetCursorToMenuItem</a> instead. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Unlike <a class="el" href="#ga5cf6c0a5a3d4aace3410ac7b46bb8b78" title="Scroll to the given menu item.">SetCursorToMenuItem</a>, it also re-applies the item count (relayout and redraw). </dd>
+<dd>
+Updates the scrollbar when the menu is focused. </dd></dl>
 
 </div>
 </div>
@@ -5047,7 +5055,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga0a4e25abe9240a5d76ad3f5faa81df42" title="Add softkey to the GUI.">SetSoftKey</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga0a4e25abe9240a5d76ad3f5faa81df42" title="Add softkey to the GUI.">SetSoftKey</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -5084,7 +5092,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>Use <a class="el" href="#gad102ee7a12fd7831e01979de3696d5c7" title="Set header to the GUI.">SetHeader</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>Use <a class="el" href="#gad102ee7a12fd7831e01979de3696d5c7" title="Set header to the GUI.">SetHeader</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -5591,8 +5599,8 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga8255da09902a222ab737efaae5e272e2" name="ga8255da09902a222ab737efaae5e272e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8255da09902a222ab737efaae5e272e2">&#9670;&#160;</a></span>CreateRadioButtonList()</h2>
+<a id="ga2b841de5079c8fc56637ac3a9b1bc1c8" name="ga2b841de5079c8fc56637ac3a9b1bc1c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b841de5079c8fc56637ac3a9b1bc1c8">&#9670;&#160;</a></span>CreateRadioButtonList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5600,7 +5608,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td class="memname">int CreateRadioButtonList </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>desc</em></span>, </td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>items</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -5610,45 +5618,69 @@ Enumerations</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_zero0</em></span>, </td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *</td>          <td class="paramname"><span class="paramname"><em>exclude_ids</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk_zero1</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exclude_count</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>selected_item</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>selected_id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>handler&#160;</em></span>)(int), </td>
+          <td class="paramtype">int(*</td>          <td class="paramname"><span class="paramname"><em>handler&#160;</em></span>)(int item_id, int key, int user1, int user2), </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>header_lgp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> int *</td>          <td class="paramname"><span class="paramname"><em>header_icon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>user1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>user2</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create radios button list. </p>
+<p>Create radio button list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">desc</td><td>gui description </td></tr>
+    <tr><td class="paramname">items</td><td>array of 20-byte items, the first word of each item is its ID </td></tr>
     <tr><td class="paramname">num</td><td>number of the items </td></tr>
-    <tr><td class="paramname">unk_zero0</td><td>unknown, set to 0 </td></tr>
-    <tr><td class="paramname">unk_zero1</td><td>unknown, set to 0 </td></tr>
-    <tr><td class="paramname">selected_item</td><td>selected item index </td></tr>
-    <tr><td class="paramname">handler</td><td>item handler </td></tr>
-    <tr><td class="paramname">flags</td><td>unknown flags </td></tr>
+    <tr><td class="paramname">exclude_ids</td><td>IDs of the items to hide, can be NULL </td></tr>
+    <tr><td class="paramname">exclude_count</td><td>number of the IDs in exclude_ids </td></tr>
+    <tr><td class="paramname">selected_id</td><td>ID of the checked item (used when bit 1 of flags is set) </td></tr>
+    <tr><td class="paramname">handler</td><td>item handler, return 1 to close the list </td></tr>
+    <tr><td class="paramname">flags</td><td>bit 0: alternative header and <a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> style, bit 1: check selected_id </td></tr>
+    <tr><td class="paramname">header_lgp</td><td>header text (LGP ID) </td></tr>
+    <tr><td class="paramname">header_icon</td><td>header icon </td></tr>
+    <tr><td class="paramname">user1</td><td>passed to the handler </td></tr>
+    <tr><td class="paramname">user2</td><td>passed to the handler </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> ID </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___g_u_i.html#struct_g_u_i" title="GUI description and state.">GUI</a> ID or 0 </dd></dl>
 
 </div>
 </div>

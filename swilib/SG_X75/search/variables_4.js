@@ -15,7 +15,7 @@ var searchData=
   ['data_5ftype_12',['data_type',['../builtin_2zlib_8h.html#a9d8f63877d7639a8bca60f9fc3704fc4',1,'z_stream_s']]],
   ['datasize_13',['datasize',['../group___c_s_m.html#a30f057a2f32f4b7d352c2a9e4dee5626',1,'CSM_DESC']]],
   ['dateformat_14',['dateFormat',['../group___date_time.html#ac8d6e20a85e2c406c5fe27ea2b1ed243',1,'TDateTimeSettings']]],
-  ['day_15',['day',['../group___date_time.html#af4c88e3229ea28ce69b981f49b82490b',1,'TDate::day'],['../builtin_2png_8h.html#afa0f94516a676178d1dabeb96eccdcdb',1,'png_time_struct::day']]],
+  ['day_15',['day',['../group___date_time.html#af4c88e3229ea28ce69b981f49b82490b',1,'TDate::day'],['../builtin_2png_8h.html#afa0f94516a676178d1dabeb96eccdcdb',1,'png_time_struct::day'],['../group___l_e_g_a_c_y.html#af624a58df350fe5708a525c95f432426',1,'RAM_DATETIME::day']]],
   ['db_16',['db',['../x509v3_8h.html#ab9c02945f7b4566735f6184baf63b765',1,'v3_ext_ctx']]],
   ['db_5fmeth_17',['db_meth',['../x509v3_8h.html#a7e8b728812e1ae2216de8991faeae558',1,'v3_ext_ctx']]],
   ['debug_18',['debug',['../ssl_8h.html#a44db2b5a38c43821c3a852669e48d67f',1,'ssl_st']]],

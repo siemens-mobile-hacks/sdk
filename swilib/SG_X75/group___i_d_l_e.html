@@ -142,9 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga16d40b171eca372cc1df31974454a524" id="r_ga16d40b171eca372cc1df31974454a524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_s___r_a_m">SS_RAM</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16d40b171eca372cc1df31974454a524">GetScreenSaverRAM</a> (void)</td></tr>
 <tr class="memdesc:ga16d40b171eca372cc1df31974454a524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get screensaver CSM.  <br /></td></tr>
 <tr class="separator:ga16d40b171eca372cc1df31974454a524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa6a395945418616ef4a55536b2d72d38" id="r_gaa6a395945418616ef4a55536b2d72d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_s___r_a_m">SS_RAM</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa6a395945418616ef4a55536b2d72d38">RamScreenSaverCSM</a> (void)</td></tr>
-<tr class="memdesc:gaa6a395945418616ef4a55536b2d72d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get screensaver CSM.  <br /></td></tr>
-<tr class="separator:gaa6a395945418616ef4a55536b2d72d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20184f4008a00c2c629d14d8623bc319" id="r_ga20184f4008a00c2c629d14d8623bc319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga20184f4008a00c2c629d14d8623bc319">RamScreenSaverCSM</a> (void)</td></tr>
+<tr class="memdesc:ga20184f4008a00c2c629d14d8623bc319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable with the screensaver CSM.  <br /></td></tr>
+<tr class="separator:ga20184f4008a00c2c629d14d8623bc319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4148b6bd3b30f7c4b3f1a18caab8c48e" id="r_ga4148b6bd3b30f7c4b3f1a18caab8c48e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4148b6bd3b30f7c4b3f1a18caab8c48e">GBS_Cmd_4209_RefreshScreensaver</a> ()</td></tr>
 <tr class="memdesc:ga4148b6bd3b30f7c4b3f1a18caab8c48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return GBS command ID for refreshing screensaver.  <br /></td></tr>
 <tr class="separator:ga4148b6bd3b30f7c4b3f1a18caab8c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,14 +319,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa6a395945418616ef4a55536b2d72d38" name="gaa6a395945418616ef4a55536b2d72d38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa6a395945418616ef4a55536b2d72d38">&#9670;&#160;</a></span>RamScreenSaverCSM()</h2>
+<a id="ga20184f4008a00c2c629d14d8623bc319" name="ga20184f4008a00c2c629d14d8623bc319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20184f4008a00c2c629d14d8623bc319">&#9670;&#160;</a></span>RamScreenSaverCSM()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#struct_s_s___r_a_m">SS_RAM</a> * RamScreenSaverCSM </td>
+          <td class="memname"><a class="el" href="group___c_s_m.html#struct_c_s_m___r_a_m">CSM_RAM</a> ** RamScreenSaverCSM </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -334,9 +334,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get screensaver CSM. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the screensaver CSM </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000055">Deprecated</a></b></dt><dd>use <a class="el" href="#ga16d40b171eca372cc1df31974454a524" title="Get screensaver CSM.">GetScreenSaverRAM</a> </dd></dl>
+<p>Variable with the screensaver CSM. </p>
+<dl class="section return"><dt>Returns</dt><dd>NSG: pointer to the variable with the screensaver CSM </dd>
+<dd>
+SG: pointer to the variable with the IDLE CSM; it points to the screensaver at a model-specific offset </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000054">Deprecated</a></b></dt><dd>use <a class="el" href="#ga16d40b171eca372cc1df31974454a524" title="Get screensaver CSM.">GetScreenSaverRAM</a> </dd></dl>
 
 </div>
 </div>

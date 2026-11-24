@@ -297,7 +297,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current volume level.  <br /></td></tr>
 <tr class="separator:gaeac995d1bab995b3f95b86cde51ebf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25f546e713d427446c3d26bf78eedfee" id="r_ga25f546e713d427446c3d26bf78eedfee"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25f546e713d427446c3d26bf78eedfee">RamMediaIsPlaying</a> ()</td></tr>
-<tr class="memdesc:ga25f546e713d427446c3d26bf78eedfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checking if any sound is currently played.  <br /></td></tr>
+<tr class="memdesc:ga25f546e713d427446c3d26bf78eedfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy of a PASIC audio register, historically used to check if a sound is played.  <br /></td></tr>
 <tr class="separator:ga25f546e713d427446c3d26bf78eedfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f0d40b59a1ad5bdcc156df5dbba1a71" id="r_ga1f0d40b59a1ad5bdcc156df5dbba1a71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f0d40b59a1ad5bdcc156df5dbba1a71">IsPlayerOn</a> ()</td></tr>
 <tr class="memdesc:ga1f0d40b59a1ad5bdcc156df5dbba1a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the radio or player is active.  <br /></td></tr>
@@ -606,12 +606,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checking if any sound is currently played. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the value of an unknown PASIC register </dd>
+<p>Copy of a PASIC audio register, historically used to check if a sound is played. </p>
+<dl class="section return"><dt>Returns</dt><dd>NSG: MONO control copy, 1 on C81/S75/SL75 and 2 on S68 while audio is routed to the speaker </dd>
 <dd>
-SG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if any sound is currently played.">RamMediaIsPlaying()</a> != 2 // sound is playing </dd>
+ELKA: DAC control copy, nonzero while the PCM audio path is active </dd>
 <dd>
-NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if any sound is currently played.">RamMediaIsPlaying()</a> != 0 // sound is playing </dd></dl>
+SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Copy of a PASIC audio register, historically used to check if a sound is played.">RamMediaIsPlaying()</a> != 2 // sound is playing </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On NSG the value is also changed by key clicks and tones, and not changed for headset or Bluetooth playback. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Result varies across platforms. </dd></dl>
 
 </div>
@@ -1025,7 +1026,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00382">382</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00383">383</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1067,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00392">392</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00393">393</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -1308,7 +1309,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>play handle or -1 (0xFFFF) on error </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Untested function that is not found in any ELF's. </dd></dl>
 
 </div>
@@ -1330,6 +1331,7 @@ NSG: <a class="el" href="#ga25f546e713d427446c3d26bf78eedfee" title="Checking if
 
 <p>Pointer to the AudioHook. </p>
 <dl class="section return"><dt>Returns</dt><dd>implementation specific </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>X75, SG </dd></dl>
 
 </div>
 </div>

@@ -147,7 +147,7 @@ var searchData=
   ['dateaddyears_144',['DateAddYears',['../group___date_time.html#ga0cff14ce56dd3abe582a0f423476df44',1,'date.h']]],
   ['dateformat_145',['dateFormat',['../group___date_time.html#ac8d6e20a85e2c406c5fe27ea2b1ed243',1,'TDateTimeSettings']]],
   ['datetime_146',['DateTime',['../group___date_time.html',1,'']]],
-  ['day_147',['day',['../group___date_time.html#af4c88e3229ea28ce69b981f49b82490b',1,'TDate::day'],['../builtin_2png_8h.html#afa0f94516a676178d1dabeb96eccdcdb',1,'png_time_struct::day']]],
+  ['day_147',['day',['../group___date_time.html#af4c88e3229ea28ce69b981f49b82490b',1,'TDate::day'],['../builtin_2png_8h.html#afa0f94516a676178d1dabeb96eccdcdb',1,'png_time_struct::day'],['../group___l_e_g_a_c_y.html#af624a58df350fe5708a525c95f432426',1,'RAM_DATETIME::day']]],
   ['db_148',['db',['../x509v3_8h.html#ab9c02945f7b4566735f6184baf63b765',1,'v3_ext_ctx']]],
   ['db_5ferror_5findex_5fclash_149',['DB_ERROR_INDEX_CLASH',['../txt__db_8h.html#abb973cdd9311b774651a0279a0955036',1,'txt_db.h']]],
   ['db_5ferror_5findex_5fout_5fof_5frange_150',['DB_ERROR_INDEX_OUT_OF_RANGE',['../txt__db_8h.html#a80049fd077a6d41b0a2ad9d557a810cf',1,'txt_db.h']]],

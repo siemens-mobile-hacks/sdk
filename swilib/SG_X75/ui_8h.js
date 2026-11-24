@@ -222,7 +222,7 @@ var ui_8h =
     [ "TViewSetText", "group___u_i.html#ga377bc11a63fd66dee50a538ba000aad9", null ],
     [ "TViewSetUserPointer", "group___u_i.html#ga2a2bfc59416cb3f25fc0a7af6c326bd6", null ],
     [ "TViewGetUserPointer", "group___u_i.html#ga8b75db47e227cc4a56eedab904dc915f", null ],
-    [ "CreateRadioButtonList", "group___u_i.html#ga8255da09902a222ab737efaae5e272e2", null ],
+    [ "CreateRadioButtonList", "group___u_i.html#ga2b841de5079c8fc56637ac3a9b1bc1c8", null ],
     [ "CreateScrollbarWidget", "group___u_i.html#ga8487ab411c3874090d1612d51b83b666", null ],
     [ "Scrollbar_Configure", "group___u_i.html#gadf4036fcab5926a5534d3760c711e863", null ],
     [ "Scrollbar_SetValue", "group___u_i.html#ga2144d00e5aa18fa3fcfc6335b6112376", null ],

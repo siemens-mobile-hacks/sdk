@@ -24,5 +24,5 @@ var searchData=
   ['hit_21',['hit',['../ssl_8h.html#a20d2f2c7a00b1fd70c28c81c2d6f34c2',1,'ssl_st']]],
   ['hmi_5fkeys_22',['hmi_keys',['../group___settings.html#a5566db6bc97985c8058846a04ba4082a',1,'REG_CLIENT']]],
   ['hmi_5fkeys_5fcount_23',['hmi_keys_count',['../group___settings.html#a894fc44b3fe2eff3137e1c79e4391130',1,'REG_CLIENT']]],
-  ['hour_24',['hour',['../group___date_time.html#ae7afd210e593b007611ac237bd32d30d',1,'TTime::hour'],['../builtin_2png_8h.html#a79ac8b217254fd87cdc7299e6612a6f4',1,'png_time_struct::hour']]]
+  ['hour_24',['hour',['../group___date_time.html#ae7afd210e593b007611ac237bd32d30d',1,'TTime::hour'],['../builtin_2png_8h.html#a79ac8b217254fd87cdc7299e6612a6f4',1,'png_time_struct::hour'],['../group___l_e_g_a_c_y.html#a38b3a7ab25191e678ddbde32ac50da7e',1,'RAM_DATETIME::hour']]]
 ];

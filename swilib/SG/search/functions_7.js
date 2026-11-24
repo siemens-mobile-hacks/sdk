@@ -166,7 +166,7 @@ var searchData=
   ['getunicodesymbolbydynicon_163',['GetUnicodeSymbolByDynIcon',['../group___w_s_h_d_r.html#gab0100111647a65be7f4a8a5b133bd2b5',1,'wstring.h']]],
   ['getvibrastatus_164',['GetVibraStatus',['../group___m_i_s_c.html#gad68eab1388351b1ec514ca164ab43f31',1,'misc.h']]],
   ['getwavlen_165',['GetWavLen',['../group___file.html#ga18287f6df4bf061289ceb9941b838e9e',1,'file.h']]],
-  ['getwavlenbycontent_166',['GetWavLenByContent',['../group___l_e_g_a_c_y.html#ga0dcc715dd0a04b12ac7ff265f4106a08',1,'legacy.h']]],
+  ['getwavlenbycontent_166',['GetWavLenByContent',['../group___l_e_g_a_c_y.html#ga36c68ba325af3dda57d0f8f947db8aa6',1,'legacy.h']]],
   ['getweek_167',['GetWeek',['../group___date_time.html#gafbf2787f486102f8fd113190dfd6b443',1,'date.h']]],
   ['gprs_5fonoff_168',['GPRS_OnOff',['../group___g_p_r_s.html#gab7e6794e50eb6e643039e83822857e73',1,'gprs.h']]],
   ['gsm_5fl1_5fdisable_169',['GSM_L1_Disable',['../group___system.html#gac3f3f6bb3fdc947a2744ce5efe3f8c82',1,'system.h']]],

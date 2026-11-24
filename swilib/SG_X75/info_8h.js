@@ -27,7 +27,6 @@ var info_8h =
     [ "Get_Phone_Info", "group___info.html#ga922f5001ef201e4abab843b9ce15a43a", null ],
     [ "GetCurrentLocale", "group___info.html#gad30ccd654823fdbd65de7dc01c16f4b7", null ],
     [ "RamDisplayLanguage", "group___info.html#ga839a07ed0dfc5f7c990cfdde01c52b38", null ],
-    [ "RamInputLanguage", "group___info.html#ga826aac442cd4451fe0982a31cc2dab91", null ],
     [ "GetAkku", "group___info.html#ga16997585e6f2d3f622de43023007f4d7", null ],
     [ "GetAkkuCapacity", "group___info.html#gaf575dea2b27b525b433bef2acb9ab2da", null ],
     [ "RamCap", "group___info.html#ga09945d720beb754bb6879b63f28ab62c", null ],

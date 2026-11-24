@@ -725,7 +725,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or socket error code (same as *<a class="el" href="#ga04e7c1a8d2c7787e27ce895e5ff5e4b7" title="Pointer to the last socket error.">socklasterr()</a>)</dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="#structhostent">hostent</a> *response;</div>
 <div class="line"><span class="keywordtype">int</span> req_id;</div>
 <div class="line"><span class="keywordtype">int</span> ret = <a class="code hl_function" href="#ga7b9f404d7034accc3a9f6ad82051f4a0">async_gethostbyname</a>(<span class="stringliteral">&quot;LOCALHOST&quot;</span>, &amp;response, &amp;req_id);</div>
@@ -961,7 +961,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error (see <a class="el" href="#ga04e7c1a8d2c7787e27ce895e5ff5e4b7" title="Pointer to the last socket error.">socklasterr</a>) </dd></dl>
 
 </div>
 </div>
@@ -1121,7 +1121,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error (see <a class="el" href="#ga04e7c1a8d2c7787e27ce895e5ff5e4b7" title="Pointer to the last socket error.">socklasterr</a>) </dd></dl>
 
 </div>
 </div>

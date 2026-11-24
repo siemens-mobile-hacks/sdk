@@ -724,9 +724,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga39250708c8bd1893ca27af311ad80216" id="r_ga39250708c8bd1893ca27af311ad80216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_r_a_p___l_c_d_l_a_y_e_r___l_i_s_t">RAP_LCDLAYER_LIST</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39250708c8bd1893ca27af311ad80216">RamLcdRapLayersList</a> ()</td></tr>
 <tr class="memdesc:ga39250708c8bd1893ca27af311ad80216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the list of the <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a>'s (RAP).  <br /></td></tr>
 <tr class="separator:ga39250708c8bd1893ca27af311ad80216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd88cdf023a49f2aaead6dda4becbbed" id="r_gabd88cdf023a49f2aaead6dda4becbbed"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd88cdf023a49f2aaead6dda4becbbed">Ram_LCD_Overlay_Layer</a> ()</td></tr>
-<tr class="memdesc:gabd88cdf023a49f2aaead6dda4becbbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown.  <br /></td></tr>
-<tr class="separator:gabd88cdf023a49f2aaead6dda4becbbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga238aa2067d6cef0af0df186aca8f6197" id="r_ga238aa2067d6cef0af0df186aca8f6197"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga238aa2067d6cef0af0df186aca8f6197">Ram_LCD_Overlay_Layer</a> ()</td></tr>
+<tr class="memdesc:ga238aa2067d6cef0af0df186aca8f6197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlay layer of the display.  <br /></td></tr>
+<tr class="separator:ga238aa2067d6cef0af0df186aca8f6197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Deprecated</h2></td></tr>
 <tr class="memitem:ga83025ab9854751c8df647944893970e8" id="r_ga83025ab9854751c8df647944893970e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83025ab9854751c8df647944893970e8">SetPixel</a> (int x, int y, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *color)</td></tr>
@@ -3358,8 +3358,10 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 </div><div class="memdoc">
 
 <p>Build "Canvas" with IDLE Wallpaper. </p>
-<p>"Canvas" is a really meaning for standard UI background. </p><dl class="section note"><dt>Note</dt><dd>Useful for painting widgets to the IDLE screen. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the "canvas" object </dd></dl>
+<p>"Canvas" is a really meaning for standard UI background. </p><dl class="section note"><dt>Note</dt><dd>Useful for painting widgets to the IDLE screen. </dd>
+<dd>
+On ELKA the canvas is drawn only while the IDLE UI is on top (<a class="el" href="group___i_d_l_e.html#gac7a4c918386482153b7d5eb1dfa0af79" title="Check if the IDLE is currently displayed.">IsIdleUiOnTop</a>). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the "canvas" object for <a class="el" href="#gac3c4d4570c2220a0d0594832a30ed63c" title="&quot;Canvas&quot; is a really meaning for standard UI background.">DrawCanvas</a> </dd></dl>
 <dl class="section user"><dt>Pointer to the memory:</dt><dd>FLASH </dd></dl>
 
 </div>
@@ -4185,18 +4187,18 @@ Call only from MMI! (not SUBPROC) </dd></dl>
 </div><div class="memdoc">
 
 <p>Pointer to the list of the <a class="el" href="#struct_l_c_d_l_a_y_e_r" title="LCD drawing layer.">LCDLAYER</a>'s (RAP). </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the array of <a class="el" href="#struct_l_c_d_l_a_y_e_r___l_i_s_t" title="LCD drawing layer container.">LCDLAYER_LIST</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the array of 5 <a class="el" href="#struct_r_a_p___l_c_d_l_a_y_e_r___l_i_s_t" title="LCD drawing layer container (RAP).">RAP_LCDLAYER_LIST</a> </dd></dl>
 
 </div>
 </div>
-<a id="gabd88cdf023a49f2aaead6dda4becbbed" name="gabd88cdf023a49f2aaead6dda4becbbed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabd88cdf023a49f2aaead6dda4becbbed">&#9670;&#160;</a></span>Ram_LCD_Overlay_Layer()</h2>
+<a id="ga238aa2067d6cef0af0df186aca8f6197" name="ga238aa2067d6cef0af0df186aca8f6197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga238aa2067d6cef0af0df186aca8f6197">&#9670;&#160;</a></span>Ram_LCD_Overlay_Layer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * Ram_LCD_Overlay_Layer </td>
+          <td class="memname"><a class="el" href="#struct_l_c_d_l_a_y_e_r">LCDLAYER</a> * Ram_LCD_Overlay_Layer </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -4204,8 +4206,8 @@ Call only from MMI! (not SUBPROC) </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Unknown. </p>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the unknown </dd></dl>
+<p>Overlay layer of the display. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the layer </dd></dl>
 
 </div>
 </div>
