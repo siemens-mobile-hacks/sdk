@@ -292,12 +292,13 @@ int isDecryption(void)
 __swi_end(0x289, isDecryption, ());
 
 /**
- * Checking if current call don't have number.
- * @return 1 or 0
+ * Check if the call has a number.
+ * @param call_id	call ID (1..7), other values cause a fatal error
+ * @return nonzero (pointer to the internal number record) if the call has a number, 0 if it has none
  * */
 __swi_begin(0x07D)
-int IsIncognitoCall(void)
-__swi_end(0x07D, IsIncognitoCall, ());
+int IsIncognitoCall(int call_id)
+__swi_end(0x07D, IsIncognitoCall, (call_id));
 
 /**
  * Checking for an active direct call.
@@ -384,11 +385,11 @@ RAMNET *RamNet()
 __swi_end(0x80CA, RamNet, ());
 
 /**
- * Check if cellular network is online.
- * @return 1 or 0
+ * Network online flag.
+ * @return pointer to the flag: 1 if the network is online, 0 otherwise
  * */
 __swi_begin(0x80D6)
-RAMNET *RamNetOnline()
+int *RamNetOnline()
 __swi_end(0x80D6, RamNetOnline, ());
 
 /**
@@ -573,10 +574,12 @@ __swi_end(0x048, ReadNewSMS, ());
 
 /**
  * Open new received flash SMS in SMS UI.
+ * @param ack	nonzero: acknowledge the flash SMS when the UI is closed
+ * @return CSM ID or 0 if there is no flash SMS
  * */
 __swi_begin(0x049)
-void ReadFlashSMS()
-__swi_end(0x049, ReadFlashSMS, ());
+int ReadFlashSMS(int ack)
+__swi_end(0x049, ReadFlashSMS, (ack));
 
 /**
  * Starts "opwvmsg:RGetAllEmail" in Openwave.

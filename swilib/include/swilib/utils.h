@@ -70,8 +70,8 @@ __swi_end(0x0AF, HexToInt, (s, fallback));
 
 /**
  * Convert HEX char to int.
- * @param c		HEX char
- * @return int
+ * @param c		HEX char, any case
+ * @return 0..15 or 0xFF if the char is not a HEX digit
  * */
 __swi_begin(0x081)
 int HexCharToInt(char c)

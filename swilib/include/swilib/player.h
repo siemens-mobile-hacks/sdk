@@ -16,11 +16,14 @@ __swilib_begin
  */
 
 /**
- * Pointer to the magic value for controlling media player.
- * @return pointer
- * 
+ * Pointer to the CSM ID of the media player, used to send commands to it.
+ * @return NSG: CSM ID of the player controlled by Bluetooth (AVRCP) keys, 0 when it closes; always 0 on S68
+ * @return ELKA: CSM ID of the player that last started playback, 0xFFFE before the first playback
+ * @note On ELKA the value is not cleared when the player closes, check #IsPlayerOn before sending commands.
+ * @platforms NSG, ELKA
+ *
  * ```C
- * uint32_t ctrl_code = *RamMPlayer_CtrlCode();
+ * GBS_SendMessage(MMI_CEPID, 0x8053, 0, *RamMPlayer_CtrlCode(), cmd);
  * ```
  * */
 __swi_begin(0x80E1)

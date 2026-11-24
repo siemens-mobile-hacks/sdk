@@ -1719,19 +1719,23 @@ __swi_end(0x2DA, TViewGetUserPointer, (gui));
  * */
 
 /**
- * Create radios button list.
- * @param desc				gui description
+ * Create radio button list.
+ * @param items				array of 20-byte items, the first word of each item is its ID
  * @param num				number of the items
- * @param unk_zero0			unknown, set to 0
- * @param unk_zero1			unknown, set to 0
- * @param selected_item		selected item index
- * @param handler			item handler
- * @param flags				unknown flags
- * @return GUI ID
+ * @param exclude_ids		IDs of the items to hide, can be NULL
+ * @param exclude_count		number of the IDs in exclude_ids
+ * @param selected_id		ID of the checked item (used when bit 1 of flags is set)
+ * @param handler			item handler, return 1 to close the list
+ * @param flags				bit 0: alternative header and GUI style, bit 1: check selected_id
+ * @param header_lgp		header text (LGP ID)
+ * @param header_icon		header icon
+ * @param user1				passed to the handler
+ * @param user2				passed to the handler
+ * @return GUI ID or 0
  * */
 __swi_begin(0x22B)
-int CreateRadioButtonList(void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void (*handler)(int), int flags)
-__swi_end(0x22B, CreateRadioButtonList, (desc, num, unk_zero0, unk_zero1, selected_item, handler, flags));
+int CreateRadioButtonList(const void *items, int num, const int *exclude_ids, int exclude_count, int selected_id, int (*handler)(int item_id, int key, int user1, int user2), int flags, int header_lgp, const int *header_icon, int user1, int user2)
+__swi_end(0x22B, CreateRadioButtonList, (items, num, exclude_ids, exclude_count, selected_id, handler, flags, header_lgp, header_icon, user1, user2));
 
 /** @} */
 

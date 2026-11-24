@@ -344,7 +344,9 @@ FF,4D,2D,E9,??,??,??,E2,42,CC,41,E2,07,C0,5C,E2,??,??,??,E5,??,??,??,E1,??,??,??
 
 [033]
 decl = "short SoundAE_PlayFileAsEvent(int event_id, int cepid, int msg_id, const WSHDR *folder, const WSHDR *file)"
-NSG = "08402DE90030A0E300308DE5????????0880BDE8"
+NSG = "FF4D2DE90060A0E1????9FE530809DE502B0A0E103A0A0E1"
+ELKA = "FF4D2DE918D04DE20060A0E1????9FE548809DE502B0A0E1"
+SG = "FF4D2DE930709DE502B0A0E101A0A0E10380A0E10060A0E1"
 
 [034]
 decl = "void PlaySoundLoop(int unk1, int unk2, int duration)"
@@ -453,11 +455,12 @@ NSG = false
 SG = "00B5??B06846????????00226946??48??????????B000BD+1"
 
 [049]
-decl = "void ReadFlashSMS()"
+decl = "int ReadFlashSMS(int ack)"
 NSG = """
 ??,B5,??,1C,??,??,??,??,??,1C,{??,B5,??,B0,??,1C,??,1C,??,B0,??,??,??,??,??,28,??,D1,??,B0,??,B0,??,BD,??,
 ??,??,32,??,1C,??,A8,??,??,??,??,??,??,??,02,??,46,??,18,??,62,??,48,??,46,??,22,??,??,??,??,??,E7},??,BD
 """
+SG = "B0 B5 FF B0 04 1C 0D 1C 91 B0 ?? F? ?? F? 00 28 02 D1 7F B0 11 B0 B0 BD FF 22 ED 32 21 1C 0A A8 ?? F? ?? ?? 01 21 49 02 68 46 40 18 05 62 ?? 48 69 46 02 22 ?? F? ?? ?? ?? E7 01 1C ?? 48 00 68 ?? E7 + 3B"
 
 [04A]
 decl = "short PlayFile(int flags, const WSHDR *folder, const WSHDR *file, int cepid, int msgid, const PLAYFILE_OPT *sfo)"
@@ -734,7 +737,6 @@ NSG = "011C00200A2980B5??D218204843 + 1"
 
 [077]
 decl = "void DrwObj_SetColor_2(DRWOBJ *drwobj, const char *pen, const char *brush)"
-NSG = ""
 
 [078]
 decl = "int GetTimeFormat()"
@@ -778,7 +780,7 @@ NSG = """
 """
 
 [07D]
-decl = "int IsIncognitoCall(void)"
+decl = "int IsIncognitoCall(int call_id)"
 NSG = "10B5041C????????3221201C????????D420 + 1"
 
 [07E]
@@ -804,7 +806,7 @@ NSG = """
 
 [081]
 decl = "int HexCharToInt(char c)"
-NSG = "0A1040E2200140E0200280E0200480E0200880E0A001A0E1002180E0821051E0010080520A1081421EFF2FE1"
+ALL = "??B5????????011C3039092901D8081C??BD011C6139052901D85738??BDFF20??BD"
 
 [082]
 decl = "const WSHDR *MediaProc_GetLastAudioTrackFilename()"
@@ -985,7 +987,7 @@ ELKA = """
 SG = false # Absent from SG/X75 firmware; ELFLoader provides the builtin implementation.
 
 [096]
-decl = "short GetWavLenByContent(uint8_t *bytes, int offset, short *duration)"
+decl = "short GetWavLenByContent(const uint8_t **data, uint32_t riff_size, void *info)"
 NSG = "??,B5,??,68,??,1C,??,25,??,1C,??,21,??,36,??,1C,??,B0,??,??,??,FF,??,42,??,D0,??,1C,??,1C,??,30"
 
 [097]
@@ -1217,7 +1219,6 @@ NSG = "<A0063001>"
 
 [0C0]
 decl = "uint32_t MiniGPS()"
-NSG = ""
 
 [0C1]
 decl = "void RunDispatcher()"
@@ -1225,7 +1226,6 @@ NSG = "<A0060C51>"
 
 [0C2]
 decl = "void GetAllPatchesByInject()"
-NSG = ""
 
 [0C3]
 decl = "void ProcessFiles(const char *path, void (*callback)(const char *text))"
@@ -1245,7 +1245,6 @@ NSG = "(20,08,A0,E1,08,80,BD,E8,??,??,??,E5,??,??,??,E1,1E,FF,2F,E1)+8"
 
 [0C7]
 decl = "void CallLibFunByNumber(int func_id)"
-NSG = ""
 
 [0C8]
 decl = "uint16_t *RamCap()"
@@ -1276,11 +1275,12 @@ NSG = "&(??,49,00,20,08,60,70,47,??,48,40,68,70,47) + 4"
 
 [0CD]
 decl = "char *RamMissedSMS()"
-NSG = ""
 
 [0CE]
-decl = "void *RamDateTime()"
-NSG = "*(50 BF 00 00 ?? ?? ?? ?? 01 00 00 80 + 4) - 0x50"
+decl = "RAM_DATETIME *RamDateTime()"
+NSG = "&(10 B5 04 1C ?? F? ?? E? ?? 49 06 23 C8 5E 08 23 CA 5E 0A 23 C9 5E 03 1C 20 1C + 8)"
+ELKA = "&(38 B5 ?? 4C 05 1C 20 1C ?? F? ?? E? 00 22 00 92 00 23 E0 5E 02 23 E2 5E 04 23 E1 5E + 2)"
+SG = "&(38 B5 04 1C ?? F? ?? ?? 20 1C ?? F? ?? ?? ?? 4D 80 35 A8 80 20 1C ?? F? ?? ?? 68 80 20 1C ?? F? ?? ?? 28 80 + 0E) + 80"
 
 [0CF]
 decl = "char *RamAlarmClockState()"
@@ -1291,8 +1291,17 @@ decl = "void *RamAccPoint(void)"
 NSG = "*(1EFF2FE1E4008FE21EFF2FE1F0008FE21EFF2FE1F4008FE21EFF2FE1+20)"
 
 [0D1]
-decl = "SS_RAM *RamScreenSaverCSM(void)"
+decl = "SS_RAM **RamScreenSaverCSM(void)"
+decl_SG = "CSM_RAM **RamScreenSaverCSM(void)"
 NSG = "*(??560000E8030000000000000000000001000000140500000600000000000000-10)"
+X75 = [
+	"&(?? 48 C0 68 80 30 ?? 68 70 47) + C",
+	"&(?? 48 00 68 80 30 40 68 70 47)",
+]
+SG = [
+	"&(?? 48 00 68 C0 6F 70 47)",
+	"&(?? 48 14 38 00 68 80 30 40 68 70 47) - 14",
+]
 
 [0D2]
 decl = "char *RamIsAutoTimeEnabled(void)"
@@ -1301,7 +1310,6 @@ SG = "&(??4800797047??4980B5087100F0????80BD)+4"
 
 [0D3]
 decl = "char *RamIsStandby()"
-NSG = ""
 
 [0D4]
 decl = "char *RamMissedMessage()"
@@ -1316,7 +1324,7 @@ decl = "int *RamIsLocked(void)"
 NSG = "&(??,49,??,B5,??,20,??,39,??,60,??,21,??,20) - 10"
 
 [0D6]
-decl = "RAMNET *RamNetOnline()"
+decl = "int *RamNetOnline()"
 NSG = "&(??,48,??,B5,??,68,??,49,??,28,??,D1,??,??,??,??,??,28,??,D0)"
 
 [0D7]
@@ -1330,7 +1338,6 @@ ELKA = "&(10 B5 ?? 4C 04 22 20 1C ?? A1 ?? F? ?? E? ?? 48 89 38 44 60 + 2)"
 
 [0D9]
 decl = "void *RamShutdownMode()"
-NSG = ""
 
 [0DA]
 decl = "char *RamIsShutdown()"
@@ -1350,7 +1357,7 @@ NSG = false # heap object
 
 [0DE]
 decl = "char *RamIsSimPresent()"
-NSG = "&(??,??,??,E5,??,??,??,E7,??,??,??,E3,??,??,??,13,??,??,??,03,??,??,??,EA)"
+ALL = "&(?? ?? [.0011111] E5 00 20 D3 E5 00 00 52 E3 05 00 A0 13 1E FF 2F 11 01 00 50 E3 07 00 A0 23 1E FF 2F 21 ?? ?? [.0011111] E5 00 C1 92 E7 01 00 5C E3 ?? 10 83 15 01 10 A0 13 00 11 82 17 0B 00 A0 03 + 20)"
 
 [0DF]
 decl = "char *RamPressedKey()"
@@ -1368,7 +1375,7 @@ ELKA = [
 [0E1]
 decl = "uint32_t *RamMPlayer_CtrlCode()"
 NSG = "&(F8B501270D1C041C081C????????????808831888842+0E) + 4"
-ELKA = "*(00 30 8D E5 53 20 A0 E3 B0 1F 82 E2 02 30 A0 E3 + 48)+8"
+ELKA = "*(00308DE55320A0E3B01F82E20230A0E3????8FE2??????FB????9FE5B000D4E1FFCC40E2FEC05CE2 + 48) + 8"
 
 [0E2]
 decl = "char *RamKeyBuffer(void)"
@@ -1387,8 +1394,7 @@ NSG = "<0000123D>"
 
 [0E6]
 decl = "int PIT_Pic_Big()"
-NSG = "<00000260>"
-ELKA = "<00000268>"
+NSG = "*(CD,3B,3E,BF,23,4A,2B,BF,10,7A,16,BF,00,00,00,BF,FB,3A,D0,BE,3F,35,9E,BE,BD,E3,54,BE,19,04,D6,BD,??,02,00,00 + 0x20)"
 
 [0E7]
 decl = "int PIT_Pic_Little()"
@@ -1408,7 +1414,7 @@ NSG = "<00000818>"
 
 [0EB]
 decl = "int PIT_Pic_Call()"
-NSG = ""
+NSG = "<0000081A>"
 
 [0EC]
 decl = "int PIT_Pic_AdvNet()"
@@ -1432,10 +1438,7 @@ NSG = "<00001200>"
 
 [0F1]
 decl = "void *BuildCanvas(void)"
-NSG = [
-	"F0,B5,07,1C,??,48,0E,1C,C1,6A,00,6B,87,B0,06,90,00,25,00,20,05,91",
-	"F0,B5,07,1C,??,48,0E,1C,??,6?,??,6?,87,B0,06,90,00,25,00,20,05,91",
-]
+NSG = "F0,B5,07,1C,??,48,0E,1C,?1,6B,?0,6B,87,B0,06,90,00,25,00,20,05,91"
 
 [0F2]
 decl = "int Registry_RegClient(const REG_CLIENT *client)"
@@ -1449,10 +1452,10 @@ ELKA = "10 40 2D E9 00 40 A0 E1 ?? ?? ?? E5 ?? ?? ?? E2 88 1F A0 E3 ?? ?? ?? EB 
 
 [0F4]
 decl = "int PIT_Pic_Lani()"
-NSG = ""
+NSG = "<00000840>"
 
 [0F5]
-decl = "void *Ram_LCD_Overlay_Layer()"
+decl = "LCDLAYER *Ram_LCD_Overlay_Layer()"
 NSG = "&(E08170BD70B5051C0C1C??????48 + 0C)"
 ELKA = [
 	"&(9E,B5,01,28,??,D1,??,F?,??,F?,??,4C,00,21,20,1C,C0,30 + 0A) + 4",
@@ -1465,35 +1468,27 @@ NSG = "&(00B5??????FF431C??D0??4940014018??????BD0020??BD??B5??????FF0028??D0???
 
 [0F7]
 decl = "RAP_LCDLAYER_LIST *RamLcdRapLayersList()"
-NSG = ""
 
 [0F8]
 decl = "void *Additional_PIT_address()"
-NSG = ""
 
 [0F9]
 decl = "uint32_t Additional_PIT_start()"
-NSG = ""
 
 [0FA]
 decl = "uint32_t Additional_PIT_end()"
-NSG = ""
 
 [0FB]
 decl = "void *ShortcutsTableAddr()"
-NSG = ""
 
 [0FC]
 decl = "void *PictureRelocationTableAddr()"
-NSG = ""
 
 [0FD]
 decl = "uint32_t PictureRelocationBaseAddr()"
-NSG = ""
 
 [0FE]
 decl = "uint32_t NextPictureMagicValue()"
-NSG = ""
 
 [0FF]
 decl = "void *AddrLibrary()"
@@ -1610,23 +1605,18 @@ NSG = "??,1C,??,??,??,B5,??,68,??,68,??,??,??,??,??,??,??,BD,00,20,F4,E7 + 13"
 
 [10A]
 decl = "void *GetConfig(uint32_t id)"
-NSG = ""
 
 [10B]
 decl = "void *GetMinAdrScan()"
-NSG = ""
 
 [10C]
 decl = "void *GetMaxAdrScan()"
-NSG = ""
 
 [10D]
 decl = "uint16_t *GetCI()"
-NSG = ""
 
 [10E]
 decl = "void Vibration(uint32_t power, uint32_t duration)"
-NSG = ""
 
 [10F]
 decl = "void freeUSSD()"
@@ -2298,11 +2288,9 @@ NSG = "??,B5,??,1C,??,22,??,92,??,04,??,0C,??,23,??,06,??,0E,??,??,??,??,??,BD"
 
 [171]
 decl = "void SUBPROC(void *callback, ...)"
-NSG = ""
 
 [172]
 decl = "void REDRAW(void)"
-NSG = ""
 
 [173]
 decl = "int socket(int domain, int type, int protocol)"
@@ -2586,7 +2574,6 @@ NSG = [
 
 [19C]
 decl = "void SEQKILLER(void *data, void (*next_in_seq)(void *), void *data_to_kill)"
-NSG = ""
 
 [19D]
 decl = "unsigned long long getCpuUsedTime_if_ena(void)"
@@ -2594,7 +2581,7 @@ NSG = [
 	"10402DE9????1FE5740094E5000050E344104F02",
 	"??,??,??,E5,??,??,??,E5,??,??,??,E3,??,??,??,02,??,??,??,08,??,??,??,15,??,??,??,15,??,??,??,E1",
 ]
-ELKA = "10402DE9????1FE5740094E5000050E344104F02"
+SG = "10 40 2D E9 ?? ?? ?? EB ?? 40 1F E5 64 10 A0 E3 78 30 94 E5 74 20 94 E5 03 30 40 E0 03 20 82 E0 78 00 84 E5 74 20 84 E5 6C 00 94 E5 00 00 92 E0"
 
 [19E]
 decl = "void StartCpuUsageCount(void)"
@@ -2714,15 +2701,12 @@ ALL = false # Implemented by ELFLoader as EXT2_AREA; there is no firmware target
 
 [1B9]
 decl = "PNGTOP_DESC *PNG_TOP(void)"
-NSG = ""
 
 [1BA]
 decl = "void *LIB_TOP(void)"
-NSG = ""
 
 [1BB]
 decl = "SFN_DATA *DATA_N_SFB(void)"
-NSG = ""
 
 [1BC]
 decl = "void SHA1_Init(SHA_CTX *c)"
@@ -2976,7 +2960,6 @@ NSG = """
 
 [1E9]
 decl = "IMGHDR *CreateIMGHDRFromPngFile(const char *path, int type)"
-NSG = ""
 
 [1EA]
 decl = "int GetMaxDynIcon(void)"
@@ -3059,8 +3042,8 @@ ELKA = "&(??,49,??,23,??,31,??,1C,??,56,??,??,??,??,??,23,??,56,??,28) + 0x8D"
 
 [1FB]
 decl = "char *RamMediaIsPlaying()"
-NSG = "&(??,??,?F,E5,??,??,?F,E5,??,??,01,E2,??,??,00,0A) + 48"
-ELKA = "&(??,??,?F,E5,??,??,?F,E5,??,??,01,E2,??,??,00,0A)+0x6D"
+NSG = "&(?? 5? ?F E5 04 00 14 E3 ?? 00 D5 E5 ?? 10 D5 E5 01 70 A0 E3 ?? 6? ?F E5 ?? 8? ?F E5 04 10 01 E2 0F 00 00 0A 00 00 51 E3 04 00 10 03 17 00 00 1A) + 18"
+ELKA = "&(????1FE54630A0E32D00C1E500308DE52D2081E25210A0E30130A0E30000A0E3) + 2D"
 
 [1FC]
 decl = "void CloseCSM(int id)"
@@ -3312,7 +3295,7 @@ NSG = """
 
 [220]
 decl = "char IsSliderClosed()"
-NSG = "??,48,??,38,00,78,70,47 + 1"
+NSG = "?? 48 18 38 00 78 70 47 ?? 48 18 38 40 78 70 47 + 1"
 
 [221]
 decl = "void SetCpuClockLow(int unk)"
@@ -3376,7 +3359,7 @@ NSG = """
 """
 
 [22B]
-decl = "int CreateRadioButtonList(void *desc, int num, int unk_zero0, int unk_zero1, char selected_item, void (*handler)(int), int flags)"
+decl = "int CreateRadioButtonList(const void *items, int num, const int *exclude_ids, int exclude_count, int selected_id, int (*handler)(int item_id, int key, int user1, int user2), int flags, int header_lgp, const int *header_icon, int user1, int user2)"
 NSG = "??B51E1C051C002881B0"
 
 [22C]
@@ -3428,15 +3411,12 @@ NSG = "80B500214FA0"
 
 [234]
 decl = "int GetLunarDate(const TDate *date, TDate *lunar_date)"
-NSG = ""
 
 [235]
 decl = "int GetLunarYearID(int year)"
-NSG = ""
 
 [236]
 decl = "int GetLunarAnimal(int year)"
-NSG = ""
 
 [237]
 decl = "char *RamIconBar()"
@@ -3494,11 +3474,9 @@ NSG = "F0 B5 05 1C 0C 1C 00 28 89 B0 ?? ?? 00 2C"
 
 [242]
 decl = "void gb2ws(WSHDR *destination, const char *source, int size)"
-NSG = ""
 
 [243]
 decl = "void ws2gb(const WSHDR *source, char *destination, int size)"
-NSG = ""
 
 [244]
 decl = "int Base64Encode(void *inbuf, int insize, void *outbuf, int outsize)"
@@ -3971,7 +3949,7 @@ NSG = "25,48,40,88,70,47 + 1"
 
 [29C]
 decl = "char *RamInputLanguage()"
-NSG = "&(??,48,40,79,C0,07,C0,0F,70,47) + 5"
+NSG = "&(?? 48 C0 88 00 06 00 16 70 47) + 5"
 
 [29D]
 decl = "char *RamDisplayLanguage()"
@@ -3983,7 +3961,7 @@ NSG = "&(??,20,??,43,??,4B,??,5A,??,42,??,D1,??,18,??,6E,??,28,??,D1,??,23,??,43
 
 [29F]
 decl = "char *RamIsBTHeadsetConnected()"
-NSG = "&(??,20,??,43,??,4B,??,5A,??,42,??,D1,??,18,??,6E,??,28,??,D1,??,23,??,43,??,4B+4)"
+NSG = "&(?? 4B 1E 5A BE 42 ?? D1 C2 18 D0 6E 00 28 ?? D1)"
 
 [2A0]
 decl = "int GetAlarmClockState(int state)"
@@ -5059,7 +5037,6 @@ ELKA = "??,28,??,D1,??,BD,??,30,??,78,??,BD,+0xC"
 
 [38A]
 decl = "void *RamAudioHook()"
-NSG = ""
 
 [38B]
 decl = "const char *RamLastStoreString()"

@@ -205,8 +205,9 @@ __swi_end(0x82FA, GetLoaderVersion, ());
 
 
 /**
- * Get function library address.
+ * Address of the ElfPack function library.
  * @return address in memory
+ * @note Defined by the ElfPack placement, not by firmware.
  * @pointer-type FLASH
  * */
 __swi_begin(0x80FF)
@@ -345,8 +346,12 @@ void StartCpuUsageCount(void)
 __swi_end(0x19E, StartCpuUsageCount, ());
 
 /**
- * Get CPU usage (time), if the cpu usage monitor is enabled.
- * @return time in unknown unit
+ * Get CPU usage monitor value. The result depends on the model.
+ * @return ELKA, S68: time since #StartCpuUsageCount in microseconds, or 0 if the monitor is disabled
+ * @return C81, S75, SL75: time of the last #StartCpuUsageCount in microseconds, or 0 if the monitor is disabled
+ * @return SG, X75: CPU load in percent (0-100, in the low 32 bits); does not check that the monitor is enabled
+ * @note On NSG and ELKA, nonzero means that the monitor is enabled.
+ * @warning On SG and X75, each call resets the CPU usage counters.
  * */
 __swi_begin(0x19D)
 unsigned long long getCpuUsedTime_if_ena(void)

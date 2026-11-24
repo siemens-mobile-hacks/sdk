@@ -109,18 +109,6 @@ __swi_begin(0x829D)
 char *RamDisplayLanguage()
 __swi_end(0x829D, RamDisplayLanguage, ());
 
-/**
- * Get the phone's input language.
- * @return pointer to the language ID
-
- * ```C
- * int lang_id = *RamInputLanguage();
- * ```
- * */
-__swi_begin(0x829C)
-char *RamInputLanguage()
-__swi_end(0x829C, RamInputLanguage, ());
-
 /** @} */
 
 /**
@@ -226,7 +214,8 @@ __swi_end(0x829E, RamIsBTConnected, ());
 
 /**
  * Check if bluetooth connected to the headset.
- * @return C-string
+ * @return pointer to the low byte of the connection handle in BT link slot 0: 0xFF if no device is connected
+ * @note Any BT device in link slot 0 is reported, usually the headset.
  * */
 __swi_begin(0x829F)
 char *RamIsBTHeadsetConnected()
@@ -257,8 +246,9 @@ __swi_end(0x009D, GetMissedEventsPtr, ());
  * */
 
 /**
- * Check if slider closed.
- * @return 1 or 0
+ * Get slider position.
+ * @return 1 if the slider is closed, 0 if it is open, 2 if the position is unknown
+ * @note Always returns 2 on models without a slider.
  * */
 __swi_begin(0x220)
 char IsSliderClosed()
@@ -266,7 +256,8 @@ __swi_end(0x220, IsSliderClosed, ());
 
 /**
  * Check if SIM-card is present.
- * @return SIM status
+ * @return pointer to the flag: nonzero while a SIM card is active, 0 if no card answered or the SIM is deactivated
+ * @note The flag is nonzero during the first activation attempts at startup, until card detection finishes.
  * */
 __swi_begin(0x80DE)
 char *RamIsSimPresent()
@@ -282,7 +273,7 @@ __swi_end(0x8282, RamIsRunCamera, ());
 
 /**
  * Check if phone in shutdown process.
- * @return 1 or 0
+ * @return pointer to the flag: 1 after the power-off started by holding the end key, 0 otherwise
  * */
 __swi_begin(0x80DA)
 char *RamIsShutdown()

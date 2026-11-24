@@ -81,12 +81,17 @@ SS_RAM *GetScreenSaverRAM(void)
 __swi_end(0x068, GetScreenSaverRAM, ());
 
 /**
- * Get screensaver CSM.
- * @return pointer to the screensaver CSM
+ * Variable with the screensaver CSM.
+ * @return NSG: pointer to the variable with the screensaver CSM
+ * @return SG: pointer to the variable with the IDLE CSM; it points to the screensaver at a model-specific offset
  * @deprecated use #GetScreenSaverRAM
  * */
 __swi_begin(0x80D1)
-SS_RAM *RamScreenSaverCSM(void)
+#ifdef NEWSGOLD
+SS_RAM **RamScreenSaverCSM(void)
+#else
+CSM_RAM **RamScreenSaverCSM(void)
+#endif
 __swi_end(0x80D1, RamScreenSaverCSM, ());
 
 /**

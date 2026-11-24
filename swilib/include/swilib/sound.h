@@ -244,10 +244,11 @@ char *RamVolumeLevel()
 __swi_end(0x81FA, RamVolumeLevel, ());
 
 /**
- * Checking if any sound is currently played
- * @return pointer to the value of an unknown PASIC register
- * @return SG: RamMediaIsPlaying() != 2 // sound is playing
- * @return NSG: RamMediaIsPlaying() != 0 // sound is playing
+ * Copy of a PASIC audio register, historically used to check if a sound is played.
+ * @return NSG: MONO control copy, 1 on C81/S75/SL75 and 2 on S68 while audio is routed to the speaker
+ * @return ELKA: DAC control copy, nonzero while the PCM audio path is active
+ * @return SG: pointer to the value of an unknown PASIC register, RamMediaIsPlaying() != 2 // sound is playing
+ * @note On NSG the value is also changed by key clicks and tones, and not changed for headset or Bluetooth playback.
  * @warning Result varies across platforms.
  * */
 __swi_begin(0x81FB)
@@ -486,7 +487,7 @@ __swi_end(0x09A, ChangeVolume, (volume));
  * @param msg_id		GBS message ID
  * @param folder		folder for custom sound, can be NULL
  * @param file			file for custom sound, can be NULL
- * @return 0 or error
+ * @return play handle or -1 (0xFFFF) on error
  * @warning Untested function that is not found in any ELF's.
  * */
 __swi_begin(0x033)

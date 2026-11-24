@@ -20,6 +20,20 @@ __swilib_begin
  * @{
  */
 
+typedef struct RAM_DATETIME RAM_DATETIME;
+
+/**
+ * RAM copy of the RTC calendar.
+ * */
+struct RAM_DATETIME {
+	uint16_t sec;			/**< Seconds */
+	uint16_t min;			/**< Minutes */
+	uint16_t hour;			/**< Hours */
+	uint16_t day;			/**< Day of the month */
+	uint16_t month;			/**< Month (1-12) */
+	uint16_t year;			/**< Year */
+};
+
 /**
  * @copydoc memcmp
  * @deprecated use #memcmp
@@ -165,16 +179,18 @@ int GetTimeFormat()
 __swi_end(0x078, GetTimeFormat, ());
 
 /**
- * Get duration of the .wav file.
- * @param bytes				pointer to the .wav file bytes
- * @param offset			unknown offset
- * @param[out] duration		output variable for duration
- * @return duration
- * @deprecated Strange function! Always use: #GetFileProp
+ * Parse the header of an IMA ADPCM .wav file (mono, 4 bits, 8000 or 16000 Hz).
+ * @param data				pointer to the pointer to the .wav file bytes, starting with "RIFF"
+ * @param riff_size			RIFF chunk size (32-bit value at offset 4 of the file)
+ * @param[out] info			buffer of 0xD8 bytes
+ * @return 0x11 on success, other values on error
+ * @note info: +0x00 status (uint16_t), +0x14 audio data offset (uint32_t), +0x18 duration in ms (uint32_t).
+ * @platforms NSG, ELKA
+ * @deprecated Always use: #GetFileProp
  * */
 __swi_begin(0x096)
-short GetWavLenByContent(uint8_t *bytes, int offset, short *duration)
-__swi_end(0x096, GetWavLenByContent, (bytes, offset, duration));
+short GetWavLenByContent(const uint8_t **data, uint32_t riff_size, void *info)
+__swi_end(0x096, GetWavLenByContent, (data, riff_size, info));
 
 /**
  * Pointer to the current track in MediaPlayer.
@@ -194,11 +210,12 @@ void *RamAudioParamsAddr(void)
 __swi_end(0x809B, RamAudioParamsAddr, ());
 
 /**
- * Pointer to the current datetime (unknown).
- * @return unknown
+ * Pointer to the current date and time.
+ * @return pointer to the RAM copy of the RTC calendar
+ * @note The time fields may not be updated on every platform, use #GetDateTime.
  * */
 __swi_begin(0x80CE)
-void *RamDateTime()
+RAM_DATETIME *RamDateTime()
 __swi_end(0x80CE, RamDateTime, ());
 
 /**
@@ -329,6 +346,16 @@ __swi_end(0x367, NU_Disable_History_Saving_2, ());
 __swi_begin(0x368)
 void NU_Enable_History_Saving_2(void)
 __swi_end(0x368, NU_Enable_History_Saving_2, ());
+
+/**
+ * Input language flags byte (historical address, not the language ID).
+ * @return pointer to the flags byte: bit 1 = first input language is automatic, bit 4 = second one is automatic
+ * @note The first input language follows this byte: index in the T9 language table (0-35).
+ * @deprecated Not the input language.
+ * */
+__swi_begin(0x829C)
+char *RamInputLanguage()
+__swi_end(0x829C, RamInputLanguage, ());
 
 /** @} */
 

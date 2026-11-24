@@ -1089,7 +1089,8 @@ __swi_end(0x207, DrawScrollString, (text, x1, y1, x2, y2, xdisp, font, text_flag
  * Build "Canvas" with IDLE Wallpaper.
  * "Canvas" is a really meaning for standard UI background.
  * @note Useful for painting widgets to the IDLE screen.
- * @return pointer to the "canvas" object
+ * @note On ELKA the canvas is drawn only while the IDLE UI is on top (#IsIdleUiOnTop).
+ * @return pointer to the "canvas" object for #DrawCanvas
  * @pointer-type FLASH
  * */
 __swi_begin(0x80F1)
@@ -1381,11 +1382,11 @@ RAP_LCDLAYER_LIST *RamLcdRapLayersList()
 __swi_end(0x80F7, RamLcdRapLayersList, ());
 
 /**
- * Unknown
- * @return pointer to the unknown
+ * Overlay layer of the display.
+ * @return pointer to the layer
  * */
 __swi_begin(0x80F5)
-void *Ram_LCD_Overlay_Layer()
+LCDLAYER *Ram_LCD_Overlay_Layer()
 __swi_end(0x80F5, Ram_LCD_Overlay_Layer, ());
 
 /** @} */
