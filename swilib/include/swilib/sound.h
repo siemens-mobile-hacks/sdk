@@ -351,10 +351,19 @@ __swi_end(0x225, PlayMelody_SetVolume, (handle, volume));
  * @param handle		play object handle
  * @param[out] volume	current volume, see #PLAY_VOLUME
  * @return 1 if success, 0 if error
- * @platforms NSG, ELKA
  * */
 __swi_begin(0x4E4)
 int PlayMelody_GetVolume(int handle, PLAY_VOLUME *volume)
+__swi_end(0x4E4, PlayMelody_GetVolume, (handle, volume));
+#else
+/**
+ * Get the volume of the playing melody.
+ * @param handle		play object handle
+ * @param[out] volume	current volume 0..15, 16 when the melody is not playing
+ * @return 1 if success, 0 if error
+ * */
+__swi_begin(0x4E4)
+int PlayMelody_GetVolume(int handle, int *volume)
 __swi_end(0x4E4, PlayMelody_GetVolume, (handle, volume));
 #endif
 

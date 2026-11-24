@@ -15,6 +15,7 @@
 __swilib_begin
 
 typedef struct GBS_MSG GBS_MSG;
+typedef struct MOPI_MSG MOPI_MSG;
 typedef struct GBSTMR GBSTMR;
 typedef struct IPC_REQ IPC_REQ;
 typedef struct PGROUP PGROUP;
@@ -119,6 +120,26 @@ struct GBS_MSG {
 	int submess;	/**< Sub message ID */
 	void *data0;	/**< Custom payload */
 	void *data1;	/**< Custom payload */
+};
+
+/**
+ * MOPI message header, the payload follows it. GBS messages are MOPI messages with a GBS payload.
+ * */
+struct MOPI_MSG {
+	MOPI_MSG *next;
+#ifdef NEWSGOLD
+	void (*on_destroy)(MOPI_MSG **msg);	/**< Called when the message is freed, NULL = none */
+	uint32_t flags;
+#else
+	uint16_t flags;
+	uint16_t unk1;
+#endif
+	uint16_t cepid_to;		/**< Destination CEPID */
+	uint16_t cepid_from;	/**< Sender CEPID */
+	uint16_t msg_id;		/**< Message ID */
+	uint16_t unk2;
+	uint16_t size;			/**< Payload size */
+	uint16_t unk3;
 };
 
 /**
@@ -256,8 +277,6 @@ __swi_begin(0x153)
 int GBS_RecActDstMessage(GBS_MSG *msg)
 __swi_end(0x153, GBS_RecActDstMessage, (msg));
 
-#ifdef NEWSGOLD
-
 /**
  * Get the native payload view of a received GBS message.
  * @param msg		received GBS message
@@ -276,36 +295,42 @@ __swi_begin(0x463)
 PGROUP *GBS_GetProcGroup(int cepid)
 __swi_end(0x463, GBS_GetProcGroup, (cepid));
 
-#endif
-
-#ifdef NEWSGOLD
-
 /**
- * Create a GBS message (the kernel's own format, as the firmware's drivers post their replies).
- * Header: +00 next, +08 flags (1), +0C u16 destination cepid, +0E u16 sender cepid (= current, may be
- * changed before #GBS_PostMsg, e.g. to answer as a file system driver), +10 u16 message id, +14 u16 size,
- * +18 payload.
- * @param[out] msg		message handle, pass it to #GBS_PostMsg
+ * Create a MOPI message.
+ * @param[out] msg		message handle, pass it to #MOPI_PostMessage
  * @param cepid_to		destination CEPID
  * @param msg_id		message id
  * @param size			payload size in bytes
- * @return payload (header + 0x18), NULL when size is 0
- * @platforms NSG, ELKA
+ * @return payload (right after the #MOPI_MSG header), NULL when size is 0
+ * @note msg->cepid_from is set to the current process and may be changed before #MOPI_PostMessage.
+ * */
+__swi_begin(0x4E1)
+void *MOPI_CreateMessage(MOPI_MSG **msg, int cepid_to, int msg_id, int size)
+__swi_end(0x4E1, MOPI_CreateMessage, (msg, cepid_to, msg_id, size));
+
+/**
+ * Post a message created with #MOPI_CreateMessage to its destination (sets the handle to NULL).
+ * @param msg		message handle
+ * */
+__swi_begin(0x4E2)
+void MOPI_PostMessage(MOPI_MSG **msg)
+__swi_end(0x4E2, MOPI_PostMessage, (msg));
+
+/**
+ * @copydoc MOPI_CreateMessage
+ * @deprecated Use #MOPI_CreateMessage instead.
  * */
 __swi_begin(0x4E1)
 void *GBS_CreateMsg(void **msg, int cepid_to, int msg_id, int size)
 __swi_end(0x4E1, GBS_CreateMsg, (msg, cepid_to, msg_id, size));
 
 /**
- * Post a message created with #GBS_CreateMsg to its destination (sets the handle to NULL).
- * @param msg		message handle
- * @platforms NSG, ELKA
+ * @copydoc MOPI_PostMessage
+ * @deprecated Use #MOPI_PostMessage instead.
  * */
 __swi_begin(0x4E2)
 void GBS_PostMsg(void **msg)
 __swi_end(0x4E2, GBS_PostMsg, (msg));
-
-#endif
 
 /**
  * ACK message received with #GBS_RecActDstMessage

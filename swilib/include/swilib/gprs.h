@@ -234,8 +234,6 @@ __swi_begin(0x187)
 int RequestLMANConnect(LMAN_DATA *data)
 __swi_end(0x187, RequestLMANConnect, (data));
 
-#ifdef NEWSGOLD
-
 /**
  * Request disconnection of a native LMAN context.
  * @param req		two request bytes: context ID, then disconnect cause
@@ -273,14 +271,17 @@ __swi_begin(0x43E)
 unsigned LMAN_AllocContext(unsigned bearer, uint8_t type)
 __swi_end(0x43E, LMAN_AllocContext, (bearer, type));
 
+#ifdef NEWSGOLD
 /**
  * Copy a NAP profile into an allocated LMAN context.
  * @param cid		context index 0..7
  * @param profile		profile with a terminated name and native bearer settings
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x43F)
 void LMAN_SetProfile(unsigned cid, const CTX_NAPDEF *profile)
 __swi_end(0x43F, LMAN_SetProfile, (cid, profile));
+#endif
 
 /**
  * Attach or detach a registered process from an LMAN context.
@@ -311,7 +312,7 @@ __swi_end(0x442, LMAN_FreeContext, (cid));
 
 /**
  * Get the native LMAN context table.
- * @return pointer to 8 context entries, 0x70 bytes each
+ * @return pointer to 8 context entries: 0x70 bytes each on NSG/ELKA, 8 bytes on SG/X75
  * */
 __swi_begin(0x8444)
 uint8_t *RamLmanContexts(void)
@@ -353,15 +354,18 @@ __swi_begin(0x44E)
 int WSP_ReadProperty(const char *key, void *value, unsigned *length)
 __swi_end(0x44E, WSP_ReadProperty, (key, value, length));
 
+#ifdef NEWSGOLD
 /**
  * Get the WSP connection state.
  * @param bearer	bearer ID
  * @param nap		NAP profile ID
  * @return connection state, 2: connected
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x44F)
 uint8_t WSP_GetConnectionState(int bearer, int nap)
 __swi_end(0x44F, WSP_GetConnectionState, (bearer, nap));
+#endif
 
 /**
  * Initialize an ENIP network module (the driver side of a network interface).
@@ -430,7 +434,7 @@ __swi_end(0x469, ENIP_PortSend, (port, packet));
  * @param size		buffer size
  * @param pool		buffer pool
  * @param offset	data offset in the buffer
- * @param quota		allocation quota
+ * @param quota		allocation quota (ignored on SG/X75)
  * @return packet, or NULL if no memory
  * */
 __swi_begin(0x46A)
@@ -448,8 +452,9 @@ __swi_end(0x46B, ENIP_PacketFree, (packet));
 /**
  * Register an IP driver (network interface) in the ENIP IP layer.
  * @param driver	driver object: ports, addresses, DNS, MTU, bearer and interface index
- * @param flags		0
+ * @param flags		0 (ignored on SG/X75)
  * @return 1: success
+ * @note The driver object is 0x2C bytes on NSG/ELKA and 0x28 bytes on SG/X75.
  * */
 __swi_begin(0x46C)
 int ENIP_RegisterDriver(void *driver, int flags)
@@ -494,7 +499,7 @@ __swi_end(0x470, ENIP_ListRemoveHead, (list));
 
 /**
  * Get the GPRS PDP driver table (the DNS resolver takes servers for bearer 1 from it).
- * @return 8 entries, 0x2C bytes each: +4 local IP, +8 DNS 1, +C DNS 2
+ * @return driver entries (0x2C bytes on NSG/ELKA, 0x28 on SG/X75): +4 local IP, +8 DNS 1, +C DNS 2
  * */
 __swi_begin(0x8471)
 void *RamPdpDrivers(void)
@@ -553,7 +558,7 @@ int enip_packet_max_size(void)
 __swi_end(0x477, enip_packet_max_size, ());
 
 /**
- * Initialise the ENIP IP module, its 8 interface slots and the 2 reassembly slots.
+ * Initialise the ENIP IP module, its interface slots (8 on NSG/ELKA, 16 on SG/X75) and the 2 reassembly slots.
  * @param post_run	stored as the IP module's post-run procedure (not confirmed)
  * @return 1
  * */
@@ -562,7 +567,7 @@ int enip_ip_init(void *post_run)
 __swi_end(0x478, enip_ip_init, (post_run));
 
 /**
- * Find the IP interface (of 8) whose registered driver belongs to the same module as the given driver.
+ * Find the IP interface whose registered driver belongs to the same module as the given driver.
  * @param driver	ENIP IP driver
  * @return IP interface (its driver part), NULL when not found
  * */
@@ -679,10 +684,11 @@ void *enip_siph_find_IF(int address)
 __swi_end(0x484, enip_siph_find_IF, (address));
 
 /**
- * Process a received ICMP packet (echo request, unreachable, quench, time exceeded, parameter
- * problem) and release it.
+ * Process a received ICMP packet and release it.
+ * Replies to echo requests (type 8) and handles destination unreachable messages (type 3); other types are dropped.
  * @param module	ENIP module
  * @param packet	ENIP packet, data at the ICMP header
+ * @note NSG/ELKA also handle source quench (type 4), time exceeded (type 11) and parameter problem (type 12).
  * */
 __swi_begin(0x485)
 void enip_icmp_frame_read(void *module, void *packet)
@@ -814,7 +820,7 @@ void enip_sockh_IF_init(void *iface)
 __swi_end(0x492, enip_sockh_IF_init, (iface));
 
 /**
- * Allocate and initialise a socket in a free slot of the 12-socket table.
+ * Allocate and initialise a socket in a free slot of the socket table.
  * @param family	1: IPv4
  * @param type	0: datagram, 1: stream
  * @param protocol	17 (UDP) or 6 (TCP)
@@ -862,15 +868,18 @@ __swi_begin(0x496)
 int enip_sockh_dgram_connect(void *socket, int address, uint32_t unused, uint16_t port)
 __swi_end(0x496, enip_sockh_dgram_connect, (socket, address, unused, port));
 
+#ifdef NEWSGOLD
 /**
  * Find the socket for a received packet by protocol, ports and address.
  * @param module	ENIP module with the socket list
  * @param header	IPv4 header
  * @return socket, NULL when none matches
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x497)
 void *enip_sockh_from_ipheader(void *module, const uint8_t *header)
 __swi_end(0x497, enip_sockh_from_ipheader, (module, header));
+#endif
 
 /**
  * Fill the IPv4 header of an outgoing packet from the socket's settings.
@@ -883,14 +892,17 @@ __swi_begin(0x498)
 int enip_sockh_prepare_send(int index, void *socket, uint32_t address)
 __swi_end(0x498, enip_sockh_prepare_send, (index, socket, address));
 
+#ifdef NEWSGOLD
 /**
  * Allocate an outgoing TCP segment of the socket's maximum size. Only partly reversed.
  * @param socket	ENIP socket
  * @return 0 or negative error
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x499)
 int enip_sockh_tcp_packet_allocate(void *socket)
 __swi_end(0x499, enip_sockh_tcp_packet_allocate, (socket));
+#endif
 
 /**
  * Initialise the TCP state of a socket: initial sequence number, windows and MSS.
@@ -1083,8 +1095,6 @@ __swi_begin(0x4AD)
 void zDLL_Init(void *list)
 __swi_end(0x4AD, zDLL_Init, (list));
 
-#endif
-
 /** @} */
 
 /**
@@ -1134,8 +1144,6 @@ __swi_begin(0x070)
 int *GetGPRSTrafficPointer()
 __swi_end(0x070, GetGPRSTrafficPointer, ());
 
-#ifdef SGOLD
-
 /**
  * Find the LMAN socket registration of a process or take a free one (asserts when all 14 are used).
  * @return registration index 0..13
@@ -1150,8 +1158,6 @@ __swi_end(0x4DF, LMAN_GetRegSlot, (cepid));
 __swi_begin(0x4E0)
 int LMAN_FillReg(unsigned reg_index, const REGSOCKCEPID_DATA *reg, int on)
 __swi_end(0x4E0, LMAN_FillReg, (reg_index, reg, on));
-
-#endif
 
 /** @} */
 

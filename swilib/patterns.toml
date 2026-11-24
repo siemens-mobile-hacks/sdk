@@ -6760,24 +6760,27 @@ ELKA = "B0 B5 0E 28 ?? D2 0C 88 19 23 5B 01 + 1"
 SG = "10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3"
 
 [4E1]
-decl = "void *GBS_CreateMsg(void **msg, int cepid_to, int msg_id, int size)"
+decl = "void *MOPI_CreateMessage(MOPI_MSG **msg, int cepid_to, int msg_id, int size)"
 NSG = "F0 41 2D E9 00 40 A0 E1 18 00 83 E2 40 0B C0 E3"
 ELKA = "FF B5 04 1C 18 1C 17 1C 1D 1C 18 30 00 04 00 0C + 1"
+SG = "F0 41 2D E9 00 40 A0 E1 14 00 83 E2 40 0B C0 E3"
 
 [4E2]
-decl = "void GBS_PostMsg(void **msg)"
+decl = "void MOPI_PostMessage(MOPI_MSG **msg)"
 NSG = "FF 41 2D E9 00 40 A0 E1 0D 00 A0 E1 00 20 A0 E3"
 ELKA = "F0 B5 85 B0 04 1C 01 A8 00 21 00 22 06 C0 06 C0 + 1"
+SG = "38 40 2D E9 00 40 A0 E1 00 00 90 E5 ?? ?? ?? EB 00 00 94 E5 B8 00 D0 E1"
 
 [4E3]
 decl = "void *FS_MemAlloc(int size)"
 NSG = "30 40 2D E9 ?? 5? 9F E5 00 10 A0 E1 05 00 A0 E1"
-ELKA = "30 40 2D E9 ?? 5? 9F E5 00 10 A0 E1 05 00 A0 E1"
+SG = "10 40 2D E9 DE FF FF EB 00 40 B0 E1 E7 FF FF 0B 04 00 A0 E1 10 80 BD E8"
 
 [4E4]
 decl = "int PlayMelody_GetVolume(int handle, PLAY_VOLUME *volume)"
+decl_SG = "int PlayMelody_GetVolume(int handle, int *volume)"
 NSG = "38 40 2D E9 01 50 B0 E1 ?? ?? ?? 0A ?? ?? ?? EB 00 40 B0 E1 ?? ?? ?? 1A"
-ELKA = "38 40 2D E9 01 50 B0 E1 ?? ?? ?? 0A ?? ?? ?? EB 00 40 B0 E1 ?? ?? ?? 1A"
+SG = "38 40 2D E9 01 50 A0 E1 ?? ?? ?? EB 00 40 B0 E1 0B 00 00 0A ?? ?? ?? EB 00 00 50 E3 04 00 00 0A 04 00 A0 E1 ?? ?? ?? EB 01 00 50 E3 00 00 A0 13 01 00 00 1A 04 00 A0 E1 ?? ?? ?? EB 00 00 85 E5 01 00 A0 E3 38 80 BD E8"
 
 [4E5]
 decl = "void *Obs_MemAlloc(int size)"
@@ -6796,11 +6799,9 @@ decl = "void **RamObsFileStreamMethods(void)"
 ALL = "&(?? 0? 9F E5 B0 B0 C5 E1 ?? 0? 84 E5 ?? 0? 9F E5)"
 
 [4E8]
-decl = "void *RamFsDrivers(void)"
-NSG = "&(?? 3? 9F E5 01 22 93 E7 00 00 52 E3 ?? ?? ?? 0A)"
-ELKA = "&(?? 3? 9F E5 01 22 93 E7 00 00 52 E3 ?? ?? ?? 0A)"
+decl = "FS_DRIVER *RamFsDrivers(void)"
+ALL = "&(?? 3? 9F E5 01 22 93 E7 00 00 52 E3 ?? ?? ?? 0A)"
 
 [4E9]
-decl = "void *RamFsDrives(void)"
-NSG = "&(?? 2? 9F E5 84 00 84 E0 80 11 92 E7 00 00 51 E3)"
-ELKA = "&(?? 2? 9F E5 84 00 84 E0 80 11 92 E7 00 00 51 E3)"
+decl = "FS_DRIVE *RamFsDrives(void)"
+ALL = "&(?? 2? 9F E5 84 00 84 E0 80 11 92 E7 00 00 51 E3)"

@@ -287,8 +287,6 @@ __swi_begin(0x176)
 int closesocket(int socket)
 __swi_end(0x176, closesocket, (socket));
 
-#ifdef NEWSGOLD
-
 /**
  * Resolve a host name synchronously.
  * @param name		domain name
@@ -376,8 +374,6 @@ __swi_end(0x43A, listen, (sock, backlog));
 __swi_begin(0x443)
 int ENIP_GetNativeSocket(int sock, void **native)
 __swi_end(0x443, ENIP_GetNativeSocket, (sock, native));
-
-#endif
 
 __swilib_end
 

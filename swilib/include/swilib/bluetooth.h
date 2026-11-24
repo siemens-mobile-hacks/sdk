@@ -11,10 +11,8 @@ __swilib_begin
  * @brief Bluetooth functions.
  *
  * Usage: `#include <swilib.h>` or `#include <swilib/bluetooth.h>`
- * @platforms NSG, ELKA
  * @{
  */
-#ifdef NEWSGOLD /* NSG and ELKA: S75v52 library has 420-462 too */
 
 typedef struct SDEV SDEV;
 typedef struct SDEV_APP SDEV_APP;
@@ -41,6 +39,7 @@ struct SDEV_APP {
 	int (*get_dev)(int index, int *inst);
 };
 
+#ifdef NEWSGOLD
 /**
  * Create a Bluetooth accessor. Events are sent to the supplied CEPID.
  * @param cepid		destination process for accessor events
@@ -177,6 +176,7 @@ __swi_end(0x42C, BTA_Conn_CloseReq, (oh, conn, tid));
 __swi_begin(0x42D)
 const uint8_t *BT_GetLocAddr(void)
 __swi_end(0x42D, BT_GetLocAddr, ());
+#endif
 
 /**
  * Initialize an SDev endpoint with the firmware default callbacks.
@@ -189,11 +189,13 @@ __swi_end(0x42E, SDev_InitEndpoint, (ep));
 /**
  * Get the native local Bluetooth device object.
  * @return firmware-owned device object. Its layout is firmware-specific
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x42F)
 uint8_t *BT_GetLocalDevice(void)
 __swi_end(0x42F, BT_GetLocalDevice, ());
 
+#ifdef NEWSGOLD
 /**
  * Set the local Bluetooth connection security level.
  * @param lo		0 selects high security; nonzero selects low security
@@ -204,10 +206,11 @@ __swi_end(0x42F, BT_GetLocalDevice, ());
 __swi_begin(0x430)
 void BT_SetSecurityCheck(int lo, int unk1, int unk2, int unk3)
 __swi_end(0x430, BT_SetSecurityCheck, (lo, unk1, unk2, unk3));
+#endif
 
 /**
  * Get the SDev application callback table.
- * @return firmware-owned table of 32 application pointers
+ * @return firmware-owned table of application pointers (32 on NSG/ELKA, 27 on SG/X75)
  * */
 __swi_begin(0x8431)
 void **RamSDevApps(void)
@@ -216,11 +219,13 @@ __swi_end(0x8431, RamSDevApps, ());
 /**
  * Get the native Bluetooth buffer-pool status.
  * @return status words; words 0 and 1 count free receive and transmit buffers
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x8432)
 uint16_t *RamBtBufferPool(void)
 __swi_end(0x8432, RamBtBufferPool, ());
 
+#ifdef NEWSGOLD
 /**
  * Open an outgoing L2CAP connection. Completion arrives as an accessor event.
  * @param oh		accessor handle
@@ -250,7 +255,7 @@ __swi_end(0x433, BTA_Conn_New_L2CAP, (oh, addr, sapi_type, psm, master, encrypt,
  * @param authenticate		require authentication
  * @param tid		transaction id (see NextTid)
  * @return connection handle, or an invalid handle on failure
- * @platforms ELKA
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x450)
 int BTA_Conn_New_RFCOMM(int oh, const uint8_t addr[8], int sapi_type, int channel, int master, int encrypt, int authenticate, int tid)
@@ -268,7 +273,7 @@ __swi_end(0x450, BTA_Conn_New_RFCOMM, (oh, addr, sapi_type, channel, master, enc
  * @param nattrs	number of attribute ids
  * @param tid		transaction id
  * @return remote device handle, or an invalid handle on failure
- * @platforms ELKA
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x451)
 int BTA_ServiceSearch_StartReq(int oh, const uint8_t addr[8], const void *uuids, const uint16_t *attrs, int nattrs, int tid)
@@ -279,23 +284,25 @@ __swi_end(0x451, BTA_ServiceSearch_StartReq, (oh, addr, uuids, attrs, nattrs, ti
  * @param oh		accessor handle
  * @param remdev	remote device handle from BTA_ServiceSearch_StartReq
  * @param tid		transaction id
- * @platforms ELKA
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x452)
 void BTA_ServiceSearch_StopReq(int oh, int remdev, int tid)
 __swi_end(0x452, BTA_ServiceSearch_StopReq, (oh, remdev, tid));
+#endif
 
 /**
  * Server channel from an SDP record's ProtocolDescriptorList.
- * @param record	record from message 0x0F (+20)
+ * @param record	SDP service record
  * @param rfcomm	1: RFCOMM channel, 0: L2CAP PSM
  * @return channel / PSM, 0 if the record has none
- * @platforms ELKA
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x453)
 unsigned BTA_SdpRec_GetChannel(const void *record, int rfcomm)
 __swi_end(0x453, BTA_SdpRec_GetChannel, (record, rfcomm));
 
+#ifdef NEWSGOLD
 /**
  * Open a view of the stored Bluetooth device list.
  * @param oh		accessor handle
@@ -718,18 +725,17 @@ __swi_end(0x84CB, RamBtlpConnections, ());
 __swi_begin(0x84CC)
 void *RamL2capChannelState(void)
 __swi_end(0x84CC, RamL2capChannelState, ());
-
 #endif
 
 /* Bluetooth CA layer: objects, message replicators (MR),
  * L2CAP connections, the device list. */
-#ifdef SGOLD
-
+#ifndef NEWSGOLD
 /**
  * Create a CA message replicator: every event of the objects it is subscribed to comes to
  * `cepid` as GBS message `msg` (submess = replicator, data0 = object message).
  * @param file, line	caller's source position (debug only)
  * @return replicator handle (0xFFxx = error)
+ * @platforms X75, SG
  * */
 __swi_begin(0x4CD)
 uint16_t CA_MR_New(int cepid, int msg, const char *file, int line)
@@ -737,6 +743,7 @@ __swi_end(0x4CD, CA_MR_New, (cepid, msg, file, line));
 
 /**
  * Subscribe a replicator to the events of an object class.
+ * @platforms X75, SG
  * */
 __swi_begin(0x4CE)
 void CA_MR_Subscribe(uint16_t mr, int code, int class_id)
@@ -744,6 +751,7 @@ __swi_end(0x4CE, CA_MR_Subscribe, (mr, code, class_id));
 
 /**
  * Stop a replicator; it then reports CA_MR_Class() event 6 and can be released.
+ * @platforms X75, SG
  * */
 __swi_begin(0x4CF)
 void CA_MR_Stop(uint16_t mr)
@@ -751,10 +759,12 @@ __swi_end(0x4CF, CA_MR_Stop, (mr));
 
 /**
  * Hand an event (data0 of the replicator's GBS message) back to the replicator.
+ * @platforms X75, SG
  * */
 __swi_begin(0x4D0)
 void CA_MR_Done(uint16_t mr, void *object_message)
 __swi_end(0x4D0, CA_MR_Done, (mr, object_message));
+#endif
 
 /**
  * Object class of the replicator's own events.
@@ -772,6 +782,7 @@ __swi_end(0x4D2, CA_Release, (handle));
 
 /**
  * Object class of SAPI connection events (opened, closed, failed, parameters).
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D3)
 uint8_t CA_SapiConnClass(void)
@@ -779,6 +790,7 @@ __swi_end(0x4D3, CA_SapiConnClass, ());
 
 /**
  * Create a remote device object for a 6-byte BT address.
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D4)
 void *CA_RemDev_New(const void *bd_addr)
@@ -791,9 +803,12 @@ __swi_begin(0x4D5)
 void CA_RemDev_Free(void *remdev)
 __swi_end(0x4D5, CA_RemDev_Free, (remdev));
 
+#ifndef NEWSGOLD
 /**
  * Open an outgoing L2CAP connection; events go to the replicator `mr`.
  * @return connection handle (0xFFxx = error)
+ * @platforms X75, SG
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D6)
 uint16_t CA_L2CAP_New(uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)
@@ -801,13 +816,16 @@ __swi_end(0x4D6, CA_L2CAP_New, (mr, remdev, sapi, psm, master, encrypt, authenti
 
 /**
  * Close a CA connection; `owner` = the replicator that gets the events.
+ * @platforms X75, SG
  * */
 __swi_begin(0x4D7)
 int CA_Conn_Close(uint16_t conn, uint16_t owner)
 __swi_end(0x4D7, CA_Conn_Close, (conn, owner));
+#endif
 
 /**
  * Device list object of the local BT device.
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D8)
 uint16_t CA_DevList(uint16_t local_dev)
@@ -815,13 +833,17 @@ __swi_end(0x4D8, CA_DevList, (local_dev));
 
 /**
  * Object class of device list answers.
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D9)
 uint8_t CA_DevListClass(void)
 __swi_end(0x4D9, CA_DevListClass, ());
 
+#ifndef NEWSGOLD
 /**
  * Ask for the number of entries of a device list (type 0 = paired); the answer comes to `mr`.
+ * @platforms X75, SG
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4DA)
 void CA_DevList_CountReq(uint16_t list, uint16_t mr, int type)
@@ -829,10 +851,13 @@ __swi_end(0x4DA, CA_DevList_CountReq, (list, mr, type));
 
 /**
  * Ask for one device list entry; the answer (a RemDev copy) comes to `mr`.
+ * @platforms X75, SG
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4DB)
 void CA_DevList_EntryReq(uint16_t list, uint16_t mr, int type, int index)
 __swi_end(0x4DB, CA_DevList_EntryReq, (list, mr, type, index));
+#endif
 
 /**
  * Root object of the local BT stack.
@@ -850,12 +875,11 @@ __swi_end(0x4DD, CA_LocalDev, (root, zero));
 
 /**
  * BT address of the local device object.
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4DE)
 const uint8_t *CA_LocalAddr(uint16_t local_dev)
 __swi_end(0x4DE, CA_LocalAddr, (local_dev));
-
-#endif
 
 __swilib_end
 
