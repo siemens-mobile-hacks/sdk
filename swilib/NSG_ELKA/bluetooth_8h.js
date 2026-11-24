@@ -65,5 +65,15 @@ var bluetooth_8h =
     [ "Ca_SasSApp_Init", "group___bluetooth.html#ga04527048283a8a29cbfe51e25fc4c9de", null ],
     [ "RamJSApiConnections", "group___bluetooth.html#ga91950329cc6721f6d8b074cee93cd196", null ],
     [ "RamBtlpConnections", "group___bluetooth.html#gaa641593358c3b7cb8cd94c19782cab0a", null ],
-    [ "RamL2capChannelState", "group___bluetooth.html#ga84afc0dd90f5b9a0eea63e5f302bb303", null ]
+    [ "RamL2capChannelState", "group___bluetooth.html#ga84afc0dd90f5b9a0eea63e5f302bb303", null ],
+    [ "CA_MR_Class", "group___bluetooth.html#ga1c75a7aee1a8187c8ea892fa76294738", null ],
+    [ "CA_Release", "group___bluetooth.html#gac015e1166da8b5a1f4218ca4b86ae196", null ],
+    [ "CA_SapiConnClass", "group___bluetooth.html#ga0d7bb26947bf430781c629f71e5d3e4f", null ],
+    [ "CA_RemDev_New", "group___bluetooth.html#gac515e97ebb1281b2b0648afde72d10b4", null ],
+    [ "CA_RemDev_Free", "group___bluetooth.html#ga0ca6578b6f4cdc1cb982afacd814cc3c", null ],
+    [ "CA_DevList", "group___bluetooth.html#ga75bef0c099579440ecdc1dd217801a43", null ],
+    [ "CA_DevListClass", "group___bluetooth.html#gaa4da9cfd34aa29866a19416317972cec", null ],
+    [ "CA_LocalRoot", "group___bluetooth.html#gad1138e07b6d93d666bb5d8b2debadc2e", null ],
+    [ "CA_LocalDev", "group___bluetooth.html#gaedc33e2dd2e0653ce348718980a486fb", null ],
+    [ "CA_LocalAddr", "group___bluetooth.html#gaff734875fecfa624026b484702be7ad3", null ]
 ];

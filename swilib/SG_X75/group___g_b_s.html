@@ -113,6 +113,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_g_b_s___m_s_g" id="r_struct_g_b_s___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a></td></tr>
 <tr class="memdesc:struct_g_b_s___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS Message.  <a href="#struct_g_b_s___m_s_g">More...</a><br /></td></tr>
 <tr class="separator:struct_g_b_s___m_s_g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_m_o_p_i___m_s_g" id="r_struct_m_o_p_i___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_m_o_p_i___m_s_g">MOPI_MSG</a></td></tr>
+<tr class="memdesc:struct_m_o_p_i___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">MOPI message header, the payload follows it.  <a href="#struct_m_o_p_i___m_s_g">More...</a><br /></td></tr>
+<tr class="separator:struct_m_o_p_i___m_s_g"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_g_b_s_t_m_r" id="r_struct_g_b_s_t_m_r"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_g_b_s_t_m_r">GBSTMR</a></td></tr>
 <tr class="memdesc:struct_g_b_s_t_m_r"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS Timer.  <a href="#struct_g_b_s_t_m_r">More...</a><br /></td></tr>
 <tr class="separator:struct_g_b_s_t_m_r"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +130,8 @@ Data Structures</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga3fc8765d166f56721ea24fd2620da594" id="r_ga3fc8765d166f56721ea24fd2620da594"><td class="memItemLeft" align="right" valign="top">typedef struct GBS_MSG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3fc8765d166f56721ea24fd2620da594">GBS_MSG</a></td></tr>
 <tr class="separator:ga3fc8765d166f56721ea24fd2620da594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0c13b773d5d13ce2344c9e8f337e684" id="r_gaa0c13b773d5d13ce2344c9e8f337e684"><td class="memItemLeft" align="right" valign="top">typedef struct MOPI_MSG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0c13b773d5d13ce2344c9e8f337e684">MOPI_MSG</a></td></tr>
+<tr class="separator:gaa0c13b773d5d13ce2344c9e8f337e684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a5fd123d33ab0e60e006889ca9f4478" id="r_ga8a5fd123d33ab0e60e006889ca9f4478"><td class="memItemLeft" align="right" valign="top">typedef struct GBSTMR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8a5fd123d33ab0e60e006889ca9f4478">GBSTMR</a></td></tr>
 <tr class="separator:ga8a5fd123d33ab0e60e006889ca9f4478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a03129260e030640a9fa0c94715455f" id="r_ga1a03129260e030640a9fa0c94715455f"><td class="memItemLeft" align="right" valign="top">typedef struct IPC_REQ&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a03129260e030640a9fa0c94715455f">IPC_REQ</a></td></tr>
@@ -217,6 +222,24 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gae99584ad2b71cf10cb600af9b9bf0e88" id="r_gae99584ad2b71cf10cb600af9b9bf0e88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88">GBS_RecActDstMessage</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
 <tr class="memdesc:gae99584ad2b71cf10cb600af9b9bf0e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a message from the queue without auto-ACK.  <br /></td></tr>
 <tr class="separator:gae99584ad2b71cf10cb600af9b9bf0e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f8b941831defc3ca1eeff243d0b7b85" id="r_ga0f8b941831defc3ca1eeff243d0b7b85"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f8b941831defc3ca1eeff243d0b7b85">GBS_GetMsgPayload</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
+<tr class="memdesc:ga0f8b941831defc3ca1eeff243d0b7b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native payload view of a received GBS message.  <br /></td></tr>
+<tr class="separator:ga0f8b941831defc3ca1eeff243d0b7b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1850807f0de118a07272088652a3713" id="r_gad1850807f0de118a07272088652a3713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_p_g_r_o_u_p">PGROUP</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad1850807f0de118a07272088652a3713">GBS_GetProcGroup</a> (int cepid)</td></tr>
+<tr class="memdesc:gad1850807f0de118a07272088652a3713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a GBS process group.  <br /></td></tr>
+<tr class="separator:gad1850807f0de118a07272088652a3713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9231f9349e1cc357db8b36ea37f8551c" id="r_ga9231f9349e1cc357db8b36ea37f8551c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c">MOPI_CreateMessage</a> (<a class="el" href="#struct_m_o_p_i___m_s_g">MOPI_MSG</a> **msg, int cepid_to, int msg_id, int size)</td></tr>
+<tr class="memdesc:ga9231f9349e1cc357db8b36ea37f8551c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a MOPI message.  <br /></td></tr>
+<tr class="separator:ga9231f9349e1cc357db8b36ea37f8551c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7c9485503e771889cbe7a17402eb3b1" id="r_gaf7c9485503e771889cbe7a17402eb3b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1">MOPI_PostMessage</a> (<a class="el" href="#struct_m_o_p_i___m_s_g">MOPI_MSG</a> **msg)</td></tr>
+<tr class="memdesc:gaf7c9485503e771889cbe7a17402eb3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post a message created with <a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c" title="Create a MOPI message.">MOPI_CreateMessage</a> to its destination (sets the handle to NULL).  <br /></td></tr>
+<tr class="separator:gaf7c9485503e771889cbe7a17402eb3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35125d6103bf72d885a4bd0a9e96b1aa" id="r_ga35125d6103bf72d885a4bd0a9e96b1aa"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35125d6103bf72d885a4bd0a9e96b1aa">GBS_CreateMsg</a> (void **msg, int cepid_to, int msg_id, int size)</td></tr>
+<tr class="memdesc:ga35125d6103bf72d885a4bd0a9e96b1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a MOPI message.     <br /></td></tr>
+<tr class="separator:ga35125d6103bf72d885a4bd0a9e96b1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52fe0bec3d323887f49de063dd8818bd" id="r_ga52fe0bec3d323887f49de063dd8818bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga52fe0bec3d323887f49de063dd8818bd">GBS_PostMsg</a> (void **msg)</td></tr>
+<tr class="memdesc:ga52fe0bec3d323887f49de063dd8818bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post a message created with <a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c" title="Create a MOPI message.">MOPI_CreateMessage</a> to its destination (sets the handle to NULL).     <br /></td></tr>
+<tr class="separator:ga52fe0bec3d323887f49de063dd8818bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga751070ca379cfe601fe8ad6694624927" id="r_ga751070ca379cfe601fe8ad6694624927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga751070ca379cfe601fe8ad6694624927">GBS_AcceptMessage</a> (void)</td></tr>
 <tr class="memdesc:ga751070ca379cfe601fe8ad6694624927"><td class="mdescLeft">&#160;</td><td class="mdescRight">ACK message received with <a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88" title="Receive a message from the queue without auto-ACK.">GBS_RecActDstMessage</a>.  <br /></td></tr>
 <tr class="separator:ga751070ca379cfe601fe8ad6694624927"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +294,20 @@ Enumerations</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">struct GBS_MSG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="struct_m_o_p_i___m_s_g" id="struct_m_o_p_i___m_s_g"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_m_o_p_i___m_s_g">&#9670;&#160;</a></span>MOPI_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct MOPI_MSG</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -336,6 +373,22 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="gaa0c13b773d5d13ce2344c9e8f337e684" name="gaa0c13b773d5d13ce2344c9e8f337e684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0c13b773d5d13ce2344c9e8f337e684">&#9670;&#160;</a></span>MOPI_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct MOPI_MSG MOPI_MSG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00018">18</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+
+</div>
+</div>
 <a id="ga8a5fd123d33ab0e60e006889ca9f4478" name="ga8a5fd123d33ab0e60e006889ca9f4478"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8a5fd123d33ab0e60e006889ca9f4478">&#9670;&#160;</a></span>GBSTMR</h2>
 
@@ -348,7 +401,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00018">18</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00019">19</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -364,7 +417,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00019">19</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00020">20</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -380,7 +433,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00020">20</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00021">21</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -396,7 +449,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00022">22</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00023">23</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +465,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00023">23</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00024">24</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -441,7 +494,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00028">28</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00029">29</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +544,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00042">42</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gbs_8h_source.html#l00043">43</a> of file <a class="el" href="gbs_8h_source.html">gbs.h</a>.</p>
 
 </div>
 </div>
@@ -760,6 +813,198 @@ Enumerations</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>count of messages in the queue </dd></dl>
+
+</div>
+</div>
+<a id="ga0f8b941831defc3ca1eeff243d0b7b85" name="ga0f8b941831defc3ca1eeff243d0b7b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f8b941831defc3ca1eeff243d0b7b85">&#9670;&#160;</a></span>GBS_GetMsgPayload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ** GBS_GetMsgPayload </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the native payload view of a received GBS message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>received GBS message </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>firmware-owned payload view. Do not free or retain it after consuming the message </dd></dl>
+
+</div>
+</div>
+<a id="gad1850807f0de118a07272088652a3713" name="gad1850807f0de118a07272088652a3713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1850807f0de118a07272088652a3713">&#9670;&#160;</a></span>GBS_GetProcGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#struct_p_g_r_o_u_p">PGROUP</a> * GBS_GetProcGroup </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cepid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find a GBS process group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cepid</td><td>CEPID whose group (cepid &amp; 0xFF00) is looked up </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>process group, or NULL if the group does not exist </dd></dl>
+
+</div>
+</div>
+<a id="ga9231f9349e1cc357db8b36ea37f8551c" name="ga9231f9349e1cc357db8b36ea37f8551c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9231f9349e1cc357db8b36ea37f8551c">&#9670;&#160;</a></span>MOPI_CreateMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MOPI_CreateMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_m_o_p_i___m_s_g">MOPI_MSG</a> **</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cepid_to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>msg_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a MOPI message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg</td><td>message handle, pass it to <a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1" title="Post a message created with MOPI_CreateMessage to its destination (sets the handle to NULL).">MOPI_PostMessage</a> </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cepid_to</td><td>destination CEPID </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">msg_id</td><td>message id </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">size</td><td>payload size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>payload (right after the <a class="el" href="#struct_m_o_p_i___m_s_g" title="MOPI message header, the payload follows it.">MOPI_MSG</a> header), NULL when size is 0 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>msg-&gt;cepid_from is set to the current process and may be changed before <a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1" title="Post a message created with MOPI_CreateMessage to its destination (sets the handle to NULL).">MOPI_PostMessage</a>. </dd></dl>
+
+</div>
+</div>
+<a id="gaf7c9485503e771889cbe7a17402eb3b1" name="gaf7c9485503e771889cbe7a17402eb3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7c9485503e771889cbe7a17402eb3b1">&#9670;&#160;</a></span>MOPI_PostMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MOPI_PostMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#struct_m_o_p_i___m_s_g">MOPI_MSG</a> **</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Post a message created with <a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c" title="Create a MOPI message.">MOPI_CreateMessage</a> to its destination (sets the handle to NULL). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga35125d6103bf72d885a4bd0a9e96b1aa" name="ga35125d6103bf72d885a4bd0a9e96b1aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35125d6103bf72d885a4bd0a9e96b1aa">&#9670;&#160;</a></span>GBS_CreateMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * GBS_CreateMsg </td>
+          <td>(</td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cepid_to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>msg_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a MOPI message.    </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg</td><td>message handle, pass it to <a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1" title="Post a message created with MOPI_CreateMessage to its destination (sets the handle to NULL).">MOPI_PostMessage</a> </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">cepid_to</td><td>destination CEPID </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">msg_id</td><td>message id </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">size</td><td>payload size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>payload (right after the <a class="el" href="#struct_m_o_p_i___m_s_g" title="MOPI message header, the payload follows it.">MOPI_MSG</a> header), NULL when size is 0 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>msg-&gt;cepid_from is set to the current process and may be changed before <a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1" title="Post a message created with MOPI_CreateMessage to its destination (sets the handle to NULL).">MOPI_PostMessage</a>.    </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c" title="Create a MOPI message.">MOPI_CreateMessage</a> instead. </dd></dl>
+
+</div>
+</div>
+<a id="ga52fe0bec3d323887f49de063dd8818bd" name="ga52fe0bec3d323887f49de063dd8818bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52fe0bec3d323887f49de063dd8818bd">&#9670;&#160;</a></span>GBS_PostMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GBS_PostMsg </td>
+          <td>(</td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Post a message created with <a class="el" href="#ga9231f9349e1cc357db8b36ea37f8551c" title="Create a MOPI message.">MOPI_CreateMessage</a> to its destination (sets the handle to NULL).    </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message handle    </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>Use <a class="el" href="#gaf7c9485503e771889cbe7a17402eb3b1" title="Post a message created with MOPI_CreateMessage to its destination (sets the handle to NULL).">MOPI_PostMessage</a> instead. </dd></dl>
 
 </div>
 </div>

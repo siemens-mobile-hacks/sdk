@@ -129,5 +129,7 @@ var group___g_p_r_s =
     [ "RamActiveGPRSProfileName", "group___g_p_r_s.html#ga50550c586f46c004d5174b4a47632296", null ],
     [ "RefreshGPRSTraffic", "group___g_p_r_s.html#ga0b8abe545a8426ac1987a3d191a1bda2", null ],
     [ "ResetGPRSTraffic", "group___g_p_r_s.html#ga0408fe9e3cc0afc74ec9e98816cd01f6", null ],
-    [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305", null ]
+    [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305", null ],
+    [ "LMAN_GetRegSlot", "group___g_p_r_s.html#gac06691580f4c50a1882595fbcacd54bc", null ],
+    [ "LMAN_FillReg", "group___g_p_r_s.html#gaef371a047bd00e640a006a2bd1a88b5f", null ]
 ];

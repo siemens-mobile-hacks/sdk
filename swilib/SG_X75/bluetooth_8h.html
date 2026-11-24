@@ -97,12 +97,105 @@ $(function(){initNavTree('bluetooth_8h.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">bluetooth.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="base_8h_source.html">base.h</a>&quot;</code><br />
 </div>
 <p><a href="bluetooth_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:struct_s_d_e_v" id="r_struct_s_d_e_v"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#struct_s_d_e_v">SDEV</a></td></tr>
+<tr class="memdesc:struct_s_d_e_v"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDev endpoint.  <a href="group___bluetooth.html#struct_s_d_e_v">More...</a><br /></td></tr>
+<tr class="separator:struct_s_d_e_v"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_s_d_e_v___a_p_p" id="r_struct_s_d_e_v___a_p_p"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#struct_s_d_e_v___a_p_p">SDEV_APP</a></td></tr>
+<tr class="memdesc:struct_s_d_e_v___a_p_p"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDev application callbacks.  <a href="group___bluetooth.html#struct_s_d_e_v___a_p_p">More...</a><br /></td></tr>
+<tr class="separator:struct_s_d_e_v___a_p_p"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga9bd68955176b3976c1af7a2949d39b6f" id="r_ga9bd68955176b3976c1af7a2949d39b6f"><td class="memItemLeft" align="right" valign="top">typedef struct SDEV&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga9bd68955176b3976c1af7a2949d39b6f">SDEV</a></td></tr>
+<tr class="separator:ga9bd68955176b3976c1af7a2949d39b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea613ddcee3db4656818a200ae06c20b" id="r_gaea613ddcee3db4656818a200ae06c20b"><td class="memItemLeft" align="right" valign="top">typedef struct SDEV_APP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaea613ddcee3db4656818a200ae06c20b">SDEV_APP</a></td></tr>
+<tr class="separator:gaea613ddcee3db4656818a200ae06c20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga577e99539136e802587b5517a2a664d5" id="r_ga577e99539136e802587b5517a2a664d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga577e99539136e802587b5517a2a664d5">SDev_InitEndpoint</a> (<a class="el" href="group___bluetooth.html#struct_s_d_e_v">SDEV</a> *ep)</td></tr>
+<tr class="memdesc:ga577e99539136e802587b5517a2a664d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SDev endpoint with the firmware default callbacks.  <br /></td></tr>
+<tr class="separator:ga577e99539136e802587b5517a2a664d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d4424b68fe66d9eb9704dedaeac3f8d" id="r_ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga5d4424b68fe66d9eb9704dedaeac3f8d">BT_GetLocalDevice</a> (void)</td></tr>
+<tr class="memdesc:ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native local Bluetooth device object.  <br /></td></tr>
+<tr class="separator:ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27b915f25d1c1a7f86ea82a628c8ee13" id="r_ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga27b915f25d1c1a7f86ea82a628c8ee13">RamSDevApps</a> (void)</td></tr>
+<tr class="memdesc:ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the SDev application callback table.  <br /></td></tr>
+<tr class="separator:ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73d25940d654dafdfe6116f8804e5ebb" id="r_ga73d25940d654dafdfe6116f8804e5ebb"><td class="memItemLeft" align="right" valign="top">uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga73d25940d654dafdfe6116f8804e5ebb">RamBtBufferPool</a> (void)</td></tr>
+<tr class="memdesc:ga73d25940d654dafdfe6116f8804e5ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native Bluetooth buffer-pool status.  <br /></td></tr>
+<tr class="separator:ga73d25940d654dafdfe6116f8804e5ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0ef17ef9de31419668fbec3911a50b2" id="r_gad0ef17ef9de31419668fbec3911a50b2"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gad0ef17ef9de31419668fbec3911a50b2">BTA_SdpRec_GetChannel</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *record, int rfcomm)</td></tr>
+<tr class="memdesc:gad0ef17ef9de31419668fbec3911a50b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server channel from an SDP record's ProtocolDescriptorList.  <br /></td></tr>
+<tr class="separator:gad0ef17ef9de31419668fbec3911a50b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00fab07c3e820d7b53211615ee378679" id="r_ga00fab07c3e820d7b53211615ee378679"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga00fab07c3e820d7b53211615ee378679">CA_MR_New</a> (int cepid, int msg, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td></tr>
+<tr class="memdesc:ga00fab07c3e820d7b53211615ee378679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a CA message replicator: every event of the objects it is subscribed to comes to <code>cepid</code> as GBS message <code>msg</code> (submess = replicator, data0 = object message).  <br /></td></tr>
+<tr class="separator:ga00fab07c3e820d7b53211615ee378679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0587bc70334e64ec924758f2ce5e117" id="r_gaf0587bc70334e64ec924758f2ce5e117"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaf0587bc70334e64ec924758f2ce5e117">CA_MR_Subscribe</a> (uint16_t mr, int code, int class_id)</td></tr>
+<tr class="memdesc:gaf0587bc70334e64ec924758f2ce5e117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe a replicator to the events of an object class.  <br /></td></tr>
+<tr class="separator:gaf0587bc70334e64ec924758f2ce5e117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64d9b42e0951336adf4a77373d91183f" id="r_ga64d9b42e0951336adf4a77373d91183f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga64d9b42e0951336adf4a77373d91183f">CA_MR_Stop</a> (uint16_t mr)</td></tr>
+<tr class="memdesc:ga64d9b42e0951336adf4a77373d91183f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop a replicator; it then reports <a class="el" href="group___bluetooth.html#ga1c75a7aee1a8187c8ea892fa76294738" title="Object class of the replicator&#39;s own events.">CA_MR_Class()</a> event 6 and can be released.  <br /></td></tr>
+<tr class="separator:ga64d9b42e0951336adf4a77373d91183f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b59f216d4d3426523668b0888dc10f0" id="r_ga7b59f216d4d3426523668b0888dc10f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga7b59f216d4d3426523668b0888dc10f0">CA_MR_Done</a> (uint16_t mr, void *object_message)</td></tr>
+<tr class="memdesc:ga7b59f216d4d3426523668b0888dc10f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hand an event (data0 of the replicator's GBS message) back to the replicator.  <br /></td></tr>
+<tr class="separator:ga7b59f216d4d3426523668b0888dc10f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c75a7aee1a8187c8ea892fa76294738" id="r_ga1c75a7aee1a8187c8ea892fa76294738"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga1c75a7aee1a8187c8ea892fa76294738">CA_MR_Class</a> (void)</td></tr>
+<tr class="memdesc:ga1c75a7aee1a8187c8ea892fa76294738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object class of the replicator's own events.  <br /></td></tr>
+<tr class="separator:ga1c75a7aee1a8187c8ea892fa76294738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac015e1166da8b5a1f4218ca4b86ae196" id="r_gac015e1166da8b5a1f4218ca4b86ae196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gac015e1166da8b5a1f4218ca4b86ae196">CA_Release</a> (uint16_t handle)</td></tr>
+<tr class="memdesc:gac015e1166da8b5a1f4218ca4b86ae196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release a CA object handle (replicator, connection).  <br /></td></tr>
+<tr class="separator:gac015e1166da8b5a1f4218ca4b86ae196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d7bb26947bf430781c629f71e5d3e4f" id="r_ga0d7bb26947bf430781c629f71e5d3e4f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga0d7bb26947bf430781c629f71e5d3e4f">CA_SapiConnClass</a> (void)</td></tr>
+<tr class="memdesc:ga0d7bb26947bf430781c629f71e5d3e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object class of SAPI connection events (opened, closed, failed, parameters).  <br /></td></tr>
+<tr class="separator:ga0d7bb26947bf430781c629f71e5d3e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac515e97ebb1281b2b0648afde72d10b4" id="r_gac515e97ebb1281b2b0648afde72d10b4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gac515e97ebb1281b2b0648afde72d10b4">CA_RemDev_New</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *bd_addr)</td></tr>
+<tr class="memdesc:gac515e97ebb1281b2b0648afde72d10b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a remote device object for a 6-byte BT address.  <br /></td></tr>
+<tr class="separator:gac515e97ebb1281b2b0648afde72d10b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ca6578b6f4cdc1cb982afacd814cc3c" id="r_ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga0ca6578b6f4cdc1cb982afacd814cc3c">CA_RemDev_Free</a> (void *remdev)</td></tr>
+<tr class="memdesc:ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a remote device object.  <br /></td></tr>
+<tr class="separator:ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3876b501f2d768a503efa4c69a137623" id="r_ga3876b501f2d768a503efa4c69a137623"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga3876b501f2d768a503efa4c69a137623">CA_L2CAP_New</a> (uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)</td></tr>
+<tr class="memdesc:ga3876b501f2d768a503efa4c69a137623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an outgoing L2CAP connection; events go to the replicator <code>mr</code>.  <br /></td></tr>
+<tr class="separator:ga3876b501f2d768a503efa4c69a137623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafed90ff249591e412fc0b96c2c98a003" id="r_gafed90ff249591e412fc0b96c2c98a003"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gafed90ff249591e412fc0b96c2c98a003">CA_Conn_Close</a> (uint16_t conn, uint16_t owner)</td></tr>
+<tr class="memdesc:gafed90ff249591e412fc0b96c2c98a003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a CA connection; <code>owner</code> = the replicator that gets the events.  <br /></td></tr>
+<tr class="separator:gafed90ff249591e412fc0b96c2c98a003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75bef0c099579440ecdc1dd217801a43" id="r_ga75bef0c099579440ecdc1dd217801a43"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga75bef0c099579440ecdc1dd217801a43">CA_DevList</a> (uint16_t local_dev)</td></tr>
+<tr class="memdesc:ga75bef0c099579440ecdc1dd217801a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device list object of the local BT device.  <br /></td></tr>
+<tr class="separator:ga75bef0c099579440ecdc1dd217801a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4da9cfd34aa29866a19416317972cec" id="r_gaa4da9cfd34aa29866a19416317972cec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaa4da9cfd34aa29866a19416317972cec">CA_DevListClass</a> (void)</td></tr>
+<tr class="memdesc:gaa4da9cfd34aa29866a19416317972cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object class of device list answers.  <br /></td></tr>
+<tr class="separator:gaa4da9cfd34aa29866a19416317972cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8f2a69eb9af952d8756ab21785f8889" id="r_gaa8f2a69eb9af952d8756ab21785f8889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaa8f2a69eb9af952d8756ab21785f8889">CA_DevList_CountReq</a> (uint16_t list, uint16_t mr, int type)</td></tr>
+<tr class="memdesc:gaa8f2a69eb9af952d8756ab21785f8889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for the number of entries of a device list (type 0 = paired); the answer comes to <code>mr</code>.  <br /></td></tr>
+<tr class="separator:gaa8f2a69eb9af952d8756ab21785f8889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga606fbb920e9458444ff93ab2539e6577" id="r_ga606fbb920e9458444ff93ab2539e6577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga606fbb920e9458444ff93ab2539e6577">CA_DevList_EntryReq</a> (uint16_t list, uint16_t mr, int type, int index)</td></tr>
+<tr class="memdesc:ga606fbb920e9458444ff93ab2539e6577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for one device list entry; the answer (a RemDev copy) comes to <code>mr</code>.  <br /></td></tr>
+<tr class="separator:ga606fbb920e9458444ff93ab2539e6577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1138e07b6d93d666bb5d8b2debadc2e" id="r_gad1138e07b6d93d666bb5d8b2debadc2e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gad1138e07b6d93d666bb5d8b2debadc2e">CA_LocalRoot</a> (void)</td></tr>
+<tr class="memdesc:gad1138e07b6d93d666bb5d8b2debadc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root object of the local BT stack.  <br /></td></tr>
+<tr class="separator:gad1138e07b6d93d666bb5d8b2debadc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaedc33e2dd2e0653ce348718980a486fb" id="r_gaedc33e2dd2e0653ce348718980a486fb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaedc33e2dd2e0653ce348718980a486fb">CA_LocalDev</a> (uint16_t root, int zero)</td></tr>
+<tr class="memdesc:gaedc33e2dd2e0653ce348718980a486fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local BT device object.  <br /></td></tr>
+<tr class="separator:gaedc33e2dd2e0653ce348718980a486fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff734875fecfa624026b484702be7ad3" id="r_gaff734875fecfa624026b484702be7ad3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaff734875fecfa624026b484702be7ad3">CA_LocalAddr</a> (uint16_t local_dev)</td></tr>
+<tr class="memdesc:gaff734875fecfa624026b484702be7ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">BT address of the local device object.  <br /></td></tr>
+<tr class="separator:gaff734875fecfa624026b484702be7ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

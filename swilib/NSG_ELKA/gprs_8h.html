@@ -317,10 +317,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga18071400fb98341d5ec3e71714586521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the largest ENIP packet size (a firmware constant).  <br /></td></tr>
 <tr class="separator:ga18071400fb98341d5ec3e71714586521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5bd039d4afd18b21993244256387f141" id="r_ga5bd039d4afd18b21993244256387f141"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#ga5bd039d4afd18b21993244256387f141">enip_ip_init</a> (void *post_run)</td></tr>
-<tr class="memdesc:ga5bd039d4afd18b21993244256387f141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the ENIP IP module, its 8 interface slots and the 2 reassembly slots.  <br /></td></tr>
+<tr class="memdesc:ga5bd039d4afd18b21993244256387f141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the ENIP IP module, its interface slots (8 on NSG/ELKA, 16 on SG/X75) and the 2 reassembly slots.  <br /></td></tr>
 <tr class="separator:ga5bd039d4afd18b21993244256387f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa7caf7ea432a2cded2c68fcc4179c1c3" id="r_gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gaa7caf7ea432a2cded2c68fcc4179c1c3">enip_find_iface_by_driver</a> (void *driver)</td></tr>
-<tr class="memdesc:gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface (of 8) whose registered driver belongs to the same module as the given driver.  <br /></td></tr>
+<tr class="memdesc:gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface whose registered driver belongs to the same module as the given driver.  <br /></td></tr>
 <tr class="separator:gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae4ed61ae2655a5ea20861cc077b79f94" id="r_gae4ed61ae2655a5ea20861cc077b79f94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gae4ed61ae2655a5ea20861cc077b79f94">enip_iph_calc_chk_and_port_send</a> (void **port, void *packet, uint32_t size)</td></tr>
 <tr class="memdesc:gae4ed61ae2655a5ea20861cc077b79f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the IPv4 header checksum of a packet, set its size and send it to a port.  <br /></td></tr>
@@ -356,7 +356,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga07800a755ec8f11a819aa5b609357973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface with the given local address.  <br /></td></tr>
 <tr class="separator:ga07800a755ec8f11a819aa5b609357973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f632ef382c3f3a57f94c76d8b225849" id="r_ga1f632ef382c3f3a57f94c76d8b225849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#ga1f632ef382c3f3a57f94c76d8b225849">enip_icmp_frame_read</a> (void *module, void *packet)</td></tr>
-<tr class="memdesc:ga1f632ef382c3f3a57f94c76d8b225849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received ICMP packet (echo request, unreachable, quench, time exceeded, parameter problem) and release it.  <br /></td></tr>
+<tr class="memdesc:ga1f632ef382c3f3a57f94c76d8b225849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received ICMP packet and release it.  <br /></td></tr>
 <tr class="separator:ga1f632ef382c3f3a57f94c76d8b225849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga280f232036535a2416051be36f219307" id="r_ga280f232036535a2416051be36f219307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#ga280f232036535a2416051be36f219307">enip_udph_frame_read</a> (void *module, void *packet)</td></tr>
 <tr class="memdesc:ga280f232036535a2416051be36f219307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received UDP packet: check it and queue it on the matching socket.  <br /></td></tr>
@@ -398,7 +398,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab93322705086c78656f9e3209314d959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick a pseudo-random first local port for an interface.  <br /></td></tr>
 <tr class="separator:gab93322705086c78656f9e3209314d959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace038ebb3814e0d9bc1a6b20da5c3c9e" id="r_gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gace038ebb3814e0d9bc1a6b20da5c3c9e">enip_sockh_create_internal</a> (int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)</td></tr>
-<tr class="memdesc:gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initialise a socket in a free slot of the 12-socket table.  <br /></td></tr>
+<tr class="memdesc:gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initialise a socket in a free slot of the socket table.  <br /></td></tr>
 <tr class="separator:gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8c695c99b56a64b85c961012deb48d4d" id="r_ga8c695c99b56a64b85c961012deb48d4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#ga8c695c99b56a64b85c961012deb48d4d">enip_sockh_autobind_IF</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, int address)</td></tr>
 <tr class="memdesc:ga8c695c99b56a64b85c961012deb48d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a socket to an IP interface: the one matching its LMAN destination, or the first usable one.  <br /></td></tr>
@@ -492,6 +492,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gadd1324add5adf8b853e98b371b072305" id="r_gadd1324add5adf8b853e98b371b072305"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305">GetGPRSTrafficPointer</a> ()</td></tr>
 <tr class="memdesc:gadd1324add5adf8b853e98b371b072305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get traffic used by GPRS.  <br /></td></tr>
 <tr class="separator:gadd1324add5adf8b853e98b371b072305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac06691580f4c50a1882595fbcacd54bc" id="r_gac06691580f4c50a1882595fbcacd54bc"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gac06691580f4c50a1882595fbcacd54bc">LMAN_GetRegSlot</a> (unsigned cepid)</td></tr>
+<tr class="memdesc:gac06691580f4c50a1882595fbcacd54bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the LMAN socket registration of a process or take a free one (asserts when all 14 are used).  <br /></td></tr>
+<tr class="separator:gac06691580f4c50a1882595fbcacd54bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef371a047bd00e640a006a2bd1a88b5f" id="r_gaef371a047bd00e640a006a2bd1a88b5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_r_s.html#gaef371a047bd00e640a006a2bd1a88b5f">LMAN_FillReg</a> (unsigned reg_index, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="group___g_p_r_s.html#struct_r_e_g_s_o_c_k_c_e_p_i_d___d_a_t_a">REGSOCKCEPID_DATA</a> *reg, int on)</td></tr>
+<tr class="memdesc:gaef371a047bd00e640a006a2bd1a88b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a socket registration, as RegisterCepidForSocketWork does for the current process.  <br /></td></tr>
+<tr class="separator:gaef371a047bd00e640a006a2bd1a88b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

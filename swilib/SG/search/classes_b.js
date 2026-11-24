@@ -7,5 +7,6 @@ var searchData=
   ['menuitem_5fdesc_4',['MENUITEM_DESC',['../group___u_i.html#struct_m_e_n_u_i_t_e_m___d_e_s_c',1,'']]],
   ['ml_5fmenu_5fdesc_5',['ML_MENU_DESC',['../group___u_i.html#struct_m_l___m_e_n_u___d_e_s_c',1,'']]],
   ['mmicmd_6',['MMICMD',['../group___c_s_m.html#struct_m_m_i_c_m_d',1,'']]],
-  ['mutex_7',['MUTEX',['../group___system.html#struct_m_u_t_e_x',1,'']]]
+  ['mopi_5fmsg_7',['MOPI_MSG',['../group___g_b_s.html#struct_m_o_p_i___m_s_g',1,'']]],
+  ['mutex_8',['MUTEX',['../group___system.html#struct_m_u_t_e_x',1,'']]]
 ];

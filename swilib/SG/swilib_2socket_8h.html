@@ -263,6 +263,30 @@ Functions</h2></td></tr>
 <tr class="memitem:gad4725afcb96cfe437fd7a748129b1f33" id="r_gad4725afcb96cfe437fd7a748129b1f33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#gad4725afcb96cfe437fd7a748129b1f33">closesocket</a> (int <a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
 <tr class="memdesc:gad4725afcb96cfe437fd7a748129b1f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close socket descriptor.  <br /></td></tr>
 <tr class="separator:gad4725afcb96cfe437fd7a748129b1f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2df09663e36f8f790d61a02810a3395" id="r_gad2df09663e36f8f790d61a02810a3395"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group___socket.html#structhostent">hostent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#gad2df09663e36f8f790d61a02810a3395">gethostbyname</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *name)</td></tr>
+<tr class="memdesc:gad2df09663e36f8f790d61a02810a3395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a host name synchronously.  <br /></td></tr>
+<tr class="separator:gad2df09663e36f8f790d61a02810a3395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46bb52bb4b6f955262014b3b11c102ea" id="r_ga46bb52bb4b6f955262014b3b11c102ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga46bb52bb4b6f955262014b3b11c102ea">getsockname</a> (int sock, <a class="el" href="group___socket.html#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *addr, int *len)</td></tr>
+<tr class="memdesc:ga46bb52bb4b6f955262014b3b11c102ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the local address of a socket.  <br /></td></tr>
+<tr class="separator:ga46bb52bb4b6f955262014b3b11c102ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabea7e39e29fe65e493b74b5b57cbeefe" id="r_gabea7e39e29fe65e493b74b5b57cbeefe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#gabea7e39e29fe65e493b74b5b57cbeefe">getpeername</a> (int sock, <a class="el" href="group___socket.html#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *addr, int *len)</td></tr>
+<tr class="memdesc:gabea7e39e29fe65e493b74b5b57cbeefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the remote address of a connected socket.  <br /></td></tr>
+<tr class="separator:gabea7e39e29fe65e493b74b5b57cbeefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2170ca2cad523243a1b62221f1bd44f6" id="r_ga2170ca2cad523243a1b62221f1bd44f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga2170ca2cad523243a1b62221f1bd44f6">setsockopt</a> (int sock, int level, int option, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *value, int len)</td></tr>
+<tr class="memdesc:ga2170ca2cad523243a1b62221f1bd44f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a socket option.  <br /></td></tr>
+<tr class="separator:ga2170ca2cad523243a1b62221f1bd44f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73f4af649a91ea1c14d4172d94f80b7f" id="r_ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga73f4af649a91ea1c14d4172d94f80b7f">getsockopt</a> (int sock, int level, int option, void *value, int *len)</td></tr>
+<tr class="memdesc:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a socket option.  <br /></td></tr>
+<tr class="separator:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga304033105c73531ec03d76f993bc296a" id="r_ga304033105c73531ec03d76f993bc296a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga304033105c73531ec03d76f993bc296a">ioctlsocket</a> (int sock, int cmd, void *arg)</td></tr>
+<tr class="memdesc:ga304033105c73531ec03d76f993bc296a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a socket control command; read socklasterr for errors.  <br /></td></tr>
+<tr class="separator:ga304033105c73531ec03d76f993bc296a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7005ffbeeff92be5394ff3244da79028" id="r_ga7005ffbeeff92be5394ff3244da79028"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga7005ffbeeff92be5394ff3244da79028">listen</a> (int sock, int backlog)</td></tr>
+<tr class="memdesc:ga7005ffbeeff92be5394ff3244da79028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start listening for incoming TCP connections.  <br /></td></tr>
+<tr class="separator:ga7005ffbeeff92be5394ff3244da79028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ea7cf16b549b6fc8b404f8dc72347e2" id="r_ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___socket.html#ga1ea7cf16b549b6fc8b404f8dc72347e2">ENIP_GetNativeSocket</a> (int sock, void **native)</td></tr>
+<tr class="memdesc:ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up the native ENIP object for a socket descriptor.  <br /></td></tr>
+<tr class="separator:ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
