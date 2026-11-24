@@ -6552,8 +6552,7 @@ ELKA = "F8 40 2D E9 01 70 A0 E1 00 50 A0 E1 02 40 A0 E1 ?? ?? ?? EB 00 60 A0 E1 
 
 [4BB]
 decl = "uint8_t JSApi_GetConnectionState(int conn)"
-NSG = "38 40 2D E9 00 50 A0 E1 ?? ?? ?? EB 00 40 A0 E1 61 00 A0 E3"
-ELKA = "1C 40 2D E9 00 40 A0 E1 ?? ?? ?? EB 05 00 50 E3"
+NSG = "1C 40 2D E9 00 40 A0 E1 ?? ?? ?? EB 0? 00 50 E3 00 40 8D E5"
 
 [4BC]
 decl = "int JSApi_ReadBytes(int conn, void *buffer, uint32_t size)"
@@ -6601,7 +6600,7 @@ SG = "F8 B5 00 21 08 38 04 28 00 91 09 D3 ?? A0 ?? F? ?? ??"
 decl = "void BTLP_vFlushBuffer(int mode, int sapi)"
 NSG = "F3 31 09 06 09 0E 09 29 B0 B5 1A D3 + 1"
 ELKA = "F3 31 09 06 09 0E 09 29 B0 B5 1A D3 + 1"
-SG = "80 B5 09 D3 ?? A0 ?? F? ?? ?? 03 DF 00 20 ?? 49"
+SG = "08 39 04 29 80 B5 09 D3 ?? A0 ?? F? ?? ?? 03 DF 00 20 ?? 49 + 1"
 
 [4C4]
 decl = "void L2CA_ReadDataReq(const void *message)"
@@ -6670,9 +6669,7 @@ SG = "98 B5 04 1C ?? F? ?? ?? 10 22 00 92 04 22 01 1C"
 
 [4D0]
 decl = "void CA_MR_Done(uint16_t mr, void *object_message)"
-SG = "02 1C 08 1C 80 B5 11 1C ?? F? ?? ?? 80 BD B0 B5 + 1"
-# CX75v25: the SG row hits another wrapper (A0C7F1D5); anchored on the end of CA_MR_New
-X75 = "07 B0 F0 BD 02 1C 08 1C 80 B5 11 1C ?? F? ?? ?? 80 BD + 5"
+SG = "07 B0 F0 BD 02 1C 08 1C 80 B5 11 1C ?? F? ?? ?? 80 BD + 5"
 
 [4D1]
 decl = "uint8_t CA_MR_Class(void)"
