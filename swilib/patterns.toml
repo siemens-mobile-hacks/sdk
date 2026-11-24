@@ -5975,11 +5975,19 @@ SG = "F3 B5 89 B0 00 26 04 1C 04 21 07 AB 08 AA ?? F? ?? ??"
 decl = "int *RamJavaVMStarted(void)"
 NSG = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 4) + 8"
 ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 4) + 8"
+SG = [
+	"&(FF 4D 2D E9 ?? ?? 9F E5 08 D0 4D E2 04 00 96 E5 00 00 50 E3 ?? 00 00 0A BA 00 DD E1 ?? ?? 9F E5 ?? ?? 9F E5 45 00 50 E3 + 4) + 4",
+	"&(FF 4D 2D E9 ?? ?? 9F E5 08 D0 4D E2 08 00 96 E5 00 00 50 E3 04 00 00 0A ?? ?? ?? EB 00 00 50 E3 03 00 00 0A 08 00 8D E2 ?? ?? ?? EB 18 D0 8D E2 F0 8D BD E8 BA 00 DD E1 ?? ?? 9F E5 ?? ?? 9F E5 4? 00 50 E3 + 4) + 8",
+]
 
 [455]
 decl = "int *RamJavaExitPopup(void)"
 NSG = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 14)"
 ELKA = "&(FC 4D 2D E9 ?? ?? 9F E5 08 00 96 E5 00 00 50 E3 ?? 00 00 0A ?? ?? 9F E5 62 0C 51 E3 + 14)"
+SG = [
+	"&(FF 4D 2D E9 ?? ?? 9F E5 08 D0 4D E2 04 00 96 E5 00 00 50 E3 ?? 00 00 0A BA 00 DD E1 ?? ?? 9F E5 ?? ?? 9F E5 45 00 50 E3 + 20)",
+	"&(FF 4D 2D E9 ?? ?? 9F E5 08 D0 4D E2 08 00 96 E5 00 00 50 E3 04 00 00 0A ?? ?? ?? EB 00 00 50 E3 03 00 00 0A 08 00 8D E2 ?? ?? ?? EB 18 D0 8D E2 F0 8D BD E8 BA 00 DD E1 ?? ?? 9F E5 ?? ?? 9F E5 4? 00 50 E3 + 3C)",
+]
 
 [456]
 decl = "JAVA_HEAP_SLOTS *RamJavaHeapSlots(void)"
@@ -6001,7 +6009,7 @@ SG = "08 40 2D E9 03 C0 A0 E1 08 30 9D E5 00 30 8D E5 0C 30 A0 E1 ?? ?? ?? EB 00
 
 [45B]
 decl = "SEXIT_HOOKS *RamSExitHooks(void)"
-ELKA = "&(38 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 ?? ?? 9F 15 0C 00 50 11 80 CF 40 12 06 C0 5C 12 07 00 A0 03 00 00 C1 05 ?? ?? 9F E5 + 5C)"
+NSG = "&(?? 40 2D E9 ?? ?? 9F E5 00 C0 94 E5 00 00 5C E3 11 00 00 0A 00 20 CC E5 01 20 A0 E1 00 10 A0 E1 0C 00 A0 E1 ?? ?? ?? EB 00 10 94 E5 B2 00 D1 E1 B4 20 D1 E1 00 00 52 E3 07 00 00 1A 80 CF 40 E2 03 C0 5C E2 + 5C)"
 
 [45C]
 decl = "SEXIT_STATE *RamSExitState(void)"

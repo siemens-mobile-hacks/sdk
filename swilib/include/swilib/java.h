@@ -72,7 +72,8 @@ typedef struct JAVA_HEAP_SLOTS {
 
 /**
  * "VM started" flag: 1 while the Java VM exists, cleared when the VM ends.
- * In the VM state of the JVM message handler (native/jenv/java_jvm_port.c, JVM_*_MSG 0x6200-0x6203).
+ * The JVM message handler (JVM_*_MSG 0x6200-0x6203 on NSG/ELKA, 0x45-0x49 on SG, 0x48-0x4E on X75)
+ * ignores messages while it is 0.
  * @return pointer to the flag
  * */
 __swi_begin(0x8454)

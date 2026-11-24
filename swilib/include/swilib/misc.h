@@ -571,6 +571,7 @@ __swi_end(0x3F9, IsAnyOfAccessoriesConnected, (accessory_ids, count));
  * @{
  * */
 
+#ifdef NEWSGOLD
 /**
  * SExit record: what the firmware saves on a fatal exit ("Exit Info") or a warning.
  * Filled by the SExit call (code, module) and SWI 2/3 of the caller (registers, stack).
@@ -599,12 +600,15 @@ typedef void (*SEXIT_HANDLER)(SEXIT_RECORD *record);
 /**
  * SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler). By
  * default they point to flash, so replace a pointer, not the word.
+ * @warning On S68v52 the table has the ELKA layout: pre at +0x0C, blacklist at +0x10.
  * */
 typedef struct SEXIT_HOOKS {
 	SEXIT_HANDLER *fatal;		/**< fatal exit: saves Exit Info and restarts the phone (never returns) */
 	SEXIT_HANDLER *warning;		/**< warning: saves the record and returns */
 	void *unk;
+#ifdef ELKA
 	void (**pre)(void);			/**< called before both, no handler by default */
+#endif
 	int blacklist;				/**< 1: check the module blacklist */
 } SEXIT_HOOKS;
 
@@ -632,11 +636,12 @@ typedef struct SEXIT_RECORDS {
 } SEXIT_RECORDS;
 
 /**
- * SExit handler table (see #SEXIT_HOOKS). The fatal exit (EL71 A04D319C, called from ~3500 places
- * and the CPU exception vectors) fills the current fatal record, calls *pre, then jumps to *fatal.
+ * SExit handler table (see #SEXIT_HOOKS). The fatal exit (#SExit, also called from the CPU exception vectors)
+ * fills the current fatal record, calls *pre (if the table has it), then jumps to *fatal.
  * The caller has run SWI 2 before: it continues in SYS mode with IRQ and FIQ disabled, the
  * original CPSR is in record->regs.cpsr.
  * @return pointer to the table
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x845B)
 SEXIT_HOOKS *RamSExitHooks(void)
@@ -647,21 +652,23 @@ __swi_end(0x845B, RamSExitHooks, ());
  * the firmware does for a warning: fatal_depth--, then #SEXIT_RECORDS fatal = slot of the new depth
  * (1: fatal_slot[0], 2: fatal_slot[1], else NULL).
  * @return pointer to the state
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x845C)
 SEXIT_STATE *RamSExitState(void)
 __swi_end(0x845C, RamSExitState, ());
 
 /**
- * Current SExit records (see #SEXIT_RECORDS), internal RAM 0x81B04 on EL71/E71 sw45.
+ * Current SExit records (see #SEXIT_RECORDS) in internal RAM.
  * @return pointer to the records
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x845D)
 SEXIT_RECORDS *RamSExitRecords(void)
 __swi_end(0x845D, RamSExitRecords, ());
 
 /**
- * Fatal SExit ("default" exit, EL71 A04D319C): fills the current fatal record and jumps to the
+ * Fatal SExit ("default" exit): fills the current fatal record and jumps to the
  * #SEXIT_HOOKS fatal handler, which by default saves Exit Info and restarts the phone.
  * The firmware always runs SWI 2 right before it (`svc 2`): that saves the registers, takes a
  * record (#SEXIT_STATE fatal_depth) and disables IRQ/FIQ. Without SWI 2 there is no record.
@@ -669,10 +676,12 @@ __swi_end(0x845D, RamSExitRecords, ());
  * @param module	module id (2 bytes, big endian) + name, the last character has bit 7 set
  * @param type		record type, 2 for a fatal exit
  * @param param		saved in the record
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x45E)
 void SExit(int code, const void *module, int type, int param)
 __swi_end(0x45E, SExit, (code, module, type, param));
+#endif
 
 /**
  * Open FlexMenu.
