@@ -113,7 +113,7 @@ $(function(){initNavTree('group___sound.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:struct_p_l_a_y___v_o_l_u_m_e" id="r_struct_p_l_a_y___v_o_l_u_m_e"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></td></tr>
-<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_SetVolume.  <a href="#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
+<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to <a class="el" href="#gaff1e41b89854b46f253f15f82ff5453b" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a>.  <a href="#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
 <tr class="separator:struct_p_l_a_y___v_o_l_u_m_e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_g_b_s___p_s_o_u_n_d___m_s_g" id="r_struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">GBS_PSOUND_MSG</a></td></tr>
 <tr class="memdesc:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS event (<a class="el" href="group___g_b_s.html#ggac509767e10a246d85d34188e9db97736a6bd39ad9862d39301ed56f48d1eb205a" title="PlayFile status reporting.">MSG_PLAYFILE_REPORT</a>) for the <a class="el" href="#gaa72dd56ff46de16afed8c90775c80716" title="Play file from filesystem (path=folder\file).">PlayFile</a> or <a class="el" href="#ga8ebafa81a63693690844b2019fecfcc4" title="Play melody from memory.">PlayMelodyInMem</a>.  <a href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">More...</a><br /></td></tr>
@@ -741,12 +741,27 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>play object handle </td></tr>
-    <tr><td class="paramname">volume</td><td>volume level (nsg: 1-15, sg: 1-5) </td></tr>
+    <tr><td class="paramname">volume</td><td>NSG/ELKA: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> passed by value; SG/X75: volume level, 16 = the level from the profile </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
-
+<dl class="section note"><dt>Note</dt><dd>The type of <code>volume</code> differs between platforms: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> on NSG/ELKA, int on SG/X75. </dd>
+<dd>
+On NSG/ELKA read the current value with #PlayMelody_GetVolume and change <code>level</code>.</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifdef NEWSGOLD</span></div>
+<div class="line"><a class="code hl_struct" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume;</div>
+<div class="line"><span class="keywordflow">if</span> (PlayMelody_GetVolume(handle, &amp;volume)) {</div>
+<div class="line">    volume.<a class="code hl_variable" href="#a69b3276086324147c75e97900d008eb7">level</a> = 3;</div>
+<div class="line">    <a class="code hl_function" href="#gaff1e41b89854b46f253f15f82ff5453b">PlayMelody_ChangeVolume</a>(handle, volume);</div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><a class="code hl_function" href="#gaff1e41b89854b46f253f15f82ff5453b">PlayMelody_ChangeVolume</a>(handle, 3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agroup___sound_html_a69b3276086324147c75e97900d008eb7"><div class="ttname"><a href="#a69b3276086324147c75e97900d008eb7">PLAY_VOLUME::level</a></div><div class="ttdeci">uint8_t level</div><div class="ttdoc">volume level 0..5 (Obs 0, 1, 4, 8, 12, 15), 6 = the level from the profile</div><div class="ttdef"><b>Definition</b> <a href="sound_8h_source.html#l00029">sound.h:29</a></div></div>
+<div class="ttc" id="agroup___sound_html_gaff1e41b89854b46f253f15f82ff5453b"><div class="ttname"><a href="#gaff1e41b89854b46f253f15f82ff5453b">PlayMelody_ChangeVolume</a></div><div class="ttdeci">int PlayMelody_ChangeVolume(int handle, int volume)</div><div class="ttdoc">Change the volume of the playing melody.</div></div>
+<div class="ttc" id="agroup___sound_html_struct_p_l_a_y___v_o_l_u_m_e"><div class="ttname"><a href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></div><div class="ttdoc">Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.</div><div class="ttdef"><b>Definition</b> <a href="sound_8h_source.html#l00028">sound.h:28</a></div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga72961d85ae1cec288d43942767592b30" name="ga72961d85ae1cec288d43942767592b30"></a>
@@ -983,7 +998,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00421">421</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00433">433</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -1024,7 +1039,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00431">431</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00443">443</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>

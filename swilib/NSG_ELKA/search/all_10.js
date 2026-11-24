@@ -544,7 +544,7 @@ var searchData=
   ['player_5fvol_5fup_541',['PLAYER_VOL_UP',['../mplayer_8h.html#aa147e33708b5a4495b0df19473b2cf23',1,'mplayer.h']]],
   ['playfile_542',['PlayFile',['../group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776',1,'sound.h']]],
   ['playfile_5fopt_543',['PLAYFILE_OPT',['../group___sound.html#struct_p_l_a_y_f_i_l_e___o_p_t',1,'PLAYFILE_OPT'],['../group___sound.html#ga03767c5a7e78df80ea93ce372221275c',1,'PLAYFILE_OPT:&#160;sound.h']]],
-  ['playmelody_5fchangevolume_544',['PlayMelody_ChangeVolume',['../group___sound.html#gaff1e41b89854b46f253f15f82ff5453b',1,'sound.h']]],
+  ['playmelody_5fchangevolume_544',['PlayMelody_ChangeVolume',['../group___sound.html#ga2b03ef8d4fd3b13ee8700ab7d99a9420',1,'sound.h']]],
   ['playmelody_5fgetduration_545',['PlayMelody_GetDuration',['../group___sound.html#ga2989aa7c6fb9bc15c228032c0c60078e',1,'sound.h']]],
   ['playmelody_5fgetposition_546',['PlayMelody_GetPosition',['../group___sound.html#gad3bd5ebede0583620de217ff6220a330',1,'sound.h']]],
   ['playmelody_5fgetvolume_547',['PlayMelody_GetVolume',['../group___sound.html#gae5de9129a097bbd61b71f6e9de215128',1,'sound.h']]],

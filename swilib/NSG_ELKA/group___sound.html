@@ -113,7 +113,7 @@ $(function(){initNavTree('group___sound.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:struct_p_l_a_y___v_o_l_u_m_e" id="r_struct_p_l_a_y___v_o_l_u_m_e"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></td></tr>
-<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to <a class="el" href="#ga4252bf642675211754b63f09028f965d" title="Change the volume of the playing melody (PlayMelody_ChangeVolume with the real NSG argument).">PlayMelody_SetVolume</a>.  <a href="#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
+<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to <a class="el" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a>.  <a href="#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
 <tr class="separator:struct_p_l_a_y___v_o_l_u_m_e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_g_b_s___p_s_o_u_n_d___m_s_g" id="r_struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">GBS_PSOUND_MSG</a></td></tr>
 <tr class="memdesc:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS event (<a class="el" href="group___g_b_s.html#ggac509767e10a246d85d34188e9db97736a6bd39ad9862d39301ed56f48d1eb205a" title="PlayFile status reporting.">MSG_PLAYFILE_REPORT</a>) for the <a class="el" href="#gafc75a10382cd8b26ad9ba59a3e75e776" title="Play file from filesystem (path=folder\file).">PlayFile</a> or <a class="el" href="#ga8ebafa81a63693690844b2019fecfcc4" title="Play melody from memory.">PlayMelodyInMem</a>.  <a href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">More...</a><br /></td></tr>
@@ -316,11 +316,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8ebafa81a63693690844b2019fecfcc4" id="r_ga8ebafa81a63693690844b2019fecfcc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ebafa81a63693690844b2019fecfcc4">PlayMelodyInMem</a> (char unk1, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *buffer, int size, int cepid, int msg, int unk2)</td></tr>
 <tr class="memdesc:ga8ebafa81a63693690844b2019fecfcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play melody from memory.  <br /></td></tr>
 <tr class="separator:ga8ebafa81a63693690844b2019fecfcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff1e41b89854b46f253f15f82ff5453b" id="r_gaff1e41b89854b46f253f15f82ff5453b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff1e41b89854b46f253f15f82ff5453b">PlayMelody_ChangeVolume</a> (int handle, int volume)</td></tr>
-<tr class="memdesc:gaff1e41b89854b46f253f15f82ff5453b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody.  <br /></td></tr>
-<tr class="separator:gaff1e41b89854b46f253f15f82ff5453b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b03ef8d4fd3b13ee8700ab7d99a9420" id="r_ga2b03ef8d4fd3b13ee8700ab7d99a9420"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a> (int handle, <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume)</td></tr>
+<tr class="memdesc:ga2b03ef8d4fd3b13ee8700ab7d99a9420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody.  <br /></td></tr>
+<tr class="separator:ga2b03ef8d4fd3b13ee8700ab7d99a9420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4252bf642675211754b63f09028f965d" id="r_ga4252bf642675211754b63f09028f965d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4252bf642675211754b63f09028f965d">PlayMelody_SetVolume</a> (int handle, <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume)</td></tr>
-<tr class="memdesc:ga4252bf642675211754b63f09028f965d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody (<a class="el" href="#gaff1e41b89854b46f253f15f82ff5453b" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a> with the real NSG argument).  <br /></td></tr>
+<tr class="memdesc:ga4252bf642675211754b63f09028f965d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody.     <br /></td></tr>
 <tr class="separator:ga4252bf642675211754b63f09028f965d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae5de9129a097bbd61b71f6e9de215128" id="r_gae5de9129a097bbd61b71f6e9de215128"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae5de9129a097bbd61b71f6e9de215128">PlayMelody_GetVolume</a> (int handle, <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> *volume)</td></tr>
 <tr class="memdesc:gae5de9129a097bbd61b71f6e9de215128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the volume of the playing melody.  <br /></td></tr>
@@ -802,8 +802,8 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 
 </div>
 </div>
-<a id="gaff1e41b89854b46f253f15f82ff5453b" name="gaff1e41b89854b46f253f15f82ff5453b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaff1e41b89854b46f253f15f82ff5453b">&#9670;&#160;</a></span>PlayMelody_ChangeVolume()</h2>
+<a id="ga2b03ef8d4fd3b13ee8700ab7d99a9420" name="ga2b03ef8d4fd3b13ee8700ab7d99a9420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">&#9670;&#160;</a></span>PlayMelody_ChangeVolume()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -816,7 +816,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>volume</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></td>          <td class="paramname"><span class="paramname"><em>volume</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -825,12 +825,28 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>play object handle </td></tr>
-    <tr><td class="paramname">volume</td><td>volume level (nsg: 1-15, sg: 1-5) </td></tr>
+    <tr><td class="paramname">volume</td><td>NSG/ELKA: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> passed by value; SG/X75: volume level, 16 = the level from the profile </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
-
+<dl class="section note"><dt>Note</dt><dd>The type of <code>volume</code> differs between platforms: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> on NSG/ELKA, int on SG/X75. </dd>
+<dd>
+On NSG/ELKA read the current value with <a class="el" href="#gae5de9129a097bbd61b71f6e9de215128" title="Get the volume of the playing melody.">PlayMelody_GetVolume</a> and change <code>level</code>.</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifdef NEWSGOLD</span></div>
+<div class="line"><a class="code hl_struct" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume;</div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="#gae5de9129a097bbd61b71f6e9de215128">PlayMelody_GetVolume</a>(handle, &amp;volume)) {</div>
+<div class="line">    volume.<a class="code hl_variable" href="#a69b3276086324147c75e97900d008eb7">level</a> = 3;</div>
+<div class="line">    <a class="code hl_function" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a>(handle, volume);</div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><a class="code hl_function" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a>(handle, 3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agroup___sound_html_a69b3276086324147c75e97900d008eb7"><div class="ttname"><a href="#a69b3276086324147c75e97900d008eb7">PLAY_VOLUME::level</a></div><div class="ttdeci">uint8_t level</div><div class="ttdoc">volume level 0..5 (Obs 0, 1, 4, 8, 12, 15), 6 = the level from the profile</div><div class="ttdef"><b>Definition</b> <a href="sound_8h_source.html#l00029">sound.h:29</a></div></div>
+<div class="ttc" id="agroup___sound_html_ga2b03ef8d4fd3b13ee8700ab7d99a9420"><div class="ttname"><a href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a></div><div class="ttdeci">int PlayMelody_ChangeVolume(int handle, PLAY_VOLUME volume)</div><div class="ttdoc">Change the volume of the playing melody.</div></div>
+<div class="ttc" id="agroup___sound_html_gae5de9129a097bbd61b71f6e9de215128"><div class="ttname"><a href="#gae5de9129a097bbd61b71f6e9de215128">PlayMelody_GetVolume</a></div><div class="ttdeci">int PlayMelody_GetVolume(int handle, PLAY_VOLUME *volume)</div><div class="ttdoc">Get the volume of the playing melody.</div></div>
+<div class="ttc" id="agroup___sound_html_struct_p_l_a_y___v_o_l_u_m_e"><div class="ttname"><a href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></div><div class="ttdoc">Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.</div><div class="ttdef"><b>Definition</b> <a href="sound_8h_source.html#l00028">sound.h:28</a></div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga4252bf642675211754b63f09028f965d" name="ga4252bf642675211754b63f09028f965d"></a>
@@ -852,16 +868,28 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
       </table>
 </div><div class="memdoc">
 
-<p>Change the volume of the playing melody (<a class="el" href="#gaff1e41b89854b46f253f15f82ff5453b" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a> with the real NSG argument). </p>
-<p>On NSG the volume is an 8-byte <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_SetVolume.">PLAY_VOLUME</a> passed in r1:r2; with an int the second word is garbage (EL71v45: the stream went silent). Read the current value with <a class="el" href="#gae5de9129a097bbd61b71f6e9de215128" title="Get the volume of the playing melody.">PlayMelody_GetVolume</a> and change <code>level</code>. <code>level</code> 0..5 maps to the Obs volume 0, 1, 4, 8, 12, 15; for all 16 Obs steps use <a class="el" href="group___o_b_s.html#ga1a3b48028242bd7b6e898f112cb3651b" title="Set sound volume.">Obs_Sound_SetVolumeEx</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Change the volume of the playing melody.    </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>play object handle </td></tr>
-    <tr><td class="paramname">volume</td><td>new volume, see <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_SetVolume.">PLAY_VOLUME</a> </td></tr>
+    <tr><td class="paramname">volume</td><td>NSG/ELKA: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> passed by value; SG/X75: volume level, 16 = the level from the profile </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
-<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The type of <code>volume</code> differs between platforms: <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> on NSG/ELKA, int on SG/X75. </dd>
+<dd>
+On NSG/ELKA read the current value with <a class="el" href="#gae5de9129a097bbd61b71f6e9de215128" title="Get the volume of the playing melody.">PlayMelody_GetVolume</a> and change <code>level</code>.</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifdef NEWSGOLD</span></div>
+<div class="line"><a class="code hl_struct" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume;</div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="#gae5de9129a097bbd61b71f6e9de215128">PlayMelody_GetVolume</a>(handle, &amp;volume)) {</div>
+<div class="line">    volume.<a class="code hl_variable" href="#a69b3276086324147c75e97900d008eb7">level</a> = 3;</div>
+<div class="line">    <a class="code hl_function" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a>(handle, volume);</div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><a class="code hl_function" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420">PlayMelody_ChangeVolume</a>(handle, 3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+</div><!-- fragment -->    <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>Use <a class="el" href="#ga2b03ef8d4fd3b13ee8700ab7d99a9420" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -888,7 +916,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">handle</td><td>play object handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">volume</td><td>current volume, see <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_SetVolume.">PLAY_VOLUME</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">volume</td><td>current volume, see <a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e" title="Volume of a play object (NSG/ELKA), passed by value to PlayMelody_ChangeVolume.">PLAY_VOLUME</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -1131,7 +1159,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00421">421</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00433">433</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1200,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00431">431</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00443">443</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>

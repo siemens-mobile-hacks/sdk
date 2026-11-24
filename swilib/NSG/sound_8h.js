@@ -90,7 +90,7 @@ var sound_8h =
     [ "GetPlayStatus", "group___sound.html#ga8b458f020a130911922204d5b11f8339", null ],
     [ "PlaySound", "group___sound.html#ga36212ddf58d0e3f3670592a2dc775b61", null ],
     [ "PlayMelodyInMem", "group___sound.html#ga8ebafa81a63693690844b2019fecfcc4", null ],
-    [ "PlayMelody_ChangeVolume", "group___sound.html#gaff1e41b89854b46f253f15f82ff5453b", null ],
+    [ "PlayMelody_ChangeVolume", "group___sound.html#ga2b03ef8d4fd3b13ee8700ab7d99a9420", null ],
     [ "PlayMelody_SetVolume", "group___sound.html#ga4252bf642675211754b63f09028f965d", null ],
     [ "PlayMelody_GetVolume", "group___sound.html#gae5de9129a097bbd61b71f6e9de215128", null ],
     [ "PlayMelody_StopPlayback", "group___sound.html#ga72961d85ae1cec288d43942767592b30", null ],
