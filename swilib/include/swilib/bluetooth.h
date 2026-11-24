@@ -519,8 +519,7 @@ __swi_end(0x4B7, BTA_ServiceSearch_RetrieveServiceReq, (oh, device, record, para
 /**
  * Find the JSApi (Java Bluetooth) slot of a connection handle.
  * @param conn		connection handle
- * @return slot 0..4, 5 when not registered
- * ARM code.
+ * @return slot index; when not registered, the number of slots (5 or 6, depends on the firmware)
  * */
 __swi_begin(0x4B8)
 uint32_t JSApi_CurrentHandleID(int conn)

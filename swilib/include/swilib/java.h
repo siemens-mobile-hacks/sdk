@@ -62,8 +62,7 @@ void StartMidlet(char *midlet)
 __swi_end(0x04B, StartMidlet, (midlet));
 
 /**
- * Java heap slots: the VM takes its heap from one of two slots, malloc'ed at the VM start.
- * The firmware does not free them when the VM ends; see #RamJavaHeapSlots.
+ * Java heap slots, allocated at the VM start and never freed by the firmware (see #RamJavaHeapSlots).
  * */
 typedef struct JAVA_HEAP_SLOTS {
 	void *heap[2];	/**< aligned heap start, NULL = slot free */
@@ -90,9 +89,9 @@ int *RamJavaExitPopup(void)
 __swi_end(0x8455, RamJavaExitPopup, ());
 
 /**
- * Java heap slots (see #JAVA_HEAP_SLOTS). After the VM has ended (#RamJavaVMStarted is 0) the
- * blocks can be freed: mfree(raw[i]), then zero heap[i], raw[i], size[i] and the matching
- * #RamJavaVMHeaps entry. Without this the Java heap (MBs) stays allocated until a reboot.
+ * Java heap slots (see #JAVA_HEAP_SLOTS).
+ * After the VM has ended, free a slot with mfree(raw[i]) and zero heap[i] and the matching #RamJavaVMHeaps entry.
+ * Without this the Java heap (MBs) stays allocated until a reboot.
  * @return pointer to the slot table
  * */
 __swi_begin(0x8456)
@@ -100,9 +99,8 @@ JAVA_HEAP_SLOTS *RamJavaHeapSlots(void)
 __swi_end(0x8456, RamJavaHeapSlots, ());
 
 /**
- * VM heap globals (set up by the VM start, "HeapCapacity (%d bytes) too low to start VM").
- * Entry [1] belongs to heap slot 0, entry [0] to heap slot 1: zero them with the slots.
- * @return pointer to the globals
+ * Heap pointers reused by the next VM start; a non-NULL entry equals heap[i] of its #JAVA_HEAP_SLOTS slot.
+ * @return pointer to the entries (two; on X75 only entry [0])
  * */
 __swi_begin(0x8457)
 void **RamJavaVMHeaps(void)
