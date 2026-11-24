@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['file_0',['File',['../group___file.html',1,'']]]
+  ['eeprom_0',['EEPROM',['../group___e_e_p_r_o_m.html',1,'']]],
+  ['explorer_1',['Explorer',['../group___explorer.html',1,'']]]
 ];

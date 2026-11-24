@@ -232,6 +232,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga944b87d181da40172ce7a3ad07eb4586" id="r_ga944b87d181da40172ce7a3ad07eb4586"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga944b87d181da40172ce7a3ad07eb4586">htonl</a> (uint32_t p)</td></tr>
 <tr class="memdesc:ga944b87d181da40172ce7a3ad07eb4586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert host to network order (unsigned int).  <br /></td></tr>
 <tr class="separator:ga944b87d181da40172ce7a3ad07eb4586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b062b1a9db368e577bf2e143152780e" id="r_ga3b062b1a9db368e577bf2e143152780e"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3b062b1a9db368e577bf2e143152780e">ntohs</a> (uint16_t p)</td></tr>
+<tr class="memdesc:ga3b062b1a9db368e577bf2e143152780e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert network to host order.  <br /></td></tr>
+<tr class="separator:ga3b062b1a9db368e577bf2e143152780e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf62a3ceb6a1115567fafbca7b7b6ccf8" id="r_gaf62a3ceb6a1115567fafbca7b7b6ccf8"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf62a3ceb6a1115567fafbca7b7b6ccf8">ntohl</a> (uint32_t p)</td></tr>
+<tr class="separator:gaf62a3ceb6a1115567fafbca7b7b6ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf4e0711877c45a41168ac677b0670ccd" id="r_gaf4e0711877c45a41168ac677b0670ccd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf4e0711877c45a41168ac677b0670ccd">socket</a> (int domain, int type, int protocol)</td></tr>
 <tr class="separator:gaf4e0711877c45a41168ac677b0670ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeedaa5cac80a95d50232c1d130615a1a" id="r_gaeedaa5cac80a95d50232c1d130615a1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeedaa5cac80a95d50232c1d130615a1a">connect</a> (int <a class="el" href="#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> struct <a class="el" href="#structsockaddr">sockaddr</a> *address, <a class="el" href="#ga3f5f480bed01f54df564b99350f1d1bb">socklen_t</a> address_len)</td></tr>
@@ -822,6 +827,63 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Convert host to network order (unsigned int). </p>
+
+</div>
+</div>
+<a id="ga3b062b1a9db368e577bf2e143152780e" name="ga3b062b1a9db368e577bf2e143152780e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b062b1a9db368e577bf2e143152780e">&#9670;&#160;</a></span>ntohs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t ntohs </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert network to host order. </p>
+<p>On this little-endian core the swap is symmetric, so these reuse the host-to-network SWIs above. </p>
+
+<p class="definition">Definition at line <a class="el" href="swilib_2socket_8h_source.html#l00191">191</a> of file <a class="el" href="swilib_2socket_8h_source.html">socket.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf62a3ceb6a1115567fafbca7b7b6ccf8" name="gaf62a3ceb6a1115567fafbca7b7b6ccf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf62a3ceb6a1115567fafbca7b7b6ccf8">&#9670;&#160;</a></span>ntohl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t ntohl </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="swilib_2socket_8h_source.html#l00192">192</a> of file <a class="el" href="swilib_2socket_8h_source.html">socket.h</a>.</p>
 
 </div>
 </div>

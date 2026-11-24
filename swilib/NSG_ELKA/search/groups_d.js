@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['settings_0',['Settings',['../group___settings.html',1,'']]],
-  ['socket_1',['Socket',['../group___socket.html',1,'']]],
-  ['sound_2',['Sound',['../group___sound.html',1,'']]],
-  ['swilib_3',['SWILIB',['../group___s_w_i_l_i_b.html',1,'']]],
-  ['system_4',['System',['../group___system.html',1,'']]]
+  ['patch_0',['PATCH',['../group___p_a_t_c_h.html',1,'']]],
+  ['player_1',['Player',['../group___player.html',1,'']]],
+  ['png_2',['PNG',['../group___p_n_g.html',1,'']]]
 ];

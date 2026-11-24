@@ -112,6 +112,9 @@ $(function(){initNavTree('group___sound.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:struct_p_l_a_y___v_o_l_u_m_e" id="r_struct_p_l_a_y___v_o_l_u_m_e"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></td></tr>
+<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_SetVolume.  <a href="#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
+<tr class="separator:struct_p_l_a_y___v_o_l_u_m_e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_g_b_s___p_s_o_u_n_d___m_s_g" id="r_struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">GBS_PSOUND_MSG</a></td></tr>
 <tr class="memdesc:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS event (<a class="el" href="group___g_b_s.html#ggac509767e10a246d85d34188e9db97736a6bd39ad9862d39301ed56f48d1eb205a" title="PlayFile status reporting.">MSG_PLAYFILE_REPORT</a>) for the <a class="el" href="#gafc75a10382cd8b26ad9ba59a3e75e776" title="Play file from filesystem (path=folder\file).">PlayFile</a> or <a class="el" href="#ga8ebafa81a63693690844b2019fecfcc4" title="Play melody from memory.">PlayMelodyInMem</a>.  <a href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">More...</a><br /></td></tr>
 <tr class="separator:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +128,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9aca91c49875477e52e2a098c60604e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03767c5a7e78df80ea93ce372221275c" id="r_ga03767c5a7e78df80ea93ce372221275c"><td class="memItemLeft" align="right" valign="top">typedef struct PLAYFILE_OPT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga03767c5a7e78df80ea93ce372221275c">PLAYFILE_OPT</a></td></tr>
 <tr class="separator:ga03767c5a7e78df80ea93ce372221275c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e3dcb7477519ab29f76158be6b61524" id="r_ga8e3dcb7477519ab29f76158be6b61524"><td class="memItemLeft" align="right" valign="top">typedef struct PLAY_VOLUME&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8e3dcb7477519ab29f76158be6b61524">PLAY_VOLUME</a></td></tr>
+<tr class="separator:ga8e3dcb7477519ab29f76158be6b61524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -321,6 +326,20 @@ Functions</h2></td></tr>
 <tr class="separator:ga6dfbc1dd05ec10a52987bb1691cd8ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="struct_p_l_a_y___v_o_l_u_m_e" id="struct_p_l_a_y___v_o_l_u_m_e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_p_l_a_y___v_o_l_u_m_e">&#9670;&#160;</a></span>PLAY_VOLUME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct PLAY_VOLUME</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="struct_g_b_s___p_s_o_u_n_d___m_s_g" id="struct_g_b_s___p_s_o_u_n_d___m_s_g"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#struct_g_b_s___p_s_o_u_n_d___m_s_g">&#9670;&#160;</a></span>GBS_PSOUND_MSG</h2>
 
@@ -382,6 +401,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga8e3dcb7477519ab29f76158be6b61524" name="ga8e3dcb7477519ab29f76158be6b61524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e3dcb7477519ab29f76158be6b61524">&#9670;&#160;</a></span>PLAY_VOLUME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct PLAY_VOLUME PLAY_VOLUME</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00022">22</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga1512dbf348d2fadedd5b67cb005eb7cc" name="ga1512dbf348d2fadedd5b67cb005eb7cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1512dbf348d2fadedd5b67cb005eb7cc">&#9670;&#160;</a></span>PlaySoundEventID</h2>
@@ -433,7 +468,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga1512dbf348d2fadedd5b67cb005eb7ccac0ea6e584c0fbfb859519127201e4f83" name="gga1512dbf348d2fadedd5b67cb005eb7ccac0ea6e584c0fbfb859519127201e4f83"></a>M_SAE_AUDIO_EVENT_RESUMED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00049">49</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00060">60</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -460,7 +495,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ggae71bd3edbb0e431ada94dad8ed89e73eaa2e3cf05a9feca4591229fc93ee1e5bd" name="ggae71bd3edbb0e431ada94dad8ed89e73eaa2e3cf05a9feca4591229fc93ee1e5bd"></a>Job_GetRecordingTimeMax&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00152">152</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00163">163</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -488,7 +523,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga2f70bfcbeb2032121ed3cb355bc8a182a72244be02ec85a8c52d75fdaa31d658b" name="gga2f70bfcbeb2032121ed3cb355bc8a182a72244be02ec85a8c52d75fdaa31d658b"></a>VOLUME_APPLICATIONS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00175">175</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00186">186</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -948,7 +983,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00383">383</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00421">421</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -989,7 +1024,7 @@ SG: pointer to the value of an unknown PASIC register, <a class="el" href="#ga25
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if success, 0 if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00393">393</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00431">431</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>

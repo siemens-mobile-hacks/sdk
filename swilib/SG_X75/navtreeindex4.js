@@ -140,6 +140,8 @@ var NAVTREEINDEX4 =
 "blowfish_8h.html#aded66494cc29d6fad4bb695a55b5b26b":[1,0,0,0,0,3,11],
 "blowfish_8h.html#structbf__key__st":[1,0,0,0,0,3,0],
 "blowfish_8h_source.html":[1,0,0,0,0,3],
+"bluetooth_8h.html":[1,0,0,2,3],
+"bluetooth_8h_source.html":[1,0,0,2,3],
 "bn_8h.html":[1,0,0,0,0,4],
 "bn_8h.html#a04ed72932d0af367b05bcdadf4fb968c":[1,0,0,0,0,4,108],
 "bn_8h.html#a08c3ed16a8cdd7f429f127a757c69f61":[1,0,0,0,0,4,167],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "bn_8h.html#a9c65fbb8eef64281a1cffc778c6da998":[1,0,0,0,0,4,122],
 "bn_8h.html#a9d8478ac269fb3a958095aaa678bc9a5":[1,0,0,0,0,4,153],
 "bn_8h.html#a9dd5250df1962bd7fc9063c044b08562":[1,0,0,0,0,4,154],
-"bn_8h.html#a9e53973cb563c07c214b6bdd1c2e5201":[1,0,0,0,0,4,147],
-"bn_8h.html#aa2ad946f29b201d22a2ca4750a587431":[1,0,0,0,0,4,104],
-"bn_8h.html#aa2d806f97ad6b75e85e001d781090eb0":[1,0,0,0,0,4,106]
+"bn_8h.html#a9e53973cb563c07c214b6bdd1c2e5201":[1,0,0,0,0,4,147]
 };

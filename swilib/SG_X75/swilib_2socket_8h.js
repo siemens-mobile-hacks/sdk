@@ -39,6 +39,8 @@ var swilib_2socket_8h =
     [ "inet_addr", "group___socket.html#ga4bdb578c974eb8749d7be61651f245fc", null ],
     [ "htons", "group___socket.html#ga2571f145e334dc9f51b0d578698cfd77", null ],
     [ "htonl", "group___socket.html#ga944b87d181da40172ce7a3ad07eb4586", null ],
+    [ "ntohs", "group___socket.html#ga3b062b1a9db368e577bf2e143152780e", null ],
+    [ "ntohl", "group___socket.html#gaf62a3ceb6a1115567fafbca7b7b6ccf8", null ],
     [ "socket", "group___socket.html#gaf4e0711877c45a41168ac677b0670ccd", null ],
     [ "connect", "group___socket.html#gaeedaa5cac80a95d50232c1d130615a1a", null ],
     [ "bind", "group___socket.html#ga55b3c1572b4e86ca0702ecdeb7e43997", null ],

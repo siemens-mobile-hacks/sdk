@@ -112,6 +112,9 @@ $(function(){initNavTree('sound_8h.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:struct_p_l_a_y___v_o_l_u_m_e" id="r_struct_p_l_a_y___v_o_l_u_m_e"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a></td></tr>
+<tr class="memdesc:struct_p_l_a_y___v_o_l_u_m_e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volume of a play object (NSG/ELKA), passed by value to <a class="el" href="group___sound.html#ga4252bf642675211754b63f09028f965d" title="Change the volume of the playing melody (PlayMelody_ChangeVolume with the real NSG argument).">PlayMelody_SetVolume</a>.  <a href="group___sound.html#struct_p_l_a_y___v_o_l_u_m_e">More...</a><br /></td></tr>
+<tr class="separator:struct_p_l_a_y___v_o_l_u_m_e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_g_b_s___p_s_o_u_n_d___m_s_g" id="r_struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#struct_g_b_s___p_s_o_u_n_d___m_s_g">GBS_PSOUND_MSG</a></td></tr>
 <tr class="memdesc:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="mdescLeft">&#160;</td><td class="mdescRight">GBS event (<a class="el" href="group___g_b_s.html#ggac509767e10a246d85d34188e9db97736a6bd39ad9862d39301ed56f48d1eb205a" title="PlayFile status reporting.">MSG_PLAYFILE_REPORT</a>) for the <a class="el" href="group___sound.html#gafc75a10382cd8b26ad9ba59a3e75e776" title="Play file from filesystem (path=folder\file).">PlayFile</a> or <a class="el" href="group___sound.html#ga8ebafa81a63693690844b2019fecfcc4" title="Play melody from memory.">PlayMelodyInMem</a>.  <a href="group___sound.html#struct_g_b_s___p_s_o_u_n_d___m_s_g">More...</a><br /></td></tr>
 <tr class="separator:struct_g_b_s___p_s_o_u_n_d___m_s_g"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +128,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9aca91c49875477e52e2a098c60604e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03767c5a7e78df80ea93ce372221275c" id="r_ga03767c5a7e78df80ea93ce372221275c"><td class="memItemLeft" align="right" valign="top">typedef struct PLAYFILE_OPT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga03767c5a7e78df80ea93ce372221275c">PLAYFILE_OPT</a></td></tr>
 <tr class="separator:ga03767c5a7e78df80ea93ce372221275c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e3dcb7477519ab29f76158be6b61524" id="r_ga8e3dcb7477519ab29f76158be6b61524"><td class="memItemLeft" align="right" valign="top">typedef struct PLAY_VOLUME&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga8e3dcb7477519ab29f76158be6b61524">PLAY_VOLUME</a></td></tr>
+<tr class="separator:ga8e3dcb7477519ab29f76158be6b61524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -314,6 +319,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaff1e41b89854b46f253f15f82ff5453b" id="r_gaff1e41b89854b46f253f15f82ff5453b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gaff1e41b89854b46f253f15f82ff5453b">PlayMelody_ChangeVolume</a> (int handle, int volume)</td></tr>
 <tr class="memdesc:gaff1e41b89854b46f253f15f82ff5453b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody.  <br /></td></tr>
 <tr class="separator:gaff1e41b89854b46f253f15f82ff5453b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4252bf642675211754b63f09028f965d" id="r_ga4252bf642675211754b63f09028f965d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga4252bf642675211754b63f09028f965d">PlayMelody_SetVolume</a> (int handle, <a class="el" href="group___sound.html#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> volume)</td></tr>
+<tr class="memdesc:ga4252bf642675211754b63f09028f965d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the volume of the playing melody (<a class="el" href="group___sound.html#gaff1e41b89854b46f253f15f82ff5453b" title="Change the volume of the playing melody.">PlayMelody_ChangeVolume</a> with the real NSG argument).  <br /></td></tr>
+<tr class="separator:ga4252bf642675211754b63f09028f965d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5de9129a097bbd61b71f6e9de215128" id="r_gae5de9129a097bbd61b71f6e9de215128"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#gae5de9129a097bbd61b71f6e9de215128">PlayMelody_GetVolume</a> (int handle, <a class="el" href="group___sound.html#struct_p_l_a_y___v_o_l_u_m_e">PLAY_VOLUME</a> *volume)</td></tr>
+<tr class="memdesc:gae5de9129a097bbd61b71f6e9de215128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the volume of the playing melody.  <br /></td></tr>
+<tr class="separator:gae5de9129a097bbd61b71f6e9de215128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga72961d85ae1cec288d43942767592b30" id="r_ga72961d85ae1cec288d43942767592b30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sound.html#ga72961d85ae1cec288d43942767592b30">PlayMelody_StopPlayback</a> (int handle)</td></tr>
 <tr class="memdesc:ga72961d85ae1cec288d43942767592b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the playback of the melody.  <br /></td></tr>
 <tr class="separator:ga72961d85ae1cec288d43942767592b30"><td class="memSeparator" colspan="2">&#160;</td></tr>

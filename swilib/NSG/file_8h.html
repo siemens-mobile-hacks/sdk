@@ -372,6 +372,16 @@ Functions</h2></td></tr>
 <tr class="memitem:ga62752d1c8ec29dad973c6c9c14959578" id="r_ga62752d1c8ec29dad973c6c9c14959578"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___file.html#ga62752d1c8ec29dad973c6c9c14959578">_truncate</a> (int fd, int length, uint32_t *err)</td></tr>
 <tr class="memdesc:ga62752d1c8ec29dad973c6c9c14959578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate the file to the given size.     <br /></td></tr>
 <tr class="separator:ga62752d1c8ec29dad973c6c9c14959578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">File system drivers (NSG/ELKA)</div></td></tr>
+<tr class="memitem:gafd177981f41dfbd0c68161793076e555" id="r_gafd177981f41dfbd0c68161793076e555"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___file.html#gafd177981f41dfbd0c68161793076e555">FS_MemAlloc</a> (int size)</td></tr>
+<tr class="memdesc:gafd177981f41dfbd0c68161793076e555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory from the file system heap.  <br /></td></tr>
+<tr class="separator:gafd177981f41dfbd0c68161793076e555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae073accbf165d74d889d7d644abd3699" id="r_gae073accbf165d74d889d7d644abd3699"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___file.html#gae073accbf165d74d889d7d644abd3699">RamFsDrivers</a> (void)</td></tr>
+<tr class="memdesc:gae073accbf165d74d889d7d644abd3699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file system driver table.  <br /></td></tr>
+<tr class="separator:gae073accbf165d74d889d7d644abd3699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga127c2f35519d648d3af2be685b9f5bd4" id="r_ga127c2f35519d648d3af2be685b9f5bd4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___file.html#ga127c2f35519d648d3af2be685b9f5bd4">RamFsDrives</a> (void)</td></tr>
+<tr class="memdesc:ga127c2f35519d648d3af2be685b9f5bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file system drive table.  <br /></td></tr>
+<tr class="separator:ga127c2f35519d648d3af2be685b9f5bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Legacy names for old IAR code.</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>These functions are disabled by default, because they have ambiguous names which conflict with stdio.h api.</p>
 <p>But you can always enable these functions using the <code>-DSWILIB_LEGACY_COMPAT</code> define. </p>

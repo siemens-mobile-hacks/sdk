@@ -98,6 +98,8 @@ $(function(){initNavTree('group___java.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Java</div></div>
 </div><!--header-->
@@ -106,6 +108,18 @@ $(function(){initNavTree('group___java.html',''); initResizable(true); });
 <p>Functions for the JVM. </p>
 <p>Usage: <code>#include &lt;<a class="el" href="swilib_8h.html">swilib.h</a>&gt;</code> or <code>#include &lt;<a class="el" href="java_8h.html">swilib/java.h</a>&gt;</code> </p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:struct_j_a_v_a___h_e_a_p___s_l_o_t_s" id="r_struct_j_a_v_a___h_e_a_p___s_l_o_t_s"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s">JAVA_HEAP_SLOTS</a></td></tr>
+<tr class="memdesc:struct_j_a_v_a___h_e_a_p___s_l_o_t_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java heap slots: the VM takes its heap from one of two slots, malloc'ed at the VM start.  <a href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s">More...</a><br /></td></tr>
+<tr class="separator:struct_j_a_v_a___h_e_a_p___s_l_o_t_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga5a9283711300476265bdce9d99c2dcf2" id="r_ga5a9283711300476265bdce9d99c2dcf2"><td class="memItemLeft" align="right" valign="top">typedef struct JAVA_HEAP_SLOTS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a9283711300476265bdce9d99c2dcf2">JAVA_HEAP_SLOTS</a></td></tr>
+<tr class="memdesc:ga5a9283711300476265bdce9d99c2dcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java heap slots: the VM takes its heap from one of two slots, malloc'ed at the VM start.  <br /></td></tr>
+<tr class="separator:ga5a9283711300476265bdce9d99c2dcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga1cd28820caeec4d8e2ab1fc2c01659c8" id="r_ga1cd28820caeec4d8e2ab1fc2c01659c8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1cd28820caeec4d8e2ab1fc2c01659c8">GetLastJavaApplication</a> (void)</td></tr>
@@ -123,7 +137,55 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9bb35cbba6ae402e1571f97fe2baccea" id="r_ga9bb35cbba6ae402e1571f97fe2baccea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9bb35cbba6ae402e1571f97fe2baccea">StartMidlet</a> (char *midlet)</td></tr>
 <tr class="memdesc:ga9bb35cbba6ae402e1571f97fe2baccea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start java midlet.  <br /></td></tr>
 <tr class="separator:ga9bb35cbba6ae402e1571f97fe2baccea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f13cf72bde362a05a778cb3f141275c" id="r_ga8f13cf72bde362a05a778cb3f141275c"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8f13cf72bde362a05a778cb3f141275c">RamJavaVMStarted</a> (void)</td></tr>
+<tr class="memdesc:ga8f13cf72bde362a05a778cb3f141275c"><td class="mdescLeft">&#160;</td><td class="mdescRight">"VM started" flag: 1 while the Java VM exists, cleared when the VM ends.  <br /></td></tr>
+<tr class="separator:ga8f13cf72bde362a05a778cb3f141275c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3" id="r_gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3">RamJavaExitPopup</a> (void)</td></tr>
+<tr class="memdesc:gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java exit popup flag: 1 while the "exit Java" popup is shown.  <br /></td></tr>
+<tr class="separator:gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d5865ef473047fdfa633730a996bad5" id="r_ga4d5865ef473047fdfa633730a996bad5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s">JAVA_HEAP_SLOTS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d5865ef473047fdfa633730a996bad5">RamJavaHeapSlots</a> (void)</td></tr>
+<tr class="memdesc:ga4d5865ef473047fdfa633730a996bad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java heap slots (see <a class="el" href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s" title="Java heap slots: the VM takes its heap from one of two slots, malloc&#39;ed at the VM start.">JAVA_HEAP_SLOTS</a>).  <br /></td></tr>
+<tr class="separator:ga4d5865ef473047fdfa633730a996bad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9f3c1a72ebc91bfb84795b122c7826c" id="r_gac9f3c1a72ebc91bfb84795b122c7826c"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac9f3c1a72ebc91bfb84795b122c7826c">RamJavaVMHeaps</a> (void)</td></tr>
+<tr class="memdesc:gac9f3c1a72ebc91bfb84795b122c7826c"><td class="mdescLeft">&#160;</td><td class="mdescRight">VM heap globals (set up by the VM start, "HeapCapacity (%d bytes) too low to start VM").  <br /></td></tr>
+<tr class="separator:gac9f3c1a72ebc91bfb84795b122c7826c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55b95a8a60e02ff7e5a2ec03af9ce21f" id="r_ga55b95a8a60e02ff7e5a2ec03af9ce21f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga55b95a8a60e02ff7e5a2ec03af9ce21f">JAM_StartApplicationClass</a> (<a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *class_name, int unk1, int unk2, int unk3, int unk4)</td></tr>
+<tr class="memdesc:ga55b95a8a60e02ff7e5a2ec03af9ce21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a Java application by class name, as the firmware's FlexMenu_start does at boot for L"com.siemens.mp.app.flexmenu.MenuContainer" ("JAM_StartApplicationClass(%Pw)", csrc/core/jam_start_handler.c).  <br /></td></tr>
+<tr class="separator:ga55b95a8a60e02ff7e5a2ec03af9ce21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="struct_j_a_v_a___h_e_a_p___s_l_o_t_s" id="struct_j_a_v_a___h_e_a_p___s_l_o_t_s"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s">&#9670;&#160;</a></span>JAVA_HEAP_SLOTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct JAVA_HEAP_SLOTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga5a9283711300476265bdce9d99c2dcf2" name="ga5a9283711300476265bdce9d99c2dcf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a9283711300476265bdce9d99c2dcf2">&#9670;&#160;</a></span>JAVA_HEAP_SLOTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct JAVA_HEAP_SLOTS JAVA_HEAP_SLOTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Java heap slots: the VM takes its heap from one of two slots, malloc'ed at the VM start. </p>
+<p>The firmware does not free them when the VM ends; see <a class="el" href="#ga4d5865ef473047fdfa633730a996bad5" title="Java heap slots (see JAVA_HEAP_SLOTS).">RamJavaHeapSlots</a>. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga1cd28820caeec4d8e2ab1fc2c01659c8" name="ga1cd28820caeec4d8e2ab1fc2c01659c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1cd28820caeec4d8e2ab1fc2c01659c8">&#9670;&#160;</a></span>GetLastJavaApplication()</h2>
@@ -181,7 +243,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if Java IS running. </p>
-<dl class="section return"><dt>Returns</dt><dd>2 - is no java running </dd></dl>
+<p>On EL71/E71 sw45 this is the midlet manager's count of open Java screens (an int, "decremented gui count to %d" in native/midmgr/midlet_manager.c): 0 = no Java app on screen. </p><dl class="section return"><dt>Returns</dt><dd>2 - is no java running </dd></dl>
 
 </div>
 </div>
@@ -237,6 +299,132 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga8f13cf72bde362a05a778cb3f141275c" name="ga8f13cf72bde362a05a778cb3f141275c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f13cf72bde362a05a778cb3f141275c">&#9670;&#160;</a></span>RamJavaVMStarted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * RamJavaVMStarted </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>"VM started" flag: 1 while the Java VM exists, cleared when the VM ends. </p>
+<p>In the VM state of the JVM message handler (native/jenv/java_jvm_port.c, JVM_*_MSG 0x6200-0x6203). </p><dl class="section return"><dt>Returns</dt><dd>pointer to the flag </dd></dl>
+
+</div>
+</div>
+<a id="gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3" name="gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3">&#9670;&#160;</a></span>RamJavaExitPopup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * RamJavaExitPopup </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Java exit popup flag: 1 while the "exit Java" popup is shown. </p>
+<p>Then JVM_STOP_MSG / JVM_END_MSG show the popup again instead of ending the VM. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the flag </dd></dl>
+
+</div>
+</div>
+<a id="ga4d5865ef473047fdfa633730a996bad5" name="ga4d5865ef473047fdfa633730a996bad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d5865ef473047fdfa633730a996bad5">&#9670;&#160;</a></span>RamJavaHeapSlots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s">JAVA_HEAP_SLOTS</a> * RamJavaHeapSlots </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Java heap slots (see <a class="el" href="#struct_j_a_v_a___h_e_a_p___s_l_o_t_s" title="Java heap slots: the VM takes its heap from one of two slots, malloc&#39;ed at the VM start.">JAVA_HEAP_SLOTS</a>). </p>
+<p>After the VM has ended (<a class="el" href="#ga8f13cf72bde362a05a778cb3f141275c" title="&quot;VM started&quot; flag: 1 while the Java VM exists, cleared when the VM ends.">RamJavaVMStarted</a> is 0) the blocks can be freed: mfree(raw[i]), then zero heap[i], raw[i], size[i] and the matching <a class="el" href="#gac9f3c1a72ebc91bfb84795b122c7826c" title="VM heap globals (set up by the VM start, &quot;HeapCapacity (%d bytes) too low to start VM&quot;).">RamJavaVMHeaps</a> entry. Without this the Java heap (MBs) stays allocated until a reboot. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the slot table </dd></dl>
+
+</div>
+</div>
+<a id="gac9f3c1a72ebc91bfb84795b122c7826c" name="gac9f3c1a72ebc91bfb84795b122c7826c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9f3c1a72ebc91bfb84795b122c7826c">&#9670;&#160;</a></span>RamJavaVMHeaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ** RamJavaVMHeaps </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VM heap globals (set up by the VM start, "HeapCapacity (%d bytes) too low to start VM"). </p>
+<p>Entry [1] belongs to heap slot 0, entry [0] to heap slot 1: zero them with the slots. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the globals </dd></dl>
+
+</div>
+</div>
+<a id="ga55b95a8a60e02ff7e5a2ec03af9ce21f" name="ga55b95a8a60e02ff7e5a2ec03af9ce21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55b95a8a60e02ff7e5a2ec03af9ce21f">&#9670;&#160;</a></span>JAM_StartApplicationClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JAM_StartApplicationClass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___w_s_h_d_r.html#struct_w_s_h_d_r">WSHDR</a> *</td>          <td class="paramname"><span class="paramname"><em>class_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unk4</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a Java application by class name, as the firmware's FlexMenu_start does at boot for L"com.siemens.mp.app.flexmenu.MenuContainer" ("JAM_StartApplicationClass(%Pw)", csrc/core/jam_start_handler.c). </p>
+<p>Starts the VM first when it is not running. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">class_name</td><td>full class name </td></tr>
+    <tr><td class="paramname">unk1,unk2,unk3,unk4</td><td>0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nonzero if started </dd></dl>
 
 </div>
 </div>

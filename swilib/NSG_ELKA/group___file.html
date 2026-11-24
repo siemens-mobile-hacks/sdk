@@ -373,6 +373,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga62752d1c8ec29dad973c6c9c14959578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate the file to the given size.     <br /></td></tr>
 <tr class="separator:ga62752d1c8ec29dad973c6c9c14959578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">File system drivers (NSG/ELKA)</h2></td></tr>
+<tr class="memitem:gafd177981f41dfbd0c68161793076e555" id="r_gafd177981f41dfbd0c68161793076e555"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafd177981f41dfbd0c68161793076e555">FS_MemAlloc</a> (int size)</td></tr>
+<tr class="memdesc:gafd177981f41dfbd0c68161793076e555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory from the file system heap.  <br /></td></tr>
+<tr class="separator:gafd177981f41dfbd0c68161793076e555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae073accbf165d74d889d7d644abd3699" id="r_gae073accbf165d74d889d7d644abd3699"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae073accbf165d74d889d7d644abd3699">RamFsDrivers</a> (void)</td></tr>
+<tr class="memdesc:gae073accbf165d74d889d7d644abd3699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file system driver table.  <br /></td></tr>
+<tr class="separator:gae073accbf165d74d889d7d644abd3699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga127c2f35519d648d3af2be685b9f5bd4" id="r_ga127c2f35519d648d3af2be685b9f5bd4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga127c2f35519d648d3af2be685b9f5bd4">RamFsDrives</a> (void)</td></tr>
+<tr class="memdesc:ga127c2f35519d648d3af2be685b9f5bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the file system drive table.  <br /></td></tr>
+<tr class="separator:ga127c2f35519d648d3af2be685b9f5bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Legacy names for old IAR code.</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>These functions are disabled by default, because they have ambiguous names which conflict with stdio.h api.</p>
 <p>But you can always enable these functions using the <code>-DSWILIB_LEGACY_COMPAT</code> define. </p>
@@ -635,7 +646,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00096">96</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00097">97</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -681,7 +692,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00152">152</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="file_8h_source.html#l00153">153</a> of file <a class="el" href="file_8h_source.html">file.h</a>.</p>
 
 </div>
 </div>
@@ -2502,6 +2513,75 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error    </dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>For compatibility with old GCC code. Use <a class="el" href="#ga6b7f28abc85d626d57100e777f1df80e" title="Truncate the file to the given size.">sys_truncate</a> instead. </dd></dl>
+
+</div>
+</div>
+<a id="gafd177981f41dfbd0c68161793076e555" name="gafd177981f41dfbd0c68161793076e555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafd177981f41dfbd0c68161793076e555">&#9670;&#160;</a></span>FS_MemAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * FS_MemAlloc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate memory from the file system heap. </p>
+<p>Asynchronous file system calls answer with message 0x1A2 whose payload +4 points to such a block {callback, u16 error, result}; the receiver frees it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the memory (the firmware asserts when the heap is exhausted) </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
+
+</div>
+</div>
+<a id="gae073accbf165d74d889d7d644abd3699" name="gae073accbf165d74d889d7d644abd3699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae073accbf165d74d889d7d644abd3699">&#9670;&#160;</a></span>RamFsDrivers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamFsDrivers </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the file system driver table. </p>
+<dl class="section return"><dt>Returns</dt><dd>3 entries, 0x10 bytes each: +00 used, +04 id, +08 s16 first handle, +0A s16 last handle, +0C ops (the same table as the drive's +14). EL71v45: 0 default, 1 FFS (handles 100..123), 2 MMC (0..24) </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
+
+</div>
+</div>
+<a id="ga127c2f35519d648d3af2be685b9f5bd4" name="ga127c2f35519d648d3af2be685b9f5bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga127c2f35519d648d3af2be685b9f5bd4">&#9670;&#160;</a></span>RamFsDrives()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamFsDrives </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the file system drive table. </p>
+<dl class="section return"><dt>Returns</dt><dd>5 entries, 0x18 bytes each: +00 used, +04 u16 letter, +06 s16 drive number, +08 driver id, +14 ops (+00 fclose, +04 fstat, +2C fopen, +34 fread, +40 lseek, +50 GetFileStats; the first argument of every method selects a synchronous or asynchronous call) </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>

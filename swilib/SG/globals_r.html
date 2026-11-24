@@ -144,6 +144,10 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>RamIsSimPresent()&#160;:&#160;<a class="el" href="group___info.html#ga1491b71024e049c9dee128996a2806f7">info.h</a></li>
 <li>RamIsSoundRecordingActive()&#160;:&#160;<a class="el" href="group___sound.html#ga6c3fed1da880a2015c219cebd29dc3ea">sound.h</a></li>
 <li>RamIsStandby()&#160;:&#160;<a class="el" href="group___info.html#ga88c078a65c3779f3b88c1489ad40d51e">info.h</a></li>
+<li>RamJavaExitPopup()&#160;:&#160;<a class="el" href="group___java.html#gaf2e4e4aae15da2f20dc3b8ebdf0cf3b3">java.h</a></li>
+<li>RamJavaHeapSlots()&#160;:&#160;<a class="el" href="group___java.html#ga4d5865ef473047fdfa633730a996bad5">java.h</a></li>
+<li>RamJavaVMHeaps()&#160;:&#160;<a class="el" href="group___java.html#gac9f3c1a72ebc91bfb84795b122c7826c">java.h</a></li>
+<li>RamJavaVMStarted()&#160;:&#160;<a class="el" href="group___java.html#ga8f13cf72bde362a05a778cb3f141275c">java.h</a></li>
 <li>RamKeyBuffer()&#160;:&#160;<a class="el" href="group___l_e_g_a_c_y.html#ga828e6091a49a00a84705ccb1c1a8efb5">legacy.h</a></li>
 <li>RamLastCallNum()&#160;:&#160;<a class="el" href="group___telephony.html#gab156d5d3e58beefb851ab2e45384f807">telephony.h</a></li>
 <li>RamLastStoreString()&#160;:&#160;<a class="el" href="group___system.html#ga74839418e5906214a0d4b6036422131e">system.h</a></li>
@@ -164,6 +168,7 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>RamNet()&#160;:&#160;<a class="el" href="group___telephony.html#gad82a9cbbd4fb607f9093acae375f2fe3">telephony.h</a></li>
 <li>RAMNET&#160;:&#160;<a class="el" href="group___telephony.html#ga919129c6a58e3bdc682e258ff763edef">telephony.h</a></li>
 <li>RamNetOnline()&#160;:&#160;<a class="el" href="group___telephony.html#gaa35c6de08998f5df64845a30281c1c3b">telephony.h</a></li>
+<li>RamObsFileStreamMethods()&#160;:&#160;<a class="el" href="group___o_b_s.html#ga39bf4e11c89d73d6170ea519ea2cc03a">obs.h</a></li>
 <li>RamPressedKey()&#160;:&#160;<a class="el" href="group___g_u_i.html#gaf447b405788a4a581a059b6cdbc787bf">gui.h</a></li>
 <li>RamProfileNum()&#160;:&#160;<a class="el" href="group___settings.html#gae4cbf06e8cba86a2afd06dccc906cbac">settings.h</a></li>
 <li>RamRandSeed()&#160;:&#160;<a class="el" href="group___system.html#ga18d57cd1471978edc7d09430a9530ddb">system.h</a></li>
@@ -172,6 +177,9 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>RamScreenBuffer()&#160;:&#160;<a class="el" href="group___g_u_i.html#ga294f35cbc6ca3056e0f4f05a9b1f8502">gui.h</a></li>
 <li>RamScreenSaverCSM()&#160;:&#160;<a class="el" href="group___i_d_l_e.html#ga20184f4008a00c2c629d14d8623bc319">idle.h</a></li>
 <li>RamServiceProviderName()&#160;:&#160;<a class="el" href="group___telephony.html#gaacd2125276c03f65da5043e241d77daa">telephony.h</a></li>
+<li>RamSExitHooks()&#160;:&#160;<a class="el" href="group___m_i_s_c.html#ga5e926ee85093d2070f285101c8815509">misc.h</a></li>
+<li>RamSExitRecords()&#160;:&#160;<a class="el" href="group___m_i_s_c.html#ga7447155be5adfdea07071ae6dda1e8d6">misc.h</a></li>
+<li>RamSExitState()&#160;:&#160;<a class="el" href="group___m_i_s_c.html#ga12e255d7dffe8d387305d9d33d0459b8">misc.h</a></li>
 <li>RamShutdownMode()&#160;:&#160;<a class="el" href="group___l_e_g_a_c_y.html#gad0c812a7ef7654999ad6d03d204e349a">legacy.h</a></li>
 <li>RamSizeOfPart()&#160;:&#160;<a class="el" href="group___l_e_g_a_c_y.html#ga3e304a4ae57abf3adbe32b9351788a4f">legacy.h</a></li>
 <li>RamSizeOfReceivedOrSentFile()&#160;:&#160;<a class="el" href="group___l_e_g_a_c_y.html#gac32e66b6a62f54d5cda740f00863173c">legacy.h</a></li>
@@ -251,8 +259,8 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>ReadNewSMS()&#160;:&#160;<a class="el" href="group___telephony.html#gac65346c4759f60e23f6c623910e00e81">telephony.h</a></li>
 <li>readsocket&#160;:&#160;<a class="el" href="e__os_8h.html#af7a8d9ba539699687351749aefd2750d">e_os.h</a></li>
 <li>ReadValueFromPDFile()&#160;:&#160;<a class="el" href="group___settings.html#ga50720efb839c2f6687920928de6c7921">settings.h</a></li>
-<li>realloc()&#160;:&#160;<a class="el" href="group__libc.html#gad28fed1039f35d754710633141b4edf0">libc.h</a></li>
 <li>Realloc&#160;:&#160;<a class="el" href="crypto_8h.html#ac64ce1e988d9cbe79fb8a75b7eaa19d9">crypto.h</a></li>
+<li>realloc()&#160;:&#160;<a class="el" href="group__libc.html#gad28fed1039f35d754710633141b4edf0">libc.h</a></li>
 <li>realloc_adr()&#160;:&#160;<a class="el" href="group__libc.html#gafe2fa9aaf21b95378eb97de73d59efe8">libc.h</a></li>
 <li>RebootPhone()&#160;:&#160;<a class="el" href="group___m_i_s_c.html#ga9e75e3bc7d09e0043987cf673f2fd57c">misc.h</a></li>
 <li>RECP_MUL_MOD&#160;:&#160;<a class="el" href="bn_8h.html#af3bc0ac77dd585ae06ff7f8caa239c46">bn.h</a></li>
@@ -464,21 +472,21 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>RTC_BASE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a4265e665d56225412e57a61d87417022">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a4265e665d56225412e57a61d87417022">pmb8876_regs.h</a></li>
 <li>RTC_CLC&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#aec7656c4b8f6a133d569a318cbea56cb">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#aec7656c4b8f6a133d569a318cbea56cb">pmb8876_regs.h</a></li>
 <li>RTC_CNT&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#aff2ca0f2dce48864e3874b3ea2fc8125">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#aff2ca0f2dce48864e3874b3ea2fc8125">pmb8876_regs.h</a></li>
-<li>RTC_CNT_CNT&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ac00ed5015bb52b6bd9dec21ccf9ee70a">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ac00ed5015bb52b6bd9dec21ccf9ee70a">pmb8876_regs.h</a></li>
-<li>RTC_CNT_CNT_SHIFT&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#a04b3e748a0341fafed5b16e1ff971d15">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#a04b3e748a0341fafed5b16e1ff971d15">pmb8875_regs.h</a></li>
+<li>RTC_CNT_CNT&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#ac00ed5015bb52b6bd9dec21ccf9ee70a">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#ac00ed5015bb52b6bd9dec21ccf9ee70a">pmb8875_regs.h</a></li>
+<li>RTC_CNT_CNT_SHIFT&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a04b3e748a0341fafed5b16e1ff971d15">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a04b3e748a0341fafed5b16e1ff971d15">pmb8876_regs.h</a></li>
 <li>RTC_CON&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a2b8ad713c1f1fd41657fed4c14426b1b">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a2b8ad713c1f1fd41657fed4c14426b1b">pmb8876_regs.h</a></li>
 <li>RTC_CON_ACCPOS&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a81236ba3f137a3c1ae288361c65ab954">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a81236ba3f137a3c1ae288361c65ab954">pmb8876_regs.h</a></li>
 <li>RTC_CON_PRE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ac174096757b34b10c3454778e02a3b19">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ac174096757b34b10c3454778e02a3b19">pmb8876_regs.h</a></li>
 <li>RTC_CON_REFCLK&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a2bc7b8de4f8bc62351986a2308c7976d">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a2bc7b8de4f8bc62351986a2308c7976d">pmb8876_regs.h</a></li>
 <li>RTC_CON_RUN&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ae86b9a0d8a731a6e31a82950724a881c">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ae86b9a0d8a731a6e31a82950724a881c">pmb8876_regs.h</a></li>
-<li>RTC_CON_T14DEC&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a2a36816f1b7e076937b01881223de37a">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a2a36816f1b7e076937b01881223de37a">pmb8876_regs.h</a></li>
-<li>RTC_CON_T14INC&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#aadf2a5d71f990e28a1a201c6ed29a847">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#aadf2a5d71f990e28a1a201c6ed29a847">pmb8875_regs.h</a></li>
+<li>RTC_CON_T14DEC&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#a2a36816f1b7e076937b01881223de37a">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#a2a36816f1b7e076937b01881223de37a">pmb8875_regs.h</a></li>
+<li>RTC_CON_T14INC&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#aadf2a5d71f990e28a1a201c6ed29a847">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#aadf2a5d71f990e28a1a201c6ed29a847">pmb8876_regs.h</a></li>
 <li>RTC_CTRL&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a26dbaa134802d8afcf9ce0e0cb08d094">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a26dbaa134802d8afcf9ce0e0cb08d094">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_CLK32KEN&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ac0fa8f9fe2e957be5217a2505b8f7023">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ac0fa8f9fe2e957be5217a2505b8f7023">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_CLK_SEL&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a419eba45365664298239f7e85c41fa1a">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a419eba45365664298239f7e85c41fa1a">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_CLR_RTCBAD&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a7236d82f8931d4f5ffdcdad82f59b2c8">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a7236d82f8931d4f5ffdcdad82f59b2c8">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_CLR_RTCINT&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ac39d6546f6dbacfd5fc4242ec8fdefa0">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ac39d6546f6dbacfd5fc4242ec8fdefa0">pmb8876_regs.h</a></li>
-<li>RTC_CTRL_PU32K&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a703105d1436b60e13ececf8c3d1d515e">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a703105d1436b60e13ececf8c3d1d515e">pmb8876_regs.h</a></li>
+<li>RTC_CTRL_PU32K&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#a703105d1436b60e13ececf8c3d1d515e">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#a703105d1436b60e13ececf8c3d1d515e">pmb8875_regs.h</a></li>
 <li>RTC_CTRL_RTCBAD&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a390c7ef216de5e63f58cce0534e75858">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a390c7ef216de5e63f58cce0534e75858">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_RTCINT&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a97137e8c5fa770fd1ca54bb2f3b55e75">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a97137e8c5fa770fd1ca54bb2f3b55e75">pmb8876_regs.h</a></li>
 <li>RTC_CTRL_RTCOUTEN&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a56e86dbe9387a010d1c76a397ed9f347">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a56e86dbe9387a010d1c76a397ed9f347">pmb8876_regs.h</a></li>
@@ -486,14 +494,14 @@ $(function(){initNavTree('globals_r.html',''); initResizable(true); });
 <li>RTC_ISNC&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a21d43ed854ffe3f1ccf0d19aaae50b44">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a21d43ed854ffe3f1ccf0d19aaae50b44">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_ALARMIE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a5fb2d9b90f94fbe91ed65654909070ea">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a5fb2d9b90f94fbe91ed65654909070ea">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_ALARMIR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a70aa739c89d8c35f3060e53ce332c3df">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a70aa739c89d8c35f3060e53ce332c3df">pmb8876_regs.h</a></li>
-<li>RTC_ISNC_RTC0IE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a8be65c055bbf1087cc69bb6f05b6e63c">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a8be65c055bbf1087cc69bb6f05b6e63c">pmb8876_regs.h</a></li>
+<li>RTC_ISNC_RTC0IE&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#a8be65c055bbf1087cc69bb6f05b6e63c">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#a8be65c055bbf1087cc69bb6f05b6e63c">pmb8875_regs.h</a></li>
 <li>RTC_ISNC_RTC0IR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a618ac252c618a7c6633a013409f5fcf3">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a618ac252c618a7c6633a013409f5fcf3">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_RTC1IE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a483cda4be5d9b1244af90b01e9ca58d0">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a483cda4be5d9b1244af90b01e9ca58d0">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_RTC1IR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a405b361de8514d709e5d9bd586501208">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a405b361de8514d709e5d9bd586501208">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_RTC2IE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a36a4559c706d41c9cb29a67a79480630">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a36a4559c706d41c9cb29a67a79480630">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_RTC2IR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a01e9114e443384c60cb1f650d8781b82">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a01e9114e443384c60cb1f650d8781b82">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_RTC3IE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#af08e435a71c590b21d4cda731ba4896b">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#af08e435a71c590b21d4cda731ba4896b">pmb8876_regs.h</a></li>
-<li>RTC_ISNC_RTC3IR&#160;:&#160;<a class="el" href="pmb8876__regs_8h.html#af5cfc1d85c87177b39c7d7497dae9017">pmb8876_regs.h</a>, <a class="el" href="pmb8875__regs_8h.html#af5cfc1d85c87177b39c7d7497dae9017">pmb8875_regs.h</a></li>
+<li>RTC_ISNC_RTC3IR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#af5cfc1d85c87177b39c7d7497dae9017">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#af5cfc1d85c87177b39c7d7497dae9017">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_T14IE&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a5d9a1a3b1c630a857074fbf5ec26d647">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a5d9a1a3b1c630a857074fbf5ec26d647">pmb8876_regs.h</a></li>
 <li>RTC_ISNC_T14IR&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#ada4d7b4229ba327d15a49a2393a89e45">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#ada4d7b4229ba327d15a49a2393a89e45">pmb8876_regs.h</a></li>
 <li>RTC_REL&#160;:&#160;<a class="el" href="pmb8875__regs_8h.html#a7e185335cd7534ab06d70eebdd8fc6b3">pmb8875_regs.h</a>, <a class="el" href="pmb8876__regs_8h.html#a7e185335cd7534ab06d70eebdd8fc6b3">pmb8876_regs.h</a></li>

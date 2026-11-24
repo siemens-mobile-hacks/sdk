@@ -175,7 +175,7 @@ var searchData=
   ['amba_5fperiph_5fid3_5fconfiguration_172',['AMBA_PERIPH_ID3_CONFIGURATION',['../pmb8875__regs_8h.html#abde89a57f85ee465eb0e64baf9e93a85',1,'AMBA_PERIPH_ID3_CONFIGURATION:&#160;pmb8875_regs.h'],['../pmb8876__regs_8h.html#abde89a57f85ee465eb0e64baf9e93a85',1,'AMBA_PERIPH_ID3_CONFIGURATION:&#160;pmb8876_regs.h']]],
   ['amba_5fperiph_5fid3_5fconfiguration_5fshift_173',['AMBA_PERIPH_ID3_CONFIGURATION_SHIFT',['../pmb8875__regs_8h.html#aaffda1199cfc4a288be5d0710e24056d',1,'AMBA_PERIPH_ID3_CONFIGURATION_SHIFT:&#160;pmb8875_regs.h'],['../pmb8876__regs_8h.html#aaffda1199cfc4a288be5d0710e24056d',1,'AMBA_PERIPH_ID3_CONFIGURATION_SHIFT:&#160;pmb8876_regs.h']]],
   ['api_20nsg_20nbsp_20nbsp_20nbsp_20nbsp_174',['SWILIB API (NSG)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;',['../index.html',1,'']]],
-  ['app_175',['app',['../group___g_u_i.html#a92ab9133f7f1cf7f4c58712d51d18e35',1,'RAP_LCDLAYER_LIST']]],
+  ['app_175',['app',['../group___g_u_i.html#a92ab9133f7f1cf7f4c58712d51d18e35',1,'RAP_LCDLAYER_LIST::app'],['../group___bluetooth.html#af33df014ae606fa81d868ffed896c1e6',1,'SDEV::app']]],
   ['app_5fdata_176',['app_data',['../dh_8h.html#a01cec981a5f6dd3386a24f083cf9812d',1,'dh_method::app_data'],['../dsa_8h.html#a08528c35da49dcebc0675cb9b66bbeb9',1,'dsa_method::app_data'],['../evp_8h.html#aa354bfbd520156a9bca438599f744f73',1,'evp_cipher_ctx_st::app_data'],['../rsa_8h.html#a3d4a936065797413aad5dc1c7a132f00',1,'rsa_meth_st::app_data']]],
   ['app_5fverify_5farg_177',['app_verify_arg',['../ssl_8h.html#aebecc45c887b56a233a163e195a55422',1,'ssl_ctx_st']]],
   ['app_5fverify_5fcallback_178',['app_verify_callback',['../ssl_8h.html#afe618ceff7ded69cb1011a60c4a306e2',1,'ssl_ctx_st']]],

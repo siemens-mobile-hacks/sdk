@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['kbdlock_0',['KbdLock',['../group___m_i_s_c.html#gaee4b4224ae29ce70d14af9c65604984a',1,'misc.h']]],
-  ['kbdunlock_1',['KbdUnlock',['../group___m_i_s_c.html#gae13b359dab9691d3c650600870022a5f',1,'misc.h']]],
-  ['keypressoff_2',['KeypressOff',['../group___m_i_s_c.html#ga637d15f99d214c0b0e0bf6233c71c592',1,'misc.h']]],
-  ['keypresson_3',['KeypressOn',['../group___m_i_s_c.html#ga67476e7001af550f8025991c23920033',1,'misc.h']]],
-  ['kill_5fdata_4',['kill_data',['../group___system.html#ga861fae254d98141fe282767a2a4ad608',1,'system.h']]],
-  ['kill_5felf_5',['kill_elf',['../group___system.html#gae6c8de921d1cb72090d028bea822f9d5',1,'system.h']]],
-  ['killgbsproc_6',['KillGBSproc',['../group___g_b_s.html#gad681a51f284313593d7e5ae948124979',1,'gbs.h']]]
+  ['jam_5fstartapplicationclass_0',['JAM_StartApplicationClass',['../group___java.html#ga55b95a8a60e02ff7e5a2ec03af9ce21f',1,'java.h']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['i2c_0',['I2C',['../group___i2_c.html',1,'']]],
-  ['idle_1',['IDLE',['../group___i_d_l_e.html',1,'']]],
-  ['image_2',['Image',['../group___image.html',1,'']]],
-  ['info_3',['Info',['../group___info.html',1,'']]]
+  ['gbs_0',['GBS',['../group___g_b_s.html',1,'']]],
+  ['gprs_1',['GPRS',['../group___g_p_r_s.html',1,'']]],
+  ['gui_2',['GUI',['../group___g_u_i.html',1,'']]]
 ];

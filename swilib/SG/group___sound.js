@@ -1,9 +1,11 @@
 var group___sound =
 [
+    [ "PLAY_VOLUME", "group___sound.html#struct_p_l_a_y___v_o_l_u_m_e", null ],
     [ "GBS_PSOUND_MSG", "group___sound.html#struct_g_b_s___p_s_o_u_n_d___m_s_g", null ],
     [ "PLAYFILE_OPT", "group___sound.html#struct_p_l_a_y_f_i_l_e___o_p_t", null ],
     [ "GBS_PSOUND_MSG", "group___sound.html#ga9aca91c49875477e52e2a098c60604e2", null ],
     [ "PLAYFILE_OPT", "group___sound.html#ga03767c5a7e78df80ea93ce372221275c", null ],
+    [ "PLAY_VOLUME", "group___sound.html#ga8e3dcb7477519ab29f76158be6b61524", null ],
     [ "PlaySoundEventID", "group___sound.html#ga1512dbf348d2fadedd5b67cb005eb7cc", [
       [ "M_SAE_EVENT_STARTED", "group___sound.html#gga1512dbf348d2fadedd5b67cb005eb7cca026de4310f102e56ca4f3e28514894b9", null ],
       [ "M_SAE_EVENT_STOPPED", "group___sound.html#gga1512dbf348d2fadedd5b67cb005eb7ccab621eacef87c05dfb4dfd133066c9276", null ],

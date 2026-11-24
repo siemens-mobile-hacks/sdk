@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wsbody_0',['WSBODY',['../group___w_s_h_d_r.html#struct_w_s_b_o_d_y',1,'']]],
-  ['wshdr_1',['WSHDR',['../group___w_s_h_d_r.html#struct_w_s_h_d_r',1,'']]]
+  ['v3_5fext_5fctx_0',['v3_ext_ctx',['../x509v3_8h.html#structv3__ext__ctx',1,'']]],
+  ['v3_5fext_5fmethod_1',['v3_ext_method',['../x509v3_8h.html#structv3__ext__method',1,'']]]
 ];

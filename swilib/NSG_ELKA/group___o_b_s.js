@@ -60,5 +60,8 @@ var group___o_b_s =
     [ "Obs_Sound_SetBitrate", "group___o_b_s.html#ga5cd7b5e94738f95b264e3dfa855473c5", null ],
     [ "Obs_SetUserPointer", "group___o_b_s.html#ga03498bc1745d124db262cf9defd20b4f", null ],
     [ "Obs_SetCSM", "group___o_b_s.html#gadebd304e3940d2ae6e7b069355060002", null ],
-    [ "Obs_GetUserPointer", "group___o_b_s.html#ga157c1afbede86aa4050d1e0c09d45c14", null ]
+    [ "Obs_GetUserPointer", "group___o_b_s.html#ga157c1afbede86aa4050d1e0c09d45c14", null ],
+    [ "Obs_MemAlloc", "group___o_b_s.html#ga2e0d95ee830652fe85b795c8d112182f", null ],
+    [ "Obs_MemFree", "group___o_b_s.html#ga8ca79b72d47b20ab154cff148bb843c1", null ],
+    [ "RamObsFileStreamMethods", "group___o_b_s.html#ga39bf4e11c89d73d6170ea519ea2cc03a", null ]
 ];

@@ -215,6 +215,270 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga414dc05978ab6d956ae5b9a11f042e9e" id="r_ga414dc05978ab6d956ae5b9a11f042e9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga414dc05978ab6d956ae5b9a11f042e9e">RequestLMANConnect</a> (<a class="el" href="#struct_l_m_a_n___d_a_t_a">LMAN_DATA</a> *data)</td></tr>
 <tr class="memdesc:ga414dc05978ab6d956ae5b9a11f042e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the GPRS.  <br /></td></tr>
 <tr class="separator:ga414dc05978ab6d956ae5b9a11f042e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e0f61e713b1764da9a78754d669e3da" id="r_ga1e0f61e713b1764da9a78754d669e3da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e0f61e713b1764da9a78754d669e3da">RequestLMANDisconnect</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *req)</td></tr>
+<tr class="memdesc:ga1e0f61e713b1764da9a78754d669e3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request disconnection of a native LMAN context.  <br /></td></tr>
+<tr class="separator:ga1e0f61e713b1764da9a78754d669e3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c666b16239501f928206bb6c3e394f1" id="r_ga6c666b16239501f928206bb6c3e394f1"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c666b16239501f928206bb6c3e394f1">GetSocketRegIndex</a> (unsigned cepid)</td></tr>
+<tr class="memdesc:ga6c666b16239501f928206bb6c3e394f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the socket-registration slot for a CEPID.  <br /></td></tr>
+<tr class="separator:ga6c666b16239501f928206bb6c3e394f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7018e7dcfe427fc2c5978a2412bbb3ac" id="r_ga7018e7dcfe427fc2c5978a2412bbb3ac"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7018e7dcfe427fc2c5978a2412bbb3ac">GetServiceCepid</a> (unsigned service)</td></tr>
+<tr class="memdesc:ga7018e7dcfe427fc2c5978a2412bbb3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the process identifier assigned to a native service.  <br /></td></tr>
+<tr class="separator:ga7018e7dcfe427fc2c5978a2412bbb3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36adbe9bbed48a615aad52c8f0c8638f" id="r_ga36adbe9bbed48a615aad52c8f0c8638f"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga36adbe9bbed48a615aad52c8f0c8638f">LMAN_AllocContext</a> (unsigned bearer, uint8_t type)</td></tr>
+<tr class="memdesc:ga36adbe9bbed48a615aad52c8f0c8638f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a native LMAN context.  <br /></td></tr>
+<tr class="separator:ga36adbe9bbed48a615aad52c8f0c8638f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d8005a5cdc51cb0a1dbe1a4c103df3f" id="r_ga6d8005a5cdc51cb0a1dbe1a4c103df3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d8005a5cdc51cb0a1dbe1a4c103df3f">LMAN_SetProfile</a> (unsigned cid, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_c_t_x___n_a_p_d_e_f">CTX_NAPDEF</a> *profile)</td></tr>
+<tr class="memdesc:ga6d8005a5cdc51cb0a1dbe1a4c103df3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a NAP profile into an allocated LMAN context.  <br /></td></tr>
+<tr class="separator:ga6d8005a5cdc51cb0a1dbe1a4c103df3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga771bf5955451b98b9377b35c7d504127" id="r_ga771bf5955451b98b9377b35c7d504127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga771bf5955451b98b9377b35c7d504127">LMAN_SetRef</a> (unsigned reg_index, unsigned cid, int on)</td></tr>
+<tr class="memdesc:ga771bf5955451b98b9377b35c7d504127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach or detach a registered process from an LMAN context.  <br /></td></tr>
+<tr class="separator:ga771bf5955451b98b9377b35c7d504127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54cda90e977005923cb73b578dc91996" id="r_ga54cda90e977005923cb73b578dc91996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga54cda90e977005923cb73b578dc91996">LMAN_SetState</a> (unsigned cid, int state)</td></tr>
+<tr class="memdesc:ga54cda90e977005923cb73b578dc91996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change a native LMAN context state and notify its registered owners.  <br /></td></tr>
+<tr class="separator:ga54cda90e977005923cb73b578dc91996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1201d4d2a07a4b626894aa03d7d56d84" id="r_ga1201d4d2a07a4b626894aa03d7d56d84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1201d4d2a07a4b626894aa03d7d56d84">LMAN_FreeContext</a> (unsigned cid)</td></tr>
+<tr class="memdesc:ga1201d4d2a07a4b626894aa03d7d56d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset and release a native LMAN context without disconnecting a physical bearer.  <br /></td></tr>
+<tr class="separator:ga1201d4d2a07a4b626894aa03d7d56d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d8e17b1863a83f003257e73d2e57f34" id="r_ga9d8e17b1863a83f003257e73d2e57f34"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9d8e17b1863a83f003257e73d2e57f34">RamLmanContexts</a> (void)</td></tr>
+<tr class="memdesc:ga9d8e17b1863a83f003257e73d2e57f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native LMAN context table.  <br /></td></tr>
+<tr class="separator:ga9d8e17b1863a83f003257e73d2e57f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09e0dad23c52fe972d1d81adb70cab77" id="r_ga09e0dad23c52fe972d1d81adb70cab77"><td class="memItemLeft" align="right" valign="top">uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga09e0dad23c52fe972d1d81adb70cab77">RamLmanRefs</a> (void)</td></tr>
+<tr class="memdesc:ga09e0dad23c52fe972d1d81adb70cab77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the LMAN process-to-context reference table.  <br /></td></tr>
+<tr class="separator:ga09e0dad23c52fe972d1d81adb70cab77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac366d527326dda99392e38497109e74a" id="r_gac366d527326dda99392e38497109e74a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac366d527326dda99392e38497109e74a">RamSocketRegs</a> (void)</td></tr>
+<tr class="memdesc:gac366d527326dda99392e38497109e74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native socket-registration table.  <br /></td></tr>
+<tr class="separator:gac366d527326dda99392e38497109e74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccd5d0bc4c338ed79eb158224ade1894" id="r_gaccd5d0bc4c338ed79eb158224ade1894"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaccd5d0bc4c338ed79eb158224ade1894">WSP_GetObject</a> (unsigned id)</td></tr>
+<tr class="memdesc:gaccd5d0bc4c338ed79eb158224ade1894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a WSP object.  <br /></td></tr>
+<tr class="separator:gaccd5d0bc4c338ed79eb158224ade1894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0880e15294ce48553fe592f05242079e" id="r_ga0880e15294ce48553fe592f05242079e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0880e15294ce48553fe592f05242079e">WSP_ReadProperty</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *key, void *value, unsigned *length)</td></tr>
+<tr class="memdesc:ga0880e15294ce48553fe592f05242079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a WSP property.  <br /></td></tr>
+<tr class="separator:ga0880e15294ce48553fe592f05242079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78ae7eaeeec4efe4c304fb6154f93244" id="r_ga78ae7eaeeec4efe4c304fb6154f93244"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78ae7eaeeec4efe4c304fb6154f93244">WSP_GetConnectionState</a> (int bearer, int nap)</td></tr>
+<tr class="memdesc:ga78ae7eaeeec4efe4c304fb6154f93244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the WSP connection state.  <br /></td></tr>
+<tr class="separator:ga78ae7eaeeec4efe4c304fb6154f93244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a00b6c6d51e311c5ffe98f7ab8a4049" id="r_ga6a00b6c6d51e311c5ffe98f7ab8a4049"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6a00b6c6d51e311c5ffe98f7ab8a4049">ENIP_ModuleInit</a> (void *module, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *name, void *up, void *down, void *run, void *notify, void *post_run, void *packet_available)</td></tr>
+<tr class="memdesc:ga6a00b6c6d51e311c5ffe98f7ab8a4049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an ENIP network module (the driver side of a network interface).  <br /></td></tr>
+<tr class="separator:ga6a00b6c6d51e311c5ffe98f7ab8a4049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b621cf4aa9bddb91658e96ac37d9714" id="r_ga5b621cf4aa9bddb91658e96ac37d9714"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b621cf4aa9bddb91658e96ac37d9714">ENIP_ModuleRun</a> (void *module, uint32_t *result)</td></tr>
+<tr class="memdesc:ga5b621cf4aa9bddb91658e96ac37d9714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run an ENIP network module once.  <br /></td></tr>
+<tr class="separator:ga5b621cf4aa9bddb91658e96ac37d9714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f32b22cc2f249f8befd3209b04a0f4a" id="r_ga2f32b22cc2f249f8befd3209b04a0f4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f32b22cc2f249f8befd3209b04a0f4a">ENIP_ModuleUp</a> (void *module)</td></tr>
+<tr class="memdesc:ga2f32b22cc2f249f8befd3209b04a0f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bring an ENIP network module up.  <br /></td></tr>
+<tr class="separator:ga2f32b22cc2f249f8befd3209b04a0f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfa20931390b7e5effeb9132d997df0e" id="r_gadfa20931390b7e5effeb9132d997df0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadfa20931390b7e5effeb9132d997df0e">ENIP_ModuleDown</a> (void *module, uint32_t reason)</td></tr>
+<tr class="memdesc:gadfa20931390b7e5effeb9132d997df0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bring an ENIP network module down.  <br /></td></tr>
+<tr class="separator:gadfa20931390b7e5effeb9132d997df0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec3ecac6a45ecf40645df2bd779adc6e" id="r_gaec3ecac6a45ecf40645df2bd779adc6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec3ecac6a45ecf40645df2bd779adc6e">ENIP_PortInit</a> (void *port, void *module)</td></tr>
+<tr class="memdesc:gaec3ecac6a45ecf40645df2bd779adc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the packet port of an ENIP network module.  <br /></td></tr>
+<tr class="separator:gaec3ecac6a45ecf40645df2bd779adc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2bc5c50279e760f9a6a33b14f880335" id="r_gaf2bc5c50279e760f9a6a33b14f880335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf2bc5c50279e760f9a6a33b14f880335">ENIP_PortSend</a> (void *port, void *packet)</td></tr>
+<tr class="memdesc:gaf2bc5c50279e760f9a6a33b14f880335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a packet on an ENIP port.  <br /></td></tr>
+<tr class="separator:gaf2bc5c50279e760f9a6a33b14f880335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga388f9efde7534dedbb91b2f8b1d3ce7c" id="r_ga388f9efde7534dedbb91b2f8b1d3ce7c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga388f9efde7534dedbb91b2f8b1d3ce7c">ENIP_PacketAlloc</a> (void *module, int size, uint32_t pool, int offset, int quota)</td></tr>
+<tr class="memdesc:ga388f9efde7534dedbb91b2f8b1d3ce7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an ENIP packet.  <br /></td></tr>
+<tr class="separator:ga388f9efde7534dedbb91b2f8b1d3ce7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2381b4cec92dd5a25d721ac0eec21949" id="r_ga2381b4cec92dd5a25d721ac0eec21949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2381b4cec92dd5a25d721ac0eec21949">ENIP_PacketFree</a> (void *packet)</td></tr>
+<tr class="memdesc:ga2381b4cec92dd5a25d721ac0eec21949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an ENIP packet.  <br /></td></tr>
+<tr class="separator:ga2381b4cec92dd5a25d721ac0eec21949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c6449bf5ce125021f173020a1829bd9" id="r_ga6c6449bf5ce125021f173020a1829bd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c6449bf5ce125021f173020a1829bd9">ENIP_RegisterDriver</a> (void *driver, int flags)</td></tr>
+<tr class="memdesc:ga6c6449bf5ce125021f173020a1829bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an IP driver (network interface) in the ENIP IP layer.  <br /></td></tr>
+<tr class="separator:ga6c6449bf5ce125021f173020a1829bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6b1083904dc028f9c3306cd35629d41" id="r_gac6b1083904dc028f9c3306cd35629d41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac6b1083904dc028f9c3306cd35629d41">ENIP_UnregisterDriver</a> (void *module)</td></tr>
+<tr class="memdesc:gac6b1083904dc028f9c3306cd35629d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister the IP driver of an ENIP network module.  <br /></td></tr>
+<tr class="separator:gac6b1083904dc028f9c3306cd35629d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad079ad3c04490bd829c6a28d6ca26f4f" id="r_gad079ad3c04490bd829c6a28d6ca26f4f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad079ad3c04490bd829c6a28d6ca26f4f">ENIP_FindInterface</a> (uint32_t bearer, uint16_t iface)</td></tr>
+<tr class="memdesc:gad079ad3c04490bd829c6a28d6ca26f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface of a bearer.  <br /></td></tr>
+<tr class="separator:gad079ad3c04490bd829c6a28d6ca26f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a84523a6a2a72e27a701bae6a26890c" id="r_ga9a84523a6a2a72e27a701bae6a26890c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a84523a6a2a72e27a701bae6a26890c">LMAN_AttachInterface</a> (unsigned cid, unsigned iface, unsigned unk)</td></tr>
+<tr class="memdesc:ga9a84523a6a2a72e27a701bae6a26890c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach an IP interface to a native LMAN context.  <br /></td></tr>
+<tr class="separator:ga9a84523a6a2a72e27a701bae6a26890c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga834a8d34319a14fce495164fe0bceb20" id="r_ga834a8d34319a14fce495164fe0bceb20"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga834a8d34319a14fce495164fe0bceb20">ENIP_ListRemoveHead</a> (void *list)</td></tr>
+<tr class="memdesc:ga834a8d34319a14fce495164fe0bceb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the first item of an ENIP list (packet queue).  <br /></td></tr>
+<tr class="separator:ga834a8d34319a14fce495164fe0bceb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab54eeac3ba7a4695b1f6e295f81d5717" id="r_gab54eeac3ba7a4695b1f6e295f81d5717"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab54eeac3ba7a4695b1f6e295f81d5717">RamPdpDrivers</a> (void)</td></tr>
+<tr class="memdesc:gab54eeac3ba7a4695b1f6e295f81d5717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GPRS PDP driver table (the DNS resolver takes servers for bearer 1 from it).  <br /></td></tr>
+<tr class="separator:gab54eeac3ba7a4695b1f6e295f81d5717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e4e5bb445354eea7978307d2a767d48" id="r_ga0e4e5bb445354eea7978307d2a767d48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e4e5bb445354eea7978307d2a767d48">enip_module_post_run</a> (void *module)</td></tr>
+<tr class="memdesc:ga0e4e5bb445354eea7978307d2a767d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule a run of an ENIP module: mark it as needing a run and call its post-run procedure if one is set, the module is up and no run is already posted or in progress.  <br /></td></tr>
+<tr class="separator:ga0e4e5bb445354eea7978307d2a767d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5169e1a5d2111ff02e042992efa16655" id="r_ga5169e1a5d2111ff02e042992efa16655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5169e1a5d2111ff02e042992efa16655">enip_module_nsapi_post_init</a> (void *module)</td></tr>
+<tr class="memdesc:ga5169e1a5d2111ff02e042992efa16655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the per-context fields of an NSAPI module after enip_nsapi_init_module.  <br /></td></tr>
+<tr class="separator:ga5169e1a5d2111ff02e042992efa16655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b7fb0296f94741f3230d27a18e70d01" id="r_ga9b7fb0296f94741f3230d27a18e70d01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9b7fb0296f94741f3230d27a18e70d01">enip_port_handle_pkt</a> (void *port, void *packet)</td></tr>
+<tr class="memdesc:ga9b7fb0296f94741f3230d27a18e70d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a packet to an ENIP port's queue and schedule the port's module if the queue was empty.  <br /></td></tr>
+<tr class="separator:ga9b7fb0296f94741f3230d27a18e70d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30d511943435c2f7e4747712d95c18e6" id="r_ga30d511943435c2f7e4747712d95c18e6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga30d511943435c2f7e4747712d95c18e6">enip_memory_allocate</a> (uint32_t unused, int size)</td></tr>
+<tr class="memdesc:ga30d511943435c2f7e4747712d95c18e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory from the ENIP pool, falling back to the second ENIP pool.  <br /></td></tr>
+<tr class="separator:ga30d511943435c2f7e4747712d95c18e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d43fef70e67cb756c6459e25371f8d9" id="r_ga6d43fef70e67cb756c6459e25371f8d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d43fef70e67cb756c6459e25371f8d9">enip_memory_release</a> (void *block)</td></tr>
+<tr class="memdesc:ga6d43fef70e67cb756c6459e25371f8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release a block allocated with enip_memory_allocate.  <br /></td></tr>
+<tr class="separator:ga6d43fef70e67cb756c6459e25371f8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18071400fb98341d5ec3e71714586521" id="r_ga18071400fb98341d5ec3e71714586521"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga18071400fb98341d5ec3e71714586521">enip_packet_max_size</a> (void)</td></tr>
+<tr class="memdesc:ga18071400fb98341d5ec3e71714586521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the largest ENIP packet size (a firmware constant).  <br /></td></tr>
+<tr class="separator:ga18071400fb98341d5ec3e71714586521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bd039d4afd18b21993244256387f141" id="r_ga5bd039d4afd18b21993244256387f141"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5bd039d4afd18b21993244256387f141">enip_ip_init</a> (void *post_run)</td></tr>
+<tr class="memdesc:ga5bd039d4afd18b21993244256387f141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the ENIP IP module, its 8 interface slots and the 2 reassembly slots.  <br /></td></tr>
+<tr class="separator:ga5bd039d4afd18b21993244256387f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7caf7ea432a2cded2c68fcc4179c1c3" id="r_gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa7caf7ea432a2cded2c68fcc4179c1c3">enip_find_iface_by_driver</a> (void *driver)</td></tr>
+<tr class="memdesc:gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface (of 8) whose registered driver belongs to the same module as the given driver.  <br /></td></tr>
+<tr class="separator:gaa7caf7ea432a2cded2c68fcc4179c1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4ed61ae2655a5ea20861cc077b79f94" id="r_gae4ed61ae2655a5ea20861cc077b79f94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae4ed61ae2655a5ea20861cc077b79f94">enip_iph_calc_chk_and_port_send</a> (void **port, void *packet, uint32_t size)</td></tr>
+<tr class="memdesc:gae4ed61ae2655a5ea20861cc077b79f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the IPv4 header checksum of a packet, set its size and send it to a port.  <br /></td></tr>
+<tr class="separator:gae4ed61ae2655a5ea20861cc077b79f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2353d01c4930ec46b9a420ef93a833cb" id="r_ga2353d01c4930ec46b9a420ef93a833cb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2353d01c4930ec46b9a420ef93a833cb">enip_iph_compute_checksum</a> (uint16_t seed, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *data, uint16_t size)</td></tr>
+<tr class="memdesc:ga2353d01c4930ec46b9a420ef93a833cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Internet (one's complement) checksum of a buffer.  <br /></td></tr>
+<tr class="separator:ga2353d01c4930ec46b9a420ef93a833cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga419110fd85ada355aae2f8216f4f6cb5" id="r_ga419110fd85ada355aae2f8216f4f6cb5"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga419110fd85ada355aae2f8216f4f6cb5">enip_iph_find_IF_for_socket</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
+<tr class="memdesc:ga419110fd85ada355aae2f8216f4f6cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface whose bearer ID and interface index equal the socket's LMAN destination.  <br /></td></tr>
+<tr class="separator:ga419110fd85ada355aae2f8216f4f6cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd3ce135551d1bb3ea0d650063e35b4f" id="r_gacd3ce135551d1bb3ea0d650063e35b4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd3ce135551d1bb3ea0d650063e35b4f">enip_iph_frame_read</a> (void *packet)</td></tr>
+<tr class="memdesc:gacd3ce135551d1bb3ea0d650063e35b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received IP packet: check the IPv4 header, find the interface, reassemble fragments and pass the packet to the protocol handler.  <br /></td></tr>
+<tr class="separator:gacd3ce135551d1bb3ea0d650063e35b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae49918f1bc28b0c7959fdf43bc39243a" id="r_gae49918f1bc28b0c7959fdf43bc39243a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae49918f1bc28b0c7959fdf43bc39243a">enip_iph_manage_reassembly</a> (void *iface, void *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)</td></tr>
+<tr class="memdesc:gae49918f1bc28b0c7959fdf43bc39243a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an IPv4 fragment to its reassembly slot.  <br /></td></tr>
+<tr class="separator:gae49918f1bc28b0c7959fdf43bc39243a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f8862eec5f4ea700e786b55b3371751" id="r_ga5f8862eec5f4ea700e786b55b3371751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5f8862eec5f4ea700e786b55b3371751">enip_iph_packet_avail</a> (void)</td></tr>
+<tr class="memdesc:ga5f8862eec5f4ea700e786b55b3371751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the IP layer that a packet buffer is free again.  <br /></td></tr>
+<tr class="separator:ga5f8862eec5f4ea700e786b55b3371751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae42646446a56c39d9ecf9c76b12f332f" id="r_gae42646446a56c39d9ecf9c76b12f332f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae42646446a56c39d9ecf9c76b12f332f">enip_iph_rheader_init</a> (void *slot)</td></tr>
+<tr class="memdesc:gae42646446a56c39d9ecf9c76b12f332f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset an IPv4 reassembly slot and its timer.  <br /></td></tr>
+<tr class="separator:gae42646446a56c39d9ecf9c76b12f332f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga597c4d725cc8edb02681f7c5c074ebce" id="r_ga597c4d725cc8edb02681f7c5c074ebce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga597c4d725cc8edb02681f7c5c074ebce">enip_iph_run</a> (void *module)</td></tr>
+<tr class="memdesc:ga597c4d725cc8edb02681f7c5c074ebce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run procedure of the IP module: expire socket timers and handle queued packets.  <br /></td></tr>
+<tr class="separator:ga597c4d725cc8edb02681f7c5c074ebce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga800a668e83546a8d8ce7c19f9b5a4450" id="r_ga800a668e83546a8d8ce7c19f9b5a4450"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga800a668e83546a8d8ce7c19f9b5a4450">enip_iph_write</a> (void *port, void *packet, uint32_t size)</td></tr>
+<tr class="memdesc:ga800a668e83546a8d8ce7c19f9b5a4450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a packet from the IP layer: fill the header checksum and pass it to the port.  <br /></td></tr>
+<tr class="separator:ga800a668e83546a8d8ce7c19f9b5a4450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1aab143b926f385861fa46583ac9cf52" id="r_ga1aab143b926f385861fa46583ac9cf52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1aab143b926f385861fa46583ac9cf52">enip_siph_crypt_frame_read</a> (void *module, void *packet)</td></tr>
+<tr class="memdesc:ga1aab143b926f385861fa46583ac9cf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive handler of the secure IP layer: answers a special 8-byte UDP probe in place.  <br /></td></tr>
+<tr class="separator:ga1aab143b926f385861fa46583ac9cf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07800a755ec8f11a819aa5b609357973" id="r_ga07800a755ec8f11a819aa5b609357973"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga07800a755ec8f11a819aa5b609357973">enip_siph_find_IF</a> (int address)</td></tr>
+<tr class="memdesc:ga07800a755ec8f11a819aa5b609357973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the IP interface with the given local address.  <br /></td></tr>
+<tr class="separator:ga07800a755ec8f11a819aa5b609357973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f632ef382c3f3a57f94c76d8b225849" id="r_ga1f632ef382c3f3a57f94c76d8b225849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f632ef382c3f3a57f94c76d8b225849">enip_icmp_frame_read</a> (void *module, void *packet)</td></tr>
+<tr class="memdesc:ga1f632ef382c3f3a57f94c76d8b225849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received ICMP packet (echo request, unreachable, quench, time exceeded, parameter problem) and release it.  <br /></td></tr>
+<tr class="separator:ga1f632ef382c3f3a57f94c76d8b225849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga280f232036535a2416051be36f219307" id="r_ga280f232036535a2416051be36f219307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga280f232036535a2416051be36f219307">enip_udph_frame_read</a> (void *module, void *packet)</td></tr>
+<tr class="memdesc:ga280f232036535a2416051be36f219307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received UDP packet: check it and queue it on the matching socket.  <br /></td></tr>
+<tr class="separator:ga280f232036535a2416051be36f219307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad198c4bc23b7f3d6d4612b88ddafeb65" id="r_gad198c4bc23b7f3d6d4612b88ddafeb65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad198c4bc23b7f3d6d4612b88ddafeb65">enip_init_csd_iface</a> (void *module, void *driver)</td></tr>
+<tr class="memdesc:gad198c4bc23b7f3d6d4612b88ddafeb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an IP driver description for the CSD (PPP dial-up) interface.  <br /></td></tr>
+<tr class="separator:gad198c4bc23b7f3d6d4612b88ddafeb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba318f07f855e3c0f788486d53448f0c" id="r_gaba318f07f855e3c0f788486d53448f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba318f07f855e3c0f788486d53448f0c">enip_nsapi_init_iface</a> (void *module)</td></tr>
+<tr class="memdesc:gaba318f07f855e3c0f788486d53448f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and register the IP interface of a PDP context (NSAPI module).  <br /></td></tr>
+<tr class="separator:gaba318f07f855e3c0f788486d53448f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadce4c3efddab29e115b9382d2d98b066" id="r_gadce4c3efddab29e115b9382d2d98b066"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadce4c3efddab29e115b9382d2d98b066">enip_nsapi_init_module</a> (void *module)</td></tr>
+<tr class="memdesc:gadce4c3efddab29e115b9382d2d98b066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an NSAPI (PDP context) module named "NSAPI".  <br /></td></tr>
+<tr class="separator:gadce4c3efddab29e115b9382d2d98b066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52f83bf0b4547434fe7869915546b5b1" id="r_ga52f83bf0b4547434fe7869915546b5b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga52f83bf0b4547434fe7869915546b5b1">ENIP_PDP_NET_UP_CNF</a> (uint16_t context, int result)</td></tr>
+<tr class="memdesc:ga52f83bf0b4547434fe7869915546b5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the PDP NET_UP confirmation.  <br /></td></tr>
+<tr class="separator:ga52f83bf0b4547434fe7869915546b5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabff774ce87d9325c45994d88686cbb3b" id="r_gabff774ce87d9325c45994d88686cbb3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabff774ce87d9325c45994d88686cbb3b">ENIP_PDP_NET_UP_REJ_IND</a> (uint16_t context, int result)</td></tr>
+<tr class="memdesc:gabff774ce87d9325c45994d88686cbb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the PDP NET_UP reject indication.  <br /></td></tr>
+<tr class="separator:gabff774ce87d9325c45994d88686cbb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79836f6d0c711c7ec0cd8802cb4057f0" id="r_ga79836f6d0c711c7ec0cd8802cb4057f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga79836f6d0c711c7ec0cd8802cb4057f0">ENIP_PDP_NET_DOWN_IND</a> (uint16_t context, int mode)</td></tr>
+<tr class="memdesc:ga79836f6d0c711c7ec0cd8802cb4057f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the PDP NET_DOWN indication: take the context's interface down.  <br /></td></tr>
+<tr class="separator:ga79836f6d0c711c7ec0cd8802cb4057f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga084dfddb57b0986f3c51975371d50e1a" id="r_ga084dfddb57b0986f3c51975371d50e1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga084dfddb57b0986f3c51975371d50e1a">ENIP_PDP_START_REQ</a> (int context, int mode)</td></tr>
+<tr class="memdesc:ga084dfddb57b0986f3c51975371d50e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the PDP start request: initialise and bring up the context's NSAPI module.  <br /></td></tr>
+<tr class="separator:ga084dfddb57b0986f3c51975371d50e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87bbf2d5ddf0f53d7d9bf5a41cffdc41" id="r_ga87bbf2d5ddf0f53d7d9bf5a41cffdc41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87bbf2d5ddf0f53d7d9bf5a41cffdc41">ENIP_PDP_STOP_REQ</a> (uint16_t context, int mode)</td></tr>
+<tr class="memdesc:ga87bbf2d5ddf0f53d7d9bf5a41cffdc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the PDP stop request.  <br /></td></tr>
+<tr class="separator:ga87bbf2d5ddf0f53d7d9bf5a41cffdc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f492178e586da4828b60dff2ef5d870" id="r_ga0f492178e586da4828b60dff2ef5d870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f492178e586da4828b60dff2ef5d870">ENIP_PDP_START_CSD_INT_REQ</a> (int bearer)</td></tr>
+<tr class="memdesc:ga0f492178e586da4828b60dff2ef5d870"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENIP handler of the CSD (PPP dial-up) start request: set up the "PPP CSD" module.  <br /></td></tr>
+<tr class="separator:ga0f492178e586da4828b60dff2ef5d870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d14c78217525c3cac1bfc684662b81a" id="r_ga4d14c78217525c3cac1bfc684662b81a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d14c78217525c3cac1bfc684662b81a">enip_sock_create</a> (int family, int type, int protocol, int *owner, uint32_t param, uint16_t *destination)</td></tr>
+<tr class="memdesc:ga4d14c78217525c3cac1bfc684662b81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an ENIP socket.  <br /></td></tr>
+<tr class="separator:ga4d14c78217525c3cac1bfc684662b81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6618da8ccd764d84c1ca53e76016145b" id="r_ga6618da8ccd764d84c1ca53e76016145b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6618da8ccd764d84c1ca53e76016145b">enip_socket_connect</a> (int <a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, int address, int unknown, uint16_t port, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga6618da8ccd764d84c1ca53e76016145b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect a socket: set the peer of a datagram socket or start a TCP connection.  <br /></td></tr>
+<tr class="separator:ga6618da8ccd764d84c1ca53e76016145b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab93322705086c78656f9e3209314d959" id="r_gab93322705086c78656f9e3209314d959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab93322705086c78656f9e3209314d959">enip_sockh_IF_init</a> (void *iface)</td></tr>
+<tr class="memdesc:gab93322705086c78656f9e3209314d959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick a pseudo-random first local port for an interface.  <br /></td></tr>
+<tr class="separator:gab93322705086c78656f9e3209314d959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace038ebb3814e0d9bc1a6b20da5c3c9e" id="r_gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace038ebb3814e0d9bc1a6b20da5c3c9e">enip_sockh_create_internal</a> (int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)</td></tr>
+<tr class="memdesc:gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initialise a socket in a free slot of the 12-socket table.  <br /></td></tr>
+<tr class="separator:gace038ebb3814e0d9bc1a6b20da5c3c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c695c99b56a64b85c961012deb48d4d" id="r_ga8c695c99b56a64b85c961012deb48d4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8c695c99b56a64b85c961012deb48d4d">enip_sockh_autobind_IF</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, int address)</td></tr>
+<tr class="memdesc:ga8c695c99b56a64b85c961012deb48d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a socket to an IP interface: the one matching its LMAN destination, or the first usable one.  <br /></td></tr>
+<tr class="separator:ga8c695c99b56a64b85c961012deb48d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae792753e5e69fc911a61ef3aca5474cf" id="r_gae792753e5e69fc911a61ef3aca5474cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae792753e5e69fc911a61ef3aca5474cf">enip_sockh_packet_allocate</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, uint32_t size, uint32_t flags, void **packet, int timeout)</td></tr>
+<tr class="memdesc:gae792753e5e69fc911a61ef3aca5474cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an outgoing packet for a socket with room for the interface headers.  <br /></td></tr>
+<tr class="separator:gae792753e5e69fc911a61ef3aca5474cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcd028ae11722a2e44cb72c41f45d190" id="r_gabcd028ae11722a2e44cb72c41f45d190"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabcd028ae11722a2e44cb72c41f45d190">enip_sockh_dgram_connect</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, int address, uint32_t unused, uint16_t port)</td></tr>
+<tr class="memdesc:gabcd028ae11722a2e44cb72c41f45d190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the peer of a datagram socket.  <br /></td></tr>
+<tr class="separator:gabcd028ae11722a2e44cb72c41f45d190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74d4155a8df3dc6e81094b8e3ba61e37" id="r_ga74d4155a8df3dc6e81094b8e3ba61e37"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74d4155a8df3dc6e81094b8e3ba61e37">enip_sockh_from_ipheader</a> (void *module, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *header)</td></tr>
+<tr class="memdesc:ga74d4155a8df3dc6e81094b8e3ba61e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the socket for a received packet by protocol, ports and address.  <br /></td></tr>
+<tr class="separator:ga74d4155a8df3dc6e81094b8e3ba61e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac455dbd0fd4bef777ed04b5921ef7adb" id="r_gac455dbd0fd4bef777ed04b5921ef7adb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac455dbd0fd4bef777ed04b5921ef7adb">enip_sockh_prepare_send</a> (int index, void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, uint32_t address)</td></tr>
+<tr class="memdesc:gac455dbd0fd4bef777ed04b5921ef7adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the IPv4 header of an outgoing packet from the socket's settings.  <br /></td></tr>
+<tr class="separator:gac455dbd0fd4bef777ed04b5921ef7adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ffca417ded9cbe06a8a5f0d9a139af3" id="r_ga8ffca417ded9cbe06a8a5f0d9a139af3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ffca417ded9cbe06a8a5f0d9a139af3">enip_sockh_tcp_packet_allocate</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
+<tr class="memdesc:ga8ffca417ded9cbe06a8a5f0d9a139af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an outgoing TCP segment of the socket's maximum size.  <br /></td></tr>
+<tr class="separator:ga8ffca417ded9cbe06a8a5f0d9a139af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa624fe2f32388a7f413c0e60c17dee15" id="r_gaa624fe2f32388a7f413c0e60c17dee15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa624fe2f32388a7f413c0e60c17dee15">enip_tcph_sock_init</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
+<tr class="memdesc:gaa624fe2f32388a7f413c0e60c17dee15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the TCP state of a socket: initial sequence number, windows and MSS.  <br /></td></tr>
+<tr class="separator:gaa624fe2f32388a7f413c0e60c17dee15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bec1ffde277f9be63c0508e4e78875e" id="r_ga0bec1ffde277f9be63c0508e4e78875e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0bec1ffde277f9be63c0508e4e78875e">enip_tcph_sock_connect</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, int address, uint32_t unknown, uint16_t port, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga0bec1ffde277f9be63c0508e4e78875e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a TCP connection: send SYN and start the connect timer.  <br /></td></tr>
+<tr class="separator:ga0bec1ffde277f9be63c0508e4e78875e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ecd46b437bd8263ff23eff2a01ff15d" id="r_ga1ecd46b437bd8263ff23eff2a01ff15d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1ecd46b437bd8263ff23eff2a01ff15d">enip_tcph_send_segment</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, uint32_t flags, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *data, uint32_t size, void *packet, int unknown)</td></tr>
+<tr class="memdesc:ga1ecd46b437bd8263ff23eff2a01ff15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build and send one TCP segment.  <br /></td></tr>
+<tr class="separator:ga1ecd46b437bd8263ff23eff2a01ff15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae032b2c0315abc9df77c4fe3db92369d" id="r_gae032b2c0315abc9df77c4fe3db92369d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae032b2c0315abc9df77c4fe3db92369d">enip_tcph_write_segment</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, void *packet, int use_sequence)</td></tr>
+<tr class="memdesc:gae032b2c0315abc9df77c4fe3db92369d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a received TCP segment into the socket's receive state (part of TCP input).  <br /></td></tr>
+<tr class="separator:gae032b2c0315abc9df77c4fe3db92369d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f72072e950aadf63654a60a3b3e4ebf" id="r_ga9f72072e950aadf63654a60a3b3e4ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f72072e950aadf63654a60a3b3e4ebf">enip_tcph_change_sock_state</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, uint32_t state)</td></tr>
+<tr class="memdesc:ga9f72072e950aadf63654a60a3b3e4ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the TCP state of a socket and notify its owner.  <br /></td></tr>
+<tr class="separator:ga9f72072e950aadf63654a60a3b3e4ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fae249e000bce0df523667e8e7ccf18" id="r_ga2fae249e000bce0df523667e8e7ccf18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2fae249e000bce0df523667e8e7ccf18">enip_tcph_frame_read</a> (void *module, void *packet)</td></tr>
+<tr class="memdesc:ga2fae249e000bce0df523667e8e7ccf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a received TCP segment.  <br /></td></tr>
+<tr class="separator:ga2fae249e000bce0df523667e8e7ccf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88dd4367309bf321871432dab44e612f" id="r_ga88dd4367309bf321871432dab44e612f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga88dd4367309bf321871432dab44e612f">enip_tcph_run</a> (void)</td></tr>
+<tr class="memdesc:ga88dd4367309bf321871432dab44e612f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the TCP timers of all sockets: retransmit, time out or move on in the close states.  <br /></td></tr>
+<tr class="separator:ga88dd4367309bf321871432dab44e612f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafad4860760f085e994f078eb5624c318" id="r_gafad4860760f085e994f078eb5624c318"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafad4860760f085e994f078eb5624c318">enip_tcph_get_SACK_option_from_list</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, uint32_t count, uint8_t *option)</td></tr>
+<tr class="memdesc:gafad4860760f085e994f078eb5624c318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a TCP SACK option (NOP, NOP, SACK) from the socket's SACK blocks.  <br /></td></tr>
+<tr class="separator:gafad4860760f085e994f078eb5624c318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga231880a10cacb280539784e9851db2d6" id="r_ga231880a10cacb280539784e9851db2d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga231880a10cacb280539784e9851db2d6">enip_tcph_update_SACK_block_list</a> (void *<a class="el" href="group___socket.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
+<tr class="memdesc:ga231880a10cacb280539784e9851db2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the SACK blocks that are already acknowledged.  <br /></td></tr>
+<tr class="separator:ga231880a10cacb280539784e9851db2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga202deee919163f6ce1251d04bce6908f" id="r_ga202deee919163f6ce1251d04bce6908f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga202deee919163f6ce1251d04bce6908f">enip_timer_init</a> (void *timer, void *module)</td></tr>
+<tr class="memdesc:ga202deee919163f6ce1251d04bce6908f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an ENIP timer.  <br /></td></tr>
+<tr class="separator:ga202deee919163f6ce1251d04bce6908f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5855f3fa8a540f5d2c3510a1b1a4ae05" id="r_ga5855f3fa8a540f5d2c3510a1b1a4ae05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5855f3fa8a540f5d2c3510a1b1a4ae05">enip_timer_cancel</a> (void *timer)</td></tr>
+<tr class="memdesc:ga5855f3fa8a540f5d2c3510a1b1a4ae05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop an ENIP timer if it is running.  <br /></td></tr>
+<tr class="separator:ga5855f3fa8a540f5d2c3510a1b1a4ae05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga404e33e14483f3bf2bdaad56de0c23a4" id="r_ga404e33e14483f3bf2bdaad56de0c23a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga404e33e14483f3bf2bdaad56de0c23a4">enip_timer_start</a> (void *timer, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga404e33e14483f3bf2bdaad56de0c23a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or restart an ENIP timer and schedule its module.  <br /></td></tr>
+<tr class="separator:ga404e33e14483f3bf2bdaad56de0c23a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92902769b861c5abac6c08ee4f883f55" id="r_ga92902769b861c5abac6c08ee4f883f55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92902769b861c5abac6c08ee4f883f55">LMAN_LINK_UP_CNF</a> (void)</td></tr>
+<tr class="memdesc:ga92902769b861c5abac6c08ee4f883f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">LMAN handler of the link-up confirmation: mark the waiting connection as up and notify the owner.  <br /></td></tr>
+<tr class="separator:ga92902769b861c5abac6c08ee4f883f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5aefa696df49d328a0e0f80e7bd2dc1f" id="r_ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5aefa696df49d328a0e0f80e7bd2dc1f">lman_app_register</a> (uint16_t app)</td></tr>
+<tr class="memdesc:ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an application in the LMAN application table.  <br /></td></tr>
+<tr class="separator:ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9a3e048bdfaf32b881b98b0fcdad3b9" id="r_gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9a3e048bdfaf32b881b98b0fcdad3b9">lman_app_free</a> (uint16_t slot)</td></tr>
+<tr class="memdesc:gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an LMAN application slot.  <br /></td></tr>
+<tr class="separator:gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c0d66a0884791f7df5bd47d31195219" id="r_ga9c0d66a0884791f7df5bd47d31195219"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c0d66a0884791f7df5bd47d31195219">lman_app_set_bearer</a> (uint16_t slot, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint16_t *settings, int callback)</td></tr>
+<tr class="memdesc:ga9c0d66a0884791f7df5bd47d31195219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bearer settings of an LMAN application.  <br /></td></tr>
+<tr class="separator:ga9c0d66a0884791f7df5bd47d31195219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga202abd03f52889697140b5d6e2586e1e" id="r_ga202abd03f52889697140b5d6e2586e1e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga202abd03f52889697140b5d6e2586e1e">lman_get_active_connection_id</a> (uint16_t bearer, uint16_t key)</td></tr>
+<tr class="memdesc:ga202abd03f52889697140b5d6e2586e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the LMAN connection with the given bearer ID and key.  <br /></td></tr>
+<tr class="separator:ga202abd03f52889697140b5d6e2586e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66ecd0b7790ac5eccf4d30c6540e7fd0" id="r_ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66ecd0b7790ac5eccf4d30c6540e7fd0">lman_GetBearerIdForCi</a> (uint16_t connection)</td></tr>
+<tr class="memdesc:ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bearer ID of an LMAN connection.  <br /></td></tr>
+<tr class="separator:ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73b2674dc0c018a326e153f6c6c68617" id="r_ga73b2674dc0c018a326e153f6c6c68617"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73b2674dc0c018a326e153f6c6c68617">lman_get_socket_destination</a> (uint16_t cepid, void *destination)</td></tr>
+<tr class="memdesc:ga73b2674dc0c018a326e153f6c6c68617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get where sockets of a process go: application flags, selector, bearer ID and interface index.  <br /></td></tr>
+<tr class="separator:ga73b2674dc0c018a326e153f6c6c68617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7eb1796f6224e56d60e7dd401011d85" id="r_gaf7eb1796f6224e56d60e7dd401011d85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7eb1796f6224e56d60e7dd401011d85">zDLL_Init</a> (void *list)</td></tr>
+<tr class="memdesc:gaf7eb1796f6224e56d60e7dd401011d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an empty ENIP double-linked list (two pointers: first, last).  <br /></td></tr>
+<tr class="separator:gaf7eb1796f6224e56d60e7dd401011d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Profile</h2></td></tr>
 <tr class="memitem:ga50550c586f46c004d5174b4a47632296" id="r_ga50550c586f46c004d5174b4a47632296"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50550c586f46c004d5174b4a47632296">RamActiveGPRSProfileName</a> (void)</td></tr>
@@ -715,6 +979,2733 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>LMAN connect ID </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Call only from SUBPROC, NewSGOLD only. </dd></dl>
+
+</div>
+</div>
+<a id="ga1e0f61e713b1764da9a78754d669e3da" name="ga1e0f61e713b1764da9a78754d669e3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e0f61e713b1764da9a78754d669e3da">&#9670;&#160;</a></span>RequestLMANDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RequestLMANDisconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *</td>          <td class="paramname"><span class="paramname"><em>req</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request disconnection of a native LMAN context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>two request bytes: context ID, then disconnect cause </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if handled, 0 if rejected. Call from a process registered for socket work </dd></dl>
+
+</div>
+</div>
+<a id="ga6c666b16239501f928206bb6c3e394f1" name="ga6c666b16239501f928206bb6c3e394f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c666b16239501f928206bb6c3e394f1">&#9670;&#160;</a></span>GetSocketRegIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned GetSocketRegIndex </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cepid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the socket-registration slot for a CEPID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cepid</td><td>GBS process identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>registration index 0..13, or 0xFFFF if not registered </dd></dl>
+
+</div>
+</div>
+<a id="ga7018e7dcfe427fc2c5978a2412bbb3ac" name="ga7018e7dcfe427fc2c5978a2412bbb3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7018e7dcfe427fc2c5978a2412bbb3ac">&#9670;&#160;</a></span>GetServiceCepid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned GetServiceCepid </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>service</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the process identifier assigned to a native service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">service</td><td>firmware service index; 3 selects the Java service </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>service CEPID, or 0 if unavailable </dd></dl>
+
+</div>
+</div>
+<a id="ga36adbe9bbed48a615aad52c8f0c8638f" name="ga36adbe9bbed48a615aad52c8f0c8638f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga36adbe9bbed48a615aad52c8f0c8638f">&#9670;&#160;</a></span>LMAN_AllocContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned LMAN_AllocContext </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate a native LMAN context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bearer</td><td>native bearer kind; 1 selects GPRS </td></tr>
+    <tr><td class="paramname">type</td><td>context subtype </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>context index 0..7. Check for a free context before calling; a full table asserts </dd></dl>
+
+</div>
+</div>
+<a id="ga6d8005a5cdc51cb0a1dbe1a4c103df3f" name="ga6d8005a5cdc51cb0a1dbe1a4c103df3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d8005a5cdc51cb0a1dbe1a4c103df3f">&#9670;&#160;</a></span>LMAN_SetProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_SetProfile </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_c_t_x___n_a_p_d_e_f">CTX_NAPDEF</a> *</td>          <td class="paramname"><span class="paramname"><em>profile</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a NAP profile into an allocated LMAN context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cid</td><td>context index 0..7 </td></tr>
+    <tr><td class="paramname">profile</td><td>profile with a terminated name and native bearer settings </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga771bf5955451b98b9377b35c7d504127" name="ga771bf5955451b98b9377b35c7d504127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga771bf5955451b98b9377b35c7d504127">&#9670;&#160;</a></span>LMAN_SetRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_SetRef </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>reg_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>on</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attach or detach a registered process from an LMAN context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_index</td><td>socket-registration index 0..13 </td></tr>
+    <tr><td class="paramname">cid</td><td>context index 0..7 </td></tr>
+    <tr><td class="paramname">on</td><td>1 to attach, 0 to detach </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga54cda90e977005923cb73b578dc91996" name="ga54cda90e977005923cb73b578dc91996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54cda90e977005923cb73b578dc91996">&#9670;&#160;</a></span>LMAN_SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_SetState </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change a native LMAN context state and notify its registered owners. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cid</td><td>context index 0..7 </td></tr>
+    <tr><td class="paramname">state</td><td>native state value; 4 means connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1201d4d2a07a4b626894aa03d7d56d84" name="ga1201d4d2a07a4b626894aa03d7d56d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1201d4d2a07a4b626894aa03d7d56d84">&#9670;&#160;</a></span>LMAN_FreeContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_FreeContext </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset and release a native LMAN context without disconnecting a physical bearer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cid</td><td>context index 0..7 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9d8e17b1863a83f003257e73d2e57f34" name="ga9d8e17b1863a83f003257e73d2e57f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d8e17b1863a83f003257e73d2e57f34">&#9670;&#160;</a></span>RamLmanContexts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * RamLmanContexts </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the native LMAN context table. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to 8 context entries, 0x70 bytes each </dd></dl>
+
+</div>
+</div>
+<a id="ga09e0dad23c52fe972d1d81adb70cab77" name="ga09e0dad23c52fe972d1d81adb70cab77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09e0dad23c52fe972d1d81adb70cab77">&#9670;&#160;</a></span>RamLmanRefs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t * RamLmanRefs </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the LMAN process-to-context reference table. </p>
+<dl class="section return"><dt>Returns</dt><dd>14 rows of 8 reference words, indexed by registration slot and context ID </dd></dl>
+
+</div>
+</div>
+<a id="gac366d527326dda99392e38497109e74a" name="gac366d527326dda99392e38497109e74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac366d527326dda99392e38497109e74a">&#9670;&#160;</a></span>RamSocketRegs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamSocketRegs </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the native socket-registration table. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to 14 registration entries, 0x14 bytes each </dd></dl>
+
+</div>
+</div>
+<a id="gaccd5d0bc4c338ed79eb158224ade1894" name="gaccd5d0bc4c338ed79eb158224ade1894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaccd5d0bc4c338ed79eb158224ade1894">&#9670;&#160;</a></span>WSP_GetObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * WSP_GetObject </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a WSP object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>object ID, 0x17: preferences, 0x18: network policy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the object or NULL </dd></dl>
+
+</div>
+</div>
+<a id="ga0880e15294ce48553fe592f05242079e" name="ga0880e15294ce48553fe592f05242079e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0880e15294ce48553fe592f05242079e">&#9670;&#160;</a></span>WSP_ReadProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WSP_ReadProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned *</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a WSP property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>property name </td></tr>
+    <tr><td class="paramname">value</td><td>output buffer </td></tr>
+    <tr><td class="paramname">length</td><td>buffer size, receives the value length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success, 0: error </dd></dl>
+
+</div>
+</div>
+<a id="ga78ae7eaeeec4efe4c304fb6154f93244" name="ga78ae7eaeeec4efe4c304fb6154f93244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78ae7eaeeec4efe4c304fb6154f93244">&#9670;&#160;</a></span>WSP_GetConnectionState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t WSP_GetConnectionState </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nap</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the WSP connection state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bearer</td><td>bearer ID </td></tr>
+    <tr><td class="paramname">nap</td><td>NAP profile ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>connection state, 2: connected </dd></dl>
+
+</div>
+</div>
+<a id="ga6a00b6c6d51e311c5ffe98f7ab8a4049" name="ga6a00b6c6d51e311c5ffe98f7ab8a4049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a00b6c6d51e311c5ffe98f7ab8a4049">&#9670;&#160;</a></span>ENIP_ModuleInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_ModuleInit </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>up</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>down</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>run</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>notify</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>post_run</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet_available</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize an ENIP network module (the driver side of a network interface). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>module object, filled by the firmware </td></tr>
+    <tr><td class="paramname">name</td><td>module name </td></tr>
+    <tr><td class="paramname">up</td><td>called when the module goes up </td></tr>
+    <tr><td class="paramname">down</td><td>called when the module goes down </td></tr>
+    <tr><td class="paramname">run</td><td>module run callback </td></tr>
+    <tr><td class="paramname">notify</td><td>event callback (module, event) </td></tr>
+    <tr><td class="paramname">post_run</td><td>called after run </td></tr>
+    <tr><td class="paramname">packet_available</td><td>called when a packet is queued on the module port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5b621cf4aa9bddb91658e96ac37d9714" name="ga5b621cf4aa9bddb91658e96ac37d9714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b621cf4aa9bddb91658e96ac37d9714">&#9670;&#160;</a></span>ENIP_ModuleRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ENIP_ModuleRun </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run an ENIP network module once. </p>
+<p>Call from the ENIP process. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">module</td><td>module object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>run result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>module state </dd></dl>
+
+</div>
+</div>
+<a id="ga2f32b22cc2f249f8befd3209b04a0f4a" name="ga2f32b22cc2f249f8befd3209b04a0f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f32b22cc2f249f8befd3209b04a0f4a">&#9670;&#160;</a></span>ENIP_ModuleUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ENIP_ModuleUp </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bring an ENIP network module up. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>module object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result code </dd></dl>
+
+</div>
+</div>
+<a id="gadfa20931390b7e5effeb9132d997df0e" name="gadfa20931390b7e5effeb9132d997df0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadfa20931390b7e5effeb9132d997df0e">&#9670;&#160;</a></span>ENIP_ModuleDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_ModuleDown </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>reason</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bring an ENIP network module down. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>module object </td></tr>
+    <tr><td class="paramname">reason</td><td>reason code, 0: normal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaec3ecac6a45ecf40645df2bd779adc6e" name="gaec3ecac6a45ecf40645df2bd779adc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec3ecac6a45ecf40645df2bd779adc6e">&#9670;&#160;</a></span>ENIP_PortInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PortInit </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the packet port of an ENIP network module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>port object inside the module </td></tr>
+    <tr><td class="paramname">module</td><td>owning module </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf2bc5c50279e760f9a6a33b14f880335" name="gaf2bc5c50279e760f9a6a33b14f880335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2bc5c50279e760f9a6a33b14f880335">&#9670;&#160;</a></span>ENIP_PortSend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PortSend </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue a packet on an ENIP port. </p>
+<p>The port takes ownership of the packet. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>destination port </td></tr>
+    <tr><td class="paramname">packet</td><td>packet from ENIP_PacketAlloc </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga388f9efde7534dedbb91b2f8b1d3ce7c" name="ga388f9efde7534dedbb91b2f8b1d3ce7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga388f9efde7534dedbb91b2f8b1d3ce7c">&#9670;&#160;</a></span>ENIP_PacketAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * ENIP_PacketAlloc </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>quota</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an ENIP packet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>owning module </td></tr>
+    <tr><td class="paramname">size</td><td>buffer size </td></tr>
+    <tr><td class="paramname">pool</td><td>buffer pool </td></tr>
+    <tr><td class="paramname">offset</td><td>data offset in the buffer </td></tr>
+    <tr><td class="paramname">quota</td><td>allocation quota </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>packet, or NULL if no memory </dd></dl>
+
+</div>
+</div>
+<a id="ga2381b4cec92dd5a25d721ac0eec21949" name="ga2381b4cec92dd5a25d721ac0eec21949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2381b4cec92dd5a25d721ac0eec21949">&#9670;&#160;</a></span>ENIP_PacketFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PacketFree </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free an ENIP packet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>packet from ENIP_PacketAlloc </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6c6449bf5ce125021f173020a1829bd9" name="ga6c6449bf5ce125021f173020a1829bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c6449bf5ce125021f173020a1829bd9">&#9670;&#160;</a></span>ENIP_RegisterDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ENIP_RegisterDriver </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>driver</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register an IP driver (network interface) in the ENIP IP layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">driver</td><td>driver object: ports, addresses, DNS, MTU, bearer and interface index </td></tr>
+    <tr><td class="paramname">flags</td><td>0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: success </dd></dl>
+
+</div>
+</div>
+<a id="gac6b1083904dc028f9c3306cd35629d41" name="gac6b1083904dc028f9c3306cd35629d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6b1083904dc028f9c3306cd35629d41">&#9670;&#160;</a></span>ENIP_UnregisterDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_UnregisterDriver </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unregister the IP driver of an ENIP network module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>module of the registered driver </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad079ad3c04490bd829c6a28d6ca26f4f" name="gad079ad3c04490bd829c6a28d6ca26f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad079ad3c04490bd829c6a28d6ca26f4f">&#9670;&#160;</a></span>ENIP_FindInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * ENIP_FindInterface </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>iface</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the IP interface of a bearer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bearer</td><td>bearer ID </td></tr>
+    <tr><td class="paramname">iface</td><td>interface index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>interface object, or NULL </dd></dl>
+
+</div>
+</div>
+<a id="ga9a84523a6a2a72e27a701bae6a26890c" name="ga9a84523a6a2a72e27a701bae6a26890c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a84523a6a2a72e27a701bae6a26890c">&#9670;&#160;</a></span>LMAN_AttachInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_AttachInterface </td>
+          <td>(</td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>cid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>iface</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>unk</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attach an IP interface to a native LMAN context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cid</td><td>context ID from LMAN_AllocContext </td></tr>
+    <tr><td class="paramname">iface</td><td>interface index </td></tr>
+    <tr><td class="paramname">unk</td><td>0xFFFF </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga834a8d34319a14fce495164fe0bceb20" name="ga834a8d34319a14fce495164fe0bceb20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga834a8d34319a14fce495164fe0bceb20">&#9670;&#160;</a></span>ENIP_ListRemoveHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * ENIP_ListRemoveHead </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the first item of an ENIP list (packet queue). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>list head </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>removed item, or NULL if the list is empty </dd></dl>
+
+</div>
+</div>
+<a id="gab54eeac3ba7a4695b1f6e295f81d5717" name="gab54eeac3ba7a4695b1f6e295f81d5717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab54eeac3ba7a4695b1f6e295f81d5717">&#9670;&#160;</a></span>RamPdpDrivers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamPdpDrivers </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the GPRS PDP driver table (the DNS resolver takes servers for bearer 1 from it). </p>
+<dl class="section return"><dt>Returns</dt><dd>8 entries, 0x2C bytes each: +4 local IP, +8 DNS 1, +C DNS 2 </dd></dl>
+
+</div>
+</div>
+<a id="ga0e4e5bb445354eea7978307d2a767d48" name="ga0e4e5bb445354eea7978307d2a767d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e4e5bb445354eea7978307d2a767d48">&#9670;&#160;</a></span>enip_module_post_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_module_post_run </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Schedule a run of an ENIP module: mark it as needing a run and call its post-run procedure if one is set, the module is up and no run is already posted or in progress. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5169e1a5d2111ff02e042992efa16655" name="ga5169e1a5d2111ff02e042992efa16655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5169e1a5d2111ff02e042992efa16655">&#9670;&#160;</a></span>enip_module_nsapi_post_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_module_nsapi_post_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the per-context fields of an NSAPI module after enip_nsapi_init_module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>NSAPI module </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9b7fb0296f94741f3230d27a18e70d01" name="ga9b7fb0296f94741f3230d27a18e70d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b7fb0296f94741f3230d27a18e70d01">&#9670;&#160;</a></span>enip_port_handle_pkt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_port_handle_pkt </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Append a packet to an ENIP port's queue and schedule the port's module if the queue was empty. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>ENIP port </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga30d511943435c2f7e4747712d95c18e6" name="ga30d511943435c2f7e4747712d95c18e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30d511943435c2f7e4747712d95c18e6">&#9670;&#160;</a></span>enip_memory_allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_memory_allocate </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>unused</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate memory from the ENIP pool, falling back to the second ENIP pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unused</td><td>not read by the function </td></tr>
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>memory block, NULL when both pools are exhausted </dd></dl>
+
+</div>
+</div>
+<a id="ga6d43fef70e67cb756c6459e25371f8d9" name="ga6d43fef70e67cb756c6459e25371f8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d43fef70e67cb756c6459e25371f8d9">&#9670;&#160;</a></span>enip_memory_release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_memory_release </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release a block allocated with enip_memory_allocate. </p>
+<p>NULL is a fatal error. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">block</td><td>memory block </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga18071400fb98341d5ec3e71714586521" name="ga18071400fb98341d5ec3e71714586521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18071400fb98341d5ec3e71714586521">&#9670;&#160;</a></span>enip_packet_max_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_packet_max_size </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the largest ENIP packet size (a firmware constant). </p>
+<dl class="section return"><dt>Returns</dt><dd>size in bytes </dd></dl>
+
+</div>
+</div>
+<a id="ga5bd039d4afd18b21993244256387f141" name="ga5bd039d4afd18b21993244256387f141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bd039d4afd18b21993244256387f141">&#9670;&#160;</a></span>enip_ip_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_ip_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>post_run</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the ENIP IP module, its 8 interface slots and the 2 reassembly slots. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_run</td><td>stored as the IP module's post-run procedure (not confirmed) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 </dd></dl>
+
+</div>
+</div>
+<a id="gaa7caf7ea432a2cded2c68fcc4179c1c3" name="gaa7caf7ea432a2cded2c68fcc4179c1c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa7caf7ea432a2cded2c68fcc4179c1c3">&#9670;&#160;</a></span>enip_find_iface_by_driver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_find_iface_by_driver </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>driver</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the IP interface (of 8) whose registered driver belongs to the same module as the given driver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">driver</td><td>ENIP IP driver </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IP interface (its driver part), NULL when not found </dd></dl>
+
+</div>
+</div>
+<a id="gae4ed61ae2655a5ea20861cc077b79f94" name="gae4ed61ae2655a5ea20861cc077b79f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4ed61ae2655a5ea20861cc077b79f94">&#9670;&#160;</a></span>enip_iph_calc_chk_and_port_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_iph_calc_chk_and_port_send </td>
+          <td>(</td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill the IPv4 header checksum of a packet, set its size and send it to a port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>pointer to the destination ENIP port pointer </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet with an IPv4 header at its data </td></tr>
+    <tr><td class="paramname">size</td><td>packet size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2353d01c4930ec46b9a420ef93a833cb" name="ga2353d01c4930ec46b9a420ef93a833cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2353d01c4930ec46b9a420ef93a833cb">&#9670;&#160;</a></span>enip_iph_compute_checksum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t enip_iph_compute_checksum </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the Internet (one's complement) checksum of a buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>checksum of preceding data, 0 to start </td></tr>
+    <tr><td class="paramname">data</td><td>data, summed as big-endian 16-bit words </td></tr>
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>checksum, 0 when data already contains a correct checksum </dd></dl>
+
+</div>
+</div>
+<a id="ga419110fd85ada355aae2f8216f4f6cb5" name="ga419110fd85ada355aae2f8216f4f6cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga419110fd85ada355aae2f8216f4f6cb5">&#9670;&#160;</a></span>enip_iph_find_IF_for_socket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_iph_find_IF_for_socket </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the IP interface whose bearer ID and interface index equal the socket's LMAN destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IP interface (its driver part), NULL when not found </dd></dl>
+
+</div>
+</div>
+<a id="gacd3ce135551d1bb3ea0d650063e35b4f" name="gacd3ce135551d1bb3ea0d650063e35b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd3ce135551d1bb3ea0d650063e35b4f">&#9670;&#160;</a></span>enip_iph_frame_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_iph_frame_read </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process a received IP packet: check the IPv4 header, find the interface, reassemble fragments and pass the packet to the protocol handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>ENIP packet </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae49918f1bc28b0c7959fdf43bc39243a" name="gae49918f1bc28b0c7959fdf43bc39243a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae49918f1bc28b0c7959fdf43bc39243a">&#9670;&#160;</a></span>enip_iph_manage_reassembly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_iph_manage_reassembly </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>iface</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>total_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>header_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fragment</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>source</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add an IPv4 fragment to its reassembly slot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface</td><td>receiving IP interface </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet with the fragment </td></tr>
+    <tr><td class="paramname">header</td><td>IPv4 header of the fragment </td></tr>
+    <tr><td class="paramname">total_size</td><td>IPv4 total length </td></tr>
+    <tr><td class="paramname">header_size</td><td>IPv4 header length </td></tr>
+    <tr><td class="paramname">fragment</td><td>IPv4 flags and fragment offset field </td></tr>
+    <tr><td class="paramname">source</td><td>value matched against the slot owner (probably the source address) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>complete packet, 0 while fragments are missing </dd></dl>
+
+</div>
+</div>
+<a id="ga5f8862eec5f4ea700e786b55b3371751" name="ga5f8862eec5f4ea700e786b55b3371751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f8862eec5f4ea700e786b55b3371751">&#9670;&#160;</a></span>enip_iph_packet_avail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_iph_packet_avail </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Notify the IP layer that a packet buffer is free again. </p>
+
+</div>
+</div>
+<a id="gae42646446a56c39d9ecf9c76b12f332f" name="gae42646446a56c39d9ecf9c76b12f332f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae42646446a56c39d9ecf9c76b12f332f">&#9670;&#160;</a></span>enip_iph_rheader_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_iph_rheader_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>slot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset an IPv4 reassembly slot and its timer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>reassembly slot </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga597c4d725cc8edb02681f7c5c074ebce" name="ga597c4d725cc8edb02681f7c5c074ebce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga597c4d725cc8edb02681f7c5c074ebce">&#9670;&#160;</a></span>enip_iph_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_iph_run </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run procedure of the IP module: expire socket timers and handle queued packets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>IP module </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga800a668e83546a8d8ce7c19f9b5a4450" name="ga800a668e83546a8d8ce7c19f9b5a4450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga800a668e83546a8d8ce7c19f9b5a4450">&#9670;&#160;</a></span>enip_iph_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_iph_write </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send a packet from the IP layer: fill the header checksum and pass it to the port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>pointer to the destination ENIP port pointer </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet, NULL only runs the pending output </td></tr>
+    <tr><td class="paramname">size</td><td>packet size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when a packet was given </dd></dl>
+
+</div>
+</div>
+<a id="ga1aab143b926f385861fa46583ac9cf52" name="ga1aab143b926f385861fa46583ac9cf52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1aab143b926f385861fa46583ac9cf52">&#9670;&#160;</a></span>enip_siph_crypt_frame_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_siph_crypt_frame_read </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive handler of the secure IP layer: answers a special 8-byte UDP probe in place. </p>
+<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>meaning not known </dd></dl>
+
+</div>
+</div>
+<a id="ga07800a755ec8f11a819aa5b609357973" name="ga07800a755ec8f11a819aa5b609357973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07800a755ec8f11a819aa5b609357973">&#9670;&#160;</a></span>enip_siph_find_IF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_siph_find_IF </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>address</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the IP interface with the given local address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>local IPv4 address, network byte order </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IP interface (its driver part), NULL when not found </dd></dl>
+
+</div>
+</div>
+<a id="ga1f632ef382c3f3a57f94c76d8b225849" name="ga1f632ef382c3f3a57f94c76d8b225849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f632ef382c3f3a57f94c76d8b225849">&#9670;&#160;</a></span>enip_icmp_frame_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_icmp_frame_read </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process a received ICMP packet (echo request, unreachable, quench, time exceeded, parameter problem) and release it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet, data at the ICMP header </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga280f232036535a2416051be36f219307" name="ga280f232036535a2416051be36f219307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga280f232036535a2416051be36f219307">&#9670;&#160;</a></span>enip_udph_frame_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_udph_frame_read </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process a received UDP packet: check it and queue it on the matching socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module with the socket list </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet, data at the UDP header </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad198c4bc23b7f3d6d4612b88ddafeb65" name="gad198c4bc23b7f3d6d4612b88ddafeb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad198c4bc23b7f3d6d4612b88ddafeb65">&#9670;&#160;</a></span>enip_init_csd_iface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_init_csd_iface </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>driver</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill an IP driver description for the CSD (PPP dial-up) interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>CSD module </td></tr>
+    <tr><td class="paramname">driver</td><td>ENIP IP driver to fill </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 when the module is up, otherwise 0 </dd></dl>
+
+</div>
+</div>
+<a id="gaba318f07f855e3c0f788486d53448f0c" name="gaba318f07f855e3c0f788486d53448f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba318f07f855e3c0f788486d53448f0c">&#9670;&#160;</a></span>enip_nsapi_init_iface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_nsapi_init_iface </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create and register the IP interface of a PDP context (NSAPI module). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>NSAPI module </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when the module is not up </dd></dl>
+
+</div>
+</div>
+<a id="gadce4c3efddab29e115b9382d2d98b066" name="gadce4c3efddab29e115b9382d2d98b066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadce4c3efddab29e115b9382d2d98b066">&#9670;&#160;</a></span>enip_nsapi_init_module()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_nsapi_init_module </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise an NSAPI (PDP context) module named "NSAPI". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>NSAPI module </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 </dd></dl>
+
+</div>
+</div>
+<a id="ga52f83bf0b4547434fe7869915546b5b1" name="ga52f83bf0b4547434fe7869915546b5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52f83bf0b4547434fe7869915546b5b1">&#9670;&#160;</a></span>ENIP_PDP_NET_UP_CNF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_NET_UP_CNF </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the PDP NET_UP confirmation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>PDP context index </td></tr>
+    <tr><td class="paramname">result</td><td>1: OK </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabff774ce87d9325c45994d88686cbb3b" name="gabff774ce87d9325c45994d88686cbb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabff774ce87d9325c45994d88686cbb3b">&#9670;&#160;</a></span>ENIP_PDP_NET_UP_REJ_IND()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_NET_UP_REJ_IND </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the PDP NET_UP reject indication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>PDP context index </td></tr>
+    <tr><td class="paramname">result</td><td>meaning not known; 1 releases the context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga79836f6d0c711c7ec0cd8802cb4057f0" name="ga79836f6d0c711c7ec0cd8802cb4057f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79836f6d0c711c7ec0cd8802cb4057f0">&#9670;&#160;</a></span>ENIP_PDP_NET_DOWN_IND()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_NET_DOWN_IND </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the PDP NET_DOWN indication: take the context's interface down. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>PDP context index </td></tr>
+    <tr><td class="paramname">mode</td><td>meaning not known (0 and 1 handled differently) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga084dfddb57b0986f3c51975371d50e1a" name="ga084dfddb57b0986f3c51975371d50e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga084dfddb57b0986f3c51975371d50e1a">&#9670;&#160;</a></span>ENIP_PDP_START_REQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_START_REQ </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the PDP start request: initialise and bring up the context's NSAPI module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>PDP context index </td></tr>
+    <tr><td class="paramname">mode</td><td>meaning not known (0: create the interface) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga87bbf2d5ddf0f53d7d9bf5a41cffdc41" name="ga87bbf2d5ddf0f53d7d9bf5a41cffdc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87bbf2d5ddf0f53d7d9bf5a41cffdc41">&#9670;&#160;</a></span>ENIP_PDP_STOP_REQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_STOP_REQ </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the PDP stop request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>PDP context index </td></tr>
+    <tr><td class="paramname">mode</td><td>meaning not known (0 and 1 handled differently) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0f492178e586da4828b60dff2ef5d870" name="ga0f492178e586da4828b60dff2ef5d870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f492178e586da4828b60dff2ef5d870">&#9670;&#160;</a></span>ENIP_PDP_START_CSD_INT_REQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ENIP_PDP_START_CSD_INT_REQ </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ENIP handler of the CSD (PPP dial-up) start request: set up the "PPP CSD" module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bearer</td><td>meaning not known (selects one of two interface types) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4d14c78217525c3cac1bfc684662b81a" name="ga4d14c78217525c3cac1bfc684662b81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d14c78217525c3cac1bfc684662b81a">&#9670;&#160;</a></span>enip_sock_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sock_create </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>family</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>protocol</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>param</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an ENIP socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">family</td><td>1: IPv4 </td></tr>
+    <tr><td class="paramname">type</td><td>0: datagram, 1: stream </td></tr>
+    <tr><td class="paramname">protocol</td><td>0, 17 (UDP) or 6 (TCP) </td></tr>
+    <tr><td class="paramname">owner</td><td>owner, must not be NULL; meaning not known </td></tr>
+    <tr><td class="paramname">param</td><td>passed to enip_sockh_create_internal; meaning not known </td></tr>
+    <tr><td class="paramname">destination</td><td>LMAN socket destination (5 halfwords, see lman_get_socket_destination) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>socket ID, negative on error </dd></dl>
+
+</div>
+</div>
+<a id="ga6618da8ccd764d84c1ca53e76016145b" name="ga6618da8ccd764d84c1ca53e76016145b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6618da8ccd764d84c1ca53e76016145b">&#9670;&#160;</a></span>enip_socket_connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_socket_connect </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unknown</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect a socket: set the peer of a datagram socket or start a TCP connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>socket ID </td></tr>
+    <tr><td class="paramname">address</td><td>peer IPv4 address, network byte order </td></tr>
+    <tr><td class="paramname">unknown</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">port</td><td>peer port, network byte order </td></tr>
+    <tr><td class="paramname">timeout</td><td>TCP connect timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="gab93322705086c78656f9e3209314d959" name="gab93322705086c78656f9e3209314d959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab93322705086c78656f9e3209314d959">&#9670;&#160;</a></span>enip_sockh_IF_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_sockh_IF_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>iface</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pick a pseudo-random first local port for an interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface</td><td>IP interface </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gace038ebb3814e0d9bc1a6b20da5c3c9e" name="gace038ebb3814e0d9bc1a6b20da5c3c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace038ebb3814e0d9bc1a6b20da5c3c9e">&#9670;&#160;</a></span>enip_sockh_create_internal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_sockh_create_internal </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>family</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>protocol</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>param1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>param2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate and initialise a socket in a free slot of the 12-socket table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">family</td><td>1: IPv4 </td></tr>
+    <tr><td class="paramname">type</td><td>0: datagram, 1: stream </td></tr>
+    <tr><td class="paramname">protocol</td><td>17 (UDP) or 6 (TCP) </td></tr>
+    <tr><td class="paramname">owner</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">param1</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">param2</td><td>meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>socket, NULL when the table is full </dd></dl>
+
+</div>
+</div>
+<a id="ga8c695c99b56a64b85c961012deb48d4d" name="ga8c695c99b56a64b85c961012deb48d4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c695c99b56a64b85c961012deb48d4d">&#9670;&#160;</a></span>enip_sockh_autobind_IF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sockh_autobind_IF </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind a socket to an IP interface: the one matching its LMAN destination, or the first usable one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">address</td><td>peer IPv4 address, 0 or -1 for none </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="gae792753e5e69fc911a61ef3aca5474cf" name="gae792753e5e69fc911a61ef3aca5474cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae792753e5e69fc911a61ef3aca5474cf">&#9670;&#160;</a></span>enip_sockh_packet_allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sockh_packet_allocate </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an outgoing packet for a socket with room for the interface headers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket bound to an interface </td></tr>
+    <tr><td class="paramname">size</td><td>payload size in bytes </td></tr>
+    <tr><td class="paramname">flags</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">packet</td><td>receives the ENIP packet </td></tr>
+    <tr><td class="paramname">timeout</td><td>meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="gabcd028ae11722a2e44cb72c41f45d190" name="gabcd028ae11722a2e44cb72c41f45d190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcd028ae11722a2e44cb72c41f45d190">&#9670;&#160;</a></span>enip_sockh_dgram_connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sockh_dgram_connect </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>unused</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the peer of a datagram socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">address</td><td>peer IPv4 address, network byte order </td></tr>
+    <tr><td class="paramname">unused</td><td>not read by the function </td></tr>
+    <tr><td class="paramname">port</td><td>peer port, network byte order </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 </dd></dl>
+
+</div>
+</div>
+<a id="ga74d4155a8df3dc6e81094b8e3ba61e37" name="ga74d4155a8df3dc6e81094b8e3ba61e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74d4155a8df3dc6e81094b8e3ba61e37">&#9670;&#160;</a></span>enip_sockh_from_ipheader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * enip_sockh_from_ipheader </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *</td>          <td class="paramname"><span class="paramname"><em>header</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the socket for a received packet by protocol, ports and address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module with the socket list </td></tr>
+    <tr><td class="paramname">header</td><td>IPv4 header </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>socket, NULL when none matches </dd></dl>
+
+</div>
+</div>
+<a id="gac455dbd0fd4bef777ed04b5921ef7adb" name="gac455dbd0fd4bef777ed04b5921ef7adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac455dbd0fd4bef777ed04b5921ef7adb">&#9670;&#160;</a></span>enip_sockh_prepare_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sockh_prepare_send </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill the IPv4 header of an outgoing packet from the socket's settings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of the outgoing packet in the firmware's table </td></tr>
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">address</td><td>destination IPv4 address, network byte order </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="ga8ffca417ded9cbe06a8a5f0d9a139af3" name="ga8ffca417ded9cbe06a8a5f0d9a139af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ffca417ded9cbe06a8a5f0d9a139af3">&#9670;&#160;</a></span>enip_sockh_tcp_packet_allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_sockh_tcp_packet_allocate </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate an outgoing TCP segment of the socket's maximum size. </p>
+<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="gaa624fe2f32388a7f413c0e60c17dee15" name="gaa624fe2f32388a7f413c0e60c17dee15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa624fe2f32388a7f413c0e60c17dee15">&#9670;&#160;</a></span>enip_tcph_sock_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_tcph_sock_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the TCP state of a socket: initial sequence number, windows and MSS. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket bound to an interface </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="ga0bec1ffde277f9be63c0508e4e78875e" name="ga0bec1ffde277f9be63c0508e4e78875e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bec1ffde277f9be63c0508e4e78875e">&#9670;&#160;</a></span>enip_tcph_sock_connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_tcph_sock_connect </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>unknown</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a TCP connection: send SYN and start the connect timer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">address</td><td>peer IPv4 address, network byte order </td></tr>
+    <tr><td class="paramname">unknown</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">port</td><td>peer port, network byte order </td></tr>
+    <tr><td class="paramname">timeout</td><td>connect timeout, 0 for the default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="ga1ecd46b437bd8263ff23eff2a01ff15d" name="ga1ecd46b437bd8263ff23eff2a01ff15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ecd46b437bd8263ff23eff2a01ff15d">&#9670;&#160;</a></span>enip_tcph_send_segment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int enip_tcph_send_segment </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>unknown</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build and send one TCP segment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">flags</td><td>TCP flags (2: SYN) </td></tr>
+    <tr><td class="paramname">data</td><td>payload or NULL </td></tr>
+    <tr><td class="paramname">size</td><td>payload size in bytes </td></tr>
+    <tr><td class="paramname">packet</td><td>preallocated ENIP packet or NULL </td></tr>
+    <tr><td class="paramname">unknown</td><td>meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or negative error </dd></dl>
+
+</div>
+</div>
+<a id="gae032b2c0315abc9df77c4fe3db92369d" name="gae032b2c0315abc9df77c4fe3db92369d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae032b2c0315abc9df77c4fe3db92369d">&#9670;&#160;</a></span>enip_tcph_write_segment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_tcph_write_segment </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>use_sequence</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Take a received TCP segment into the socket's receive state (part of TCP input). </p>
+<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet with the IPv4 and TCP headers </td></tr>
+    <tr><td class="paramname">use_sequence</td><td>nonzero: take the sequence number from the segment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9f72072e950aadf63654a60a3b3e4ebf" name="ga9f72072e950aadf63654a60a3b3e4ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f72072e950aadf63654a60a3b3e4ebf">&#9670;&#160;</a></span>enip_tcph_change_sock_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_tcph_change_sock_state </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the TCP state of a socket and notify its owner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">state</td><td>new state in firmware numbering (0: closed, 8: SYN sent, 10: established) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2fae249e000bce0df523667e8e7ccf18" name="ga2fae249e000bce0df523667e8e7ccf18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fae249e000bce0df523667e8e7ccf18">&#9670;&#160;</a></span>enip_tcph_frame_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_tcph_frame_read </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process a received TCP segment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module</td><td>ENIP module with the socket list </td></tr>
+    <tr><td class="paramname">packet</td><td>ENIP packet </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga88dd4367309bf321871432dab44e612f" name="ga88dd4367309bf321871432dab44e612f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88dd4367309bf321871432dab44e612f">&#9670;&#160;</a></span>enip_tcph_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_tcph_run </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check the TCP timers of all sockets: retransmit, time out or move on in the close states. </p>
+
+</div>
+</div>
+<a id="gafad4860760f085e994f078eb5624c318" name="gafad4860760f085e994f078eb5624c318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafad4860760f085e994f078eb5624c318">&#9670;&#160;</a></span>enip_tcph_get_SACK_option_from_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t enip_tcph_get_SACK_option_from_list </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>option</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a TCP SACK option (NOP, NOP, SACK) from the socket's SACK blocks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+    <tr><td class="paramname">count</td><td>maximum number of blocks </td></tr>
+    <tr><td class="paramname">option</td><td>output buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>option size in bytes, 0 when there are no blocks </dd></dl>
+
+</div>
+</div>
+<a id="ga231880a10cacb280539784e9851db2d6" name="ga231880a10cacb280539784e9851db2d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga231880a10cacb280539784e9851db2d6">&#9670;&#160;</a></span>enip_tcph_update_SACK_block_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_tcph_update_SACK_block_list </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the SACK blocks that are already acknowledged. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>ENIP socket </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga202deee919163f6ce1251d04bce6908f" name="ga202deee919163f6ce1251d04bce6908f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga202deee919163f6ce1251d04bce6908f">&#9670;&#160;</a></span>enip_timer_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_timer_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>timer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise an ENIP timer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>timer </td></tr>
+    <tr><td class="paramname">module</td><td>ENIP module whose timer list it will use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5855f3fa8a540f5d2c3510a1b1a4ae05" name="ga5855f3fa8a540f5d2c3510a1b1a4ae05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5855f3fa8a540f5d2c3510a1b1a4ae05">&#9670;&#160;</a></span>enip_timer_cancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_timer_cancel </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>timer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop an ENIP timer if it is running. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>timer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga404e33e14483f3bf2bdaad56de0c23a4" name="ga404e33e14483f3bf2bdaad56de0c23a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga404e33e14483f3bf2bdaad56de0c23a4">&#9670;&#160;</a></span>enip_timer_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void enip_timer_start </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>timer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start or restart an ENIP timer and schedule its module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>timer </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga92902769b861c5abac6c08ee4f883f55" name="ga92902769b861c5abac6c08ee4f883f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92902769b861c5abac6c08ee4f883f55">&#9670;&#160;</a></span>LMAN_LINK_UP_CNF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMAN_LINK_UP_CNF </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LMAN handler of the link-up confirmation: mark the waiting connection as up and notify the owner. </p>
+
+</div>
+</div>
+<a id="ga5aefa696df49d328a0e0f80e7bd2dc1f" name="ga5aefa696df49d328a0e0f80e7bd2dc1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5aefa696df49d328a0e0f80e7bd2dc1f">&#9670;&#160;</a></span>lman_app_register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t lman_app_register </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register an application in the LMAN application table. </p>
+<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">app</td><td>meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>application slot, error value when the table is full </dd></dl>
+
+</div>
+</div>
+<a id="gad9a3e048bdfaf32b881b98b0fcdad3b9" name="gad9a3e048bdfaf32b881b98b0fcdad3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9a3e048bdfaf32b881b98b0fcdad3b9">&#9670;&#160;</a></span>lman_app_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lman_app_free </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>slot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free an LMAN application slot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>application slot </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9c0d66a0884791f7df5bd47d31195219" name="ga9c0d66a0884791f7df5bd47d31195219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c0d66a0884791f7df5bd47d31195219">&#9670;&#160;</a></span>lman_app_set_bearer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lman_app_set_bearer </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint16_t *</td>          <td class="paramname"><span class="paramname"><em>settings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the bearer settings of an LMAN application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>application slot (0..13) </td></tr>
+    <tr><td class="paramname">settings</td><td>three halfwords: application flags (below 800), selector, meaning not known </td></tr>
+    <tr><td class="paramname">callback</td><td>stored when nonzero; meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 OK, 0 error </dd></dl>
+
+</div>
+</div>
+<a id="ga202abd03f52889697140b5d6e2586e1e" name="ga202abd03f52889697140b5d6e2586e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga202abd03f52889697140b5d6e2586e1e">&#9670;&#160;</a></span>lman_get_active_connection_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t lman_get_active_connection_id </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the LMAN connection with the given bearer ID and key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bearer</td><td>bearer ID </td></tr>
+    <tr><td class="paramname">key</td><td>value at connection +4; meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>connection ID (0..7), error value when not found </dd></dl>
+
+</div>
+</div>
+<a id="ga66ecd0b7790ac5eccf4d30c6540e7fd0" name="ga66ecd0b7790ac5eccf4d30c6540e7fd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66ecd0b7790ac5eccf4d30c6540e7fd0">&#9670;&#160;</a></span>lman_GetBearerIdForCi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lman_GetBearerIdForCi </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>connection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the bearer ID of an LMAN connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>connection ID (0..7) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bearer ID, 0xFF for an invalid connection </dd></dl>
+
+</div>
+</div>
+<a id="ga73b2674dc0c018a326e153f6c6c68617" name="ga73b2674dc0c018a326e153f6c6c68617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73b2674dc0c018a326e153f6c6c68617">&#9670;&#160;</a></span>lman_get_socket_destination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lman_get_socket_destination </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>cepid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get where sockets of a process go: application flags, selector, bearer ID and interface index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cepid</td><td>process ID </td></tr>
+    <tr><td class="paramname">destination</td><td>receives the destination (8 bytes: u16 app_flags, u16 selector, u8 bearer_id, u8 unknown, u16 iface_index; 0xFF when the process has no connection) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 OK, 0 when the process has no LMAN application </dd></dl>
+
+</div>
+</div>
+<a id="gaf7eb1796f6224e56d60e7dd401011d85" name="gaf7eb1796f6224e56d60e7dd401011d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7eb1796f6224e56d60e7dd401011d85">&#9670;&#160;</a></span>zDLL_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zDLL_Init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise an empty ENIP double-linked list (two pointers: first, last). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>list head </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

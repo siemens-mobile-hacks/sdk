@@ -1,8 +1,22 @@
 var searchData=
 [
-  ['v2i_5fgeneral_5fname_0',['v2i_GENERAL_NAME',['../x509v3_8h.html#a16fcb68ce00c39b0dd97ab52ce4fcb26',1,'x509v3.h']]],
-  ['v2i_5fgeneral_5fnames_1',['v2i_GENERAL_NAMES',['../x509v3_8h.html#a89f54eb23087cbbdbd28d799d238fac4',1,'x509v3.h']]],
-  ['vibration_2',['Vibration',['../group___p_a_t_c_h.html#ga47e1dc28c2c83c696b424457d513f814',1,'patch.h']]],
-  ['vsnprintf_3',['vsnprintf',['../group__libc.html#ga2538a4ae3b2be54c6309b62f52d8b488',1,'libc.h']]],
-  ['vsprintf_4',['vsprintf',['../group__libc.html#gafc78452394aefd38147bdb31a1c163db',1,'libc.h']]]
+  ['udiv_0',['udiv',['../group___utils.html#gaa884b03d2089351f4d4e2f649923e6bd',1,'utils.h']]],
+  ['uncompress_1',['uncompress',['../builtin_2zlib_8h.html#ac3cad591ff052f1abe68bc74c6054747',1,'zlib.h']]],
+  ['unfocusgui_2',['UnfocusGUI',['../group___g_u_i.html#gafd3ace5b073250a6f32ac0ac1a7e7b4a',1,'gui.h']]],
+  ['uni2asc_3',['uni2asc',['../pkcs12_8h.html#affaa31bdbebad744f44fc0f970d6e5c9',1,'pkcs12.h']]],
+  ['unlink_4',['unlink',['../group___file.html#ga3b5161fbab1238136f44a753f86578e0',1,'file.h']]],
+  ['unlocksched_5',['UnlockSched',['../group___system.html#gac25cb423e5c7c13f5f26158199cde214',1,'system.h']]],
+  ['unlocksched_5f2_6',['UnlockSched_2',['../group___l_e_g_a_c_y.html#ga24205fe7c25bb9f96261b3fbc0ead398',1,'legacy.h']]],
+  ['unpackabentry_7',['UnpackABentry',['../group___addressbook.html#ga002b484e1230cec24162cb80dd8e3ebb',1,'addressbook.h']]],
+  ['unpacknumpkt_8',['UnpackNumPkt',['../group___addressbook.html#ga59c844c92c57a23874ce9266cd05a25e',1,'addressbook.h']]],
+  ['unregexplorerext_9',['UnRegExplorerExt',['../group___explorer.html#ga50ba95ccc45f700e68483aa82b56c15c',1,'explorer.h']]],
+  ['unsetenv_10',['unsetenv',['../group__libc.html#ga17a3a11d20a551951a4acbc3872b280c',1,'libc.h']]],
+  ['updatemenucursoritem_11',['UpdateMenuCursorItem',['../group___u_i.html#gace84710aa23565ff48866d304bc76093',1,'ui.h']]],
+  ['updatetab1stitem_12',['UpdateTab1stItem',['../group___u_i.html#ga0a3b0f161f602f1698776455c811b38d',1,'ui.h']]],
+  ['usernotice_5ffree_13',['USERNOTICE_free',['../x509v3_8h.html#a8a18d34ec1ae7662544011206bde21b2',1,'x509v3.h']]],
+  ['usernotice_5fnew_14',['USERNOTICE_new',['../x509v3_8h.html#aa7f0f969ec0112854d9d880964c69fc1',1,'x509v3.h']]],
+  ['ustoticks_15',['UsToTicks',['../group___system.html#gad4de0e3eac99957d8df3b88f29b7578d',1,'system.h']]],
+  ['utf8_5f2ws_16',['utf8_2ws',['../group___w_s_h_d_r.html#ga1223a9f3844cf4497f16ee9a2f594b31',1,'wstring.h']]],
+  ['utf8_5fgetc_17',['UTF8_getc',['../asn1_8h.html#a068200ae693bfec1c9a3995bc1d595fb',1,'asn1.h']]],
+  ['utf8_5fputc_18',['UTF8_putc',['../asn1_8h.html#a5e3bf91569ebdf293d264a4233ca6573',1,'asn1.h']]]
 ];

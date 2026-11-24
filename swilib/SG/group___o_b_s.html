@@ -277,6 +277,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga157c1afbede86aa4050d1e0c09d45c14" id="r_ga157c1afbede86aa4050d1e0c09d45c14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga157c1afbede86aa4050d1e0c09d45c14">Obs_GetUserPointer</a> (<a class="el" href="#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef">HObj</a> obs, void **p_user_pointer)</td></tr>
 <tr class="memdesc:ga157c1afbede86aa4050d1e0c09d45c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get custom user pointer from the OBS object.  <br /></td></tr>
 <tr class="separator:ga157c1afbede86aa4050d1e0c09d45c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e0d95ee830652fe85b795c8d112182f" id="r_ga2e0d95ee830652fe85b795c8d112182f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e0d95ee830652fe85b795c8d112182f">Obs_MemAlloc</a> (int size)</td></tr>
+<tr class="memdesc:ga2e0d95ee830652fe85b795c8d112182f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory from the Obs heap (the pool of the Obs file stream chunks).  <br /></td></tr>
+<tr class="separator:ga2e0d95ee830652fe85b795c8d112182f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ca79b72d47b20ab154cff148bb843c1" id="r_ga8ca79b72d47b20ab154cff148bb843c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ca79b72d47b20ab154cff148bb843c1">Obs_MemFree</a> (void *ptr)</td></tr>
+<tr class="memdesc:ga8ca79b72d47b20ab154cff148bb843c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory allocated with <a class="el" href="#ga2e0d95ee830652fe85b795c8d112182f" title="Allocate memory from the Obs heap (the pool of the Obs file stream chunks).">Obs_MemAlloc</a>.  <br /></td></tr>
+<tr class="separator:ga8ca79b72d47b20ab154cff148bb843c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39bf4e11c89d73d6170ea519ea2cc03a" id="r_ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39bf4e11c89d73d6170ea519ea2cc03a">RamObsFileStreamMethods</a> (void)</td></tr>
+<tr class="memdesc:ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global method table of the Obs file streams (copied from flash at boot; every file stream object points to it, SG at +E8, ELKA at +FC).  <br /></td></tr>
+<tr class="separator:ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_o_b_sevent" id="struct_o_b_sevent"></a>
@@ -1617,6 +1626,77 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd>
 <dd>
 0 or error </dd></dl>
+
+</div>
+</div>
+<a id="ga2e0d95ee830652fe85b795c8d112182f" name="ga2e0d95ee830652fe85b795c8d112182f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e0d95ee830652fe85b795c8d112182f">&#9670;&#160;</a></span>Obs_MemAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Obs_MemAlloc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate memory from the Obs heap (the pool of the Obs file stream chunks). </p>
+<p>The file stream's <code>get</code> method returns its chunks from here; the reader frees them with <a class="el" href="#ga8ca79b72d47b20ab154cff148bb843c1" title="Free memory allocated with Obs_MemAlloc.">Obs_MemFree</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the memory, or NULL </dd></dl>
+
+</div>
+</div>
+<a id="ga8ca79b72d47b20ab154cff148bb843c1" name="ga8ca79b72d47b20ab154cff148bb843c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ca79b72d47b20ab154cff148bb843c1">&#9670;&#160;</a></span>Obs_MemFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obs_MemFree </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free memory allocated with <a class="el" href="#ga2e0d95ee830652fe85b795c8d112182f" title="Allocate memory from the Obs heap (the pool of the Obs file stream chunks).">Obs_MemAlloc</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>pointer to the memory </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga39bf4e11c89d73d6170ea519ea2cc03a" name="ga39bf4e11c89d73d6170ea519ea2cc03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39bf4e11c89d73d6170ea519ea2cc03a">&#9670;&#160;</a></span>RamObsFileStreamMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ** RamObsFileStreamMethods </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the global method table of the Obs file streams (copied from flash at boot; every file stream object points to it, SG at +E8, ELKA at +FC). </p>
+<p>Slots: 0 destroy, 1 read, 2 write, 3 tell, 4 seek, 5 getc, 6 release, 7 push, 8 get, 9 size, 10 notify, 11 remain, 12 one (ELKA: 13 reopen). Swapping slots serves virtual files to the player (s65-mp3, radio). </p><dl class="section return"><dt>Returns</dt><dd>method table </dd></dl>
 
 </div>
 </div>

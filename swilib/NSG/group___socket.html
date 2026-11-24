@@ -232,6 +232,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga944b87d181da40172ce7a3ad07eb4586" id="r_ga944b87d181da40172ce7a3ad07eb4586"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga944b87d181da40172ce7a3ad07eb4586">htonl</a> (uint32_t p)</td></tr>
 <tr class="memdesc:ga944b87d181da40172ce7a3ad07eb4586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert host to network order (unsigned int).  <br /></td></tr>
 <tr class="separator:ga944b87d181da40172ce7a3ad07eb4586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b062b1a9db368e577bf2e143152780e" id="r_ga3b062b1a9db368e577bf2e143152780e"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3b062b1a9db368e577bf2e143152780e">ntohs</a> (uint16_t p)</td></tr>
+<tr class="memdesc:ga3b062b1a9db368e577bf2e143152780e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert network to host order.  <br /></td></tr>
+<tr class="separator:ga3b062b1a9db368e577bf2e143152780e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf62a3ceb6a1115567fafbca7b7b6ccf8" id="r_gaf62a3ceb6a1115567fafbca7b7b6ccf8"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf62a3ceb6a1115567fafbca7b7b6ccf8">ntohl</a> (uint32_t p)</td></tr>
+<tr class="separator:gaf62a3ceb6a1115567fafbca7b7b6ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf4e0711877c45a41168ac677b0670ccd" id="r_gaf4e0711877c45a41168ac677b0670ccd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf4e0711877c45a41168ac677b0670ccd">socket</a> (int domain, int type, int protocol)</td></tr>
 <tr class="separator:gaf4e0711877c45a41168ac677b0670ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeedaa5cac80a95d50232c1d130615a1a" id="r_gaeedaa5cac80a95d50232c1d130615a1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeedaa5cac80a95d50232c1d130615a1a">connect</a> (int <a class="el" href="#gaf4e0711877c45a41168ac677b0670ccd">socket</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> struct <a class="el" href="#structsockaddr">sockaddr</a> *address, <a class="el" href="#ga3f5f480bed01f54df564b99350f1d1bb">socklen_t</a> address_len)</td></tr>
@@ -258,6 +263,30 @@ Functions</h2></td></tr>
 <tr class="memitem:gad4725afcb96cfe437fd7a748129b1f33" id="r_gad4725afcb96cfe437fd7a748129b1f33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad4725afcb96cfe437fd7a748129b1f33">closesocket</a> (int <a class="el" href="#gaf4e0711877c45a41168ac677b0670ccd">socket</a>)</td></tr>
 <tr class="memdesc:gad4725afcb96cfe437fd7a748129b1f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close socket descriptor.  <br /></td></tr>
 <tr class="separator:gad4725afcb96cfe437fd7a748129b1f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2df09663e36f8f790d61a02810a3395" id="r_gad2df09663e36f8f790d61a02810a3395"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="#structhostent">hostent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2df09663e36f8f790d61a02810a3395">gethostbyname</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *name)</td></tr>
+<tr class="memdesc:gad2df09663e36f8f790d61a02810a3395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a host name synchronously.  <br /></td></tr>
+<tr class="separator:gad2df09663e36f8f790d61a02810a3395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46bb52bb4b6f955262014b3b11c102ea" id="r_ga46bb52bb4b6f955262014b3b11c102ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46bb52bb4b6f955262014b3b11c102ea">getsockname</a> (int sock, <a class="el" href="#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *addr, int *len)</td></tr>
+<tr class="memdesc:ga46bb52bb4b6f955262014b3b11c102ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the local address of a socket.  <br /></td></tr>
+<tr class="separator:ga46bb52bb4b6f955262014b3b11c102ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabea7e39e29fe65e493b74b5b57cbeefe" id="r_gabea7e39e29fe65e493b74b5b57cbeefe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabea7e39e29fe65e493b74b5b57cbeefe">getpeername</a> (int sock, <a class="el" href="#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *addr, int *len)</td></tr>
+<tr class="memdesc:gabea7e39e29fe65e493b74b5b57cbeefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the remote address of a connected socket.  <br /></td></tr>
+<tr class="separator:gabea7e39e29fe65e493b74b5b57cbeefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2170ca2cad523243a1b62221f1bd44f6" id="r_ga2170ca2cad523243a1b62221f1bd44f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2170ca2cad523243a1b62221f1bd44f6">setsockopt</a> (int sock, int level, int option, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *value, int len)</td></tr>
+<tr class="memdesc:ga2170ca2cad523243a1b62221f1bd44f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a socket option.  <br /></td></tr>
+<tr class="separator:ga2170ca2cad523243a1b62221f1bd44f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73f4af649a91ea1c14d4172d94f80b7f" id="r_ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73f4af649a91ea1c14d4172d94f80b7f">getsockopt</a> (int sock, int level, int option, void *value, int *len)</td></tr>
+<tr class="memdesc:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a socket option.  <br /></td></tr>
+<tr class="separator:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3812035c9f808f4ed50173e54491f267" id="r_ga3812035c9f808f4ed50173e54491f267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3812035c9f808f4ed50173e54491f267">ioctlsocket</a> (int sock, int cmd, void *arg)</td></tr>
+<tr class="memdesc:ga3812035c9f808f4ed50173e54491f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a socket control command; read socklasterr for errors.  <br /></td></tr>
+<tr class="separator:ga3812035c9f808f4ed50173e54491f267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7005ffbeeff92be5394ff3244da79028" id="r_ga7005ffbeeff92be5394ff3244da79028"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7005ffbeeff92be5394ff3244da79028">listen</a> (int sock, int backlog)</td></tr>
+<tr class="memdesc:ga7005ffbeeff92be5394ff3244da79028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start listening for incoming TCP connections.  <br /></td></tr>
+<tr class="separator:ga7005ffbeeff92be5394ff3244da79028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ea7cf16b549b6fc8b404f8dc72347e2" id="r_ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1ea7cf16b549b6fc8b404f8dc72347e2">ENIP_GetNativeSocket</a> (int sock, void **native)</td></tr>
+<tr class="memdesc:ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up the native ENIP object for a socket descriptor.  <br /></td></tr>
+<tr class="separator:ga1ea7cf16b549b6fc8b404f8dc72347e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structin__addr" id="structin__addr"></a>
@@ -825,6 +854,63 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga3b062b1a9db368e577bf2e143152780e" name="ga3b062b1a9db368e577bf2e143152780e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b062b1a9db368e577bf2e143152780e">&#9670;&#160;</a></span>ntohs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t ntohs </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert network to host order. </p>
+<p>On this little-endian core the swap is symmetric, so these reuse the host-to-network SWIs above. </p>
+
+<p class="definition">Definition at line <a class="el" href="swilib_2socket_8h_source.html#l00191">191</a> of file <a class="el" href="swilib_2socket_8h_source.html">socket.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf62a3ceb6a1115567fafbca7b7b6ccf8" name="gaf62a3ceb6a1115567fafbca7b7b6ccf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf62a3ceb6a1115567fafbca7b7b6ccf8">&#9670;&#160;</a></span>ntohl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t ntohl </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="swilib_2socket_8h_source.html#l00192">192</a> of file <a class="el" href="swilib_2socket_8h_source.html">socket.h</a>.</p>
+
+</div>
+</div>
 <a id="gaf4e0711877c45a41168ac677b0670ccd" name="gaf4e0711877c45a41168ac677b0670ccd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf4e0711877c45a41168ac677b0670ccd">&#9670;&#160;</a></span>socket()</h2>
 
@@ -1122,6 +1208,302 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error (see <a class="el" href="#ga04e7c1a8d2c7787e27ce895e5ff5e4b7" title="Pointer to the last socket error.">socklasterr</a>) </dd></dl>
+
+</div>
+</div>
+<a id="gad2df09663e36f8f790d61a02810a3395" name="gad2df09663e36f8f790d61a02810a3395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2df09663e36f8f790d61a02810a3395">&#9670;&#160;</a></span>gethostbyname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="#structhostent">hostent</a> * gethostbyname </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resolve a host name synchronously. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>domain name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>firmware host entry, or NULL on error. Use async_gethostbyname for asynchronous lookup </dd></dl>
+
+</div>
+</div>
+<a id="ga46bb52bb4b6f955262014b3b11c102ea" name="ga46bb52bb4b6f955262014b3b11c102ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46bb52bb4b6f955262014b3b11c102ea">&#9670;&#160;</a></span>getsockname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getsockname </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the local address of a socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">addr</td><td>output address </td></tr>
+    <tr><td class="paramname">len</td><td>address-buffer size on entry, returned length on exit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="gabea7e39e29fe65e493b74b5b57cbeefe" name="gabea7e39e29fe65e493b74b5b57cbeefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabea7e39e29fe65e493b74b5b57cbeefe">&#9670;&#160;</a></span>getpeername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getpeername </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ga65b931c174ab681a18d0352ab48c5ce7">SOCK_ADDR</a> *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the remote address of a connected socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">addr</td><td>output address </td></tr>
+    <tr><td class="paramname">len</td><td>address-buffer size on entry, returned length on exit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="ga2170ca2cad523243a1b62221f1bd44f6" name="ga2170ca2cad523243a1b62221f1bd44f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2170ca2cad523243a1b62221f1bd44f6">&#9670;&#160;</a></span>setsockopt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setsockopt </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>option</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a socket option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">level</td><td>option level </td></tr>
+    <tr><td class="paramname">option</td><td>option identifier </td></tr>
+    <tr><td class="paramname">value</td><td>option data </td></tr>
+    <tr><td class="paramname">len</td><td>size of option data in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="ga73f4af649a91ea1c14d4172d94f80b7f" name="ga73f4af649a91ea1c14d4172d94f80b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73f4af649a91ea1c14d4172d94f80b7f">&#9670;&#160;</a></span>getsockopt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getsockopt </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>option</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a socket option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">level</td><td>option level </td></tr>
+    <tr><td class="paramname">option</td><td>option identifier </td></tr>
+    <tr><td class="paramname">value</td><td>output option data </td></tr>
+    <tr><td class="paramname">len</td><td>buffer size on entry, returned length on exit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="ga3812035c9f808f4ed50173e54491f267" name="ga3812035c9f808f4ed50173e54491f267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3812035c9f808f4ed50173e54491f267">&#9670;&#160;</a></span>ioctlsocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ioctlsocket </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apply a socket control command; read socklasterr for errors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">cmd</td><td>control command </td></tr>
+    <tr><td class="paramname">arg</td><td>command argument storage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7005ffbeeff92be5394ff3244da79028" name="ga7005ffbeeff92be5394ff3244da79028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7005ffbeeff92be5394ff3244da79028">&#9670;&#160;</a></span>listen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int listen </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>backlog</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start listening for incoming TCP connections. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>bound socket descriptor </td></tr>
+    <tr><td class="paramname">backlog</td><td>pending-connection queue length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="ga1ea7cf16b549b6fc8b404f8dc72347e2" name="ga1ea7cf16b549b6fc8b404f8dc72347e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ea7cf16b549b6fc8b404f8dc72347e2">&#9670;&#160;</a></span>ENIP_GetNativeSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ENIP_GetNativeSocket </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>native</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Look up the native ENIP object for a socket descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>socket descriptor </td></tr>
+    <tr><td class="paramname">native</td><td>receives the firmware-owned socket object on success </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, native ENIP error code otherwise </dd></dl>
 
 </div>
 </div>

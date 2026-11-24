@@ -43,6 +43,8 @@ var group___socket =
     [ "inet_addr", "group___socket.html#ga4bdb578c974eb8749d7be61651f245fc", null ],
     [ "htons", "group___socket.html#ga2571f145e334dc9f51b0d578698cfd77", null ],
     [ "htonl", "group___socket.html#ga944b87d181da40172ce7a3ad07eb4586", null ],
+    [ "ntohs", "group___socket.html#ga3b062b1a9db368e577bf2e143152780e", null ],
+    [ "ntohl", "group___socket.html#gaf62a3ceb6a1115567fafbca7b7b6ccf8", null ],
     [ "socket", "group___socket.html#gaf4e0711877c45a41168ac677b0670ccd", null ],
     [ "connect", "group___socket.html#gaeedaa5cac80a95d50232c1d130615a1a", null ],
     [ "bind", "group___socket.html#ga55b3c1572b4e86ca0702ecdeb7e43997", null ],
@@ -51,5 +53,13 @@ var group___socket =
     [ "send", "group___socket.html#ga27cec9296f3f668cf8594f7aa5e65fa4", null ],
     [ "available0", "group___socket.html#ga3df20ac7098741fa850337e9b9a81918", null ],
     [ "socklasterr", "group___socket.html#ga04e7c1a8d2c7787e27ce895e5ff5e4b7", null ],
-    [ "closesocket", "group___socket.html#gad4725afcb96cfe437fd7a748129b1f33", null ]
+    [ "closesocket", "group___socket.html#gad4725afcb96cfe437fd7a748129b1f33", null ],
+    [ "gethostbyname", "group___socket.html#gad2df09663e36f8f790d61a02810a3395", null ],
+    [ "getsockname", "group___socket.html#ga46bb52bb4b6f955262014b3b11c102ea", null ],
+    [ "getpeername", "group___socket.html#gabea7e39e29fe65e493b74b5b57cbeefe", null ],
+    [ "setsockopt", "group___socket.html#ga2170ca2cad523243a1b62221f1bd44f6", null ],
+    [ "getsockopt", "group___socket.html#ga73f4af649a91ea1c14d4172d94f80b7f", null ],
+    [ "ioctlsocket", "group___socket.html#ga3812035c9f808f4ed50173e54491f267", null ],
+    [ "listen", "group___socket.html#ga7005ffbeeff92be5394ff3244da79028", null ],
+    [ "ENIP_GetNativeSocket", "group___socket.html#ga1ea7cf16b549b6fc8b404f8dc72347e2", null ]
 ];

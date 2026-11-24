@@ -19,7 +19,7 @@ var searchData=
   ['allocated_5fsize_16',['allocated_size',['../group___g_u_i.html#a2265769cff56defbb181c65976be4116',1,'LCDLAYER']]],
   ['alpha_17',['alpha',['../builtin_2png_8h.html#af1c7203aefe12bd35dc9a4cdd58e7a4b',1,'png_color_8_struct::alpha'],['../builtin_2png_8h.html#abea98962a064e2a05f460b9f2ea2f47b',1,'png_sPLT_entry_struct::alpha']]],
   ['altproc_18',['altproc',['../group___explorer.html#ab8cffe4a19b1faf32decb9af1b5b4726',1,'REGEXPLEXT::altproc'],['../group___explorer.html#a21eed8b374087d81bcfefe0dc62c8518',1,'REGEXPLEXT_ARM_NEW::altproc']]],
-  ['app_19',['app',['../group___g_u_i.html#a92ab9133f7f1cf7f4c58712d51d18e35',1,'RAP_LCDLAYER_LIST']]],
+  ['app_19',['app',['../group___g_u_i.html#a92ab9133f7f1cf7f4c58712d51d18e35',1,'RAP_LCDLAYER_LIST::app'],['../group___bluetooth.html#af33df014ae606fa81d868ffed896c1e6',1,'SDEV::app']]],
   ['app_5fdata_20',['app_data',['../dh_8h.html#a01cec981a5f6dd3386a24f083cf9812d',1,'dh_method::app_data'],['../dsa_8h.html#a08528c35da49dcebc0675cb9b66bbeb9',1,'dsa_method::app_data'],['../evp_8h.html#aa354bfbd520156a9bca438599f744f73',1,'evp_cipher_ctx_st::app_data'],['../rsa_8h.html#a3d4a936065797413aad5dc1c7a132f00',1,'rsa_meth_st::app_data']]],
   ['app_5fverify_5farg_21',['app_verify_arg',['../ssl_8h.html#aebecc45c887b56a233a163e195a55422',1,'ssl_ctx_st']]],
   ['app_5fverify_5fcallback_22',['app_verify_callback',['../ssl_8h.html#afe618ceff7ded69cb1011a60c4a306e2',1,'ssl_ctx_st']]],
