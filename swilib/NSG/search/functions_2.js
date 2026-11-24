@@ -195,7 +195,7 @@ var searchData=
   ['bta_5fconn_5fgetsapiapp_192',['BTA_Conn_GetSapiApp',['../group___bluetooth.html#gaee8872995d680b67948493ea4a3830f1',1,'bluetooth.h']]],
   ['bta_5fconn_5fnew_5fl2cap_193',['BTA_Conn_New_L2CAP',['../group___bluetooth.html#gad12424f8b3ebcb9bd76ae1c31b85ca76',1,'bluetooth.h']]],
   ['bta_5fconn_5fnew_5frfcomm_194',['BTA_Conn_New_RFCOMM',['../group___bluetooth.html#gaea99d0305348a99523c86dafa77ec37c',1,'bluetooth.h']]],
-  ['bta_5fdevicediscovery_5fstartsearchcodreq_195',['BTA_DeviceDiscovery_StartSearchCodReq',['../group___bluetooth.html#gaf5d4366faade37d7d9a23482c5a98da2',1,'bluetooth.h']]],
+  ['bta_5fdevicediscovery_5fstartsearchcodreq_195',['BTA_DeviceDiscovery_StartSearchCodReq',['../group___bluetooth.html#ga37e2a0aeb145c3fa2ed2a5e1a111c022',1,'bluetooth.h']]],
   ['bta_5fdevicediscovery_5fstartsearchreq_196',['BTA_DeviceDiscovery_StartSearchReq',['../group___bluetooth.html#ga80673f515f03e55cd6496bf5daf835cc',1,'bluetooth.h']]],
   ['bta_5fdevicediscovery_5fstopsearchreq_197',['BTA_DeviceDiscovery_StopSearchReq',['../group___bluetooth.html#ga9f784e24b1ab387a2ff56096ac11915f',1,'bluetooth.h']]],
   ['bta_5fdevicelistview_5fgetentryreq_198',['BTA_DeviceListView_GetEntryReq',['../group___bluetooth.html#ga6a360045479e3a1aa7f8cd1efbe614e5',1,'bluetooth.h']]],

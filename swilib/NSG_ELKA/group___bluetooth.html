@@ -228,9 +228,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga80673f515f03e55cd6496bf5daf835cc" id="r_ga80673f515f03e55cd6496bf5daf835cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga80673f515f03e55cd6496bf5daf835cc">BTA_DeviceDiscovery_StartSearchReq</a> (int oh, uint32_t service, int tid)</td></tr>
 <tr class="memdesc:ga80673f515f03e55cd6496bf5daf835cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a Bluetooth device search (asynchronous).  <br /></td></tr>
 <tr class="separator:ga80673f515f03e55cd6496bf5daf835cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5d4366faade37d7d9a23482c5a98da2" id="r_gaf5d4366faade37d7d9a23482c5a98da2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf5d4366faade37d7d9a23482c5a98da2">BTA_DeviceDiscovery_StartSearchCodReq</a> (int oh, uint32_t cod_class, uint32_t param3, int param4)</td></tr>
-<tr class="memdesc:gaf5d4366faade37d7d9a23482c5a98da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a Bluetooth device search filtered by device class (asynchronous).  <br /></td></tr>
-<tr class="separator:gaf5d4366faade37d7d9a23482c5a98da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3c8cf879f23d400378bee03051e752d" id="r_gaa3c8cf879f23d400378bee03051e752d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa3c8cf879f23d400378bee03051e752d">BTA_DeviceDiscovery_StartSearchCodReq</a> (int oh, uint32_t cod_class, uint32_t iac, int tid)</td></tr>
+<tr class="memdesc:gaa3c8cf879f23d400378bee03051e752d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a Bluetooth device search filtered by class of device (asynchronous).  <br /></td></tr>
+<tr class="separator:gaa3c8cf879f23d400378bee03051e752d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9f784e24b1ab387a2ff56096ac11915f" id="r_ga9f784e24b1ab387a2ff56096ac11915f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f784e24b1ab387a2ff56096ac11915f">BTA_DeviceDiscovery_StopSearchReq</a> (int oh, int tid)</td></tr>
 <tr class="memdesc:ga9f784e24b1ab387a2ff56096ac11915f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop a running Bluetooth device search (asynchronous).  <br /></td></tr>
 <tr class="separator:ga9f784e24b1ab387a2ff56096ac11915f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1635,8 +1635,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf5d4366faade37d7d9a23482c5a98da2" name="gaf5d4366faade37d7d9a23482c5a98da2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf5d4366faade37d7d9a23482c5a98da2">&#9670;&#160;</a></span>BTA_DeviceDiscovery_StartSearchCodReq()</h2>
+<a id="gaa3c8cf879f23d400378bee03051e752d" name="gaa3c8cf879f23d400378bee03051e752d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3c8cf879f23d400378bee03051e752d">&#9670;&#160;</a></span>BTA_DeviceDiscovery_StartSearchCodReq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1654,23 +1654,23 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>param3</em></span>, </td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>iac</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>param4</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tid</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Start a Bluetooth device search filtered by device class (asynchronous). </p>
-<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Start a Bluetooth device search filtered by class of device (asynchronous). </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">oh</td><td>accessor handle </td></tr>
     <tr><td class="paramname">cod_class</td><td>class byte, matched at bits 16..23 of the class of device; 0: no filter </td></tr>
-    <tr><td class="paramname">param3</td><td>transaction ID or IAC, meaning not known </td></tr>
-    <tr><td class="paramname">param4</td><td>transaction ID or IAC, meaning not known </td></tr>
+    <tr><td class="paramname">iac</td><td>inquiry access code </td></tr>
+    <tr><td class="paramname">tid</td><td>transaction ID </td></tr>
   </table>
   </dd>
 </dl>

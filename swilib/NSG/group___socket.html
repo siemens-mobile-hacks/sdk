@@ -278,9 +278,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga73f4af649a91ea1c14d4172d94f80b7f" id="r_ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73f4af649a91ea1c14d4172d94f80b7f">getsockopt</a> (int sock, int level, int option, void *value, int *len)</td></tr>
 <tr class="memdesc:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a socket option.  <br /></td></tr>
 <tr class="separator:ga73f4af649a91ea1c14d4172d94f80b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3812035c9f808f4ed50173e54491f267" id="r_ga3812035c9f808f4ed50173e54491f267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3812035c9f808f4ed50173e54491f267">ioctlsocket</a> (int sock, int cmd, void *arg)</td></tr>
-<tr class="memdesc:ga3812035c9f808f4ed50173e54491f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a socket control command; read socklasterr for errors.  <br /></td></tr>
-<tr class="separator:ga3812035c9f808f4ed50173e54491f267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga304033105c73531ec03d76f993bc296a" id="r_ga304033105c73531ec03d76f993bc296a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga304033105c73531ec03d76f993bc296a">ioctlsocket</a> (int sock, int cmd, void *arg)</td></tr>
+<tr class="memdesc:ga304033105c73531ec03d76f993bc296a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a socket control command; read socklasterr for errors.  <br /></td></tr>
+<tr class="separator:ga304033105c73531ec03d76f993bc296a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7005ffbeeff92be5394ff3244da79028" id="r_ga7005ffbeeff92be5394ff3244da79028"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7005ffbeeff92be5394ff3244da79028">listen</a> (int sock, int backlog)</td></tr>
 <tr class="memdesc:ga7005ffbeeff92be5394ff3244da79028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start listening for incoming TCP connections.  <br /></td></tr>
 <tr class="separator:ga7005ffbeeff92be5394ff3244da79028"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1409,14 +1409,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3812035c9f808f4ed50173e54491f267" name="ga3812035c9f808f4ed50173e54491f267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3812035c9f808f4ed50173e54491f267">&#9670;&#160;</a></span>ioctlsocket()</h2>
+<a id="ga304033105c73531ec03d76f993bc296a" name="ga304033105c73531ec03d76f993bc296a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga304033105c73531ec03d76f993bc296a">&#9670;&#160;</a></span>ioctlsocket()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ioctlsocket </td>
+          <td class="memname">int ioctlsocket </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -1442,6 +1442,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error (see <a class="el" href="#ga04e7c1a8d2c7787e27ce895e5ff5e4b7" title="Pointer to the last socket error.">socklasterr</a>) </dd></dl>
 
 </div>
 </div>

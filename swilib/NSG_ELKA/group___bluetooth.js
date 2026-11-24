@@ -38,7 +38,7 @@ var group___bluetooth =
     [ "BTA_RemBtDeviceInfo_GetStatus", "group___bluetooth.html#gaa6833f3f1c8b265dd675fb376f47a03c", null ],
     [ "BTA_AclDisconnectReq", "group___bluetooth.html#gab574ed915af2175d241e3f3fb31d2398", null ],
     [ "BTA_DeviceDiscovery_StartSearchReq", "group___bluetooth.html#ga80673f515f03e55cd6496bf5daf835cc", null ],
-    [ "BTA_DeviceDiscovery_StartSearchCodReq", "group___bluetooth.html#gaf5d4366faade37d7d9a23482c5a98da2", null ],
+    [ "BTA_DeviceDiscovery_StartSearchCodReq", "group___bluetooth.html#gaa3c8cf879f23d400378bee03051e752d", null ],
     [ "BTA_DeviceDiscovery_StopSearchReq", "group___bluetooth.html#ga9f784e24b1ab387a2ff56096ac11915f", null ],
     [ "BTA_RemBtDeviceInfo_SetName", "group___bluetooth.html#ga224c1711fb6c753201e35e6dced93e0e", null ],
     [ "BTA_RemBtDeviceInfo_GetDeviceClass", "group___bluetooth.html#gaba9a4b9cc91823c46dea85efcc7af6ef", null ],

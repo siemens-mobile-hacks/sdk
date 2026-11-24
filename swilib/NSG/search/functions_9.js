@@ -154,7 +154,7 @@ var searchData=
   ['initconfig_5fname_151',['InitConfig_name',['../conf__loader_8h.html#abc5529894bb3631cc878ac85c128e5af',1,'conf_loader.h']]],
   ['initdate_152',['InitDate',['../group___date_time.html#ga92554ba6901d8a60a0b3525e0b8f6ceb',1,'date.h']]],
   ['inittime_153',['InitTime',['../group___date_time.html#ga834636c64c9c4f5dd21ba3e77e731473',1,'date.h']]],
-  ['ioctlsocket_154',['ioctlsocket',['../group___socket.html#ga3812035c9f808f4ed50173e54491f267',1,'socket.h']]],
+  ['ioctlsocket_154',['ioctlsocket',['../group___socket.html#ga304033105c73531ec03d76f993bc296a',1,'socket.h']]],
   ['isanyofaccessoriesconnected_155',['IsAnyOfAccessoriesConnected',['../group___m_i_s_c.html#ga6d00f862e0913db8db85d8a75494ac60',1,'misc.h']]],
   ['iscalling_156',['IsCalling',['../group___telephony.html#gaf5810164708d5c500450a6ffa7ebf31e',1,'telephony.h']]],
   ['iscanvasbufferset_157',['IsCanvasBufferSet',['../group___image.html#ga0f75c8dd3bc8d07cfea153460f89eb61',1,'image.h']]],

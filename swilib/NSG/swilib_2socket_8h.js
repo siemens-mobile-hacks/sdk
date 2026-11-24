@@ -55,7 +55,7 @@ var swilib_2socket_8h =
     [ "getpeername", "group___socket.html#gabea7e39e29fe65e493b74b5b57cbeefe", null ],
     [ "setsockopt", "group___socket.html#ga2170ca2cad523243a1b62221f1bd44f6", null ],
     [ "getsockopt", "group___socket.html#ga73f4af649a91ea1c14d4172d94f80b7f", null ],
-    [ "ioctlsocket", "group___socket.html#ga3812035c9f808f4ed50173e54491f267", null ],
+    [ "ioctlsocket", "group___socket.html#ga304033105c73531ec03d76f993bc296a", null ],
     [ "listen", "group___socket.html#ga7005ffbeeff92be5394ff3244da79028", null ],
     [ "ENIP_GetNativeSocket", "group___socket.html#ga1ea7cf16b549b6fc8b404f8dc72347e2", null ]
 ];

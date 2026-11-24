@@ -458,18 +458,18 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga92902769b861c5abac6c08ee4f883f55" id="r_ga92902769b861c5abac6c08ee4f883f55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92902769b861c5abac6c08ee4f883f55">LMAN_LINK_UP_CNF</a> (void)</td></tr>
 <tr class="memdesc:ga92902769b861c5abac6c08ee4f883f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">LMAN handler of the link-up confirmation: mark the waiting connection as up and notify the owner.  <br /></td></tr>
 <tr class="separator:ga92902769b861c5abac6c08ee4f883f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5aefa696df49d328a0e0f80e7bd2dc1f" id="r_ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5aefa696df49d328a0e0f80e7bd2dc1f">lman_app_register</a> (uint16_t app)</td></tr>
-<tr class="memdesc:ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an application in the LMAN application table.  <br /></td></tr>
-<tr class="separator:ga5aefa696df49d328a0e0f80e7bd2dc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe17496e3cd402706c1e2145635774a4" id="r_gafe17496e3cd402706c1e2145635774a4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafe17496e3cd402706c1e2145635774a4">lman_app_register</a> (uint16_t cepid)</td></tr>
+<tr class="memdesc:gafe17496e3cd402706c1e2145635774a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an application in the LMAN application table.  <br /></td></tr>
+<tr class="separator:gafe17496e3cd402706c1e2145635774a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad9a3e048bdfaf32b881b98b0fcdad3b9" id="r_gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9a3e048bdfaf32b881b98b0fcdad3b9">lman_app_free</a> (uint16_t slot)</td></tr>
 <tr class="memdesc:gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an LMAN application slot.  <br /></td></tr>
 <tr class="separator:gad9a3e048bdfaf32b881b98b0fcdad3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c0d66a0884791f7df5bd47d31195219" id="r_ga9c0d66a0884791f7df5bd47d31195219"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c0d66a0884791f7df5bd47d31195219">lman_app_set_bearer</a> (uint16_t slot, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint16_t *settings, int callback)</td></tr>
 <tr class="memdesc:ga9c0d66a0884791f7df5bd47d31195219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bearer settings of an LMAN application.  <br /></td></tr>
 <tr class="separator:ga9c0d66a0884791f7df5bd47d31195219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga202abd03f52889697140b5d6e2586e1e" id="r_ga202abd03f52889697140b5d6e2586e1e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga202abd03f52889697140b5d6e2586e1e">lman_get_active_connection_id</a> (uint16_t bearer, uint16_t key)</td></tr>
-<tr class="memdesc:ga202abd03f52889697140b5d6e2586e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the LMAN connection with the given bearer ID and key.  <br /></td></tr>
-<tr class="separator:ga202abd03f52889697140b5d6e2586e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa6a82e3387a87fd1da29861cc131fab" id="r_gaaa6a82e3387a87fd1da29861cc131fab"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa6a82e3387a87fd1da29861cc131fab">lman_get_active_connection_id</a> (uint16_t bearer, uint16_t key)</td></tr>
+<tr class="memdesc:gaaa6a82e3387a87fd1da29861cc131fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the LMAN connection with the given bearer ID and key.  <br /></td></tr>
+<tr class="separator:gaaa6a82e3387a87fd1da29861cc131fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga66ecd0b7790ac5eccf4d30c6540e7fd0" id="r_ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66ecd0b7790ac5eccf4d30c6540e7fd0">lman_GetBearerIdForCi</a> (uint16_t connection)</td></tr>
 <tr class="memdesc:ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bearer ID of an LMAN connection.  <br /></td></tr>
 <tr class="separator:ga66ecd0b7790ac5eccf4d30c6540e7fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3508,29 +3508,30 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5aefa696df49d328a0e0f80e7bd2dc1f" name="ga5aefa696df49d328a0e0f80e7bd2dc1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5aefa696df49d328a0e0f80e7bd2dc1f">&#9670;&#160;</a></span>lman_app_register()</h2>
+<a id="gafe17496e3cd402706c1e2145635774a4" name="gafe17496e3cd402706c1e2145635774a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe17496e3cd402706c1e2145635774a4">&#9670;&#160;</a></span>lman_app_register()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int16_t lman_app_register </td>
+          <td class="memname">uint16_t lman_app_register </td>
           <td>(</td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>cepid</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Register an application in the LMAN application table. </p>
-<p>Only partly reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">app</td><td>meaning not known </td></tr>
+    <tr><td class="paramname">cepid</td><td>CEPID of the application process </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>application slot, error value when the table is full </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>application slot 0..13 (the existing one if already registered), 0xFFFF when the table is full </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A full table also raises a firmware assertion. </dd></dl>
 
 </div>
 </div>
@@ -3596,14 +3597,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga202abd03f52889697140b5d6e2586e1e" name="ga202abd03f52889697140b5d6e2586e1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga202abd03f52889697140b5d6e2586e1e">&#9670;&#160;</a></span>lman_get_active_connection_id()</h2>
+<a id="gaaa6a82e3387a87fd1da29861cc131fab" name="gaaa6a82e3387a87fd1da29861cc131fab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa6a82e3387a87fd1da29861cc131fab">&#9670;&#160;</a></span>lman_get_active_connection_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int16_t lman_get_active_connection_id </td>
+          <td class="memname">uint16_t lman_get_active_connection_id </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
         </tr>
@@ -3623,7 +3624,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>connection ID (0..7), error value when not found </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>connection ID (0..7), 0xFFFF when not found </dd></dl>
 
 </div>
 </div>
