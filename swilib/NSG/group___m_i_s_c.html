@@ -259,10 +259,10 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga12e255d7dffe8d387305d9d33d0459b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit state (see <a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e" title="SExit state.">SEXIT_STATE</a>).  <br /></td></tr>
 <tr class="separator:ga12e255d7dffe8d387305d9d33d0459b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7447155be5adfdea07071ae6dda1e8d6" id="r_ga7447155be5adfdea07071ae6dda1e8d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s">SEXIT_RECORDS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7447155be5adfdea07071ae6dda1e8d6">RamSExitRecords</a> (void)</td></tr>
-<tr class="memdesc:ga7447155be5adfdea07071ae6dda1e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>), internal RAM 0x81B04 on EL71/E71 sw45.  <br /></td></tr>
+<tr class="memdesc:ga7447155be5adfdea07071ae6dda1e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>) in internal RAM.  <br /></td></tr>
 <tr class="separator:ga7447155be5adfdea07071ae6dda1e8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa6f32e75eccde289092d9e6e8b59a6ef" id="r_gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa6f32e75eccde289092d9e6e8b59a6ef">SExit</a> (int code, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *module, int type, int param)</td></tr>
-<tr class="memdesc:gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fatal SExit ("default" exit, EL71 A04D319C): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone.  <br /></td></tr>
+<tr class="memdesc:gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fatal SExit ("default" exit): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone.  <br /></td></tr>
 <tr class="separator:gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
 <tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>
@@ -607,7 +607,7 @@ Enumerations</h2></td></tr>
 <p>SExit record handler. </p>
 <p>The firmware jumps to it as a tail call: when it returns, the code that called SExit goes on. </p>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00597">597</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00598">598</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -624,7 +624,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler). </p>
-<p>By default they point to flash, so replace a pointer, not the word. </p>
+<p>By default they point to flash, so replace a pointer, not the word. </p><dl class="section warning"><dt>Warning</dt><dd>On S68v52 the table has the ELKA layout: pre at +0x0C, blacklist at +0x10. </dd></dl>
 
 </div>
 </div>
@@ -1794,7 +1794,8 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>SExit handler table (see <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a>). </p>
-<p>The fatal exit (EL71 A04D319C, called from ~3500 places and the CPU exception vectors) fills the current fatal record, calls *pre, then jumps to *fatal. The caller has run SWI 2 before: it continues in SYS mode with IRQ and FIQ disabled, the original CPSR is in record-&gt;regs.cpsr. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the table </dd></dl>
+<p>The fatal exit (<a class="el" href="#gaa6f32e75eccde289092d9e6e8b59a6ef" title="Fatal SExit (&quot;default&quot; exit): fills the current fatal record and jumps to the SEXIT_HOOKS fatal handl...">SExit</a>, also called from the CPU exception vectors) fills the current fatal record, calls *pre (if the table has it), then jumps to *fatal. The caller has run SWI 2 before: it continues in SYS mode with IRQ and FIQ disabled, the original CPSR is in record-&gt;regs.cpsr. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the table </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>
@@ -1815,6 +1816,7 @@ Enumerations</h2></td></tr>
 
 <p>SExit state (see <a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e" title="SExit state.">SEXIT_STATE</a>). </p>
 <p>A handler that lets a fatal exit go on must release its record as the firmware does for a warning: fatal_depth&ndash;, then <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a> fatal = slot of the new depth (1: fatal_slot[0], 2: fatal_slot[1], else NULL). </p><dl class="section return"><dt>Returns</dt><dd>pointer to the state </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>
@@ -1833,8 +1835,9 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>), internal RAM 0x81B04 on EL71/E71 sw45. </p>
+<p>Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>) in internal RAM. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the records </dd></dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>
@@ -1867,7 +1870,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fatal SExit ("default" exit, EL71 A04D319C): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone. </p>
+<p>Fatal SExit ("default" exit): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone. </p>
 <p>The firmware always runs SWI 2 right before it (<code>svc 2</code>): that saves the registers, takes a record (<a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e" title="SExit state.">SEXIT_STATE</a> fatal_depth) and disables IRQ/FIQ. Without SWI 2 there is no record. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td>exit code </td></tr>
@@ -1877,6 +1880,7 @@ Enumerations</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
 </div>

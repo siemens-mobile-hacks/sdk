@@ -20,6 +20,5 @@ var searchData=
   ['lname_17',['lname',['../asn1_8h.html#a7b6403eb8f9e092395526bd981150531',1,'BIT_STRING_BITNAME_st']]],
   ['location_18',['location',['../x509v3_8h.html#ae554d8ab9233f6c313c43fc1de26a4ae',1,'ACCESS_DESCRIPTION_st::location'],['../builtin_2png_8h.html#af56bfc32223b97fbcb6bd29ba7a1cc29',1,'png_unknown_chunk_t::location']]],
   ['locret_19',['locret',['../group___u_i.html#afccbbf109714cb79d7ffea79e22e823c',1,'INPUTDIA_DESC::locret'],['../group___u_i.html#a8f701cbd4009b4bc436957b7592a034a',1,'TVIEW_DESC::locret'],['../group___u_i.html#a0c3aedfcc71fa49bb30aa2ef9d5f7939',1,'TABGUI_DESC::locret']]],
-  ['lr_20',['lr',['../group___m_i_s_c.html#a58791f322c1bfc3de6141788d3b8666f',1,'SEXIT_RECORD.regs']]],
-  ['lseek_21',['lseek',['../group___file.html#ac90e59c923482528451a8bfd9468c796',1,'FS_OPS']]]
+  ['lseek_20',['lseek',['../group___file.html#ac90e59c923482528451a8bfd9468c796',1,'FS_OPS']]]
 ];

@@ -285,6 +285,5 @@ var searchData=
   ['lp_5fmonthslong_282',['LP_MonthsLong',['../group___c_o_n_s_t.html#gac091a3309fe03acc039f4a301ad9cca2',1,'const.h']]],
   ['lp_5fmonthsshort_283',['LP_MonthsShort',['../group___c_o_n_s_t.html#ga6fb91db12566894ab334ddda389f4733',1,'const.h']]],
   ['lp_5fweekdays_284',['LP_Weekdays',['../group___c_o_n_s_t.html#ga61db82c4d92e1cf8db648ebd6253ea5c',1,'const.h']]],
-  ['lr_285',['lr',['../group___m_i_s_c.html#a58791f322c1bfc3de6141788d3b8666f',1,'SEXIT_RECORD.regs']]],
-  ['lseek_286',['lseek',['../group___file.html#ac90e59c923482528451a8bfd9468c796',1,'FS_OPS::lseek'],['../group___file.html#ga68bdd3ad630bcbfe561257f99d733e9e',1,'lseek():&#160;file.h']]]
+  ['lseek_285',['lseek',['../group___file.html#ac90e59c923482528451a8bfd9468c796',1,'FS_OPS::lseek'],['../group___file.html#ga68bdd3ad630bcbfe561257f99d733e9e',1,'lseek():&#160;file.h']]]
 ];
