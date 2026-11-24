@@ -281,7 +281,8 @@ __swi_end(0x80DA, RamIsShutdown, ());
 
 /**
  * Check if phone in standby mode.
- * @return 1 or 0
+ * @return pointer to the flag (1 or 0)
+ * @platforms X75, SG
  * */
 __swi_begin(0x80D3)
 char *RamIsStandby()

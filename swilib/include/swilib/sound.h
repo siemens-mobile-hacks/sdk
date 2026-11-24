@@ -497,6 +497,7 @@ __swi_end(0x033, SoundAE_PlayFileAsEvent, (event_id, cepid, msg_id, folder, file
 /**
  * Pointer to the AudioHook.
  * @return implementation specific
+ * @platforms X75, SG
  * */
 __swi_begin(0x838A)
 void *RamAudioHook()

@@ -1375,7 +1375,7 @@ __swi_end(0x80F6, RamLcdMainLayersList, ());
 
 /**
  * Pointer to the list of the LCDLAYER's (RAP).
- * @return pointer to the array of #LCDLAYER_LIST
+ * @return pointer to the array of 5 #RAP_LCDLAYER_LIST
  * */
 __swi_begin(0x80F7)
 RAP_LCDLAYER_LIST *RamLcdRapLayersList()

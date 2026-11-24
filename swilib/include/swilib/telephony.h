@@ -218,9 +218,8 @@ int HasNewSMS(void)
 __swi_end(0x046, HasNewSMS, ());
 
 /**
- * Check for new flash-SMS.
- * @return 1: non-zero when there has new flash-SMS
- * @return 0: no new flash-SMS
+ * Check for a pending flash message (flash SMS, USSD reply or network text) that #ReadFlashSMS shows.
+ * @return 1 if a message is pending, 0 otherwise
  * */
 __swi_begin(0x047)
 int HasFlashSMS(void)
@@ -232,6 +231,7 @@ __swi_end(0x047, HasFlashSMS, ());
  * ```C
  * int missed_sms = *RamMissedSMS();
  * ```
+ * @platforms X75, SG
  * */
 __swi_begin(0x80CD)
 char *RamMissedSMS()

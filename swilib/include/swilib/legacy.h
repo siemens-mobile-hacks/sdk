@@ -237,8 +237,8 @@ char *RamIsNumberTyping(void)
 __swi_end(0x828F, RamIsNumberTyping, ());
 
 /**
- * Unknown.
- * @return unknown
+ * Pointer to the state of the power on/off process (MSMONOFF).
+ * @return pointer to the uint16 bitmask of completed power-off stages
  * */
 __swi_begin(0x80D9)
 void *RamShutdownMode()

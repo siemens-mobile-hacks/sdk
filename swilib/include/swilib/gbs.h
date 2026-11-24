@@ -185,7 +185,7 @@ void GBS_StartTimerProc(GBSTMR *timer, long ticks, GBSTMR_CALLBACK callback)
 __swi_end(0x04D, GBS_StartTimerProc, (timer, ticks, callback));
 
 /**
- * Start GBS timer with callback.
+ * Start GBS timer that sends a message to `cepid` when it expires.
  * @param timer		pointer to the GBS timer
  * @param ticks		number of ticks to expire the timer (1 tick - 4.615 ms)
  * @param msg_id	ID of the GBS message that will be sent when the timer expires
@@ -264,7 +264,7 @@ void GBS_AcceptMessage(void)
 __swi_end(0x102, GBS_AcceptMessage, ());
 
 /**
- * NACK message received with #GBS_RecActDstMessage
+ * Clear the message queue of the current GBS process.
  * */
 __swi_begin(0x103)
 void GBS_ClearMessage(void)

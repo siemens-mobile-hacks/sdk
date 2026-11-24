@@ -98,7 +98,7 @@ __swi_end(0x23F, MD5_Final, (hash, c));
 /** @} */
 
 /**
- * @name SHA256 hashing
+ * @name SHA1 hashing
  * @{
  * */
 
@@ -122,7 +122,7 @@ __swi_end(0x1BD, SHA1_Update, (c, data, len));
 
 /**
  * Finalize the SHA1 calculation and get hash.
- * @param[out] hash		pointer to the uint8_t[16] for md5 hash result
+ * @param[out] hash		pointer to the uint8_t[20] for the SHA1 hash result
  * @param c				pointer to the SHA_CTX
  * */
 __swi_begin(0x1BE)
@@ -192,8 +192,8 @@ __swi_end(0x8394, RAND_get_rand_method, ());
  * */
 
 /**
- * Get selected SSL method.
- * @return pointer to SSL method
+ * Get the TLSv1 client method.
+ * @return pointer to the static TLSv1 client SSL method
  * */
 __swi_begin(0x395)
 SSL_METHOD *TLSv1_client_method()
@@ -249,7 +249,7 @@ __swi_end(0x39A, SSL_set_fd, (s, fd));
 /**
  * Initiate the TLS/SSL handshake with an TLS/SSL server.
  * @param ssl		initialized SSL structure
- * @return 1 or error
+ * @return 1 on success, 0 or negative value on error
  * */
 __swi_begin(0x39B)
 int SSL_connect(SSL *ssl)
@@ -258,7 +258,7 @@ __swi_end(0x39B, SSL_connect, (ssl));
 /**
  * Shut down a SSL connection.
  * @param ssl		initialized SSL structure
- * @return 1 or error
+ * @return 1 when finished, 0 when not yet finished, negative value on error
  * */
 __swi_begin(0x39C)
 int SSL_shutdown(SSL *ssl)
@@ -335,7 +335,7 @@ __swi_end(0x3A2, SSL_SESSION_free, (sess));
 /**
  * Add new EVP cipher.
  * @param c		pointer to the #EVP_CIPHER
- * @return 1 or error
+ * @return nonzero on success, 0 on error
  * */
 __swi_begin(0x3AC)
 int EVP_add_cipher(EVP_CIPHER *c)

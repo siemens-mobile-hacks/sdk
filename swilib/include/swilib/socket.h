@@ -138,7 +138,7 @@ struct hostent {
  * @param name				domain name to be resolved
  * @param[out] response		pointer to the pointer of #hostent
  * @param[out] req_id		request ID or NULL
- * @return 0 or error
+ * @return 0 or socket error code (same as *#socklasterr())
  * 
  * ```C
  * struct hostent *response;
@@ -220,7 +220,7 @@ __swi_end(0x175, bind, (socket, address, address_len));
  * Shutdown
  * @param socket		socket descriptor
  * @param how	specifies the type of shutdown, see #SockShutdownTypeID
- * @return 0 or error
+ * @return 0 on success, -1 on error (see #socklasterr)
  * */
 __swi_begin(0x177)
 int shutdown(int socket, int how)
@@ -274,7 +274,7 @@ __swi_end(0x817C, socklasterr, ());
 /**
  * Close socket descriptor.
  * @param socket		socket descriptor
- * @return 0 or error
+ * @return 0 on success, -1 on error (see #socklasterr)
  * */
 __swi_begin(0x176)
 int closesocket(int socket)

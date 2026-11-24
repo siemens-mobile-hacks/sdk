@@ -513,9 +513,10 @@ void SetHeaderExtraText(void *header, const WSHDR *ws, const void *malloc_fn, co
 __swi_end(0x3C7, SetHeaderExtraText, (header, ws, malloc_fn, mfree_fn));
 
 /**
- * Get pointer to the UI header.
+ * Set icons of the UI header.
  * @param header		pointer to the header (#GetHeaderPointer)
  * @param icons			C-array of the icons (ID from PIT or pointer to IMGHDR), last item is always 0
+ * @note The icons array is not copied and must stay valid while the GUI exists.
  * @param malloc_fn		result of #malloc_adr()
  * @param mfree_fn		result of #mfree_adr()
  * */
@@ -1503,8 +1504,11 @@ void SetCursorToMenuItem(void *gui, int item_n)
 __swi_end(0x1C4, SetCursorToMenuItem, (gui, item_n));
 
 /**
- * @copydoc SetCursorToMenuItem
- * @deprecated Use #SetCursorToMenuItem instead.
+ * Scroll to the given menu item and refresh the menu.
+ * @param gui		pointer to the Menu GUI
+ * @param item_n	index of the item (from 0)
+ * @note Unlike #SetCursorToMenuItem, it also re-applies the item count (relayout and redraw).
+ * @note Updates the scrollbar when the menu is focused.
  * */
 __swi_begin(0x2A3)
 void UpdateMenuCursorItem(void *gui, int item_n)
