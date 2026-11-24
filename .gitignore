@@ -1,4 +1,6 @@
+tests/
 AGENTS.md
+!swilib/AGENTS.md
 *.o
 */bin
 */bin-*
@@ -16,3 +18,4 @@ tests/*/*.elf
 build/
 */build/
 /lib_originals/
+tools/node_modules/
