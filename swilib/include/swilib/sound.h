@@ -22,7 +22,7 @@ typedef struct PLAYFILE_OPT PLAYFILE_OPT;
 typedef struct PLAY_VOLUME PLAY_VOLUME;
 
 /**
- * Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_SetVolume.
+ * Volume of a play object (NSG/ELKA), passed by value to #PlayMelody_ChangeVolume.
  * Read it with #PlayMelody_GetVolume, change `level`, write it back (as the firmware's volume keys do).
  * */
 struct PLAY_VOLUME {
@@ -312,23 +312,35 @@ __swi_end(0x099, PlayMelodyInMem, (unk1, buffer, size, cepid, msg, unk2));
 /**
  * Change the volume of the playing melody.
  * @param handle	play object handle
- * @param volume	volume level (nsg: 1-15, sg: 1-5)
+ * @param volume	NSG/ELKA: #PLAY_VOLUME passed by value; SG/X75: volume level, 16 = the level from the profile
  * @return 1 if success, 0 if error
+ * @note The type of `volume` differs between platforms: #PLAY_VOLUME on NSG/ELKA, int on SG/X75.
+ * @note On NSG/ELKA read the current value with #PlayMelody_GetVolume and change `level`.
+ *
+ * ```C
+ * #ifdef NEWSGOLD
+ * PLAY_VOLUME volume;
+ * if (PlayMelody_GetVolume(handle, &volume)) {
+ * 	volume.level = 3;
+ * 	PlayMelody_ChangeVolume(handle, volume);
+ * }
+ * #else
+ * PlayMelody_ChangeVolume(handle, 3);
+ * #endif
+ * ```
  * */
 __swi_begin(0x225)
+#ifdef NEWSGOLD
+int PlayMelody_ChangeVolume(int handle, PLAY_VOLUME volume)
+#else
 int PlayMelody_ChangeVolume(int handle, int volume)
+#endif
 __swi_end(0x225, PlayMelody_ChangeVolume, (handle, volume));
 
 #ifdef NEWSGOLD
 /**
- * Change the volume of the playing melody (#PlayMelody_ChangeVolume with the real NSG argument).
- * On NSG the volume is an 8-byte #PLAY_VOLUME passed in r1:r2; with an int the second word is garbage
- * (EL71v45: the stream went silent). Read the current value with #PlayMelody_GetVolume and change `level`.
- * `level` 0..5 maps to the Obs volume 0, 1, 4, 8, 12, 15; for all 16 Obs steps use #Obs_Sound_SetVolumeEx.
- * @param handle	play object handle
- * @param volume	new volume, see #PLAY_VOLUME
- * @return 1 if success, 0 if error
- * @platforms NSG, ELKA
+ * @copydoc PlayMelody_ChangeVolume
+ * @deprecated Use #PlayMelody_ChangeVolume instead.
  * */
 __swi_begin(0x225)
 int PlayMelody_SetVolume(int handle, PLAY_VOLUME volume)
