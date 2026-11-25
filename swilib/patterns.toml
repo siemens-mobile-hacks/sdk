@@ -5774,7 +5774,7 @@ NSG = "98 B5 04 1C ?? F? ?? ?? C4 62 ?? 48"
 ELKA = "1C B5 04 1C ?? ?? ?? ?? C4 62 ?? 48 00 78 06 28 ?? D1 ?? ?? ?? ?? C0 6A"
 
 [431]
-decl = "void **RamSDevApps(void)"
+decl = "const SDEV_APP **RamSDevApps(void)"
 NSG = "&(?? 1? 9F E5 00 00 A0 E3 00 31 81 E7 01 00 80 E2 20 00 50 E3)"
 ELKA = "&(?? 1? 9F E5 00 00 A0 E3 00 31 81 E7 01 00 80 E2 20 00 50 E3)"
 SG = "&(FC 4D 2D E9 ?? E? 9F E5 ?? 8? 9F E5 02 70 A0 E1 01 60 A0 E1 00 50 A0 E3 00 40 A0 E1 11 00 50 E3 03 00 00 2F 0E 20 A0 21 08 10 A0 21 00 00 A0 23 ?? ?? ?? 2A 1B 00 56 E3 ?? ?? ?? 3A 03 00 00 EF 0E 20 A0 E1 08 10 A0 E1 01 00 A0 E3 ?? ?? ?? EB ?? ?? ?? EA ?? A? 1F E5 00 10 E0 E3 0A 00 A0 E1 ?? ?? ?? EB ?? 8? 1F E5 07 20 A0 E1 04 01 98 E7 06 10 A0 E1 00 30 90 E5 04 00 8D E2 33 FF 2F E1 00 00 50 E3 ?? ?? ?? 0A ?? B? 1F E5 07 20 A0 E1 + 88)"
@@ -5924,12 +5924,12 @@ NSG = "F8 B5 04 1C 0D 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 FF 21 ?? 4F 0
 ELKA = "FE B5 04 1C 0D 1C ?? ?? ?? ?? 06 1C ?? 48 00 78 06 28 ?? D1 FF 21 ?? 4F 01 31 23 1C 38 1C 00 95 9A A2 ?? ?? ?? ?? 01 04"
 
 [44B]
-decl = "const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const void *device)"
+decl = "const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const CA_REMDEV *device)"
 NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 14 D1 00 96"
 ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 00 96"
 
 [44C]
-decl = "const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)"
+decl = "const char *BTA_RemBtDeviceInfo_GetName(int oh, const CA_REMDEV *device)"
 NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 17 D1 22 1C 00 D1 ?? A2 00 96 ?? 4E FF 21 01 31 01 92 2B 1C 30 1C ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 20 1C 7C BD 7C B5"
 ELKA = "7F B5 05 1C 0E 1C ?? ?? ?? ?? 00 24 E1 43 ?? ?? ?? ?? 00 28 ?? D0 30 1C ?? ?? ?? ?? 04 1C ?? 48 00 78 06 28 ?? D1 22 1C ?? D1 44 A2 00 96 ?? 4E"
 
@@ -6030,12 +6030,12 @@ NSG = "FE B5 0F 1C 04 1C 15 1C ?? F? ?? ?? 06 1C ?? 48 00 78 06 28 13 D1 23 1C F
 ELKA = "F0 B5 0E 1C 04 1C 15 1C 85 B0 ?? F? ?? ?? 07 1C ?? 48 00 78 06 28 14 D1 23 1C FF 21 01 31 00 95 01 96 ?? A2 ?? 48 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 88 23 06 22 ?? 48 ?? F? ?? ?? 0B E0 ?? A2 00 92 ?? 49 03 22 01 23 C1 31 01 94"
 
 [460]
-decl = "void *BTA_Conn_GetRemDevInfo(int oh, int conn)"
+decl = "CA_REMDEV *BTA_Conn_GetRemDevInfo(int oh, int conn)"
 NSG = "FE B5 07 1C 0D 1C ?? F? ?? ?? 06 1C 00 24 E1 43"
 ELKA = "F0 B5 06 1C 0D 1C 85 B0 ?? F? ?? ?? 07 1C 00 24"
 
 [461]
-decl = "uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const void *device, int what)"
+decl = "uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const CA_REMDEV *device, int what)"
 NSG = "FE B5 0E 1C 05 1C 17 1C ?? F? ?? ?? 00 24 E1 43"
 ELKA = "F0 B5 0E 1C 05 1C 17 1C 85 B0 ?? F? ?? ?? 00 24"
 
@@ -6493,12 +6493,12 @@ NSG = "F8 B5 04 1C ?? 48 0D 1C 00 78 06 28 13 D1 FF 21 ?? 4E 01 31 23 1C 30 1C 0
 ELKA = "FE B5 04 1C ?? 48 0D 1C 00 78 06 28 14 D1 FF 21 ?? 4E 01 31 23 1C 30 1C 00 95 ?? A2 ?? F? ?? ?? 01 04 ?? 48 09 0C 01 80 00 22 00 92 06 22 88 23 30 1C ?? F? ?? ?? 0A E0 ?? A0 ?? 49 00 90 01 23 03 22 47 31"
 
 [4B1]
-decl = "int BTA_RemBtDeviceInfo_SetName(int oh, void *device, const char *name)"
+decl = "int BTA_RemBtDeviceInfo_SetName(int oh, CA_REMDEV *device, const char *name)"
 NSG = "FE B5 0F 1C 06 1C 15 1C ?? F? ?? ?? 00 24 E1 43"
 ELKA = "F0 B5 0F 1C 06 1C 14 1C 85 B0 ?? F? ?? ?? 00 25"
 
 [4B2]
-decl = "void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, void *device)"
+decl = "void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, CA_REMDEV *device)"
 NSG = "7C B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 18 D1 00 22"
 ELKA = "7F B5 05 1C 0E 1C ?? F? ?? ?? 00 24 E1 43 ?? F? ?? ?? 00 28 03 D0 30 1C ?? F? ?? ?? 04 1C ?? 48 00 78 06 28 19 D1 00 22"
 
@@ -6606,19 +6606,19 @@ ELKA = "F8 B5 80 88 ?? 4E 40 38 05 04 2D 0C"
 SG = "F8 B5 80 88 ?? 4E 40 38 04 04 24 0C A5 00 34 3E"
 
 [4C5]
-decl = "void SApp_Register(int handler_id, void *methods)"
+decl = "void SApp_Register(int handler_id, const SDEV_APP *methods)"
 NSG = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 20 00 50 E3"
 ELKA = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 20 00 50 E3"
 SG = "70 40 2D E9 01 60 A0 E1 00 40 A0 E1 1B 00 50 E3"
 
 [4C6]
-decl = "int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, void *connection_info)"
+decl = "int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, const void *connection_info)"
 NSG = "FC 4D 2D E9 00 40 A0 E1 13 00 54 E3"
 ELKA = "FC 4D 2D E9 00 40 A0 E1 13 00 54 E3"
 SG = "FC 4D 2D E9 ?? E? 9F E5 ?? 8? 9F E5 02 70 A0 E1"
 
 [4C7]
-decl = "int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)"
+decl = "int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, const void *connection_info)"
 NSG = "FC 4D 2D E9 00 40 A0 E1 20 00 54 E3"
 ELKA = "FC 4D 2D E9 00 40 A0 E1 20 00 54 E3"
 SG = "FC 4D 2D E9 02 70 A0 E1 1B 00 50 E3 1B 00 57 33"
@@ -6650,7 +6650,7 @@ ELKA = "&(?? 49 C0 00 43 18 0D 50 DE 71 04 99)"
 SG = "&(10 B5 ?? 4C 03 1C FF 20 00 21 20 3C CA 00 A2 58 9A 42 01 D1 08 1C 10 BD 01 31 09 06 09 0E 04 29 + 2) - 20"
 
 [4CC]
-decl = "void *RamL2capChannelState(void)"
+decl = "L2CAP_CHANNEL *RamL2capChannelState(void)"
 NSG = "&(?? 4E 0E E0 18 23 53 43 9B 19 9F 88)"
 ELKA = "&(?? 4E 0E E0 18 23 53 43 9B 19 9F 88)"
 SG = "&(F8 B5 80 88 ?? 4E 40 38 04 04 24 0C A5 00 34 3E 70 59 ?? F? ?? ?? ?? 49 00 28 1A D0 18 26 + 16)"
@@ -6690,19 +6690,19 @@ ELKA = "80 B5 ?? F? ?? F? 00 7D 80 BD FF B5 85 B0 + 1"
 SG = "80 B5 ?? F? ?? ?? 00 7D 80 BD FF B5 85 B0 0F 9C"
 
 [4D4]
-decl = "void *CA_RemDev_New(const void *bd_addr)"
+decl = "CA_REMDEV *CA_RemDev_New(const uint8_t bd_addr[6])"
 NSG = "B0 B5 05 1C 40 20 ?? F? ?? E? 01 1C + 1"
 ELKA = "B0 B5 05 1C 40 20 ?? F? ?? E? 01 1C + 1"
 SG = "B0 B5 05 1C 48 20 ?? F? ?? ?? 01 1C 01 20 ?? F? ?? ??"
 
 [4D5]
-decl = "void CA_RemDev_Free(void *remdev)"
+decl = "void CA_RemDev_Free(CA_REMDEV *remdev)"
 NSG = "80 B5 00 28 ?? D0 01 1C 01 20 ?? F? ?? F? ?? F? ?? E? 80 BD 00 00 + 1"
 ELKA = "80 B5 00 28 ?? D0 01 1C 01 20 ?? F? ?? F? ?? F? ?? E? 80 BD 00 00 + 1"
 SG = "80 B5 00 28 05 D0 01 1C 01 20 ?? F? ?? ?? ?? F? ?? ?? 80 BD 00 28 01 D0"
 
 [4D6]
-decl = "uint16_t CA_L2CAP_New(uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)"
+decl = "uint16_t CA_L2CAP_New(uint16_t mr, CA_REMDEV *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)"
 SG = "FF B5 85 B0 05 1C 14 1C 10 1C 12 9F ?? F? ?? ??"
 
 [4D7]

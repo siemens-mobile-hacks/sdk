@@ -18,6 +18,12 @@ typedef struct SDEV SDEV;
 typedef struct SDEV_APP SDEV_APP;
 typedef struct JSAPI_CONN JSAPI_CONN;
 typedef struct BTLP_CONN BTLP_CONN;
+typedef struct L2CAP_CHANNEL L2CAP_CHANNEL;
+
+/**
+ * Remote Bluetooth device object (CA layer), also used by the BTA_RemBtDeviceInfo_* functions.
+ * */
+typedef struct CA_REMDEV CA_REMDEV;
 
 /**
  * SDev endpoint.
@@ -215,7 +221,7 @@ __swi_end(0x430, BT_SetSecurityCheck, (lo, unk1, unk2, unk3));
  * @return firmware-owned table of application pointers (32 on NSG/ELKA, 27 on SG/X75)
  * */
 __swi_begin(0x8431)
-void **RamSDevApps(void)
+const SDEV_APP **RamSDevApps(void)
 __swi_end(0x8431, RamSDevApps, ());
 
 /**
@@ -352,7 +358,7 @@ __swi_end(0x44A, BTA_DeviceListView_StopList, (oh, list));
  * @return six-byte address, least significant byte first. Copy before consuming the event
  * */
 __swi_begin(0x44B)
-const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const void *device)
+const uint8_t *BTA_RemBtDeviceInfo_GetAddress(int oh, const CA_REMDEV *device)
 __swi_end(0x44B, BTA_RemBtDeviceInfo_GetAddress, (oh, device));
 
 /**
@@ -362,7 +368,7 @@ __swi_end(0x44B, BTA_RemBtDeviceInfo_GetAddress, (oh, device));
  * @return UTF-8 device name. Copy before consuming the event
  * */
 __swi_begin(0x44C)
-const char *BTA_RemBtDeviceInfo_GetName(int oh, const void *device)
+const char *BTA_RemBtDeviceInfo_GetName(int oh, const CA_REMDEV *device)
 __swi_end(0x44C, BTA_RemBtDeviceInfo_GetName, (oh, device));
 
 /**
@@ -383,7 +389,7 @@ __swi_end(0x45F, BTA_Conn_GetL2CAPParamReq, (oh, conn, tid));
  * @return remote-device object, for BTA_RemBtDeviceInfo_* calls
  * */
 __swi_begin(0x460)
-void *BTA_Conn_GetRemDevInfo(int oh, int conn)
+CA_REMDEV *BTA_Conn_GetRemDevInfo(int oh, int conn)
 __swi_end(0x460, BTA_Conn_GetRemDevInfo, (oh, conn));
 
 /**
@@ -394,7 +400,7 @@ __swi_end(0x460, BTA_Conn_GetRemDevInfo, (oh, conn));
  * @return status, 2: ACL connected
  * */
 __swi_begin(0x461)
-uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const void *device, int what)
+uint32_t BTA_RemBtDeviceInfo_GetStatus(int oh, const CA_REMDEV *device, int what)
 __swi_end(0x461, BTA_RemBtDeviceInfo_GetStatus, (oh, device, what));
 
 /**
@@ -458,7 +464,7 @@ __swi_end(0x4B0, BTA_DeviceDiscovery_StopSearchReq, (oh, tid));
  * @return result of the store, 0 on failure
  * */
 __swi_begin(0x4B1)
-int BTA_RemBtDeviceInfo_SetName(int oh, void *device, const char *name)
+int BTA_RemBtDeviceInfo_SetName(int oh, CA_REMDEV *device, const char *name)
 __swi_end(0x4B1, BTA_RemBtDeviceInfo_SetName, (oh, device, name));
 
 /**
@@ -468,7 +474,7 @@ __swi_end(0x4B1, BTA_RemBtDeviceInfo_SetName, (oh, device, name));
  * @return class record (byte +2 is the major class), NULL when unknown
  * */
 __swi_begin(0x4B2)
-void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, void *device)
+void *BTA_RemBtDeviceInfo_GetDeviceClass(int oh, CA_REMDEV *device)
 __swi_end(0x4B2, BTA_RemBtDeviceInfo_GetDeviceClass, (oh, device));
 
 /**
@@ -668,7 +674,7 @@ __swi_end(0x4C4, L2CA_ReadDataReq, (message));
  * ARM code.
  * */
 __swi_begin(0x4C5)
-void SApp_Register(int handler_id, void *methods)
+void SApp_Register(int handler_id, const SDEV_APP *methods)
 __swi_end(0x4C5, SApp_Register, (handler_id, methods));
 
 /**
@@ -680,7 +686,7 @@ __swi_end(0x4C5, SApp_Register, (handler_id, methods));
  * ARM code.
  * */
 __swi_begin(0x4C6)
-int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, void *connection_info)
+int ConnSDevSApp(uint32_t sdevice, uint32_t handler_id, const void *connection_info)
 __swi_end(0x4C6, ConnSDevSApp, (sdevice, handler_id, connection_info));
 
 /**
@@ -693,7 +699,7 @@ __swi_end(0x4C6, ConnSDevSApp, (sdevice, handler_id, connection_info));
  * ARM code.
  * */
 __swi_begin(0x4C7)
-int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)
+int CHConnSApp(uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, const void *connection_info)
 __swi_end(0x4C7, CHConnSApp, (handler_id, instance, new_handler_id, connection_info));
 
 /**
@@ -791,12 +797,25 @@ BTLP_CONN *RamBtlpConnections(void)
 __swi_end(0x84CB, RamBtlpConnections, ());
 
 /**
- * Get the L2CAP channel state table.
- * @return channel state table
+ * L2CAP channel (see #RamL2capChannelState).
+ * */
+struct L2CAP_CHANNEL {
+	uint16_t cid;			/**< Local CID, 0x40 + entry index */
+	uint16_t unk_02;
+	uint16_t unk_04;
+	uint16_t unk_06;
+	uint16_t unk_08;
+	uint16_t sig;			/**< Signalling instance, 0xFFFF = none */
+	uint8_t unk_0C[12];
+};
+
+/**
+ * Get the L2CAP channel table.
+ * @return 8 entries
  * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x84CC)
-void *RamL2capChannelState(void)
+L2CAP_CHANNEL *RamL2capChannelState(void)
 __swi_end(0x84CC, RamL2capChannelState, ());
 
 /* Bluetooth CA layer: objects, message replicators (MR),
@@ -865,14 +884,14 @@ __swi_end(0x4D3, CA_SapiConnClass, ());
  * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D4)
-void *CA_RemDev_New(const void *bd_addr)
+CA_REMDEV *CA_RemDev_New(const uint8_t bd_addr[6])
 __swi_end(0x4D4, CA_RemDev_New, (bd_addr));
 
 /**
  * Free a remote device object.
  * */
 __swi_begin(0x4D5)
-void CA_RemDev_Free(void *remdev)
+void CA_RemDev_Free(CA_REMDEV *remdev)
 __swi_end(0x4D5, CA_RemDev_Free, (remdev));
 
 #ifndef NEWSGOLD
@@ -883,7 +902,7 @@ __swi_end(0x4D5, CA_RemDev_Free, (remdev));
  * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4D6)
-uint16_t CA_L2CAP_New(uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)
+uint16_t CA_L2CAP_New(uint16_t mr, CA_REMDEV *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)
 __swi_end(0x4D6, CA_L2CAP_New, (mr, remdev, sapi, psm, master, encrypt, authenticate, rx_mtu, tx_mtu));
 
 /**
