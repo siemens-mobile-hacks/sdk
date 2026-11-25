@@ -122,6 +122,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_b_t_l_p___c_o_n_n" id="r_struct_b_t_l_p___c_o_n_n"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a></td></tr>
 <tr class="memdesc:struct_b_t_l_p___c_o_n_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">BTLP connection (see <a class="el" href="#ga61c090833546cc4ab7febcfb10a615af" title="Get the BTLP (Bluetooth L2CAP port) connection table.">RamBtlpConnections</a>).  <a href="#struct_b_t_l_p___c_o_n_n">More...</a><br /></td></tr>
 <tr class="separator:struct_b_t_l_p___c_o_n_n"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_l2_c_a_p___c_h_a_n_n_e_l" id="r_struct_l2_c_a_p___c_h_a_n_n_e_l"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_l2_c_a_p___c_h_a_n_n_e_l">L2CAP_CHANNEL</a></td></tr>
+<tr class="memdesc:struct_l2_c_a_p___c_h_a_n_n_e_l"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2CAP channel (see <a class="el" href="#gaad20d936b144529300c9fac99492cf97" title="Get the L2CAP channel table.">RamL2capChannelState</a>).  <a href="#struct_l2_c_a_p___c_h_a_n_n_e_l">More...</a><br /></td></tr>
+<tr class="separator:struct_l2_c_a_p___c_h_a_n_n_e_l"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -133,6 +136,11 @@ Typedefs</h2></td></tr>
 <tr class="separator:gad408d6e2e59fc1b99aa3ca02cfc5e0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga72200912a6ae45e3cd439e012de40ae0" id="r_ga72200912a6ae45e3cd439e012de40ae0"><td class="memItemLeft" align="right" valign="top">typedef struct BTLP_CONN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga72200912a6ae45e3cd439e012de40ae0">BTLP_CONN</a></td></tr>
 <tr class="separator:ga72200912a6ae45e3cd439e012de40ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a16f8f54e9801d8b585019fd6f15058" id="r_ga1a16f8f54e9801d8b585019fd6f15058"><td class="memItemLeft" align="right" valign="top">typedef struct L2CAP_CHANNEL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a16f8f54e9801d8b585019fd6f15058">L2CAP_CHANNEL</a></td></tr>
+<tr class="separator:ga1a16f8f54e9801d8b585019fd6f15058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2ea50cb13eac0caa6d181e5bc6733aa" id="r_gab2ea50cb13eac0caa6d181e5bc6733aa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a></td></tr>
+<tr class="memdesc:gab2ea50cb13eac0caa6d181e5bc6733aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remote Bluetooth device object (CA layer), also used by the BTA_RemBtDeviceInfo_* functions.  <br /></td></tr>
+<tr class="separator:gab2ea50cb13eac0caa6d181e5bc6733aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -142,9 +150,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5d4424b68fe66d9eb9704dedaeac3f8d" id="r_ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5d4424b68fe66d9eb9704dedaeac3f8d">BT_GetLocalDevice</a> (void)</td></tr>
 <tr class="memdesc:ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native local Bluetooth device object.  <br /></td></tr>
 <tr class="separator:ga5d4424b68fe66d9eb9704dedaeac3f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga27b915f25d1c1a7f86ea82a628c8ee13" id="r_ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga27b915f25d1c1a7f86ea82a628c8ee13">RamSDevApps</a> (void)</td></tr>
-<tr class="memdesc:ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the SDev application callback table.  <br /></td></tr>
-<tr class="separator:ga27b915f25d1c1a7f86ea82a628c8ee13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78bfad6c6c29c0265d21011b1ecd0e91" id="r_ga78bfad6c6c29c0265d21011b1ecd0e91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_s_d_e_v___a_p_p">SDEV_APP</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78bfad6c6c29c0265d21011b1ecd0e91">RamSDevApps</a> (void)</td></tr>
+<tr class="memdesc:ga78bfad6c6c29c0265d21011b1ecd0e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the SDev application callback table.  <br /></td></tr>
+<tr class="separator:ga78bfad6c6c29c0265d21011b1ecd0e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga73d25940d654dafdfe6116f8804e5ebb" id="r_ga73d25940d654dafdfe6116f8804e5ebb"><td class="memItemLeft" align="right" valign="top">uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73d25940d654dafdfe6116f8804e5ebb">RamBtBufferPool</a> (void)</td></tr>
 <tr class="memdesc:ga73d25940d654dafdfe6116f8804e5ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native Bluetooth buffer-pool status.  <br /></td></tr>
 <tr class="separator:ga73d25940d654dafdfe6116f8804e5ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,15 +195,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gabc9aab97ecb13c8c986e8fdecc8f5e6f" id="r_gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabc9aab97ecb13c8c986e8fdecc8f5e6f">L2CA_ReadDataReq</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *message)</td></tr>
 <tr class="memdesc:gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2CAP handler of the L2CA_ReadDataReq signal.  <br /></td></tr>
 <tr class="separator:gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa56489c85aa39ec92d2c3f66ac0d2c49" id="r_gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49">SApp_Register</a> (int handler_id, void *methods)</td></tr>
-<tr class="memdesc:gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an SDev application (serial data endpoint) in the application table.  <br /></td></tr>
-<tr class="separator:gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga507af8f593c1049b3ada50742e862638" id="r_ga507af8f593c1049b3ada50742e862638"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga507af8f593c1049b3ada50742e862638">ConnSDevSApp</a> (uint32_t sdevice, uint32_t handler_id, void *connection_info)</td></tr>
-<tr class="memdesc:ga507af8f593c1049b3ada50742e862638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect a serial device to an SDev application.  <br /></td></tr>
-<tr class="separator:ga507af8f593c1049b3ada50742e862638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c80dcfdea23250ae5fa2d12c4b6c9d7" id="r_ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c80dcfdea23250ae5fa2d12c4b6c9d7">CHConnSApp</a> (uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)</td></tr>
-<tr class="memdesc:ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move an open device connection from one SDev application to another.  <br /></td></tr>
-<tr class="separator:ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56ea649735dafcb57ee157097471d4fe" id="r_ga56ea649735dafcb57ee157097471d4fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56ea649735dafcb57ee157097471d4fe">SApp_Register</a> (int handler_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_s_d_e_v___a_p_p">SDEV_APP</a> *methods)</td></tr>
+<tr class="memdesc:ga56ea649735dafcb57ee157097471d4fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an SDev application (serial data endpoint) in the application table.  <br /></td></tr>
+<tr class="separator:ga56ea649735dafcb57ee157097471d4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4c2ad198c15f2027d3fc32ccf93838f" id="r_gaf4c2ad198c15f2027d3fc32ccf93838f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf4c2ad198c15f2027d3fc32ccf93838f">ConnSDevSApp</a> (uint32_t sdevice, uint32_t handler_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *connection_info)</td></tr>
+<tr class="memdesc:gaf4c2ad198c15f2027d3fc32ccf93838f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect a serial device to an SDev application.  <br /></td></tr>
+<tr class="separator:gaf4c2ad198c15f2027d3fc32ccf93838f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2afa4411de51f5568daea2d8a5f1e9eb" id="r_ga2afa4411de51f5568daea2d8a5f1e9eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2afa4411de51f5568daea2d8a5f1e9eb">CHConnSApp</a> (uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *connection_info)</td></tr>
+<tr class="memdesc:ga2afa4411de51f5568daea2d8a5f1e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move an open device connection from one SDev application to another.  <br /></td></tr>
+<tr class="separator:ga2afa4411de51f5568daea2d8a5f1e9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga56ca46fe8cd247993517ef065c866bdf" id="r_ga56ca46fe8cd247993517ef065c866bdf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56ca46fe8cd247993517ef065c866bdf">Serial_CanOpenSApp</a> (uint32_t handler_id, uint32_t instance)</td></tr>
 <tr class="memdesc:ga56ca46fe8cd247993517ef065c866bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether an SDev application would accept a connection (opens and closes it again).  <br /></td></tr>
 <tr class="separator:ga56ca46fe8cd247993517ef065c866bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,9 +216,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga61c090833546cc4ab7febcfb10a615af" id="r_ga61c090833546cc4ab7febcfb10a615af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga61c090833546cc4ab7febcfb10a615af">RamBtlpConnections</a> (void)</td></tr>
 <tr class="memdesc:ga61c090833546cc4ab7febcfb10a615af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BTLP (Bluetooth L2CAP port) connection table.  <br /></td></tr>
 <tr class="separator:ga61c090833546cc4ab7febcfb10a615af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga84afc0dd90f5b9a0eea63e5f302bb303" id="r_ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84afc0dd90f5b9a0eea63e5f302bb303">RamL2capChannelState</a> (void)</td></tr>
-<tr class="memdesc:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the L2CAP channel state table.  <br /></td></tr>
-<tr class="separator:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad20d936b144529300c9fac99492cf97" id="r_gaad20d936b144529300c9fac99492cf97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_l2_c_a_p___c_h_a_n_n_e_l">L2CAP_CHANNEL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad20d936b144529300c9fac99492cf97">RamL2capChannelState</a> (void)</td></tr>
+<tr class="memdesc:gaad20d936b144529300c9fac99492cf97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the L2CAP channel table.  <br /></td></tr>
+<tr class="separator:gaad20d936b144529300c9fac99492cf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00fab07c3e820d7b53211615ee378679" id="r_ga00fab07c3e820d7b53211615ee378679"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00fab07c3e820d7b53211615ee378679">CA_MR_New</a> (int cepid, int msg, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td></tr>
 <tr class="memdesc:ga00fab07c3e820d7b53211615ee378679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a CA message replicator: every event of the objects it is subscribed to comes to <code>cepid</code> as GBS message <code>msg</code> (submess = replicator, data0 = object message).  <br /></td></tr>
 <tr class="separator:ga00fab07c3e820d7b53211615ee378679"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,15 +240,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0d7bb26947bf430781c629f71e5d3e4f" id="r_ga0d7bb26947bf430781c629f71e5d3e4f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d7bb26947bf430781c629f71e5d3e4f">CA_SapiConnClass</a> (void)</td></tr>
 <tr class="memdesc:ga0d7bb26947bf430781c629f71e5d3e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object class of SAPI connection events (opened, closed, failed, parameters).  <br /></td></tr>
 <tr class="separator:ga0d7bb26947bf430781c629f71e5d3e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac515e97ebb1281b2b0648afde72d10b4" id="r_gac515e97ebb1281b2b0648afde72d10b4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac515e97ebb1281b2b0648afde72d10b4">CA_RemDev_New</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *bd_addr)</td></tr>
-<tr class="memdesc:gac515e97ebb1281b2b0648afde72d10b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a remote device object for a 6-byte BT address.  <br /></td></tr>
-<tr class="separator:gac515e97ebb1281b2b0648afde72d10b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ca6578b6f4cdc1cb982afacd814cc3c" id="r_ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0ca6578b6f4cdc1cb982afacd814cc3c">CA_RemDev_Free</a> (void *remdev)</td></tr>
-<tr class="memdesc:ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a remote device object.  <br /></td></tr>
-<tr class="separator:ga0ca6578b6f4cdc1cb982afacd814cc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3876b501f2d768a503efa4c69a137623" id="r_ga3876b501f2d768a503efa4c69a137623"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3876b501f2d768a503efa4c69a137623">CA_L2CAP_New</a> (uint16_t mr, void *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)</td></tr>
-<tr class="memdesc:ga3876b501f2d768a503efa4c69a137623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an outgoing L2CAP connection; events go to the replicator <code>mr</code>.  <br /></td></tr>
-<tr class="separator:ga3876b501f2d768a503efa4c69a137623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e6a2fa153a70927fc93f2f04beb469b" id="r_ga3e6a2fa153a70927fc93f2f04beb469b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3e6a2fa153a70927fc93f2f04beb469b">CA_RemDev_New</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t bd_addr[6])</td></tr>
+<tr class="memdesc:ga3e6a2fa153a70927fc93f2f04beb469b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a remote device object for a 6-byte BT address.  <br /></td></tr>
+<tr class="separator:ga3e6a2fa153a70927fc93f2f04beb469b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab46cebe102cdd3826f836d34709c634e" id="r_gab46cebe102cdd3826f836d34709c634e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab46cebe102cdd3826f836d34709c634e">CA_RemDev_Free</a> (<a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> *remdev)</td></tr>
+<tr class="memdesc:gab46cebe102cdd3826f836d34709c634e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a remote device object.  <br /></td></tr>
+<tr class="separator:gab46cebe102cdd3826f836d34709c634e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44f85169e6482780070ea1cea771fad6" id="r_ga44f85169e6482780070ea1cea771fad6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga44f85169e6482780070ea1cea771fad6">CA_L2CAP_New</a> (uint16_t mr, <a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> *remdev, int sapi, int psm, int master, int encrypt, int authenticate, int rx_mtu, int tx_mtu)</td></tr>
+<tr class="memdesc:ga44f85169e6482780070ea1cea771fad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an outgoing L2CAP connection; events go to the replicator <code>mr</code>.  <br /></td></tr>
+<tr class="separator:ga44f85169e6482780070ea1cea771fad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafed90ff249591e412fc0b96c2c98a003" id="r_gafed90ff249591e412fc0b96c2c98a003"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafed90ff249591e412fc0b96c2c98a003">CA_Conn_Close</a> (uint16_t conn, uint16_t owner)</td></tr>
 <tr class="memdesc:gafed90ff249591e412fc0b96c2c98a003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a CA connection; <code>owner</code> = the replicator that gets the events.  <br /></td></tr>
 <tr class="separator:gafed90ff249591e412fc0b96c2c98a003"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,6 +331,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a name="struct_l2_c_a_p___c_h_a_n_n_e_l" id="struct_l2_c_a_p___c_h_a_n_n_e_l"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_l2_c_a_p___c_h_a_n_n_e_l">&#9670;&#160;</a></span>L2CAP_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct L2CAP_CHANNEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga9bd68955176b3976c1af7a2949d39b6f" name="ga9bd68955176b3976c1af7a2949d39b6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9bd68955176b3976c1af7a2949d39b6f">&#9670;&#160;</a></span>SDEV</h2>
@@ -388,6 +410,40 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga1a16f8f54e9801d8b585019fd6f15058" name="ga1a16f8f54e9801d8b585019fd6f15058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a16f8f54e9801d8b585019fd6f15058">&#9670;&#160;</a></span>L2CAP_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct L2CAP_CHANNEL L2CAP_CHANNEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bluetooth_8h_source.html#l00021">21</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+
+</div>
+</div>
+<a id="gab2ea50cb13eac0caa6d181e5bc6733aa" name="gab2ea50cb13eac0caa6d181e5bc6733aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2ea50cb13eac0caa6d181e5bc6733aa">&#9670;&#160;</a></span>CA_REMDEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> <a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remote Bluetooth device object (CA layer), also used by the BTA_RemBtDeviceInfo_* functions. </p>
+
+<p class="definition">Definition at line <a class="el" href="bluetooth_8h_source.html#l00026">26</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga577e99539136e802587b5517a2a664d5" name="ga577e99539136e802587b5517a2a664d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga577e99539136e802587b5517a2a664d5">&#9670;&#160;</a></span>SDev_InitEndpoint()</h2>
@@ -435,14 +491,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga27b915f25d1c1a7f86ea82a628c8ee13" name="ga27b915f25d1c1a7f86ea82a628c8ee13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga27b915f25d1c1a7f86ea82a628c8ee13">&#9670;&#160;</a></span>RamSDevApps()</h2>
+<a id="ga78bfad6c6c29c0265d21011b1ecd0e91" name="ga78bfad6c6c29c0265d21011b1ecd0e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78bfad6c6c29c0265d21011b1ecd0e91">&#9670;&#160;</a></span>RamSDevApps()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ** RamSDevApps </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_s_d_e_v___a_p_p">SDEV_APP</a> ** RamSDevApps </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -858,8 +914,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa56489c85aa39ec92d2c3f66ac0d2c49" name="gaa56489c85aa39ec92d2c3f66ac0d2c49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa56489c85aa39ec92d2c3f66ac0d2c49">&#9670;&#160;</a></span>SApp_Register()</h2>
+<a id="ga56ea649735dafcb57ee157097471d4fe" name="ga56ea649735dafcb57ee157097471d4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56ea649735dafcb57ee157097471d4fe">&#9670;&#160;</a></span>SApp_Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -872,7 +928,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>methods</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#struct_s_d_e_v___a_p_p">SDEV_APP</a> *</td>          <td class="paramname"><span class="paramname"><em>methods</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -888,8 +944,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga507af8f593c1049b3ada50742e862638" name="ga507af8f593c1049b3ada50742e862638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga507af8f593c1049b3ada50742e862638">&#9670;&#160;</a></span>ConnSDevSApp()</h2>
+<a id="gaf4c2ad198c15f2027d3fc32ccf93838f" name="gaf4c2ad198c15f2027d3fc32ccf93838f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4c2ad198c15f2027d3fc32ccf93838f">&#9670;&#160;</a></span>ConnSDevSApp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -907,7 +963,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -916,7 +972,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sdevice</td><td>device type (0..18 on NSG/ELKA, 0..16 on SG/X75) </td></tr>
-    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#ga56ea649735dafcb57ee157097471d4fe" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
     <tr><td class="paramname">connection_info</td><td>connection information passed to both sides </td></tr>
   </table>
   </dd>
@@ -925,8 +981,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga7c80dcfdea23250ae5fa2d12c4b6c9d7" name="ga7c80dcfdea23250ae5fa2d12c4b6c9d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c80dcfdea23250ae5fa2d12c4b6c9d7">&#9670;&#160;</a></span>CHConnSApp()</h2>
+<a id="ga2afa4411de51f5568daea2d8a5f1e9eb" name="ga2afa4411de51f5568daea2d8a5f1e9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2afa4411de51f5568daea2d8a5f1e9eb">&#9670;&#160;</a></span>CHConnSApp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -949,7 +1005,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -957,7 +1013,7 @@ Functions</h2></td></tr>
 <p>Move an open device connection from one SDev application to another. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handler_id</td><td>current application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">handler_id</td><td>current application number (see <a class="el" href="#ga56ea649735dafcb57ee157097471d4fe" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
     <tr><td class="paramname">instance</td><td>connection instance of the current application </td></tr>
     <tr><td class="paramname">new_handler_id</td><td>new application number; the current one returns 1 without changes </td></tr>
     <tr><td class="paramname">connection_info</td><td>connection information for the new application </td></tr>
@@ -990,7 +1046,7 @@ Functions</h2></td></tr>
 <p>Check whether an SDev application would accept a connection (opens and closes it again). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#ga56ea649735dafcb57ee157097471d4fe" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
     <tr><td class="paramname">instance</td><td>passed to the application's open method </td></tr>
   </table>
   </dd>
@@ -1060,14 +1116,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga84afc0dd90f5b9a0eea63e5f302bb303" name="ga84afc0dd90f5b9a0eea63e5f302bb303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga84afc0dd90f5b9a0eea63e5f302bb303">&#9670;&#160;</a></span>RamL2capChannelState()</h2>
+<a id="gaad20d936b144529300c9fac99492cf97" name="gaad20d936b144529300c9fac99492cf97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad20d936b144529300c9fac99492cf97">&#9670;&#160;</a></span>RamL2capChannelState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * RamL2capChannelState </td>
+          <td class="memname"><a class="el" href="#struct_l2_c_a_p___c_h_a_n_n_e_l">L2CAP_CHANNEL</a> * RamL2capChannelState </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1075,8 +1131,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the L2CAP channel state table. </p>
-<dl class="section return"><dt>Returns</dt><dd>channel state table </dd></dl>
+<p>Get the L2CAP channel table. </p>
+<dl class="section return"><dt>Returns</dt><dd>8 entries </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
 
 </div>
@@ -1253,16 +1309,16 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gac515e97ebb1281b2b0648afde72d10b4" name="gac515e97ebb1281b2b0648afde72d10b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac515e97ebb1281b2b0648afde72d10b4">&#9670;&#160;</a></span>CA_RemDev_New()</h2>
+<a id="ga3e6a2fa153a70927fc93f2f04beb469b" name="ga3e6a2fa153a70927fc93f2f04beb469b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e6a2fa153a70927fc93f2f04beb469b">&#9670;&#160;</a></span>CA_RemDev_New()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * CA_RemDev_New </td>
+          <td class="memname"><a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> * CA_RemDev_New </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>bd_addr</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t</td>          <td class="paramname"><span class="paramname"><em>bd_addr</em></span>[6]</td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1273,8 +1329,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0ca6578b6f4cdc1cb982afacd814cc3c" name="ga0ca6578b6f4cdc1cb982afacd814cc3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0ca6578b6f4cdc1cb982afacd814cc3c">&#9670;&#160;</a></span>CA_RemDev_Free()</h2>
+<a id="gab46cebe102cdd3826f836d34709c634e" name="gab46cebe102cdd3826f836d34709c634e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab46cebe102cdd3826f836d34709c634e">&#9670;&#160;</a></span>CA_RemDev_Free()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1282,7 +1338,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void CA_RemDev_Free </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>remdev</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> *</td>          <td class="paramname"><span class="paramname"><em>remdev</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1292,8 +1348,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3876b501f2d768a503efa4c69a137623" name="ga3876b501f2d768a503efa4c69a137623"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3876b501f2d768a503efa4c69a137623">&#9670;&#160;</a></span>CA_L2CAP_New()</h2>
+<a id="ga44f85169e6482780070ea1cea771fad6" name="ga44f85169e6482780070ea1cea771fad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44f85169e6482780070ea1cea771fad6">&#9670;&#160;</a></span>CA_L2CAP_New()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1306,7 +1362,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>remdev</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#gab2ea50cb13eac0caa6d181e5bc6733aa">CA_REMDEV</a> *</td>          <td class="paramname"><span class="paramname"><em>remdev</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

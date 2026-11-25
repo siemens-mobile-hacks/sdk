@@ -44,7 +44,7 @@ var group___g_b_s =
     [ "GBS_SendMessage", "group___g_b_s.html#ga82f00b61e57a70765cdbbc8d2efb189f", null ],
     [ "GBS_ReciveMessage", "group___g_b_s.html#gac7a3377cf275357cc1a037b54eab6352", null ],
     [ "GBS_RecActDstMessage", "group___g_b_s.html#gae99584ad2b71cf10cb600af9b9bf0e88", null ],
-    [ "GBS_GetMsgPayload", "group___g_b_s.html#ga0f8b941831defc3ca1eeff243d0b7b85", null ],
+    [ "GBS_GetMsgPayload", "group___g_b_s.html#ga4d58f9ce14891ca5c080a27addaabe3b", null ],
     [ "GBS_GetProcGroup", "group___g_b_s.html#gad1850807f0de118a07272088652a3713", null ],
     [ "MOPI_CreateMessage", "group___g_b_s.html#ga9231f9349e1cc357db8b36ea37f8551c", null ],
     [ "MOPI_PostMessage", "group___g_b_s.html#gaf7c9485503e771889cbe7a17402eb3b1", null ],

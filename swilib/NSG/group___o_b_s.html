@@ -114,6 +114,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_o_b_sevent" id="r_struct_o_b_sevent"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_o_b_sevent">OBSevent</a></td></tr>
 <tr class="memdesc:struct_o_b_sevent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event for <a class="el" href="#ga1430d097799a7eac1ce96127714c7921" title="Process async callbacks from GBS message.">Obs_TranslateMessageGBS</a>.  <a href="#struct_o_b_sevent">More...</a><br /></td></tr>
 <tr class="separator:struct_o_b_sevent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s" id="r_struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s">OBS_FILE_STREAM_METHODS</a></td></tr>
+<tr class="memdesc:struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method table of the Obs file streams (see <a class="el" href="#ga7fbf95a4972e1ebf879d286d9feae7df" title="Get the global method table of the Obs file streams, shared by all file stream objects.">RamObsFileStreamMethods</a>).  <a href="#struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s">More...</a><br /></td></tr>
+<tr class="separator:struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -121,6 +124,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gaf99da94b4d68f5ac64e3d2d1d2f6b3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2539dc717fce2372ff6fa9176a726d89" id="r_ga2539dc717fce2372ff6fa9176a726d89"><td class="memItemLeft" align="right" valign="top">typedef struct OBSevent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2539dc717fce2372ff6fa9176a726d89">OBSevent</a></td></tr>
 <tr class="separator:ga2539dc717fce2372ff6fa9176a726d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9963290636ab55804489ef6baac305db" id="r_ga9963290636ab55804489ef6baac305db"><td class="memItemLeft" align="right" valign="top">typedef struct OBS_FILE_STREAM_METHODS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9963290636ab55804489ef6baac305db">OBS_FILE_STREAM_METHODS</a></td></tr>
+<tr class="separator:ga9963290636ab55804489ef6baac305db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -155,7 +160,11 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#gga5996e1c5c62e6374c0a2fdbee807fdaea29c691ef42f1f730c8db59e2c52bac0a">OBS_EV_ResumeCon</a> = 0x18
 , <br />
-&#160;&#160;<a class="el" href="#gga5996e1c5c62e6374c0a2fdbee807fdaea7f975e944077dba9ceb6cd8a68eb296d">OBS_EV_EndList</a> = 0x2F
+&#160;&#160;<a class="el" href="#gga5996e1c5c62e6374c0a2fdbee807fdaeae9b05c6402c3352c72beee6d3c90e27c">OBS_EV_PrepareCon</a> = 0x34
+, <br />
+&#160;&#160;<a class="el" href="#gga5996e1c5c62e6374c0a2fdbee807fdaea2099570e619191534430653c882a7683">OBS_EV_GetCapabilityCon</a> = 0x36
+, <br />
+&#160;&#160;<a class="el" href="#gga5996e1c5c62e6374c0a2fdbee807fdaea7f975e944077dba9ceb6cd8a68eb296d">OBS_EV_EndList</a> = 0x57
 <br />
  }</td></tr>
 <tr class="memdesc:ga5996e1c5c62e6374c0a2fdbee807fdae"><td class="mdescLeft">&#160;</td><td class="mdescRight">OBS events for async mode.  <a href="#ga5996e1c5c62e6374c0a2fdbee807fdae">More...</a><br /></td></tr>
@@ -283,9 +292,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8ca79b72d47b20ab154cff148bb843c1" id="r_ga8ca79b72d47b20ab154cff148bb843c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8ca79b72d47b20ab154cff148bb843c1">Obs_MemFree</a> (void *ptr)</td></tr>
 <tr class="memdesc:ga8ca79b72d47b20ab154cff148bb843c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory allocated with <a class="el" href="#ga2e0d95ee830652fe85b795c8d112182f" title="Allocate memory from the Obs heap (the pool of the Obs file stream chunks).">Obs_MemAlloc</a>.  <br /></td></tr>
 <tr class="separator:ga8ca79b72d47b20ab154cff148bb843c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39bf4e11c89d73d6170ea519ea2cc03a" id="r_ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39bf4e11c89d73d6170ea519ea2cc03a">RamObsFileStreamMethods</a> (void)</td></tr>
-<tr class="memdesc:ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global method table of the Obs file streams (copied from flash at boot; every file stream object points to it, SG at +E8, ELKA at +FC).  <br /></td></tr>
-<tr class="separator:ga39bf4e11c89d73d6170ea519ea2cc03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fbf95a4972e1ebf879d286d9feae7df" id="r_ga7fbf95a4972e1ebf879d286d9feae7df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s">OBS_FILE_STREAM_METHODS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7fbf95a4972e1ebf879d286d9feae7df">RamObsFileStreamMethods</a> (void)</td></tr>
+<tr class="memdesc:ga7fbf95a4972e1ebf879d286d9feae7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global method table of the Obs file streams, shared by all file stream objects.  <br /></td></tr>
+<tr class="separator:ga7fbf95a4972e1ebf879d286d9feae7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="struct_o_b_sevent" id="struct_o_b_sevent"></a>
@@ -296,6 +305,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">struct OBSevent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s" id="struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s">&#9670;&#160;</a></span>OBS_FILE_STREAM_METHODS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct OBS_FILE_STREAM_METHODS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -335,6 +358,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga9963290636ab55804489ef6baac305db" name="ga9963290636ab55804489ef6baac305db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9963290636ab55804489ef6baac305db">&#9670;&#160;</a></span>OBS_FILE_STREAM_METHODS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct OBS_FILE_STREAM_METHODS OBS_FILE_STREAM_METHODS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00023">23</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga5996e1c5c62e6374c0a2fdbee807fdae" name="ga5996e1c5c62e6374c0a2fdbee807fdae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5996e1c5c62e6374c0a2fdbee807fdae">&#9670;&#160;</a></span>ObsEventID</h2>
@@ -365,10 +404,12 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaea9323428b2c50480b290266a37c72cfb7" name="gga5996e1c5c62e6374c0a2fdbee807fdaea9323428b2c50480b290266a37c72cfb7"></a>OBS_EV_StopCon&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaea5ca650f79bd0445acdab0a2f66c80ba1" name="gga5996e1c5c62e6374c0a2fdbee807fdaea5ca650f79bd0445acdab0a2f66c80ba1"></a>OBS_EV_PauseCon&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaea29c691ef42f1f730c8db59e2c52bac0a" name="gga5996e1c5c62e6374c0a2fdbee807fdaea29c691ef42f1f730c8db59e2c52bac0a"></a>OBS_EV_ResumeCon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaeae9b05c6402c3352c72beee6d3c90e27c" name="gga5996e1c5c62e6374c0a2fdbee807fdaeae9b05c6402c3352c72beee6d3c90e27c"></a>OBS_EV_PrepareCon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaea2099570e619191534430653c882a7683" name="gga5996e1c5c62e6374c0a2fdbee807fdaea2099570e619191534430653c882a7683"></a>OBS_EV_GetCapabilityCon&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga5996e1c5c62e6374c0a2fdbee807fdaea7f975e944077dba9ceb6cd8a68eb296d" name="gga5996e1c5c62e6374c0a2fdbee807fdaea7f975e944077dba9ceb6cd8a68eb296d"></a>OBS_EV_EndList&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00035">35</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00036">36</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
 
 </div>
 </div>
@@ -1047,7 +1088,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00262">262</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00290">290</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1129,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 or error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00272">272</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="swilib_2obs_8h_source.html#l00300">300</a> of file <a class="el" href="swilib_2obs_8h_source.html">obs.h</a>.</p>
 
 </div>
 </div>
@@ -1680,14 +1721,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga39bf4e11c89d73d6170ea519ea2cc03a" name="ga39bf4e11c89d73d6170ea519ea2cc03a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39bf4e11c89d73d6170ea519ea2cc03a">&#9670;&#160;</a></span>RamObsFileStreamMethods()</h2>
+<a id="ga7fbf95a4972e1ebf879d286d9feae7df" name="ga7fbf95a4972e1ebf879d286d9feae7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fbf95a4972e1ebf879d286d9feae7df">&#9670;&#160;</a></span>RamObsFileStreamMethods()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ** RamObsFileStreamMethods </td>
+          <td class="memname"><a class="el" href="#struct_o_b_s___f_i_l_e___s_t_r_e_a_m___m_e_t_h_o_d_s">OBS_FILE_STREAM_METHODS</a> * RamObsFileStreamMethods </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1695,8 +1736,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the global method table of the Obs file streams (copied from flash at boot; every file stream object points to it, SG at +E8, ELKA at +FC). </p>
-<p>Slots: 0 destroy, 1 read, 2 write, 3 tell, 4 seek, 5 getc, 6 release, 7 push, 8 get, 9 size, 10 notify, 11 remain, 12 one (ELKA: 13 reopen). Swapping slots serves virtual files to the player (s65-mp3, radio). </p><dl class="section return"><dt>Returns</dt><dd>method table </dd></dl>
+<p>Get the global method table of the Obs file streams, shared by all file stream objects. </p>
+<p>Swapping methods serves virtual files to the player (s65-mp3, radio). </p><dl class="section return"><dt>Returns</dt><dd>method table </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On X75 the table may have more methods than declared. </dd></dl>
 
 </div>
 </div>

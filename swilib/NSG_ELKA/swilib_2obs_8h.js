@@ -2,6 +2,7 @@ var swilib_2obs_8h =
 [
     [ "HObj", "group___o_b_s.html#gaf99da94b4d68f5ac64e3d2d1d2f6b3ef", null ],
     [ "OBSevent", "group___o_b_s.html#ga2539dc717fce2372ff6fa9176a726d89", null ],
+    [ "OBS_FILE_STREAM_METHODS", "group___o_b_s.html#ga9963290636ab55804489ef6baac305db", null ],
     [ "ObsEventID", "group___o_b_s.html#ga5996e1c5c62e6374c0a2fdbee807fdae", [
       [ "OBS_EV_NO_MSG", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaead8fcbc47728f1e63dbd49e0245d7e386", null ],
       [ "OBS_EV_GetInfoCon", "group___o_b_s.html#gga5996e1c5c62e6374c0a2fdbee807fdaea24113e2cbdc04ccde5b86be13a2064e5", null ],
@@ -62,5 +63,5 @@ var swilib_2obs_8h =
     [ "Obs_GetUserPointer", "group___o_b_s.html#ga157c1afbede86aa4050d1e0c09d45c14", null ],
     [ "Obs_MemAlloc", "group___o_b_s.html#ga2e0d95ee830652fe85b795c8d112182f", null ],
     [ "Obs_MemFree", "group___o_b_s.html#ga8ca79b72d47b20ab154cff148bb843c1", null ],
-    [ "RamObsFileStreamMethods", "group___o_b_s.html#ga39bf4e11c89d73d6170ea519ea2cc03a", null ]
+    [ "RamObsFileStreamMethods", "group___o_b_s.html#ga7fbf95a4972e1ebf879d286d9feae7df", null ]
 ];

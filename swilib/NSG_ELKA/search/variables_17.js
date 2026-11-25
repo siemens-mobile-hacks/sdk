@@ -23,7 +23,7 @@ var searchData=
   ['wpend_5ftot_20',['wpend_tot',['../ssl2_8h.html#ac50b123c8bdeb713b84a0e479f4d1eb5',1,'ssl2_state_st::wpend_tot'],['../ssl3_8h.html#ab5e408a79cde9fbe60437e28f6294dc5',1,'ssl3_state_st::wpend_tot']]],
   ['wpend_5ftype_21',['wpend_type',['../ssl3_8h.html#a9433855d8d8f5ee9e388e8ab942b6306',1,'ssl3_state_st']]],
   ['wrec_22',['wrec',['../ssl3_8h.html#ab3e2700e58172be629db1f2af7ef510a',1,'ssl3_state_st']]],
-  ['write_23',['write',['../group___file.html#a31fac26836358542f6eea26707ae8234',1,'FS_OPS']]],
+  ['write_23',['write',['../group___file.html#a31fac26836358542f6eea26707ae8234',1,'FS_OPS::write'],['../group___o_b_s.html#acc0efd516763edc2630669cf9008a63d',1,'OBS_FILE_STREAM_METHODS::write']]],
   ['write16_24',['write16',['../group___file.html#a32aa914719590be5559dc457ef1881c2',1,'FS_OPS']]],
   ['write_5fdata_5ffn_25',['write_data_fn',['../builtin_2png_8h.html#acc53cd87f0ffc4d1f67da7e10a94af39',1,'png_struct_def']]],
   ['write_5fhash_26',['write_hash',['../ssl_8h.html#a88564246f9467cd43110b55276ea3c48',1,'ssl_st']]],

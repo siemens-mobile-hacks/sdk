@@ -139,6 +139,17 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga887c43e70c99ce34df2f7fd13d8278ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6b1a35c597b76fe6af020a30262c183" id="r_gab6b1a35c597b76fe6af020a30262c183"><td class="memItemLeft" align="right" valign="top">typedef struct LIGHT_PARAM&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6b1a35c597b76fe6af020a30262c183">LIGHT_PARAM</a></td></tr>
 <tr class="separator:gab6b1a35c597b76fe6af020a30262c183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf14c1373a514d7bed205a9e2f7898d0" id="r_gaaf14c1373a514d7bed205a9e2f7898d0"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_RECORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf14c1373a514d7bed205a9e2f7898d0">SEXIT_RECORD</a></td></tr>
+<tr class="separator:gaaf14c1373a514d7bed205a9e2f7898d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b29eca9661b07c26b0983fa841fcb00" id="r_ga5b29eca9661b07c26b0983fa841fcb00"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_HOOKS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b29eca9661b07c26b0983fa841fcb00">SEXIT_HOOKS</a></td></tr>
+<tr class="separator:ga5b29eca9661b07c26b0983fa841fcb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea6c15f811a197349156fc07fed2b117" id="r_gaea6c15f811a197349156fc07fed2b117"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_STATE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea6c15f811a197349156fc07fed2b117">SEXIT_STATE</a></td></tr>
+<tr class="separator:gaea6c15f811a197349156fc07fed2b117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf61ee27b3bb8207c269a0416bd7a0789" id="r_gaf61ee27b3bb8207c269a0416bd7a0789"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_RECORDS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf61ee27b3bb8207c269a0416bd7a0789">SEXIT_RECORDS</a></td></tr>
+<tr class="separator:gaf61ee27b3bb8207c269a0416bd7a0789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1124cdc2333773659ce73fb884bfb2a" id="r_gac1124cdc2333773659ce73fb884bfb2a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac1124cdc2333773659ce73fb884bfb2a">SEXIT_HANDLER</a>) (<a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d">SEXIT_RECORD</a> *record)</td></tr>
+<tr class="memdesc:gac1124cdc2333773659ce73fb884bfb2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit record handler.  <br /></td></tr>
+<tr class="separator:gac1124cdc2333773659ce73fb884bfb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -239,53 +250,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gae1894c9b92dbc06702bc07493c4d7141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessories.  <a href="#gae1894c9b92dbc06702bc07493c4d7141">More...</a><br /></td></tr>
 <tr class="separator:gae1894c9b92dbc06702bc07493c4d7141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Other functions</h2></td></tr>
-<tr class="memitem:gaaf14c1373a514d7bed205a9e2f7898d0" id="r_gaaf14c1373a514d7bed205a9e2f7898d0"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_RECORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf14c1373a514d7bed205a9e2f7898d0">SEXIT_RECORD</a></td></tr>
-<tr class="memdesc:gaaf14c1373a514d7bed205a9e2f7898d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit record: what the firmware saves on a fatal exit ("Exit Info") or a warning.  <br /></td></tr>
-<tr class="separator:gaaf14c1373a514d7bed205a9e2f7898d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1124cdc2333773659ce73fb884bfb2a" id="r_gac1124cdc2333773659ce73fb884bfb2a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac1124cdc2333773659ce73fb884bfb2a">SEXIT_HANDLER</a>) (<a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d">SEXIT_RECORD</a> *record)</td></tr>
-<tr class="memdesc:gac1124cdc2333773659ce73fb884bfb2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit record handler.  <br /></td></tr>
-<tr class="separator:gac1124cdc2333773659ce73fb884bfb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5b29eca9661b07c26b0983fa841fcb00" id="r_ga5b29eca9661b07c26b0983fa841fcb00"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_HOOKS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b29eca9661b07c26b0983fa841fcb00">SEXIT_HOOKS</a></td></tr>
-<tr class="memdesc:ga5b29eca9661b07c26b0983fa841fcb00"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).  <br /></td></tr>
-<tr class="separator:ga5b29eca9661b07c26b0983fa841fcb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea6c15f811a197349156fc07fed2b117" id="r_gaea6c15f811a197349156fc07fed2b117"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_STATE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea6c15f811a197349156fc07fed2b117">SEXIT_STATE</a></td></tr>
-<tr class="memdesc:gaea6c15f811a197349156fc07fed2b117"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit state.  <br /></td></tr>
-<tr class="separator:gaea6c15f811a197349156fc07fed2b117"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf61ee27b3bb8207c269a0416bd7a0789" id="r_gaf61ee27b3bb8207c269a0416bd7a0789"><td class="memItemLeft" align="right" valign="top">typedef struct SEXIT_RECORDS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf61ee27b3bb8207c269a0416bd7a0789">SEXIT_RECORDS</a></td></tr>
-<tr class="memdesc:gaf61ee27b3bb8207c269a0416bd7a0789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current SExit records (internal RAM).  <br /></td></tr>
-<tr class="separator:gaf61ee27b3bb8207c269a0416bd7a0789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e926ee85093d2070f285101c8815509" id="r_ga5e926ee85093d2070f285101c8815509"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s">SEXIT_HOOKS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e926ee85093d2070f285101c8815509">RamSExitHooks</a> (void)</td></tr>
-<tr class="memdesc:ga5e926ee85093d2070f285101c8815509"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit handler table (see <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a>).  <br /></td></tr>
-<tr class="separator:ga5e926ee85093d2070f285101c8815509"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12e255d7dffe8d387305d9d33d0459b8" id="r_ga12e255d7dffe8d387305d9d33d0459b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e">SEXIT_STATE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12e255d7dffe8d387305d9d33d0459b8">RamSExitState</a> (void)</td></tr>
-<tr class="memdesc:ga12e255d7dffe8d387305d9d33d0459b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit state (see <a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e" title="SExit state.">SEXIT_STATE</a>).  <br /></td></tr>
-<tr class="separator:ga12e255d7dffe8d387305d9d33d0459b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7447155be5adfdea07071ae6dda1e8d6" id="r_ga7447155be5adfdea07071ae6dda1e8d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s">SEXIT_RECORDS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7447155be5adfdea07071ae6dda1e8d6">RamSExitRecords</a> (void)</td></tr>
-<tr class="memdesc:ga7447155be5adfdea07071ae6dda1e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>) in internal RAM.  <br /></td></tr>
-<tr class="separator:ga7447155be5adfdea07071ae6dda1e8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa6f32e75eccde289092d9e6e8b59a6ef" id="r_gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa6f32e75eccde289092d9e6e8b59a6ef">SExit</a> (int code, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *module, int type, int param)</td></tr>
-<tr class="memdesc:gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fatal SExit ("default" exit): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone.  <br /></td></tr>
-<tr class="separator:gaa6f32e75eccde289092d9e6e8b59a6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
-<tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>
-<tr class="separator:ga4a20e4d245e664ef2df0ca82f864be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga912b218cc7bbfadee40de173539e405f" id="r_ga912b218cc7bbfadee40de173539e405f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga912b218cc7bbfadee40de173539e405f">ShowNativeMenu</a> ()</td></tr>
-<tr class="memdesc:ga912b218cc7bbfadee40de173539e405f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open NativeMenu.  <br /></td></tr>
-<tr class="separator:ga912b218cc7bbfadee40de173539e405f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2ec5c39551bc6e08b46875e3f0d25d4" id="r_gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2ec5c39551bc6e08b46875e3f0d25d4">Devmenu_Config_IsCheckboxOff</a> (int checkbox_id)</td></tr>
-<tr class="memdesc:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get checkbox state from the devmenu.  <br /></td></tr>
-<tr class="separator:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a8fa635fa2e2a451b94e3a50c18bd06" id="r_ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a8fa635fa2e2a451b94e3a50c18bd06">GetShortcutRecordByName</a> (char *shortcut_name)</td></tr>
-<tr class="memdesc:ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get shortcut by shortcut name.  <br /></td></tr>
-<tr class="separator:ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9728c36cc15ce3d100a6910456b7dfbd" id="r_ga9728c36cc15ce3d100a6910456b7dfbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9728c36cc15ce3d100a6910456b7dfbd">GetFunctionPointer</a> (char *shortcut_name)</td></tr>
-<tr class="memdesc:ga9728c36cc15ce3d100a6910456b7dfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get shortcut by shortcut name.     <br /></td></tr>
-<tr class="separator:ga9728c36cc15ce3d100a6910456b7dfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42c043e1eda0a6a15f09b5bee5fed21a" id="r_ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42c043e1eda0a6a15f09b5bee5fed21a">StartNativeBrowserCore</a> ()</td></tr>
-<tr class="memdesc:ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize Openwave browser.  <br /></td></tr>
-<tr class="separator:ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Control</h2></td></tr>
 <tr class="memitem:ga618e25b6c8787fd8b9fabcf48ff9bf3f" id="r_ga618e25b6c8787fd8b9fabcf48ff9bf3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga618e25b6c8787fd8b9fabcf48ff9bf3f">SwitchPhoneOff</a> ()</td></tr>
@@ -430,6 +394,38 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ga6d00f862e0913db8db85d8a75494ac60" id="r_ga6d00f862e0913db8db85d8a75494ac60"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d00f862e0913db8db85d8a75494ac60">IsAnyOfAccessoriesConnected</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> enum <a class="el" href="#gae1894c9b92dbc06702bc07493c4d7141">Accessory</a> *accessory_ids, uint8_t count)</td></tr>
 <tr class="memdesc:ga6d00f862e0913db8db85d8a75494ac60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any accessory from the list is connected.  <br /></td></tr>
 <tr class="separator:ga6d00f862e0913db8db85d8a75494ac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Other functions</h2></td></tr>
+<tr class="memitem:ga5e926ee85093d2070f285101c8815509" id="r_ga5e926ee85093d2070f285101c8815509"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s">SEXIT_HOOKS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e926ee85093d2070f285101c8815509">RamSExitHooks</a> (void)</td></tr>
+<tr class="memdesc:ga5e926ee85093d2070f285101c8815509"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit handler table (see <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a>).  <br /></td></tr>
+<tr class="separator:ga5e926ee85093d2070f285101c8815509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12e255d7dffe8d387305d9d33d0459b8" id="r_ga12e255d7dffe8d387305d9d33d0459b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e">SEXIT_STATE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12e255d7dffe8d387305d9d33d0459b8">RamSExitState</a> (void)</td></tr>
+<tr class="memdesc:ga12e255d7dffe8d387305d9d33d0459b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SExit state (see <a class="el" href="#struct_s_e_x_i_t___s_t_a_t_e" title="SExit state.">SEXIT_STATE</a>).  <br /></td></tr>
+<tr class="separator:ga12e255d7dffe8d387305d9d33d0459b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7447155be5adfdea07071ae6dda1e8d6" id="r_ga7447155be5adfdea07071ae6dda1e8d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s">SEXIT_RECORDS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7447155be5adfdea07071ae6dda1e8d6">RamSExitRecords</a> (void)</td></tr>
+<tr class="memdesc:ga7447155be5adfdea07071ae6dda1e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current SExit records (see <a class="el" href="#struct_s_e_x_i_t___r_e_c_o_r_d_s" title="Current SExit records (internal RAM).">SEXIT_RECORDS</a>) in internal RAM.  <br /></td></tr>
+<tr class="separator:ga7447155be5adfdea07071ae6dda1e8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d00dace22fffe2e63d4e98855b8e2a8" id="r_ga6d00dace22fffe2e63d4e98855b8e2a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d00dace22fffe2e63d4e98855b8e2a8">SExit</a> (int code, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *module, int type, int param)</td></tr>
+<tr class="memdesc:ga6d00dace22fffe2e63d4e98855b8e2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fatal SExit ("default" exit): fills the current fatal record and jumps to the <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a> fatal handler, which by default saves Exit Info and restarts the phone.  <br /></td></tr>
+<tr class="separator:ga6d00dace22fffe2e63d4e98855b8e2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a20e4d245e664ef2df0ca82f864be81" id="r_ga4a20e4d245e664ef2df0ca82f864be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a20e4d245e664ef2df0ca82f864be81">ShowMainMenu</a> ()</td></tr>
+<tr class="memdesc:ga4a20e4d245e664ef2df0ca82f864be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open FlexMenu.  <br /></td></tr>
+<tr class="separator:ga4a20e4d245e664ef2df0ca82f864be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga912b218cc7bbfadee40de173539e405f" id="r_ga912b218cc7bbfadee40de173539e405f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga912b218cc7bbfadee40de173539e405f">ShowNativeMenu</a> ()</td></tr>
+<tr class="memdesc:ga912b218cc7bbfadee40de173539e405f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open NativeMenu.  <br /></td></tr>
+<tr class="separator:ga912b218cc7bbfadee40de173539e405f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2ec5c39551bc6e08b46875e3f0d25d4" id="r_gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2ec5c39551bc6e08b46875e3f0d25d4">Devmenu_Config_IsCheckboxOff</a> (int checkbox_id)</td></tr>
+<tr class="memdesc:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get checkbox state from the devmenu.  <br /></td></tr>
+<tr class="separator:gad2ec5c39551bc6e08b46875e3f0d25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a8fa635fa2e2a451b94e3a50c18bd06" id="r_ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a8fa635fa2e2a451b94e3a50c18bd06">GetShortcutRecordByName</a> (char *shortcut_name)</td></tr>
+<tr class="memdesc:ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get shortcut by shortcut name.  <br /></td></tr>
+<tr class="separator:ga5a8fa635fa2e2a451b94e3a50c18bd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9728c36cc15ce3d100a6910456b7dfbd" id="r_ga9728c36cc15ce3d100a6910456b7dfbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="#structshortcut">shortcut</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9728c36cc15ce3d100a6910456b7dfbd">GetFunctionPointer</a> (char *shortcut_name)</td></tr>
+<tr class="memdesc:ga9728c36cc15ce3d100a6910456b7dfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get shortcut by shortcut name.     <br /></td></tr>
+<tr class="separator:ga9728c36cc15ce3d100a6910456b7dfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42c043e1eda0a6a15f09b5bee5fed21a" id="r_ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42c043e1eda0a6a15f09b5bee5fed21a">StartNativeBrowserCore</a> ()</td></tr>
+<tr class="memdesc:ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize Openwave browser.  <br /></td></tr>
+<tr class="separator:ga42c043e1eda0a6a15f09b5bee5fed21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structshortcut" id="structshortcut"></a>
@@ -591,8 +587,55 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>SExit record: what the firmware saves on a fatal exit ("Exit Info") or a warning. </p>
-<p>Filled by the SExit call (code, module) and SWI 2/3 of the caller (registers, stack). </p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00023">23</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5b29eca9661b07c26b0983fa841fcb00" name="ga5b29eca9661b07c26b0983fa841fcb00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b29eca9661b07c26b0983fa841fcb00">&#9670;&#160;</a></span>SEXIT_HOOKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SEXIT_HOOKS SEXIT_HOOKS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00024">24</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+
+</div>
+</div>
+<a id="gaea6c15f811a197349156fc07fed2b117" name="gaea6c15f811a197349156fc07fed2b117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea6c15f811a197349156fc07fed2b117">&#9670;&#160;</a></span>SEXIT_STATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SEXIT_STATE SEXIT_STATE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00025">25</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf61ee27b3bb8207c269a0416bd7a0789" name="gaf61ee27b3bb8207c269a0416bd7a0789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf61ee27b3bb8207c269a0416bd7a0789">&#9670;&#160;</a></span>SEXIT_RECORDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct SEXIT_RECORDS SEXIT_RECORDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00026">26</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -611,56 +654,7 @@ Enumerations</h2></td></tr>
 <p>SExit record handler. </p>
 <p>The firmware jumps to it as a tail call: when it returns, the code that called SExit goes on. </p>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00598">598</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a id="ga5b29eca9661b07c26b0983fa841fcb00" name="ga5b29eca9661b07c26b0983fa841fcb00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5b29eca9661b07c26b0983fa841fcb00">&#9670;&#160;</a></span>SEXIT_HOOKS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct SEXIT_HOOKS SEXIT_HOOKS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler). </p>
-<p>By default they point to flash, so replace a pointer, not the word. </p><dl class="section warning"><dt>Warning</dt><dd>On S68v52 the table has the ELKA layout: pre at +0x0C, blacklist at +0x10. </dd></dl>
-
-</div>
-</div>
-<a id="gaea6c15f811a197349156fc07fed2b117" name="gaea6c15f811a197349156fc07fed2b117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaea6c15f811a197349156fc07fed2b117">&#9670;&#160;</a></span>SEXIT_STATE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct SEXIT_STATE SEXIT_STATE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>SExit state. </p>
-
-</div>
-</div>
-<a id="gaf61ee27b3bb8207c269a0416bd7a0789" name="gaf61ee27b3bb8207c269a0416bd7a0789"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf61ee27b3bb8207c269a0416bd7a0789">&#9670;&#160;</a></span>SEXIT_RECORDS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct SEXIT_RECORDS SEXIT_RECORDS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current SExit records (internal RAM). </p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00168">168</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -689,7 +683,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00026">26</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00032">32</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -713,7 +707,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00036">36</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00042">42</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -733,7 +727,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga61feef040f39ed4bd493659c43e31c2aa059f52d618e8baaa1ddf88ecaf663ebd" name="gga61feef040f39ed4bd493659c43e31c2aa059f52d618e8baaa1ddf88ecaf663ebd"></a>COUNTDOWN_TONE_ALERT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00072">72</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00078">78</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +780,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggae1894c9b92dbc06702bc07493c4d7141a910029251f5011ae501220a000649d42" name="ggae1894c9b92dbc06702bc07493c4d7141a910029251f5011ae501220a000649d42"></a>ACC_UNKNOWN_DEVICE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00080">80</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="misc_8h_source.html#l00086">86</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
 
 </div>
 </div>
@@ -1800,7 +1794,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>SExit handler table (see <a class="el" href="#struct_s_e_x_i_t___h_o_o_k_s" title="SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler).">SEXIT_HOOKS</a>). </p>
-<p>The fatal exit (<a class="el" href="#gaa6f32e75eccde289092d9e6e8b59a6ef" title="Fatal SExit (&quot;default&quot; exit): fills the current fatal record and jumps to the SEXIT_HOOKS fatal handl...">SExit</a>, also called from the CPU exception vectors) fills the current fatal record, calls *pre (if the table has it), then jumps to *fatal. The caller has run SWI 2 before: it continues in SYS mode with IRQ and FIQ disabled, the original CPSR is in record-&gt;regs.cpsr. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the table </dd></dl>
+<p>The fatal exit (<a class="el" href="#ga6d00dace22fffe2e63d4e98855b8e2a8" title="Fatal SExit (&quot;default&quot; exit): fills the current fatal record and jumps to the SEXIT_HOOKS fatal handl...">SExit</a>, also called from the CPU exception vectors) fills the current fatal record, calls *pre (if the table has it), then jumps to *fatal. The caller has run SWI 2 before: it continues in SYS mode with IRQ and FIQ disabled, the original CPSR is in record-&gt;regs.cpsr. </p><dl class="section return"><dt>Returns</dt><dd>pointer to the table </dd></dl>
 <dl class="section user"><dt>Available on platforms:</dt><dd>NSG, ELKA </dd></dl>
 
 </div>
@@ -1847,8 +1841,8 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa6f32e75eccde289092d9e6e8b59a6ef" name="gaa6f32e75eccde289092d9e6e8b59a6ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa6f32e75eccde289092d9e6e8b59a6ef">&#9670;&#160;</a></span>SExit()</h2>
+<a id="ga6d00dace22fffe2e63d4e98855b8e2a8" name="ga6d00dace22fffe2e63d4e98855b8e2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d00dace22fffe2e63d4e98855b8e2a8">&#9670;&#160;</a></span>SExit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1861,7 +1855,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> uint8_t *</td>          <td class="paramname"><span class="paramname"><em>module</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1978,7 +1972,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>function pointer</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_function" href="#ga5a8fa635fa2e2a451b94e3a50c18bd06">GetShortcutRecordByName</a>(<span class="stringliteral">&quot;ALARM_CLOCK&quot;</span>)-&gt;<a class="code hl_variable" href="#abd2dccd307232dc53db4fc6d1a9d585e">pointer</a>();</div>
-<div class="ttc" id="agroup___m_i_s_c_html_abd2dccd307232dc53db4fc6d1a9d585e"><div class="ttname"><a href="#abd2dccd307232dc53db4fc6d1a9d585e">shortcut::pointer</a></div><div class="ttdeci">shortcut_func pointer</div><div class="ttdoc">Function which is called by shortcut.</div><div class="ttdef"><b>Definition</b> <a href="misc_8h_source.html#l00047">misc.h:47</a></div></div>
+<div class="ttc" id="agroup___m_i_s_c_html_abd2dccd307232dc53db4fc6d1a9d585e"><div class="ttname"><a href="#abd2dccd307232dc53db4fc6d1a9d585e">shortcut::pointer</a></div><div class="ttdeci">shortcut_func pointer</div><div class="ttdoc">Function which is called by shortcut.</div><div class="ttdef"><b>Definition</b> <a href="misc_8h_source.html#l00053">misc.h:53</a></div></div>
 <div class="ttc" id="agroup___m_i_s_c_html_ga5a8fa635fa2e2a451b94e3a50c18bd06"><div class="ttname"><a href="#ga5a8fa635fa2e2a451b94e3a50c18bd06">GetShortcutRecordByName</a></div><div class="ttdeci">const shortcut * GetShortcutRecordByName(char *shortcut_name)</div><div class="ttdoc">Get shortcut by shortcut name.</div></div>
 </div><!-- fragment --> 
 </div>

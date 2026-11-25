@@ -54,5 +54,5 @@ var searchData=
   ['msg_5fid_51',['msg_id',['../group___g_b_s.html#a6eb75709a71e2c46d2fd28099a77aad2',1,'MOPI_MSG::msg_id'],['../group___settings.html#ab3d21ae091c384dc9165be2c6a085a2b',1,'REG_CLIENT::msg_id']]],
   ['mtime_5fdate_52',['mtime_date',['../group___file.html#ad0acbb8ed7b86464850b6d10a8ef32cd',1,'FSTATS']]],
   ['mtime_5ftime_53',['mtime_time',['../group___file.html#a2790a674407495780d629431183c8db5',1,'FSTATS']]],
-  ['mtu_54',['mtu',['../group___bluetooth.html#ae3a582b58ae3906555766571f0789731',1,'BTLP_CONN']]]
+  ['mtu_54',['mtu',['../group___g_p_r_s.html#a431a4be52a14f3518ecc1877a6da50bf',1,'ENIP_IP_DRIVER::mtu'],['../group___bluetooth.html#ae3a582b58ae3906555766571f0789731',1,'BTLP_CONN::mtu']]]
 ];

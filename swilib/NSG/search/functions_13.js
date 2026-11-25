@@ -2,7 +2,7 @@ var searchData=
 [
   ['s2i_5fasn1_5finteger_0',['s2i_ASN1_INTEGER',['../x509v3_8h.html#a5821f43eced5afe13eae2f507a213a70',1,'x509v3.h']]],
   ['s2i_5fasn1_5foctet_5fstring_1',['s2i_ASN1_OCTET_STRING',['../x509v3_8h.html#a1d8449952f60524bbd361e17bc1d4429',1,'x509v3.h']]],
-  ['sapp_5fregister_2',['SApp_Register',['../group___bluetooth.html#gaa56489c85aa39ec92d2c3f66ac0d2c49',1,'bluetooth.h']]],
+  ['sapp_5fregister_2',['SApp_Register',['../group___bluetooth.html#ga56ea649735dafcb57ee157097471d4fe',1,'bluetooth.h']]],
   ['savemaxillumination_3',['SaveMaxIllumination',['../group___settings.html#gabea52c427719b1c361a37c0001b898c7',1,'settings.h']]],
   ['screenh_4',['ScreenH',['../group___g_u_i.html#ga1af49e762cc8cb409903c03045cc34b7',1,'gui.h']]],
   ['screenshoot_5',['ScreenShoot',['../group___p_a_t_c_h.html#gaca89d2e7c8ad58a057376c68fe563f79',1,'patch.h']]],
@@ -94,7 +94,7 @@ var searchData=
   ['setvibrastatus_91',['SetVibraStatus',['../group___m_i_s_c.html#ga3f159b7365ea0575d532cc6cd6200385',1,'misc.h']]],
   ['setvibration_92',['SetVibration',['../group___m_i_s_c.html#ga84e082085e0997fe160b90b48f020f50',1,'misc.h']]],
   ['setwidgetrect_93',['SetWidgetRect',['../group___u_i.html#ga409cd36ed414581f4798ad50a757be13',1,'ui.h']]],
-  ['sexit_94',['SExit',['../group___m_i_s_c.html#gaa6f32e75eccde289092d9e6e8b59a6ef',1,'misc.h']]],
+  ['sexit_94',['SExit',['../group___m_i_s_c.html#ga6d00dace22fffe2e63d4e98855b8e2a8',1,'misc.h']]],
   ['sha_95',['SHA',['../sha_8h.html#a4dabbdb22fa4184cbd49ae23c3ee43f3',1,'sha.h']]],
   ['sha1_96',['SHA1',['../sha_8h.html#ab31f399922718f60c020da86108cdd21',1,'sha.h']]],
   ['sha1_5ffinal_97',['SHA1_Final',['../group___open_s_s_l.html#gac7a46e35da7d9de1fdfb6b05c308c586',1,'openssl.h']]],

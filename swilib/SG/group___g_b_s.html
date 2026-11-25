@@ -222,9 +222,9 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gae99584ad2b71cf10cb600af9b9bf0e88" id="r_gae99584ad2b71cf10cb600af9b9bf0e88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae99584ad2b71cf10cb600af9b9bf0e88">GBS_RecActDstMessage</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
 <tr class="memdesc:gae99584ad2b71cf10cb600af9b9bf0e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a message from the queue without auto-ACK.  <br /></td></tr>
 <tr class="separator:gae99584ad2b71cf10cb600af9b9bf0e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f8b941831defc3ca1eeff243d0b7b85" id="r_ga0f8b941831defc3ca1eeff243d0b7b85"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f8b941831defc3ca1eeff243d0b7b85">GBS_GetMsgPayload</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
-<tr class="memdesc:ga0f8b941831defc3ca1eeff243d0b7b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native payload view of a received GBS message.  <br /></td></tr>
-<tr class="separator:ga0f8b941831defc3ca1eeff243d0b7b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d58f9ce14891ca5c080a27addaabe3b" id="r_ga4d58f9ce14891ca5c080a27addaabe3b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d58f9ce14891ca5c080a27addaabe3b">GBS_GetMsgPayload</a> (<a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *msg)</td></tr>
+<tr class="memdesc:ga4d58f9ce14891ca5c080a27addaabe3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the payload of a received GBS message.  <br /></td></tr>
+<tr class="separator:ga4d58f9ce14891ca5c080a27addaabe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad1850807f0de118a07272088652a3713" id="r_gad1850807f0de118a07272088652a3713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_p_g_r_o_u_p">PGROUP</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad1850807f0de118a07272088652a3713">GBS_GetProcGroup</a> (int cepid)</td></tr>
 <tr class="memdesc:gad1850807f0de118a07272088652a3713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a GBS process group.  <br /></td></tr>
 <tr class="separator:gad1850807f0de118a07272088652a3713"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -816,14 +816,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0f8b941831defc3ca1eeff243d0b7b85" name="ga0f8b941831defc3ca1eeff243d0b7b85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f8b941831defc3ca1eeff243d0b7b85">&#9670;&#160;</a></span>GBS_GetMsgPayload()</h2>
+<a id="ga4d58f9ce14891ca5c080a27addaabe3b" name="ga4d58f9ce14891ca5c080a27addaabe3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d58f9ce14891ca5c080a27addaabe3b">&#9670;&#160;</a></span>GBS_GetMsgPayload()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ** GBS_GetMsgPayload </td>
+          <td class="memname">void * GBS_GetMsgPayload </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#struct_g_b_s___m_s_g">GBS_MSG</a> *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
           <td></td>
@@ -831,14 +831,14 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the native payload view of a received GBS message. </p>
+<p>Get the payload of a received GBS message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>received GBS message </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>firmware-owned payload view. Do not free or retain it after consuming the message </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the payload of the <a class="el" href="#struct_m_o_p_i___m_s_g" title="MOPI message header, the payload follows it.">MOPI_MSG</a> in data0 for a long message (bit 16 of msg on NSG/ELKA, bit 10 on SG/X75), otherwise &amp;msg-&gt;submess. It is freed with the message </dd></dl>
 
 </div>
 </div>
