@@ -791,7 +791,7 @@ __swi_end(0x48F, ENIP_PDP_START_CSD_INT_REQ, (bearer));
  * @param protocol	0, 17 (UDP) or 6 (TCP)
  * @param owner	owner, must not be NULL; meaning not known
  * @param param	passed to enip_sockh_create_internal; meaning not known
- * @param destination	LMAN socket destination (5 halfwords, see lman_get_socket_destination)
+ * @param destination	LMAN socket destination (5 halfwords, see #LMAN_GetSocketDestination)
  * @return socket ID, negative on error
  * */
 __swi_begin(0x490)
@@ -1029,63 +1029,42 @@ void LMAN_LINK_UP_CNF(void)
 __swi_end(0x4A6, LMAN_LINK_UP_CNF, ());
 
 /**
- * Register an application in the LMAN application table.
- * @param cepid	CEPID of the application process
- * @return application slot 0..13 (the existing one if already registered), 0xFFFF when the table is full
- * @note A full table also raises a firmware assertion.
- * */
-__swi_begin(0x4A7)
-uint16_t lman_app_register(uint16_t cepid)
-__swi_end(0x4A7, lman_app_register, (cepid));
-
-/**
- * Free an LMAN application slot.
- * @param slot	application slot
+ * Free an LMAN socket registration (see #RamSocketRegs).
+ * @param index	registration index
  * */
 __swi_begin(0x4A8)
-void lman_app_free(uint16_t slot)
-__swi_end(0x4A8, lman_app_free, (slot));
+void LMAN_FreeSocketReg(unsigned index)
+__swi_end(0x4A8, LMAN_FreeSocketReg, (index));
 
 /**
- * Set the bearer settings of an LMAN application.
- * @param slot	application slot (0..13)
- * @param settings	three halfwords: application flags (below 800), selector, meaning not known
- * @param callback	stored when nonzero; meaning not known
- * @return 1 OK, 0 error
- * */
-__swi_begin(0x4A9)
-int lman_app_set_bearer(uint16_t slot, const uint16_t *settings, int callback)
-__swi_end(0x4A9, lman_app_set_bearer, (slot, settings, callback));
-
-/**
- * Find the LMAN connection with the given bearer ID and key.
- * @param bearer	bearer ID
- * @param key	value at connection +4; meaning not known
- * @return connection ID (0..7), 0xFFFF when not found
+ * Find the LMAN context with the given bearer ID and key.
+ * @param bearer	bearer ID (see #LMAN_AllocContext)
+ * @param key	value at context +4; meaning not known
+ * @return context index 0..7, 0xFFFF when not found
  * */
 __swi_begin(0x4AA)
-uint16_t lman_get_active_connection_id(uint16_t bearer, uint16_t key)
-__swi_end(0x4AA, lman_get_active_connection_id, (bearer, key));
+uint16_t LMAN_FindContext(uint16_t bearer, uint16_t key)
+__swi_end(0x4AA, LMAN_FindContext, (bearer, key));
 
 /**
- * Get the bearer ID of an LMAN connection.
- * @param connection	connection ID (0..7)
- * @return bearer ID, 0xFF for an invalid connection
+ * Get the bearer ID of an LMAN context.
+ * @param cid	context index 0..7
+ * @return bearer ID, 0xFF for an invalid context (also raises a firmware assertion)
  * */
 __swi_begin(0x4AB)
-uint8_t lman_GetBearerIdForCi(uint16_t connection)
-__swi_end(0x4AB, lman_GetBearerIdForCi, (connection));
+uint8_t LMAN_GetBearerIdForCi(uint16_t cid)
+__swi_end(0x4AB, LMAN_GetBearerIdForCi, (cid));
 
 /**
  * Get where sockets of a process go: application flags, selector, bearer ID and interface index.
  * @param cepid	process ID
  * @param destination	receives the destination (8 bytes: u16 app_flags, u16 selector, u8 bearer_id,
  *	u8 unknown, u16 iface_index; 0xFF when the process has no connection)
- * @return 1 OK, 0 when the process has no LMAN application
+ * @return 1 OK, 0 when the process has no LMAN socket registration (see #RamSocketRegs)
  * */
 __swi_begin(0x4AC)
-int lman_get_socket_destination(uint16_t cepid, void *destination)
-__swi_end(0x4AC, lman_get_socket_destination, (cepid, destination));
+int LMAN_GetSocketDestination(uint16_t cepid, void *destination)
+__swi_end(0x4AC, LMAN_GetSocketDestination, (cepid, destination));
 
 /**
  * Initialise an empty ENIP double-linked list (two pointers: first, last).
@@ -1145,19 +1124,26 @@ int *GetGPRSTrafficPointer()
 __swi_end(0x070, GetGPRSTrafficPointer, ());
 
 /**
- * Find the LMAN socket registration of a process or take a free one (asserts when all 14 are used).
- * @return registration index 0..13
+ * Find the LMAN socket registration (see #RamSocketRegs) of a process or take a free one.
+ * @param cepid		CEPID of the process
+ * @return registration index 0..13, 0xFFFF when the table is full (also raises a firmware assertion)
  * */
 __swi_begin(0x4DF)
-unsigned LMAN_GetRegSlot(unsigned cepid)
-__swi_end(0x4DF, LMAN_GetRegSlot, (cepid));
+unsigned LMAN_GetOrAllocSocketRegIndex(unsigned cepid)
+__swi_end(0x4DF, LMAN_GetOrAllocSocketRegIndex, (cepid));
 
 /**
- * Fill a socket registration, as RegisterCepidForSocketWork does for the current process.
+ * Set the data of an LMAN socket registration, as #RegisterCepidForSocketWork does for the current process.
+ * @param index	registration index 0..13 (see #LMAN_GetOrAllocSocketRegIndex);
+ *				larger values raise a firmware assertion
+ * @param reg		registration data, the first field must be below 800
+ * @param keep		nonzero: keep the registration when the process releases its last context;
+ *				0 leaves this flag unchanged
+ * @return 1 OK, 0 error
  * */
 __swi_begin(0x4E0)
-int LMAN_FillReg(unsigned reg_index, const REGSOCKCEPID_DATA *reg, int on)
-__swi_end(0x4E0, LMAN_FillReg, (reg_index, reg, on));
+int LMAN_SetSocketReg(unsigned index, const REGSOCKCEPID_DATA *reg, int keep)
+__swi_end(0x4E0, LMAN_SetSocketReg, (index, reg, keep));
 
 /** @} */
 

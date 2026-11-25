@@ -16,6 +16,8 @@ __swilib_begin
 
 typedef struct SDEV SDEV;
 typedef struct SDEV_APP SDEV_APP;
+typedef struct JSAPI_CONN JSAPI_CONN;
+typedef struct BTLP_CONN BTLP_CONN;
 
 /**
  * SDev endpoint.
@@ -523,17 +525,19 @@ __swi_begin(0x4B7)
 int BTA_ServiceSearch_RetrieveServiceReq(int oh, uint32_t device, uint32_t record, void *param4, int param5, int tid)
 __swi_end(0x4B7, BTA_ServiceSearch_RetrieveServiceReq, (oh, device, record, param4, param5, tid));
 
+#endif
+
 /**
  * Find the JSApi (Java Bluetooth) slot of a connection handle.
  * @param conn		connection handle
- * @return slot index; when not registered, the number of slots (5 or 6, depends on the firmware)
+ * @return slot index; when not registered, the number of slots (firmware dependent)
  * */
 __swi_begin(0x4B8)
 uint32_t JSApi_CurrentHandleID(int conn)
 __swi_end(0x4B8, JSApi_CurrentHandleID, (conn));
 
 /**
- * Initialise the JSApi slots once and register JSApi as SDev application 0x0F.
+ * Initialise the JSApi slots once and register JSApi as an SDev application.
  * ARM code.
  * */
 __swi_begin(0x4B9)
@@ -544,23 +548,26 @@ __swi_end(0x4B9, JSApi_InitHandles, ());
  * Register a connection handle in a free JSApi slot.
  * @param conn		connection handle
  * @param packet	0: RFCOMM stream, 1: L2CAP packets
- * @param param3	stored in the slot; meaning not known, 0 works
- * @return 1 OK, 0 when the slots are full or the handle is invalid
+ * @param on_connect	called with conn when a device attaches, NULL = none (ignored on SG/X75)
+ * @return 1 OK, 0 when the handle is already registered or 0xFFFE (NSG/ELKA), or the slots are full
  * ARM code.
  * */
 __swi_begin(0x4BA)
-int JSApi_RegisterConHandle(int conn, uint32_t packet, uint32_t param3)
-__swi_end(0x4BA, JSApi_RegisterConHandle, (conn, packet, param3));
+int JSApi_RegisterConHandle(int conn, uint32_t packet, void (*on_connect)(int conn))
+__swi_end(0x4BA, JSApi_RegisterConHandle, (conn, packet, on_connect));
 
+#ifdef NEWSGOLD
 /**
  * Get the state of a JSApi connection.
  * @param conn		connection handle
- * @return state, 0: not registered (0 and 2: no connection)
+ * @return 3 device attached, 2 no device, 0 not registered
  * ARM code.
+ * @platforms NSG, ELKA
  * */
 __swi_begin(0x4BB)
 uint8_t JSApi_GetConnectionState(int conn)
 __swi_end(0x4BB, JSApi_GetConnectionState, (conn));
+#endif
 
 /**
  * Read received data of a JSApi connection. In packet mode reads one L2CAP packet.
@@ -599,7 +606,7 @@ __swi_end(0x4BE, JSApi_WriteBytes, (conn, data, size));
 /**
  * Free the JSApi slot of a connection handle and its receive buffer.
  * @param conn		connection handle
- * @return meaning not known
+ * @return 1 freed, 0 not registered
  * ARM code.
  * */
 __swi_begin(0x4BF)
@@ -607,7 +614,8 @@ int JSApi_ClearConnectionHandle(int conn)
 __swi_end(0x4BF, JSApi_ClearConnectionHandle, (conn));
 
 /**
- * Initialise the 9 L2CAP port devices (SAPI 0x0D..0x15).
+ * Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08..0x0B).
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C0)
 void BTLP_InitL2CAP_IO(void)
@@ -616,9 +624,10 @@ __swi_end(0x4C0, BTLP_InitL2CAP_IO, ());
 /**
  * Send data over an L2CAP port: one buffer per packet from the shared stack pool.
  * @param data		data
- * @param size		size in bytes; more than the channel maximum is a fatal error
- * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * @param size		size in bytes; on NSG/ELKA more than the channel maximum is a fatal error
+ * @param sapi		L2CAP port SAPI (see #BTLP_InitL2CAP_IO)
  * @return bytes queued, less than size when the pool is empty
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C1)
 int BTLP_uiSendDataOverBT(const void *data, uint32_t size, int sapi)
@@ -626,7 +635,8 @@ __swi_end(0x4C1, BTLP_uiSendDataOverBT, (data, size, sapi));
 
 /**
  * Deliver received packets queued on an L2CAP port to its application until it stops taking them.
- * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * @param sapi		L2CAP port SAPI (see #BTLP_InitL2CAP_IO)
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C2)
 void BTLP_vDataToAppCallback(int sapi)
@@ -635,7 +645,8 @@ __swi_end(0x4C2, BTLP_vDataToAppCallback, (sapi));
 /**
  * Drop the received packets queued on an L2CAP port.
  * @param mode		1 or 3 flushes, other values do nothing
- * @param sapi		L2CAP port SAPI (0x0D..0x15)
+ * @param sapi		L2CAP port SAPI (see #BTLP_InitL2CAP_IO)
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C3)
 void BTLP_vFlushBuffer(int mode, int sapi)
@@ -644,6 +655,7 @@ __swi_end(0x4C3, BTLP_vFlushBuffer, (mode, sapi));
 /**
  * L2CAP handler of the L2CA_ReadDataReq signal. Not reversed.
  * @param message	signal, meaning not known
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C4)
 void L2CA_ReadDataReq(const void *message)
@@ -651,7 +663,7 @@ __swi_end(0x4C4, L2CA_ReadDataReq, (message));
 
 /**
  * Register an SDev application (serial data endpoint) in the application table.
- * @param handler_id	application number (0..31)
+ * @param handler_id	application number (0..31 on NSG/ELKA, 0..26 on SG/X75)
  * @param methods	method table of the application
  * ARM code.
  * */
@@ -661,8 +673,8 @@ __swi_end(0x4C5, SApp_Register, (handler_id, methods));
 
 /**
  * Connect a serial device to an SDev application.
- * @param sdevice	device type (0..18)
- * @param handler_id	application number (0..31)
+ * @param sdevice	device type (0..18 on NSG/ELKA, 0..16 on SG/X75)
+ * @param handler_id	application number (see #SApp_Register)
  * @param connection_info	connection information passed to both sides
  * @return 1 OK, 0 when either side refuses
  * ARM code.
@@ -673,9 +685,9 @@ __swi_end(0x4C6, ConnSDevSApp, (sdevice, handler_id, connection_info));
 
 /**
  * Move an open device connection from one SDev application to another.
- * @param handler_id	current application number (0..31)
+ * @param handler_id	current application number (see #SApp_Register)
  * @param instance	connection instance of the current application
- * @param new_handler_id	new application number (0..31), not the current one
+ * @param new_handler_id	new application number; the current one returns 1 without changes
  * @param connection_info	connection information for the new application
  * @return 1 OK, 0 error
  * ARM code.
@@ -686,7 +698,7 @@ __swi_end(0x4C7, CHConnSApp, (handler_id, instance, new_handler_id, connection_i
 
 /**
  * Check whether an SDev application would accept a connection (opens and closes it again).
- * @param handler_id	application number (0..31)
+ * @param handler_id	application number (see #SApp_Register)
  * @param instance	passed to the application's open method
  * @return 1 yes, 0 no
  * ARM code.
@@ -697,35 +709,95 @@ __swi_end(0x4C8, Serial_CanOpenSApp, (handler_id, instance));
 
 /**
  * Initialise the SIM Access Profile server and register it as SDev application 0x13.
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x4C9)
 void Ca_SasSApp_Init(void)
 __swi_end(0x4C9, Ca_SasSApp_Init, ());
 
 /**
- * Get the JSApi (Java Bluetooth) connection list.
- * @return list head of the JSApi connection handles
+ * JSApi connection slot (see #RamJSApiConnections).
+ * */
+struct JSAPI_CONN {
+	uint16_t handle;				/**< Connection handle, 0xFFFE = free */
+#ifdef NEWSGOLD
+	uint8_t packet;					/**< 0: RFCOMM stream, 1: L2CAP packets */
+	uint8_t state;					/**< See #JSApi_GetConnectionState */
+	int unk_04;
+	int read_pending;				/**< A read callback is pending */
+	SDEV *sdev;						/**< Attached serial device */
+	int settings_pending;			/**< flags, xon_char and xoff_char are to be applied */
+	uint32_t flags;
+	uint8_t xon_char;
+	uint8_t xoff_char;
+	uint16_t unk_1A;
+	int unk_1C;
+	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
+	uint8_t unk_21[3];
+	uint8_t rx_buffer[0x5C];		/**< Receive ring buffer (the data block is allocated on registration) */
+	void (*on_connect)(int conn);	/**< See #JSApi_RegisterConHandle */
+#else
+	uint16_t dev_handle;			/**< Device handle, 0xFFFE = none */
+	uint32_t packet;				/**< 0: RFCOMM stream, 1: L2CAP packets */
+#ifdef X75
+	int handle_set;					/**< handle is registered */
+	int dev_handle_set;				/**< dev_handle is registered */
+	int unk_10;
+#else
+	int in_use;						/**< The slot is registered */
+	int unk_0C;
+#endif
+	int read_pending;				/**< A read callback is pending */
+	SDEV *sdev;						/**< Attached serial device */
+	int sdev_param;					/**< Passed to the device when it attaches */
+	int xon_char;
+	int xoff_char;
+	uint32_t flags;
+	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
+	uint8_t unk[3];
+#endif
+};
+
+/**
+ * Get the JSApi (Java Bluetooth) connection slots.
+ * @return slot array, #JSApi_CurrentHandleID returns the number of slots for an unregistered handle
  * */
 __swi_begin(0x84CA)
-void *RamJSApiConnections(void)
+JSAPI_CONN *RamJSApiConnections(void)
 __swi_end(0x84CA, RamJSApiConnections, ());
 
 /**
+ * BTLP connection (see #RamBtlpConnections). On SG/X75 the entry index is the channel number.
+ * */
+struct BTLP_CONN {
+	int conn;			/**< Connection handle, 0 = free */
+#ifdef NEWSGOLD
+	uint16_t mtu;		/**< Maximum packet size */
+	uint8_t type;		/**< Service type, selected by the PSM */
+	uint8_t channel;	/**< Channel number */
+#else
+	uint8_t type;		/**< Service type, selected by the PSM */
+	uint8_t unk[3];
+#endif
+};
+
+/**
  * Get the BTLP (Bluetooth L2CAP port) connection table.
- * @return connection table
+ * @return one entry per L2CAP port (see #BTLP_InitL2CAP_IO)
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x84CB)
-void *RamBtlpConnections(void)
+BTLP_CONN *RamBtlpConnections(void)
 __swi_end(0x84CB, RamBtlpConnections, ());
 
 /**
  * Get the L2CAP channel state table.
  * @return channel state table
+ * @note Only on models with Bluetooth.
  * */
 __swi_begin(0x84CC)
 void *RamL2capChannelState(void)
 __swi_end(0x84CC, RamL2capChannelState, ());
-#endif
 
 /* Bluetooth CA layer: objects, message replicators (MR),
  * L2CAP connections, the device list. */
