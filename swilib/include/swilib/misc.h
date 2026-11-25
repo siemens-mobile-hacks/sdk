@@ -19,6 +19,12 @@ __swilib_begin
 typedef int(*shortcut_func)(void);
 typedef struct shortcut shortcut;
 typedef struct LIGHT_PARAM LIGHT_PARAM;
+#ifdef NEWSGOLD
+typedef struct SEXIT_RECORD SEXIT_RECORD;
+typedef struct SEXIT_HOOKS SEXIT_HOOKS;
+typedef struct SEXIT_STATE SEXIT_STATE;
+typedef struct SEXIT_RECORDS SEXIT_RECORDS;
+#endif
 
 /**
  * Illumination device.
@@ -134,6 +140,71 @@ enum Accessory {
 #endif
 #endif
 };
+
+#ifdef NEWSGOLD
+/**
+ * SExit record: what the firmware saves on a fatal exit ("Exit Info") or a warning.
+ * Filled by the SExit call (code, module) and SWI 2/3 of the caller (registers, stack).
+ * */
+struct SEXIT_RECORD {
+	uint8_t type;				/**< 2 fatal exit, 3 warning, 7 CPU exception (code 0x203/0x205/0x206) */
+	uint8_t unk1;
+	uint16_t code;				/**< exit code; 0x2xx with module 0: CPU exception (0x205 data abort) */
+	uint16_t module;			/**< module id */
+	uint16_t param;				/**< 4th argument of the SExit call */
+	uint32_t pc;				/**< = regs.pc */
+	char text[32];				/**< extra text set before the call (often a file name or an address) */
+	char name[32];				/**< module name */
+	uint32_t stack[16];			/**< 64 bytes from the caller's stack pointer */
+	struct {
+		uint32_t r[13], sp, lr, pc, cpsr, spsr;
+	} regs;						/**< caller registers at the SWI 2/3 (CPU exception: at the fault) */
+};
+
+/**
+ * SExit record handler. The firmware jumps to it as a tail call: when it returns, the code that
+ * called SExit goes on.
+ * */
+typedef void (*SEXIT_HANDLER)(SEXIT_RECORD *record);
+
+/**
+ * SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler). By
+ * default they point to flash, so replace a pointer, not the word.
+ * @warning On S68v52 the table has the ELKA layout: pre at +0x0C, blacklist at +0x10.
+ * */
+struct SEXIT_HOOKS {
+	SEXIT_HANDLER *fatal;		/**< fatal exit: saves Exit Info and restarts the phone (never returns) */
+	SEXIT_HANDLER *warning;		/**< warning: saves the record and returns */
+	void *unk;
+#ifdef ELKA
+	void (**pre)(void);			/**< called before both, no handler by default */
+#endif
+	int blacklist;				/**< 1: check the module blacklist */
+};
+
+/**
+ * SExit state.
+ * */
+struct SEXIT_STATE {
+	uint8_t fatal_depth;		/**< fatal records in use (1-2), #SEXIT_RECORDS fatal is slot 1 or 2 */
+	uint8_t warning_depth;		/**< warning records in use */
+	uint16_t unk;
+	int fatal;					/**< result of the last exit check: 1 fatal, 0 warning */
+	int enabled;				/**< 0 (default): checked exits are only warnings */
+	int no_hooks;
+	int unk2;
+};
+
+/**
+ * Current SExit records (internal RAM).
+ * */
+struct SEXIT_RECORDS {
+	SEXIT_RECORD *fatal;
+	SEXIT_RECORD *warning;
+	SEXIT_RECORD fatal_slot[2];
+	SEXIT_RECORD warning_slot[2];
+};
+#endif
 
 /**
  * @name Control
@@ -572,69 +643,6 @@ __swi_end(0x3F9, IsAnyOfAccessoriesConnected, (accessory_ids, count));
  * */
 
 #ifdef NEWSGOLD
-/**
- * SExit record: what the firmware saves on a fatal exit ("Exit Info") or a warning.
- * Filled by the SExit call (code, module) and SWI 2/3 of the caller (registers, stack).
- * */
-typedef struct SEXIT_RECORD {
-	uint8_t type;				/**< 2 fatal exit, 3 warning, 7 CPU exception (code 0x203/0x205/0x206) */
-	uint8_t unk1;
-	uint16_t code;				/**< exit code; 0x2xx with module 0: CPU exception (0x205 data abort) */
-	uint16_t module;			/**< module id */
-	uint16_t param;				/**< 4th argument of the SExit call */
-	uint32_t pc;				/**< = regs.pc */
-	char text[32];				/**< extra text set before the call (often a file name or an address) */
-	char name[32];				/**< module name */
-	uint32_t stack[16];			/**< 64 bytes from the caller's stack pointer */
-	struct {
-		uint32_t r[13], sp, lr, pc, cpsr, spsr;
-	} regs;						/**< caller registers at the SWI 2/3 (CPU exception: at the fault) */
-} SEXIT_RECORD;
-
-/**
- * SExit record handler. The firmware jumps to it as a tail call: when it returns, the code that
- * called SExit goes on.
- * */
-typedef void (*SEXIT_HANDLER)(SEXIT_RECORD *record);
-
-/**
- * SExit handler table (pointers to the handler words, 0xFFFFFFFF in a word = no handler). By
- * default they point to flash, so replace a pointer, not the word.
- * @warning On S68v52 the table has the ELKA layout: pre at +0x0C, blacklist at +0x10.
- * */
-typedef struct SEXIT_HOOKS {
-	SEXIT_HANDLER *fatal;		/**< fatal exit: saves Exit Info and restarts the phone (never returns) */
-	SEXIT_HANDLER *warning;		/**< warning: saves the record and returns */
-	void *unk;
-#ifdef ELKA
-	void (**pre)(void);			/**< called before both, no handler by default */
-#endif
-	int blacklist;				/**< 1: check the module blacklist */
-} SEXIT_HOOKS;
-
-/**
- * SExit state.
- * */
-typedef struct SEXIT_STATE {
-	uint8_t fatal_depth;		/**< fatal records in use (1-2), #SEXIT_RECORDS fatal is slot 1 or 2 */
-	uint8_t warning_depth;		/**< warning records in use */
-	uint16_t unk;
-	int fatal;					/**< result of the last exit check: 1 fatal, 0 warning */
-	int enabled;				/**< 0 (default): checked exits are only warnings */
-	int no_hooks;
-	int unk2;
-} SEXIT_STATE;
-
-/**
- * Current SExit records (internal RAM).
- * */
-typedef struct SEXIT_RECORDS {
-	SEXIT_RECORD *fatal;
-	SEXIT_RECORD *warning;
-	SEXIT_RECORD fatal_slot[2];
-	SEXIT_RECORD warning_slot[2];
-} SEXIT_RECORDS;
-
 /**
  * SExit handler table (see #SEXIT_HOOKS). The fatal exit (#SExit, also called from the CPU exception vectors)
  * fills the current fatal record, calls *pre (if the table has it), then jumps to *fatal.

@@ -47,6 +47,77 @@ struct SDEV_APP {
 	int (*get_dev)(int index, int *inst);
 };
 
+/**
+ * JSApi connection slot (see #RamJSApiConnections).
+ * */
+struct JSAPI_CONN {
+	uint16_t handle;				/**< Connection handle, 0xFFFE = free */
+#ifdef NEWSGOLD
+	uint8_t packet;					/**< 0: RFCOMM stream, 1: L2CAP packets */
+	uint8_t state;					/**< See #JSApi_GetConnectionState */
+	int unk_04;
+	int read_pending;				/**< A read callback is pending */
+	SDEV *sdev;						/**< Attached serial device */
+	int settings_pending;			/**< flags, xon_char and xoff_char are to be applied */
+	uint32_t flags;
+	uint8_t xon_char;
+	uint8_t xoff_char;
+	uint16_t unk_1A;
+	int unk_1C;
+	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
+	uint8_t unk_21[3];
+	uint8_t rx_buffer[0x5C];		/**< Receive ring buffer (the data block is allocated on registration) */
+	void (*on_connect)(int conn);	/**< See #JSApi_RegisterConHandle */
+#else
+	uint16_t dev_handle;			/**< Device handle, 0xFFFE = none */
+	uint32_t packet;				/**< 0: RFCOMM stream, 1: L2CAP packets */
+#ifdef X75
+	int handle_set;					/**< handle is registered */
+	int dev_handle_set;				/**< dev_handle is registered */
+	int unk_10;
+#else
+	int in_use;						/**< The slot is registered */
+	int unk_0C;
+#endif
+	int read_pending;				/**< A read callback is pending */
+	SDEV *sdev;						/**< Attached serial device */
+	int sdev_param;					/**< Passed to the device when it attaches */
+	int xon_char;
+	int xoff_char;
+	uint32_t flags;
+	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
+	uint8_t unk[3];
+#endif
+};
+
+/**
+ * BTLP connection (see #RamBtlpConnections). On SG/X75 the entry index is the channel number.
+ * */
+struct BTLP_CONN {
+	int conn;			/**< Connection handle, 0 = free */
+#ifdef NEWSGOLD
+	uint16_t mtu;		/**< Maximum packet size */
+	uint8_t type;		/**< Service type, selected by the PSM */
+	uint8_t channel;	/**< Channel number */
+#else
+	uint8_t type;		/**< Service type, selected by the PSM */
+	uint8_t unk[3];
+#endif
+};
+
+/**
+ * L2CAP channel (see #RamL2capChannelState).
+ * */
+struct L2CAP_CHANNEL {
+	uint16_t cid;			/**< Local CID, 0x40 + entry index */
+	uint16_t unk_02;
+	uint16_t unk_04;
+	uint16_t unk_06;
+	uint16_t unk_08;
+	uint16_t sig;			/**< Signalling instance, 0xFFFF = none */
+	uint8_t unk_0C[12];
+};
+
 #ifdef NEWSGOLD
 /**
  * Create a Bluetooth accessor. Events are sent to the supplied CEPID.
@@ -722,70 +793,12 @@ void Ca_SasSApp_Init(void)
 __swi_end(0x4C9, Ca_SasSApp_Init, ());
 
 /**
- * JSApi connection slot (see #RamJSApiConnections).
- * */
-struct JSAPI_CONN {
-	uint16_t handle;				/**< Connection handle, 0xFFFE = free */
-#ifdef NEWSGOLD
-	uint8_t packet;					/**< 0: RFCOMM stream, 1: L2CAP packets */
-	uint8_t state;					/**< See #JSApi_GetConnectionState */
-	int unk_04;
-	int read_pending;				/**< A read callback is pending */
-	SDEV *sdev;						/**< Attached serial device */
-	int settings_pending;			/**< flags, xon_char and xoff_char are to be applied */
-	uint32_t flags;
-	uint8_t xon_char;
-	uint8_t xoff_char;
-	uint16_t unk_1A;
-	int unk_1C;
-	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
-	uint8_t unk_21[3];
-	uint8_t rx_buffer[0x5C];		/**< Receive ring buffer (the data block is allocated on registration) */
-	void (*on_connect)(int conn);	/**< See #JSApi_RegisterConHandle */
-#else
-	uint16_t dev_handle;			/**< Device handle, 0xFFFE = none */
-	uint32_t packet;				/**< 0: RFCOMM stream, 1: L2CAP packets */
-#ifdef X75
-	int handle_set;					/**< handle is registered */
-	int dev_handle_set;				/**< dev_handle is registered */
-	int unk_10;
-#else
-	int in_use;						/**< The slot is registered */
-	int unk_0C;
-#endif
-	int read_pending;				/**< A read callback is pending */
-	SDEV *sdev;						/**< Attached serial device */
-	int sdev_param;					/**< Passed to the device when it attaches */
-	int xon_char;
-	int xoff_char;
-	uint32_t flags;
-	uint8_t device_type;			/**< Type of the attached device, 0xFF = none */
-	uint8_t unk[3];
-#endif
-};
-
-/**
  * Get the JSApi (Java Bluetooth) connection slots.
  * @return slot array, #JSApi_CurrentHandleID returns the number of slots for an unregistered handle
  * */
 __swi_begin(0x84CA)
 JSAPI_CONN *RamJSApiConnections(void)
 __swi_end(0x84CA, RamJSApiConnections, ());
-
-/**
- * BTLP connection (see #RamBtlpConnections). On SG/X75 the entry index is the channel number.
- * */
-struct BTLP_CONN {
-	int conn;			/**< Connection handle, 0 = free */
-#ifdef NEWSGOLD
-	uint16_t mtu;		/**< Maximum packet size */
-	uint8_t type;		/**< Service type, selected by the PSM */
-	uint8_t channel;	/**< Channel number */
-#else
-	uint8_t type;		/**< Service type, selected by the PSM */
-	uint8_t unk[3];
-#endif
-};
 
 /**
  * Get the BTLP (Bluetooth L2CAP port) connection table.
@@ -795,19 +808,6 @@ struct BTLP_CONN {
 __swi_begin(0x84CB)
 BTLP_CONN *RamBtlpConnections(void)
 __swi_end(0x84CB, RamBtlpConnections, ());
-
-/**
- * L2CAP channel (see #RamL2capChannelState).
- * */
-struct L2CAP_CHANNEL {
-	uint16_t cid;			/**< Local CID, 0x40 + entry index */
-	uint16_t unk_02;
-	uint16_t unk_04;
-	uint16_t unk_06;
-	uint16_t unk_08;
-	uint16_t sig;			/**< Signalling instance, 0xFFFF = none */
-	uint8_t unk_0C[12];
-};
 
 /**
  * Get the L2CAP channel table.

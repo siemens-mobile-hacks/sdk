@@ -16,6 +16,17 @@
 
 __swilib_begin
 
+typedef struct JAVA_HEAP_SLOTS JAVA_HEAP_SLOTS;
+
+/**
+ * Java heap slots, allocated at the VM start and never freed by the firmware (see #RamJavaHeapSlots).
+ * */
+struct JAVA_HEAP_SLOTS {
+	void *heap[2];	/**< aligned heap start, NULL = slot free */
+	void *raw[2];	/**< block from malloc, to be freed with mfree */
+	int size[2];	/**< heap size */
+};
+
 /**
  * Get the name of the running Java application.
  *
@@ -60,15 +71,6 @@ __swi_end(0x283, runMidletLinkablely, (midlet, filename));
 __swi_begin(0x04B)
 void StartMidlet(char *midlet)
 __swi_end(0x04B, StartMidlet, (midlet));
-
-/**
- * Java heap slots, allocated at the VM start and never freed by the firmware (see #RamJavaHeapSlots).
- * */
-typedef struct JAVA_HEAP_SLOTS {
-	void *heap[2];	/**< aligned heap start, NULL = slot free */
-	void *raw[2];	/**< block from malloc, to be freed with mfree */
-	int size[2];	/**< heap size */
-} JAVA_HEAP_SLOTS;
 
 /**
  * "VM started" flag: 1 while the Java VM exists, cleared when the VM ends.

@@ -185,6 +185,106 @@ struct TWavLen {
 };
 
 /**
+ * File system driver methods (see #FS_DRIVER and #FS_DRIVE).
+ * async = 0 runs a method synchronously with req = -1; async = 1 answers with a message and req is a request tag.
+ * The FFS driver answers asynchronous calls with message 0x1A2 (see #FS_MemAlloc); err is NULL in that case.
+ * */
+struct FS_OPS {
+	int (*close)(int async, int fd, uint32_t *err, int req);
+	int (*fstat)(int async, int fd, FSTATS *stat, uint32_t *err, int req);
+	int (*fflush)(int async, int fd, uint32_t *err, int req);
+#ifdef NEWSGOLD
+	int (*format)(int async, int16_t drive, int param, uint32_t *err, int req);
+	int (*find_close)(int async, DIR_ENTRY *de, uint32_t *err, int req);
+	int (*get_file_attrib)(int async, const char *path, const WSHDR *wpath, uint8_t *attr, uint32_t *err, int req);
+	int (*get_free_space)(int async, int16_t drive, uint32_t *err, int req);
+	int (*find_first_file)(int async, DIR_ENTRY *de, const char *mask, const WSHDR *wmask, uint32_t *err, int req);
+	int (*find_next_file)(int async, DIR_ENTRY *de, uint32_t *err, int req);
+	int (*is_dir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
+	int (*mkdir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
+	int (*open)(int async, const char *path, const WSHDR *wpath, uint32_t mode, uint32_t perm, uint32_t *err, int req);
+	int (*read16)(int async, int fd, void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
+	int (*read)(int async, int fd, void *buf, int len, uint32_t *err, int req);
+	int (*rename)(int async, const char *old_path, const WSHDR *old_wpath, const char *new_path, const WSHDR *new_wpath,
+		uint32_t *err, int req);
+	int (*rmdir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
+	int (*lseek)(int async, int fd, int32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2, int req);
+	int (*set_file_attrib)(int async, const char *path, const WSHDR *wpath, uint8_t attr, uint32_t *err, int req);
+	int (*set_file_size)(int async, int fd, uint32_t size, uint32_t *err, int req);
+	int (*set_file_time)(int async, int fd, uint16_t date, uint16_t time, uint32_t *err, int req);
+	int (*stat)(int async, const char *path, const WSHDR *wpath, FSTATS *stat, uint32_t *err, int req);
+	int (*truncate)(int async, int fd, int length, uint32_t *err, int req);
+	int (*unlink)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
+	int (*mount)(int async, int16_t drive, uint32_t *err, int req);
+	int (*unmount)(int async, int16_t drive, uint32_t *err, int req);
+	int (*write16)(int async, int fd, const void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
+	int (*write)(int async, int fd, const void *buf, int len, uint32_t *err, int req);
+	void *unk_6C;
+	int (*get_drive_info)(int16_t drive, void *info);	/**< Fills a driver-specific drive info block */
+	int (*get_total_space)(int drive);
+	int (*unk_78)(int drive);
+	void *unk_7C;
+	void *unk_80;
+#else
+	int (*format)(int async, int16_t drive, uint32_t *err, int req);
+	int (*find_close)(int async, DIR_ENTRY *de, uint32_t *err, int req);
+	int (*get_file_attrib)(int async, const char *path, uint8_t *attr, uint32_t *err, int req);
+	int (*get_free_space)(int async, int16_t drive, uint32_t *err, int req);
+	int (*find_first_file)(int async, DIR_ENTRY *de, const char *mask, uint32_t *err, int req);
+	int (*find_next_file)(int async, DIR_ENTRY *de, uint32_t *err, int req);
+	int (*is_dir)(int async, const char *path, uint32_t *err, int req);
+	int (*mkdir)(int async, const char *path, uint32_t *err, int req);
+	int (*open)(int async, const char *path, uint32_t mode, uint32_t perm, uint32_t *err, int req);
+	int (*read16)(int async, int fd, void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
+	int (*rename)(int async, const char *old_path, const char *new_path, uint32_t *err, int req);
+	int (*rmdir)(int async, const char *path, uint32_t *err, int req);
+	int (*lseek)(int async, int fd, int32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2, int req);
+	int (*set_file_attrib)(int async, const char *path, uint8_t attr, uint32_t *err, int req);
+	int (*set_file_size)(int async, int fd, uint32_t size, uint32_t *err, int req);
+	int (*set_file_time)(int async, int fd, const void *datetime, uint32_t *err, int req);
+	int (*stat)(int async, const char *path, FSTATS *stat, uint32_t *err, int req);
+	int (*truncate)(int async, int fd, int length, uint32_t *err, int req);
+	int (*unlink)(int async, const char *path, uint32_t *err, int req);
+	void *unk_58;
+	int (*write16)(int async, int fd, const void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
+	int (*get_drive_info)(int16_t drive, void *info);	/**< Fills a driver-specific drive info block */
+	int (*get_total_space)(int drive);
+	int (*unk_68)(int drive);
+	void *unk_6C;
+	void *unk_70;
+#endif
+};
+
+/**
+ * File system driver (see #RamFsDrivers).
+ * */
+struct FS_DRIVER {
+	int used;				/**< Nonzero when the entry is registered */
+	int id;					/**< Driver ID */
+	int16_t first_handle;	/**< First file handle of the driver */
+	int16_t last_handle;	/**< Last file handle of the driver */
+	const FS_OPS *ops;		/**< Driver methods */
+};
+
+/**
+ * File system drive (see #RamFsDrives).
+ * */
+struct FS_DRIVE {
+	int used;			/**< Nonzero when the entry is registered */
+#ifdef NEWSGOLD
+	uint16_t letter;	/**< Drive letter */
+#else
+	uint8_t letter;		/**< Drive letter */
+	uint8_t alias;		/**< Alternative drive letter, 0 = none */
+#endif
+	int16_t drive;		/**< Drive number */
+	int driver_id;		/**< Driver ID, see #RamFsDrivers */
+	int unk1;
+	uint8_t unk2[4];
+	const FS_OPS *ops;	/**< Driver methods */
+};
+
+/**
  * Open the file.
  * @param path			path to the file
  * @param mode			bitmask from #FileAccessMode
@@ -709,88 +809,6 @@ void *FS_MemAlloc(int size)
 __swi_end(0x4E3, FS_MemAlloc, (size));
 
 /**
- * File system driver methods (see #FS_DRIVER and #FS_DRIVE).
- * async = 0 runs a method synchronously with req = -1; async = 1 answers with a message and req is a request tag.
- * The FFS driver answers asynchronous calls with message 0x1A2 (see #FS_MemAlloc); err is NULL in that case.
- * */
-struct FS_OPS {
-	int (*close)(int async, int fd, uint32_t *err, int req);
-	int (*fstat)(int async, int fd, FSTATS *stat, uint32_t *err, int req);
-	int (*fflush)(int async, int fd, uint32_t *err, int req);
-#ifdef NEWSGOLD
-	int (*format)(int async, int16_t drive, int param, uint32_t *err, int req);
-	int (*find_close)(int async, DIR_ENTRY *de, uint32_t *err, int req);
-	int (*get_file_attrib)(int async, const char *path, const WSHDR *wpath, uint8_t *attr, uint32_t *err, int req);
-	int (*get_free_space)(int async, int16_t drive, uint32_t *err, int req);
-	int (*find_first_file)(int async, DIR_ENTRY *de, const char *mask, const WSHDR *wmask, uint32_t *err, int req);
-	int (*find_next_file)(int async, DIR_ENTRY *de, uint32_t *err, int req);
-	int (*is_dir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
-	int (*mkdir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
-	int (*open)(int async, const char *path, const WSHDR *wpath, uint32_t mode, uint32_t perm, uint32_t *err, int req);
-	int (*read16)(int async, int fd, void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
-	int (*read)(int async, int fd, void *buf, int len, uint32_t *err, int req);
-	int (*rename)(int async, const char *old_path, const WSHDR *old_wpath, const char *new_path, const WSHDR *new_wpath,
-		uint32_t *err, int req);
-	int (*rmdir)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
-	int (*lseek)(int async, int fd, int32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2, int req);
-	int (*set_file_attrib)(int async, const char *path, const WSHDR *wpath, uint8_t attr, uint32_t *err, int req);
-	int (*set_file_size)(int async, int fd, uint32_t size, uint32_t *err, int req);
-	int (*set_file_time)(int async, int fd, uint16_t date, uint16_t time, uint32_t *err, int req);
-	int (*stat)(int async, const char *path, const WSHDR *wpath, FSTATS *stat, uint32_t *err, int req);
-	int (*truncate)(int async, int fd, int length, uint32_t *err, int req);
-	int (*unlink)(int async, const char *path, const WSHDR *wpath, uint32_t *err, int req);
-	int (*mount)(int async, int16_t drive, uint32_t *err, int req);
-	int (*unmount)(int async, int16_t drive, uint32_t *err, int req);
-	int (*write16)(int async, int fd, const void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
-	int (*write)(int async, int fd, const void *buf, int len, uint32_t *err, int req);
-	void *unk_6C;
-	int (*get_drive_info)(int16_t drive, void *info);	/**< Fills a driver-specific drive info block */
-	int (*get_total_space)(int drive);
-	int (*unk_78)(int drive);
-	void *unk_7C;
-	void *unk_80;
-#else
-	int (*format)(int async, int16_t drive, uint32_t *err, int req);
-	int (*find_close)(int async, DIR_ENTRY *de, uint32_t *err, int req);
-	int (*get_file_attrib)(int async, const char *path, uint8_t *attr, uint32_t *err, int req);
-	int (*get_free_space)(int async, int16_t drive, uint32_t *err, int req);
-	int (*find_first_file)(int async, DIR_ENTRY *de, const char *mask, uint32_t *err, int req);
-	int (*find_next_file)(int async, DIR_ENTRY *de, uint32_t *err, int req);
-	int (*is_dir)(int async, const char *path, uint32_t *err, int req);
-	int (*mkdir)(int async, const char *path, uint32_t *err, int req);
-	int (*open)(int async, const char *path, uint32_t mode, uint32_t perm, uint32_t *err, int req);
-	int (*read16)(int async, int fd, void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
-	int (*rename)(int async, const char *old_path, const char *new_path, uint32_t *err, int req);
-	int (*rmdir)(int async, const char *path, uint32_t *err, int req);
-	int (*lseek)(int async, int fd, int32_t offset, uint32_t origin, uint32_t *err, uint32_t *err2, int req);
-	int (*set_file_attrib)(int async, const char *path, uint8_t attr, uint32_t *err, int req);
-	int (*set_file_size)(int async, int fd, uint32_t size, uint32_t *err, int req);
-	int (*set_file_time)(int async, int fd, const void *datetime, uint32_t *err, int req);
-	int (*stat)(int async, const char *path, FSTATS *stat, uint32_t *err, int req);
-	int (*truncate)(int async, int fd, int length, uint32_t *err, int req);
-	int (*unlink)(int async, const char *path, uint32_t *err, int req);
-	void *unk_58;
-	int (*write16)(int async, int fd, const void *buf, int len, uint32_t *err, int req);	/**< 16-bit result */
-	int (*get_drive_info)(int16_t drive, void *info);	/**< Fills a driver-specific drive info block */
-	int (*get_total_space)(int drive);
-	int (*unk_68)(int drive);
-	void *unk_6C;
-	void *unk_70;
-#endif
-};
-
-/**
- * File system driver (see #RamFsDrivers).
- * */
-struct FS_DRIVER {
-	int used;				/**< Nonzero when the entry is registered */
-	int id;					/**< Driver ID */
-	int16_t first_handle;	/**< First file handle of the driver */
-	int16_t last_handle;	/**< Last file handle of the driver */
-	const FS_OPS *ops;		/**< Driver methods */
-};
-
-/**
  * Get the file system driver table.
  * @return 3 entries
  * @note Entry 0 is the default driver and uses the FFS methods; entries 1 and 2 are taken in registration order.
@@ -800,24 +818,6 @@ struct FS_DRIVER {
 __swi_begin(0x84E8)
 FS_DRIVER *RamFsDrivers(void)
 __swi_end(0x84E8, RamFsDrivers, ());
-
-/**
- * File system drive (see #RamFsDrives).
- * */
-struct FS_DRIVE {
-	int used;			/**< Nonzero when the entry is registered */
-#ifdef NEWSGOLD
-	uint16_t letter;	/**< Drive letter */
-#else
-	uint8_t letter;		/**< Drive letter */
-	uint8_t alias;		/**< Alternative drive letter, 0 = none */
-#endif
-	int16_t drive;		/**< Drive number */
-	int driver_id;		/**< Driver ID, see #RamFsDrivers */
-	int unk1;
-	uint8_t unk2[4];
-	const FS_OPS *ops;	/**< Driver methods */
-};
 
 /**
  * Get the file system drive table.
