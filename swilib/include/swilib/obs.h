@@ -20,6 +20,7 @@ __swilib_begin
 
 typedef int HObj;
 typedef struct OBSevent OBSevent;
+typedef struct OBS_FILE_STREAM_METHODS OBS_FILE_STREAM_METHODS;
 
 /**
  * Event for #Obs_TranslateMessageGBS
@@ -52,13 +53,40 @@ enum ObsEventID {
 	OBS_EV_PrepareCon			= 0x35,
 	OBS_EV_GetCapabilityCon		= 0x37,
 	OBS_EV_EndList				= 0x66,
-#elif defined(ELKA)
+#elif defined(NEWSGOLD)
 	OBS_EV_PrepareCon			= 0x34,
 	OBS_EV_GetCapabilityCon		= 0x36,
 	OBS_EV_EndList				= 0x57,
 #else
 	OBS_EV_EndList				= 0x2F,
 #endif	
+};
+
+/**
+ * Method table of the Obs file streams (see #RamObsFileStreamMethods). `stream` is the file stream object.
+ * */
+struct OBS_FILE_STREAM_METHODS {
+	void (*destroy)(void *stream, int last);				/**< last: the stream is the last in its chain */
+	int (*read)(void *buf, int len, void *stream);			/**< Returns bytes read */
+	int (*write)(const void *buf, int len, void *stream);	/**< Returns bytes written */
+	void *tell;
+	int (*seek)(void *stream, int offset, int whence);		/**< whence 0 = from start; 0 = error */
+	int16_t (*read_char)(void *stream);						/**< Negative = error. NULL on EL71 */
+	void *release;
+	int (*push)(const void *buf, int len, void *stream);	/**< Returns bytes written */
+	int (*get)(void *stream, void **chunk, int *size, int *eof);	/**< chunk: free with #Obs_MemFree; 0 = OK */
+	void *size;
+	void *notify;
+	void *remain;
+	void *one;
+#if defined(NEWSGOLD) || defined(X75)
+	int (*reopen)(void *src, void *stream);					/**< Called for a copy of src; 0 = OK */
+#endif
+#ifdef X75
+	void (*unk_38)(void *stream, void *buf, int offset, int len);
+	void *unk_3C;
+	void (*unk_40)(void *stream);
+#endif
 };
 
 /**
@@ -471,14 +499,13 @@ void Obs_MemFree(void *ptr)
 __swi_end(0x4E6, Obs_MemFree, (ptr));
 
 /**
- * Get the global method table of the Obs file streams (copied from flash at boot; every file stream object
- * points to it, SG at +E8, ELKA at +FC).
- * Slots: 0 destroy, 1 read, 2 write, 3 tell, 4 seek, 5 getc, 6 release, 7 push, 8 get, 9 size, 10 notify,
- * 11 remain, 12 one (ELKA: 13 reopen). Swapping slots serves virtual files to the player (s65-mp3, radio).
+ * Get the global method table of the Obs file streams, shared by all file stream objects.
+ * Swapping methods serves virtual files to the player (s65-mp3, radio).
  * @return method table
+ * @note On X75 the table may have more methods than declared.
  * */
 __swi_begin(0x84E7)
-void **RamObsFileStreamMethods(void)
+OBS_FILE_STREAM_METHODS *RamObsFileStreamMethods(void)
 __swi_end(0x84E7, RamObsFileStreamMethods, ());
 
 /*

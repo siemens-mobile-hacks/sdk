@@ -679,7 +679,7 @@ __swi_end(0x845D, RamSExitRecords, ());
  * @platforms NSG, ELKA
  * */
 __swi_begin(0x45E)
-void SExit(int code, const void *module, int type, int param)
+void SExit(int code, const uint8_t *module, int type, int param)
 __swi_end(0x45E, SExit, (code, module, type, param));
 #endif
 
