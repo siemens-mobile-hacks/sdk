@@ -2,6 +2,7 @@
 
 #ifndef __IN_SWILIB__
 #include "base.h"
+#include "gprs.h"
 #endif
 
 __swilib_begin
@@ -372,7 +373,7 @@ __swi_end(0x43A, listen, (sock, backlog));
  * @return 0 on success, native ENIP error code otherwise
  * */
 __swi_begin(0x443)
-int ENIP_GetNativeSocket(int sock, void **native)
+int ENIP_GetNativeSocket(int sock, ENIP_SOCKET **native)
 __swi_end(0x443, ENIP_GetNativeSocket, (sock, native));
 
 __swilib_end

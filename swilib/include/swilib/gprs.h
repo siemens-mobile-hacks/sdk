@@ -22,6 +22,22 @@ typedef struct NAP_PARAM_CONT NAP_PARAM_CONT;
 typedef struct LMAN_DATA LMAN_DATA;
 typedef struct LMAN_SOCKET_REG LMAN_SOCKET_REG;
 typedef struct LMAN_CONTEXT LMAN_CONTEXT;
+typedef struct LMAN_SOCKET_DESTINATION LMAN_SOCKET_DESTINATION;
+typedef struct ENIP_ZDLL_ITEM ENIP_ZDLL_ITEM;
+typedef struct ENIP_ZDLL_HEAD ENIP_ZDLL_HEAD;
+typedef struct ENIP_MODULE ENIP_MODULE;
+typedef struct ENIP_PORT ENIP_PORT;
+typedef struct ENIP_PKT ENIP_PKT;
+typedef struct ENIP_TIMER ENIP_TIMER;
+typedef struct ENIP_NSAPI_MODULE ENIP_NSAPI_MODULE;
+typedef struct ENIP_IP_DRIVER ENIP_IP_DRIVER;
+typedef struct ENIP_IPH_INTERFACE ENIP_IPH_INTERFACE;
+typedef struct ENIP_SOCKET_DESTINATION ENIP_SOCKET_DESTINATION;
+
+/**
+ * ENIP socket. Its layout differs between NSG/ELKA and SG/X75.
+ * */
+typedef struct ENIP_SOCKET ENIP_SOCKET;
 
 /**
  * LinkManager GBS events.
@@ -95,6 +111,162 @@ struct LMAN_CONTEXT {
 	uint8_t unk_6C;
 	uint8_t unk_6D[3];
 #endif
+};
+
+/**
+ * Where sockets of a process go (see #LMAN_GetSocketDestination).
+ * */
+struct LMAN_SOCKET_DESTINATION {
+	uint16_t app_flags;		/**< See #REGSOCKCEPID_DATA */
+	uint16_t selector;		/**< See #REGSOCKCEPID_DATA */
+	uint8_t bearer;			/**< Bearer ID, 0xFF = no context */
+	uint8_t unk_05;
+	uint16_t iface;			/**< Interface index */
+};
+
+/**
+ * Socket destination passed to #enip_sock_create.
+ * */
+struct ENIP_SOCKET_DESTINATION {
+	uint16_t cepid;			/**< Owner process */
+	uint16_t app_flags;		/**< See #LMAN_SOCKET_DESTINATION */
+	uint16_t selector;		/**< See #LMAN_SOCKET_DESTINATION */
+	uint8_t bearer;			/**< See #LMAN_SOCKET_DESTINATION */
+	uint8_t unk_07;
+	uint16_t iface;			/**< See #LMAN_SOCKET_DESTINATION */
+};
+
+/**
+ * ENIP list item, the first field of a listed object.
+ * */
+struct ENIP_ZDLL_ITEM {
+	void *next;
+	void *prev;
+};
+
+/**
+ * ENIP list (see #zDLL_Init).
+ * */
+struct ENIP_ZDLL_HEAD {
+	void *first;
+	void *last;
+};
+
+/**
+ * ENIP network module (see #ENIP_ModuleInit). IP and NSAPI modules keep their #ENIP_PORT right after it.
+ * */
+struct ENIP_MODULE {
+	uint8_t state;							/**< Bits 7..6: 2 = up, 0 = down */
+	uint8_t unk_01[3];
+	int (*up)(ENIP_MODULE *module);
+	void (*down)(ENIP_MODULE *module, uint32_t reason);
+	void (*run)(ENIP_MODULE *module);
+	void (*notify)(ENIP_MODULE *module, int event);
+	int need_post_run;
+	void (*post_run)(ENIP_MODULE *module);
+	void (*packet_available)(ENIP_MODULE *module, uint8_t pool);
+	int run_posted;
+	int running;
+	char name[10];
+	uint8_t unk_32[2];
+	ENIP_ZDLL_HEAD timers;					/**< See #ENIP_TIMER */
+	ENIP_ZDLL_HEAD ports;					/**< See #ENIP_PORT */
+};
+
+/**
+ * ENIP port: packet input of a module (see #ENIP_PortInit).
+ * */
+struct ENIP_PORT {
+	ENIP_ZDLL_ITEM item;					/**< In the port list of the module */
+	ENIP_MODULE *module;					/**< Owning module */
+	void (*callback)(ENIP_PORT *port, ENIP_PKT *packet);	/**< Default #enip_port_handle_pkt */
+	ENIP_ZDLL_HEAD packets;					/**< Queued packets */
+};
+
+/**
+ * ENIP packet header (see #ENIP_PacketAlloc). The buffer follows it.
+ * */
+struct ENIP_PKT {
+	ENIP_ZDLL_ITEM item;
+	uint8_t *data;							/**< Current data */
+	uint8_t *transport;						/**< Transport header, set by the IP layer */
+	uint8_t *buffer;						/**< Start of the buffer */
+	uint32_t unk_14;
+	uint32_t size;							/**< Data size */
+	uint32_t allocation_size;				/**< Buffer size */
+#ifdef NEWSGOLD
+	uint8_t pool[4];						/**< Pools of the owners, [0] = allocating pool */
+	uint8_t ref_count;
+	uint8_t bearer;							/**< Receiving bearer ID */
+	uint16_t iface;							/**< Receiving interface index */
+#else
+	uint8_t pool;							/**< Allocating pool */
+	uint8_t ref_count;
+	uint8_t bearer;							/**< Receiving bearer ID */
+	uint8_t unk_23;
+	uint16_t iface;							/**< Receiving interface index */
+	uint16_t unk_26;
+#endif
+	uint8_t unk_28[28];
+};
+
+/**
+ * ENIP timer (see #enip_timer_init).
+ * */
+struct ENIP_TIMER {
+	ENIP_ZDLL_ITEM item;					/**< In the timer list of the module */
+	ENIP_MODULE *module;
+	uint32_t start;							/**< Start tick */
+	uint32_t timeout;
+	int active;
+};
+
+/**
+ * ENIP NSAPI module (see #enip_nsapi_init_module).
+ * */
+struct ENIP_NSAPI_MODULE {
+	ENIP_MODULE module;
+	ENIP_PORT port;
+	ENIP_PORT *ip_port;						/**< Input port of the IP layer */
+	ENIP_ZDLL_HEAD unk_60;
+	uint32_t unk_68;
+	uint32_t unk_6C;
+};
+
+/**
+ * ENIP IP driver: the network side of an interface (see #ENIP_RegisterDriver).
+ * */
+struct ENIP_IP_DRIVER {
+	ENIP_PORT *port_tx;						/**< Port of the driver for outgoing packets */
+	uint32_t local_ip;						/**< IPv4 address */
+	uint32_t dns1;
+	uint32_t dns2;
+	uint8_t ip_version;						/**< 4 */
+	uint8_t unk_11[3];
+	uint32_t mtu;
+	uint8_t headroom;						/**< Bytes reserved before the IP header */
+	uint8_t tailroom;						/**< Bytes reserved after the data */
+	uint8_t unk_1A[2];
+	ENIP_MODULE *module;					/**< Module of the driver */
+	ENIP_PORT *port_rx;						/**< Input port of the IP layer, set by #ENIP_RegisterDriver */
+	uint8_t bearer;							/**< Bearer ID, 0xFF = none */
+	uint8_t unk_25;
+	uint16_t iface;							/**< Interface index */
+#ifdef NEWSGOLD
+	uint32_t unk_28;						/**< Set by #ENIP_RegisterDriver */
+#endif
+};
+
+/**
+ * ENIP IP interface: a registered driver (see #ENIP_FindInterface).
+ * */
+struct ENIP_IPH_INTERFACE {
+	ENIP_IP_DRIVER driver;					/**< Copy of the registered driver */
+	uint16_t unk1;
+	uint16_t unk2;
+	ENIP_ZDLL_HEAD sockets;
+	uint16_t next_port;						/**< Next local port for automatic binding */
+	uint8_t unk3[10];
 };
 
 /**
@@ -417,7 +589,10 @@ __swi_end(0x44F, WSP_GetConnectionState, (bearer, nap));
  * @param packet_available	called when a packet is queued on the module port
  * */
 __swi_begin(0x464)
-void ENIP_ModuleInit(void *module, const char *name, void *up, void *down, void *run, void *notify, void *post_run, void *packet_available)
+void ENIP_ModuleInit(ENIP_MODULE *module, const char *name, int (*up)(ENIP_MODULE *module),
+	void (*down)(ENIP_MODULE *module, uint32_t reason), void (*run)(ENIP_MODULE *module),
+	void (*notify)(ENIP_MODULE *module, int event), void (*post_run)(ENIP_MODULE *module),
+	void (*packet_available)(ENIP_MODULE *module, uint8_t pool))
 __swi_end(0x464, ENIP_ModuleInit, (module, name, up, down, run, notify, post_run, packet_available));
 
 /**
@@ -427,7 +602,7 @@ __swi_end(0x464, ENIP_ModuleInit, (module, name, up, down, run, notify, post_run
  * @return module state
  * */
 __swi_begin(0x465)
-uint8_t ENIP_ModuleRun(void *module, uint32_t *result)
+uint8_t ENIP_ModuleRun(ENIP_MODULE *module, uint32_t *result)
 __swi_end(0x465, ENIP_ModuleRun, (module, result));
 
 /**
@@ -436,7 +611,7 @@ __swi_end(0x465, ENIP_ModuleRun, (module, result));
  * @return result code
  * */
 __swi_begin(0x466)
-int ENIP_ModuleUp(void *module)
+int ENIP_ModuleUp(ENIP_MODULE *module)
 __swi_end(0x466, ENIP_ModuleUp, (module));
 
 /**
@@ -445,7 +620,7 @@ __swi_end(0x466, ENIP_ModuleUp, (module));
  * @param reason	reason code, 0: normal
  * */
 __swi_begin(0x467)
-void ENIP_ModuleDown(void *module, uint32_t reason)
+void ENIP_ModuleDown(ENIP_MODULE *module, uint32_t reason)
 __swi_end(0x467, ENIP_ModuleDown, (module, reason));
 
 /**
@@ -454,7 +629,7 @@ __swi_end(0x467, ENIP_ModuleDown, (module, reason));
  * @param module	owning module
  * */
 __swi_begin(0x468)
-void ENIP_PortInit(void *port, void *module)
+void ENIP_PortInit(ENIP_PORT *port, ENIP_MODULE *module)
 __swi_end(0x468, ENIP_PortInit, (port, module));
 
 /**
@@ -463,7 +638,7 @@ __swi_end(0x468, ENIP_PortInit, (port, module));
  * @param packet	packet from ENIP_PacketAlloc
  * */
 __swi_begin(0x469)
-void ENIP_PortSend(void *port, void *packet)
+void ENIP_PortSend(ENIP_PORT *port, ENIP_PKT *packet)
 __swi_end(0x469, ENIP_PortSend, (port, packet));
 
 /**
@@ -476,7 +651,7 @@ __swi_end(0x469, ENIP_PortSend, (port, packet));
  * @return packet, or NULL if no memory
  * */
 __swi_begin(0x46A)
-void *ENIP_PacketAlloc(void *module, int size, uint32_t pool, int offset, int quota)
+ENIP_PKT *ENIP_PacketAlloc(ENIP_MODULE *module, int size, uint32_t pool, int offset, int quota)
 __swi_end(0x46A, ENIP_PacketAlloc, (module, size, pool, offset, quota));
 
 /**
@@ -484,7 +659,7 @@ __swi_end(0x46A, ENIP_PacketAlloc, (module, size, pool, offset, quota));
  * @param packet	packet from ENIP_PacketAlloc
  * */
 __swi_begin(0x46B)
-void ENIP_PacketFree(void *packet)
+void ENIP_PacketFree(ENIP_PKT *packet)
 __swi_end(0x46B, ENIP_PacketFree, (packet));
 
 /**
@@ -492,10 +667,9 @@ __swi_end(0x46B, ENIP_PacketFree, (packet));
  * @param driver	driver object: ports, addresses, DNS, MTU, bearer and interface index
  * @param flags		0 (ignored on SG/X75)
  * @return 1: success
- * @note The driver object is 0x2C bytes on NSG/ELKA and 0x28 bytes on SG/X75.
  * */
 __swi_begin(0x46C)
-int ENIP_RegisterDriver(void *driver, int flags)
+int ENIP_RegisterDriver(ENIP_IP_DRIVER *driver, int flags)
 __swi_end(0x46C, ENIP_RegisterDriver, (driver, flags));
 
 /**
@@ -503,7 +677,7 @@ __swi_end(0x46C, ENIP_RegisterDriver, (driver, flags));
  * @param module	module of the registered driver
  * */
 __swi_begin(0x46D)
-void ENIP_UnregisterDriver(void *module)
+void ENIP_UnregisterDriver(ENIP_MODULE *module)
 __swi_end(0x46D, ENIP_UnregisterDriver, (module));
 
 /**
@@ -513,7 +687,7 @@ __swi_end(0x46D, ENIP_UnregisterDriver, (module));
  * @return interface object, or NULL
  * */
 __swi_begin(0x46E)
-void *ENIP_FindInterface(uint32_t bearer, uint16_t iface)
+ENIP_IPH_INTERFACE *ENIP_FindInterface(uint32_t bearer, uint16_t iface)
 __swi_end(0x46E, ENIP_FindInterface, (bearer, iface));
 
 /**
@@ -532,15 +706,15 @@ __swi_end(0x46F, LMAN_AttachInterface, (cid, iface, unk));
  * @return removed item, or NULL if the list is empty
  * */
 __swi_begin(0x470)
-void *ENIP_ListRemoveHead(void *list)
-__swi_end(0x470, ENIP_ListRemoveHead, (list));
+void *zDLL_RemHead(ENIP_ZDLL_HEAD *list)
+__swi_end(0x470, zDLL_RemHead, (list));
 
 /**
  * Get the GPRS PDP driver table (the DNS resolver takes servers for bearer 1 from it).
- * @return driver entries (0x2C bytes on NSG/ELKA, 0x28 on SG/X75): +4 local IP, +8 DNS 1, +C DNS 2
+ * @return driver entries
  * */
 __swi_begin(0x8471)
-void *RamPdpDrivers(void)
+ENIP_IP_DRIVER *RamPdpDrivers(void)
 __swi_end(0x8471, RamPdpDrivers, ());
 
 /**
@@ -549,7 +723,7 @@ __swi_end(0x8471, RamPdpDrivers, ());
  * @param module	ENIP module
  * */
 __swi_begin(0x472)
-void enip_module_post_run(void *module)
+void enip_module_post_run(ENIP_MODULE *module)
 __swi_end(0x472, enip_module_post_run, (module));
 
 /**
@@ -557,7 +731,7 @@ __swi_end(0x472, enip_module_post_run, (module));
  * @param module	NSAPI module
  * */
 __swi_begin(0x473)
-void enip_module_nsapi_post_init(void *module)
+void enip_module_nsapi_post_init(ENIP_NSAPI_MODULE *module)
 __swi_end(0x473, enip_module_nsapi_post_init, (module));
 
 /**
@@ -566,7 +740,7 @@ __swi_end(0x473, enip_module_nsapi_post_init, (module));
  * @param packet	ENIP packet
  * */
 __swi_begin(0x474)
-void enip_port_handle_pkt(void *port, void *packet)
+void enip_port_handle_pkt(ENIP_PORT *port, ENIP_PKT *packet)
 __swi_end(0x474, enip_port_handle_pkt, (port, packet));
 
 /**
@@ -601,16 +775,16 @@ __swi_end(0x477, enip_packet_max_size, ());
  * @return 1
  * */
 __swi_begin(0x478)
-int enip_ip_init(void *post_run)
+int enip_ip_init(void (*post_run)(ENIP_MODULE *module))
 __swi_end(0x478, enip_ip_init, (post_run));
 
 /**
  * Find the IP interface whose registered driver belongs to the same module as the given driver.
  * @param driver	ENIP IP driver
- * @return IP interface (its driver part), NULL when not found
+ * @return IP interface, NULL when not found
  * */
 __swi_begin(0x479)
-void *enip_find_iface_by_driver(void *driver)
+ENIP_IPH_INTERFACE *enip_find_iface_by_driver(ENIP_IP_DRIVER *driver)
 __swi_end(0x479, enip_find_iface_by_driver, (driver));
 
 /**
@@ -620,7 +794,7 @@ __swi_end(0x479, enip_find_iface_by_driver, (driver));
  * @param size	packet size in bytes
  * */
 __swi_begin(0x47A)
-void enip_iph_calc_chk_and_port_send(void **port, void *packet, uint32_t size)
+void enip_iph_calc_chk_and_port_send(ENIP_PORT **port, ENIP_PKT *packet, uint32_t size)
 __swi_end(0x47A, enip_iph_calc_chk_and_port_send, (port, packet, size));
 
 /**
@@ -637,10 +811,10 @@ __swi_end(0x47B, enip_iph_compute_checksum, (seed, data, size));
 /**
  * Find the IP interface whose bearer ID and interface index equal the socket's LMAN destination.
  * @param socket	ENIP socket
- * @return IP interface (its driver part), NULL when not found
+ * @return IP interface, NULL when not found
  * */
 __swi_begin(0x47C)
-void *enip_iph_find_IF_for_socket(void *socket)
+ENIP_IPH_INTERFACE *enip_iph_find_IF_for_socket(ENIP_SOCKET *socket)
 __swi_end(0x47C, enip_iph_find_IF_for_socket, (socket));
 
 /**
@@ -649,7 +823,7 @@ __swi_end(0x47C, enip_iph_find_IF_for_socket, (socket));
  * @param packet	ENIP packet
  * */
 __swi_begin(0x47D)
-void enip_iph_frame_read(void *packet)
+void enip_iph_frame_read(ENIP_PKT *packet)
 __swi_end(0x47D, enip_iph_frame_read, (packet));
 
 /**
@@ -664,7 +838,8 @@ __swi_end(0x47D, enip_iph_frame_read, (packet));
  * @return complete packet, 0 while fragments are missing
  * */
 __swi_begin(0x47E)
-int enip_iph_manage_reassembly(void *iface, void *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)
+int enip_iph_manage_reassembly(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet, uint8_t *header, uint32_t total_size,
+	uint32_t header_size, uint32_t fragment, int source)
 __swi_end(0x47E, enip_iph_manage_reassembly, (iface, packet, header, total_size, header_size, fragment, source));
 
 /**
@@ -687,7 +862,7 @@ __swi_end(0x480, enip_iph_rheader_init, (slot));
  * @param module	IP module
  * */
 __swi_begin(0x481)
-void enip_iph_run(void *module)
+void enip_iph_run(ENIP_MODULE *module)
 __swi_end(0x481, enip_iph_run, (module));
 
 /**
@@ -698,48 +873,48 @@ __swi_end(0x481, enip_iph_run, (module));
  * @return 0 when a packet was given
  * */
 __swi_begin(0x482)
-int enip_iph_write(void *port, void *packet, uint32_t size)
+int enip_iph_write(ENIP_PORT **port, ENIP_PKT *packet, uint32_t size)
 __swi_end(0x482, enip_iph_write, (port, packet, size));
 
 /**
  * Receive handler of the secure IP layer: answers a special 8-byte UDP probe in place.
  * Only partly reversed.
- * @param module	ENIP module
+ * @param iface	receiving IP interface
  * @param packet	ENIP packet
  * @return meaning not known
  * */
 __swi_begin(0x483)
-int enip_siph_crypt_frame_read(void *module, void *packet)
-__swi_end(0x483, enip_siph_crypt_frame_read, (module, packet));
+int enip_siph_crypt_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)
+__swi_end(0x483, enip_siph_crypt_frame_read, (iface, packet));
 
 /**
  * Find the IP interface with the given local address.
  * @param address	local IPv4 address, network byte order
- * @return IP interface (its driver part), NULL when not found
+ * @return IP interface, NULL when not found
  * */
 __swi_begin(0x484)
-void *enip_siph_find_IF(int address)
+ENIP_IPH_INTERFACE *enip_siph_find_IF(int address)
 __swi_end(0x484, enip_siph_find_IF, (address));
 
 /**
  * Process a received ICMP packet and release it.
  * Replies to echo requests (type 8) and handles destination unreachable messages (type 3); other types are dropped.
- * @param module	ENIP module
+ * @param iface	receiving IP interface
  * @param packet	ENIP packet, data at the ICMP header
  * @note NSG/ELKA also handle source quench (type 4), time exceeded (type 11) and parameter problem (type 12).
  * */
 __swi_begin(0x485)
-void enip_icmp_frame_read(void *module, void *packet)
-__swi_end(0x485, enip_icmp_frame_read, (module, packet));
+void enip_icmp_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)
+__swi_end(0x485, enip_icmp_frame_read, (iface, packet));
 
 /**
  * Process a received UDP packet: check it and queue it on the matching socket.
- * @param module	ENIP module with the socket list
+ * @param iface	receiving IP interface
  * @param packet	ENIP packet, data at the UDP header
  * */
 __swi_begin(0x486)
-void enip_udph_frame_read(void *module, void *packet)
-__swi_end(0x486, enip_udph_frame_read, (module, packet));
+void enip_udph_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)
+__swi_end(0x486, enip_udph_frame_read, (iface, packet));
 
 /**
  * Fill an IP driver description for the CSD (PPP dial-up) interface.
@@ -748,7 +923,7 @@ __swi_end(0x486, enip_udph_frame_read, (module, packet));
  * @return 1 when the module is up, otherwise 0
  * */
 __swi_begin(0x487)
-int enip_init_csd_iface(void *module, void *driver)
+int enip_init_csd_iface(ENIP_MODULE *module, ENIP_IP_DRIVER *driver)
 __swi_end(0x487, enip_init_csd_iface, (module, driver));
 
 /**
@@ -757,7 +932,7 @@ __swi_end(0x487, enip_init_csd_iface, (module, driver));
  * @return 0 when the module is not up
  * */
 __swi_begin(0x488)
-int enip_nsapi_init_iface(void *module)
+int enip_nsapi_init_iface(ENIP_NSAPI_MODULE *module)
 __swi_end(0x488, enip_nsapi_init_iface, (module));
 
 /**
@@ -766,7 +941,7 @@ __swi_end(0x488, enip_nsapi_init_iface, (module));
  * @return 1
  * */
 __swi_begin(0x489)
-int enip_nsapi_init_module(void *module)
+int enip_nsapi_init_module(ENIP_NSAPI_MODULE *module)
 __swi_end(0x489, enip_nsapi_init_module, (module));
 
 /**
@@ -829,11 +1004,12 @@ __swi_end(0x48F, ENIP_PDP_START_CSD_INT_REQ, (bearer));
  * @param protocol	0, 17 (UDP) or 6 (TCP)
  * @param owner	owner, must not be NULL; meaning not known
  * @param param	passed to enip_sockh_create_internal; meaning not known
- * @param destination	LMAN socket destination (5 halfwords, see #LMAN_GetSocketDestination)
+ * @param destination	socket destination
  * @return socket ID, negative on error
  * */
 __swi_begin(0x490)
-int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, uint16_t *destination)
+int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param,
+	const ENIP_SOCKET_DESTINATION *destination)
 __swi_end(0x490, enip_sock_create, (family, type, protocol, owner, param, destination));
 
 /**
@@ -854,7 +1030,7 @@ __swi_end(0x491, enip_socket_connect, (socket, address, unknown, port, timeout))
  * @param iface	IP interface
  * */
 __swi_begin(0x492)
-void enip_sockh_IF_init(void *iface)
+void enip_sockh_IF_init(ENIP_IPH_INTERFACE *iface)
 __swi_end(0x492, enip_sockh_IF_init, (iface));
 
 /**
@@ -868,7 +1044,8 @@ __swi_end(0x492, enip_sockh_IF_init, (iface));
  * @return socket, NULL when the table is full
  * */
 __swi_begin(0x493)
-void *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)
+ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1,
+	uint32_t param2)
 __swi_end(0x493, enip_sockh_create_internal, (family, type, protocol, owner, param1, param2));
 
 /**
@@ -878,21 +1055,21 @@ __swi_end(0x493, enip_sockh_create_internal, (family, type, protocol, owner, par
  * @return 0 or negative error
  * */
 __swi_begin(0x494)
-int enip_sockh_autobind_IF(void *socket, int address)
+int enip_sockh_autobind_IF(ENIP_SOCKET *socket, int address)
 __swi_end(0x494, enip_sockh_autobind_IF, (socket, address));
 
 /**
  * Allocate an outgoing packet for a socket with room for the interface headers.
  * @param socket	ENIP socket bound to an interface
  * @param size	payload size in bytes
- * @param flags	meaning not known
+ * @param pool	buffer pool (see #ENIP_PacketAlloc)
  * @param packet	receives the ENIP packet
  * @param timeout	meaning not known
  * @return 0 or negative error
  * */
 __swi_begin(0x495)
-int enip_sockh_packet_allocate(void *socket, uint32_t size, uint32_t flags, void **packet, int timeout)
-__swi_end(0x495, enip_sockh_packet_allocate, (socket, size, flags, packet, timeout));
+int enip_sockh_packet_allocate(ENIP_SOCKET *socket, uint32_t size, uint32_t pool, ENIP_PKT **packet, int timeout)
+__swi_end(0x495, enip_sockh_packet_allocate, (socket, size, pool, packet, timeout));
 
 /**
  * Set the peer of a datagram socket.
@@ -903,20 +1080,20 @@ __swi_end(0x495, enip_sockh_packet_allocate, (socket, size, flags, packet, timeo
  * @return 0
  * */
 __swi_begin(0x496)
-int enip_sockh_dgram_connect(void *socket, int address, uint32_t unused, uint16_t port)
+int enip_sockh_dgram_connect(ENIP_SOCKET *socket, int address, uint32_t unused, uint16_t port)
 __swi_end(0x496, enip_sockh_dgram_connect, (socket, address, unused, port));
 
 #ifdef NEWSGOLD
 /**
  * Find the socket for a received packet by protocol, ports and address.
- * @param module	ENIP module with the socket list
+ * @param iface	receiving IP interface
  * @param header	IPv4 header
  * @return socket, NULL when none matches
  * @platforms NSG, ELKA
  * */
 __swi_begin(0x497)
-void *enip_sockh_from_ipheader(void *module, const uint8_t *header)
-__swi_end(0x497, enip_sockh_from_ipheader, (module, header));
+ENIP_SOCKET *enip_sockh_from_ipheader(ENIP_IPH_INTERFACE *iface, const uint8_t *header)
+__swi_end(0x497, enip_sockh_from_ipheader, (iface, header));
 #endif
 
 /**
@@ -927,7 +1104,7 @@ __swi_end(0x497, enip_sockh_from_ipheader, (module, header));
  * @return 0 or negative error
  * */
 __swi_begin(0x498)
-int enip_sockh_prepare_send(int index, void *socket, uint32_t address)
+int enip_sockh_prepare_send(int index, ENIP_SOCKET *socket, uint32_t address)
 __swi_end(0x498, enip_sockh_prepare_send, (index, socket, address));
 
 #ifdef NEWSGOLD
@@ -938,7 +1115,7 @@ __swi_end(0x498, enip_sockh_prepare_send, (index, socket, address));
  * @platforms NSG, ELKA
  * */
 __swi_begin(0x499)
-int enip_sockh_tcp_packet_allocate(void *socket)
+int enip_sockh_tcp_packet_allocate(ENIP_SOCKET *socket)
 __swi_end(0x499, enip_sockh_tcp_packet_allocate, (socket));
 #endif
 
@@ -948,7 +1125,7 @@ __swi_end(0x499, enip_sockh_tcp_packet_allocate, (socket));
  * @return 0 or negative error
  * */
 __swi_begin(0x49A)
-int enip_tcph_sock_init(void *socket)
+int enip_tcph_sock_init(ENIP_SOCKET *socket)
 __swi_end(0x49A, enip_tcph_sock_init, (socket));
 
 /**
@@ -961,7 +1138,7 @@ __swi_end(0x49A, enip_tcph_sock_init, (socket));
  * @return 0 or negative error
  * */
 __swi_begin(0x49B)
-int enip_tcph_sock_connect(void *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)
+int enip_tcph_sock_connect(ENIP_SOCKET *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)
 __swi_end(0x49B, enip_tcph_sock_connect, (socket, address, unknown, port, timeout));
 
 /**
@@ -975,7 +1152,8 @@ __swi_end(0x49B, enip_tcph_sock_connect, (socket, address, unknown, port, timeou
  * @return 0 or negative error
  * */
 __swi_begin(0x49C)
-int enip_tcph_send_segment(void *socket, uint32_t flags, const void *data, uint32_t size, void *packet, int unknown)
+int enip_tcph_send_segment(ENIP_SOCKET *socket, uint32_t flags, const void *data, uint32_t size, ENIP_PKT *packet,
+	int unknown)
 __swi_end(0x49C, enip_tcph_send_segment, (socket, flags, data, size, packet, unknown));
 
 /**
@@ -986,7 +1164,7 @@ __swi_end(0x49C, enip_tcph_send_segment, (socket, flags, data, size, packet, unk
  * @param use_sequence	nonzero: take the sequence number from the segment
  * */
 __swi_begin(0x49D)
-void enip_tcph_write_segment(void *socket, void *packet, int use_sequence)
+void enip_tcph_write_segment(ENIP_SOCKET *socket, ENIP_PKT *packet, int use_sequence)
 __swi_end(0x49D, enip_tcph_write_segment, (socket, packet, use_sequence));
 
 /**
@@ -995,17 +1173,17 @@ __swi_end(0x49D, enip_tcph_write_segment, (socket, packet, use_sequence));
  * @param state	new state in firmware numbering (0: closed, 8: SYN sent, 10: established)
  * */
 __swi_begin(0x49E)
-void enip_tcph_change_sock_state(void *socket, uint32_t state)
+void enip_tcph_change_sock_state(ENIP_SOCKET *socket, uint32_t state)
 __swi_end(0x49E, enip_tcph_change_sock_state, (socket, state));
 
 /**
  * Process a received TCP segment.
- * @param module	ENIP module with the socket list
+ * @param iface	receiving IP interface
  * @param packet	ENIP packet
  * */
 __swi_begin(0x49F)
-void enip_tcph_frame_read(void *module, void *packet)
-__swi_end(0x49F, enip_tcph_frame_read, (module, packet));
+void enip_tcph_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)
+__swi_end(0x49F, enip_tcph_frame_read, (iface, packet));
 
 /**
  * Check the TCP timers of all sockets: retransmit, time out or move on in the close states.
@@ -1022,7 +1200,7 @@ __swi_end(0x4A0, enip_tcph_run, ());
  * @return option size in bytes, 0 when there are no blocks
  * */
 __swi_begin(0x4A1)
-uint32_t enip_tcph_get_SACK_option_from_list(void *socket, uint32_t count, uint8_t *option)
+uint32_t enip_tcph_get_SACK_option_from_list(ENIP_SOCKET *socket, uint32_t count, uint8_t *option)
 __swi_end(0x4A1, enip_tcph_get_SACK_option_from_list, (socket, count, option));
 
 /**
@@ -1030,7 +1208,7 @@ __swi_end(0x4A1, enip_tcph_get_SACK_option_from_list, (socket, count, option));
  * @param socket	ENIP socket
  * */
 __swi_begin(0x4A2)
-void enip_tcph_update_SACK_block_list(void *socket)
+void enip_tcph_update_SACK_block_list(ENIP_SOCKET *socket)
 __swi_end(0x4A2, enip_tcph_update_SACK_block_list, (socket));
 
 /**
@@ -1039,7 +1217,7 @@ __swi_end(0x4A2, enip_tcph_update_SACK_block_list, (socket));
  * @param module	ENIP module whose timer list it will use
  * */
 __swi_begin(0x4A3)
-void enip_timer_init(void *timer, void *module)
+void enip_timer_init(ENIP_TIMER *timer, ENIP_MODULE *module)
 __swi_end(0x4A3, enip_timer_init, (timer, module));
 
 /**
@@ -1047,7 +1225,7 @@ __swi_end(0x4A3, enip_timer_init, (timer, module));
  * @param timer	timer
  * */
 __swi_begin(0x4A4)
-void enip_timer_cancel(void *timer)
+void enip_timer_cancel(ENIP_TIMER *timer)
 __swi_end(0x4A4, enip_timer_cancel, (timer));
 
 /**
@@ -1056,7 +1234,7 @@ __swi_end(0x4A4, enip_timer_cancel, (timer));
  * @param timeout	timeout
  * */
 __swi_begin(0x4A5)
-void enip_timer_start(void *timer, uint32_t timeout)
+void enip_timer_start(ENIP_TIMER *timer, uint32_t timeout)
 __swi_end(0x4A5, enip_timer_start, (timer, timeout));
 
 /**
@@ -1096,12 +1274,11 @@ __swi_end(0x4AB, LMAN_GetBearerIdForCi, (cid));
 /**
  * Get where sockets of a process go: application flags, selector, bearer ID and interface index.
  * @param cepid	process ID
- * @param destination	receives the destination (8 bytes: u16 app_flags, u16 selector, u8 bearer_id,
- *	u8 unknown, u16 iface_index; 0xFF when the process has no connection)
+ * @param destination	receives the destination
  * @return 1 OK, 0 when the process has no LMAN socket registration (see #RamSocketRegs)
  * */
 __swi_begin(0x4AC)
-int LMAN_GetSocketDestination(uint16_t cepid, void *destination)
+int LMAN_GetSocketDestination(uint16_t cepid, LMAN_SOCKET_DESTINATION *destination)
 __swi_end(0x4AC, LMAN_GetSocketDestination, (cepid, destination));
 
 /**
@@ -1109,7 +1286,7 @@ __swi_end(0x4AC, LMAN_GetSocketDestination, (cepid, destination));
  * @param list	list head
  * */
 __swi_begin(0x4AD)
-void zDLL_Init(void *list)
+void zDLL_Init(ENIP_ZDLL_HEAD *list)
 __swi_end(0x4AD, zDLL_Init, (list));
 
 /** @} */

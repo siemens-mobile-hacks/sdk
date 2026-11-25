@@ -5880,7 +5880,7 @@ ELKA = "B0 B5 08 28 ?? D2 70 21 41 43 ?? 4A 00 25 55 54 FF 20 8C 18 60 70 A0 80"
 SG = "80 B5 08 28 09 D2 C1 00 ?? 4A 00 23 53 54 FF 20"
 
 [443]
-decl = "int ENIP_GetNativeSocket(int sock, void **native)"
+decl = "int ENIP_GetNativeSocket(int sock, ENIP_SOCKET **native)"
 NSG = "B0 B5 0D 1C 04 1C 01 1C 14 20 ?? F? ?? ??"
 ELKA = "B0 B5 0D 1C 04 1C 01 1C 0C 20 ?? ?? ?? ?? 88 00 ?? 49 40 18 09 21 89 01"
 SG = "B0 B5 0D 1C 04 1C 01 1C 14 20 ?? F? ?? ?? 88 00"
@@ -6051,67 +6051,67 @@ ELKA = "?? 49 DF 31 88 42 05 D0 00 0A ?? 49 + 1"
 SG = "FF CC 40 E2 FF C0 5C E2 ?? 1? 1F 15 20 04 A0 11"
 
 [464]
-decl = "void ENIP_ModuleInit(void *module, const char *name, void *up, void *down, void *run, void *notify, void *post_run, void *packet_available)"
+decl = "void ENIP_ModuleInit(ENIP_MODULE *module, const char *name, int (*up)(ENIP_MODULE *module), void (*down)(ENIP_MODULE *module, uint32_t reason), void (*run)(ENIP_MODULE *module), void (*notify)(ENIP_MODULE *module, int event), void (*post_run)(ENIP_MODULE *module), void (*packet_available)(ENIP_MODULE *module, uint8_t pool))"
 NSG = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF"
 ELKA = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF"
 SG = "F8 B5 06 AF 04 1C 9C 46 00 23 E1 CF 23 70 62 60"
 
 [465]
-decl = "uint8_t ENIP_ModuleRun(void *module, uint32_t *result)"
+decl = "uint8_t ENIP_ModuleRun(ENIP_MODULE *module, uint32_t *result)"
 NSG = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0"
 ELKA = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0"
 SG = "70 B5 04 1C 40 6B 0D 1C 00 28 04 D0 40 69 00 28"
 
 [466]
-decl = "int ENIP_ModuleUp(void *module)"
+decl = "int ENIP_ModuleUp(ENIP_MODULE *module)"
 NSG = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1"
 ELKA = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1"
 SG = "B0 B5 04 1C ?? F? ?? ?? 05 1C 05 D1 60 69 00 28"
 
 [467]
-decl = "void ENIP_ModuleDown(void *module, uint32_t reason)"
+decl = "void ENIP_ModuleDown(ENIP_MODULE *module, uint32_t reason)"
 NSG = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
 ELKA = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
 SG = "10 B5 04 1C ?? F? ?? ?? 60 69 00 28 02 D0 20 1C"
 
 [468]
-decl = "void ENIP_PortInit(void *port, void *module)"
+decl = "void ENIP_PortInit(ENIP_PORT *port, ENIP_MODULE *module)"
 NSG = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C"
 ELKA = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C"
 SG = "B0 B5 04 1C ?? 48 0D 1C E0 60 20 1C 10 30 A1 60"
 
 [469]
-decl = "void ENIP_PortSend(void *port, void *packet)"
+decl = "void ENIP_PortSend(ENIP_PORT *port, ENIP_PKT *packet)"
 NSG = "80 B5 00 28 09 D0 82 68 00 2A 03 D0"
 ELKA = "80 B5 00 28 09 D0 82 68 00 2A 03 D0"
 SG = "80 B5 00 28 09 D0 82 68 00 2A 03 D0 12 78 12 06"
 
 [46A]
-decl = "void *ENIP_PacketAlloc(void *module, int size, uint32_t pool, int offset, int quota)"
+decl = "ENIP_PKT *ENIP_PacketAlloc(ENIP_MODULE *module, int size, uint32_t pool, int offset, int quota)"
 NSG = "FF B5 0C 1C ?? 49 95 00 49 59 85 B0"
 ELKA = "FF B5 0C 1C ?? 49 16 1C BC 31 95 00"
 SG = "FE B5 1F 1C ?? 4B 15 1C 0C 1C 0A 1C 1B 68 ?? 49"
 
 [46B]
-decl = "void ENIP_PacketFree(void *packet)"
+decl = "void ENIP_PacketFree(ENIP_PKT *packet)"
 NSG = "FE B5 00 26 05 1C 00 28 ?? 4F ?? 4A"
 ELKA = "FE B5 00 26 05 1C 00 28 ?? 4F ?? 4A"
 SG = "F8 B5 ?? 4B 82 69 1B 68 00 27 06 1C 65 20 ?? 49"
 
 [46C]
-decl = "int ENIP_RegisterDriver(void *driver, int flags)"
+decl = "int ENIP_RegisterDriver(ENIP_IP_DRIVER *driver, int flags)"
 NSG = "F3 B5 ?? 4F 04 1C 08 21 00 20 81 B0"
 ELKA = "F3 B5 ?? 4F 04 1C 08 21 00 20 81 B0"
 SG = "F8 B5 ?? 4F 04 1C 10 21 00 20 82 01 D2 19 92 6F"
 
 [46D]
-decl = "void ENIP_UnregisterDriver(void *module)"
+decl = "void ENIP_UnregisterDriver(ENIP_MODULE *module)"
 NSG = "F8 B5 ?? 4E 00 24 08 22 00 21 44 23"
 ELKA = "F8 B5 ?? 4E 00 24 08 22 00 21 44 23"
 SG = "F8 B5 ?? 4E 00 24 10 23 00 21 8A 01 92 19 92 6F"
 
 [46E]
-decl = "void *ENIP_FindInterface(uint32_t bearer, uint16_t iface)"
+decl = "ENIP_IPH_INTERFACE *ENIP_FindInterface(uint32_t bearer, uint16_t iface)"
 NSG = "30 B5 ?? 4C 00 22 44 23 53 43 1D 19"
 ELKA = "30 B5 ?? 4C 00 22 44 23 53 43 1D 19"
 SG = "30 B5 ?? 4D 00 22 93 01 5C 19 80 34 23 78 FF 2B"
@@ -6123,31 +6123,31 @@ ELKA = "B0 B5 08 28 06 D2 70 23 58 43 ?? 4B"
 SG = "80 B5 08 28 05 D2 ?? 4B C0 00 C0 18 81 80 C2 80"
 
 [470]
-decl = "void *ENIP_ListRemoveHead(void *list)"
+decl = "void *zDLL_RemHead(ENIP_ZDLL_HEAD *list)"
 NSG = "01 1C 00 68 00 28 00 D1 70 47 02 68 + 1"
 ELKA = "01 1C 00 68 00 28 00 D1 70 47 02 68 + 1"
 SG = "01 1C 00 68 00 28 00 D1 70 47 02 68 00 23 00 2A + 1"
 
 [471]
-decl = "void *RamPdpDrivers(void)"
+decl = "ENIP_IP_DRIVER *RamPdpDrivers(void)"
 NSG = "&(?? 49 58 43 40 18 00 E0 ?? 48 81 68)"
 ELKA = "&(?? 49 58 43 40 18 00 E0 ?? 48 81 68)"
 SG = "&(FF B5 15 1C ?? 4A 07 1C 10 68 00 26 1C 1C 00 28 8D B0 74 D0 00 2C 0B D0 0E 9B 00 2B 08 D0 0E 98 ?? F? ?? ?? 00 28 03 D0 01 2D 05 D0 0C 2D 03 D0 ?? 48 05 38 11 B0 F0 BD ?? 48 20 60 ?? 4C 6C 34 01 2D 20 D1 0E 98 ?? F? ?? ?? 09 28 19 D1 05 A8 0E 99 ?? F? ?? ?? 05 A8 06 E0 0A 1C 61 3A 19 2A 01 D8 E0 31 01 70 01 30 01 78 00 29 F5 D1 ?? A1 05 A8 ?? F? ?? ?? 00 28 03 D1 01 2D 0B D0 00 20 D8 E7 0E 9E 17 E0 0C 2D 15 D1 0E 9B 18 68 01 06 09 0E 7F 29 04 D1 21 1C ?? 48 ?? F? ?? ?? EE E7 ?? F? ?? ?? 1D 22 05 A9 ?? F? ?? ?? ?? A1 05 A8 ?? F? ?? ?? 05 AE 17 9A 90 79 00 28 08 D0 01 28 1D D1 17 9A 28 23 10 89 ?? 49 58 43 40 18 00 E0 + C8)"
 
 [472]
-decl = "void enip_module_post_run(void *module)"
+decl = "void enip_module_post_run(ENIP_MODULE *module)"
 NSG = "80 B5 01 22 42 61 81 69 00 29 0B D0"
 ELKA = "80 B5 01 22 42 61 81 69 00 29 0B D0"
 SG = "80 B5 01 22 42 61 81 69 00 29 0B D0 03 6A 00 2B"
 
 [473]
-decl = "void enip_module_nsapi_post_init(void *module)"
+decl = "void enip_module_nsapi_post_init(ENIP_NSAPI_MODULE *module)"
 NSG = "00 22 D1 43 C1 66 C2 65 82 66 70 47 + 1"
 ELKA = "00 22 D1 43 C1 66 C2 65 82 66 70 47 + 1"
 SG = "00 22 D1 43 C1 66 C2 65 82 66 70 47 ?? 49 08 B5 + 1"
 
 [474]
-decl = "void enip_port_handle_pkt(void *port, void *packet)"
+decl = "void enip_port_handle_pkt(ENIP_PORT *port, ENIP_PKT *packet)"
 NSG = "B0 B5 04 1C 00 69 01 25 00 28 00 D0"
 ELKA = "B0 B5 04 1C 00 69 01 25 00 28 00 D0"
 SG = "B0 B5 04 1C 00 69 01 25 00 28 00 D0 00 25 20 1C"
@@ -6171,19 +6171,19 @@ ELKA = "?? 48 77 38 70 47 F8 B5 88 68 0C 1C + 1"
 SG = "?? 48 70 47 F8 B5 88 68 0C 1C 09 69 40 1A 08 D5 + 1"
 
 [478]
-decl = "int enip_ip_init(void *post_run)"
+decl = "int enip_ip_init(void (*post_run)(ENIP_MODULE *module))"
 NSG = "F0 B5 ?? 4D 65 21 C9 00 04 1C 28 1C"
 ELKA = "F0 B5 ?? 4D 61 21 C9 00 04 1C 28 1C"
 SG = "F0 B5 ?? 4D A1 21 C9 00 04 1C 28 1C 85 B0 ?? F? ?? ??"
 
 [479]
-decl = "void *enip_find_iface_by_driver(void *driver)"
+decl = "ENIP_IPH_INTERFACE *enip_find_iface_by_driver(ENIP_IP_DRIVER *driver)"
 NSG = "?? 4A C0 69 00 21 44 23 4B 43 9B 18 + 1"
 ELKA = "?? 4A C0 69 00 21 44 23 4B 43 9B 18 + 1"
 SG = "?? 4B C2 69 00 21 88 01 C0 18 80 6F 90 42 03 D1 + 1"
 
 [47A]
-decl = "void enip_iph_calc_chk_and_port_send(void **port, void *packet, uint32_t size)"
+decl = "void enip_iph_calc_chk_and_port_send(ENIP_PORT **port, ENIP_PKT *packet, uint32_t size)"
 NSG = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72"
 ELKA = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72"
 SG = "F8 B5 0C 1C 89 68 06 1C 00 20 88 72 17 1C 0D 1C"
@@ -6195,17 +6195,17 @@ ELKA = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 + 1"
 SG = "03 1C ?? 48 10 B5 98 43 08 E0 0B 78 4C 78 02 31 + 1"
 
 [47C]
-decl = "void *enip_iph_find_IF_for_socket(void *socket)"
+decl = "ENIP_IPH_INTERFACE *enip_iph_find_IF_for_socket(ENIP_SOCKET *socket)"
 NSG = "30 B5 00 21 FF 30 ?? 4A 61 30 44 23"
 ELKA = "30 B5 00 21 FF 30 ?? 4A 61 30 44 23"
 SG = "70 B5 03 1C FF 33 51 33 1C 1C ?? 4D 00 21 10 3C"
 
 [47D]
-decl = "void enip_iph_frame_read(void *packet)"
+decl = "void enip_iph_frame_read(ENIP_PKT *packet)"
 ALL = "F0 B5 87 B0 85 68 00 AB"
 
 [47E]
-decl = "int enip_iph_manage_reassembly(void *iface, void *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)"
+decl = "int enip_iph_manage_reassembly(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet, uint8_t *header, uint32_t total_size, uint32_t header_size, uint32_t fragment, int source)"
 NSG = "FF B5 95 B0 16 1C 00 22 84 46 1F 98"
 ELKA = "FF B5 95 B0 16 1C 00 22 84 46 1F 98"
 SG = "FF B5 95 B0 16 1C 00 22 84 46 1F 98 06 92 19 1C"
@@ -6223,53 +6223,53 @@ ELKA = "00 21 C9 43 80 B5 01 60 00 21 C1 60 + 1"
 SG = "00 21 C9 43 80 B5 01 60 00 21 C1 60 ?? 49 10 30 + 1"
 
 [481]
-decl = "void enip_iph_run(void *module)"
+decl = "void enip_iph_run(ENIP_MODULE *module)"
 NSG = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28"
 ELKA = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28"
 SG = "F1 B5 ?? F? ?? ?? ?? 48 00 68 01 28 01 D1 ?? F? ?? ??"
 
 [482]
-decl = "int enip_iph_write(void *port, void *packet, uint32_t size)"
+decl = "int enip_iph_write(ENIP_PORT **port, ENIP_PKT *packet, uint32_t size)"
 ALL = "F7 B5 17 1C 00 25 0C 1C 00 29"
 
 [483]
-decl = "int enip_siph_crypt_frame_read(void *module, void *packet)"
+decl = "int enip_siph_crypt_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)"
 NSG = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C"
 ELKA = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C"
 SG = "F3 B5 88 68 89 B0 82 78 C3 78 0D 1C 12 02 D2 18"
 
 [484]
-decl = "void *enip_siph_find_IF(int address)"
+decl = "ENIP_IPH_INTERFACE *enip_siph_find_IF(int address)"
 NSG = "10 B5 ?? 4C 00 21 44 22 4A 43 12 19"
 ELKA = "10 B5 ?? 4C 00 21 44 22 4A 43 12 19"
 SG = "10 B5 ?? 4C 00 21 8A 01 12 19 12 6E 53 1C 05 D0"
 
 [485]
-decl = "void enip_icmp_frame_read(void *module, void *packet)"
+decl = "void enip_icmp_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)"
 NSG = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C"
 ELKA = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C"
 SG = "F3 B5 88 68 83 B0 02 90 CD 68 0C 1C 28 1A 07 04"
 
 [486]
-decl = "void enip_udph_frame_read(void *module, void *packet)"
+decl = "void enip_udph_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)"
 NSG = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68"
 ELKA = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68"
 SG = "F3 B5 87 B0 00 20 03 90 0C 1C 89 68 ?? 4F 06 91"
 
 [487]
-decl = "int enip_init_csd_iface(void *module, void *driver)"
+decl = "int enip_init_csd_iface(ENIP_MODULE *module, ENIP_IP_DRIVER *driver)"
 NSG = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F"
 ELKA = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F"
 SG = "BC B5 05 1C 00 78 0C 1C 00 06 80 0F 02 28 31 D1"
 
 [488]
-decl = "int enip_nsapi_init_iface(void *module)"
+decl = "int enip_nsapi_init_iface(ENIP_NSAPI_MODULE *module)"
 NSG = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C"
 ELKA = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C"
 SG = "F0 B5 8B B0 07 1C ?? F? ?? ?? 05 1C 38 78 00 06"
 
 [489]
-decl = "int enip_nsapi_init_module(void *module)"
+decl = "int enip_nsapi_init_module(ENIP_NSAPI_MODULE *module)"
 NSG = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C"
 ELKA = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C"
 SG = "1F B5 00 22 03 92 ?? 4A ?? 49 04 1C 00 20 00 92"
@@ -6311,7 +6311,7 @@ ELKA = "F0 B5 9D B0 05 1C 03 24 32 23 32 21"
 SG = "F0 B5 9D B0 05 1C 03 24 32 23 32 21 10 A8 03 AA"
 
 [490]
-decl = "int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, uint16_t *destination)"
+decl = "int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, const ENIP_SOCKET_DESTINATION *destination)"
 NSG = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
 ELKA = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
 SG = "7C B5 0E 1C 05 1C 00 2B 06 99 07 9C 02 D1 ?? 48"
@@ -6323,83 +6323,83 @@ ELKA = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F"
 SG = "FE B5 0E 1C 14 1C 1D 1C 02 A9 08 9F ?? F? ?? ??"
 
 [492]
-decl = "void enip_sockh_IF_init(void *iface)"
+decl = "void enip_sockh_IF_init(ENIP_IPH_INTERFACE *iface)"
 NSG = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
 ELKA = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
 SG = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
 
 [493]
-decl = "void *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)"
+decl = "ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)"
 NSG = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
 ELKA = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
 SG = "FF B5 ?? 49 83 B0 08 78 00 25 0D 9F 00 06 80 0F"
 
 [494]
-decl = "int enip_sockh_autobind_IF(void *socket, int address)"
+decl = "int enip_sockh_autobind_IF(ENIP_SOCKET *socket, int address)"
 NSG = "F8 B5 04 1C C0 69 00 28 01 D0 00 20"
 ELKA = "F8 B5 04 1C C0 69 00 28 01 D0 00 20"
 SG = "F8 B5 04 1C C0 69 00 28 01 D0 00 20 F8 BD 26 1C"
 
 [495]
-decl = "int enip_sockh_packet_allocate(void *socket, uint32_t size, uint32_t flags, void **packet, int timeout)"
+decl = "int enip_sockh_packet_allocate(ENIP_SOCKET *socket, uint32_t size, uint32_t pool, ENIP_PKT **packet, int timeout)"
 NSG = "F8 B5 16 1C 04 1C 08 1C 1D 1C 06 9A"
 ELKA = "F8 B5 16 1C 04 1C 08 1C 1D 1C 06 9A"
 SG = "B0 B5 04 1C 08 1C 1D 1C ?? F? ?? ?? ?? 4B 0B 3B"
 
 [496]
-decl = "int enip_sockh_dgram_connect(void *socket, int address, uint32_t unused, uint16_t port)"
+decl = "int enip_sockh_dgram_connect(ENIP_SOCKET *socket, int address, uint32_t unused, uint16_t port)"
 NSG = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1"
 ELKA = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1"
 SG = "F8 B5 04 1C 40 69 1F 1C 01 28 15 D1 26 1C E0 6C"
 
 [497]
-decl = "void *enip_sockh_from_ipheader(void *module, const uint8_t *header)"
+decl = "ENIP_SOCKET *enip_sockh_from_ipheader(ENIP_IPH_INTERFACE *iface, const uint8_t *header)"
 NSG = "FF B5 00 22 03 92 02 92 0E 7C 4A 7A"
 ELKA = "FF B5 00 22 03 92 02 92 0E 7C 4A 7A"
 
 [498]
-decl = "int enip_sockh_prepare_send(int index, void *socket, uint32_t address)"
+decl = "int enip_sockh_prepare_send(int index, ENIP_SOCKET *socket, uint32_t address)"
 NSG = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20"
 ELKA = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20"
 SG = "70 B5 0D 1C ?? 49 80 00 0C 58 50 20 40 5B 16 1C"
 
 [499]
-decl = "int enip_sockh_tcp_packet_allocate(void *socket)"
+decl = "int enip_sockh_tcp_packet_allocate(ENIP_SOCKET *socket)"
 NSG = "1C B5 04 1C 80 30 C0 6B 00 21 ?? F? ?? ??"
 ELKA = "1C B5 04 1C 80 30 C0 6B 00 21 ?? F? ?? ??"
 
 [49A]
-decl = "int enip_tcph_sock_init(void *socket)"
+decl = "int enip_tcph_sock_init(ENIP_SOCKET *socket)"
 NSG = "F8 B5 04 1C ?? F? ?? ?? E2 69 25 1C"
 ELKA = "F8 B5 04 1C ?? F? ?? ?? E2 69 25 1C"
 SG = "F8 B5 04 1C ?? F? ?? ?? E2 69 01 26 11 1C 93 6B"
 
 [49B]
-decl = "int enip_tcph_sock_connect(void *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)"
+decl = "int enip_tcph_sock_connect(ENIP_SOCKET *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)"
 NSG = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24"
 ELKA = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24"
 SG = "FF B5 0F 1C 01 7C 05 1C 83 B0 00 24 07 29 0C 9E"
 
 [49C]
-decl = "int enip_tcph_send_segment(void *socket, uint32_t flags, const void *data, uint32_t size, void *packet, int unknown)"
+decl = "int enip_tcph_send_segment(ENIP_SOCKET *socket, uint32_t flags, const void *data, uint32_t size, ENIP_PKT *packet, int unknown)"
 NSG = "FF B5 04 1C 00 20 91 B0 1A 9D 02 90"
 ELKA = "FF B5 04 1C 00 20 91 B0 1A 9D 02 90"
 SG = "FF B5 04 1C 00 20 8F B0 18 9D 00 90 0B 90 01 A8"
 
 [49D]
-decl = "void enip_tcph_write_segment(void *socket, void *packet, int use_sequence)"
+decl = "void enip_tcph_write_segment(ENIP_SOCKET *socket, ENIP_PKT *packet, int use_sequence)"
 NSG = "F7 B5 0E 1C 05 1C 00 28 89 68 88 B0"
 ELKA = "F7 B5 0E 1C 05 1C 00 28 89 68 88 B0"
 SG = "F0 B5 0E 1C 17 1C 05 1C 00 28 89 68 89 B0 71 D0"
 
 [49E]
-decl = "void enip_tcph_change_sock_state(void *socket, uint32_t state)"
+decl = "void enip_tcph_change_sock_state(ENIP_SOCKET *socket, uint32_t state)"
 NSG = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0"
 ELKA = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0"
 SG = "F0 B5 0D 1C 04 1C 00 28 85 B0 71 D0 20 7C A8 42"
 
 [49F]
-decl = "void enip_tcph_frame_read(void *module, void *packet)"
+decl = "void enip_tcph_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)"
 NSG = "F3 B5 A1 B0 00 24 00 AB 0D 1C 00 20"
 ELKA = "F3 B5 A1 B0 00 24 00 AB 0D 1C 00 20"
 SG = "F3 B5 9F B0 00 24 00 AB 0D 1C 00 20 1C 85 09 90"
@@ -6411,31 +6411,31 @@ ELKA = "FE B5 00 27 ?? 49 B8 00 40 18 09 21"
 SG = "FE B5 00 26 00 27 ?? 49 B0 00 40 18 11 21 89 01"
 
 [4A1]
-decl = "uint32_t enip_tcph_get_SACK_option_from_list(void *socket, uint32_t count, uint8_t *option)"
+decl = "uint32_t enip_tcph_get_SACK_option_from_list(ENIP_SOCKET *socket, uint32_t count, uint8_t *option)"
 NSG = "F7 B5 01 20 10 70 50 70 05 20 90 70"
 ELKA = "F7 B5 01 20 10 70 50 70 05 20 90 70"
 SG = "F7 B5 01 20 10 70 50 70 05 20 90 70 14 1D 00 20"
 
 [4A2]
-decl = "void enip_tcph_update_SACK_block_list(void *socket)"
+decl = "void enip_tcph_update_SACK_block_list(ENIP_SOCKET *socket)"
 NSG = "F0 B5 06 1C FF 36 01 21 49 02 01 36"
 ELKA = "F0 B5 06 1C FF 36 01 21 49 02 01 36"
 SG = "F0 B5 06 1C FF 36 01 36 35 1C 00 27 00 23 C0 35"
 
 [4A3]
-decl = "void enip_timer_init(void *timer, void *module)"
+decl = "void enip_timer_init(ENIP_TIMER *timer, ENIP_MODULE *module)"
 NSG = "81 60 00 21 41 61 01 60 41 60 70 47 + 1"
 ELKA = "81 60 00 21 41 61 01 60 41 60 70 47 + 1"
 SG = "81 60 00 21 41 61 01 60 41 60 70 47 80 B5 01 1C + 1"
 
 [4A4]
-decl = "void enip_timer_cancel(void *timer)"
+decl = "void enip_timer_cancel(ENIP_TIMER *timer)"
 NSG = "80 B5 01 1C 40 69 00 28 05 D0 00 20"
 ELKA = "80 B5 01 1C 40 69 00 28 05 D0 00 20"
 SG = "80 B5 01 1C 40 69 00 28 05 D0 00 20 48 61 88 68"
 
 [4A5]
-decl = "void enip_timer_start(void *timer, uint32_t timeout)"
+decl = "void enip_timer_start(ENIP_TIMER *timer, uint32_t timeout)"
 NSG = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0"
 ELKA = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0"
 SG = "F8 B5 05 1C 40 69 0F 1C 00 28 02 D0 28 1C ?? F? ?? ??"
@@ -6465,13 +6465,13 @@ ELKA = "B0 B5 08 28 05 D2 70 23 58 43 ?? 49 40 18 40 78"
 SG = "80 B5 08 28 04 D2 ?? 49 C0 00 40 18 40 78 80 BD"
 
 [4AC]
-decl = "int LMAN_GetSocketDestination(uint16_t cepid, void *destination)"
+decl = "int LMAN_GetSocketDestination(uint16_t cepid, LMAN_SOCKET_DESTINATION *destination)"
 NSG = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ??"
 ELKA = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ??"
 SG = "70 B5 00 04 00 0C 0C 1C 05 1C ?? F? ?? ?? 06 1C"
 
 [4AD]
-decl = "void zDLL_Init(void *list)"
+decl = "void zDLL_Init(ENIP_ZDLL_HEAD *list)"
 NSG = "00 21 41 60 01 60 70 47 42 68 00 23 + 1"
 ELKA = "00 21 41 60 01 60 70 47 42 68 00 23 + 1"
 SG = "00 21 41 60 01 60 70 47 42 68 00 23 00 2A 04 D1 + 1"
