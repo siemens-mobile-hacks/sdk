@@ -116,6 +116,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_s_d_e_v___a_p_p" id="r_struct_s_d_e_v___a_p_p"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#struct_s_d_e_v___a_p_p">SDEV_APP</a></td></tr>
 <tr class="memdesc:struct_s_d_e_v___a_p_p"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDev application callbacks.  <a href="group___bluetooth.html#struct_s_d_e_v___a_p_p">More...</a><br /></td></tr>
 <tr class="separator:struct_s_d_e_v___a_p_p"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_j_s_a_p_i___c_o_n_n" id="r_struct_j_s_a_p_i___c_o_n_n"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#struct_j_s_a_p_i___c_o_n_n">JSAPI_CONN</a></td></tr>
+<tr class="memdesc:struct_j_s_a_p_i___c_o_n_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSApi connection slot (see <a class="el" href="group___bluetooth.html#ga65c5e5cef6536af4280904c9e2de58b6" title="Get the JSApi (Java Bluetooth) connection slots.">RamJSApiConnections</a>).  <a href="group___bluetooth.html#struct_j_s_a_p_i___c_o_n_n">More...</a><br /></td></tr>
+<tr class="separator:struct_j_s_a_p_i___c_o_n_n"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_b_t_l_p___c_o_n_n" id="r_struct_b_t_l_p___c_o_n_n"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a></td></tr>
+<tr class="memdesc:struct_b_t_l_p___c_o_n_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">BTLP connection (see <a class="el" href="group___bluetooth.html#ga61c090833546cc4ab7febcfb10a615af" title="Get the BTLP (Bluetooth L2CAP port) connection table.">RamBtlpConnections</a>).  <a href="group___bluetooth.html#struct_b_t_l_p___c_o_n_n">More...</a><br /></td></tr>
+<tr class="separator:struct_b_t_l_p___c_o_n_n"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -123,6 +129,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9bd68955176b3976c1af7a2949d39b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea613ddcee3db4656818a200ae06c20b" id="r_gaea613ddcee3db4656818a200ae06c20b"><td class="memItemLeft" align="right" valign="top">typedef struct SDEV_APP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaea613ddcee3db4656818a200ae06c20b">SDEV_APP</a></td></tr>
 <tr class="separator:gaea613ddcee3db4656818a200ae06c20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad408d6e2e59fc1b99aa3ca02cfc5e0a0" id="r_gad408d6e2e59fc1b99aa3ca02cfc5e0a0"><td class="memItemLeft" align="right" valign="top">typedef struct JSAPI_CONN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gad408d6e2e59fc1b99aa3ca02cfc5e0a0">JSAPI_CONN</a></td></tr>
+<tr class="separator:gad408d6e2e59fc1b99aa3ca02cfc5e0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72200912a6ae45e3cd439e012de40ae0" id="r_ga72200912a6ae45e3cd439e012de40ae0"><td class="memItemLeft" align="right" valign="top">typedef struct BTLP_CONN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga72200912a6ae45e3cd439e012de40ae0">BTLP_CONN</a></td></tr>
+<tr class="separator:ga72200912a6ae45e3cd439e012de40ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -259,11 +269,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga911062b0226f845429d88c1e683403a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the JSApi (Java Bluetooth) slot of a connection handle.  <br /></td></tr>
 <tr class="separator:ga911062b0226f845429d88c1e683403a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4d17b18b62753646011018812b4d4567" id="r_ga4d17b18b62753646011018812b4d4567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga4d17b18b62753646011018812b4d4567">JSApi_InitHandles</a> (void)</td></tr>
-<tr class="memdesc:ga4d17b18b62753646011018812b4d4567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the JSApi slots once and register JSApi as SDev application 0x0F.  <br /></td></tr>
+<tr class="memdesc:ga4d17b18b62753646011018812b4d4567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the JSApi slots once and register JSApi as an SDev application.  <br /></td></tr>
 <tr class="separator:ga4d17b18b62753646011018812b4d4567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga97640870e22645bb3773cce3cefdd084" id="r_ga97640870e22645bb3773cce3cefdd084"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga97640870e22645bb3773cce3cefdd084">JSApi_RegisterConHandle</a> (int conn, uint32_t packet, uint32_t param3)</td></tr>
-<tr class="memdesc:ga97640870e22645bb3773cce3cefdd084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a connection handle in a free JSApi slot.  <br /></td></tr>
-<tr class="separator:ga97640870e22645bb3773cce3cefdd084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9beb2c20bf4c65d7aecf6fa65bd2a90" id="r_gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaa9beb2c20bf4c65d7aecf6fa65bd2a90">JSApi_RegisterConHandle</a> (int conn, uint32_t packet, void(*on_connect)(int conn))</td></tr>
+<tr class="memdesc:gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a connection handle in a free JSApi slot.  <br /></td></tr>
+<tr class="separator:gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaec8358b0fc0d924c1e91877dc3820034" id="r_gaec8358b0fc0d924c1e91877dc3820034"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaec8358b0fc0d924c1e91877dc3820034">JSApi_GetConnectionState</a> (int conn)</td></tr>
 <tr class="memdesc:gaec8358b0fc0d924c1e91877dc3820034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of a JSApi connection.  <br /></td></tr>
 <tr class="separator:gaec8358b0fc0d924c1e91877dc3820034"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,7 +290,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gabfe9f64b2511586c0f4c86cb671c4159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the JSApi slot of a connection handle and its receive buffer.  <br /></td></tr>
 <tr class="separator:gabfe9f64b2511586c0f4c86cb671c4159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4140b249d68370dd96ea759283095e10" id="r_ga4140b249d68370dd96ea759283095e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga4140b249d68370dd96ea759283095e10">BTLP_InitL2CAP_IO</a> (void)</td></tr>
-<tr class="memdesc:ga4140b249d68370dd96ea759283095e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the 9 L2CAP port devices (SAPI 0x0D..0x15).  <br /></td></tr>
+<tr class="memdesc:ga4140b249d68370dd96ea759283095e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08..0x0B).  <br /></td></tr>
 <tr class="separator:ga4140b249d68370dd96ea759283095e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed149ed5dc68a723815b2324383fc49b" id="r_gaed149ed5dc68a723815b2324383fc49b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaed149ed5dc68a723815b2324383fc49b">BTLP_uiSendDataOverBT</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *data, uint32_t size, int sapi)</td></tr>
 <tr class="memdesc:gaed149ed5dc68a723815b2324383fc49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data over an L2CAP port: one buffer per packet from the shared stack pool.  <br /></td></tr>
@@ -309,12 +319,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga04527048283a8a29cbfe51e25fc4c9de" id="r_ga04527048283a8a29cbfe51e25fc4c9de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga04527048283a8a29cbfe51e25fc4c9de">Ca_SasSApp_Init</a> (void)</td></tr>
 <tr class="memdesc:ga04527048283a8a29cbfe51e25fc4c9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the SIM Access Profile server and register it as SDev application 0x13.  <br /></td></tr>
 <tr class="separator:ga04527048283a8a29cbfe51e25fc4c9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91950329cc6721f6d8b074cee93cd196" id="r_ga91950329cc6721f6d8b074cee93cd196"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga91950329cc6721f6d8b074cee93cd196">RamJSApiConnections</a> (void)</td></tr>
-<tr class="memdesc:ga91950329cc6721f6d8b074cee93cd196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the JSApi (Java Bluetooth) connection list.  <br /></td></tr>
-<tr class="separator:ga91950329cc6721f6d8b074cee93cd196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa641593358c3b7cb8cd94c19782cab0a" id="r_gaa641593358c3b7cb8cd94c19782cab0a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#gaa641593358c3b7cb8cd94c19782cab0a">RamBtlpConnections</a> (void)</td></tr>
-<tr class="memdesc:gaa641593358c3b7cb8cd94c19782cab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BTLP (Bluetooth L2CAP port) connection table.  <br /></td></tr>
-<tr class="separator:gaa641593358c3b7cb8cd94c19782cab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65c5e5cef6536af4280904c9e2de58b6" id="r_ga65c5e5cef6536af4280904c9e2de58b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___bluetooth.html#struct_j_s_a_p_i___c_o_n_n">JSAPI_CONN</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga65c5e5cef6536af4280904c9e2de58b6">RamJSApiConnections</a> (void)</td></tr>
+<tr class="memdesc:ga65c5e5cef6536af4280904c9e2de58b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the JSApi (Java Bluetooth) connection slots.  <br /></td></tr>
+<tr class="separator:ga65c5e5cef6536af4280904c9e2de58b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61c090833546cc4ab7febcfb10a615af" id="r_ga61c090833546cc4ab7febcfb10a615af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___bluetooth.html#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga61c090833546cc4ab7febcfb10a615af">RamBtlpConnections</a> (void)</td></tr>
+<tr class="memdesc:ga61c090833546cc4ab7febcfb10a615af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BTLP (Bluetooth L2CAP port) connection table.  <br /></td></tr>
+<tr class="separator:ga61c090833546cc4ab7febcfb10a615af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga84afc0dd90f5b9a0eea63e5f302bb303" id="r_ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___bluetooth.html#ga84afc0dd90f5b9a0eea63e5f302bb303">RamL2capChannelState</a> (void)</td></tr>
 <tr class="memdesc:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the L2CAP channel state table.  <br /></td></tr>
 <tr class="separator:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memSeparator" colspan="2">&#160;</td></tr>

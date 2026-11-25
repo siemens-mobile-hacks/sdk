@@ -13,5 +13,13 @@ var searchData=
   ['job_5fplaybuffer_10',['Job_PlayBuffer',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73eaeeb677cb024493c0d3f1cfe089a05f21',1,'sound.h']]],
   ['job_5fplayfile_11',['Job_PlayFile',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73ead96cdb8f861ef4d6f5cfae69e4eabeb1',1,'sound.h']]],
   ['job_5frecbuffer_12',['Job_RecBuffer',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73ea5337cd802b2fd02cbcfc53ecca3f6d35',1,'sound.h']]],
-  ['job_5frecfile_13',['Job_RecFile',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73eab239d86d9b4ae3eb3151a8b9c356547f',1,'sound.h']]]
+  ['job_5frecfile_13',['Job_RecFile',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73eab239d86d9b4ae3eb3151a8b9c356547f',1,'sound.h']]],
+  ['jsapi_5fbytesavailable_14',['JSApi_BytesAvailable',['../group___bluetooth.html#ga33edde764cf2093bd9763c0146c568a9',1,'bluetooth.h']]],
+  ['jsapi_5fclearconnectionhandle_15',['JSApi_ClearConnectionHandle',['../group___bluetooth.html#gabfe9f64b2511586c0f4c86cb671c4159',1,'bluetooth.h']]],
+  ['jsapi_5fconn_16',['JSAPI_CONN',['../group___bluetooth.html#struct_j_s_a_p_i___c_o_n_n',1,'JSAPI_CONN'],['../group___bluetooth.html#gad408d6e2e59fc1b99aa3ca02cfc5e0a0',1,'JSAPI_CONN:&#160;bluetooth.h']]],
+  ['jsapi_5fcurrenthandleid_17',['JSApi_CurrentHandleID',['../group___bluetooth.html#ga911062b0226f845429d88c1e683403a7',1,'bluetooth.h']]],
+  ['jsapi_5finithandles_18',['JSApi_InitHandles',['../group___bluetooth.html#ga4d17b18b62753646011018812b4d4567',1,'bluetooth.h']]],
+  ['jsapi_5freadbytes_19',['JSApi_ReadBytes',['../group___bluetooth.html#ga258486d3cf22f36d3627520848acc999',1,'bluetooth.h']]],
+  ['jsapi_5fregisterconhandle_20',['JSApi_RegisterConHandle',['../group___bluetooth.html#gaa9beb2c20bf4c65d7aecf6fa65bd2a90',1,'bluetooth.h']]],
+  ['jsapi_5fwritebytes_21',['JSApi_WriteBytes',['../group___bluetooth.html#gade2b7f2eb9693b33628a13f2d8174993',1,'bluetooth.h']]]
 ];

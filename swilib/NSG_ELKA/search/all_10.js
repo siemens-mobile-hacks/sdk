@@ -6,7 +6,7 @@ var searchData=
   ['p2_3',['p2',['../group___telephony.html#a88fe4d7885f53064f1467f091c83eaed',1,'StructUSSD']]],
   ['p_5fread_4',['P_READ',['../group___file.html#gga1b7253c1113d8a9910e1d93189ccf54bad8838dd6ae304e1304897d372cdfadeb',1,'file.h']]],
   ['p_5fwrite_5',['P_WRITE',['../group___file.html#gga1b7253c1113d8a9910e1d93189ccf54baa6b742b254acfa81fb515e6711658206',1,'file.h']]],
-  ['packet_6',['packet',['../ssl_8h.html#a5b43e468488be2327eac1c4396b568bc',1,'ssl_st']]],
+  ['packet_6',['packet',['../ssl_8h.html#a5b43e468488be2327eac1c4396b568bc',1,'ssl_st::packet'],['../group___bluetooth.html#a1b6242cb503216d64bdf98a2373c5be1',1,'JSAPI_CONN::packet']]],
   ['packet_5flength_7',['packet_length',['../ssl_8h.html#ae52697ae4cfec851e2b0d2c5ccaa1df7',1,'ssl_st']]],
   ['pad_8',['pad',['../dh_8h.html#aae482b7bef6f43b8299ed2bdd1f658c9',1,'dh_st::pad'],['../dsa_8h.html#abdf71672c40a2cd7d02bc8f86f33d3c9',1,'dsa_st::pad'],['../rsa_8h.html#a0ad31a89c1623d6a321162b3e6ad0afd',1,'rsa_st::pad']]],
   ['pad_5fdata_9',['pad_data',['../ssl2_8h.html#a1302ea15d3d43d4bf8947c412fb5f903',1,'ssl2_state_st']]],

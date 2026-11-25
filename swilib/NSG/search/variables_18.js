@@ -12,5 +12,7 @@ var searchData=
   ['x_5fpixels_5fper_5funit_9',['x_pixels_per_unit',['../builtin_2png_8h.html#af32f310bc311b5b649e9f8f5a5f70c1c',1,'png_info_struct']]],
   ['x_5fred_10',['x_red',['../builtin_2png_8h.html#a71f22da2f24fad06e4eb4e976dc01f97',1,'png_info_struct']]],
   ['x_5fwhite_11',['x_white',['../builtin_2png_8h.html#a62a1a82bf148f792c27a0779cecede9a',1,'png_info_struct']]],
-  ['xclass_12',['xclass',['../asn1_8h.html#a13d5a9bd152573c46b088acac3f7671f',1,'asn1_ctx_st']]]
+  ['xclass_12',['xclass',['../asn1_8h.html#a13d5a9bd152573c46b088acac3f7671f',1,'asn1_ctx_st']]],
+  ['xoff_5fchar_13',['xoff_char',['../group___bluetooth.html#a78d534b1bac73709069b282ad5588a37',1,'JSAPI_CONN']]],
+  ['xon_5fchar_14',['xon_char',['../group___bluetooth.html#ace6e0b85981be8ecad8ea634314fda0d',1,'JSAPI_CONN']]]
 ];

@@ -53,5 +53,6 @@ var searchData=
   ['msg_50',['msg',['../group___g_b_s.html#a9495eea0e5ecd8b3c32138020ebd98b2',1,'GBS_MSG::msg'],['../group___sound.html#a6e3ecb3a6f4c571e1d92430aec5a5863',1,'GBS_PSOUND_MSG::msg'],['../group___telephony.html#aeee2676ff207a12fe5080f9846e77176',1,'GBS_USSD_MSG::msg'],['../builtin_2zlib_8h.html#a9b2f745fc780e3b33e2935f8c650a326',1,'z_stream_s::msg'],['../naticq__ipc_8h.html#ad5f4c127377677fe0d960ac2318ff688',1,'IPCMsg::msg'],['../naticq__ipc_8h.html#a17758f4acb92db4a88562fb73b618200',1,'IPCMsg_RECVMSG::msg']]],
   ['msg_5fid_51',['msg_id',['../group___g_b_s.html#a6eb75709a71e2c46d2fd28099a77aad2',1,'MOPI_MSG::msg_id'],['../group___settings.html#ab3d21ae091c384dc9165be2c6a085a2b',1,'REG_CLIENT::msg_id']]],
   ['mtime_5fdate_52',['mtime_date',['../group___file.html#ad0acbb8ed7b86464850b6d10a8ef32cd',1,'FSTATS']]],
-  ['mtime_5ftime_53',['mtime_time',['../group___file.html#a2790a674407495780d629431183c8db5',1,'FSTATS']]]
+  ['mtime_5ftime_53',['mtime_time',['../group___file.html#a2790a674407495780d629431183c8db5',1,'FSTATS']]],
+  ['mtu_54',['mtu',['../group___bluetooth.html#ae3a582b58ae3906555766571f0789731',1,'BTLP_CONN']]]
 ];

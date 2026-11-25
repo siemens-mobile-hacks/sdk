@@ -116,6 +116,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_s_d_e_v___a_p_p" id="r_struct_s_d_e_v___a_p_p"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_s_d_e_v___a_p_p">SDEV_APP</a></td></tr>
 <tr class="memdesc:struct_s_d_e_v___a_p_p"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDev application callbacks.  <a href="#struct_s_d_e_v___a_p_p">More...</a><br /></td></tr>
 <tr class="separator:struct_s_d_e_v___a_p_p"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_j_s_a_p_i___c_o_n_n" id="r_struct_j_s_a_p_i___c_o_n_n"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_j_s_a_p_i___c_o_n_n">JSAPI_CONN</a></td></tr>
+<tr class="memdesc:struct_j_s_a_p_i___c_o_n_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSApi connection slot (see <a class="el" href="#ga65c5e5cef6536af4280904c9e2de58b6" title="Get the JSApi (Java Bluetooth) connection slots.">RamJSApiConnections</a>).  <a href="#struct_j_s_a_p_i___c_o_n_n">More...</a><br /></td></tr>
+<tr class="separator:struct_j_s_a_p_i___c_o_n_n"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_b_t_l_p___c_o_n_n" id="r_struct_b_t_l_p___c_o_n_n"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a></td></tr>
+<tr class="memdesc:struct_b_t_l_p___c_o_n_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">BTLP connection (see <a class="el" href="#ga61c090833546cc4ab7febcfb10a615af" title="Get the BTLP (Bluetooth L2CAP port) connection table.">RamBtlpConnections</a>).  <a href="#struct_b_t_l_p___c_o_n_n">More...</a><br /></td></tr>
+<tr class="separator:struct_b_t_l_p___c_o_n_n"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -123,6 +129,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga9bd68955176b3976c1af7a2949d39b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea613ddcee3db4656818a200ae06c20b" id="r_gaea613ddcee3db4656818a200ae06c20b"><td class="memItemLeft" align="right" valign="top">typedef struct SDEV_APP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea613ddcee3db4656818a200ae06c20b">SDEV_APP</a></td></tr>
 <tr class="separator:gaea613ddcee3db4656818a200ae06c20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad408d6e2e59fc1b99aa3ca02cfc5e0a0" id="r_gad408d6e2e59fc1b99aa3ca02cfc5e0a0"><td class="memItemLeft" align="right" valign="top">typedef struct JSAPI_CONN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad408d6e2e59fc1b99aa3ca02cfc5e0a0">JSAPI_CONN</a></td></tr>
+<tr class="separator:gad408d6e2e59fc1b99aa3ca02cfc5e0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72200912a6ae45e3cd439e012de40ae0" id="r_ga72200912a6ae45e3cd439e012de40ae0"><td class="memItemLeft" align="right" valign="top">typedef struct BTLP_CONN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga72200912a6ae45e3cd439e012de40ae0">BTLP_CONN</a></td></tr>
+<tr class="separator:ga72200912a6ae45e3cd439e012de40ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -141,6 +151,66 @@ Functions</h2></td></tr>
 <tr class="memitem:gad0ef17ef9de31419668fbec3911a50b2" id="r_gad0ef17ef9de31419668fbec3911a50b2"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad0ef17ef9de31419668fbec3911a50b2">BTA_SdpRec_GetChannel</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *record, int rfcomm)</td></tr>
 <tr class="memdesc:gad0ef17ef9de31419668fbec3911a50b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server channel from an SDP record's ProtocolDescriptorList.  <br /></td></tr>
 <tr class="separator:gad0ef17ef9de31419668fbec3911a50b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga911062b0226f845429d88c1e683403a7" id="r_ga911062b0226f845429d88c1e683403a7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga911062b0226f845429d88c1e683403a7">JSApi_CurrentHandleID</a> (int conn)</td></tr>
+<tr class="memdesc:ga911062b0226f845429d88c1e683403a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the JSApi (Java Bluetooth) slot of a connection handle.  <br /></td></tr>
+<tr class="separator:ga911062b0226f845429d88c1e683403a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d17b18b62753646011018812b4d4567" id="r_ga4d17b18b62753646011018812b4d4567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d17b18b62753646011018812b4d4567">JSApi_InitHandles</a> (void)</td></tr>
+<tr class="memdesc:ga4d17b18b62753646011018812b4d4567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the JSApi slots once and register JSApi as an SDev application.  <br /></td></tr>
+<tr class="separator:ga4d17b18b62753646011018812b4d4567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9beb2c20bf4c65d7aecf6fa65bd2a90" id="r_gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9beb2c20bf4c65d7aecf6fa65bd2a90">JSApi_RegisterConHandle</a> (int conn, uint32_t packet, void(*on_connect)(int conn))</td></tr>
+<tr class="memdesc:gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a connection handle in a free JSApi slot.  <br /></td></tr>
+<tr class="separator:gaa9beb2c20bf4c65d7aecf6fa65bd2a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga258486d3cf22f36d3627520848acc999" id="r_ga258486d3cf22f36d3627520848acc999"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga258486d3cf22f36d3627520848acc999">JSApi_ReadBytes</a> (int conn, void *buffer, uint32_t size)</td></tr>
+<tr class="memdesc:ga258486d3cf22f36d3627520848acc999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read received data of a JSApi connection.  <br /></td></tr>
+<tr class="separator:ga258486d3cf22f36d3627520848acc999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33edde764cf2093bd9763c0146c568a9" id="r_ga33edde764cf2093bd9763c0146c568a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga33edde764cf2093bd9763c0146c568a9">JSApi_BytesAvailable</a> (int conn)</td></tr>
+<tr class="memdesc:ga33edde764cf2093bd9763c0146c568a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of received bytes waiting in a JSApi connection.  <br /></td></tr>
+<tr class="separator:ga33edde764cf2093bd9763c0146c568a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade2b7f2eb9693b33628a13f2d8174993" id="r_gade2b7f2eb9693b33628a13f2d8174993"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade2b7f2eb9693b33628a13f2d8174993">JSApi_WriteBytes</a> (int conn, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *data, uint32_t size)</td></tr>
+<tr class="memdesc:gade2b7f2eb9693b33628a13f2d8174993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data over a JSApi connection.  <br /></td></tr>
+<tr class="separator:gade2b7f2eb9693b33628a13f2d8174993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfe9f64b2511586c0f4c86cb671c4159" id="r_gabfe9f64b2511586c0f4c86cb671c4159"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabfe9f64b2511586c0f4c86cb671c4159">JSApi_ClearConnectionHandle</a> (int conn)</td></tr>
+<tr class="memdesc:gabfe9f64b2511586c0f4c86cb671c4159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the JSApi slot of a connection handle and its receive buffer.  <br /></td></tr>
+<tr class="separator:gabfe9f64b2511586c0f4c86cb671c4159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4140b249d68370dd96ea759283095e10" id="r_ga4140b249d68370dd96ea759283095e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4140b249d68370dd96ea759283095e10">BTLP_InitL2CAP_IO</a> (void)</td></tr>
+<tr class="memdesc:ga4140b249d68370dd96ea759283095e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08..0x0B).  <br /></td></tr>
+<tr class="separator:ga4140b249d68370dd96ea759283095e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed149ed5dc68a723815b2324383fc49b" id="r_gaed149ed5dc68a723815b2324383fc49b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed149ed5dc68a723815b2324383fc49b">BTLP_uiSendDataOverBT</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *data, uint32_t size, int sapi)</td></tr>
+<tr class="memdesc:gaed149ed5dc68a723815b2324383fc49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data over an L2CAP port: one buffer per packet from the shared stack pool.  <br /></td></tr>
+<tr class="separator:gaed149ed5dc68a723815b2324383fc49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83f347ed9e2c1438a20ac26ff9348783" id="r_ga83f347ed9e2c1438a20ac26ff9348783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83f347ed9e2c1438a20ac26ff9348783">BTLP_vDataToAppCallback</a> (int sapi)</td></tr>
+<tr class="memdesc:ga83f347ed9e2c1438a20ac26ff9348783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deliver received packets queued on an L2CAP port to its application until it stops taking them.  <br /></td></tr>
+<tr class="separator:ga83f347ed9e2c1438a20ac26ff9348783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c5de3ad45f959f3208ab9b0db32729e" id="r_ga9c5de3ad45f959f3208ab9b0db32729e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c5de3ad45f959f3208ab9b0db32729e">BTLP_vFlushBuffer</a> (int mode, int sapi)</td></tr>
+<tr class="memdesc:ga9c5de3ad45f959f3208ab9b0db32729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop the received packets queued on an L2CAP port.  <br /></td></tr>
+<tr class="separator:ga9c5de3ad45f959f3208ab9b0db32729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc9aab97ecb13c8c986e8fdecc8f5e6f" id="r_gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabc9aab97ecb13c8c986e8fdecc8f5e6f">L2CA_ReadDataReq</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *message)</td></tr>
+<tr class="memdesc:gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L2CAP handler of the L2CA_ReadDataReq signal.  <br /></td></tr>
+<tr class="separator:gabc9aab97ecb13c8c986e8fdecc8f5e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa56489c85aa39ec92d2c3f66ac0d2c49" id="r_gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49">SApp_Register</a> (int handler_id, void *methods)</td></tr>
+<tr class="memdesc:gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an SDev application (serial data endpoint) in the application table.  <br /></td></tr>
+<tr class="separator:gaa56489c85aa39ec92d2c3f66ac0d2c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga507af8f593c1049b3ada50742e862638" id="r_ga507af8f593c1049b3ada50742e862638"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga507af8f593c1049b3ada50742e862638">ConnSDevSApp</a> (uint32_t sdevice, uint32_t handler_id, void *connection_info)</td></tr>
+<tr class="memdesc:ga507af8f593c1049b3ada50742e862638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect a serial device to an SDev application.  <br /></td></tr>
+<tr class="separator:ga507af8f593c1049b3ada50742e862638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c80dcfdea23250ae5fa2d12c4b6c9d7" id="r_ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c80dcfdea23250ae5fa2d12c4b6c9d7">CHConnSApp</a> (uint32_t handler_id, uint32_t instance, uint32_t new_handler_id, void *connection_info)</td></tr>
+<tr class="memdesc:ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move an open device connection from one SDev application to another.  <br /></td></tr>
+<tr class="separator:ga7c80dcfdea23250ae5fa2d12c4b6c9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56ca46fe8cd247993517ef065c866bdf" id="r_ga56ca46fe8cd247993517ef065c866bdf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56ca46fe8cd247993517ef065c866bdf">Serial_CanOpenSApp</a> (uint32_t handler_id, uint32_t instance)</td></tr>
+<tr class="memdesc:ga56ca46fe8cd247993517ef065c866bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether an SDev application would accept a connection (opens and closes it again).  <br /></td></tr>
+<tr class="separator:ga56ca46fe8cd247993517ef065c866bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04527048283a8a29cbfe51e25fc4c9de" id="r_ga04527048283a8a29cbfe51e25fc4c9de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga04527048283a8a29cbfe51e25fc4c9de">Ca_SasSApp_Init</a> (void)</td></tr>
+<tr class="memdesc:ga04527048283a8a29cbfe51e25fc4c9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the SIM Access Profile server and register it as SDev application 0x13.  <br /></td></tr>
+<tr class="separator:ga04527048283a8a29cbfe51e25fc4c9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65c5e5cef6536af4280904c9e2de58b6" id="r_ga65c5e5cef6536af4280904c9e2de58b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_j_s_a_p_i___c_o_n_n">JSAPI_CONN</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga65c5e5cef6536af4280904c9e2de58b6">RamJSApiConnections</a> (void)</td></tr>
+<tr class="memdesc:ga65c5e5cef6536af4280904c9e2de58b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the JSApi (Java Bluetooth) connection slots.  <br /></td></tr>
+<tr class="separator:ga65c5e5cef6536af4280904c9e2de58b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61c090833546cc4ab7febcfb10a615af" id="r_ga61c090833546cc4ab7febcfb10a615af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga61c090833546cc4ab7febcfb10a615af">RamBtlpConnections</a> (void)</td></tr>
+<tr class="memdesc:ga61c090833546cc4ab7febcfb10a615af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BTLP (Bluetooth L2CAP port) connection table.  <br /></td></tr>
+<tr class="separator:ga61c090833546cc4ab7febcfb10a615af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84afc0dd90f5b9a0eea63e5f302bb303" id="r_ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga84afc0dd90f5b9a0eea63e5f302bb303">RamL2capChannelState</a> (void)</td></tr>
+<tr class="memdesc:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the L2CAP channel state table.  <br /></td></tr>
+<tr class="separator:ga84afc0dd90f5b9a0eea63e5f302bb303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00fab07c3e820d7b53211615ee378679" id="r_ga00fab07c3e820d7b53211615ee378679"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00fab07c3e820d7b53211615ee378679">CA_MR_New</a> (int cepid, int msg, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td></tr>
 <tr class="memdesc:ga00fab07c3e820d7b53211615ee378679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a CA message replicator: every event of the objects it is subscribed to comes to <code>cepid</code> as GBS message <code>msg</code> (submess = replicator, data0 = object message).  <br /></td></tr>
 <tr class="separator:ga00fab07c3e820d7b53211615ee378679"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +295,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a name="struct_j_s_a_p_i___c_o_n_n" id="struct_j_s_a_p_i___c_o_n_n"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_j_s_a_p_i___c_o_n_n">&#9670;&#160;</a></span>JSAPI_CONN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct JSAPI_CONN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="struct_b_t_l_p___c_o_n_n" id="struct_b_t_l_p___c_o_n_n"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#struct_b_t_l_p___c_o_n_n">&#9670;&#160;</a></span>BTLP_CONN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct BTLP_CONN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga9bd68955176b3976c1af7a2949d39b6f" name="ga9bd68955176b3976c1af7a2949d39b6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9bd68955176b3976c1af7a2949d39b6f">&#9670;&#160;</a></span>SDEV</h2>
@@ -255,6 +353,38 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="bluetooth_8h_source.html#l00018">18</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+
+</div>
+</div>
+<a id="gad408d6e2e59fc1b99aa3ca02cfc5e0a0" name="gad408d6e2e59fc1b99aa3ca02cfc5e0a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad408d6e2e59fc1b99aa3ca02cfc5e0a0">&#9670;&#160;</a></span>JSAPI_CONN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct JSAPI_CONN JSAPI_CONN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bluetooth_8h_source.html#l00019">19</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+
+</div>
+</div>
+<a id="ga72200912a6ae45e3cd439e012de40ae0" name="ga72200912a6ae45e3cd439e012de40ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72200912a6ae45e3cd439e012de40ae0">&#9670;&#160;</a></span>BTLP_CONN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct BTLP_CONN BTLP_CONN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bluetooth_8h_source.html#l00020">20</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
 
 </div>
 </div>
@@ -374,6 +504,579 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>channel / PSM, 0 if the record has none </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="ga911062b0226f845429d88c1e683403a7" name="ga911062b0226f845429d88c1e683403a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga911062b0226f845429d88c1e683403a7">&#9670;&#160;</a></span>JSApi_CurrentHandleID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t JSApi_CurrentHandleID </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the JSApi (Java Bluetooth) slot of a connection handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>slot index; when not registered, the number of slots (firmware dependent) </dd></dl>
+
+</div>
+</div>
+<a id="ga4d17b18b62753646011018812b4d4567" name="ga4d17b18b62753646011018812b4d4567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d17b18b62753646011018812b4d4567">&#9670;&#160;</a></span>JSApi_InitHandles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JSApi_InitHandles </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the JSApi slots once and register JSApi as an SDev application. </p>
+<p>ARM code. </p>
+
+</div>
+</div>
+<a id="gaa9beb2c20bf4c65d7aecf6fa65bd2a90" name="gaa9beb2c20bf4c65d7aecf6fa65bd2a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9beb2c20bf4c65d7aecf6fa65bd2a90">&#9670;&#160;</a></span>JSApi_RegisterConHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSApi_RegisterConHandle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>on_connect&#160;</em></span>)(int conn)&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a connection handle in a free JSApi slot. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+    <tr><td class="paramname">packet</td><td>0: RFCOMM stream, 1: L2CAP packets </td></tr>
+    <tr><td class="paramname">on_connect</td><td>called with conn when a device attaches, NULL = none (ignored on SG/X75) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 OK, 0 when the handle is already registered or 0xFFFE (NSG/ELKA), or the slots are full ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga258486d3cf22f36d3627520848acc999" name="ga258486d3cf22f36d3627520848acc999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga258486d3cf22f36d3627520848acc999">&#9670;&#160;</a></span>JSApi_ReadBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSApi_ReadBytes </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read received data of a JSApi connection. </p>
+<p>In packet mode reads one L2CAP packet. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+    <tr><td class="paramname">buffer</td><td>output buffer </td></tr>
+    <tr><td class="paramname">size</td><td>buffer size; the rest of a longer packet is dropped </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bytes read ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga33edde764cf2093bd9763c0146c568a9" name="ga33edde764cf2093bd9763c0146c568a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33edde764cf2093bd9763c0146c568a9">&#9670;&#160;</a></span>JSApi_BytesAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSApi_BytesAvailable </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of received bytes waiting in a JSApi connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bytes available ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="gade2b7f2eb9693b33628a13f2d8174993" name="gade2b7f2eb9693b33628a13f2d8174993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade2b7f2eb9693b33628a13f2d8174993">&#9670;&#160;</a></span>JSApi_WriteBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSApi_WriteBytes </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send data over a JSApi connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+    <tr><td class="paramname">data</td><td>data </td></tr>
+    <tr><td class="paramname">size</td><td>size in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bytes written, less than size when the stack is busy ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="gabfe9f64b2511586c0f4c86cb671c4159" name="gabfe9f64b2511586c0f4c86cb671c4159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfe9f64b2511586c0f4c86cb671c4159">&#9670;&#160;</a></span>JSApi_ClearConnectionHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JSApi_ClearConnectionHandle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>conn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free the JSApi slot of a connection handle and its receive buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conn</td><td>connection handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 freed, 0 not registered ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga4140b249d68370dd96ea759283095e10" name="ga4140b249d68370dd96ea759283095e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4140b249d68370dd96ea759283095e10">&#9670;&#160;</a></span>BTLP_InitL2CAP_IO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTLP_InitL2CAP_IO </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08..0x0B). </p>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="gaed149ed5dc68a723815b2324383fc49b" name="gaed149ed5dc68a723815b2324383fc49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed149ed5dc68a723815b2324383fc49b">&#9670;&#160;</a></span>BTLP_uiSendDataOverBT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BTLP_uiSendDataOverBT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sapi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send data over an L2CAP port: one buffer per packet from the shared stack pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>data </td></tr>
+    <tr><td class="paramname">size</td><td>size in bytes; on NSG/ELKA more than the channel maximum is a fatal error </td></tr>
+    <tr><td class="paramname">sapi</td><td>L2CAP port SAPI (see <a class="el" href="#ga4140b249d68370dd96ea759283095e10" title="Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08....">BTLP_InitL2CAP_IO</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bytes queued, less than size when the pool is empty </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="ga83f347ed9e2c1438a20ac26ff9348783" name="ga83f347ed9e2c1438a20ac26ff9348783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83f347ed9e2c1438a20ac26ff9348783">&#9670;&#160;</a></span>BTLP_vDataToAppCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTLP_vDataToAppCallback </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sapi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deliver received packets queued on an L2CAP port to its application until it stops taking them. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sapi</td><td>L2CAP port SAPI (see <a class="el" href="#ga4140b249d68370dd96ea759283095e10" title="Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08....">BTLP_InitL2CAP_IO</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="ga9c5de3ad45f959f3208ab9b0db32729e" name="ga9c5de3ad45f959f3208ab9b0db32729e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c5de3ad45f959f3208ab9b0db32729e">&#9670;&#160;</a></span>BTLP_vFlushBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTLP_vFlushBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sapi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drop the received packets queued on an L2CAP port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>1 or 3 flushes, other values do nothing </td></tr>
+    <tr><td class="paramname">sapi</td><td>L2CAP port SAPI (see <a class="el" href="#ga4140b249d68370dd96ea759283095e10" title="Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08....">BTLP_InitL2CAP_IO</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="gabc9aab97ecb13c8c986e8fdecc8f5e6f" name="gabc9aab97ecb13c8c986e8fdecc8f5e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc9aab97ecb13c8c986e8fdecc8f5e6f">&#9670;&#160;</a></span>L2CA_ReadDataReq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void L2CA_ReadDataReq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L2CAP handler of the L2CA_ReadDataReq signal. </p>
+<p>Not reversed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>signal, meaning not known </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="gaa56489c85aa39ec92d2c3f66ac0d2c49" name="gaa56489c85aa39ec92d2c3f66ac0d2c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa56489c85aa39ec92d2c3f66ac0d2c49">&#9670;&#160;</a></span>SApp_Register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SApp_Register </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>handler_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>methods</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register an SDev application (serial data endpoint) in the application table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler_id</td><td>application number (0..31 on NSG/ELKA, 0..26 on SG/X75) </td></tr>
+    <tr><td class="paramname">methods</td><td>method table of the application ARM code. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga507af8f593c1049b3ada50742e862638" name="ga507af8f593c1049b3ada50742e862638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga507af8f593c1049b3ada50742e862638">&#9670;&#160;</a></span>ConnSDevSApp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConnSDevSApp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>sdevice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>handler_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect a serial device to an SDev application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sdevice</td><td>device type (0..18 on NSG/ELKA, 0..16 on SG/X75) </td></tr>
+    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">connection_info</td><td>connection information passed to both sides </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 OK, 0 when either side refuses ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga7c80dcfdea23250ae5fa2d12c4b6c9d7" name="ga7c80dcfdea23250ae5fa2d12c4b6c9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c80dcfdea23250ae5fa2d12c4b6c9d7">&#9670;&#160;</a></span>CHConnSApp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CHConnSApp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>handler_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>new_handler_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>connection_info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move an open device connection from one SDev application to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler_id</td><td>current application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">instance</td><td>connection instance of the current application </td></tr>
+    <tr><td class="paramname">new_handler_id</td><td>new application number; the current one returns 1 without changes </td></tr>
+    <tr><td class="paramname">connection_info</td><td>connection information for the new application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 OK, 0 error ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga56ca46fe8cd247993517ef065c866bdf" name="ga56ca46fe8cd247993517ef065c866bdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56ca46fe8cd247993517ef065c866bdf">&#9670;&#160;</a></span>Serial_CanOpenSApp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serial_CanOpenSApp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>handler_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether an SDev application would accept a connection (opens and closes it again). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler_id</td><td>application number (see <a class="el" href="#gaa56489c85aa39ec92d2c3f66ac0d2c49" title="Register an SDev application (serial data endpoint) in the application table.">SApp_Register</a>) </td></tr>
+    <tr><td class="paramname">instance</td><td>passed to the application's open method </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 yes, 0 no ARM code. </dd></dl>
+
+</div>
+</div>
+<a id="ga04527048283a8a29cbfe51e25fc4c9de" name="ga04527048283a8a29cbfe51e25fc4c9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04527048283a8a29cbfe51e25fc4c9de">&#9670;&#160;</a></span>Ca_SasSApp_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ca_SasSApp_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the SIM Access Profile server and register it as SDev application 0x13. </p>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="ga65c5e5cef6536af4280904c9e2de58b6" name="ga65c5e5cef6536af4280904c9e2de58b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65c5e5cef6536af4280904c9e2de58b6">&#9670;&#160;</a></span>RamJSApiConnections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#struct_j_s_a_p_i___c_o_n_n">JSAPI_CONN</a> * RamJSApiConnections </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the JSApi (Java Bluetooth) connection slots. </p>
+<dl class="section return"><dt>Returns</dt><dd>slot array, <a class="el" href="#ga911062b0226f845429d88c1e683403a7" title="Find the JSApi (Java Bluetooth) slot of a connection handle.">JSApi_CurrentHandleID</a> returns the number of slots for an unregistered handle </dd></dl>
+
+</div>
+</div>
+<a id="ga61c090833546cc4ab7febcfb10a615af" name="ga61c090833546cc4ab7febcfb10a615af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61c090833546cc4ab7febcfb10a615af">&#9670;&#160;</a></span>RamBtlpConnections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#struct_b_t_l_p___c_o_n_n">BTLP_CONN</a> * RamBtlpConnections </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the BTLP (Bluetooth L2CAP port) connection table. </p>
+<dl class="section return"><dt>Returns</dt><dd>one entry per L2CAP port (see <a class="el" href="#ga4140b249d68370dd96ea759283095e10" title="Initialise the L2CAP port devices: 9 on NSG/ELKA (SAPI 0x0D..0x15), 4 on SG/X75 (SAPI 0x08....">BTLP_InitL2CAP_IO</a>) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
+
+</div>
+</div>
+<a id="ga84afc0dd90f5b9a0eea63e5f302bb303" name="ga84afc0dd90f5b9a0eea63e5f302bb303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84afc0dd90f5b9a0eea63e5f302bb303">&#9670;&#160;</a></span>RamL2capChannelState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RamL2capChannelState </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the L2CAP channel state table. </p>
+<dl class="section return"><dt>Returns</dt><dd>channel state table </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Only on models with Bluetooth. </dd></dl>
 
 </div>

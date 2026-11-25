@@ -11,5 +11,6 @@ var searchData=
   ['bn_5fblinding_5fst_8',['bn_blinding_st',['../bn_8h.html#structbn__blinding__st',1,'']]],
   ['bn_5fmont_5fctx_5fst_9',['bn_mont_ctx_st',['../bn_8h.html#structbn__mont__ctx__st',1,'']]],
   ['bn_5frecp_5fctx_5fst_10',['bn_recp_ctx_st',['../bn_8h.html#structbn__recp__ctx__st',1,'']]],
-  ['buf_5fmem_5fst_11',['buf_mem_st',['../buffer_8h.html#structbuf__mem__st',1,'']]]
+  ['btlp_5fconn_11',['BTLP_CONN',['../group___bluetooth.html#struct_b_t_l_p___c_o_n_n',1,'']]],
+  ['buf_5fmem_5fst_12',['buf_mem_st',['../buffer_8h.html#structbuf__mem__st',1,'']]]
 ];

@@ -16,10 +16,11 @@ var searchData=
   ['job_5frecfile_13',['Job_RecFile',['../group___sound.html#ggae71bd3edbb0e431ada94dad8ed89e73eab239d86d9b4ae3eb3151a8b9c356547f',1,'sound.h']]],
   ['jsapi_5fbytesavailable_14',['JSApi_BytesAvailable',['../group___bluetooth.html#ga33edde764cf2093bd9763c0146c568a9',1,'bluetooth.h']]],
   ['jsapi_5fclearconnectionhandle_15',['JSApi_ClearConnectionHandle',['../group___bluetooth.html#gabfe9f64b2511586c0f4c86cb671c4159',1,'bluetooth.h']]],
-  ['jsapi_5fcurrenthandleid_16',['JSApi_CurrentHandleID',['../group___bluetooth.html#ga911062b0226f845429d88c1e683403a7',1,'bluetooth.h']]],
-  ['jsapi_5fgetconnectionstate_17',['JSApi_GetConnectionState',['../group___bluetooth.html#gaec8358b0fc0d924c1e91877dc3820034',1,'bluetooth.h']]],
-  ['jsapi_5finithandles_18',['JSApi_InitHandles',['../group___bluetooth.html#ga4d17b18b62753646011018812b4d4567',1,'bluetooth.h']]],
-  ['jsapi_5freadbytes_19',['JSApi_ReadBytes',['../group___bluetooth.html#ga258486d3cf22f36d3627520848acc999',1,'bluetooth.h']]],
-  ['jsapi_5fregisterconhandle_20',['JSApi_RegisterConHandle',['../group___bluetooth.html#ga97640870e22645bb3773cce3cefdd084',1,'bluetooth.h']]],
-  ['jsapi_5fwritebytes_21',['JSApi_WriteBytes',['../group___bluetooth.html#gade2b7f2eb9693b33628a13f2d8174993',1,'bluetooth.h']]]
+  ['jsapi_5fconn_16',['JSAPI_CONN',['../group___bluetooth.html#struct_j_s_a_p_i___c_o_n_n',1,'JSAPI_CONN'],['../group___bluetooth.html#gad408d6e2e59fc1b99aa3ca02cfc5e0a0',1,'JSAPI_CONN:&#160;bluetooth.h']]],
+  ['jsapi_5fcurrenthandleid_17',['JSApi_CurrentHandleID',['../group___bluetooth.html#ga911062b0226f845429d88c1e683403a7',1,'bluetooth.h']]],
+  ['jsapi_5fgetconnectionstate_18',['JSApi_GetConnectionState',['../group___bluetooth.html#gaec8358b0fc0d924c1e91877dc3820034',1,'bluetooth.h']]],
+  ['jsapi_5finithandles_19',['JSApi_InitHandles',['../group___bluetooth.html#ga4d17b18b62753646011018812b4d4567',1,'bluetooth.h']]],
+  ['jsapi_5freadbytes_20',['JSApi_ReadBytes',['../group___bluetooth.html#ga258486d3cf22f36d3627520848acc999',1,'bluetooth.h']]],
+  ['jsapi_5fregisterconhandle_21',['JSApi_RegisterConHandle',['../group___bluetooth.html#gaa9beb2c20bf4c65d7aecf6fa65bd2a90',1,'bluetooth.h']]],
+  ['jsapi_5fwritebytes_22',['JSApi_WriteBytes',['../group___bluetooth.html#gade2b7f2eb9693b33628a13f2d8174993',1,'bluetooth.h']]]
 ];

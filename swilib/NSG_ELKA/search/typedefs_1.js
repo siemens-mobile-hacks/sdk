@@ -14,8 +14,9 @@ var searchData=
   ['bn_5fmont_5fctx_11',['BN_MONT_CTX',['../bn_8h.html#aec902d353e00ced6d3fee6cd033a8bd0',1,'bn.h']]],
   ['bn_5frecp_5fctx_12',['BN_RECP_CTX',['../bn_8h.html#a5de69a274a54c379cdce2a9954a57bbd',1,'bn.h']]],
   ['boolean_13',['BOOLEAN',['../group___n_u_c_l_e_u_s.html#ga0481d5094d1cb6d6c4fed1191d2226cd',1,'nucleus.h']]],
-  ['buf_5fmem_14',['BUF_MEM',['../buffer_8h.html#aaea4d745bf2689d2009791186616bb3c',1,'buffer.h']]],
-  ['byte_15',['Byte',['../zconf_8h.html#ae3a497195d617519e5353ea7b417940f',1,'zconf.h']]],
-  ['byte_5fptr_16',['BYTE_PTR',['../group___n_u_c_l_e_u_s.html#gae6cf9e1c719865049d11f6748432eb39',1,'nucleus.h']]],
-  ['bytef_17',['Bytef',['../zconf_8h.html#ac5613fe8160cbbf89d3e470574b755fb',1,'zconf.h']]]
+  ['btlp_5fconn_14',['BTLP_CONN',['../group___bluetooth.html#ga72200912a6ae45e3cd439e012de40ae0',1,'bluetooth.h']]],
+  ['buf_5fmem_15',['BUF_MEM',['../buffer_8h.html#aaea4d745bf2689d2009791186616bb3c',1,'buffer.h']]],
+  ['byte_16',['Byte',['../zconf_8h.html#ae3a497195d617519e5353ea7b417940f',1,'zconf.h']]],
+  ['byte_5fptr_17',['BYTE_PTR',['../group___n_u_c_l_e_u_s.html#gae6cf9e1c719865049d11f6748432eb39',1,'nucleus.h']]],
+  ['bytef_18',['Bytef',['../zconf_8h.html#ac5613fe8160cbbf89d3e470574b755fb',1,'zconf.h']]]
 ];

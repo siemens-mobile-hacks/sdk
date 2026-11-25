@@ -119,17 +119,15 @@ var group___g_p_r_s =
     [ "enip_timer_cancel", "group___g_p_r_s.html#ga5855f3fa8a540f5d2c3510a1b1a4ae05", null ],
     [ "enip_timer_start", "group___g_p_r_s.html#ga404e33e14483f3bf2bdaad56de0c23a4", null ],
     [ "LMAN_LINK_UP_CNF", "group___g_p_r_s.html#ga92902769b861c5abac6c08ee4f883f55", null ],
-    [ "lman_app_register", "group___g_p_r_s.html#gafe17496e3cd402706c1e2145635774a4", null ],
-    [ "lman_app_free", "group___g_p_r_s.html#gad9a3e048bdfaf32b881b98b0fcdad3b9", null ],
-    [ "lman_app_set_bearer", "group___g_p_r_s.html#ga9c0d66a0884791f7df5bd47d31195219", null ],
-    [ "lman_get_active_connection_id", "group___g_p_r_s.html#gaaa6a82e3387a87fd1da29861cc131fab", null ],
-    [ "lman_GetBearerIdForCi", "group___g_p_r_s.html#ga66ecd0b7790ac5eccf4d30c6540e7fd0", null ],
-    [ "lman_get_socket_destination", "group___g_p_r_s.html#ga73b2674dc0c018a326e153f6c6c68617", null ],
+    [ "LMAN_FreeSocketReg", "group___g_p_r_s.html#gaf0d870d172ee2ff88b039eb59ddb00b0", null ],
+    [ "LMAN_FindContext", "group___g_p_r_s.html#ga26ce2e45f0aa4f0ad3aa8f7949aa6a20", null ],
+    [ "LMAN_GetBearerIdForCi", "group___g_p_r_s.html#gaa7c7a52d733bd2bb5ca77bfb1e81b6a9", null ],
+    [ "LMAN_GetSocketDestination", "group___g_p_r_s.html#gaf3290f7aa839d150c41aba8e5f3c933a", null ],
     [ "zDLL_Init", "group___g_p_r_s.html#gaf7eb1796f6224e56d60e7dd401011d85", null ],
     [ "RamActiveGPRSProfileName", "group___g_p_r_s.html#ga50550c586f46c004d5174b4a47632296", null ],
     [ "RefreshGPRSTraffic", "group___g_p_r_s.html#ga0b8abe545a8426ac1987a3d191a1bda2", null ],
     [ "ResetGPRSTraffic", "group___g_p_r_s.html#ga0408fe9e3cc0afc74ec9e98816cd01f6", null ],
     [ "GetGPRSTrafficPointer", "group___g_p_r_s.html#gadd1324add5adf8b853e98b371b072305", null ],
-    [ "LMAN_GetRegSlot", "group___g_p_r_s.html#gac06691580f4c50a1882595fbcacd54bc", null ],
-    [ "LMAN_FillReg", "group___g_p_r_s.html#gaef371a047bd00e640a006a2bd1a88b5f", null ]
+    [ "LMAN_GetOrAllocSocketRegIndex", "group___g_p_r_s.html#ga8a9f88e77e05be7d50a6d62ffd8234e6", null ],
+    [ "LMAN_SetSocketReg", "group___g_p_r_s.html#ga8297dc666f899800cbbbfa680529352b", null ]
 ];

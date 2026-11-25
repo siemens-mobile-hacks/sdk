@@ -7,6 +7,6 @@ var searchData=
   ['jsapi_5fgetconnectionstate_4',['JSApi_GetConnectionState',['../group___bluetooth.html#gaec8358b0fc0d924c1e91877dc3820034',1,'bluetooth.h']]],
   ['jsapi_5finithandles_5',['JSApi_InitHandles',['../group___bluetooth.html#ga4d17b18b62753646011018812b4d4567',1,'bluetooth.h']]],
   ['jsapi_5freadbytes_6',['JSApi_ReadBytes',['../group___bluetooth.html#ga258486d3cf22f36d3627520848acc999',1,'bluetooth.h']]],
-  ['jsapi_5fregisterconhandle_7',['JSApi_RegisterConHandle',['../group___bluetooth.html#ga97640870e22645bb3773cce3cefdd084',1,'bluetooth.h']]],
+  ['jsapi_5fregisterconhandle_7',['JSApi_RegisterConHandle',['../group___bluetooth.html#gaa9beb2c20bf4c65d7aecf6fa65bd2a90',1,'bluetooth.h']]],
   ['jsapi_5fwritebytes_8',['JSApi_WriteBytes',['../group___bluetooth.html#gade2b7f2eb9693b33628a13f2d8174993',1,'bluetooth.h']]]
 ];

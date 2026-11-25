@@ -379,8 +379,8 @@ var searchData=
   ['x509v3_5fext_5fconf_5fnid_376',['X509V3_EXT_conf_nid',['../x509v3_8h.html#a8b27d2f1d7e2d559c3c1753bff8d0c9a',1,'x509v3.h']]],
   ['x509v3_5fext_5fcrl_5fadd_5fconf_377',['X509V3_EXT_CRL_add_conf',['../x509v3_8h.html#af7f9fad17149b1dcd0090cabd22f3e0b',1,'x509v3.h']]],
   ['x509v3_5fext_5fctx_5fdep_378',['X509V3_EXT_CTX_DEP',['../x509v3_8h.html#ab9ba6934f15dff6bd9320c030342192f',1,'x509v3.h']]],
-  ['x509v3_5fext_5fd2i_379',['X509V3_EXT_D2I',['../x509v3_8h.html#a3a0390a3af5b524f63de3a8a6aa7add6',1,'x509v3.h']]],
-  ['x509v3_5fext_5fd2i_380',['X509V3_EXT_d2i',['../x509v3_8h.html#ac8e332fd514cadb132ae37b2398550f3',1,'x509v3.h']]],
+  ['x509v3_5fext_5fd2i_379',['X509V3_EXT_d2i',['../x509v3_8h.html#ac8e332fd514cadb132ae37b2398550f3',1,'x509v3.h']]],
+  ['x509v3_5fext_5fd2i_380',['X509V3_EXT_D2I',['../x509v3_8h.html#a3a0390a3af5b524f63de3a8a6aa7add6',1,'x509v3.h']]],
   ['x509v3_5fext_5fdynamic_381',['X509V3_EXT_DYNAMIC',['../x509v3_8h.html#ad207d8512665c6e8fece990b0a5b4519',1,'x509v3.h']]],
   ['x509v3_5fext_5ffree_382',['X509V3_EXT_FREE',['../x509v3_8h.html#a90f00f10cb7c7d69c4a3336dbf3eb928',1,'x509v3.h']]],
   ['x509v3_5fext_5fget_383',['X509V3_EXT_get',['../x509v3_8h.html#aa0942cd4c004eb7273a5aca15de208bf',1,'x509v3.h']]],
@@ -525,5 +525,7 @@ var searchData=
   ['xku_5fsmime_522',['XKU_SMIME',['../x509v3_8h.html#aa4695efbf8bca15958d3f98a63ac588d',1,'x509v3.h']]],
   ['xku_5fssl_5fclient_523',['XKU_SSL_CLIENT',['../x509v3_8h.html#a2ca73017d2f90d80abbc56c09238ecec',1,'x509v3.h']]],
   ['xku_5fssl_5fserver_524',['XKU_SSL_SERVER',['../x509v3_8h.html#a6793a948192d6d455e04be87c7cb775f',1,'x509v3.h']]],
-  ['xtask_5fipc_2eh_525',['xtask_ipc.h',['../xtask__ipc_8h.html',1,'']]]
+  ['xoff_5fchar_525',['xoff_char',['../group___bluetooth.html#a78d534b1bac73709069b282ad5588a37',1,'JSAPI_CONN']]],
+  ['xon_5fchar_526',['xon_char',['../group___bluetooth.html#ace6e0b85981be8ecad8ea634314fda0d',1,'JSAPI_CONN']]],
+  ['xtask_5fipc_2eh_527',['xtask_ipc.h',['../xtask__ipc_8h.html',1,'']]]
 ];

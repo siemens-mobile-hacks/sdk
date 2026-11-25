@@ -187,11 +187,15 @@ var searchData=
   ['bt_5fgetlocaldevice_184',['BT_GetLocalDevice',['../group___bluetooth.html#ga5d4424b68fe66d9eb9704dedaeac3f8d',1,'bluetooth.h']]],
   ['bt_5fgetlocvisibility_185',['BT_GetLocVisibility',['../group___info.html#gac7ec995909dc0db9e41dcf4bc66479d9',1,'info.h']]],
   ['bta_5fsdprec_5fgetchannel_186',['BTA_SdpRec_GetChannel',['../group___bluetooth.html#gad0ef17ef9de31419668fbec3911a50b2',1,'bluetooth.h']]],
-  ['buf_5fmem_5ffree_187',['BUF_MEM_free',['../buffer_8h.html#a23b89bdd73ece6de391da978a0649388',1,'buffer.h']]],
-  ['buf_5fmem_5fgrow_188',['BUF_MEM_grow',['../buffer_8h.html#a9197c3442cef41c5c749c7a63e4c99ea',1,'buffer.h']]],
-  ['buf_5fmem_5fnew_189',['BUF_MEM_new',['../buffer_8h.html#a2ef2d5c1f3c48d765772d579c5520a77',1,'buffer.h']]],
-  ['buf_5fstrdup_190',['BUF_strdup',['../buffer_8h.html#adc52668f5e2cc669bd2d17ac341e9359',1,'buffer.h']]],
-  ['buildcanvas_191',['BuildCanvas',['../group___g_u_i.html#ga024971abffcbb4d49025da695a7b288d',1,'gui.h']]],
-  ['buildpath_192',['BuildPath',['../group___explorer.html#gae79533b0b95f6badc5d4d34551483ac4',1,'explorer.h']]],
-  ['bzero_193',['bzero',['../group__libc.html#ga374cda7fc0f7ec3ab2b4ac04fb858922',1,'libc.h']]]
+  ['btlp_5finitl2cap_5fio_187',['BTLP_InitL2CAP_IO',['../group___bluetooth.html#ga4140b249d68370dd96ea759283095e10',1,'bluetooth.h']]],
+  ['btlp_5fuisenddataoverbt_188',['BTLP_uiSendDataOverBT',['../group___bluetooth.html#gaed149ed5dc68a723815b2324383fc49b',1,'bluetooth.h']]],
+  ['btlp_5fvdatatoappcallback_189',['BTLP_vDataToAppCallback',['../group___bluetooth.html#ga83f347ed9e2c1438a20ac26ff9348783',1,'bluetooth.h']]],
+  ['btlp_5fvflushbuffer_190',['BTLP_vFlushBuffer',['../group___bluetooth.html#ga9c5de3ad45f959f3208ab9b0db32729e',1,'bluetooth.h']]],
+  ['buf_5fmem_5ffree_191',['BUF_MEM_free',['../buffer_8h.html#a23b89bdd73ece6de391da978a0649388',1,'buffer.h']]],
+  ['buf_5fmem_5fgrow_192',['BUF_MEM_grow',['../buffer_8h.html#a9197c3442cef41c5c749c7a63e4c99ea',1,'buffer.h']]],
+  ['buf_5fmem_5fnew_193',['BUF_MEM_new',['../buffer_8h.html#a2ef2d5c1f3c48d765772d579c5520a77',1,'buffer.h']]],
+  ['buf_5fstrdup_194',['BUF_strdup',['../buffer_8h.html#adc52668f5e2cc669bd2d17ac341e9359',1,'buffer.h']]],
+  ['buildcanvas_195',['BuildCanvas',['../group___g_u_i.html#ga024971abffcbb4d49025da695a7b288d',1,'gui.h']]],
+  ['buildpath_196',['BuildPath',['../group___explorer.html#gae79533b0b95f6badc5d4d34551483ac4',1,'explorer.h']]],
+  ['bzero_197',['bzero',['../group__libc.html#ga374cda7fc0f7ec3ab2b4ac04fb858922',1,'libc.h']]]
 ];
