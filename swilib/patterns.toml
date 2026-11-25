@@ -2432,6 +2432,7 @@ ELKA = """
 [186]
 decl = "int RegisterCepidForSocketWork(REGSOCKCEPID_DATA *reg)"
 NSG = "??,B5,??,1C,??,??,??,??,??,1C,??,88,??,4E,??,4F,??,07,??,D5,??,??,??,??,??,28,??,D0,??,42,??,D0,??,1C,??,20"
+SG = "F8 B5 05 1C ?? F? ?? E? 04 1C A8 88 ?? 4E ?? 4F C0 07 ?? D5 ?? F0 ?? F9 00 28 ?? D0 A0 42 ?? D0 03 DF"
 
 [187]
 decl = "int RequestLMANConnect(LMAN_DATA *data)"
@@ -6311,7 +6312,7 @@ ELKA = "F0 B5 9D B0 05 1C 03 24 32 23 32 21"
 SG = "F0 B5 9D B0 05 1C 03 24 32 23 32 21 10 A8 03 AA"
 
 [490]
-decl = "int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param, const ENIP_SOCKET_DESTINATION *destination)"
+decl = "int enip_sock_create(int family, int type, int protocol, int *socket_id, uint32_t param, const ENIP_SOCKET_DESTINATION *destination)"
 NSG = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
 ELKA = "7C B5 0C 1C 06 1C 00 2B 06 99 07 9D"
 SG = "7C B5 0E 1C 05 1C 00 2B 06 99 07 9C 02 D1 ?? 48"
@@ -6329,7 +6330,7 @@ ELKA = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
 SG = "10 B5 04 1C ?? F? ?? ?? 01 1C ?? 48 ?? F? ?? ??"
 
 [493]
-decl = "ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1, uint32_t param2)"
+decl = "ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *socket_id, uint32_t param1, uint32_t param2)"
 NSG = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
 ELKA = "FF B5 ?? 49 83 B0 08 78 00 27 0D 9E"
 SG = "FF B5 ?? 49 83 B0 08 78 00 25 0D 9F 00 06 80 0F"

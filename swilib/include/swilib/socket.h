@@ -359,7 +359,7 @@ __swi_end(0x439, ioctlsocket, (sock, cmd, arg));
 /**
  * Start listening for incoming TCP connections.
  * @param sock		bound socket descriptor
- * @param backlog		pending-connection queue length
+ * @param backlog		must be 3, other values fail
  * @return 0 on success, -1 on error
  * */
 __swi_begin(0x43A)

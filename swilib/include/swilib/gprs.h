@@ -428,7 +428,7 @@ __swi_end(0x1A4, GetDisconnectTime, ());
  * Register current CEPID for sockets.
  * @param reg	pointer to the #REGSOCKCEPID_DATA
  * @return 1: success, 0: error
- * @warning Call only from SUBPROC, NewSGOLD only.
+ * @warning Call only from SUBPROC.
  * */
 __swi_begin(0x186)
 int RegisterCepidForSocketWork(REGSOCKCEPID_DATA *reg)
@@ -771,7 +771,7 @@ __swi_end(0x477, enip_packet_max_size, ());
 
 /**
  * Initialise the ENIP IP module, its interface slots (8 on NSG/ELKA, 16 on SG/X75) and the 2 reassembly slots.
- * @param post_run	stored as the IP module's post-run procedure (not confirmed)
+ * @param post_run	post-run procedure of the IP module (see #ENIP_MODULE)
  * @return 1
  * */
 __swi_begin(0x478)
@@ -877,11 +877,11 @@ int enip_iph_write(ENIP_PORT **port, ENIP_PKT *packet, uint32_t size)
 __swi_end(0x482, enip_iph_write, (port, packet, size));
 
 /**
- * Receive handler of the secure IP layer: answers a special 8-byte UDP probe in place.
- * Only partly reversed.
+ * Receive handler of the secure IP layer: answers a special 8-byte ICMP probe (type 0x49, code 0x44, id 1)
+ * in place with "SCRN\3\0".
  * @param iface	receiving IP interface
  * @param packet	ENIP packet
- * @return meaning not known
+ * @return 1 when the probe was answered, 0 to pass the packet to #enip_icmp_frame_read
  * */
 __swi_begin(0x483)
 int enip_siph_crypt_frame_read(ENIP_IPH_INTERFACE *iface, ENIP_PKT *packet)
@@ -1002,15 +1002,15 @@ __swi_end(0x48F, ENIP_PDP_START_CSD_INT_REQ, (bearer));
  * @param family	1: IPv4
  * @param type	0: datagram, 1: stream
  * @param protocol	0, 17 (UDP) or 6 (TCP)
- * @param owner	owner, must not be NULL; meaning not known
- * @param param	passed to enip_sockh_create_internal; meaning not known
+ * @param[out] socket_id	receives the socket ID, must not be NULL
+ * @param param	passed to #enip_sockh_create_internal; meaning not known
  * @param destination	socket destination
- * @return socket ID, negative on error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x490)
-int enip_sock_create(int family, int type, int protocol, int *owner, uint32_t param,
+int enip_sock_create(int family, int type, int protocol, int *socket_id, uint32_t param,
 	const ENIP_SOCKET_DESTINATION *destination)
-__swi_end(0x490, enip_sock_create, (family, type, protocol, owner, param, destination));
+__swi_end(0x490, enip_sock_create, (family, type, protocol, socket_id, param, destination));
 
 /**
  * Connect a socket: set the peer of a datagram socket or start a TCP connection.
@@ -1019,7 +1019,7 @@ __swi_end(0x490, enip_sock_create, (family, type, protocol, owner, param, destin
  * @param unknown	meaning not known
  * @param port	peer port, network byte order
  * @param timeout	TCP connect timeout
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x491)
 int enip_socket_connect(int socket, int address, int unknown, uint16_t port, uint32_t timeout)
@@ -1038,21 +1038,21 @@ __swi_end(0x492, enip_sockh_IF_init, (iface));
  * @param family	1: IPv4
  * @param type	0: datagram, 1: stream
  * @param protocol	17 (UDP) or 6 (TCP)
- * @param owner	meaning not known
+ * @param[out] socket_id	receives the socket ID
  * @param param1	meaning not known
  * @param param2	meaning not known
  * @return socket, NULL when the table is full
  * */
 __swi_begin(0x493)
-ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *owner, uint32_t param1,
+ENIP_SOCKET *enip_sockh_create_internal(int family, int type, int protocol, int *socket_id, uint32_t param1,
 	uint32_t param2)
-__swi_end(0x493, enip_sockh_create_internal, (family, type, protocol, owner, param1, param2));
+__swi_end(0x493, enip_sockh_create_internal, (family, type, protocol, socket_id, param1, param2));
 
 /**
  * Bind a socket to an IP interface: the one matching its LMAN destination, or the first usable one.
  * @param socket	ENIP socket
  * @param address	peer IPv4 address, 0 or -1 for none
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x494)
 int enip_sockh_autobind_IF(ENIP_SOCKET *socket, int address)
@@ -1065,7 +1065,7 @@ __swi_end(0x494, enip_sockh_autobind_IF, (socket, address));
  * @param pool	buffer pool (see #ENIP_PacketAlloc)
  * @param packet	receives the ENIP packet
  * @param timeout	meaning not known
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x495)
 int enip_sockh_packet_allocate(ENIP_SOCKET *socket, uint32_t size, uint32_t pool, ENIP_PKT **packet, int timeout)
@@ -1101,7 +1101,7 @@ __swi_end(0x497, enip_sockh_from_ipheader, (iface, header));
  * @param index	index of the outgoing packet in the firmware's table
  * @param socket	ENIP socket
  * @param address	destination IPv4 address, network byte order
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x498)
 int enip_sockh_prepare_send(int index, ENIP_SOCKET *socket, uint32_t address)
@@ -1109,9 +1109,9 @@ __swi_end(0x498, enip_sockh_prepare_send, (index, socket, address));
 
 #ifdef NEWSGOLD
 /**
- * Allocate an outgoing TCP segment of the socket's maximum size. Only partly reversed.
+ * Check that a TCP segment of the socket's maximum size can be allocated (allocates it and frees it at once).
  * @param socket	ENIP socket
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * @platforms NSG, ELKA
  * */
 __swi_begin(0x499)
@@ -1122,7 +1122,7 @@ __swi_end(0x499, enip_sockh_tcp_packet_allocate, (socket));
 /**
  * Initialise the TCP state of a socket: initial sequence number, windows and MSS.
  * @param socket	ENIP socket bound to an interface
- * @return 0 or negative error
+ * @return 0
  * */
 __swi_begin(0x49A)
 int enip_tcph_sock_init(ENIP_SOCKET *socket)
@@ -1135,7 +1135,7 @@ __swi_end(0x49A, enip_tcph_sock_init, (socket));
  * @param unknown	meaning not known
  * @param port	peer port, network byte order
  * @param timeout	connect timeout, 0 for the default
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x49B)
 int enip_tcph_sock_connect(ENIP_SOCKET *socket, int address, uint32_t unknown, uint16_t port, uint32_t timeout)
@@ -1149,7 +1149,7 @@ __swi_end(0x49B, enip_tcph_sock_connect, (socket, address, unknown, port, timeou
  * @param size	payload size in bytes
  * @param packet	preallocated ENIP packet or NULL
  * @param unknown	meaning not known
- * @return 0 or negative error
+ * @return 0 or an ENIP error code (0x20xx)
  * */
 __swi_begin(0x49C)
 int enip_tcph_send_segment(ENIP_SOCKET *socket, uint32_t flags, const void *data, uint32_t size, ENIP_PKT *packet,
@@ -1157,11 +1157,10 @@ int enip_tcph_send_segment(ENIP_SOCKET *socket, uint32_t flags, const void *data
 __swi_end(0x49C, enip_tcph_send_segment, (socket, flags, data, size, packet, unknown));
 
 /**
- * Take a received TCP segment into the socket's receive state (part of TCP input).
- * Only partly reversed.
+ * Fill in the TCP header of an outgoing segment of the socket and send it. Only partly reversed.
  * @param socket	ENIP socket
  * @param packet	ENIP packet with the IPv4 and TCP headers
- * @param use_sequence	nonzero: take the sequence number from the segment
+ * @param use_sequence	nonzero: keep the sequence number of the segment (retransmission), 0: take it from the socket
  * */
 __swi_begin(0x49D)
 void enip_tcph_write_segment(ENIP_SOCKET *socket, ENIP_PKT *packet, int use_sequence)

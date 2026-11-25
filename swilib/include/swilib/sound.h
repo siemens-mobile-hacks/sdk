@@ -350,7 +350,8 @@ __swi_end(0x225, PlayMelody_SetVolume, (handle, volume));
  * Get the volume of the playing melody.
  * @param handle		play object handle
  * @param[out] volume	current volume, see #PLAY_VOLUME
- * @return 1 if success, 0 if error
+ * @return 1 if the handle is valid, 0 if error
+ * @note volume may be left unchanged even when 1 is returned; initialize it before the call.
  * */
 __swi_begin(0x4E4)
 int PlayMelody_GetVolume(int handle, PLAY_VOLUME *volume)
