@@ -20,6 +20,8 @@ typedef struct REGSOCKCEPID_DATA REGSOCKCEPID_DATA;
 typedef struct CTX_NAPDEF CTX_NAPDEF;
 typedef struct NAP_PARAM_CONT NAP_PARAM_CONT;
 typedef struct LMAN_DATA LMAN_DATA;
+typedef struct LMAN_SOCKET_REG LMAN_SOCKET_REG;
+typedef struct LMAN_CONTEXT LMAN_CONTEXT;
 
 /**
  * LinkManager GBS events.
@@ -49,7 +51,6 @@ enum EnipEventID {
 
 /**
  * CEPID registration data for sockets.
- * @warning Used on NewSGOLD.
  * */
 #pragma pack(2)
 struct REGSOCKCEPID_DATA {
@@ -58,6 +59,43 @@ struct REGSOCKCEPID_DATA {
 	uint16_t _0x0000;	/**< Set to 0x0000 */
 };
 #pragma pack()
+
+/**
+ * LMAN socket registration of a process (see #RamSocketRegs).
+ * */
+struct LMAN_SOCKET_REG {
+	uint16_t cepid;			/**< Process, 0xFFFF = free */
+	REGSOCKCEPID_DATA data;	/**< See #LMAN_SetSocketReg */
+	uint32_t unk_08;
+	int unk_0C;
+	int keep;				/**< See #LMAN_SetSocketReg */
+};
+
+/**
+ * LMAN context (see #RamLmanContexts).
+ * */
+struct LMAN_CONTEXT {
+	uint8_t state;			/**< See #LMAN_SetState */
+	uint8_t bearer;			/**< See #LMAN_AllocContext, 0xFF = free */
+	uint8_t type;			/**< See #LMAN_AllocContext */
+	uint8_t unk_03;
+	uint16_t iface;			/**< See #LMAN_AttachInterface */
+	uint16_t unk_06;		/**< See #LMAN_AttachInterface */
+#ifdef NEWSGOLD
+	char name[25];			/**< Profile name, see #LMAN_SetProfile */
+	uint8_t unk_21[3];
+	uint32_t unk_24;
+	char unk_28[25];
+	char unk_41[25];
+	uint8_t unk_5A[2];
+	uint32_t unk_5C;
+	uint32_t unk_60;
+	int unk_64;				/**< unk_5C is set */
+	int unk_68;				/**< unk_60 is set */
+	uint8_t unk_6C;
+	uint8_t unk_6D[3];
+#endif
+};
 
 /**
  * Network Access Point data.
@@ -311,11 +349,11 @@ void LMAN_FreeContext(unsigned cid)
 __swi_end(0x442, LMAN_FreeContext, (cid));
 
 /**
- * Get the native LMAN context table.
- * @return pointer to 8 context entries: 0x70 bytes each on NSG/ELKA, 8 bytes on SG/X75
+ * Get the LMAN context table.
+ * @return 8 entries
  * */
 __swi_begin(0x8444)
-uint8_t *RamLmanContexts(void)
+LMAN_CONTEXT *RamLmanContexts(void)
 __swi_end(0x8444, RamLmanContexts, ());
 
 /**
@@ -327,11 +365,11 @@ uint32_t *RamLmanRefs(void)
 __swi_end(0x8445, RamLmanRefs, ());
 
 /**
- * Get the native socket-registration table.
- * @return pointer to 14 registration entries, 0x14 bytes each
+ * Get the LMAN socket registration table.
+ * @return 14 entries
  * */
 __swi_begin(0x8446)
-void *RamSocketRegs(void)
+LMAN_SOCKET_REG *RamSocketRegs(void)
 __swi_end(0x8446, RamSocketRegs, ());
 
 /**
@@ -1037,14 +1075,14 @@ void LMAN_FreeSocketReg(unsigned index)
 __swi_end(0x4A8, LMAN_FreeSocketReg, (index));
 
 /**
- * Find the LMAN context with the given bearer ID and key.
+ * Find the LMAN context with the given bearer ID and interface.
  * @param bearer	bearer ID (see #LMAN_AllocContext)
- * @param key	value at context +4; meaning not known
+ * @param iface	interface index (see #LMAN_AttachInterface)
  * @return context index 0..7, 0xFFFF when not found
  * */
 __swi_begin(0x4AA)
-uint16_t LMAN_FindContext(uint16_t bearer, uint16_t key)
-__swi_end(0x4AA, LMAN_FindContext, (bearer, key));
+uint16_t LMAN_FindContext(uint16_t bearer, uint16_t iface)
+__swi_end(0x4AA, LMAN_FindContext, (bearer, iface));
 
 /**
  * Get the bearer ID of an LMAN context.

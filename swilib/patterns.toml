@@ -5886,7 +5886,7 @@ ELKA = "B0 B5 0D 1C 04 1C 01 1C 0C 20 ?? ?? ?? ?? 88 00 ?? 49 40 18 09 21 89 01"
 SG = "B0 B5 0D 1C 04 1C 01 1C 14 20 ?? F? ?? ?? 88 00"
 
 [444]
-decl = "uint8_t *RamLmanContexts(void)"
+decl = "LMAN_CONTEXT *RamLmanContexts(void)"
 NSG = "&(?? 49 40 18 80 88 B0 BD ?? 4C 21 1C 07 20 ?? ?? ?? ?? ?? 4D)"
 ELKA = "&(?? 49 40 18 80 88 B0 BD ?? 4C 21 1C 07 20 ?? ?? ?? ?? ?? 4D)"
 SG = "&(80 B5 08 28 09 D2 C1 00 ?? 4A 00 23 53 54 FF 20 + 8)"
@@ -5898,7 +5898,7 @@ ELKA = "&(?? 4A 40 01 00 21 80 18 8A 00 82 58 01 2A ?? D1 59 80 70 BD)"
 SG = "&(30 B5 ?? 4D 00 22 40 3D D3 00 5B 19 9C 88 8C 42 + 2)"
 
 [446]
-decl = "void *RamSocketRegs(void)"
+decl = "LMAN_SOCKET_REG *RamSocketRegs(void)"
 NSG = "&(?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C)"
 ELKA = "&(?? 4A 00 20 14 23 43 43 D3 5A 8B 42 ?? D0 01 30 00 04 00 0C)"
 SG = "&(10 B5 0E 28 14 D2 0C 88 19 23 5B 01 9C 42 01 D3 00 20 10 BD 14 23 58 43 ?? 4B C0 18 44 80 4B 88 + 18)"
@@ -6453,7 +6453,7 @@ ELKA = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 + 1"
 SG = "14 23 58 43 ?? 49 ?? 4A 80 23 11 52 80 18 43 80 + 1"
 
 [4AA]
-decl = "uint16_t LMAN_FindContext(uint16_t bearer, uint16_t key)"
+decl = "uint16_t LMAN_FindContext(uint16_t bearer, uint16_t iface)"
 NSG = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
 ELKA = "30 B5 ?? 4C 00 22 70 23 53 43 1B 19"
 SG = "30 B5 ?? 4D 00 22 40 3D D3 00 5B 19 9C 88 8C 42"
